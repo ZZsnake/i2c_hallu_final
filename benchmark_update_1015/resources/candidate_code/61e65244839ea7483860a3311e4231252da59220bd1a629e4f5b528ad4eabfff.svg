@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80">
+  <!-- Background fill of the pentagon -->
+  <polygon points="16,45 31,74 91,74 110,39 58,15" fill="none" />
+
+  <!-- Dashed green outline of the pentagon -->
+  <polygon points="16,45 31,74 91,74 110,39 58,15" fill="none" stroke="green" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Blue diagonal from E to C -->
+  <line x1="58" y1="15" x2="91" y2="74" stroke="blue" stroke-width="2" stroke-dasharray="6,4" />
+
+  <!-- Purple dots at each vertex -->
+  <circle cx="16" cy="45" r="2.2" fill="purple" />
+  <circle cx="31" cy="74" r="2.2" fill="purple" />
+  <circle cx="91" cy="74" r="2.2" fill="purple" />
+  <circle cx="110" cy="39" r="2.2" fill="purple" />
+  <circle cx="58" cy="15" r="2.2" fill="purple" />
+
+  <!-- Labels for vertices -->
+  <text x="8.2" y="51.5" font-family="serif" font-size="8" fill="black">A</text>
+  <text x="28" y="79" font-family="serif" font-size="8" fill="black">B</text>
+  <text x="88.5" y="81.2" font-family="serif" font-size="8" fill="black">C</text>
+  <text x="112" y="39" font-family="serif" font-size="8" fill="black">D</text>
+  <text x="58.2" y="13.5" font-family="serif" font-size="8" fill="black">E</text>
+
+  <!-- Label 'd' on side AE -->
+  <text x="42" y="35" font-family="serif" font-size="8" fill="black">d</text>
+</svg>

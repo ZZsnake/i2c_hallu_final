@@ -1,0 +1,49 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bodyGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#87CEFA; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4682B4; stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="heartGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#FFD700; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00; stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- Body Cavity -->
+  <path d="M400,150 C200,150 180,350 180,500 C180,650 300,750 400,750 C500,750 620,650 620,500 C620,350 600,150 400,150 Z" 
+        fill="url(#bodyGradient)" stroke="#00008B" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Esophagus (behind) -->
+  <rect x="390" y="250" width="20" height="250" fill="#4682B4" rx="5" />
+  <text x="400" y="480" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#00008B" text-anchor="middle">食管</text>
+
+  <!-- Trachea -->
+  <g>
+    <rect x="392" y="240" width="16" height="100" fill="#228B22" rx="8" />
+    <line x1="392" y1="260" x2="408" y2="260" stroke="#006400" stroke-width="1" />
+    <line x1="392" y1="280" x2="408" y2="280" stroke="#006400" stroke-width="1" />
+    <line x1="392" y1="300" x2="408" y2="300" stroke="#006400" stroke-width="1" />
+    <line x1="392" y1="320" x2="408" y2="320" stroke="#006400" stroke-width="1" />
+    <!-- Bronchi -->
+    <path d="M400,340 Q400,380 350,410" fill="none" stroke="#228B22" stroke-width="4" />
+    <path d="M400,340 Q400,380 450,410" fill="none" stroke="#228B22" stroke-width="4" />
+  </g>
+  <text x="440" y="270" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#228B22" text-anchor="start">气管</text>
+
+  <!-- Lungs -->
+  <path d="M400,350 C350,350 340,450 340,500 C340,550 370,580 400,580 C400,580 400,350 400,350 Z" fill="#CD5C5C" stroke="#B22222" stroke-width="1" />
+  <path d="M400,350 C450,350 460,450 460,500 C460,550 430,580 400,580 C400,580 400,350 400,350 Z" fill="#CD5C5C" stroke="#B22222" stroke-width="1" />
+  
+  <text x="375" y="470" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#B22222" text-anchor="end">左肺</text>
+  <text x="425" y="470" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#B22222" text-anchor="start">右肺</text>
+
+  <!-- Heart -->
+  <circle cx="400" y="550" r="45" fill="url(#heartGradient)" />
+  <text x="400" y="560" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FF8C00" text-anchor="middle">心脏</text>
+
+  <!-- Pharynx Label -->
+  <text x="400" y="190" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#00008B" text-anchor="middle">咽部</text>
+  <path d="M400,200 L400,235" stroke="#00008B" stroke-width="2" stroke-dasharray="4,2" fill="none" />
+
+</svg>

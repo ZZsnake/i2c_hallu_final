@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Mathematics Function Trends - Line Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222222;
+    }
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-weight: bold;
+      font-size: 18px;
+      color: #252B52;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- New Math Domain Dataset ---
+    // Simulated values of f(x) = x^2 - 2x + 3 for x = 1 to 24
+    const data = [
+      ["x=1", 2], ["x=2", 3], ["x=3", 6], ["x=4", 11], ["x=5", 18], ["x=6", 27],
+      ["x=7", 38], ["x=8", 51], ["x=9", 66], ["x=10", 83], ["x=11", 102], ["x=12", 123],
+      ["x=13", 146], ["x=14", 171], ["x=15", 198], ["x=16", 227], ["x=17", 258], ["x=18", 291],
+      ["x=19", 326], ["x=20", 363], ["x=21", 402], ["x=22", 443], ["x=23", 486], ["x=24", 531]
+    ];
+    const dateList = data.map(function (item) {
+      return item[0];
+    });
+    const valueList = data.map(function (item) {
+      return item[1];
+    });
+
+    option = {
+      visualMap: [
+        {
+          show: false,
+          type: 'continuous',
+          seriesIndex: 0,
+          min: 0,
+          max: 550
+        },
+        {
+          show: false,
+          type: 'continuous',
+          seriesIndex: 1,
+          dimension: 0,
+          min: 0,
+          max: dateList.length - 1
+        }
+      ],
+      title: [
+        {
+          left: 'center',
+          text: 'Quadratic Function: f(x) = x² - 2x + 3',
+          textStyle: {
+            color: '#252B52',
+            fontWeight: 'bold',
+            fontSize: 18,
+            fontFamily: 'Segoe UI, Arial, sans-serif'
+          }
+        },
+        {
+          top: '55%',
+          left: 'center',
+          text: 'Function Value Progression (Second View)',
+          textStyle: {
+            color: '#A91B34',
+            fontWeight: 'bold',
+            fontSize: 16,
+            fontFamily: 'Segoe UI, Arial, sans-serif'
+          }
+        }
+      ],
+      tooltip: {
+        trigger: 'axis',
+        textStyle: {
+          color: '#222'
+        },
+        backgroundColor: 'rgba(255,255,255,0.97)',
+        borderColor: '#3749A6',
+        borderWidth: 1
+      },
+      xAxis: [
+        {
+          data: dateList,
+          axisLine: { lineStyle: { color: '#252B52', width: 2 } },
+          axisLabel: { color: '#252B52', fontWeight: 'bold' }
+        },
+        {
+          data: dateList,
+          gridIndex: 1,
+          axisLine: { lineStyle: { color: '#A91B34', width: 2 } },
+          axisLabel: { color: '#A91B34', fontWeight: 'bold' }
+        }
+      ],
+      yAxis: [
+        {
+          axisLine: { lineStyle: { color: '#252B52', width: 2 } },
+          axisLabel: { color: '#252B52', fontWeight: 'bold' },
+          name: 'f(x) Value',
+          nameTextStyle: { color: '#252B52', fontWeight: 'bold' }
+        },
+        {
+          gridIndex: 1,
+          axisLine: { lineStyle: { color: '#A91B34', width: 2 } },
+          axisLabel: { color: '#A91B34', fontWeight: 'bold' },
+          name: 'f(x) Value',
+          nameTextStyle: { color: '#A91B34', fontWeight: 'bold' }
+        }
+      ],
+      grid: [
+        {
+          bottom: '60%',
+          left: 60,
+          right: 40
+        },
+        {
+          top: '60%',
+          left: 60,
+          right: 40
+        }
+      ],
+      series: [
+        {
+          type: 'line',
+          showSymbol: true,
+          symbol: 'circle',
+          symbolSize: 7,
+          data: valueList,
+          lineStyle: {
+            width: 4,
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: '#3749A6' },
+                { offset: 1, color: '#F54F29' }
+              ]
+            }
+          },
+          itemStyle: {
+            color: '#3749A6'
+          }
+        },
+        {
+          type: 'line',
+          showSymbol: true,
+          symbol: 'rect',
+          symbolSize: 7,
+          data: valueList,
+          xAxisIndex: 1,
+          yAxisIndex: 1,
+          lineStyle: {
+            width: 3,
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                { offset: 0, color: '#A91B34' },
+                { offset: 1, color: '#00A878' }
+              ]
+            }
+          },
+          itemStyle: {
+            color: '#A91B34'
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

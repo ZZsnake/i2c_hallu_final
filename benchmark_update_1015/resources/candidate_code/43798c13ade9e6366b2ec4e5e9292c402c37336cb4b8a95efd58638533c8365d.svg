@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 410" style="background:#fffff">
+  <!-- Axes -->
+  <line x1="44" y1="20" x2="44" y2="410" stroke="#2d2b69" stroke-width="2" stroke-dasharray="7 6"/>
+  <line x1="18" y1="359" x2="466" y2="359" stroke="#2d2b69" stroke-width="2" stroke-dasharray="7 6"/>
+
+  <!-- Axis labels -->
+  <text x="10" y="39" font-family="Arial, sans-serif" font-size="20" fill="#2d2b69">y</text>
+  <text x="445" y="398" font-family="Arial, sans-serif" font-size="20" fill="#2d2b69">x</text>
+
+  <!-- Y-axis ticks and labels -->
+  <line x1="37" y1="140" x2="49" y2="140" stroke="#2d2b69" stroke-width="2"/>
+  <text x="18" y="145" font-family="Arial, sans-serif" font-size="16" fill="#2d2b69">2</text>
+  <line x1="37" y1="250" x2="49" y2="250" stroke="#2d2b69" stroke-width="2"/>
+  <text x="18" y="255" font-family="Arial, sans-serif" font-size="16" fill="#2d2b69">1</text>
+  <line x1="37" y1="320" x2="49" y2="320" stroke="#2d2b69" stroke-width="2"/>
+  <text x="18" y="325" font-family="Arial, sans-serif" font-size="16" fill="#2d2b69">0</text>
+
+  <!-- X-axis ticks and labels for pi, 2pi, 3pi -->
+  <!-- pi -->
+  <line x1="116" y1="353" x2="116" y2="365" stroke="#2d2b69" stroke-width="2"/>
+  <text x="111" y="384" font-family="Arial, sans-serif" font-size="18" fill="#2d2b69">&#960;</text>
+  <!-- 2pi -->
+  <line x1="246" y1="353" x2="246" y2="365" stroke="#2d2b69" stroke-width="2"/>
+  <text x="234" y="384" font-family="Arial, sans-serif" font-size="18" fill="#2d2b69">2&#960;</text>
+  <!-- 3pi -->
+  <line x1="371" y1="353" x2="371" y2="365" stroke="#2d2b69" stroke-width="2"/>
+  <text x="359" y="384" font-family="Arial, sans-serif" font-size="18" fill="#2d2b69">3&#960;</text>
+
+  <!-- Legend text -->
+  <text x="105" y="64" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#2d2b69">
+    y = sin(x) + 1.5
+  </text>
+  <text x="105" y="98" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#3e9dd0">
+    y = cos(x) - 1
+  </text>
+  <text x="105" y="132" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#10234d">
+    y = x<tspan dy="-7" font-size="14">2</tspan>
+  </text>
+
+  <!-- Parabola y = x^2 (stylized) -->
+  <path d="M 58 321
+           C 104 244 168 204 240 204
+           C 306 204 374 244 421 321"
+        fill="none" stroke="#10234d" stroke-width="4"/>
+
+  <!-- Sine curve y = sin(x) + 1.5 (stylized red) -->
+  <path d="M 58 251
+           C 72 233 92 242 113 263
+           C 139 290 166 318 196 293
+           C 220 273 223 218 250 176
+           C 276 135 319 129 354 154
+           C 383 174 405 216 421 251"
+        fill="none" stroke="#e53146" stroke-width="4"/>
+
+  <!-- Cosine curve y = cos(x) - 1 (stylized dashed cyan) -->
+  <path d="M 58 321
+           C 80 268 113 220 151 210
+           C 181 202 212 217 236 249
+           C 263 285 283 360 311 405
+           C 338 447 384 438 421 321"
+        fill="none" stroke="#3e9dd0" stroke-width="3" stroke-dasharray="8 6"/>
+
+  <!-- Point A on parabola -->
+  <circle cx="240" cy="204" r="11" fill="#17c653" stroke="#10234d" stroke-width="2"/>
+  <text x="256" y="209" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#10234d">A</text>
+
+  <!-- Point B near x = pi -->
+  <circle cx="120" cy="320" r="9" fill="#f3a31b" stroke="#10234d" stroke-width="2"/>
+  <text x="134" y="325" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#e53146">B</text>
+</svg>

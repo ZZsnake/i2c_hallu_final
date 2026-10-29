@@ -1,0 +1,211 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}[font=\rmfamily\Large]
+
+% Overall sizes
+\def\tableWidth{27cm}
+\def\tableHeight{11cm}
+\def\nCols{6}
+
+% Column widths (roughly: factor col smaller, 5 equal data cols)
+\def\cwLeft{5cm}
+\def\cwData{4.4cm}
+
+% x positions
+\coordinate (L) at (0,0);
+\coordinate (R) at (\tableWidth,0);
+
+\def\xA{0}
+\def\xB{\cwLeft}
+\def\xC{\cwLeft+\cwData}
+\def\xD{\cwLeft+2*\cwData}
+\def\xE{\cwLeft+3*\cwData}
+\def\xF{\cwLeft+4*\cwData}
+\def\xG{\cwLeft+5*\cwData}
+
+% y positions from top down: compact booktabs-style table
+\def\yTop{0}
+\def\hTitle{0.65}
+\def\hHeader{1.10}
+\def\hRow{0.55}
+\def\hSection{0.65}
+
+% compute y levels
+\def\yA{0} % top of title
+\def\yB{-\hTitle}
+\def\yC{-\hTitle-\hHeader}
+\def\yD{-\hTitle-\hHeader-\hRow}
+\def\yE{-\hTitle-\hHeader-2*\hRow}
+\def\yF{-\hTitle-\hHeader-3*\hRow}
+\def\yG{-\hTitle-\hHeader-4*\hRow}
+\def\yH{-\hTitle-\hHeader-5*\hRow}
+\def\yI{-\hTitle-\hHeader-5*\hRow-\hSection}
+\def\yJ{-\hTitle-\hHeader-5*\hRow-\hSection-\hRow}
+\def\yK{-\hTitle-\hHeader-5*\hRow-\hSection-2*\hRow}
+\def\yL{-\hTitle-\hHeader-5*\hRow-\hSection-3*\hRow}
+\def\yM{-\hTitle-\hHeader-5*\hRow-2*\hSection-3*\hRow}
+\def\yN{-\hTitle-\hHeader-5*\hRow-2*\hSection-4*\hRow}
+\def\yO{-\hTitle-\hHeader-5*\hRow-2*\hSection-5*\hRow}
+\def\yP{-\hTitle-\hHeader-5*\hRow-2*\hSection-6*\hRow}
+\def\yQ{-\hTitle-\hHeader-5*\hRow-2*\hSection-7*\hRow}
+\def\yBottom{\yQ-\hRow}
+
+% Colors
+\definecolor{titleblue}{RGB}{0,102,204}
+\definecolor{bandblue}{RGB}{100,178,245}
+\definecolor{lightblue}{RGB}{230,243,255}
+
+\newcommand{\HRule}[1]{\draw[line width=0.8pt] (\xA,#1) -- (\xG,#1);}
+
+% TITLE BAND ----------------------------------------------------
+\fill[titleblue] (\xA,\yA) rectangle (\xG,\yB);
+\node[white,font=\bfseries\LARGE] at ({(\xA+\xG)/2},{(\yA+\yB)/2})
+  {Socioeconomic Factors and Vector-Borne Diseases};
+
+% COLUMN HEADER BAND --------------------------------------------
+\fill[bandblue] (\xA,\yB) rectangle (\xG,\yC);
+
+\node[black,font=\bfseries\LARGE,anchor=west] at ({\xA+0.30},{(\yB+\yC)/2}) {Factor};
+\node[black,font=\bfseries\LARGE] at ({(\xB+\xC)/2},{(\yB+\yC)/2}) {Brazil};
+\node[black,font=\bfseries\LARGE] at ({(\xC+\xD)/2},{(\yB+\yC)/2}) {India};
+\node[black,font=\bfseries\LARGE] at ({(\xD+\xE)/2},{(\yB+\yC)/2}) {Nigeria};
+\node[black,font=\bfseries\LARGE] at ({(\xE+\xF)/2},{(\yB+\yC)/2}) {Vietnam};
+\node[black,font=\bfseries\LARGE,align=center] at ({(\xF+\xG)/2},{(\yB+\yC)/2}) {South\\Africa};
+
+% SOCIOECONOMIC ROWS --------------------------------------------
+% Row 1: Population (light blue)
+\fill[lightblue] (\xA,\yC) rectangle (\xG,\yD);
+\node[anchor=west] at ({\xA+0.30},{(\yC+\yD)/2}) {Population};
+\node at ({(\xB+\xC)/2},{(\yC+\yD)/2}) {213\,993\,437};
+\node at ({(\xC+\xD)/2},{(\yC+\yD)/2}) {1\,393\,409\,038};
+\node at ({(\xD+\xE)/2},{(\yC+\yD)/2}) {211\,400\,708};
+\node at ({(\xE+\xF)/2},{(\yC+\yD)/2}) {98\,168\,829};
+\node at ({(\xF+\xG)/2},{(\yC+\yD)/2}) {59\,308\,690};
+
+% Row 2: Urbanization (white)
+\node[anchor=west] at ({\xA+0.30},{(\yD+\yE)/2}) {Urbanization Rate (\%)};
+\node at ({(\xB+\xC)/2},{(\yD+\yE)/2}) {87.4};
+\node at ({(\xC+\xD)/2},{(\yD+\yE)/2}) {34.5};
+\node at ({(\xD+\xE)/2},{(\yD+\yE)/2}) {51.2};
+\node at ({(\xE+\xF)/2},{(\yD+\yE)/2}) {37.0};
+\node at ({(\xF+\xG)/2},{(\yD+\yE)/2}) {66.0};
+
+% Row 3: GDP per capita (light blue)
+\fill[lightblue] (\xA,\yE) rectangle (\xG,\yF);
+\node[anchor=west] at ({\xA+0.30},{(\yE+\yF)/2}) {GDP Per Capita (USD)};
+\node at ({(\xB+\xC)/2},{(\yE+\yF)/2}) {9040};
+\node at ({(\xC+\xD)/2},{(\yE+\yF)/2}) {2100};
+\node at ({(\xD+\xE)/2},{(\yE+\yF)/2}) {2272};
+\node at ({(\xE+\xF)/2},{(\yE+\yF)/2}) {3483};
+\node at ({(\xF+\xG)/2},{(\yE+\yF)/2}) {6025};
+
+% Row 4: Healthcare Expenditure (white)
+\node[anchor=west] at ({\xA+0.30},{(\yF+\yG)/2}) {Healthcare Expenditure (\% of GDP)};
+\node at ({(\xB+\xC)/2},{(\yF+\yG)/2}) {9.5};
+\node at ({(\xC+\xD)/2},{(\yF+\yG)/2}) {3.5};
+\node at ({(\xD+\xE)/2},{(\yF+\yG)/2}) {3.7};
+\node at ({(\xE+\xF)/2},{(\yF+\yG)/2}) {5.7};
+\node at ({(\xF+\xG)/2},{(\yF+\yG)/2}) {8.5};
+
+% Row 5: Access to Healthcare (light blue)
+\fill[lightblue] (\xA,\yG) rectangle (\xG,\yH);
+\node[anchor=west] at ({\xA+0.30},{(\yG+\yH)/2}) {Access to Healthcare (\%)};
+\node at ({(\xB+\xC)/2},{(\yG+\yH)/2}) {78};
+\node at ({(\xC+\xD)/2},{(\yG+\yH)/2}) {66};
+\node at ({(\xD+\xE)/2},{(\yG+\yH)/2}) {47};
+\node at ({(\xE+\xF)/2},{(\yG+\yH)/2}) {70};
+\node at ({(\xF+\xG)/2},{(\yG+\yH)/2}) {80};
+
+% SECTION: Population Distribution --------------------------------
+\fill[bandblue] (\xA,\yH) rectangle (\xG,\yI);
+\node[black,font=\bfseries\LARGE] at ({(\xA+\xG)/2},{(\yH+\yI)/2})
+  {Population Distribution (\%)};
+
+% Children row (white)
+\node[anchor=west] at ({\xA+0.30},{(\yI+\yJ)/2}) {Children};
+\node at ({(\xB+\xC)/2},{(\yI+\yJ)/2}) {14.8};
+\node at ({(\xC+\xD)/2},{(\yI+\yJ)/2}) {28.5};
+\node at ({(\xD+\xE)/2},{(\yI+\yJ)/2}) {45.4};
+\node at ({(\xE+\xF)/2},{(\yI+\yJ)/2}) {19.4};
+\node at ({(\xF+\xG)/2},{(\yI+\yJ)/2}) {29.2};
+
+% Adults row (light blue)
+\fill[lightblue] (\xA,\yJ) rectangle (\xG,\yK);
+\node[anchor=west] at ({\xA+0.30},{(\yJ+\yK)/2}) {Adults};
+\node at ({(\xB+\xC)/2},{(\yJ+\yK)/2}) {56.2};
+\node at ({(\xC+\xD)/2},{(\yJ+\yK)/2}) {53.2};
+\node at ({(\xD+\xE)/2},{(\yJ+\yK)/2}) {51.0};
+\node at ({(\xE+\xF)/2},{(\yJ+\yK)/2}) {72.3};
+\node at ({(\xF+\xG)/2},{(\yJ+\yK)/2}) {65.8};
+
+% Elderly row (white)
+\node[anchor=west] at ({\xA+0.30},{(\yK+\yL)/2}) {Elderly};
+\node at ({(\xB+\xC)/2},{(\yK+\yL)/2}) {29.0};
+\node at ({(\xC+\xD)/2},{(\yK+\yL)/2}) {18.3};
+\node at ({(\xD+\xE)/2},{(\yK+\yL)/2}) {3.6};
+\node at ({(\xE+\xF)/2},{(\yK+\yL)/2}) {8.3};
+\node at ({(\xF+\xG)/2},{(\yK+\yL)/2}) {5.0};
+
+% SECTION: Annual Incidence --------------------------------------
+\fill[bandblue] (\xA,\yL) rectangle (\xG,\yM);
+\node[black,font=\bfseries\LARGE] at ({(\xA+\xG)/2},{(\yL+\yM)/2})
+  {Annual Incidence of Vector-Borne Diseases};
+
+% Dengue row (light blue)
+\fill[lightblue] (\xA,\yM) rectangle (\xG,\yN);
+\node[anchor=west] at ({\xA+0.30},{(\yM+\yN)/2}) {Dengue};
+\node at ({(\xB+\xC)/2},{(\yM+\yN)/2}) {1\,400\,000};
+\node at ({(\xC+\xD)/2},{(\yM+\yN)/2}) {100\,000};
+\node at ({(\xD+\xE)/2},{(\yM+\yN)/2}) {60\,000};
+\node at ({(\xE+\xF)/2},{(\yM+\yN)/2}) {200\,000};
+\node at ({(\xF+\xG)/2},{(\yM+\yN)/2}) {3000};
+
+% Malaria row (white)
+\node[anchor=west] at ({\xA+0.30},{(\yN+\yO)/2}) {Malaria};
+\node at ({(\xB+\xC)/2},{(\yN+\yO)/2}) {65\,000};
+\node at ({(\xC+\xD)/2},{(\yN+\yO)/2}) {1\,000\,000};
+\node at ({(\xD+\xE)/2},{(\yN+\yO)/2}) {2\,000\,000};
+\node at ({(\xE+\xF)/2},{(\yN+\yO)/2}) {30\,000};
+\node at ({(\xF+\xG)/2},{(\yN+\yO)/2}) {55\,000};
+
+% Zika row (light blue)
+\fill[lightblue] (\xA,\yO) rectangle (\xG,\yP);
+\node[anchor=west] at ({\xA+0.30},{(\yO+\yP)/2}) {Zika};
+\node at ({(\xB+\xC)/2},{(\yO+\yP)/2}) {65\,000};
+\node at ({(\xC+\xD)/2},{(\yO+\yP)/2}) {3000};
+\node at ({(\xD+\xE)/2},{(\yO+\yP)/2}) {500};
+\node at ({(\xE+\xF)/2},{(\yO+\yP)/2}) {500};
+\node at ({(\xF+\xG)/2},{(\yO+\yP)/2}) {50};
+
+% Chikungunya row (white)
+\node[anchor=west] at ({\xA+0.30},{(\yP+\yQ)/2}) {Chikungunya};
+\node at ({(\xB+\xC)/2},{(\yP+\yQ)/2}) {300\,000};
+\node at ({(\xC+\xD)/2},{(\yP+\yQ)/2}) {3000};
+\node at ({(\xD+\xE)/2},{(\yP+\yQ)/2}) {8000};
+\node at ({(\xE+\xF)/2},{(\yP+\yQ)/2}) {5000};
+\node at ({(\xF+\xG)/2},{(\yP+\yQ)/2}) {1000};
+
+% Yellow Fever row (light blue)
+\fill[lightblue] (\xA,\yQ) rectangle (\xG,\yBottom);
+\node[anchor=west] at ({\xA+0.30},{(\yQ+\yBottom)/2}) {Yellow Fever};
+\node at ({(\xB+\xC)/2},{(\yQ+\yBottom)/2}) {1300};
+\node at ({(\xC+\xD)/2},{(\yQ+\yBottom)/2}) {0};
+\node at ({(\xD+\xE)/2},{(\yQ+\yBottom)/2}) {2000};
+\node at ({(\xE+\xF)/2},{(\yQ+\yBottom)/2}) {0};
+\node at ({(\xF+\xG)/2},{(\yQ+\yBottom)/2}) {0};
+
+% Booktabs-style horizontal rules only
+\HRule{\yA}
+\HRule{\yB}
+\HRule{\yC}
+\HRule{\yH}
+\HRule{\yI}
+\HRule{\yL}
+\HRule{\yM}
+\HRule{\yBottom}
+
+\end{tikzpicture}
+\end{document}

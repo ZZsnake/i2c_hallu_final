@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Blue oval background -->
+    <path d="M50 10c-20 0-40 10-40 30s20 30 40 30 40-10 40-30S70 10 50 10z" fill="#4fc3f7"/>
+    
+    <!-- Left Lung -->
+    <circle cx="35" cy="60" r="15" fill="#ff4d4d"/>
+    <text x="35" y="65" font-size="8" fill="#fff">左肺</text>
+    
+    <!-- Right Lung -->
+    <circle cx="65" cy="60" r="15" fill="#ff4d4d"/>
+    <text x="65" y="65" font-size="8" fill="#fff">右肺</text>
+    
+    <!-- Trachea/Esophagus -->
+    <rect x="45" y="20" width="10" height="40" fill="#4caf50"/>
+    <text x="50" y="25" font-size="8" fill="#fff">咽部</text>
+    
+    <!-- Stomach -->
+    <circle cx="50" cy="90" r="10" fill="#ffa726"/>
+    <text x="50" y="95" font-size="8" fill="#fff">胃</text>
+    
+    <!-- Esophagus Connection -->
+    <line x1="50" y1="60" x2="50" y2="90" stroke="#ffd54f" stroke-width="2"/>
+    <text x="50" y="70" font-size="8" fill="#ffd54f">食管</text>
+</svg>

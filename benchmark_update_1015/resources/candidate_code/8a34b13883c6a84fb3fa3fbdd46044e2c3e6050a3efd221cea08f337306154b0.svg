@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 800">
+  <!-- Background regions -->
+  <rect x="95" y="105" width="500" height="500" fill="#BBBBBB"/>
+  <rect x="345" y="105" width="250" height="250" fill="#5A5A5A"/>
+  
+  <!-- Axes -->
+  <line x1="40" y1="355" x2="595" y2="355" stroke="black" stroke-width="4"/>
+  <line x1="345" y1="655" x2="345" y2="25" stroke="black" stroke-width="4"/>
+  
+  <!-- Axis arrows -->
+  <polygon points="595,355 580,348 580,362" fill="black"/>
+  <polygon points="345,25 338,40 352,40" fill="black"/>
+  
+  <!-- Axis labels -->
+  <text x="610" y="320" font-family="Arial, sans-serif" font-size="60" font-weight="bold">x</text>
+  <text x="650" y="335" font-family="Arial, sans-serif" font-size="40" font-weight="bold">1</text>
+  
+  <text x="365" y="70" font-family="Arial, sans-serif" font-size="60" font-weight="bold">x</text>
+  <text x="405" y="85" font-family="Arial, sans-serif" font-size="40" font-weight="bold">2</text>
+  
+  <!-- Decision boundary (dashed blue line) -->
+  <line x1="315" y1="125" x2="575" y2="385" stroke="#4169E1" stroke-width="4" stroke-dasharray="10,8"/>
+  
+  <!-- Connecting lines between nodes -->
+  <line x1="345" y1="205" x2="345" y2="355" stroke="black" stroke-width="3"/>
+  <line x1="345" y1="205" x2="495" y2="205" stroke="black" stroke-width="3"/>
+  <line x1="495" y1="205" x2="495" y2="355" stroke="black" stroke-width="3"/>
+  <line x1="345" y1="355" x2="495" y2="355" stroke="black" stroke-width="3"/>
+  
+  <!-- Nodes -->
+  <!-- (0,1) - top left - orange -->
+  <circle cx="345" cy="205" r="22" fill="#FF6600" stroke="black" stroke-width="4"/>
+  
+  <!-- (1,1) - top right - green -->
+  <circle cx="495" cy="205" r="22" fill="#00FF00" stroke="black" stroke-width="4"/>
+  
+  <!-- (0,0) - bottom left - orange -->
+  <circle cx="345" cy="355" r="22" fill="#FF6600" stroke="black" stroke-width="4"/>
+  
+  <!-- (1,0) - bottom right - orange -->
+  <circle cx="495" cy="355" r="22" fill="#FF6600" stroke="black" stroke-width="4"/>
+  
+  <!-- Labels for coordinates -->
+  <text x="245" y="230" font-family="Arial, sans-serif" font-size="60" font-weight="bold">0</text>
+  <text x="245" y="460" font-family="Arial, sans-serif" font-size="60" font-weight="bold">1</text>
+  <text x="470" y="460" font-family="Arial, sans-serif" font-size="60" font-weight="bold">1</text>
+  
+  <!-- Title -->
+  <text x="130" y="750" font-family="Arial, sans-serif" font-size="70" font-weight="bold">AND (x</text>
+  <text x="340" y="760" font-family="Arial, sans-serif" font-size="50" font-weight="bold">1</text>
+  <text x="370" y="750" font-family="Arial, sans-serif" font-size="70" font-weight="bold">∧x</text>
+  <text x="490" y="760" font-family="Arial, sans-serif" font-size="50" font-weight="bold">2</text>
+  <text x="520" y="750" font-family="Arial, sans-serif" font-size="70" font-weight="bold">)</text>
+</svg>

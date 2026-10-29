@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="2000">
+  <!-- Axes -->
+  <line x1="300" y1="1800" x2="2700" y2="1800" stroke="#212b75" stroke-width="8"/>
+  <line x1="300" y1="300" x2="300" y2="1800" stroke="#212b75" stroke-width="8"/>
+
+  <!-- Years (X labels) -->
+  <g font-family="Roboto, Arial, sans-serif" font-size="78" fill="#1c1c1c" letter-spacing="0.1em" text-anchor="middle">
+    <text x="500" y="1870">2015</text>
+    <text x="850" y="1870">2016</text>
+    <text x="1200" y="1870">2017</text>
+    <text x="1550" y="1870">2018</text>
+    <text x="1900" y="1870">2019</text>
+    <text x="2250" y="1870">2020</text>
+    <text x="2600" y="1870">2021</text>
+  </g>
+
+  <!-- Y labels (Inflation Rate %) -->
+  <g font-family="Roboto, Arial, sans-serif" font-size="62" fill="#212b75">
+    <text x="220" y="1800" text-anchor="end">0%</text>
+    <text x="220" y="1560" text-anchor="end">2%</text>
+    <text x="220" y="1320" text-anchor="end">4%</text>
+    <text x="220" y="1080" text-anchor="end">6%</text>
+    <text x="220" y="840"  text-anchor="end">8%</text>
+    <text x="220" y="600"  text-anchor="end">10%</text>
+  </g>
+  <!-- Gridlines -->
+  <g stroke="#b7b7b7" stroke-width="2" stroke-dasharray="18 18">
+    <line x1="300" y1="1560" x2="2700" y2="1560"/>
+    <line x1="300" y1="1320" x2="2700" y2="1320"/>
+    <line x1="300" y1="1080" x2="2700" y2="1080"/>
+    <line x1="300" y1="840"  x2="2700" y2="840"/>
+    <line x1="300" y1="600"  x2="2700" y2="600"/>
+  </g>
+
+  <!-- Line: UK Inflation -->
+  <polyline
+    fill="none"
+    stroke="#d61c4a"
+    stroke-width="12"
+    stroke-dasharray="30 12"
+    points="
+      500,1630
+      850,1520
+      1200,1360
+      1550,1180
+      1900,1250
+      2250,980
+      2600,740
+    "
+  />
+  <!-- Data Points -->
+  <g>
+    <circle cx="500" cy="1630" r="28" fill="#d61c4a" stroke="#212b75" stroke-width="8"/>
+    <circle cx="850" cy="1520" r="28" fill="#d61c4a" stroke="#212b75" stroke-width="8"/>
+    <circle cx="1200" cy="1360" r="28" fill="#d61c4a" stroke="#212b75" stroke-width="8"/>
+    <circle cx="1550" cy="1180" r="28" fill="#d61c4a" stroke="#212b75" stroke-width="8"/>
+    <circle cx="1900" cy="1250" r="28" fill="#d61c4a" stroke="#212b75" stroke-width="8"/>
+    <circle cx="2250" cy="980"  r="28" fill="#d61c4a" stroke="#212b75" stroke-width="8"/>
+    <circle cx="2600" cy="740"  r="28" fill="#d61c4a" stroke="#212b75" stroke-width="8"/>
+  </g>
+
+  <!-- Data Labels (on points) -->
+  <g font-family="Roboto, Arial, sans-serif" font-size="54" fill="#212b75" font-weight="bold">
+    <text x="500" y="1585" text-anchor="middle">2.1%</text>
+    <text x="850" y="1475" text-anchor="middle">3.3%</text>
+    <text x="1200" y="1315" text-anchor="middle">4.8%</text>
+    <text x="1550" y="1135" text-anchor="middle">6.7%</text>
+    <text x="1900" y="1205" text-anchor="middle">6.0%</text>
+    <text x="2250" y="935" text-anchor="middle">8.9%</text>
+    <text x="2600" y="695" text-anchor="middle">11.2%</text>
+  </g>
+  <!-- Title -->
+  <text x="1500" y="220" font-family="Roboto, Arial, sans-serif" font-size="110" fill="#212b75" font-weight="bold" text-anchor="middle" letter-spacing="0.07em">
+    UK Inflation Rate (Consumer Price Index)
+  </text>
+  <!-- Subtitle -->
+  <text x="1500" y="320" font-family="Roboto, Arial, sans-serif" font-size="68" fill="#1c1c1c" text-anchor="middle">
+    Jan 2015 – Dec 2021
+  </text>
+  <!-- Source -->
+  <text x="1500" y="1960" font-family="Roboto, Arial, sans-serif" font-size="60" fill="#1c1c1c" text-anchor="middle">
+    Source: Office for National Statistics (ONS)
+  </text>
+</svg>

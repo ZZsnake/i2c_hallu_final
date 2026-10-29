@@ -1,0 +1,86 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc, matrix}
+
+\begin{document}
+\begin{tikzpicture}
+% Define colors
+\definecolor{headerblue}{RGB}{0,91,170}
+\definecolor{lightblue}{RGB}{230,242,255}
+
+% Define matrix with custom styles
+\matrix (table) [matrix of nodes,
+    nodes={align=left, anchor=west, text width=2.5cm, inner sep=5pt, font=\sffamily},
+    row 1/.style={nodes={fill=headerblue, text=white, font=\sffamily\bfseries}},
+    row 2/.style={nodes={fill=lightblue}},
+    row 3/.style={nodes={fill=white}},
+    row 4/.style={nodes={fill=lightblue}},
+    row 5/.style={nodes={fill=white}},
+    row 6/.style={nodes={fill=lightblue}},
+    row 7/.style={nodes={fill=white}},
+    column 1/.style={nodes={text width=1.5cm}},
+    column 2/.style={nodes={text width=3.5cm}},
+    column 3/.style={nodes={text width=2cm}},
+    column 4/.style={nodes={text width=2cm}},
+    column 5/.style={nodes={text width=2.5cm}},
+    column 6/.style={nodes={text width=4.5cm}},
+    row sep=-\pgflinewidth,
+    column sep=-\pgflinewidth,
+    nodes in empty cells,
+    every outer xsep=0pt,
+    every outer ysep=0pt,
+    inner sep=0pt,
+    outer sep=0pt,
+    matrix anchor=north west,
+    ] {
+    Year & City & Commuters (\%) & Bike Lanes (km) & Population Growth (\%) & Impact on Air Quality \\
+    2000 & Portland, OR & 4.5 & 200 & 0.8 & Improved, 10\% reduction in CO$_2$ emissions \\
+    2005 & Amsterdam, Netherlands & 36.0 & 400 & 1.5 & Significantly improved, 15\% reduction in NO$_2$ levels \\
+    2010 & Copenhagen, Denmark & 38.0 & 350 & 2.0 & Improved, significant decreases in urban traffic pollutants \\
+    2015 & San Francisco, CA & 7.0 & 150 & 1.0 & Moderately improved, 5\% reduction in overall vehicle emissions \\
+    2020 & New York, NY & 12.5 & 400 & 1.2 & Improved, 10\% decrease in particulate matter levels \\
+    2023 & Barcelona, Spain & 16.0 & 250 & 1.1 & Improved, 8\% reduction in greenhouse gas emissions \\
+};
+
+% Draw borders
+\draw[thick] (table-1-1.north west) -- (table-1-6.north east);
+\draw[thick] (table-1-1.south west) -- (table-1-6.south east);
+\draw[thick] (table-7-1.south west) -- (table-7-6.south east);
+\draw[thick] (table-7-1.north west) -- (table-7-6.north east);
+
+% Draw horizontal lines between rows
+\foreach \i in {2,3,4,5,6,7} {
+    \draw (table-\i-1.south west) -- (table-\i-6.south east);
+}
+
+% Draw vertical lines between columns
+\foreach \j in {1,2,3,4,5,6} {
+    \draw (table-1-\j.north west) -- (table-7-\j.south west);
+}
+
+% Add double lines at top and bottom
+\draw[double, double distance=1pt, thick] (table-1-1.north west) -- (table-1-6.north east);
+\draw[double, double distance=1pt, thick] (table-7-1.south west) -- (table-7-6.south east);
+
+% Adjust text alignment for header
+\foreach \j in {1,2,3,4,5,6} {
+    \node[font=\sffamily\bfseries, text=white, align=center, text width=2.5cm] at (table-1-\j.center) {\pgfkeysvalueof{/tikz/matrix of nodes/row 1/column \j}};
+}
+
+% Adjust text alignment for data cells
+\foreach \i in {2,3,4,5,6,7} {
+    \foreach \j in {1,2,3,4,5,6} {
+        \node[align=left, text width=2.5cm, inner sep=5pt, font=\sffamily] at (table-\i-\j.center) {\pgfkeysvalueof{/tikz/matrix of nodes/row \i/column \j}};
+    }
+}
+
+% Fix multi-line text in last column
+\foreach \i in {2,3,4,5,6,7} {
+    \node[align=left, text width=4.5cm, inner sep=5pt, font=\sffamily] at (table-\i-6.center) {
+        \pgfkeysvalueof{/tikz/matrix of nodes/row \i/column 6}
+    };
+}
+
+% Ensure proper spacing and alignment
+\end{tikzpicture}
+\end{document}

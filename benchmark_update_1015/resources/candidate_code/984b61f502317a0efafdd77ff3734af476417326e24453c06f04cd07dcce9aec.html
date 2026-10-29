@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population by Region</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('chart'));
+
+            var option = {
+                title: {
+                    text: 'Population by Region',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['Urban', 'Rural']
+                },
+                xAxis: {
+                    data: ['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Oceania']
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Population (millions)',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                },
+                series: [
+                    {
+                        name: 'Urban',
+                        type: 'bar',
+                        data: [342.5, 120, 420, 210, 950, 35],
+                        itemStyle: {
+                            color: '#1f77b4'
+                        }
+                    },
+                    {
+                        name: 'Rural',
+                        type: 'bar',
+                        data: [157, 80, 70, 340, 400, 12],
+                        itemStyle: {
+                            color: '#2ca02c'
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

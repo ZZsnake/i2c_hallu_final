@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Heatmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+        #chart-container {
+            width: 90vw;
+            height: 85vh;
+            max-width: 1000px;
+            max-height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chart-container"></div>
+
+<script>
+    $(document).ready(function() {
+        const chartDom = document.getElementById('chart-container');
+        const myChart = echarts.init(chartDom);
+
+        const xData = ['1', '2', '3', '4', '5', '6'];
+        const yData = ['1', '2', '3', '4', '5', '6'];
+
+        // Generate multiplication table data [x_index, y_index, value]
+        const data = [];
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 6; j++) {
+                data.push([i, j, (i + 1) * (j + 1)]);
+            }
+        }
+
+        const option = {
+            title: {
+                text: 'Multiplication Table Heatmap (1-6)',
+                left: 'center',
+                top: 20,
+                textStyle: {
+                    fontSize: 20,
+                    fontWeight: 'bold'
+                }
+            },
+            tooltip: {
+                position: 'top',
+                formatter: function (params) {
+                    return (params.data[0] + 1) + ' x ' + (params.data[1] + 1) + ' = ' + params.data[2];
+                }
+            },
+            grid: {
+                top: '10%',
+                bottom: '15%',
+                left: '10%',
+                right: '10%'
+            },
+            xAxis: {
+                type: 'category',
+                data: xData,
+                splitArea: {
+                    show: true
+                },
+                axisLine: { show: true },
+                axisTick: { show: true }
+            },
+            yAxis: {
+                type: 'category',
+                data: yData,
+                splitArea: {
+                    show: true
+                },
+                axisLine: { show: true },
+                axisTick: { show: true }
+            },
+            visualMap: {
+                min: 1,
+                max: 36,
+                calculable: true,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: '2%',
+                // Custom rainbow gradient to match the image
+                inRange: {
+                    color: [
+                        '#2171f3', // Deep Blue
+                        '#00a2ff', // Sky Blue
+                        '#00c9ff', // Cyan
+                        '#00d26a', // Greenish Cyan
+                        '#32cd32', // Lime Green
+                        '#adff2f', // Yellow Green
+                        '#ffff00', // Yellow
+                        '#ffa500', // Orange
+                        '#ff4500', // Orange Red
+                        '#e60000'  // Red
+                    ]
+                },
+                text: ['36', '1'],
+                itemWidth: 20,
+                itemHeight: 300
+            },
+            series: [{
+                name: 'Product',
+                type: 'heatmap',
+                data: data,
+                label: {
+                    show: true,
+                    color: '#000',
+                    fontSize: 12,
+                    formatter: function(params) {
+                        return params.data[2];
+                    }
+                },
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    });
+</script>
+
+</body>
+</html>

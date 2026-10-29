@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <style>
+    .title { font-family: sans-serif; font-size: 28px; font-weight: normal; text-anchor: middle; }
+    .subtitle { font-family: sans-serif; font-size: 18px; font-weight: normal; text-anchor: middle; }
+    .legend-text { font-family: sans-serif; font-size: 14px; }
+    .axis-label { font-family: sans-serif; font-size: 14px; }
+    .sector-label { font-family: sans-serif; font-size: 14px; text-anchor: end; }
+    .grid-line { stroke: #ccc; stroke-dasharray: 4 2; stroke-width: 1; }
+    .bar-domestic { fill: #1f77b4; }
+    .bar-foreign { fill: #d62728; }
+  </style>
+
+  <!-- Title and Subtitle -->
+  <text x="500" y="40" class="title">GDP by Sector and Ownership</text>
+  <text x="500" y="70" class="subtitle">Country X, 2023</text>
+
+  <!-- Legend -->
+  <rect x="800" y="20" width="15" height="15" class="bar-domestic"/>
+  <text x="820" y="33" class="legend-text">Domestic</text>
+  <rect x="800" y="45" width="15" height="15" class="bar-foreign"/>
+  <text x="820" y="58" class="legend-text">Foreign-Owned</text>
+
+  <!-- X-axis -->
+  <line x1="150" y1="520" x2="950" y2="520" stroke="black" stroke-width="1"/>
+  <text x="150" y="540" class="axis-label" text-anchor="middle">0</text>
+  <text x="310" y="540" class="axis-label" text-anchor="middle">25B</text>
+  <text x="470" y="540" class="axis-label" text-anchor="middle">50B</text>
+  <text x="630" y="540" class="axis-label" text-anchor="middle">75B</text>
+  <text x="790" y="540" class="axis-label" text-anchor="middle">100B</text>
+  <text x="950" y="540" class="axis-label" text-anchor="middle">125B</text>
+
+  <!-- Grid Lines -->
+  <line x1="310" y1="100" x2="310" y2="520" class="grid-line"/>
+  <line x1="470" y1="100" x2="470" y2="520" class="grid-line"/>
+  <line x1="630" y1="100" x2="630" y2="520" class="grid-line"/>
+  <line x1="790" y1="100" x2="790" y2="520" class="grid-line"/>
+  <line x1="950" y1="100" x2="950" y2="520" class="grid-line"/>
+
+  <!-- Bar Chart Data (Sector labels and bars) -->
+  <!-- Base X-position for bars: 150. Scale: 1B = 6.4px (800px / 125B) -->
+  <!-- Bar height: 15px, spacing: 15px, total row height: 30px -->
+  <g transform="translate(0, 100)">
+    <!-- Agricul -->
+    <text x="130" y="15" class="sector-label">Agricul</text>
+    <rect x="150" y="5" width="140.8" height="15" class="bar-domestic"/> <!-- 22B * 6.4 -->
+    <rect x="290.8" y="5" width="19.2" height="15" class="bar-foreign"/> <!-- 3B * 6.4 -->
+
+    <!-- Manufa -->
+    <text x="130" y="45" class="sector-label">Manufa</text>
+    <rect x="150" y="35" width="192" height="15" class="bar-domestic"/> <!-- 30B * 6.4 -->
+    <rect x="342" y="35" width="96" height="15" class="bar-foreign"/> <!-- 15B * 6.4 -->
+
+    <!-- Services -->
+    <text x="130" y="75" class="sector-label">Services</text>
+    <rect x="150" y="65" width="288" height="15" class="bar-domestic"/> <!-- 45B * 6.4 -->
+    <rect x="438" y="65" width="64" height="15" class="bar-foreign"/> <!-- 10B * 6.4 -->
+
+    <!-- Constru -->
+    <text x="130" y="105" class="sector-label">Constru</text>
+    <rect x="150" y="95" width="224" height="15" class="bar-domestic"/> <!-- 35B * 6.4 -->
+    <rect x="374" y="95" width="96" height="15" class="bar-foreign"/> <!-- 15B * 6.4 -->
+
+    <!-- Retail -->
+    <text x="130" y="135" class="sector-label">Retail</text>
+    <rect x="150" y="125" width="256" height="15" class="bar-domestic"/> <!-- 40B * 6.4 -->
+    <rect x="406" y="125" width="160" height="15" class="bar-foreign"/> <!-- 25B * 6.4 -->
+
+    <!-- Finance -->
+    <text x="130" y="165" class="sector-label">Finance</text>
+    <rect x="150" y="155" width="352" height="15" class="bar-domestic"/> <!-- 55B * 6.4 -->
+    <rect x="502" y="155" width="96" height="15" class="bar-foreign"/> <!-- 15B * 6.4 -->
+
+    <!-- Healthc -->
+    <text x="130" y="195" class="sector-label">Healthc</text>
+    <rect x="150" y="185" width="384" height="15" class="bar-domestic"/> <!-- 60B * 6.4 -->
+    <rect x="534" y="185" width="64" height="15" class="bar-foreign"/> <!-- 10B * 6.4 -->
+
+    <!-- Transpo -->
+    <text x="130" y="225" class="sector-label">Transpo</text>
+    <rect x="150" y="215" width="288" height="15" class="bar-domestic"/> <!-- 45B * 6.4 -->
+    <rect x="438" y="215" width="96" height="15" class="bar-foreign"/> <!-- 15B * 6.4 -->
+
+    <!-- Technol -->
+    <text x="130" y="255" class="sector-label">Technol</text>
+    <rect x="150" y="245" width="320" height="15" class="bar-domestic"/> <!-- 50B * 6.4 -->
+    <rect x="470" y="245" width="96" height="15" class="bar-foreign"/> <!-- 15B * 6.4 -->
+
+    <!-- Energy -->
+    <text x="130" y="285" class="sector-label">Energy</text>
+    <rect x="150" y="275" width="384" height="15" class="bar-domestic"/> <!-- 60B * 6.4 -->
+    <rect x="534" y="275" width="128" height="15" class="bar-foreign"/> <!-- 20B * 6.4 -->
+
+    <!-- Educati -->
+    <text x="130" y="315" class="sector-label">Educati</text>
+    <rect x="150" y="305" width="512" height="15" class="bar-domestic"/> <!-- 80B * 6.4 -->
+    <rect x="662" y="305" width="96" height="15" class="bar-foreign"/> <!-- 15B * 6.4 -->
+
+    <!-- Tourism -->
+    <text x="130" y="345" class="sector-label">Tourism</text>
+    <rect x="150" y="335" width="320" height="15" class="bar-domestic"/> <!-- 50B * 6.4 -->
+    <rect x="470" y="335" width="128" height="15" class="bar-foreign"/> <!-- 20B * 6.4 -->
+
+    <!-- Mining -->
+    <text x="130" y="375" class="sector-label">Mining</text>
+    <rect x="150" y="365" width="224" height="15" class="bar-domestic"/> <!-- 35B * 6.4 -->
+    <rect x="374" y="365" width="96" height="15" class="bar-foreign"/> <!-- 15B * 6.4 -->
+
+    <!-- Utilities -->
+    <text x="130" y="405" class="sector-label">Utilities</text>
+    <rect x="150" y="395" width="192" height="15" class="bar-domestic"/> <!-- 30B * 6.4 -->
+    <rect x="342" y="395" width="64" height="15" class="bar-foreign"/> <!-- 10B * 6.4 -->
+
+    <!-- Real Est -->
+    <text x="130" y="435" class="sector-label">Real Est</text>
+    <rect x="150" y="425" width="224" height="15" class="bar-domestic"/> <!-- 35B * 6.4 -->
+    <rect x="374" y="425" width="64" height="15" class="bar-foreign"/> <!-- 10B * 6.4 -->
+
+    <!-- Public A -->
+    <text x="130" y="465" class="sector-label">Public A</text>
+    <rect x="150" y="455" width="192" height="15" class="bar-domestic"/> <!-- 30B * 6.4 -->
+    <rect x="342" y="455" width="32" height="15" class="bar-foreign"/> <!-- 5B * 6.4 -->
+
+    <!-- Arts -->
+    <text x="130" y="495" class="sector-label">Arts</text>
+    <rect x="150" y="485" width="128" height="15" class="bar-domestic"/> <!-- 20B * 6.4 -->
+    <rect x="278" y="485" width="32" height="15" class="bar-foreign"/> <!-- 5B * 6.4 -->
+
+    <!-- Other -->
+    <text x="130" y="525" class="sector-label">Other</text>
+    <rect x="150" y="515" width="128" height="15" class="bar-domestic"/> <!-- 20B * 6.4 -->
+    <rect x="278" y="515" width="64" height="15" class="bar-foreign"/> <!-- 10B * 6.4 -->
+  </g>
+</svg>

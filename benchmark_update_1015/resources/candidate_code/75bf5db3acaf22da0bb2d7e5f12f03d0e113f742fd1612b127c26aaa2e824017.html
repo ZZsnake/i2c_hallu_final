@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Response Methods</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .chart-container {
+            width: 300px;
+            height: 300px;
+        }
+        .chart-title {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="chart-title">Survey Response Methods</div>
+        <div id="chart1" class="chart-container"></div>
+    </div>
+    <div>
+        <div class="chart-title">Survey Response Methods</div>
+        <div id="chart2" class="chart-container"></div>
+    </div>
+    <div>
+        <div class="chart-title">Survey Response Methods</div>
+        <div id="chart3" class="chart-container"></div>
+    </div>
+
+    <script>
+        const data = [
+            { value: 10, name: 'Email' },
+            { value: 15, name: 'Phone Call' },
+            { value: 20, name: 'In-person' },
+            { value: 25, name: 'Online Form' },
+            { value: 10, name: 'Mail' },
+            { value: 10, name: 'Social Media' },
+            { value: 10, name: 'Other' }
+        ];
+
+        const options = {
+            series: [{
+                type: 'pie',
+                data: data,
+                label: {
+                    show: true,
+                    position: 'outside'
+                }
+            }]
+        };
+
+        const charts = ['#chart1', '#chart2', '#chart3'];
+        charts.forEach((chartId, index) => {
+            const chart = echarts.init(document.querySelector(chartId));
+            chart.setOption(options);
+        });
+    </script>
+</body>
+</html>

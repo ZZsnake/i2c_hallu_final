@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Background Grid -->
+  <g stroke="#D3D3D3" stroke-width="1" stroke-dasharray="4 4">
+    <!-- Vertical lines -->
+    <line x1="50" y1="50" x2="50" y2="750" />
+    <line x1="150" y1="50" x2="150" y2="750" />
+    <line x1="250" y1="50" x2="250" y2="750" />
+    <line x1="350" y1="50" x2="350" y2="750" />
+    <line x1="450" y1="50" x2="450" y2="750" />
+    <line x1="550" y1="50" x2="550" y2="750" />
+    <line x1="650" y1="50" x2="650" y2="750" />
+    <line x1="750" y1="50" x2="750" y2="750" />
+    <!-- Horizontal lines -->
+    <line x1="50" y1="50" x2="750" y2="50" />
+    <line x1="50" y1="150" x2="750" y2="150" />
+    <line x1="50" y1="250" x2="750" y2="250" />
+    <line x1="50" y1="350" x2="750" y2="350" />
+    <line x1="50" y1="450" x2="750" y2="450" />
+    <line x1="50" y1="550" x2="750" y2="550" />
+    <line x1="50" y1="650" x2="750" y2="650" />
+    <line x1="50" y1="750" x2="750" y2="750" />
+  </g>
+
+  <!-- Axes -->
+  <line x1="50" y1="400" x2="780" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="400" y1="750" x2="400" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Origin Label -->
+  <text x="410" y="425" font-family="sans-serif" font-size="24" fill="black">O</text>
+
+  <!-- Axis Labels -->
+  <text x="770" y="425" font-family="sans-serif" font-size="24" fill="black">x</text>
+  <text x="410" y="35" font-family="sans-serif" font-size="24" fill="black">y</text>
+
+  <!-- Tick Marks and Labels -->
+  <!-- x-axis -->
+  <line x1="86" y1="395" x2="86" y2="405" stroke="black" stroke-width="2" />
+  <text x="70" y="430" font-family="sans-serif" font-size="24" fill="black">-π</text>
+  <line x1="714" y1="395" x2="714" y2="405" stroke="black" stroke-width="2" />
+  <text x="700" y="430" font-family="sans-serif" font-size="24" fill="black">π</text>
+
+  <!-- y = sin(x) curve -->
+  <path d="M 86 400 C 186 200, 286 200, 314 200 S 486 600, 514 600 S 686 200, 714 200 S 886 600, 914 600"
+        fill="none" stroke="red" stroke-width="3"
+        transform="scale(1, -1) translate(0, -800)" />
+  <!-- The path above is a simplified approximation. A more accurate one would use more points or a different curve type.
+       Let's try to generate a more accurate sine wave.
+       x values from -π to 2π (approx -3.14 to 6.28)
+       SVG x: 400 + x_graph * 100
+       SVG y: 400 - y_graph * 100
+  -->
+  <path d="M 86 400
+           C 160 200, 240 200, 314 400
+           C 388 600, 462 600, 536 400
+           C 610 200, 684 200, 714 400
+           C 788 600, 862 600, 936 400"
+        fill="none" stroke="red" stroke-width="3" />
+
+  <!-- y = x^2 curve -->
+  <path d="M 50 650 C 150 550, 250 450, 400 400 C 550 450, 650 550, 750 650"
+        fill="none" stroke="orange" stroke-width="3" stroke-dasharray="8 8" />
+
+  <!-- Dashed Circles -->
+  <circle cx="400" cy="400" r="150" fill="none" stroke="blue" stroke-width="2" stroke-dasharray="8 8" />
+  <circle cx="400" cy="400" r="150" fill="none" stroke="blue" stroke-width="2" stroke-dasharray="8 8" transform="rotate(180 400 400)" />
+  <!-- The two circles are identical and overlap, creating a single dashed circle.
+       The image shows two distinct arcs, one in Q1/Q2 and one in Q3/Q4.
+       This implies a single circle with a specific dash pattern or two arcs.
+       Let's try to replicate the visual effect of two arcs.
+       A single circle with a dash array that leaves gaps.
+       Circumference = 2 * pi * r = 2 * 3.14 * 150 = 942
+       If we want two halves, we need a dash of 471 and a gap of 471.
+       But the image shows a dashed line, not a solid half.
+       Let's use two arcs or a single circle with a dash array that creates the visual.
+       The image shows a circle with radius approx 1.5 units, so 150 SVG units.
+       The dashes are not uniform around the circle, suggesting two separate arcs or a very specific dash pattern.
+       Let's use two arcs for better control.
+       Arc 1: from 0 to pi (top half)
+       Arc 2: from pi to 2pi (bottom half)
+  -->
+  <path d="M 250 400 A 150 150 0 0 1 550 400" fill="none" stroke="blue" stroke-width="2" stroke-dasharray="8 8" />
+  <path d="M 550 400 A 150 150 0 0 1 250 400" fill="none" stroke="blue" stroke-width="2" stroke-dasharray="8 8" />
+
+
+  <!-- Blue Dot at Origin -->
+  <circle cx="400" cy="400" r="5" fill="blue" />
+
+  <!-- Function Labels -->
+  <text x="150" y="150" font-family="sans-serif" font-size="24" fill="red">y = sin(x)</text>
+  <text x="500" y="150" font-family="sans-serif" font-size="24" fill="orange">y = x²</text>
+</svg>

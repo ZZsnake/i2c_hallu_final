@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Test Score Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .chart-container {
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            border-radius: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .legend {
+            text-align: left;
+            font-size: 12px;
+            line-height: 12px;
+            font-weight: bold;
+            color: #222222;
+            margin-top: -2px;
+            margin-left: 10%;
+            padding: 2px 4px;
+            width: max-content;
+            background-color: #ffffff;
+            border: 1px solid #555555;
+            border-radius: 0;
+        }
+        .axis-label {
+            font-size: 14px;
+            color: #333333;
+        }
+        .group-label {
+            font-size: 14px;
+            color: #333333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">Algebra Test Score Distribution</div>
+        <div id="mainChart" style="width: 100%; height: calc(100vh - 100px);"></div>
+        <div class="legend">
+            Boxplot: Q1, Q3, Median &amp; Outliers<br>
+            (upper: Q3 + 1.5 × IQR, lower: Q1 - 1.5 × IQR)
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize ECharts
+            var myChart = echarts.init(document.getElementById('mainChart'));
+            
+            // Define the boxplot statistics for each group: [min, Q1, median, Q3, max]
+            var groupData = [
+                {name: 'Group 1', data: [78, 85, 89.5, 95, 100]},
+                {name: 'Group 2', data: [65, 68.8, 73.5, 78.3, 85]},
+                {name: 'Group 3', data: [54, 58, 60.5, 63.2, 66]},
+                {name: 'Group 4', data: [45, 49.8, 52.5, 56.3, 61]},
+                {name: 'Group 5', data: [88, 91.7, 93.5, 96.2, 99]}
+            ];
+            
+            // Create the option configuration
+            var option = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    show: false
+                },
+                grid: {
+                    left: '9%',
+                    right: '9%',
+                    top: '2%',
+                    bottom: '7%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    name: 'Score',
+                    nameLocation: 'end',
+                    nameGap: 8,
+                    min: 0,
+                    max: 100,
+                    interval: 20,
+                    splitNumber: 5,
+                    axisLabel: {
+                        textStyle: {
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            color: '#222222'
+                        }
+                    },
+                    nameTextStyle: {
+                        fontSize: 16,
+                        fontWeight: 'bold',
+                        color: '#222222'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333333'
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#dfe6f2',
+                            width: 1
+                        }
+                    },
+                    splitArea: {
+                        show: true,
+                        areaStyle: {
+                            color: ['#ffffff', '#f5f7fc']
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['Group 1', 'Group 2', 'Group 3', 'Group 4', 'Group 5'],
+                    axisLabel: {
+                        textStyle: {
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            color: '#222222'
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333333'
+                        }
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                },
+                series: [
+                    {
+                        name: 'Score Distribution',
+                        type: 'boxplot',
+                        data: groupData.map(item => item.data),
+                        itemStyle: {
+                            color: '#2478cf',
+                            borderColor: '#0d47a1',
+                            borderWidth: 3
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                borderColor: '#0d47a1',
+                                borderWidth: 3
+                            }
+                        },
+                        boxWidth: ['12%', '24%'],
+                        label: {
+                            show: false
+                        }
+                    }
+                ]
+            };
+            
+            // Set the option
+            myChart.setOption(option);
+            window.addEventListener('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth,
+    axis/.style={line width=1.1pt,draw=teal!70!black},
+    point/.style={circle,inner sep=2pt,fill=blue!80,draw=blue!80},
+    method/.style={blue!80,font=\large},
+    every node/.style={font=\normalsize}
+  ]
+
+  % Axes
+  \draw[axis,->] (0,0) -- (0,7) node[above,rotate=90,midway, yshift=3.5cm,font=\large,teal!70!black]{precision};
+  \draw[axis,->] (0,0) -- (11,0) node[below right=4pt and -10pt,font=\large,teal!70!black]{algorithmic demand};
+
+  % x-axis ticks and labels S^1 ... S^8
+  \foreach \x in {1,...,8}{
+    \draw[axis] (\x,0) -- ++(0,0.12);
+    \node[below=3pt,teal!70!black,font=\large] at (\x,0) {$S^{\x}$};
+  }
+
+  % Dashed diagonal trend line
+  \draw[line width=1pt,draw=brown!70!orange,dash pattern=on 4pt off 3pt]
+      (0,0) -- (11,7);
+
+  % Coordinates of methods
+  \coordinate (MF)  at (1.5,1.2);
+  \coordinate (SD)  at (4.0,2.5);
+  \coordinate (DM)  at (3.0,3.3);
+  \coordinate (PT)  at (5.5,3.6);
+  \coordinate (ED)  at (7.0,4.8);
+  \coordinate (TN)  at (9.0,5.8);
+  \coordinate (VMC) at (4.3,4.3);
+
+  % Points
+  \foreach \p in {MF,SD,DM,PT,ED,TN,VMC}{
+    \node[point] at (\p) {};
+  }
+
+  % Labels for methods
+  \node[method,below left=4pt and 0pt] at (MF) {Mean Field};
+  \node[method,below=4pt]             at (SD) {Slater Determinant};
+  \node[method,left=8pt]              at (DM) {Density Matrix};
+  \node[method,above right=2pt and 2pt] at (PT) {Perturbation Theory};
+  \node[method,above=4pt]             at (ED) {Exact Diagonalization};
+  \node[method,above right=2pt and 0pt] at (TN) {Tensor Network};
+  \node[method,above=4pt]             at (VMC) {Variational Monte Carlo};
+
+  % Purple arrow from Mean Field towards Slater Determinant
+  \draw[->,line width=1pt,draw=purple!70]
+    ($(MF)+(0.8,0.4)$) -- ($(SD)+(-0.5,-0.3)$);
+
+\end{tikzpicture}
+\end{document}

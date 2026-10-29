@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Definitions for markers -->
+  <defs>
+    <marker id="crowfoot" markerWidth="10" markerHeight="10" refX="10" refY="5" orientation="auto">
+      <path d="M 0 0 L 10 5 L 0 10 M 10 0 L 10 10" fill="none" stroke="#337ab7" stroke-width="1.5" />
+    </marker>
+    <marker id="doublebar" markerWidth="10" markerHeight="10" refX="0" refY="5" orientation="auto">
+      <path d="M 2 0 L 2 10 M 6 0 L 6 10" fill="none" stroke="#2e7d32" stroke-width="1.5" />
+    </marker>
+  </defs>
+
+  <!-- Computer Box -->
+  <rect x="150" y="20" width="170" height="160" rx="5" fill="#e3f2fd" stroke="#1a237e" stroke-width="1.5" />
+  <line x1="150" y1="55" x2="320" y2="55" stroke="#1a237e" stroke-width="1" stroke-dasharray="4,2" />
+  <line x1="150" y1="170" x2="320" y2="170" stroke="#1a237e" stroke-width="1" stroke-dasharray="4,2" />
+  <circle cx="200" cy="38" r="13" fill="#1976d2" />
+  <text x="200" y="43" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">C</text>
+  <text x="225" y="43" font-family="Arial, sans-serif" font-size="16" fill="#333">Computer</text>
+  
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <circle cx="165" cy="75" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="175" y="80">ProcessorType</text>
+    <circle cx="165" cy="93" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="175" y="98">RAM</text>
+    <circle cx="165" cy="111" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="175" y="116">StorageType</text>
+    <circle cx="165" cy="129" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="175" y="134">OSVersion</text>
+    <circle cx="165" cy="147" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="175" y="152">NetworkAdapter</text>
+    <circle cx="165" cy="165" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="175" y="170">ConnectedUser</text>
+  </g>
+
+  <!-- User Box -->
+  <rect x="15" y="250" width="130" height="145" rx="5" fill="#e3f2fd" stroke="#b71c1c" stroke-width="1.5" />
+  <line x1="15" y1="285" x2="145" y2="285" stroke="#b71c1c" stroke-width="1" stroke-dasharray="4,2" />
+  <line x1="15" y1="385" x2="145" y2="385" stroke="#b71c1c" stroke-width="1" stroke-dasharray="4,2" />
+  <circle cx="35" cy="268" r="13" fill="#e64a19" />
+  <text x="35" y="273" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">C</text>
+  <text x="55" y="273" font-family="Arial, sans-serif" font-size="16" fill="#333">User</text>
+  
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <circle cx="30" cy="305" r="3" fill="none" stroke="#1976d2" stroke-width="1.5" />
+    <text x="40" y="310">UserName</text>
+    <circle cx="30" cy="323" r="3" fill="none" stroke="#1976d2" stroke-width="1.5" />
+    <text x="40" y="328">Role</text>
+    <circle cx="30" cy="341" r="3" fill="none" stroke="#1976d2" stroke-width="1.5" />
+    <text x="40" y="346">LoginTime</text>
+    <circle cx="30" cy="359" r="3" fill="none" stroke="#1976d2" stroke-width="1.5" />
+    <text x="40" y="364">Status</text>
+    <circle cx="30" cy="377" r="3" fill="none" stroke="#1976d2" stroke-width="1.5" />
+    <text x="40" y="382">Email</text>
+  </g>
+
+  <!-- Network Box -->
+  <rect x="185" y="250" width="100" height="145" rx="5" fill="#e3f2fd" stroke="#2e7d32" stroke-width="1.5" />
+  <line x1="185" y1="285" x2="285" y2="285" stroke="#2e7d32" stroke-width="1" stroke-dasharray="4,2" />
+  <line x1="185" y1="385" x2="285" y2="385" stroke="#2e7d32" stroke-width="1" stroke-dasharray="4,2" />
+  <circle cx="200" cy="268" r="13" fill="#388e3c" />
+  <text x="200" y="273" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">C</text>
+  <text x="218" y="273" font-family="Arial, sans-serif" font-size="16" fill="#333">Network</text>
+  
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <circle cx="195" cy="305" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="205" y="310">IPAddress</text>
+    <circle cx="195" cy="323" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="205" y="328">Port</text>
+    <circle cx="195" cy="341" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="205" y="346">Protocol</text>
+    <circle cx="195" cy="359" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="205" y="364">Subnet</text>
+    <circle cx="195" cy="377" r="3" fill="none" stroke="#d32f2f" stroke-width="1.5" />
+    <text x="205" y="382">Gateway</text>
+  </g>
+
+  <!-- Connections -->
+  <!-- User to Computer -->
+  <path d="M 80 250 Q 80 165 150 165" fill="none" stroke="#337ab7" stroke-width="1.5" marker-end="url(#crowfoot)" />
+  
+  <!-- Network to Computer -->
+  <path d="M 285 260 Q 360 200 320 100" fill="none" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#doublebar)" />
+  <path d="M 285 260 Q 350 210 320 120" fill="none" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#doublebar)" />
+
+</svg>

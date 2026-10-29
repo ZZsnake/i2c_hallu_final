@@ -1,0 +1,22 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{circuitikz}[scale=0.8]
+    \draw (0,0) to[battery1, l=$V_{cc}$] (0,4);
+    \draw (0,4) to[R=$R_1$, o-] (4,4)
+              to[C=$C_1$] (4,0) -- (0,0);
+    \draw (4,4) to[short, -o] (6,4);
+    \draw (6,4) to[R=$R_2$] (6,0) -- (4,0);
+    \draw (6,4) to[short, i=$I_{out}$] (8,4)
+              to[L=$L_1$] (8,0) -- (6,0);
+    
+    \node[align=center] at (4,-1) {RC Timing Circuit for\\Automated Honey Extraction\\Process Control};
+    \node[rotate=90] at (-1,2) {\small Honey Extractor Power};
+    \node[align=center] at (9,2) {\small To Extraction\\Motor};
+    
+\end{circuitikz}
+
+\end{document}

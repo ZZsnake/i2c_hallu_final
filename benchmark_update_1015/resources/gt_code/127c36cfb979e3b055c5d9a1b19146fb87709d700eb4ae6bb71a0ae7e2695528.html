@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Bar Chart: Axis Breaks</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // --- NEW DATASET & VISUALS (Math Domain) ---
+    var axisBreaks = [
+      {
+        start: 60,
+        end: 400,
+        gap: '1.2%'
+      },
+      {
+        start: 450,
+        end: 2000,
+        gap: '1.2%'
+      }
+    ];
+
+    option = {
+      title: {
+        text: 'Distribution of Math Test Scores',
+        subtext: 'Axis breaks help visualize score outliers',
+        left: 'center',
+        textStyle: {
+          fontSize: 22,
+          fontFamily: 'Trebuchet MS, Arial, sans-serif',
+          color: '#181818',
+          fontWeight: 'bold'
+        },
+        subtextStyle: {
+          color: '#bb1b1b',
+          fontSize: 15,
+          fontWeight: 'bold',
+          fontFamily: 'Trebuchet MS, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+          shadowStyle: {
+            color: 'rgba(80,80,80,0.10)'
+          }
+        }
+      },
+      legend: {
+        top: 70,
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Trebuchet MS, Arial, sans-serif',
+          fontWeight: 'bold'
+        }
+      },
+      grid: {
+        top: 120
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: ['Algebra', 'Geometry', 'Calculus', 'Statistics', 'Trigonometry', 'Discrete Math', 'Number Theory'],
+          axisLine: {
+            lineStyle: {
+              color: '#222',
+              width: 2
+            }
+          },
+          axisLabel: {
+            color: '#222',
+            fontWeight: 'bold',
+            fontFamily: 'Trebuchet MS, Arial, sans-serif',
+            fontSize: 13
+          }
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: 'Score',
+          nameTextStyle: {
+            color: '#222',
+            fontWeight: 'bold',
+            fontFamily: 'Trebuchet MS, Arial, sans-serif',
+            fontSize: 14
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#222',
+              width: 2
+            }
+          },
+          axisLabel: {
+            color: '#222',
+            fontWeight: 'bold',
+            fontFamily: 'Trebuchet MS, Arial, sans-serif',
+            fontSize: 13
+          },
+          breaks: axisBreaks,
+          breakArea: {
+            itemStyle: {
+              opacity: 1,
+              color: '#e8e8e8'
+            },
+            zigzagZ: 160
+          }
+        }
+      ],
+      series: [
+        {
+          name: 'Mean Score',
+          type: 'bar',
+          data: [58, 72, 65, 61, 90, 63, 60],
+          itemStyle: {
+            color: '#267bd2'
+          },
+          barWidth: 20,
+          emphasis: {
+            focus: 'series',
+            itemStyle: {
+              color: '#104e8b'
+            }
+          }
+        },
+        {
+          name: 'Top Score',
+          type: 'bar',
+          data: [97, 99, 98, 95, 100, 96, 98],
+          itemStyle: {
+            color: '#1aa560'
+          },
+          barWidth: 20,
+          emphasis: {
+            focus: 'series',
+            itemStyle: {
+              color: '#156e44'
+            }
+          }
+        },
+        {
+          name: 'Lowest Score',
+          type: 'bar',
+          data: [10, 18, 15, 11, 20, 13, 14],
+          itemStyle: {
+            color: '#e54c2a'
+          },
+          barWidth: 20,
+          emphasis: {
+            focus: 'series',
+            itemStyle: {
+              color: '#b01909'
+            }
+          }
+        },
+        {
+          name: 'Outlier Score',
+          type: 'bar',
+          data: [1200, 1500, 1700, 900, 1350, 1600, 1250],
+          itemStyle: {
+            color: '#8855ff'
+          },
+          barWidth: 20,
+          emphasis: {
+            focus: 'series',
+            itemStyle: {
+              color: '#4b237a'
+            }
+          }
+        }
+      ]
+    };
+
+    function initAxisBreakInteraction() {
+      myChart.on('axisbreakchanged', function (params) {
+        updateCollapseButton(params);
+      });
+      myChart.on('click', function (params) {
+        if (params.name === 'collapseAxisBreakBtn') {
+          collapseAxisBreak();
+        }
+      });
+      function updateCollapseButton(params) {
+        var needReset = false;
+        for (let i = 0; i < params.breaks.length; i++) {
+          const changedBreakItem = params.breaks[i];
+          if (changedBreakItem.isExpanded) {
+            needReset = true;
+            break;
+          }
+        }
+        myChart.setOption({
+          graphic: [
+            {
+              elements: [
+                {
+                  type: 'rect',
+                  ignore: !needReset,
+                  name: 'collapseAxisBreakBtn',
+                  top: 5,
+                  left: 5,
+                  shape: { r: 3, width: 170, height: 28 },
+                  style: { fill: '#f3f3f3', stroke: '#2f2f2f', lineWidth: 2 },
+                  textContent: {
+                    type: 'text',
+                    style: {
+                      text: 'Collapse Axis Breaks',
+                      fontSize: 14,
+                      fontWeight: 'bold',
+                      fontFamily: 'Trebuchet MS, Arial, sans-serif',
+                      fill: '#222'
+                    }
+                  },
+                  textConfig: { position: 'inside' }
+                }
+              ]
+            }
+          ]
+        });
+      }
+      function collapseAxisBreak() {
+        myChart.dispatchAction({
+          type: 'collapseAxisBreak',
+          yAxisIndex: 0,
+          breaks: axisBreaks
+        });
+      }
+    }
+    setTimeout(initAxisBreakInteraction, 0);
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

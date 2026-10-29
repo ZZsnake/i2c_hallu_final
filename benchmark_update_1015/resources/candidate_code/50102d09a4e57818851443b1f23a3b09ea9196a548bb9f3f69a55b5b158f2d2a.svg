@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Software System Rectangle -->
+  <rect x="300" y="100" width="500" height="700" stroke="blue" fill="none" stroke-width="2"/>
+  
+  <!-- Use Cases -->
+  <ellipse cx="500" cy="200" rx="150" ry="50" fill="lightgreen"/>
+  <ellipse cx="500" cy="350" rx="150" ry="50" fill="lightgreen"/>
+  <ellipse cx="500" cy="500" rx="150" ry="50" fill="lightgreen"/>
+  <ellipse cx="500" cy="650" rx="150" ry="50" fill="lightgreen"/>
+  
+  <!-- Use Case Text -->
+  <text x="400" y="200" font-size="20" fill="black">Check Permissions</text>
+  <text x="400" y="350" font-size="20" fill="black">Submit Data Entry</text>
+  <text x="400" y="500" font-size="20" fill="black">Validate Input Data</text>
+  <text x="400" y="650" font-size="20" fill="black">Generate Report</text>
+  
+  <!-- Actors -->
+  <circle cx="100" cy="300" r="10" fill="red"/>
+  <line x1="100" y1="310" x2="100" y2="350" stroke="red" stroke-width="2"/>
+  <line x1="90" y1="350" x2="110" y2="350" stroke="red" stroke-width="2"/>
+  <line x1="90" y1="360" x2="110" y2="360" stroke="red" stroke-width="2"/>
+  
+  <circle cx="1050" cy="150" r="10" fill="red"/>
+  <line x1="1050" y1="160" x2="1050" y2="200" stroke="red" stroke-width="2"/>
+  <line x1="1040" y1="200" x2="1060" y2="200" stroke="red" stroke-width="2"/>
+  <line x1="1040" y1="210" x2="1060" y2="210" stroke="red" stroke-width="2"/>
+  
+  <circle cx="1050" y1="450" r="10" fill="red"/>
+  <line x1="1050" y1="460" x2="1050" y2="500" stroke="red" stroke-width="2"/>
+  <line x1="1040" y1="500" x2="1060" y2="500" stroke="red" stroke-width="2"/>
+  <line x1="1040" y1="510" x2="1060" y2="510" stroke="red" stroke-width="2"/>
+  
+  <circle cx="1050" y1="700" r="10" fill="red"/>
+  <line x1="1050" y1="710" x2="1050" y2="750" stroke="red" stroke-width="2"/>
+  <line x1="1040" y1="750" x2="1060" y2="750" stroke="red" stroke-width="2"/>
+  <line x1="1040" y1="760" x2="1060" y2="760" stroke="red" stroke-width="2"/>
+  
+  <!-- Actor Labels -->
+  <text x="80" y="320" font-size="20" fill="black">User</text>
+  <text x="1070" y="170" font-size="20" fill="black">Actor</text>
+  <text x="1070" y="470" font-size="20" fill="black">Validator</text>
+  <text x="1070" y="720" font-size="20" fill="black">Analyst</text>
+  
+  <!-- Connections -->
+  <line x1="100" y1="350" x2="300" y2="200" stroke="blue" stroke-width="2"/>
+  <line x1="100" y1="350" x2="300" y2="350" stroke="blue" stroke-width="2"/>
+  <line x1="100" y1="350" x2="300" y2="500" stroke="blue" stroke-width="2"/>
+  <line x1="100" y1="350" x2="300" y2="650" stroke="blue" stroke-width="2"/>
+  
+  <line x1="800" y1="200" x2="1050" y2="170" stroke="blue" stroke-width="2"/>
+  <line x1="800" y1="350" x2="1050" y2="470" stroke="blue" stroke-width="2"/>
+  <line x1="800" y1="500" x2="1050" y2="470" stroke="blue" stroke-width="2"/>
+  <line x1="800" y1="650" x2="1050" y2="720" stroke="blue" stroke-width="2"/>
+  
+  <!-- System Label -->
+  <rect x="30" y="850" width="100" height="30" fill="none" stroke="black" stroke-width="1"/>
+  <text x="50" y="870" font-size="20" fill="black">System</text>
+</svg>

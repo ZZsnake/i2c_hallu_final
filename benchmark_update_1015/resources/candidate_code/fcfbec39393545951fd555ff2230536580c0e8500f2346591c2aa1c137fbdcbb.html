@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Activity Preferences (Survey)</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+    }
+
+    header {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .year-sections {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      gap: 30px;
+      margin-top: 320px;
+    }
+
+    .year-container {
+      width: 340px;
+      text-align: center;
+    }
+
+    .year-label {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+      font-size: 0.9em;
+      z-index: 2;
+    }
+
+    .year-2021 {
+      top: -145px;
+    }
+
+    .year-2022 {
+      top: 110px;
+    }
+
+    .year-2023 {
+      top: 330px;
+    }
+
+    .chart-container {
+      width: 340px;
+      height: 260px;
+      margin: 0 auto;
+      overflow: visible;
+    }
+  </style>
+</head>
+<body>
+  <header>Community Activity Preferences (Survey)</header>
+
+  <div class="year-sections">
+    <!-- Year 2021 -->
+    <div class="year-container">
+      <div class="year-label year-2021">Year: 2021</div>
+      <div id="chart-2021" class="chart-container"></div>
+    </div>
+
+    <!-- Year 2022 -->
+    <div class="year-container">
+      <div class="year-label year-2022">Year: 2022</div>
+      <div id="chart-2022" class="chart-container"></div>
+    </div>
+
+    <!-- Year 2023 -->
+    <div class="year-container">
+      <div class="year-label year-2023">Year: 2023</div>
+      <div id="chart-2023" class="chart-container"></div>
+    </div>
+  </div>
+
+  <script>
+    const colors = {
+      Painting: '#5e4fa2',
+      Volunteering: '#2166ac',
+      'Book Club': '#fdb863',
+      Gardening: '#67a963',
+      Yoga: '#b2182b'
+    };
+
+    const pieData2021 = [
+      { value: 30, name: 'Volunteering', itemStyle: { color: colors.Volunteering } },
+      { value: 25, name: 'Yoga', itemStyle: { color: colors.Yoga } },
+      { value: 20, name: 'Gardening', itemStyle: { color: colors.Gardening } },
+      { value: 15, name: 'Book Club', itemStyle: { color: colors['Book Club'] } },
+      { value: 10, name: 'Painting', itemStyle: { color: colors.Painting } }
+    ];
+
+    const pieData2022 = [
+      { value: 30, name: 'Volunteering', itemStyle: { color: colors.Volunteering } },
+      { value: 25, name: 'Yoga', itemStyle: { color: colors.Yoga } },
+      { value: 20, name: 'Gardening', itemStyle: { color: colors.Gardening } },
+      { value: 15, name: 'Book Club', itemStyle: { color: colors['Book Club'] } },
+      { value: 10, name: 'Painting', itemStyle: { color: colors.Painting } }
+    ];
+
+    const pieData2023 = [
+      { value: 30, name: 'Volunteering', itemStyle: { color: colors.Volunteering } },
+      { value: 25, name: 'Yoga', itemStyle: { color: colors.Yoga } },
+      { value: 20, name: 'Gardening', itemStyle: { color: colors.Gardening } },
+      { value: 15, name: 'Book Club', itemStyle: { color: colors['Book Club'] } },
+      { value: 10, name: 'Painting', itemStyle: { color: colors.Painting } }
+    ];
+
+    function makeOption(data) {
+      return {
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+          show: false
+        },
+        series: [
+          {
+            type: 'pie',
+            radius: '42%',
+            center: ['50%', '50%'],
+            startAngle: 90,
+            clockwise: true,
+            data: data,
+            avoidLabelOverlap: true,
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.1)'
+              }
+            },
+            label: {
+              show: true,
+              position: 'outside',
+              distanceToLabelLine: 4,
+              fontSize: 12,
+              fontWeight: 'bold',
+              color: '#000',
+              formatter: '{b}',
+              overflow: 'none'
+            },
+            labelLine: {
+              show: true,
+              length: 18,
+              length2: 16,
+              lineStyle: {
+                color: '#222',
+                width: 2,
+                type: 'solid'
+              }
+            }
+          }
+        ]
+      };
+    }
+
+    // Initialize charts
+    const chart2021 = echarts.init(document.getElementById('chart-2021'));
+    const chart2022 = echarts.init(document.getElementById('chart-2022'));
+    const chart2023 = echarts.init(document.getElementById('chart-2023'));
+
+    chart2021.setOption(makeOption(pieData2021));
+    chart2022.setOption(makeOption(pieData2022));
+    chart2023.setOption(makeOption(pieData2023));
+
+    // Resize on window resize
+    window.addEventListener('resize', function () {
+      chart2021.resize();
+      chart2022.resize();
+      chart2023.resize();
+    });
+  </script>
+</body>
+</html>

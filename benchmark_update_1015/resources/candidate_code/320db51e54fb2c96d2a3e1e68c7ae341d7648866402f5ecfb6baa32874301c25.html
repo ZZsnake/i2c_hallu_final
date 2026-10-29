@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Quadratic Function Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #fff;
+        }
+        #chart-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .chart-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container">
+        <div class="chart-title">Quadratic Function: y = x² + 2x + 1</div>
+        <div id="main" style="width: 100%; height: 600px;"></div>
+    </div>
+    <script type="text/javascript">
+        const chartDom = document.getElementById('main');
+        const myChart = echarts.init(chartDom);
+        
+        const data = [
+            [-4, 9], [-3, 4], [-2, 1], [-1, 0], [0, 1],
+            [1, 4], [2, 9], [3, 16], [4, 25], [5, 36],
+            [6, 49], [7, 64]
+        ];
+
+        const option = {
+            title: {
+                text: 'Quadratic Function: y = x² + 2x + 1',
+                left: 'center',
+                textStyle: {
+                    fontSize: 14
+                }
+            },
+            xAxis: {
+                type: 'value',
+                min: -4,
+                max: 8,
+                axisLabel: { show: false },
+                axisLine: { show: true },
+                axisTick: { show: true },
+                splitLine: { show: false }
+            },
+            yAxis: {
+                type: 'value',
+                min: 0,
+                max: 70,
+                axisLabel: { show: false },
+                axisLine: { show: true },
+                axisTick: { show: true },
+                splitLine: { show: false }
+            },
+            series: [{
+                type: 'scatter',
+                data: data,
+                symbolSize: 8,
+                itemStyle: { color: '#d9534f' }
+            }],
+            tooltip: {
+                trigger: 'item',
+                formatter: function(params) {
+                    return `x: ${params.value[0]}<br/>y: ${params.value[1]}`;
+                }
+            }
+        };
+        
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

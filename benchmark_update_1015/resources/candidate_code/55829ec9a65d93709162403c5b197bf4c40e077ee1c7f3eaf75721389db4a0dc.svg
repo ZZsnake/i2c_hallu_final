@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Software System Boundary -->
+  <rect x="150" y="100" width="500" height="400" fill="none" stroke="black" stroke-width="2"/>
+  <text x="160" y="90" font-family="Arial" font-size="14" font-weight="bold">Software System</text>
+  
+  <!-- Use Cases -->
+  <ellipse cx="300" cy="150" rx="100" ry="30" fill="lightblue"/>
+  <text x="250" y="145" font-family="Arial" font-size="12">Check Permissions</text>
+  
+  <ellipse cx="300" cy="220" rx="100" ry="30" fill="lightblue"/>
+  <text x="250" y="215" font-family="Arial" font-size="12">Submit Data Entry</text>
+  
+  <ellipse cx="300" cy="290" rx="100" ry="30" fill="lightblue"/>
+  <text x="250" y="285" font-family="Arial" font-size="12">Validate Input Data</text>
+  
+  <ellipse cx="300" cy="360" rx="100" ry="30" fill="lightblue"/>
+  <text x="250" y="355" font-family="Arial" font-size="12">Generate Report</text>
+  
+  <!-- Actors -->
+  <circle cx="50" cy="150" r="10" fill="red"/>
+  <line x1="50" y1="160" x2="50" y2="180" stroke="red" stroke-width="2"/>
+  <line x1="50" y1="180" x2="30" y2="200" stroke="red" stroke-width="2"/>
+  <line x1="50" y1="180" x2="70" y2="200" stroke="red" stroke-width="2"/>
+  <text x="30" y="145" font-family="Arial" font-size="12">User</text>
+  
+  <circle cx="50" cy="300" r="10" fill="red"/>
+  <line x1="50" y1="310" x2="50" y2="330" stroke="red" stroke-width="2"/>
+  <line x1="50" y1="330" x2="30" y2="350" stroke="red" stroke-width="2"/>
+  <line x1="50" y1="330" x2="70" y2="350" stroke="red" stroke-width="2"/>
+  <text x="30" y="295" font-family="Arial" font-size="12">Validator</text>
+  
+  <circle cx="50" cy="450" r="10" fill="red"/>
+  <line x1="50" y1="460" x2="50" y2="480" stroke="red" stroke-width="2"/>
+  <line x1="50" y1="480" x2="30" y2="500" stroke="red" stroke-width="2"/>
+  <line x1="50" y1="480" x2="70" y2="500" stroke="red" stroke-width="2"/>
+  <text x="30" y="445" font-family="Arial" font-size="12">Analyst</text>
+  
+  <circle cx="750" cy="150" r="10" fill="red"/>
+  <line x1="750" y1="160" x2="750" y2="180" stroke="red" stroke-width="2"/>
+  <line x1="750" y1="180" x2="730" y2="200" stroke="red" stroke-width="2"/>
+  <line x1="750" y1="180" x2="770" y2="200" stroke="red" stroke-width="2"/>
+  <text x="730" y="145" font-family="Arial" font-size="12">Database</text>
+  
+  <!-- Associations -->
+  <line x1="50" y1="150" x2="300" y2="150" stroke="blue" stroke-width="2"/>
+  <line x1="50" y1="300" x2="300" y2="290" stroke="blue" stroke-width="2"/>
+  <line x1="50" y1="450" x2="300" y2="360" stroke="blue" stroke-width="2"/>
+  <line x1="750" y1="150" x2="300" y2="150" stroke="blue" stroke-width="2"/>
+  
+  <!-- System Boundary -->
+  <text x="10" y="590" font-family="Arial" font-size="12" font-weight="bold">System</text>
+  <line x1="150" y1="500" x2="650" y2="500" stroke="black" stroke-dasharray="5,5" stroke-width="2"/>
+</svg>

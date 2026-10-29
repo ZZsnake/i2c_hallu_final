@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabola and Line Intersection</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('chart'));
+
+            var option = {
+                title: {
+                    text: 'Analytical Geometry: Parabola y = 0.04x² - 5 and Line y = 2x - 10',
+                    left: 'center'
+                },
+                tooltip: {},
+                xAxis: {
+                    name: 'x',
+                    min: -20,
+                    max: 20,
+                    scale: true
+                },
+                yAxis: {
+                    name: 'y',
+                    min: -30,
+                    max: 30,
+                    scale: true
+                },
+                series: [
+                    {
+                        name: 'Parabola',
+                        type: 'line',
+                        data: generateParabolaData(),
+                        smooth: true,
+                        lineStyle: {
+                            color: 'blue'
+                        }
+                    },
+                    {
+                        name: 'Line',
+                        type: 'line',
+                        data: generateLineData(),
+                        smooth: true,
+                        lineStyle: {
+                            color: 'red',
+                            type: 'dashed'
+                        }
+                    },
+                    {
+                        name: 'Intersection',
+                        type: 'scatter',
+                        data: [[3, -4]],
+                        symbolSize: 10,
+                        itemStyle: {
+                            color: 'green'
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            function generateParabolaData() {
+                var data = [];
+                for (var x = -20; x <= 20; x++) {
+                    var y = 0.04 * Math.pow(x, 2) - 5;
+                    data.push([x, y]);
+                }
+                return data;
+            }
+
+            function generateLineData() {
+                var data = [];
+                for (var x = -20; x <= 20; x++) {
+                    var y = 2 * x - 10;
+                    data.push([x, y]);
+                }
+                return data;
+            }
+        });
+    </script>
+</body>
+</html>

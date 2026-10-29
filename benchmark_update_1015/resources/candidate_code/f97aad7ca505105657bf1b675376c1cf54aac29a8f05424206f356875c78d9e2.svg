@@ -1,0 +1,75 @@
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background and Definitions -->
+  <defs>
+    <clipPath id="curveClip">
+      <path d="M 50,440 Q 250,440 350,250 T 500,20 T 650,250 Q 750,440 950,440 L 950,440 L 50,440 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Shaded Areas -->
+  <!-- Left side (Orange) -->
+  <path d="M 50,440 Q 250,440 350,250 T 500,20 L 500,440 L 50,440 Z" fill="#FFCCAA" stroke="none" />
+  <!-- Right side (Cyan) -->
+  <path d="M 500,20 T 650,250 Q 750,440 950,440 L 950,440 L 500,440 Z" fill="#AAFFFF" stroke="none" />
+
+  <!-- Vertical Dividers -->
+  <line x1="500" y1="20" x2="500" y2="440" stroke="black" stroke-width="2" />
+  <line x1="368" y1="215" x2="368" y2="440" stroke="black" stroke-width="2" />
+  <line x1="632" y1="215" x2="632" y2="440" stroke="black" stroke-width="2" />
+  <line x1="236" y1="390" x2="236" y2="440" stroke="black" stroke-width="2" />
+  <line x1="764" y1="390" x2="764" y2="440" stroke="black" stroke-width="2" />
+  <line x1="104" y1="430" x2="104" y2="440" stroke="black" stroke-width="2" />
+  <line x1="896" y1="430" x2="896" y2="440" stroke="black" stroke-width="2" />
+  
+  <!-- Dotted lines at 3 sigma -->
+  <line x1="104" y1="390" x2="104" y2="430" stroke="black" stroke-width="2" stroke-dasharray="2,2" />
+  <line x1="896" y1="390" x2="896" y2="430" stroke="black" stroke-width="2" stroke-dasharray="2,2" />
+
+  <!-- The Bell Curve -->
+  <path d="M 50,440 Q 250,440 350,250 T 500,20 T 650,250 Q 750,440 950,440" fill="none" stroke="black" stroke-width="3" />
+
+  <!-- Horizontal Axis -->
+  <line x1="50" y1="440" x2="950" y2="440" stroke="black" stroke-width="2" />
+
+  <!-- Axis Labels -->
+  <g font-family="Arial, sans-serif" font-size="20" text-anchor="middle">
+    <text x="500" y="470">μ</text>
+    <text x="632" y="470">μ+σ</text>
+    <text x="764" y="470">μ+2·σ</text>
+    <text x="896" y="470">μ+3·σ</text>
+    <text x="368" y="470">μ-σ</text>
+    <text x="236" y="470">μ-2·σ</text>
+    <text x="104" y="470">μ-3·σ</text>
+  </g>
+
+  <!-- Percentage Labels -->
+  <g font-family="Arial, sans-serif" font-size="18" text-anchor="middle">
+    <text x="434" y="260">34,13 %</text>
+    <text x="566" y="260">34,13 %</text>
+    <text x="302" y="370">13,59 %</text>
+    <text x="698" y="370">13,59 %</text>
+    <text x="205" y="425" font-size="16">2,14 %</text>
+    <text x="795" y="425" font-size="16">2,14 %</text>
+    <text x="55" y="425" font-size="16">0,13 %</text>
+    <text x="945" y="425" font-size="16">0,13 %</text>
+  </g>
+
+  <!-- Top Left Text Block -->
+  <g font-family="Arial, sans-serif" font-size="16">
+    <text x="100" y="80">P(μ-1·σ ≤ X ≤ μ+1·σ) ≈ 68,27 %</text>
+    <text x="100" y="105">P(μ-2·σ ≤ X ≤ μ+2·σ) ≈ 95,45 %</text>
+    <text x="100" y="130">P(μ-3·σ ≤ X ≤ μ+3·σ) ≈ 99,73 %</text>
+  </g>
+
+  <!-- Top Right Text Block -->
+  <g font-family="Arial, sans-serif" font-size="16">
+    <text x="630" y="80">P(X ≤ μ+1·σ) ≈ 84,13 %</text>
+    <text x="630" y="105">P(X ≤ μ+2·σ) ≈ 97,72 %</text>
+    <text x="630" y="130">P(X ≤ μ+3·σ) ≈ 99,87 %</text>
+  </g>
+
+  <!-- Bottom Center Text -->
+  <text x="500" y="495" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">
+    P(X ≤ μ) = 50 % = P(X ≥ μ)
+  </text>
+</svg>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Interactive Math Line Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // Dummy data for a math function: Quadratic (y = x^2 - 5x + 6)
+    const symbolSize = 14;
+    const data = [
+      [-2, 20],
+      [0, 6],
+      [2, 0],
+      [4, 2],
+      [6, 12]
+    ];
+    option = {
+      title: {
+        text: 'Quadratic Function: y = x² - 5x + 6',
+        left: 'center',
+        top: 10,
+        textStyle: {
+          color: '#193366',
+          fontWeight: 'bold',
+          fontSize: 20,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        backgroundColor: '#fff',
+        borderColor: '#193366',
+        borderWidth: 2,
+        textStyle: {
+          color: '#193366',
+          fontWeight: 'bold'
+        },
+        formatter: function (params) {
+          var data = params.data || [0, 0];
+          return 'x: <b>' + data[0].toFixed(2) + '</b><br>y: <b>' + data[1].toFixed(2) + '</b>';
+        }
+      },
+      grid: {
+        left: '8%',
+        right: '8%',
+        bottom: '10%',
+        top: '15%',
+        containLabel: true
+      },
+      xAxis: {
+        min: -3,
+        max: 7,
+        type: 'value',
+        name: 'x',
+        nameTextStyle: {
+          color: '#193366',
+          fontWeight: 'bold',
+          fontSize: 15
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#193366',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#193366',
+          fontWeight: 'bold',
+          fontSize: 13
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#cccccc',
+            type: 'dashed'
+          }
+        }
+      },
+      yAxis: {
+        min: -5,
+        max: 25,
+        type: 'value',
+        name: 'y',
+        nameTextStyle: {
+          color: '#193366',
+          fontWeight: 'bold',
+          fontSize: 15
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#193366',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#193366',
+          fontWeight: 'bold',
+          fontSize: 13
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#cccccc',
+            type: 'dashed'
+          }
+        }
+      },
+      series: [
+        {
+          id: 'math-quadratic',
+          type: 'line',
+          smooth: false,
+          symbolSize: symbolSize,
+          data: data,
+          lineStyle: {
+            color: '#F22E2E',
+            width: 4
+          },
+          itemStyle: {
+            color: '#F22E2E',
+            borderColor: '#193366',
+            borderWidth: 2
+          },
+          symbol: 'circle'
+        }
+      ]
+    };
+
+    var zr = myChart.getZr();
+    zr.on('click', function (params) {
+      var pointInPixel = [params.offsetX, params.offsetY];
+      var pointInGrid = myChart.convertFromPixel('grid', pointInPixel);
+      if (myChart.containPixel('grid', pointInPixel)) {
+        data.push(pointInGrid);
+        myChart.setOption({
+          series: [
+            {
+              id: 'math-quadratic',
+              data: data
+            }
+          ]
+        });
+      }
+    });
+    zr.on('mousemove', function (params) {
+      var pointInPixel = [params.offsetX, params.offsetY];
+      zr.setCursorStyle(
+        myChart.containPixel('grid', pointInPixel) ? 'pointer' : 'default'
+      );
+    });
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

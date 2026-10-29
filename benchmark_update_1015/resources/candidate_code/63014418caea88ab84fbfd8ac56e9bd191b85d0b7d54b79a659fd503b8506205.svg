@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="400" fill="white"/>
+
+  <!-- Group for donut -->
+  <g transform="translate(200,200)">
+    <!-- Base parameters:
+         inner radius = 80
+         outer radius = 180
+         Each quadrant spans 90 degrees, starting at top (Algebra) and going clockwise.
+    -->
+
+    <!-- Top quadrant - Algebra (dusty rose) -->
+    <path d="
+      M 0,-80
+      L 0,-180
+      A 180 180 0 0 1 180,0
+      L 80,0
+      A 80 80 0 0 0 0,-80
+      Z"
+      fill="#b86a87" stroke="#22252b" stroke-width="6"/>
+
+    <!-- Right quadrant - Geometry (deep blue) -->
+    <path d="
+      M 80,0
+      L 180,0
+      A 180 180 0 0 1 0,180
+      L 0,80
+      A 80 80 0 0 0 80,0
+      Z"
+      fill="#2f5678" stroke="#22252b" stroke-width="6"/>
+
+    <!-- Bottom quadrant - Calculus (warm pink), dashed border -->
+    <path d="
+      M 0,80
+      L 0,180
+      A 180 180 0 0 1 -180,0
+      L -80,0
+      A 80 80 0 0 0 0,80
+      Z"
+      fill="#f27c8e" stroke="#22252b" stroke-width="6" stroke-dasharray="10 8"/>
+
+    <!-- Left quadrant - Statistics (dark purple), dashed border -->
+    <path d="
+      M -80,0
+      L -180,0
+      A 180 180 0 0 1 0,-180
+      L 0,-80
+      A 80 80 0 0 0 -80,0
+      Z"
+      fill="#78557e" stroke="#22252b" stroke-width="6" stroke-dasharray="10 8"/>
+
+    <!-- Inner white circle (center hole) with outline -->
+    <circle cx="0" cy="0" r="80" fill="white" stroke="#22252b" stroke-width="4"/>
+
+    <!-- Center title text -->
+    <text x="0" y="10"
+          text-anchor="middle"
+          font-family="sans-serif"
+          font-weight="bold"
+          font-size="34"
+          fill="#22252b">
+      Math Topics
+    </text>
+
+    <!-- Quadrant labels -->
+    <!-- Algebra (top) -->
+    <text x="0" y="-140"
+          text-anchor="middle"
+          font-family="sans-serif"
+          font-size="32"
+          fill="#22252b">
+      Algebra
+    </text>
+
+    <!-- Geometry (right) -->
+    <text x="120" y="-10"
+          text-anchor="middle"
+          font-family="sans-serif"
+          font-size="32"
+          fill="#22252b">
+      Geometry
+    </text>
+
+    <!-- Calculus (bottom) -->
+    <text x="0" y="165"
+          text-anchor="middle"
+          font-family="sans-serif"
+          font-size="32"
+          fill="#22252b">
+      Calculus
+    </text>
+
+    <!-- Statistics (left) -->
+    <text x="-130" y="-10"
+          text-anchor="middle"
+          font-family="sans-serif"
+          font-size="32"
+          fill="#22252b">
+      Statistics
+    </text>
+  </g>
+</svg>

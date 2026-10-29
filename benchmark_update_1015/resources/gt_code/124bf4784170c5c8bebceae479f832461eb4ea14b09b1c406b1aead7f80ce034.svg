@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4.1in" height="3.5in" viewBox="1307 456 4938 4236">
+<g style="stroke-width:.03in; stroke:#1a237e; fill:none">
+  <!-- Axes -->
+  <polyline points="1889,519 1889,3779 6141,3779 6188,3779"
+    style="stroke:#1a237e;stroke-width:68;stroke-linejoin:miter;stroke-linecap:square;"/>
+  <!-- Demand Curve -->
+  <polyline points="1937,944 5669,3732"
+    style="stroke:#008b00;stroke-width:12;stroke-linejoin=round;stroke-linecap=round;stroke-dasharray:60 30;"/>
+  <!-- Supply Curve -->
+  <polyline points="1937,3307 5669,897"
+    style="stroke:#c62828;stroke-width:12;stroke-linejoin=round;stroke-linecap=round;"/>
+  <!-- Equilibrium Lines -->
+  <polyline points="3637,2220 3637,3826"
+    style="stroke:#1a237e;stroke-width:12;stroke-dasharray:40 16 8 16;stroke-linejoin:bevel;stroke-linecap:round;"/>
+  <polyline points="3637,2220 1937,2220"
+    style="stroke:#1a237e;stroke-width:12;stroke-dasharray:40 16 8 16;stroke-linejoin:bevel;stroke-linecap:round;"/>
+  <!-- Reference Lines -->
+  <polyline points="2220,4393 3354,4393"
+    style="stroke:#00695c;stroke-width:12;stroke-linejoin:miter;stroke-linecap:round;"/>
+  <polyline points="2362,4629 3401,4629"
+    style="stroke:#00695c;stroke-width:12;stroke-dasharray:60 30;stroke-linejoin:miter;stroke-linecap:round;"/>
+  <!-- Price Ceiling/Floor -->
+  <polyline points="5480,1700 1889,1700"
+    style="stroke:#b71c1c;stroke-width:12;stroke-linejoin:miter;stroke-linecap:round;"/>
+  <polyline points="5433,2645 1937,2645"
+    style="stroke:#b71c1c;stroke-width:12;stroke-linejoin:miter;stroke-linecap:round;"/>
+  <!-- Quantity Markers -->
+  <polyline points="2976,1700 2976,3779"
+    style="stroke:#283593;stroke-width:12;stroke-linejoin:miter;stroke-linecap:round;"/>
+  <!-- Tax Effect Arrows -->
+  <polyline points="5244,1826 5244,2519"
+    style="stroke:#fb8c00;stroke-width:12;stroke-linejoin:miter;stroke-linecap:round;"/>
+  <!-- Arrowhead Down -->
+  <polygon points="5212 2518 5244 2644 5275 2518 5212 2518"
+    style="stroke:#fb8c00;stroke-width:12;fill:#fb8c00;"/>
+  <!-- Arrowhead Up -->
+  <polygon points="5275 1827 5244 1701 5212 1827 5275 1827"
+    style="stroke:#fb8c00;stroke-width:12;fill:#fb8c00;"/>
+  <!-- Labels -->
+  <text xml:space="preserve" x="1606" y="4440"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Supply
+  </text>
+  <text xml:space="preserve" x="5055" y="4110"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Quantity
+  </text>
+  <text xml:space="preserve" x="1322" y="614"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Price
+  </text>
+  <text xml:space="preserve" x="1559" y="4677"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Demand
+  </text>
+  <text xml:space="preserve" x="1606" y="2267"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Eq Price
+  </text>
+  <text xml:space="preserve" x="5338" y="2173"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Tax
+  </text>
+  <text xml:space="preserve" x="1606" y="2692"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Price Floor
+  </text>
+  <text xml:space="preserve" x="1606" y="1748"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Price Ceiling
+  </text>
+  <text xml:space="preserve" x="2881" y="4015"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Q Floor
+  </text>
+  <text xml:space="preserve" x="3543" y="4015"
+    stroke="#212121" fill="#212121" font-family="Arial" font-weight="bold" font-size="152" text-anchor="start">
+    Q Eq
+  </text>
+</g>
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+    <style>
+      .line {
+        stroke: black;
+        stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .line-red {
+        stroke: red;
+        stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .text-black {
+        font-family: sans-serif;
+        font-size: 20px;
+        fill: black;
+      }
+      .text-blue {
+        font-family: sans-serif;
+        font-size: 24px;
+        fill: blue;
+      }
+      .text-red {
+        font-family: sans-serif;
+        font-size: 20px;
+        fill: red;
+      }
+      .terminal-circle {
+        fill: none;
+        stroke: black;
+        stroke-width: 2;
+      }
+    </style>
+  </defs>
+
+  <!-- MOSFET (left) -->
+  <path class="line" d="M100 200 H130 M130 180 V220 M130 190 H160 M130 210 H160 M160 190 V210 M160 200 H200"/>
+  <path class="line" d="M100 200 L80 200"/>
+  <path class="line" d="M160 200 L160 300 L200 300"/>
+  <path class="line" d="M160 300 L160 320 L100 320"/>
+  <path class="line" d="M100 320 L80 320"/>
+  <circle class="terminal-circle" cx="80" cy="200" r="5"/>
+  <circle class="terminal-circle" cx="80" cy="320" r="5"/>
+
+  <!-- Resistor: Сопротивление дрейфовой области -->
+  <rect class="line" x="250" y="100" width="50" height="20"/>
+  <path class="line" d="M200 110 H250 M300 110 H350"/>
+  <text class="text-black" x="180" y="70" text-anchor="middle">Сопротивление</text>
+  <text class="text-black" x="180" y="95" text-anchor="middle">дрейфовой области</text>
+
+  <!-- Parasitic Transistor (NPN, red) -->
+  <path class="line-red" d="M350 200 L350 250 L300 250 L300 200 L350 200"/>
+  <path class="line-red" d="M325 250 L325 300"/>
+  <path class="line-red" d="M325 250 L315 260 M325 250 L335 260"/>
+  <path class="line-red" d="M300 200 L200 200"/>
+  <path class="line-red" d="M325 300 L200 300"/>
+  <text class="text-red" x="300" y="280" text-anchor="middle">паразитный</text>
+  <text class="text-red" x="300" y="305" text-anchor="middle">транзистор</text>
+
+  <!-- BJT (PNP, top right) -->
+  <path class="line" d="M350 110 L350 160 L400 160 L400 110 L350 110"/>
+  <path class="line" d="M375 160 L375 210"/>
+  <path class="line" d="M375 160 L365 150 M375 160 L385 150"/>
+  <path class="line" d="M400 110 L400 80 L420 80"/>
+  <circle class="terminal-circle" cx="420" cy="80" r="5"/>
+  <path class="line" d="M375 210 L375 250"/>
+
+  <!-- Resistor: Сопротивление подложки -->
+  <rect class="line" x="400" y="250" width="20" height="50"/>
+  <path class="line" d="M375 250 H400 M420 275 H450"/>
+  <path class="line" d="M410 300 V320 L200 320"/>
+  <text class="text-black" x="470" y="270" text-anchor="start">Сопротивление</text>
+  <text class="text-black" x="470" y="295" text-anchor="start">подложки</text>
+
+  <!-- Connections -->
+  <path class="line" d="M200 200 L200 110"/>
+  <path class="line" d="M200 300 L200 320"/>
+  <path class="line" d="M375 250 L375 320"/>
+  <path class="line" d="M200 320 L375 320"/>
+  <circle class="terminal-circle" cx="200" cy="320" r="5"/>
+
+  <!-- Labels -->
+  <text class="text-blue" x="480" y="85" text-anchor="start">Коллектор</text>
+  <text class="text-blue" x="20" y="325" text-anchor="end">Затвор</text>
+  <text class="text-blue" x="20" y="205" text-anchor="end">Эмиттер</text>
+</svg>

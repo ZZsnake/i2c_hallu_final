@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 486" width="600" height="486">
+  <!-- Continents -->
+  <ellipse cx="340" cy="60" rx="80" ry="35" fill="lightgreen" fill-opacity="0.35" stroke="#174d3a" stroke-width="3" />
+  
+  <!-- Countries -->
+  <ellipse cx="340" cy="150" rx="70" ry="32" fill="lightsalmon" fill-opacity="0.55" stroke="#d84a12" stroke-width="3" />
+  
+  <!-- Regions -->
+  <ellipse cx="340" cy="250" rx="90" ry="38" fill="lavender" stroke="#5142d6" stroke-width="3" />
+  
+  <!-- Cities -->
+  <ellipse cx="340" cy="360" rx="110" ry="45" fill="khaki" fill-opacity="0.45" stroke="#b8bb00" stroke-width="3" />
+  
+  <!-- Coastal Zone -->
+  <ellipse cx="120" cy="380" rx="60" ry="28" fill="lightskyblue" fill-opacity="0.45" stroke="#168bd4" stroke-width="3" />
+  
+  <!-- Mountain Zone -->
+  <ellipse cx="540" cy="380" rx="60" ry="28" fill="pink" fill-opacity="0.55" stroke="#d41472" stroke-width="3" />
+  
+  <!-- Relationship connector lines -->
+  <line x1="340" y1="95" x2="340" y2="118" stroke="#174d3a" stroke-width="3" stroke-dasharray="5,5" />
+  <line x1="340" y1="182" x2="340" y2="212" stroke="#d84a12" stroke-width="3" stroke-dasharray="7,6" />
+  <line x1="340" y1="288" x2="340" y2="315" stroke="#5142d6" stroke-width="3" stroke-dasharray="6,6" />
+  <line x1="180" y1="380" x2="480" y2="380" stroke="#168bd4" stroke-width="3" stroke-dasharray="2,8" />
+  <line x1="180" y1="380" x2="340" y2="405" stroke="#b8bb00" stroke-width="4" stroke-dasharray="8,7" />
+  <line x1="340" y1="405" x2="500" y2="380" stroke="#b8bb00" stroke-width="4" stroke-dasharray="8,7" />
+  
+  <!-- Labels -->
+  <text x="290" y="68" font-family="Montserrat, sans-serif" font-size="23" font-weight="700" fill="#13252c">Continents</text>
+  <text x="347" y="109" font-family="Montserrat, sans-serif" font-size="16" font-weight="700" fill="#174d3a">includes</text>
+  
+  <text x="287" y="159" font-family="Montserrat, sans-serif" font-size="23" font-weight="700" fill="#d84a12">Countries</text>
+  <text x="347" y="204" font-family="Montserrat, sans-serif" font-size="16" font-weight="700" fill="#d84a12">contains</text>
+  
+  <text x="282" y="260" font-family="Montserrat, sans-serif" font-size="23" font-weight="700" fill="#26305f">Regions</text>
+  <text x="347" y="304" font-family="Montserrat, sans-serif" font-size="16" font-weight="700" fill="#5142d6">grouped by</text>
+  
+  <text x="285" y="369" font-family="Montserrat, sans-serif" font-size="23" font-weight="700" fill="#6b6200">Cities</text>
+  <text x="70" y="389" font-family="Montserrat, sans-serif" font-size="19" font-weight="700" fill="#1d5f8a">Coastal Zone</text>
+  <text x="485" y="389" font-family="Montserrat, sans-serif" font-size="19" font-weight="700" fill="#8c225b">Mountain Zone</text>
+  <text x="262" y="420" font-family="Montserrat, sans-serif" font-size="16" font-weight="700" fill="#168bd4" text-anchor="middle">adjacent to</text>
+  <text x="472" y="420" font-family="Montserrat, sans-serif" font-size="16" font-weight="700" fill="#d41472" text-anchor="middle">adjacent to</text>
+  
+  <!-- Title -->
+  <text x="290" y="470" font-family="Montserrat, sans-serif" font-size="25" font-weight="700" fill="#13252c">Geographic Hierarchy</text>
+</svg>

@@ -1,0 +1,26 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{circuitikz}[scale=0.8, transform shape]
+    \draw (0,0) 
+    to[battery1, l=\small{Vintage Car Battery}, v=$12\,\mathrm{V}$] (0,4) 
+    to[short] (4,4)
+    to[ammeter, l=\small{Ammeter}] (6,4)
+    to[R, l=\small{Current Limiter}, *-*] (8,4)
+    to[short] (10,4)
+    to[vsourcesin, l=\small{AC Source}, v=$120\,\mathrm{V}$] (10,0)
+    to[short] (0,0);
+    
+    \draw (6,4) to[diode, l=\small{Rectifier}] (6,2);
+    \draw (6,2) to[C, l=\small{Filter}, *-*] (8,2);
+    \draw (8,2) to[short] (8,4);
+    
+    \node[draw, rounded corners, fill=yellow!20, text width=2cm, align=center, font=\footnotesize] at (3,2) {Vintage Trickle Charger};
+    
+    \node[font=\small\itshape] at (5,-1) {Liberace's Favorite Car Battery Maintainer};
+\end{circuitikz}
+
+\end{document}

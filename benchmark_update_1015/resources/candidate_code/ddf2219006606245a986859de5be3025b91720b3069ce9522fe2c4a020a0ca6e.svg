@@ -1,0 +1,54 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="white"/>
+
+  <!-- Left Centrosome -->
+  <g transform="translate(50, 150)">
+    <circle cx="0" cy="0" r="10" fill="magenta"/>
+    <path d="M0 0 L 20 0 L 10 20 L -10 20 Z" fill="magenta"/>
+    <path d="M0 0 L 0 20" stroke="magenta" stroke-width="1"/>
+    <path d="M0 0 L -20 0" stroke="magenta" stroke-width="1"/>
+    <path d="M0 0 L 10 -20" stroke="magenta" stroke-width="1"/>
+    <path d="M0 0 L -10 -20" stroke="magenta" stroke-width="1"/>
+  </g>
+
+  <!-- Right Centrosome -->
+  <g transform="translate(350, 150)">
+    <circle cx="0" cy="0" r="10" fill="magenta"/>
+    <path d="M0 0 L 20 0 L 10 20 L -10 20 Z" fill="magenta"/>
+    <path d="M0 0 L 0 20" stroke="magenta" stroke-width="1"/>
+    <path d="M0 0 L -20 0" stroke="magenta" stroke-width="1"/>
+    <path d="M0 0 L 10 -20" stroke="magenta" stroke-width="1"/>
+    <path d="M0 0 L -10 -20" stroke="magenta" stroke-width="1"/>
+  </g>
+
+  <!-- Spindle Fibers -->
+  <path d="M50 150 L 350 150" stroke="brown" stroke-width="2"/>
+  <path d="M50 150 L 200 50" stroke="brown" stroke-width="2"/>
+  <path d="M50 150 L 200 250" stroke="brown" stroke-width="2"/>
+  <path d="M350 150 L 200 50" stroke="brown" stroke-width="2"/>
+  <path d="M350 150 L 200 250" stroke="brown" stroke-width="2"/>
+  <path d="M50 150 L 100 20" stroke="brown" stroke-width="2"/>
+  <path d="M50 150 L 100 280" stroke="brown" stroke-width="2"/>
+  <path d="M350 150 L 300 20" stroke="brown" stroke-width="2"/>
+  <path d="M350 150 L 300 280" stroke="brown" stroke-width="2"/>
+
+  <!-- Chromosomes -->
+  <ellipse cx="100" cy="50" rx="20" ry="10" fill="purple"/>
+  <ellipse cx="100" cy="250" rx="20" ry="10" fill="purple"/>
+  <ellipse cx="300" cy="50" rx="20" ry="10" fill="purple"/>
+  <ellipse cx="300" cy="250" rx="20" ry="10" fill="purple"/>
+  <ellipse cx="200" cy="20" rx="20" ry="10" fill="purple"/>
+  <ellipse cx="200" cy="280" rx="20" ry="10" fill="purple"/>
+  <ellipse cx="150" cy="100" rx="20" ry="10" fill="purple"/>
+  <ellipse cx="250" cy="100" rx="20" ry="10" fill="purple"/>
+
+  <!-- Kinetochores -->
+  <circle cx="100" cy="50" r="5" fill="blue"/>
+  <circle cx="100" cy="250" r="5" fill="blue"/>
+  <circle cx="300" cy="50" r="5" fill="blue"/>
+  <circle cx="300" cy="250" r="5" fill="blue"/>
+  <circle cx="200" cy="20" r="5" fill="blue"/>
+  <circle cx="200" cy="280" r="5" fill="blue"/>
+  <circle cx="150" cy="100" r="5" fill="blue"/>
+  <circle cx="250" cy="100" r="5" fill="blue"/>
+</svg>

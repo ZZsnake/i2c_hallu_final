@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{math}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{1pt}
+%
+% Rewritten: Sample of a solid of revolution in math
+%
+\begin{document}
+    %
+    \tdplotsetmaincoords{55}{120}
+    \begin{tikzpicture}[tdplot_main_coords]
+        % Define new function for rotation
+        \tikzmath{function g(\x) {return 2.2 - 0.55*cos(\x r);};}
+        \pgfmathsetmacro{\domain}{1.7}
+        \pgfmathsetmacro{\startx}{-\domain}
+        \pgfmathsetmacro{\stepx}{(\domain-\startx)/60.0}
+        \pgfmathsetmacro{\nextx}{\startx+\stepx}
+        \pgfmathsetmacro{\maxaxis}{3.2}
+        % Draw circumferences (behind axes)
+        \foreach \x in {\startx,\nextx,...,\domain}{
+            \pgfmathsetmacro{\radius}{g(\x)}
+            \draw[teal!80!black,thick,opacity=0.4] plot[domain=0.5*pi:2*pi,smooth,variable=\t] ({\radius*cos(\t r)},{\x},{\radius*sin(\t r)});
+        }
+        % Solid surface (behind axes)
+        \foreach \angle in {358,355,...,90}{
+            \draw[teal!80!black,thick,rotate around y=\angle,opacity=0.4] plot[domain=-\domain:\domain,smooth,variable=\t] ({0},{\t},{g(\t)});
+        }
+        % Function curve being rotated
+        \draw[blue!80!black,ultra thick] plot[domain=-\domain:\domain,smooth,variable=\t] ({0},{\t},{g(\t)}) node [above right] {$z = g(y)$};
+        % Coordinate axes
+        \draw[black,thick,->] (0,0,0) -- (0,\maxaxis,0) node [right] {$y$};
+        \draw[black,thick,->] (0,0,0) -- (\maxaxis,0,0) node [below] {$x$};
+        \draw[black,thick,->] (0,0,0) -- (0,0,\maxaxis) node [above] {$z$};
+        % Circumferences (in front of axes)
+        \foreach \x in {\startx,\nextx,...,\domain}{
+            \pgfmathsetmacro{\radius}{g(\x)}
+            \draw[teal!80!black,thick,opacity=0.4] plot[domain=0:0.5*pi,smooth,variable=\t] ({\radius*cos(\t r)},{\x},{\radius*sin(\t r)});
+        }
+        % Solid surface (in front of axes)
+        \foreach \angle in {0,3,...,89}{
+            \draw[teal!80!black,thick,rotate around y=\angle,opacity=0.4] plot[domain=-\domain:\domain,smooth,variable=\t] ({0},{\t},{g(\t)});
+        }
+    \end{tikzpicture}
+\end{document}

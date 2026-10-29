@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}%
+\usetikzlibrary{shapes.geometric, shapes.arrows, positioning}
+\usepackage{array}
+\begin{document}
+\begin{tikzpicture}[
+    auto,
+    decision/.style = {diamond, draw=teal!80!black, thick, fill=teal!20,
+                       text width=5em, text badly centered,
+                       inner sep=1pt, rounded corners},
+    block/.style    = {rectangle, draw=teal!80!black, thick,
+                       fill=teal!20, text width=10em, text centered,
+                       rounded corners, minimum height=2em},
+    line/.style     = {draw, ultra thick, -stealth, shorten >=2pt, color=blue!80!black},
+    labeltext/.style = {font=\sffamily\small, color=blue!80!black}
+  ]
+  % Node matrix
+  \matrix [column sep=5mm, row sep=11mm] {
+                    & \node [text centered, labeltext] (input) {$\mathbf{S}$};            & \\
+                    & \node (gap1) {};                                    & \\
+                    & \node [block] (pre) {\textsf{Preprocess}($\mathbf{S}$)};   & \\
+    \node(gap3){};  & \node [decision] (auth)
+                        {\textsf{Auth}($\mathbf{U}$)};
+                                  & \node[text centered, labeltext](token){$\mathbf{T}$}; \\
+                    & \node [block] (detect) {\textsf{Detect}($\mathbf{s}$)}; & \\
+                    & \node [block] (extract)
+                        {\textsf{Extract}(Det$_{\mathrm{C}}$,Pre)};            & \\
+                    & \node [block] (filter)
+                        {\textsf{Filter}($\mathbf{v},\mathbf{s}$)};          & \\
+                    & \node [text centered, labeltext] (output) {$\hat{s}(t)$ };          & \\
+  };
+  % Connections
+  \begin{scope} [every path/.style=line]
+    \path (input)      --    (pre);
+    \path (pre)        --    node [near start, labeltext] {Pre} (auth);
+    \path (token)      --    (auth);
+    \path (auth)       --++  (-3,0) node [near start, labeltext] {deny} |- (gap1);
+    \path (auth)       --    node [near start, labeltext] {Det} (detect);
+    \path (detect)     --    node [near start, labeltext] {Det$_{\mathrm{C}}$} (extract);
+    \path (extract)    --    node [near start, labeltext] {$\mathbf{v}$} (filter);
+    \path (filter)     --    (output);
+  \end{scope}
+  %
+  % Legend for subprocedures
+  \node (legend1) at (7.6, 5){
+    \begin{tabular}{>{\sffamily}l@{: }l}
+      \multicolumn{2}{c}{\textbf{subprocedures}} \\
+      Preprocess & signal preprocessing           \\
+      Auth       & user authentication           \\
+      Detect     & event detection               \\
+      Extract    & feature extraction            \\
+      Filter     & result filtering
+    \end{tabular}
+  };
+  %
+  % Legend for input and output variables
+  \node (legend2) at (7.1, 0){
+    \begin{tabular}{l@{: }l}
+      \multicolumn{2}{c}{\textbf{variables}}               \\
+      Det                    & detection result            \\
+      $\mathbf{T}$           & authentication token        \\
+      $\mathbf{S},\,\mathbf{s}$ & signal input             \\
+      Det$_{\mathrm{C}}$     & confirmed detection        \\
+      $\hat{s}(t)$           & filtered output signal
+      \end{tabular}
+  };
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution of Mathematical Topics Studied</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        
+        #chartContainer {
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Distribution of Mathematical Topics Studied</h1>
+        <div id="chartContainer"></div>
+    </div>
+
+    <script>
+        var chartDom = document.getElementById('chartContainer');
+        var myChart = echarts.init(chartDom);
+        
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}: {c}%'
+            },
+            legend: {
+                orient: 'vertical',
+                left: '5%',
+                top: 'center',
+                itemWidth: 14,
+                itemHeight: 14,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333'
+                },
+                data: ['Algebra', 'Geometry', 'Calculus', 'Probability', 'Statistics', 'Number Theory', 'Logic']
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['35%', '60%'],
+                    center: ['60%', '52%'],
+                    avoidLabelOverlap: true,
+                    itemStyle: {
+                        borderColor: '#FFFFFF',
+                        borderWidth: 3
+                    },
+                    label: {
+                        show: true,
+                        position: 'outer',
+                        alignTo: 'none',
+                        formatter: '{b}',
+                        fontSize: 14,
+                        color: '#333',
+                        distanceToLabelLine: 5
+                    },
+                    labelLine: {
+                        show: true,
+                        length: 20,
+                        length2: 40,
+                        smooth: false,
+                        lineStyle: {
+                            color: '#202442',
+                            width: 3
+                        }
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: 16,
+                            fontWeight: 'bold'
+                        },
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    },
+                    data: [
+                        { 
+                            value: 22, 
+                            name: 'Algebra',
+                            itemStyle: { color: '#4169E1' }
+                        },
+                        { 
+                            value: 17, 
+                            name: 'Geometry',
+                            itemStyle: { color: '#EF4444' }
+                        },
+                        { 
+                            value: 13, 
+                            name: 'Calculus',
+                            itemStyle: { color: '#10B981' }
+                        },
+                        { 
+                            value: 18, 
+                            name: 'Probability',
+                            itemStyle: { color: '#F59E0B' }
+                        },
+                        { 
+                            value: 8, 
+                            name: 'Statistics',
+                            itemStyle: { color: '#9333EA' }
+                        },
+                        { 
+                            value: 14, 
+                            name: 'Number Theory',
+                            itemStyle: { color: '#1F2937' }
+                        },
+                        { 
+                            value: 8, 
+                            name: 'Logic',
+                            itemStyle: { color: '#FF5722' }
+                        }
+                    ]
+                }
+            ]
+        };
+        
+        myChart.setOption(option);
+        
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

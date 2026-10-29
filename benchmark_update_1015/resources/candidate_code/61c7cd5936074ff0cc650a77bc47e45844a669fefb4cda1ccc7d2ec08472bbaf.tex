@@ -1,0 +1,55 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $T/T_c$,
+    ylabel = $m(0,T)$,
+    xmin=0, xmax=1.5,
+    ymin=0, ymax=1.5,
+    xtick={0, 0.5, 1, 1.5},
+    ytick={0, 0.5, 1, 1.5},
+    ylabel style={at={(0.0, 0.5)}, anchor=east},
+    xlabel style={at={(0.5, 0.0)}, anchor=north},
+    tick label style={font=\small},
+    legend style={font=\small},
+    width=10cm,
+    height=10cm,
+    grid=major,
+    grid style={gray!30},
+    axis line style={-Stealth},
+]
+
+% Plot the magnetization curve
+\addplot[
+    orange,
+    thick,
+    smooth,
+    domain=0:1.5,
+    samples=100,
+] {1 - (x-1)^2*(x<1) + (x-1)^2*(x>=1)};
+\addplot[
+    dashed,
+    black,
+    thick,
+    domain=0:1.5,
+] {x};
+
+% Mark the critical point
+\addplot[
+    only marks,
+    mark=*,
+    mark size=2pt,
+    color=black,
+] coordinates {(1, 1)};
+
+% Add vertical line at T/Tc = 1
+\draw[black, thick] (1, 0) -- (1, 1.5);
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

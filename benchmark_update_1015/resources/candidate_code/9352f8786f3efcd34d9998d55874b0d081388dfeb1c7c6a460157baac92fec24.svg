@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="20" text-anchor="middle">Computer Science Flow</text>
+  
+  <!-- Input Data -->
+  <rect x="100" y="100" width="100" height=50 fill="#d9eaff"/>
+  <text x="150" y="125" font-family="Arial" font-size="16">Input Data</text>
+  
+  <!-- Validation -->
+  <rect x="100" y="175" width="100" height=50 fill="#a0e4ff"/>
+  <text x="150" y="200" font-family="Arial" font-size="16">Validation</text>
+  
+  <!-- Preprocessing -->
+  <rect x="300" y="100" width="100" height=50 fill="#f4c0bf"/>
+  <text x="350" y="125" font-family="Arial" font-size="16">Preprocessing</text>
+  
+  <!-- Algorithm -->
+  <rect x="500" y="100" width="100" height=50 fill="#d9eaff"/>
+  <text x="550" y="125" font-family="Arial" font-size="16">Algorithm</text>
+  
+  <!-- Data Structures -->
+  <rect x="500" y="175" width="100" height=50 fill="#a0e4ff"/>
+  <text x="550" y="200" font-family="Arial" font-size="16">Data Structures</text>
+  
+  <!-- Output -->
+  <rect x="700" y="100" width="100" height=50 fill="#f4c0bf"/>
+  <text x="750" y="125" font-family="Arial" font-size="16">Output</text>
+  
+  <!-- Condition -->
+  <polygon points="300,250 400,250 400,300 300,300" fill="#ffffb3"/>
+  <text x="350" y="275" font-family="Arial" font-size="16">Condition?</text>
+  
+  <!-- Result -->
+  <ellipse cx="400" cy="350" rx="50" ry=50 fill="#ffffb3"/>
+  <text x="400" y="375" font-family="Arial" font-size="16">Result</text>
+  
+  <!-- Arrows and Lines -->
+  <path d="M150 125 L300 125" stroke="black" stroke-width="2"/>
+  <path d="M150 175 L300 175" stroke="black" stroke-width="2"/>
+  <path d="M300 125 L500 125" stroke="black" stroke-width="2"/>
+  <path d="M300 175 L500 175" stroke="black" stroke-width="2"/>
+  <path d="M500 125 L700 125" stroke="black" stroke-width="2"/>
+  <path d="M300 300 L400 300" stroke="black" stroke-width="2"/>
+  <path d="M400 300 L400 350" stroke="black" stroke-width="2"/>
+</svg>

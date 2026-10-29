@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="gray"/>
+  <circle cx="70" cy="100" r="50" fill="white" stroke="black"/>
+  <circle cx="130" cy="100" r="50" fill="white" stroke="black"/>
+  <circle cx="100" cy="140" r="50" fill="white" stroke="black"/>
+  <path d="M 70 100 A 50 50 0 0 1 100 140 A 50 50 0 0 1 130 100 A 50 50 0 0 1 100 60 A 50 50 0 0 1 70 100 Z" fill="black"/>
+  <path d="M 130 100 A 50 50 0 0 1 100 140 A 50 50 0 0 1 70 100 A 50 50 0 0 1 100 60 A 50 50 0 0 1 130 100 Z" fill="black"/>
+  <path d="M 100 140 A 50 50 0 0 1 70 100 A 50 50 0 0 1 100 60 A 50 50 0 0 1 130 100 A 50 50 0 0 1 100 140 Z" fill="black"/>
+  <text x="60" y="90" font-size="12" text-anchor="middle" fill="black">A</text>
+  <text x="140" y="90" font-size="12" text-anchor="middle" fill="black">B</text>
+  <text x="100" y="150" font-size="12" text-anchor="middle" fill="black">C</text>
+</svg>

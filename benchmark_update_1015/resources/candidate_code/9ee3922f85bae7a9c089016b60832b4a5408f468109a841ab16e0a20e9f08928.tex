@@ -1,0 +1,30 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}
+    % Left graph
+    \begin{scope}
+        \draw[->] (0,0) -- (3,0) node[right] {$e$};
+        \draw[->] (0,0) -- (0,3) node[above] {$w$};
+        \draw[domain=0.2:3, smooth, variable=\x, black] plot ({\x}, {3 - \x});
+        \draw[dashed] (1.5,0) -- (1.5,1.5) -- (0,1.5);
+        \node at (1.5,1.5) [circle, fill, inner sep=1.5pt] (A) {};
+        \node[above right] at (A) {$A$};
+        \node[below] at (1.5,0) {$w^*$};
+    \end{scope}
+
+    % Right graph
+    \begin{scope}[xshift=4cm]
+        \draw[->] (0,0) -- (3,0) node[right] {$N$};
+        \draw[->] (0,0) -- (0,3) node[above] {$w$};
+        \draw[domain=0:3, smooth, variable=\x, black] plot ({\x}, {3 - \x});
+        \draw[domain=0:3, smooth, variable=\x, black] plot ({\x}, {\x});
+        \draw[dashed] (1.5,0) -- (1.5,1.5) -- (0,1.5);
+        \node at (1.5,1.5) [circle, fill, inner sep=1.5pt] {};
+        \node[below] at (1.5,0) {$N_s$};
+        \node[below] at (1.5,0) [yshift=-0.3cm] {$N_d$};
+    \end{scope}
+\end{tikzpicture}
+\end{document}

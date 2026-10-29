@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <!-- White background -->
+  <rect width="700" height="450" fill="white"/>
+  
+  <!-- Define plot area -->
+  <g transform="translate(60, 10)">
+    <!-- Grid lines (vertical) -->
+    <line x1="120" y1="10" x2="120" y2="400" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="240" y1="10" x2="240" y2="400" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="360" y1="10" x2="360" y2="400" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="480" y1="10" x2="480" y2="400" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="600" y1="10" x2="600" y2="400" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    
+    <!-- Grid lines (horizontal) -->
+    <line x1="0" y1="310" x2="640" y2="310" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="0" y1="220" x2="640" y2="220" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="0" y1="130" x2="640" y2="130" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="0" y1="40" x2="640" y2="40" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+    
+    <!-- Axes -->
+    <line x1="0" y1="400" x2="640" y2="400" stroke="black" stroke-width="1.5"/>
+    <line x1="0" y1="10" x2="0" y2="400" stroke="black" stroke-width="1.5"/>
+    <line x1="640" y1="10" x2="640" y2="400" stroke="black" stroke-width="1.5"/>
+    <line x1="0" y1="10" x2="640" y2="10" stroke="black" stroke-width="1.5"/>
+    
+    <!-- Horizontal line y = 4 -->
+    <line x1="0" y1="220" x2="640" y2="220" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,5"/>
+    
+    <!-- Function curve f(x) - parabola-like shape -->
+    <path d="M 0,355 Q 60,280 120,190 Q 180,120 240,85 Q 300,65 360,65 Q 420,75 480,120 Q 540,180 600,280 L 620,355" 
+          fill="none" stroke="#2d5016" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Point P at maximum -->
+    <circle cx="360" cy="65" r="5" fill="#cc0000"/>
+    
+    <!-- Labels -->
+    <text x="320" y="5" font-family="Arial, sans-serif" font-size="16" font-style="italic">f(x)</text>
+    <text x="320" y="430" font-family="Arial, sans-serif" font-size="16" font-style="italic">x</text>
+    
+    <!-- Axis numbers -->
+    <text x="-5" y="405" font-family="Arial, sans-serif" font-size="14" text-anchor="end">0</text>
+    <text x="120" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">1</text>
+    <text x="240" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">2</text>
+    <text x="360" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">3</text>
+    <text x="480" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">4</text>
+    <text x="600" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">5</text>
+    
+    <text x="-10" y="315" font-family="Arial, sans-serif" font-size="14" text-anchor="end">2</text>
+    <text x="-10" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="end">4</text>
+    <text x="-10" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="end">6</text>
+    <text x="-10" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="end">8</text>
+    
+    <!-- Label for y = 4 line -->
+    <text x="30" y="215" font-family="Arial, sans-serif" font-size="14" fill="#cc0000">y = 4</text>
+    
+    <!-- Label for point P -->
+    <text x="370" y="60" font-family="Arial, sans-serif" font-size="14" fill="#cc0000">P</text>
+  </g>
+</svg>

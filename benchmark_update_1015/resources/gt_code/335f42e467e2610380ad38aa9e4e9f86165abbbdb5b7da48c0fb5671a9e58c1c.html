@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Geography: Urban Population Growth Trends</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    #container {
+      height: 100%;
+      width: 100%;
+    }
+    .echarts-legend {
+      font-weight: 600;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    // Updated colors for high contrast
+    const colors = ['#1554C4', '#E93434', '#1DAD5B'];
+    var option = {
+      color: colors,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#333',
+            color: '#fff'
+          }
+        }
+      },
+      grid: {
+        right: '22%'
+      },
+      toolbox: {
+        feature: {
+          dataView: { show: true, readOnly: false },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      legend: {
+        data: ['Urban Population', 'Rural Population', 'Annual Growth Rate'],
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 15
+        }
+      },
+      xAxis: [
+        {
+          type: 'category',
+          axisTick: {
+            alignWithLabel: true
+          },
+          axisLabel: {
+            color: '#222',
+            fontWeight: 600
+          },
+          data: ['2010', '2012', '2014', '2016', '2018', '2020', '2022', '2024']
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: 'Urban Population (millions)',
+          position: 'left',
+          alignTicks: true,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: colors[0],
+              width: 3
+            }
+          },
+          axisLabel: {
+            color: colors[0],
+            fontWeight: 700,
+            formatter: '{value}',
+            fontSize: 14
+          }
+        },
+        {
+          type: 'value',
+          name: 'Rural Population (millions)',
+          position: 'right',
+          alignTicks: true,
+          offset: 70,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: colors[1],
+              width: 3
+            }
+          },
+          axisLabel: {
+            color: colors[1],
+            fontWeight: 700,
+            formatter: '{value}',
+            fontSize: 14
+          }
+        },
+        {
+          type: 'value',
+          name: 'Annual Growth Rate (%)',
+          position: 'right',
+          alignTicks: true,
+          offset: 140,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: colors[2],
+              width: 3
+            }
+          },
+          axisLabel: {
+            color: colors[2],
+            fontWeight: 700,
+            formatter: '{value} %',
+            fontSize: 14
+          }
+        }
+      ],
+      series: [
+        {
+          name: 'Urban Population',
+          type: 'line',
+          symbol: 'circle',
+          symbolSize: 10,
+          lineStyle: {
+            width: 4
+          },
+          data: [350, 370, 400, 430, 470, 510, 555, 600]
+        },
+        {
+          name: 'Rural Population',
+          type: 'line',
+          yAxisIndex: 1,
+          symbol: 'diamond',
+          symbolSize: 10,
+          lineStyle: {
+            width: 4,
+            type: 'dashed'
+          },
+          data: [420, 410, 400, 390, 380, 370, 360, 350]
+        },
+        {
+          name: 'Annual Growth Rate',
+          type: 'line',
+          yAxisIndex: 2,
+          symbol: 'rect',
+          symbolSize: 10,
+          lineStyle: {
+            width: 4,
+            type: 'solid'
+          },
+          data: [2.5, 2.8, 3.0, 2.9, 3.2, 3.4, 3.8, 4.0]
+        }
+      ],
+      title: {
+        text: 'Urban vs Rural Population Growth (2010-2024)',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#222',
+          fontSize: 22,
+          fontWeight: 'bold'
+        }
+      }
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    // Responsive resize
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

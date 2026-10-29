@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <!-- Define styles -->
+  <defs>
+    <marker id="arrow-open" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 7 4 L 0 8" fill="none" stroke="#FFE54C" stroke-width="1.4"/>
+    </marker>
+    <style>
+      .medium-n2 { fill: #F8F8F8; }
+      .medium-n1 { fill: #F5D5A8; }
+      .light-ray { stroke: #FFE54C; stroke-width: 2.5; fill: none; marker-end: url(#arrow-open); }
+      .normal-line { stroke: #A0D8E8; stroke-width: 1; stroke-dasharray: 7,2,1,2; }
+      .angle-arc { stroke: #333; stroke-width: 1; fill: none; }
+      .label-text { font-family: Arial, sans-serif; font-size: 14px; fill: #000; }
+      .small-text { font-size: 12px; }
+    </style>
+  </defs>
+  
+  <!-- Background regions -->
+  <rect class="medium-n2" x="0" y="0" width="400" height="100"/>
+  <rect class="medium-n1" x="0" y="100" width="400" height="180"/>
+  
+  <!-- Interface line -->
+  <line x1="0" y1="100" x2="400" y2="100" stroke="#DDD" stroke-width="1"/>
+  
+  <!-- Normal reference lines (dashed) -->
+  <line class="normal-line" x1="130" y1="35" x2="130" y2="180"/>
+  <line class="normal-line" x1="210" y1="35" x2="210" y2="180"/>
+  <line class="normal-line" x1="340" y1="35" x2="340" y2="180"/>
+  
+  <!-- Light source point -->
+  <circle cx="65" cy="235" r="3" fill="#333"/>
+  
+  <!-- Light rays -->
+  <!-- Ray 1: From source upward (incident in n1) -->
+  <line class="light-ray" x1="65" y1="235" x2="65" y2="30"/>
+  
+  <!-- Ray 2: From source to first refraction point -->
+  <line class="light-ray" x1="65" y1="235" x2="130" y2="100"/>
+  <!-- Refracted ray in n2 -->
+  <line class="light-ray" x1="130" y1="100" x2="200" y2="30"/>
+  
+  <!-- Ray 3: Critical angle - to interface at 90° -->
+  <line class="light-ray" x1="65" y1="235" x2="210" y2="100"/>
+  <!-- Refracted at 90° (along interface) -->
+  <line class="light-ray" x1="210" y1="100" x2="340" y2="100" stroke-opacity="0.7"/>
+  
+  <!-- Ray 4: Total internal reflection -->
+  <line class="light-ray" x1="65" y1="235" x2="340" y2="100"/>
+  <!-- Reflected ray -->
+  <line class="light-ray" x1="340" y1="100" x2="395" y2="135"/>
+  
+  <!-- Additional faint rays for visual effect -->
+  <line class="light-ray" x1="65" y1="235" x2="120" y2="160" stroke-opacity="0.3"/>
+  <line class="light-ray" x1="65" y1="235" x2="180" y2="140" stroke-opacity="0.3"/>
+  <line class="light-ray" x1="280" y1="100" x2="320" y2="180" stroke-opacity="0.3"/>
+  
+  <!-- Angle indicators -->
+  <!-- θ₁ angle -->
+  <path class="angle-arc" d="M 85 130 A 25 25 0 0 1 95 110"/>
+  <text class="label-text small-text" x="105" y="145">θ</text>
+  <text class="label-text small-text" x="112" y="149" font-size="10">1</text>
+  
+  <!-- θ₂ angle -->
+  <path class="angle-arc" d="M 130 80 A 20 20 0 0 0 145 90"/>
+  <text class="label-text small-text" x="135" y="65">θ</text>
+  <text class="label-text small-text" x="142" y="69" font-size="10">2</text>
+  
+  <!-- θc angle -->
+  <path class="angle-arc" d="M 190 115 A 20 20 0 0 1 205 105"/>
+  <text class="label-text small-text" x="193" y="135">θ</text>
+  <text class="label-text small-text" x="200" y="139" font-size="10">c</text>
+  
+  <!-- 90° angle indicator -->
+  <path class="angle-arc" d="M 210 85 L 210 95 L 220 95" stroke="#333" stroke-width="1" fill="none"/>
+  <text class="label-text small-text" x="225" y="82">90°</text>
+  
+  <!-- Labels -->
+  <text class="label-text" x="20" y="70">n</text>
+  <text class="label-text small-text" x="30" y="74" font-size="10">2</text>
+  
+  <text class="label-text" x="20" y="125">n</text>
+  <text class="label-text small-text" x="30" y="129" font-size="10">1</text>
+  
+  <text class="label-text small-text" x="300" y="95">total reflection</text>
+</svg>

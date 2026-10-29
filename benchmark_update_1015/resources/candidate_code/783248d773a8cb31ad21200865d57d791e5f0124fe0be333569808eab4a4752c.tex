@@ -1,0 +1,75 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    font=\sffamily,
+    bar/.style={draw, thick, fill, rounded corners=2pt},
+    axis/.style={very thick, teal!70!black},
+    label/.style={anchor=south, font=\bfseries\large, text=blue},
+    value/.style={anchor=south, font=\bfseries, text=red!70!black, inner sep=2pt},
+    sector/.style={anchor=north, font=\bfseries\small, text=blue!70!black, inner sep=3pt},
+    axis label/.style={font=\bfseries, text=teal!70!black, anchor=south, inner sep=3pt}
+]
+
+% Define bar positions and heights
+\def\barwidth{0.8}
+\def\barsep{0.3}
+\def\yaxismax{5.0}
+\def\yaxismin{0.0}
+\def\ystep{1.0}
+\def\yoffset{0.2}
+
+% Axis
+\draw[axis] (0,0) -- (0,\yaxismax + 0.5);
+\draw[axis] (0,0) -- (\barwidth*5 + \barsep*4,0);
+
+% Y-axis ticks and labels
+\foreach \y in {1,2,3,4,5} {
+    \draw[axis] (0,\y) -- (\barwidth/10,\y);
+    \node[axis label, at={(0,\y)}, right] {\y};
+}
+
+% X-axis labels
+\node[sector, at={(0.5*\barwidth + 0.5*\barsep, -0.3)}, rotate=45] {Agriculture};
+\node[sector, at={(1.5*\barwidth + 1.5*\barsep, -0.3)}, rotate=45] {Industry};
+\node[sector, at={(2.5*\barwidth + 2.5*\barsep, -0.3)}, rotate=45] {Services};
+\node[sector, at={(3.5*\barwidth + 3.5*\barsep, -0.3)}, rotate=45] {Construction};
+\node[sector, at={(4.5*\barwidth + 4.5*\barsep, -0.3)}, rotate=45] {Technology};
+
+% Bars
+\def\barx{0.5*\barwidth + 0.5*\barsep}
+\def\barxinc{\barwidth + \barsep}
+
+% Agriculture
+\draw[bar, blue!70!black, fill=blue!80!black] (\barx, 0) rectangle ++(\barwidth, 2.7);
+\node[value, at={(\barx + 0.5*\barwidth, 2.7 + \yoffset)}] {2.7};
+
+% Industry
+\draw[bar, red!70!black, fill=red!90!black] (\barxinc + \barx, 0) rectangle ++(\barwidth, 4.5);
+\node[value, at={(\barxinc + \barx + 0.5*\barwidth, 4.5 + \yoffset)}] {4.5};
+
+% Services
+\draw[bar, teal!70!black, fill=teal!90!black] (\barxinc*2 + \barx, 0) rectangle ++(\barwidth, 3.6);
+\node[value, at={(\barxinc*2 + \barx + 0.5*\barwidth, 3.6 + \yoffset)}] {3.6};
+
+% Construction
+\draw[bar, orange!70!black, fill=orange!90!black] (\barxinc*3 + \barx, 0) rectangle ++(\barwidth, 1.8);
+\node[value, at={(\barxinc*3 + \barx + 0.5*\barwidth, 1.8 + \yoffset)}] {1.8};
+
+% Technology
+\draw[bar, purple!70!black, fill=purple!90!black] (\barxinc*4 + \barx, 0) rectangle ++(\barwidth, 5.0);
+\node[value, at={(\barxinc*4 + \barx + 0.5*\barwidth, 5.0 + \yoffset)}] {5.0};
+
+% Title
+\node[label, at={(0.5*(\barwidth*5 + \barsep*4), \yaxismax + 0.7)}, text=blue, font=\bfseries\large] {GDP Growth by Sector};
+
+% Y-axis label
+\node[axis label, at={(-0.3, 0.5*\yaxismax)}, rotate=90] {Growth (\%)};
+
+% X-axis label
+\node[axis label, at={(\barwidth*5 + \barsep*4 + 0.3, -0.5)}, text=teal!70!black] {Economic Sector};
+
+\end{tikzpicture}
+\end{document}

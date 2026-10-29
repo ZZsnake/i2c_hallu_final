@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="850"
+   height="425"
+   id="svgGeographySample"
+   version="1.0"
+   style="display:inline">
+  <defs>
+    <linearGradient id="geoGradient1" x1="0" y1="0" x2="850" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:#30b0b6;stop-opacity:1;" />
+      <stop offset="1" style="stop-color:#14598a;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient id="geoGradient2" x1="0" y1="425" x2="850" y2="425" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:#f45555;stop-opacity:1;" />
+      <stop offset="1" style="stop-color:#e9952c;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient id="geoGradient3" x1="0" y1="212" x2="850" y2="212" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:#6fe06d;stop-opacity:1;" />
+      <stop offset="1" style="stop-color:#1d892e;stop-opacity:1;" />
+    </linearGradient>
+  </defs>
+  <g id="layerGeoDiagram" style="display:inline">
+    <!-- Background rectangle -->
+    <rect x="0" y="0" width="850" height="425" style="fill:#ffffff;fill-opacity:1;stroke:none;" />
+    <!-- Ocean layer -->
+    <rect x="0" y="300" width="850" height="125" style="fill:url(#geoGradient1);stroke:#134e7a;stroke-width:2;" />
+    <!-- Landmass layer -->
+    <rect x="0" y="200" width="850" height="100" style="fill:url(#geoGradient3);stroke:#1d892e;stroke-width:2;stroke-dasharray:8,4;" />
+    <!-- Mountain range -->
+    <ellipse cx="650" cy="180" rx="120" ry="48" style="fill:url(#geoGradient2);stroke:#c42c2c;stroke-width:3;" />
+    <!-- River path -->
+    <path d="M 200,210 Q 350,260 470,210 Q 600,180 750,220"
+          style="fill:none;stroke:#14598a;stroke-width:5;stroke-dasharray:10,6;" />
+    <!-- City nodes -->
+    <circle cx="180" cy="310" r="26" style="fill:#304ffe;stroke:#212121;stroke-width:2;" />
+    <circle cx="690" cy="310" r="26" style="fill:#ff6f00;stroke:#212121;stroke-width:2;" />
+    <circle cx="350" cy="265" r="18" style="fill:#00c853;stroke:#212121;stroke-width:2;" />
+    <!-- Relationship arrows (trade routes, migration, etc.) -->
+    <path d="M 180,310 C 240,320 320,275 350,265" style="fill:none;stroke:#212121;stroke-width:2;marker-end:url(#arrowGeo);" />
+    <path d="M 350,265 C 400,240 650,220 690,310" style="fill:none;stroke:#212121;stroke-width:2;marker-end:url(#arrowGeo);" />
+    <!-- Custom marker for arrows -->
+    <marker id="arrowGeo" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0,0 L 8,4 L 0,8 Z" style="fill:#212121;" />
+    </marker>
+    <!-- Lake -->
+    <ellipse cx="320" cy="340" rx="45" ry="18" style="fill:#1de9b6;stroke:#212121;stroke-width:1.5;" />
+    <!-- Text labels -->
+    <text x="650" y="165" font-size="22" font-family="Verdana" fill="#212121" font-weight="bold" text-anchor="middle">Mountain Range</text>
+    <text x="200" y="320" font-size="18" font-family="Georgia" fill="#212121" text-anchor="middle">City A</text>
+    <text x="690" y="320" font-size="18" font-family="Georgia" fill="#212121" text-anchor="middle">City B</text>
+    <text x="350" y="260" font-size="17" font-family="Georgia" fill="#212121" text-anchor="middle">Town C</text>
+    <text x="320" y="345" font-size="16" font-family="Verdana" fill="#212121" text-anchor="middle">Lake Azure</text>
+    <text x="400" y="230" font-size="18" font-family="Verdana" fill="#14598a" font-weight="bold" text-anchor="middle">River Delta</text>
+    <text x="60" y="220" font-size="18" font-family="Georgia" fill="#1d892e" font-weight="bold">Forest</text>
+    <text x="60" y="340" font-size="18" font-family="Georgia" fill="#134e7a" font-weight="bold">Coastal Area</text>
+    <!-- Lithosphere and Asthenosphere layers -->
+    <rect x="0" y="385" width="850" height="40" style="fill:#f9a825;stroke:#c42c2c;stroke-width:2;" />
+    <rect x="0" y="425" width="850" height="20" style="fill:#ffd600;stroke:#c42c2c;stroke-width:2;" />
+    <text x="425" y="410" font-size="17" font-family="Verdana" fill="#c42c2c" font-weight="bold" text-anchor="middle">Lithosphere</text>
+    <text x="425" y="440" font-size="17" font-family="Verdana" fill="#c42c2c" font-weight="bold" text-anchor="middle">Asthenosphere</text>
+    <!-- Connections between layers -->
+    <path d="M 120,385 L 120,350" style="stroke:#c42c2c;stroke-width:2;stroke-dasharray:8,4;fill:none;" />
+    <path d="M 780,385 L 780,350" style="stroke:#c42c2c;stroke-width:2;stroke-dasharray:8,4;fill:none;" />
+    <!-- Legend box -->
+    <rect x="650" y="30" width="180" height="90" style="fill:#e3f2fd;stroke:#212121;stroke-width:2;" />
+    <text x="740" y="55" font-size="16" font-family="Verdana" fill="#212121" text-anchor="middle" font-weight="bold">Legend</text>
+    <circle cx="670" cy="75" r="8" style="fill:#304ffe;stroke:#212121;stroke-width:1;" />
+    <text x="690" y="80" font-size="14" font-family="Verdana" fill="#212121">City</text>
+    <ellipse cx="670" cy="100" rx="12" ry="5" style="fill:#1de9b6;stroke:#212121;stroke-width:1;" />
+    <text x="690" y="105" font-size="14" font-family="Verdana" fill="#212121">Lake</text>
+    <rect x="670" y="115" width="24" height="10" style="fill:#6fe06d;stroke:#212121;stroke-width:1;" />
+    <text x="700" y="125" font-size="14" font-family="Verdana" fill="#212121">Landmass</text>
+  </g>
+</svg>

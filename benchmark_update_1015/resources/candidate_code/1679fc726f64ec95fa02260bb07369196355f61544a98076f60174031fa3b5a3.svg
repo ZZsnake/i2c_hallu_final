@@ -1,0 +1,78 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <title>Global Economic Indicators by Sector (2010-2022)</title>
+  <desc>Stacked bar chart showing GDP contribution by sector.</desc>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f0f0f0" />
+
+  <!-- Bars -->
+  <g>
+    <!-- 2010 -->
+    <rect x="50" y="520" width="50" height="80" fill="#008080" />
+    <rect x="50" y="440" width="50" height="80" fill="#ffa500" />
+    <rect x="50" y="360" width="50" height="80" fill="#90ee90" />
+    <rect x="50" y="280" width="50" height="80" fill="#4682b4" />
+    <rect x="50" y="200" width="50" height="80" fill="#00008b" />
+
+    <!-- 2013 -->
+    <rect x="150" y="520" width="50" height="100" fill="#008080" />
+    <rect x="150" y="420" width="50" height="100" fill="#ffa500" />
+    <rect x="150" y="320" width="50" height="100" fill="#90ee90" />
+    <rect x="150" y="220" width="50" height="100" fill="#4682b4" />
+    <rect x="150" y="120" width="50" height="100" fill="#00008b" />
+
+    <!-- 2016 -->
+    <rect x="250" y="520" width="50" height="120" fill="#008080" />
+    <rect x="250" y="400" width="50" height="120" fill="#ffa500" />
+    <rect x="250" y="280" width="50" height="120" fill="#90ee90" />
+    <rect x="250" y="160" width="50" height="120" fill="#4682b4" />
+    <rect x="250" y="40" width="50" height="120" fill="#00008b" />
+
+    <!-- 2019 -->
+    <rect x="350" y="520" width="50" height="130" fill="#008080" />
+    <rect x="350" y="390" width="50" height="130" fill="#ffa500" />
+    <rect x="350" y="260" width="50" height="130" fill="#90ee90" />
+    <rect x="350" y="130" width="50" height="130" fill="#4682b4" />
+    <rect x="350" y="0" width="50" height="130" fill="#00008b" />
+
+    <!-- 2022 -->
+    <rect x="450" y="520" width="50" height="140" fill="#008080" />
+    <rect x="450" y="380" width="50" height="140" fill="#ffa500" />
+    <rect x="450" y="240" width="50" height="140" fill="#90ee90" />
+    <rect x="450" y="100" width="50" height="140" fill="#4682b4" />
+    <rect x="450" y="-40" width="50" height="140" fill="#00008b" />
+  </g>
+
+  <!-- Labels -->
+  <text x="25" y="580" font-size="12">Source: World Bank Economic Sector Data, 2023</text>
+  <text x="25" y="560" font-size="10">Note: Data compiled from IMF and World Bank sector reports.</text>
+
+  <!-- Axis Labels -->
+  <text x="20" y="20" font-size="14">GDP Contribution (billions USD)</text>
+  <text x="250" y="580" font-size="14">Year</text>
+
+  <!-- Year Labels -->
+  <text x="75" y="590" font-size="12">2010</text>
+  <text x="175" y="590" font-size="12">2013</text>
+  <text x="275" y="590" font-size="12">2016</text>
+  <text x="375" y="590" font-size="12">2019</text>
+  <text x="475" y="590" font-size="12">2022</text>
+
+  <!-- Legend -->
+  <g>
+    <rect x="600" y="200" width="15" height="15" fill="#008080" />
+    <text x="620" y="210" font-size="12">Agriculture</text>
+
+    <rect x="600" y="250" width="15" height="15" fill="#ffa500" />
+    <text x="620" y="260" font-size="12">Industry</text>
+
+    <rect x="600" y="300" width="15" height="15" fill="#90ee90" />
+    <text x="620" y="310" font-size="12">Services</text>
+
+    <rect x="600" y="350" width="15" height="15" fill="#4682b4" />
+    <text x="620" y="360" font-size="12">Technology</text>
+
+    <rect x="600" y="400" width="15" height="15" fill="#00008b" />
+    <text x="620" y="410" font-size="12">Finance</text>
+  </g>
+</svg>

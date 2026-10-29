@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Base layout -->
+  <rect width="80" height="60" x="10" y="20" fill="#fff" stroke="#000" stroke-width="2"/>
+  
+  <!-- Transistor elements -->
+  <path d="M15,40h70v20H15V40" fill="none" stroke="#000" stroke-width="2"/>
+  <circle cx="15" cy="40" r="2" fill="black"/>
+  <circle cx="95" cy="40" r="2" fill="black"/>
+  <circle cx="50" cy="60" r="2" fill="black"/>
+  
+  <!-- Parasitic transistor -->
+  <path d="M50,40l-10,10m10,-10L60,50" stroke="red" stroke-width="2"/>
+  
+  <!-- Labels -->
+  <text x="10" y="25" font-family="Arial" font-size="10">Эмиттер</text>
+  <text x="90" y="25" font-family="Arial" font-size="10">Коллектор</text>
+  <text x="50" y="70" font-family="Arial" font-size="10">Затвор</text>
+  <text x="30" y="35" font-family="Arial" font-size="10">Сопротивление дрейфовой области</text>
+  <text x="70" y="35" font-family="Arial" font-size="10">Сопротивление подложки</text>
+  <text x="50" y="45" font-family="Arial" font-size="10">паразитный транзистор</text>
+</svg>

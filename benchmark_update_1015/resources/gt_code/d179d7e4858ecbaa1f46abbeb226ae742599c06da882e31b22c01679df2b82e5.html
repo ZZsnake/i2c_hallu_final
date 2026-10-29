@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Annual Rainfall Trends in Major Cities</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .chart-title {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: bold;
+      color: #12203a;
+      text-align: center;
+      font-size: 22px;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0; background: #fff;">
+  <div class="chart-title">Annual Rainfall in Major Cities (2016-2022)</div>
+  <div id="container" style="height: calc(100% - 46px);"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        show: false
+      },
+      grid: {
+        left: 60,
+        right: 30,
+        top: 40,
+        bottom: 50
+      },
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: '#222b45',
+        borderColor: '#184c80',
+        borderWidth: 1,
+        textStyle: {
+          color: '#fff',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+        axisLine: {
+          lineStyle: {
+            color: '#222b45',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#12203a',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 600,
+          fontSize: 15
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Rainfall (mm)',
+        nameTextStyle: {
+          color: '#184c80',
+          fontWeight: 'bold',
+          fontSize: 15,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222b45',
+            width: 2
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#d0d5df',
+            type: 'dashed'
+          }
+        },
+        axisLabel: {
+          color: '#184c80',
+          fontWeight: 500,
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontSize: 14
+        }
+      },
+      legend: {
+        data: ['London', 'Cairo'],
+        top: 0,
+        right: 16,
+        textStyle: {
+          color: '#15457b',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      series: [
+        {
+          name: 'London',
+          data: [690, 720, 755, 680, 765, 810, 785],
+          type: 'line',
+          smooth: true,
+          symbol: 'circle',
+          symbolSize: 8,
+          lineStyle: {
+            color: '#2061e8',
+            width: 4
+          },
+          itemStyle: {
+            color: '#2061e8',
+            borderColor: '#13306b',
+            borderWidth: 2
+          },
+          areaStyle: {
+            color: 'rgba(32, 97, 232, 0.10)'
+          }
+        },
+        {
+          name: 'Cairo',
+          data: [22, 25, 20, 24, 28, 30, 27],
+          type: 'line',
+          smooth: true,
+          symbol: 'diamond',
+          symbolSize: 7,
+          lineStyle: {
+            color: '#e84623',
+            width: 4
+          },
+          itemStyle: {
+            color: '#e84623',
+            borderColor: '#7e1d0e',
+            borderWidth: 2
+          },
+          areaStyle: {
+            color: 'rgba(232, 70, 35, 0.10)'
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

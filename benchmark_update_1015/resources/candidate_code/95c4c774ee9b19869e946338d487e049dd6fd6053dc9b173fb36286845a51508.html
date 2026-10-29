@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Geometry: Circle and Tangent Line</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff; /* Ensure white background */
+        }
+        #chart-container {
+            width: 800px; /* Adjust as needed */
+            height: 600px; /* Adjust as needed */
+            /* border: 1px solid #ccc; /* For debugging layout */
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container"></div>
+
+    <script>
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('chart-container'));
+
+            // Generate circle data (r=4 for all angles)
+            const circleData = [];
+            for (let i = 0; i <= 360; i += 1) {
+                circleData.push([4, i]); // [radius, angle]
+            }
+
+            var option = {
+                title: {
+                    text: 'Analytical Geometry: Circle and Tangent Line',
+                    left: 'center',
+                    top: '10px',
+                    textStyle: {
+                        fontSize: 16,
+                        fontWeight: 'normal'
+                    }
+                },
+                legend: {
+                    data: [
+                        { name: 'Circle: r = 4', icon: 'circle' },
+                        { name: 'Tangent Line', icon: 'arrow' }
+                    ],
+                    top: '40px',
+                    left: 'center',
+                    itemGap: 20,
+                    textStyle: {
+                        fontSize: 12
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function(params) {
+                        if (params.seriesName === 'Circle: r = 4') {
+                            return `Radius: ${params.value[0].toFixed(2)}<br/>Angle: ${params.value[1].toFixed(0)}°`;
+                        }
+                        return params.seriesName;
+                    }
+                },
+                // Polar coordinate system
+                polar: {
+                    center: ['50%', '55%'], // Adjust center slightly down to make space for title/legend
+                    radius: '70%' // Adjust radius to fit within container
+                },
+                radiusAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 4,
+                    interval: 1,
+                    axisLabel: {
+                        formatter: function(value) {
+                            // Only show 0, 1, 3 as per image
+                            if (value === 0 || value === 1 || value === 3) {
+                                return value;
+                            }
+                            return '';
+                        },
+                        color: '#333'
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#333' // Darker line for the main axis
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#eee' // Light gray grid lines
+                        }
+                    }
+                },
+                angleAxis: {
+                    type: 'value',
+                    startAngle: 0,
+                    min: 0,
+                    max: 360,
+                    interval: 30,
+                    axisLabel: {
+                        formatter: '{value}',
+                        color: '#333'
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#333'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#eee'
+                        }
+                    }
+                },
+                // Cartesian grid for the tangent line (to align with polar x-axis)
+                grid: {
+                    left: '15%', // Adjust to align with polar grid's effective x-range
+                    right: '15%',
+                    top: '15%',
+                    bottom: '15%',
+                    containLabel: false // Important to prevent labels from affecting grid size
+                },
+                xAxis: {
+                    type: 'value',
+                    min: -4,
+                    max: 4,
+                    show: false // Hide Cartesian x-axis, polar radius axis serves as x-axis
+                },
+                yAxis: {
+                    type: 'value',
+                    min: -4,
+                    max: 4,
+                    show: false // Hide Cartesian y-axis
+                },
+                series: [
+                    {
+                        name: 'Circle: r = 4',
+                        type: 'line',
+                        coordinateSystem: 'polar',
+                        data: circleData,
+                        symbol: 'circle',
+                        symbolSize: 5,
+                        lineStyle: {
+                            color: '#2a6099', // Dark blue
+                            width: 2
+                        },
+                        itemStyle: {
+                            color: '#2a6099' // Dark blue for markers
+                        },
+                        animation: false // No animation for static plot
+                    },
+                    {
+                        name: 'Tangent Line',
+                        type: 'line', // Use line type for markLine
+                        data: [], // No data for this series, only markLine
+                        markLine: {
+                            silent: true, // Do not trigger tooltip or highlight
+                            symbol: ['none', 'arrow'], // No symbol at start, arrow at end
+                            symbolSize: 8,
+                            lineStyle: {
+                                type: 'dashed',
+                                color: '#c23531', // Red
+                                width: 2
+                            },
+                            data: [
+                                {
+                                    xAxis: 4, // Vertical line at x=4
+                                    yAxis: -4, // Start from bottom of Cartesian grid
+                                    lineStyle: {
+                                        type: 'dashed',
+                                        color: '#c23531',
+                                        width: 2
+                                    },
+                                    symbol: 'none'
+                                },
+                                {
+                                    xAxis: 4,
+                                    yAxis: 4, // End at top of Cartesian grid
+                                    lineStyle: {
+                                        type: 'dashed',
+                                        color: '#c23531',
+                                        width: 2
+                                    },
+                                    symbol: 'arrow'
+                                }
+                            ]
+                        },
+                        // To make the markLine appear on the Cartesian grid, we need to explicitly link it.
+                        // However, markLine on a series defaults to the series's coordinate system.
+                        // If we want it on a different grid, we need to specify `xAxisIndex` and `yAxisIndex`.
+                        // Since we have only one Cartesian grid, it will use that.
+                        xAxisIndex: 0, // Refers to the first (and only) xAxis in the `grid`
+                        yAxisIndex: 0  // Refers to the first (and only) yAxis in the `grid`
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            // Adjust grid position dynamically to align with polar chart
+            // This is a bit tricky as polar radius is not directly x/y.
+            // The polar chart's radius 4 corresponds to x=4, y=4, etc.
+            // We need to ensure the Cartesian grid's x/y range of -4 to 4 aligns with the polar chart's extent.
+            // The `grid` options `left`, `right`, `top`, `bottom` are relative to the chart container.
+            // The `polar` options `center` and `radius` are also relative.
+            // Let's calculate the pixel extent of the polar chart.
+            // A radius of '70%' means 70% of the min(width, height) of the chart container.
+            // If chart-container is 800x600, min is 600. Radius is 0.7 * 300 = 210px.
+            // So the polar chart spans 210px in each direction from its center.
+            // The center is ['50%', '55%'].
+            // Let's assume chart-container is 800x600.
+            // Center X = 800 * 0.5 = 400px
+            // Center Y = 600 * 0.55 = 330px
+            // Polar extent: X from 400-210=190 to 400+210=610. Y from 330-210=120 to 330+210=540.
+            // The Cartesian grid needs to map -4 to 4 across this range.
+            // So, the Cartesian grid's `left` should be 190px, `right` should be 800-610=190px.
+            // `top` should be 120px, `bottom` should be 600-540=60px.
+            // This is complex to do with percentage values directly.
+            // Let's try to use `containLabel: true` for the Cartesian grid and adjust `left/right/top/bottom`
+            // to match the visual extent of the polar chart.
+            // For now, the current `grid` settings are a reasonable guess.
+            // The image shows the tangent line extending slightly beyond the circle's top/bottom.
+            // The `markLine` data points `yAxis: -4` and `yAxis: 4` ensure it spans the full Cartesian range.
+        });
+    </script>
+</body>
+</html>

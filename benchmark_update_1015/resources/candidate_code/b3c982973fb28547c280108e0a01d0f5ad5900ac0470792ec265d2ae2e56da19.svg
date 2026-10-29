@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <rect x="0" y="0" width="500" height="500" fill="white" />
+  <path d="M50,450 L450,450" stroke="black" stroke-width="2" />
+  <path d="M50,50 L50,450" stroke="black" stroke-width="2" />
+  <text x="470" y="460" font-family="Arial" font-size="14" text-anchor="end">পরমিণ</text>
+  <text x="30" y="250" font-family="Arial" font-size="14" writing-mode="tb" text-anchor="middle">দাম</text>
+  <path d="M50,450 C150,350 350,150 450,50" stroke="yellow" stroke-width="2" />
+  <path d="M50,50 C150,150 350,350 450,450" stroke="red" stroke-width="2" />
+  <text x="470" y="30" font-family="Arial" font-size="14" text-anchor="end">যোগান রেখা</text>
+  <text x="470" y="420" font-family="Arial" font-size="14" text-anchor="end">চাহিদা রেখা</text>
+  <circle cx="250" cy="250" r="5" fill="green" />
+  <text x="270" y="240" font-family="Arial" font-size="14" text-anchor="start">সাম্যাবস্থা</text>
+  <path d="M250,50 L250,450" stroke="black" stroke-width="2" stroke-dasharray="5,5" />
+  <path d="M50,450 L250,250" stroke="pink" stroke-width="20" stroke-linecap="round" />
+  <path d="M50,450 L250,250" stroke="yellow" stroke-width="20" stroke-linecap="round" />
+  <text x="150" y="300" font-family="Arial" font-size="14" text-anchor="middle" fill="pink">উপভোক্তা উদ্ভূত্ত</text>
+  <text x="150" y="350" font-family="Arial" font-size="14" text-anchor="middle" fill="yellow">উৎপাদক উদ্ভূত্ত</text>
+</svg>

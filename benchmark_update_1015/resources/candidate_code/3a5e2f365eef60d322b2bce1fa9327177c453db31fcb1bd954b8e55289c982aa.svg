@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Background -->
+  <rect x="0" y="0" width="500" height="500" fill="white"/>
+
+  <!-- Definitions -->
+  <defs>
+    <!-- Arrowhead marker -->
+    <marker id="axisArrow" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#25408f"/>
+    </marker>
+  </defs>
+
+  <!-- Axes (dashed L-shape) -->
+  <!-- Horizontal axis -->
+  <path d="M60,440 L440,440"
+        fill="none"
+        stroke="#25408f"
+        stroke-width="2.5"
+        stroke-dasharray="4 2"
+        marker-end="url(#axisArrow)"/>
+  <!-- Vertical axis -->
+  <path d="M440,440 L440,60"
+        fill="none"
+        stroke="#25408f"
+        stroke-width="2.5"
+        stroke-dasharray="4 2"
+        marker-end="url(#axisArrow)"/>
+
+  <!-- Perfect equity line (origin to 100%,100%) -->
+  <path d="M60,440 L440,60"
+        fill="none"
+        stroke="#25408f"
+        stroke-width="2.5"
+        stroke-dasharray="4 2"/>
+
+  <!-- Actual wealth curve (smooth concave-up curve from origin to (440,60)) -->
+  <!-- Using a cubic Bezier that bows downward then rises -->
+  <path id="wealthCurveOutline"
+        d="M60,440 C160,430 310,360 380,250 S440,120 440,60"
+        fill="none"
+        stroke="#006fb8"
+        stroke-width="2.5"
+        stroke-dasharray="2 3"/>
+
+  <!-- Filled regions -->
+  <!-- Lower green region (Market) between curve and axes -->
+  <path d="M60,440
+           C160,430 310,360 380,250
+           S440,120 440,60
+           L440,440 Z"
+        fill="#43b97f"
+        fill-opacity="1"/>
+
+  <!-- Upper teal region (Distribution) between equity line and curve -->
+  <path d="M60,440
+           L440,60
+           C440,120 450,140 380,250
+           C310,360 160,430 60,440 Z"
+        fill="#8ad2c6"
+        fill-opacity="1"/>
+
+  <!-- Axis labels -->
+  <path id="wealthCurveOverlay"
+        d="M60,440 C160,430 310,360 380,250 S440,120 440,60"
+        fill="none"
+        stroke="#25408f"
+        stroke-width="2.5"
+        stroke-dasharray="4 2"/>
+  <text x="250" y="475"
+        font-family="sans-serif"
+        font-size="16"
+        text-anchor="middle"
+        fill="#222">
+    Cumulative % of population (by wealth)
+  </text>
+
+  <text x="470" y="250"
+        font-family="sans-serif"
+        font-size="16"
+        text-anchor="middle"
+        fill="#222"
+        transform="rotate(-90 470 250)">
+    Cumulative % of total wealth
+  </text>
+
+  <!-- 100% labels at arrowheads -->
+  <text x="440" y="460"
+        font-family="sans-serif"
+        font-size="14"
+        text-anchor="end"
+        fill="#222">
+    100%
+  </text>
+
+  <text x="455" y="75"
+        font-family="sans-serif"
+        font-size="14"
+        text-anchor="middle"
+        fill="#222"
+        transform="rotate(-90 455 75)">
+    100%
+  </text>
+
+  <!-- Region labels -->
+  <text x="375" y="150"
+        font-family="sans-serif"
+        font-size="22"
+        font-weight="bold"
+        text-anchor="middle"
+        fill="#222">
+    Distribution
+  </text>
+
+  <text x="380" y="360"
+        font-family="sans-serif"
+        font-size="22"
+        font-weight="bold"
+        text-anchor="middle"
+        fill="#222">
+    Market
+  </text>
+
+  <!-- Perfect equity line label -->
+  <text x="230" y="240"
+        font-family="sans-serif"
+        font-size="14"
+        text-anchor="middle"
+        fill="#222"
+        transform="rotate(-45 230 240)">
+    Perfect equity line
+  </text>
+
+  <!-- Actual wealth curve label -->
+  <text x="305" y="315"
+        font-family="sans-serif"
+        font-size="14"
+        text-anchor="middle"
+        fill="#222"
+        transform="rotate(-52 305 315)">
+    Actual wealth curve
+  </text>
+</svg>

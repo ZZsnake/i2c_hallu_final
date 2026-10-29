@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg" font-size="35" font-family="Montserrat, Arial, sans-serif" text-anchor="middle" fill="#222">
+<rect width="1200" height="675" fill="#f8f8f8"/>
+<rect width="1050" height="544" x="100" y="50" fill="#f4f6fc"/>
+<path stroke="#2b2b56" stroke-width="2" stroke-dasharray="8,6" d="
+M90,50 h10
+M90,118 h1060
+M90,186 h1060
+M90,254 h1060
+M90,322 h1060
+M90,390 h1060
+M90,458 h1060
+M90,526 h1060
+M90,594 h10
+"/>
+<g transform="translate(50,0)" fill="#1766b4">
+<text y="266">$8B</text>
+<text y="606">0</text>
+</g>
+<g transform="translate(0,650)">
+<text x="110">1985</text>
+<text x="320">1995</text>
+<text x="530">2005</text>
+<text x="740">2015</text>
+<text x="950">2025</text>
+</g>
+<path fill="#1766b4" d="
+M102,594 v-140 h17 v140
+M123,594 v-182 h17 v182
+M144,594 v-207 h17 v207
+M165,594 v-261 h17 v261
+M186,594 v-299 h17 v299
+M207,594 v-324 h17 v324
+M228,594 v-376 h17 v376
+M249,594 v-390 h17 v390
+M270,594 v-412 h17 v412
+M291,594 v-440 h17 v440
+M312,594 v-466 h17 v466
+M333,594 v-459 h17 v459
+M354,594 v-445 h17 v445
+M375,594 v-417 h17 v417
+M396,594 v-382 h17 v382
+M417,594 v-355 h17 v355
+M438,594 v-325 h17 v325
+M459,594 v-290 h17 v290
+M480,594 v-260 h17 v260
+M501,594 v-230 h17 v230
+M522,594 v-210 h17 v210
+M543,594 v-189 h17 v189
+M564,594 v-170 h17 v170
+M585,594 v-155 h17 v155
+M606,594 v-142 h17 v142
+M627,594 v-132 h17 v132
+M648,594 v-123 h17 v123
+M669,594 v-115 h17 v115
+M690,594 v-108 h17 v108
+M711,594 v-102 h17 v102
+M732,594 v-97 h17 v97
+M753,594 v-93 h17 v93
+M774,594 v-90 h17 v90
+M795,594 v-88 h17 v88
+M816,594 v-87 h17 v87
+M837,594 v-87 h17 v87
+M858,594 v-89 h17 v89
+M879,594 v-91 h17 v91
+M900,594 v-94 h17 v94
+M921,594 v-98 h17 v98
+M942,594 v-103 h17 v103
+M963,594 v-110 h17 v110
+M984,594 v-118 h17 v118
+M1005,594 v-127 h17 v127
+M1026,594 v-137 h17 v137
+M1047,594 v-148 h17 v148
+"/>
+<path fill="#2b2b56" stroke="none" transform="translate(0,598)" d="
+M102,0 h17 l-8.5,7
+M207,0 h17 l-8.5,7
+M312,0 h17 l-8.5,7
+M417,0 h17 l-8.5,7
+M522,0 h17 l-8.5,7
+M627,0 h17 l-8.5,7
+M732,0 h17 l-8.5,7
+M837,0 h17 l-8.5,7
+M942,0 h17 l-8.5,7
+M1047,0 h17 l-8.5,7
+"/>
+<g transform="translate(120,102)" text-anchor="start">
+<text font-size="48" fill="#222">Annual GDP Growth Rates</text>
+<text y="65" font-size="38" fill="#1766b4">United States</text>
+</g>
+<text transform="translate(60,425) rotate(-90)" font-size="27" fill="#222">Inflation Adjusted</text>
+<text transform="translate(967,453) rotate(-90)" text-anchor="start" font-size="18" fill="#e32b2b">Recession</text>
+<rect width="1050" height="544" x="100" y="50" stroke="#2b2b56" stroke-width="2" fill="none"/>
+</svg>

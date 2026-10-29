@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 658.23999 516.38599" width="658.23999" height="516.38599">
+  <!-- Axes -->
+  <line x1="332.11657" y1="473.25267" x2="332.11657" y2="39.985569" stroke="#222222" stroke-dasharray="6 4" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="22.354539" y1="257.41912" x2="642.33377" y2="257.41912" stroke="#222222" stroke-dasharray="6 4" stroke-width="2.5" stroke-linecap="square"/>
+  <text x="344" y="54" font-size="20" fill="#1a1a1a" font-family="Roboto,Arial">y</text>
+  <text x="640" y="272" font-size="20" fill="#1a1a1a" font-family="Roboto,Arial">x</text>
+
+  <!-- Ellipse (dashed green) -->
+  <ellipse cx="332" cy="258.44312" rx="310" ry="216" fill="none" stroke="#005e28" stroke-dasharray="14 6" stroke-width="4"/>
+
+  <!-- Parabola (solid green) -->
+  <path d="M83.006798,257.40682 Q332,80 577.44443,257.29047" fill="none" stroke="#105800" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="8 3"/>
+
+  <!-- Equation label -->
+  <text x="350" y="140" font-size="22" fill="#b8001c" font-family="Roboto,Arial" font-weight="bold">y = ax² + bx + c</text>
+
+  <!-- Segment AB (dashed red) -->
+  <line x1="96" y1="257" x2="564" y2="257" stroke="#b8001c" stroke-dasharray="5 3" stroke-width="2"/>
+
+  <!-- Points A, B, C -->
+  <circle cx="83" cy="257" r="13" fill="#004aad" stroke="#222222" stroke-width="2"/>
+  <circle cx="577" cy="257" r="13" fill="#004aad" stroke="#222222" stroke-width="2"/>
+  <circle cx="420" cy="462" r="13" fill="#004aad" stroke="#222222" stroke-width="2"/>
+  <text x="65" y="245" font-size="24" fill="#1a1a1a" font-family="Roboto,Arial" font-weight="bold">A</text>
+  <text x="588" y="245" font-size="24" fill="#1a1a1a" font-family="Roboto,Arial" font-weight="bold">B</text>
+  <text x="426" y="480" font-size="24" fill="#1a1a1a" font-family="Roboto,Arial" font-weight="bold">C</text>
+
+  <!-- Midpoint M -->
+  <circle cx="332" cy="257" r="7" fill="#ffa500" stroke="#222222" stroke-width="1.5"/>
+  <text x="340" y="250" font-size="17" fill="#ffa500" font-family="Roboto,Arial">M</text>
+
+  <!-- Segment AB label -->
+  <text x="320" y="240" font-size="18" fill="#b8001c" font-family="Roboto,Arial">|AB|</text>
+
+  <!-- Triangle ABC (dashed red) -->
+  <line x1="83.006798" y1="257.40682" x2="420.46263" y2="462.81566" stroke="#b8001c" stroke-dasharray="12 6" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="577.44443" y1="257.29047" x2="420.46263" y2="462.81566" stroke="#b8001c" stroke-dasharray="12 6" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

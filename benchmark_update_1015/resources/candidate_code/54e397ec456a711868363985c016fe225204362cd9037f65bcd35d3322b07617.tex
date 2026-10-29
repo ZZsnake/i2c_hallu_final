@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{patterns}
+\usetikzlibrary{math}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: toroidal-polyhedron.tex
+% Description: 
+% A geometric representation of toroidal-polyhedron is shown.
+% 
+% Date of creation: July, 06th, 2021.
+% Date of last modification: October, 9th, 2022.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: page 351 of the 
+% Glosario Ilustrado de Matem\'aticas Escolares.
+% https://tinyurl.com/5udm2ufy
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+	%
+	\tdplotsetmaincoords{35}{115}
+	%
+	\begin{tikzpicture}[tdplot_main_coords,scale=0.85]
+	\pgfmathsetmacro{\rInt}{2.5}	% inner radius
+	\pgfmathsetmacro{\rExt}{4.0}	% outer radius
+	\pgfmathsetmacro{\r}{0.5*(\rInt+\rExt)}
+	\pgfmathsetmacro{\h}{0.5*(\rExt-\rInt)}
+	\pgfmathsetmacro{\n}{5}	% number of pseudovertices of the toroidal polyhedron
+	\pgfmathsetmacro{\anguloi}{30}
+	\pgfmathsetmacro{\angulo}{360.0/\n}
+	\pgfmathsetmacro{\criterio}{int(0.5*\n)}
+	\pgfmathsetmacro{\pxn}{\r*cos(0.5*\anguloi)}
+	\pgfmathsetmacro{\pyn}{\r*sin(0.5*\anguloi)}		
+	% Coordinates of the vertices
+	\foreach \vertexIndex in {1,2,...,\n}{
+		\pgfmathsetmacro{\pxi}{\rInt*cos((\angulo)*\vertexIndex+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\rInt*sin((\angulo)*\vertexIndex+\anguloi)}
+		\coordinate (A\vertexIndex) at (\pxi,\pyi,0);
+		\pgfmathsetmacro{\pxi}{\rExt*cos((\angulo)*\vertexIndex+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\rExt*sin((\angulo)*\vertexIndex+\anguloi)}
+		\coordinate (C\vertexIndex) at (\pxi,\pyi,0);
+		\pgfmathsetmacro{\pxi}{\r*cos((\angulo)*\vertexIndex+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\r*sin((\angulo)*\vertexIndex+\anguloi)}
+		\coordinate (B\vertexIndex) at (\pxi,\pyi,\h);
+		\coordinate (D\vertexIndex) at (\pxi,\pyi,-\h);
+	}
+	% The toroidal polyhedron
+	\foreach \vertexIndex in {1,2,...,\n}{
+		\pgfmathsetmacro{\nextVertex}{\vertexIndex+1}
+		\ifthenelse{\vertexIndex<\n}{
+			\draw[help lines] (A\vertexIndex) -- (B\vertexIndex) -- (B\nextVertex) -- (A\nextVertex) -- (A\vertexIndex);
+			\draw[help lines] (B\vertexIndex) -- (C\vertexIndex) -- (C\nextVertex) -- (B\nextVertex) -- (B\vertexIndex);
+			\draw[help lines] (C\vertexIndex) -- (D\vertexIndex) -- (D\nextVertex) -- (C\nextVertex) -- (C\vertexIndex);
+			\draw[help lines] (A\vertexIndex) -- (D\vertexIndex) -- (D\nextVertex) -- (A\nextVertex) -- (A\vertexIndex);
+		}{ % la última cara
+			\draw[help lines] (A\vertexIndex) -- (B\vertexIndex) -- (B1) -- (A1) -- (A\vertexIndex);
+			\draw[help lines] (B\vertexIndex) -- (C\vertexIndex) -- (C1) -- (B1) -- (B\vertexIndex);
+			\draw[help lines] (C\vertexIndex) -- (D\vertexIndex) -- (D1) -- (C1) -- (C\vertexIndex);
+			\draw[help lines] (A\vertexIndex) -- (D\vertexIndex) -- (D1) -- (A1) -- (A\vertexIndex);
+		}
+	}
+	% bottom faces (back)
+	\draw[red,thick,fill=blue!35,opacity=0.75]  (A1) -- (D1) -- (D2) -- (A2) -- (A1);
+	\draw[red,thick,fill=brown!35,opacity=0.75]  (A2) -- (D2) -- (D3) -- (A3) -- (A2);
+	\draw[red,thick,fill=violet!35,opacity=0.75]  (A3) -- (D3) -- (D4) -- (A4) -- (A3);
+	\draw[red,thick,fill=magenta!35,opacity=0.75]  (A4) -- (D4) -- (D5) -- (A5) -- (A4);
+	\draw[red,thick,fill=brown!35,opacity=0.75]  (A5) -- (D5) -- (D1) -- (A1) -- (A5);		
+	% external faces (back)
+	\draw[red,thick,fill=red!35,opacity=0.75]  (D1) -- (C1) -- (C2) -- (D2) -- (D1);
+	\draw[red,thick,fill=magenta!35,opacity=0.75]  (D2) -- (C2) -- (C3) -- (D3) -- (D2);
+	\draw[red,thick,fill=brown!35,opacity=0.75]  (D3) -- (C3) -- (C4) -- (D4) -- (D3);
+	% internal faces (front)
+	\draw[red,thick,fill=orange!35,opacity=0.75]  (A1) -- (B1) -- (B5) -- (A5) -- (A1);
+	\draw[red,thick,fill=red!35,opacity=0.75]  (A1) -- (B1) -- (B2) -- (A2) -- (A1);
+	\draw[red,thick,fill=red!35,opacity=0.75]  (A2) -- (B2) -- (B3) -- (A3) -- (A2);
+	\draw[red,thick,fill=blue!35,opacity=0.75]  (A3) -- (B3) -- (B4) -- (A4) -- (A3);
+	\draw[red,thick,fill=green!35,opacity=0.75]  (A5) -- (B5) -- (B4) -- (A4) -- (A5);
+	% external faces (front)
+	\draw[red,thick,fill=teal!35,opacity=0.75]  (D1) -- (C1) -- (C5) -- (D5) -- (D1);
+	\draw[red,thick,fill=orange!35,opacity=0.75]  (D5) -- (C5) -- (C4) -- (D4) -- (D5);
+	% top faces
+	\draw[red,thick,fill=blue!35,opacity=0.75]  (B1) -- (C1) -- (C2) -- (B2) -- (B1);
+	\draw[red,thick,fill=red!35,opacity=0.75]  (B2) -- (C2) -- (C3) -- (B3) -- (B2);
+	\draw[red,thick,fill=teal!35,opacity=0.75]  (B3) -- (C3) -- (C4) -- (B4) -- (B3);
+	\draw[red,thick,fill=teal!35,opacity=0.75]  (B4) -- (C4) -- (C5) -- (B5) -- (B4);
+	\draw[red,thick,fill=purple!35,opacity=0.75]  (B5) -- (C5) -- (C1) -- (B1) -- (B5);
+	%
+	\end{tikzpicture}
+	%
+\end{document}

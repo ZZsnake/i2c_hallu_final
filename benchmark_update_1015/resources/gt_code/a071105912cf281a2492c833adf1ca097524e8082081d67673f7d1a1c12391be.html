@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Other Dataset Pie Chart Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-legend-item {
+      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      color: #222 !important;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    var option = {
+      title: [
+        {
+          text: 'Survey Responses (Group A)',
+          left: '15%',
+          top: '10%',
+          textStyle: {
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 18,
+            color: '#2b2b2b'
+          }
+        },
+        {
+          text: 'Survey Responses (Group B)',
+          left: '65%',
+          top: '10%',
+          textStyle: {
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 18,
+            color: '#2b2b2b'
+          }
+        },
+        {
+          text: 'Survey Responses (Group C)',
+          left: '15%',
+          top: '59%',
+          textStyle: {
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 18,
+            color: '#2b2b2b'
+          }
+        },
+        {
+          text: 'Survey Responses (Group D)',
+          left: '65%',
+          top: '59%',
+          textStyle: {
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 18,
+            color: '#2b2b2b'
+          }
+        }
+      ],
+      legend: {
+        orient: 'vertical',
+        left: 'center',
+        top: 'middle',
+        textStyle: {
+          fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 15,
+          color: '#222'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {c} ({d}%)'
+      },
+      dataset: {
+        source: [
+          ['Category', 'Group A', 'Group B', 'Group C', 'Group D'],
+          ['Agree', 33, 21, 17, 27],
+          ['Neutral', 12, 28, 24, 19],
+          ['Disagree', 15, 11, 22, 14],
+          ['No Response', 8, 10, 6, 9]
+        ]
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['28%', '44%'],
+          center: ['25%', '30%'],
+          label: {
+            color: '#232323',
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14,
+            lineHeight: 18
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 3
+          },
+          color: ['#0052CC', '#FF5630', '#36B37E', '#FFC400'],
+          encode: {
+            itemName: 'Category',
+            value: 'Group A'
+          }
+        },
+        {
+          type: 'pie',
+          radius: ['28%', '44%'],
+          center: ['75%', '30%'],
+          label: {
+            color: '#232323',
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14,
+            lineHeight: 18
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 3
+          },
+          color: ['#006644', '#6554C0', '#E24800', '#008DA6'],
+          encode: {
+            itemName: 'Category',
+            value: 'Group B'
+          }
+        },
+        {
+          type: 'pie',
+          radius: ['28%', '44%'],
+          center: ['25%', '75%'],
+          label: {
+            color: '#232323',
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14,
+            lineHeight: 18
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 3
+          },
+          color: ['#3B444B', '#D7263D', '#1B998B', '#F46036'],
+          encode: {
+            itemName: 'Category',
+            value: 'Group C'
+          }
+        },
+        {
+          type: 'pie',
+          radius: ['28%', '44%'],
+          center: ['75%', '75%'],
+          label: {
+            color: '#232323',
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14,
+            lineHeight: 18
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 3
+          },
+          color: ['#29335C', '#F3A712', '#33658A', '#86BBD8'],
+          encode: {
+            itemName: 'Category',
+            value: 'Group D'
+          }
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg width="200" height="180" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Universal Set Label W -->
+  <text x="5" y="15" font-family="sans-serif" font-size="16" fill="#e6ee9c" font-weight="bold">W</text>
+  
+  <!-- Universal Set Rectangle -->
+  <rect x="15" y="15" width="170" height="150" rx="10" ry="10" fill="#f9a1a1" stroke="#8d6e63" stroke-width="2" />
+  
+  <!-- Set G Circle -->
+  <circle cx="65" cy="110" r="45" fill="#d0e1f9" stroke="#90caf9" stroke-width="4" />
+  
+  <!-- Set T Circle (with transparency to show overlap) -->
+  <circle cx="115" cy="80" r="53" fill="rgba(225, 190, 231, 0.7)" stroke="#e91e63" stroke-width="3" />
+  
+  <!-- Labels for Sets -->
+  <text x="22" y="75" font-family="sans-serif" font-size="18" fill="#90caf9" font-weight="bold">G</text>
+  <text x="165" y="45" font-family="sans-serif" font-size="18" fill="#e91e63" font-weight="bold">T</text>
+  
+  <!-- Region Labels -->
+  <text x="50" y="115" font-family="sans-serif" font-size="24" fill="black">a</text>
+  <text x="85" y="95" font-family="sans-serif" font-size="24" fill="black">b</text>
+  <text x="125" y="80" font-family="sans-serif" font-size="24" fill="black">c</text>
+  <text x="50" y="45" font-family="sans-serif" font-size="24" fill="black">d</text>
+</svg>

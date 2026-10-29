@@ -1,0 +1,71 @@
+<svg width="600" height="450" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            text {
+                font-family: sans-serif;
+                font-size: 16px;
+                fill: #333;
+            }
+            .axis-label {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .curve-label {
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .surplus-label {
+                font-size: 16px;
+                font-weight: bold;
+                text-anchor: middle;
+            }
+            .equilibrium-label {
+                font-size: 16px;
+                font-weight: bold;
+                text-anchor: middle;
+            }
+        </style>
+    </defs>
+
+    <!-- Axes -->
+    <line x1="80" y1="400" x2="550" y2="400" stroke="black" stroke-width="1.5"/> <!-- X-axis -->
+    <line x1="80" y1="400" x2="80" y2="50" stroke="black" stroke-width="1.5"/> <!-- Y-axis -->
+
+    <!-- Axis Arrows -->
+    <polygon points="550,400 540,395 540,405" fill="black"/>
+    <polygon points="80,50 75,60 85,60" fill="black"/>
+
+    <!-- Axis Labels -->
+    <text x="550" y="425" text-anchor="end" class="axis-label">পরিমাণ</text>
+    <text x="300" y="425" text-anchor="middle" class="axis-label">সমান পরিমাণ</text>
+    <text x="45" y="50" text-anchor="middle" class="axis-label" transform="rotate(-90 45 50)">দাম</text>
+    <text x="45" y="220" text-anchor="middle" class="axis-label" transform="rotate(-90 45 220)">বাজার দর</text>
+
+    <!-- Demand Curve (চাহিদা রেখা) -->
+    <path d="M80 100 C 150 50, 250 100, 350 250 C 400 320, 450 360, 500 390" fill="none" stroke="#A00000" stroke-width="2"/>
+    <text x="450" y="300" class="curve-label" fill="#A00000">চাহিদা</text>
+    <text x="450" y="320" class="curve-label" fill="#A00000">রেখা</text>
+
+    <!-- Supply Curve (যোগান রেখা) -->
+    <path d="M80 380 C 150 350, 250 300, 350 250 C 400 220, 450 180, 500 150" fill="none" stroke="#CCCC00" stroke-width="2"/>
+    <text x="450" y="100" class="curve-label" fill="#CCCC00">যোগান রেখা</text>
+
+    <!-- Equilibrium Point -->
+    <circle cx="350" cy="250" r="5" fill="#008000"/>
+    <text x="350" y="235" text-anchor="middle" class="equilibrium-label" fill="#008000">সাম্যাবস্থা</text>
+
+    <!-- Dashed lines from Equilibrium -->
+    <line x1="350" y1="250" x2="350" y2="400" stroke="black" stroke-dasharray="5,5"/>
+    <line x1="80" y1="250" x2="350" y2="250" stroke="black" stroke-dasharray="5,5"/>
+
+    <!-- Consumer Surplus (উপভোক্তা উদ্বৃত্ত) - Red shaded area -->
+    <path d="M80 100 C 150 50, 250 100, 350 250 L 80 250 Z" fill="#FFCCCC" stroke="none"/>
+    <text x="200" y="150" class="surplus-label" fill="#A00000">উপভোক্তা</text>
+    <text x="200" y="175" class="surplus-label" fill="#A00000">উদ্বৃত্ত</text>
+
+    <!-- Producer Surplus (উৎপাদক উদ্বৃত্ত) - Yellow shaded area -->
+    <path d="M80 380 C 150 350, 250 300, 350 250 L 80 250 Z" fill="#FFFFCC" stroke="none"/>
+    <text x="200" y="300" class="surplus-label" fill="#CCCC00">উৎপাদক</text>
+    <text x="200" y="325" class="surplus-label" fill="#CCCC00">উদ্বৃত্ত</text>
+
+</svg>

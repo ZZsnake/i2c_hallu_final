@@ -1,0 +1,39 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC, positioning}
+
+\begin{document}
+\begin{tikzpicture}[circuit ee IEC, small circuit symbols, every info/.style={font=\footnotesize}, set resistor graphic=var resistor IEC graphic]
+
+    % Title
+    \node[align=center] at (5, 8) {Programmable \\ Gain Amplifier for \\ Audio Component Testing};
+
+    % Op-Amp
+    \draw (2, 3) node[op amp, minimum width=2cm, name=opamp] {};
+    
+    % Input and Output Labels
+    \node[left] at (0, 3) {Input};
+    \node[right] at (8, 3) {Output};
+    
+    % Resistors
+    \draw (0, 3) to[resistor, l=$R_1$] (2, 3);
+    \draw (opamp.-) -- ++(0, -1) to[resistor, l=$R_2$, name=R2] (opamp.out |- R2.south);
+    \draw (opamp.out |- R2.south) to[resistor, l=$R_3$, name=R3] (opamp.out |- R3.south);
+    \draw (opamp.out |- R3.south) to[resistor, l=$R_4$, name=R4] (6, 1);
+
+    % Switches
+    \draw (R2.south) to[switch, l=$S_1$] (R2.south |- 6, 2);
+    \draw (R3.south) to[switch, l=$S_2$] (R3.south |- 6, 1.5);
+    \draw (R4.south) to[switch, l=$S_3$] (R4.south |- 6, 1);
+
+    % Microcontroller
+    \draw[dashed] (7, 0) rectangle (9, 4) node[midway] {Microcontroller};
+    \draw[dashed] (7.5, 2) -- (6, 2);
+    \draw[dashed] (7.5, 1.5) -- (6, 1.5);
+    \draw[dashed] (7.5, 1) -- (6, 1);
+
+    % Annotations
+    \node[below] at (8, 0) {S1, S2, S3: Digital control switches};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc, 3d}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.8, >=Stealth, thick]
+
+% Define coordinates for components
+\coordinate (Laser) at (0,0);
+\coordinate (Polarizer) at (3,0);
+\coordinate (Analyser) at (7,0);
+\coordinate (Screen) at (11,0);
+
+% Laser
+\draw[fill=gray!30] (Laser) ++(-0.5,-0.5) rectangle ++(1,1);
+\node[anchor=east] at (Laser) {Laser He-Ne};
+
+% Unpolarized light from laser
+\draw[red, thick] (Laser) ++(0.5,0) -- ++(1,0) coordinate (LightStart);
+\foreach \i in {0,45,...,315} {
+    \draw[red, thick, ->] (LightStart) ++(0.5,0) -- ++(\i:0.5);
+}
+
+% Polarizer
+\draw[fill=gray!30] (Polarizer) ++(-0.5,-0.5) rectangle ++(1,1);
+\draw[fill=white] (Polarizer) ++(0,0) circle (0.4);
+\draw[dashed] (Polarizer) ++(0,0.4) -- ++(0,-0.8);
+\draw[thick] (Polarizer) ++(-0.4,0) -- ++(0.8,0);
+\draw[thick, ->] (Polarizer) ++(0.4,0) arc (0:90:0.4) node[midway, right] {$\theta_\pi$};
+\node[anchor=south] at (Polarizer) {Polarizer};
+
+% Polarized light after polarizer
+\draw[black, thick] (LightStart) ++(1,0) -- ++(2,0) coordinate (AfterPolarizer);
+\foreach \i in {0,180} {
+    \draw[red, thick, ->] (AfterPolarizer) ++(0.5,0) -- ++(0,0.5);
+    \draw[red, thick, ->] (AfterPolarizer) ++(0.5,0) -- ++(0,-0.5);
+}
+\node[anchor=south] at (AfterPolarizer) {$I_1$};
+
+% Analyzer
+\draw[fill=gray!30] (Analyser) ++(-0.5,-0.5) rectangle ++(1,1);
+\draw[fill=white] (Analyser) ++(0,0) circle (0.4);
+\draw[dashed] (Analyser) ++(0,0.4) -- ++(0,-0.8);
+\draw[thick] (Analyser) ++(0.4,0) -- ++(-0.8,0);
+\draw[thick, ->] (Analyser) ++(0.4,0) arc (0:135:0.4) node[midway, right] {$\theta_\alpha$};
+\node[anchor=south] at (Analyser) {Analyser};
+
+% Polarized light after analyzer
+\draw[black, thick] (AfterPolarizer) ++(2,0) -- ++(2,0) coordinate (AfterAnalyser);
+\foreach \i in {0,180} {
+    \draw[red, thick, ->] (AfterAnalyser) ++(0.5,0) -- ++(45:0.5);
+    \draw[red, thick, ->] (AfterAnalyser) ++(0.5,0) -- ++(225:0.5);
+}
+\node[anchor=south] at (AfterAnalyser) {$I_0$};
+
+% Viewing Screen
+\draw[fill=gray!30] (Screen) ++(-0.5,-0.5) rectangle ++(1,1);
+\draw[dashed] (Screen) ++(0.5,0.4) -- ++(0,-0.8);
+\draw[thick, ->] (Screen) ++(0.5,0.4) -- ++(45:0.5);
+\node[anchor=south] at (Screen) {Viewing Screen};
+
+% Labels
+\node[anchor=north] at (Polarizer) {Polarization Plane of Polarizer};
+\node[anchor=north] at (Analyser) {Polarization Plane of Analyser};
+\node[anchor=west] at (Screen) {Polarization Direction};
+
+% Intensity labels
+\node[anchor=east] at (LightStart) {$I_2$};
+
+% Additional arrows for polarization direction
+\draw[thick, ->] (Screen) ++(0.5,0.4) -- ++(1,0.5) node[anchor=west] {Polarization Direction};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+  <!-- Left starburst -->
+  <g id="left-star">
+    <circle cx="15" cy="60" r="3" fill="#d946ef"/>
+    <line x1="15" y1="60" x2="5" y2="50" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="5" y2="55" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="5" y2="60" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="5" y2="65" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="5" y2="70" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="10" y2="47" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="10" y2="73" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="8" y2="52" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="15" y1="60" x2="8" y2="68" stroke="#d946ef" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Right starburst -->
+  <g id="right-star">
+    <circle cx="185" cy="60" r="3" fill="#d946ef"/>
+    <line x1="185" y1="60" x2="195" y2="50" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="195" y2="55" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="195" y2="60" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="195" y2="65" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="195" y2="70" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="190" y2="47" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="190" y2="73" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="192" y2="52" stroke="#d946ef" stroke-width="1.5"/>
+    <line x1="185" y1="60" x2="192" y2="68" stroke="#d946ef" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Radiating lines from left to right -->
+  <line x1="15" y1="60" x2="185" y2="60" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="50" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="70" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="45" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="75" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="40" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="80" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="35" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="85" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="55" stroke="#a0826d" stroke-width="0.8"/>
+  <line x1="15" y1="60" x2="185" y2="65" stroke="#a0826d" stroke-width="0.8"/>
+  
+  <!-- Central dots -->
+  <circle cx="90" cy="50" r="3.5" fill="#4a7ba7"/>
+  <circle cx="100" cy="55" r="3.5" fill="#4a7ba7"/>
+  <circle cx="100" cy="65" r="3.5" fill="#4a7ba7"/>
+  <circle cx="110" cy="70" r="3.5" fill="#4a7ba7"/>
+  
+  <!-- Top curved arrows (left to right) -->
+  <path d="M 20 15 Q 35 12 50 15" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 70 12 Q 85 10 100 12" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 115 12 Q 130 10 145 12" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 150 15 Q 165 12 180 15" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Bottom curved arrows (right to left) -->
+  <path d="M 180 105 Q 165 108 150 105" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 145 108 Q 130 110 115 108" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 100 108 Q 85 110 70 108" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 50 105 Q 35 108 20 105" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Left curved arrow -->
+  <path d="M 10 25 Q 5 35 10 45" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 10 75 Q 5 85 10 95" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Right curved arrow -->
+  <path d="M 190 45 Q 195 35 190 25" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 190 95 Q 195 85 190 75" stroke="#6b7c93" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

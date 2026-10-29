@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Process Funnel Diagram</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+      color: #1a1a1a;
+      margin: 0;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        text: 'Task Completion Funnel',
+        left: 'center',
+        top: 18,
+        textStyle: {
+          color: '#1a1a1a',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+          fontSize: 22
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a}<br/>{b}: {c}%'
+      },
+      toolbox: {
+        feature: {
+          dataView: { readOnly: false },
+          restore: {},
+          saveAsImage: {}
+        }
+      },
+      legend: {
+        data: ['Start', 'Progress', 'Review', 'Complete', 'Archive'],
+        top: 48,
+        textStyle: {
+          color: '#2c2c2c',
+          fontFamily: 'Segoe UI, Verdana, Arial, sans-serif',
+          fontWeight: 'bold'
+        }
+      },
+      series: [
+        {
+          name: 'Stages',
+          type: 'funnel',
+          left: '12%',
+          top: 80,
+          bottom: 60,
+          width: '76%',
+          min: 0,
+          max: 100,
+          minSize: '0%',
+          maxSize: '100%',
+          sort: 'descending',
+          gap: 6,
+          label: {
+            show: true,
+            position: 'inside',
+            color: '#222',
+            fontSize: 15,
+            fontWeight: 'bold',
+            fontFamily: 'Segoe UI, Verdana, Arial, sans-serif'
+          },
+          labelLine: {
+            length: 16,
+            lineStyle: {
+              width: 3,
+              type: 'solid',
+              color: '#363636'
+            }
+          },
+          itemStyle: {
+            borderColor: '#222',
+            borderWidth: 2,
+            color: function(params) {
+              var colorList = ['#2863c6', '#23a37b', '#d93d43', '#f6b622', '#7e4bd9'];
+              return colorList[params.dataIndex];
+            }
+          },
+          emphasis: {
+            label: {
+              fontSize: 20,
+              color: '#1a1a1a',
+              fontWeight: 'bold'
+            }
+          },
+          data: [
+            { value: 95, name: 'Start' },
+            { value: 80, name: 'Progress' },
+            { value: 60, name: 'Review' },
+            { value: 35, name: 'Complete' },
+            { value: 15, name: 'Archive' }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

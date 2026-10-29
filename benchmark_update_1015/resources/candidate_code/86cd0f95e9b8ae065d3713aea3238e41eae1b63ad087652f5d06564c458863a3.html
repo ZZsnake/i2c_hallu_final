@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number of Math Problems Solved by Grade</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #chart-container {
+            width: 900px; /* Adjusted width to better match the original aspect ratio */
+            height: 600px; /* Adjusted height */
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #main-chart {
+            width: 100%;
+            height: calc(100% - 50px); /* Allocate space for title and legend */
+        }
+        .chart-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .legend-color-box {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            border: 1px solid #ccc; /* Add a subtle border for clarity */
+        }
+        .legend-color-box.algebra {
+            background-color: #2a60b2; /* Matching blue */
+        }
+        .legend-color-box.geometry {
+            background-color: #d93a3a; /* Matching red */
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container">
+        <div class="chart-title">Number of Math Problems Solved by Grade</div>
+        <div class="chart-legend">
+            <div class="legend-item">
+                <div class="legend-color-box algebra"></div>
+                <span>Algebra</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box geometry"></div>
+                <span>Geometry</span>
+            </div>
+        </div>
+        <div id="main-chart"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('main-chart'));
+
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    show: false // Custom legend is used above
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01],
+                    axisLabel: {
+                        formatter: '{value}'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#e0e0e0' // Light gray grid lines
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['Grade 6', 'Grade 7', 'Grade 8', 'Grade 9', 'Grade 10'],
+                    axisLabel: {
+                        interval: 0 // Ensure all labels are shown
+                    },
+                    axisTick: {
+                        show: false // Hide y-axis ticks
+                    },
+                    axisLine: {
+                        show: false // Hide y-axis line
+                    },
+                    splitLine: {
+                        show: true, // Show horizontal grid lines
+                        lineStyle: {
+                            color: '#e0e0e0' // Light gray grid lines
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Algebra',
+                        type: 'bar',
+                        data: [120, 200, 250, 300, 400], // Approximate values from image
+                        itemStyle: {
+                            color: '#2a60b2' // Blue color for Algebra
+                        }
+                    },
+                    {
+                        name: 'Geometry',
+                        type: 'bar',
+                        data: [70, 160, 220, 280, 360], // Approximate values from image
+                        itemStyle: {
+                            color: '#d93a3a' // Red color for Geometry
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            // Make chart responsive
+            $(window).on('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

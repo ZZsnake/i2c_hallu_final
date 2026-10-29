@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Progress Gauge</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-gauge-title {
+      font-family: 'Trebuchet MS', Arial, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222244;
+    }
+    .echarts-gauge-detail {
+      font-family: 'Trebuchet MS', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #184a59;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      tooltip: {
+        formatter: '{a} <br/>{b} : {c}'
+      },
+      series: [
+        {
+          name: 'Completion',
+          type: 'gauge',
+          min: 0,
+          max: 100,
+          axisLine: {
+            lineStyle: {
+              width: 18,
+              color: [
+                [0.3, '#3366cc'],
+                [0.7, '#43a047'],
+                [1, '#e53935']
+              ]
+            }
+          },
+          progress: {
+            show: true,
+            width: 12,
+            itemStyle: {
+              color: '#184a59'
+            }
+          },
+          pointer: {
+            width: 7,
+            length: '60%',
+            itemStyle: {
+              color: '#222244'
+            }
+          },
+          title: {
+            show: true,
+            fontSize: 20,
+            fontWeight: 'bold',
+            color: '#222244',
+            fontFamily: 'Trebuchet MS, Arial, sans-serif',
+            offsetCenter: [0, '-40%'],
+            text: 'Algebra Mastery'
+          },
+          detail: {
+            valueAnimation: true,
+            fontSize: 18,
+            fontWeight: 'bold',
+            color: '#184a59',
+            fontFamily: 'Trebuchet MS, Arial, sans-serif',
+            offsetCenter: [0, '50%'],
+            formatter: '{value}%',
+          },
+          data: [
+            {
+              value: 72,
+              name: 'Progress'
+            }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

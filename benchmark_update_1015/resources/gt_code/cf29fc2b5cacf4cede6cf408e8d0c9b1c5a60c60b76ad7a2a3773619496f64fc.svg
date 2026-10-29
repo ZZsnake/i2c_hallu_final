@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg">
+
+<rect width="1200" height="675" stroke="none" fill="#f8f8f8"/>
+<rect width="825" height="525" x="300" y="50" stroke="#1d3557" stroke-width="2" fill="white"/>
+
+<g font-size="40px" font-family="Montserrat, Arial, sans-serif" text-anchor="middle" fill="#22223b">
+  <g fill="#0077b6" transform="translate(775,370)">
+    <text x="0" y="0">Global GDP Growth</text>
+    <text x="0" y="50">by Region</text>
+    <text x="0" y="100">Annual Average (2010-2020)</text>
+    <text x="0" y="140" font-size="25">(selected economies)</text>
+  </g>
+
+  <text fill="#0077b6" x="718.5" y="665">Percent (%)</text>
+
+  <g transform="translate(-5,620)">
+    <text x="306">0%</text>
+    <text x="512.25">2%</text>
+    <text x="718.5">4%</text>
+    <text x="924.75">6%</text>
+    <text x="1131">8%</text>
+  </g>
+
+  <path stroke="#2a2a2a" stroke-width="1.5" stroke-dasharray="4,4" d="
+    M300,50 v535
+    M341.25,50 v535
+    M382.5,50 v535
+    M423.75,50 v535
+    M465,50 v535
+    M506.25,50 v535
+    M547.5,50 v535
+    M588.75,50 v535
+    M630,50 v535
+    M671.25,50 v535
+    M712.5,50 v535
+    M753.75,50 v535
+    M795,50 v535
+    M836.25,50 v535
+    M877.5,50 v535
+    M918.75,50 v535
+    M960,50 v535
+    M1001.25,50 v535
+    M1042.5,50 v535
+    M1083.75,50 v535
+    M1125,50 v535
+  "/>
+
+  <g font-size="35" font-family="Montserrat, Arial, sans-serif" transform="translate(150,0)">
+    <text y="126.58">North America</text>
+    <text y="166.96">East Asia</text>
+    <text y="207.35">EU</text>
+    <text y="247.73">South Asia</text>
+    <text y="288.12">Latin America</text>
+    <text y="328.5">Africa</text>
+    <text y="368.88">Middle East</text>
+    <text y="409.27">Oceania</text>
+    <text y="449.65">Eastern Europe</text>
+    <text y="490.04">Southeast Asia</text>
+    <text y="530.42">Central Asia</text>
+  </g>
+
+  <path fill="#0077b6" d="
+    M300,94.423 h690 v32.631 h-690 z
+    M300,134.808 h775 v32.631 h-775 z
+    M300,175.192 h510 v32.631 h-510 z
+    M300,215.577 h620 v32.631 h-620 z
+    M300,255.962 h420 v32.631 h-420 z
+    M300,296.346 h360 v32.631 h-360 z
+    M300,336.731 h260 v32.631 h-260 z
+    M300,377.115 h310 v32.631 h-310 z
+    M300,417.5 h200 v32.631 h-200 z
+    M300,457.885 h275 v32.631 h-275 z
+    M300,498.269 h150 v32.631 h-150 z
+  "/>
+</g>
+</svg>

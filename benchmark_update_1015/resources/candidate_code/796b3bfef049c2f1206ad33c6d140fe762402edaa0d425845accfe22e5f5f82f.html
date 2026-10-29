@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Distribution of Math Exam Scores</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333333;
+    }
+    .container {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+    }
+    .chart-title {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    .chart-panel {
+      position: relative;
+      height: 1000px;
+      overflow: hidden;
+    }
+    .chart-container {
+      height: 100%;
+      overflow: hidden;
+    }
+    .legend-box {
+      position: absolute;
+      left: 10%;
+      bottom: 24px;
+      padding: 5px 6px;
+      border: 2px solid #333333;
+      font-size: 0.8em;
+      display: inline-block;
+      background-color: #ffffff;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chart-title">Distribution of Math Exam Scores</div>
+    <div class="chart-panel">
+      <div id="main" class="chart-container"></div>
+      <div class="legend-box">Boxplot: Q3 + 1.5×IQR (upper), Q1 - 1.5×IQR (lower)</div>
+    </div>
+  </div>
+
+  <script>
+    // Define mock data for the boxplots based on visual inspection
+    const data = [
+      [74, 84.5, 88.5, 92.3, 98], // Class 0: min, Q1, median, Q3, max
+      [72, 78, 81.5, 84.3, 90], // Class 1
+      [90, 92.7, 94.5, 97, 99], // Class 2
+      [68, 72, 74, 76, 79], // Class 3
+      [82, 86, 87.5, 89, 91]  // Class 4
+    ];
+
+    // Initialize ECharts instance
+    const myChart = echarts.init(document.getElementById('main'));
+
+    // Set chart options
+    const option = {
+      tooltip: {
+        trigger: 'axis',
+        formatter: function(params) {
+          const item = params[0];
+          return `Class ${item.name}:<br/>Min: ${item.data[0]}<br/>Q1: ${item.data[1]}<br/>Median: ${item.data[2]}<br/>Q3: ${item.data[3]}<br/>Max: ${item.data[4]}`;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Class 0', 'Class 1', 'Class 2', 'Class 3', 'Class 4'],
+        axisLabel: {
+          color: '#333333',
+          fontSize: 14,
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#0b6fe8',
+            width: 3
+          }
+        },
+        axisTick: {
+          show: true,
+          alignWithLabel: true,
+          lineStyle: {
+            color: '#0b6fe8',
+            width: 1
+          }
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Score (out of 100)',
+        min: 0,
+        max: 100,
+        interval: 20,
+        nameTextStyle: {
+          color: '#333333',
+          fontSize: 14,
+          fontWeight: 'bold',
+          align: 'left'
+        },
+        axisLabel: {
+          color: '#333333',
+          fontSize: 14,
+          fontWeight: 'bold'
+        },
+        splitArea: {
+          show: true,
+          areaStyle: {
+            color: ['#ffffff', '#f4f7fc']
+          }
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'solid',
+            color: '#d8e1ef',
+            width: 1
+          }
+        },
+        axisLine: {
+          show: false,
+          lineStyle: {
+            color: '#0b6fe8',
+            width: 3
+          }
+        }
+      },
+      series: [{
+        name: 'Scores',
+        type: 'boxplot',
+        data: data,
+        itemStyle: {
+          color: '#12a8e8',
+        boxWidth: [20, 40],
+          borderColor: '#1b2a8f',
+          borderWidth: 2
+        },
+        emphasis: {
+          itemStyle: {
+            color: '#12a8e8',
+            borderColor: '#1b2a8f',
+            borderWidth: 2
+          }
+        }
+      }],
+      grid: {
+        left: '10%',
+        right: '10%',
+        top: 31,
+        bottom: '11%'
+      },
+      color: ['#12a8e8']
+    };
+
+    // Render the chart
+    myChart.setOption(option);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      myChart.resize();
+    });
+  </script>
+</body>
+</html>

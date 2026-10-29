@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="227mm" height="231mm" version="1.1" viewBox="0 0 227 231">
+ <rect fill="#fff" width="227" height="231"/>
+ <g stroke="#008000" stroke-linejoin="round">
+  <path fill="#cceeff" d="m160 60 10 150m-120-150h110l10-22m-153 170h150l36-36-36-130-32-17-42 7-48 31z"/>
+  <path fill="none" stroke-dasharray="6" stroke-width="2" d="m115 148 93 24m-173 10 80-36 38-129m-124 184l16-25 72-152"/>
+ </g>
+ <g fill="#1a1a1a" font-family="Arial" font-size="21px" font-style="normal">
+  <text x="6" y="226">V</text>
+  <text x="30" y="192">r</text>
+  <text x="154" y="221">h</text>
+  <text x="205" y="175">S</text>
+  <text x="102" y="149">P</text>
+  <text x="40" y="70">O</text>
+  <text x="98" y="33">Q</text>
+  <text x="140" y="27">M</text>
+  <text x="170" y="46">N</text>
+  <text x="161" y="76">T</text>
+  <g stroke="#008000">
+   <circle cx="14" cy="206" r="2.5"/>
+   <circle cx="164" cy="203" r="2.5"/>
+   <circle cx="202" cy="167" r="2.5"/>
+   <circle cx="115" cy="148" r="2.5"/>
+   <circle cx="30" cy="178" r="2.5"/>
+   <circle cx="56" cy="60" r="2.5"/>
+   <circle cx="160" cy="60" r="2.5"/>
+   <circle cx="109" cy="33" r="2.5"/>
+   <circle cx="147" cy="30" r="2.5"/>
+   <circle cx="165" cy="41" r="2.5"/>
+  </g>
+ </g>
+</svg>

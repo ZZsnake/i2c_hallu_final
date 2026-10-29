@@ -1,0 +1,28 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{lightgreen}{RGB}{144,238,144}
+\definecolor{lightblue}{RGB}{173,216,230}
+
+\begin{document}
+\begin{tabular}{>{\columncolor{lightgreen}}l S[table-format=1.1] S[table-format=-2.0]}
+\toprule
+\rowcolor{darkgreen}
+\textcolor{white}{\textbf{Region}} & {\textcolor{white}{\textbf{Temp. Increase (\si{\celsius})}}} & {\textcolor{white}{\textbf{Yield Variation (\%)}}} \\
+\midrule
+Midwestern United States & 1.5 & -10 \\
+Punjab, India & 1.2 & -5 \\
+Western Europe & 0.9 & -3 \\
+Brazilian Cerrado & 2.0 & -15 \\
+Southeast Asia & 1.8 & -12 \\
+East Africa & 1.1 & -8 \\
+\bottomrule
+\multicolumn{3}{>{\columncolor{lightblue}}c}{\textcolor{darkgreen}{\textbf{Correlation Analysis: Temperature Changes and Agricultural Yield}}} \\
+\end{tabular}
+\end{document}

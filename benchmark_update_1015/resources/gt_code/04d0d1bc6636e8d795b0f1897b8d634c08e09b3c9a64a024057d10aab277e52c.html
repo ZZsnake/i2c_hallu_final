@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Mathematics Radar Chart Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial Black', Arial, sans-serif;
+      color: #222;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // --- New Math Radar Chart Sample ---
+    option = {
+      title: {
+        text: 'Math Skills Radar Comparison',
+        left: 'center',
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 22,
+          fontFamily: 'Arial Black'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: '#fff',
+        borderColor: '#222',
+        borderWidth: 2,
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Arial Black'
+        }
+      },
+      legend: {
+        left: 'center',
+        top: 40,
+        itemGap: 30,
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16,
+          fontFamily: 'Arial Black'
+        },
+        data: [
+          'Student Alpha',
+          'Student Beta',
+          'Student Gamma',
+          'Quiz Scores',
+          'Homework Scores'
+        ]
+      },
+      radar: [
+        {
+          indicator: [
+            { text: 'Algebra', max: 100 },
+            { text: 'Geometry', max: 100 },
+            { text: 'Calculus', max: 100 },
+            { text: 'Statistics', max: 100 }
+          ],
+          center: ['25%', '40%'],
+          radius: 85,
+          axisName: {
+            color: '#1a237e',
+            fontWeight: 'bold',
+            fontSize: 15,
+            fontFamily: 'Arial Black'
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#1976d2',
+              width: 3
+            }
+          },
+          splitArea: {
+            areaStyle: {
+              opacity: 0
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#1976d2',
+              width: 2
+            }
+          }
+        },
+        {
+          indicator: [
+            { text: 'Number Theory', max: 100 },
+            { text: 'Combinatorics', max: 100 },
+            { text: 'Logic', max: 100 },
+            { text: 'Probability', max: 100 },
+            { text: 'Discrete Math', max: 100 }
+          ],
+          center: ['50%', '65%'],
+          radius: 85,
+          axisName: {
+            color: '#c62828',
+            fontWeight: 'bold',
+            fontSize: 15,
+            fontFamily: 'Arial Black'
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#c62828',
+              width: 3
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#c62828',
+              width: 2
+            }
+          }
+        },
+        {
+          indicator: (function () {
+            var topics = [
+              'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6',
+              'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'
+            ];
+            var res = [];
+            for (var i = 0; i < topics.length; i++) {
+              res.push({ text: topics[i], max: 100 });
+            }
+            return res;
+          })(),
+          center: ['75%', '40%'],
+          radius: 85,
+          axisName: {
+            color: '#00695c',
+            fontWeight: 'bold',
+            fontSize: 15,
+            fontFamily: 'Arial Black'
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#00695c',
+              width: 3
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#00695c',
+              width: 2
+            }
+          }
+        }
+      ],
+      series: [
+        {
+          type: 'radar',
+          areaStyle: {
+            color: 'rgba(25, 118, 210, 0.35)'
+          },
+          lineStyle: {
+            color: '#1976d2',
+            width: 4
+          },
+          symbol: 'circle',
+          symbolSize: 10,
+          itemStyle: {
+            color: '#1976d2',
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          data: [
+            {
+              value: [82, 73, 67, 91],
+              name: 'Student Alpha'
+            }
+          ]
+        },
+        {
+          type: 'radar',
+          radarIndex: 1,
+          areaStyle: {
+            color: 'rgba(198, 40, 40, 0.35)'
+          },
+          lineStyle: {
+            width: 4,
+            color: '#c62828'
+          },
+          symbol: 'diamond',
+          symbolSize: 10,
+          itemStyle: {
+            color: '#c62828',
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          data: [
+            {
+              value: [68, 75, 90, 86, 78],
+              name: 'Student Beta'
+            },
+            {
+              value: [95, 85, 80, 92, 88],
+              name: 'Student Gamma'
+            }
+          ]
+        },
+        {
+          type: 'radar',
+          radarIndex: 2,
+          areaStyle: {
+            color: 'rgba(0, 105, 92, 0.35)'
+          },
+          lineStyle: {
+            color: '#00695c',
+            width: 4
+          },
+          symbol: 'triangle',
+          symbolSize: 10,
+          itemStyle: {
+            color: '#00695c',
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          data: [
+            {
+              name: 'Quiz Scores',
+              value: [80, 85, 78, 90, 87, 92, 88, 91, 84, 89, 85, 93]
+            },
+            {
+              name: 'Homework Scores',
+              value: [75, 80, 82, 88, 90, 91, 89, 90, 85, 87, 88, 92]
+            }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

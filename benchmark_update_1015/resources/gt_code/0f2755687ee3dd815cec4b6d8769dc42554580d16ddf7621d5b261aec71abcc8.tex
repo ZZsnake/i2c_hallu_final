@@ -1,0 +1,31 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+
+\definecolor{lightblue}{RGB}{230,240,255}
+\definecolor{lightgreen}{RGB}{220,255,220}
+
+\begin{document}
+
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.8cm}S[table-format=2.0]S[table-format=5.0]S[table-format=1.1]S[table-format=1.1]p{3cm}}
+\toprule
+\rowcolor{lightblue}
+\textbf{Region} & {\textbf{Pollution Index}} & {\textbf{Bird Population}} & {\textbf{Fish Health}} & {\textbf{Mammal Reproduction}} & \textbf{Major Pollutants} \\
+\midrule
+Great Lakes Basin, USA & 75 & 25000 & 3.2 & 1.7 & PCBs, mercury, heavy metals \\
+\rowcolor{lightgreen}
+Yangtze River, China & 85 & 12000 & 2.5 & 1.2 & Heavy metals, plastic waste, chemical runoff \\
+Amazon Rainforest, Brazil & 60 & 50000 & 4.0 & 2.5 & Deforestation, agricultural runoff, oil spills \\
+\rowcolor{lightgreen}
+Iberian Peninsula, Spain & 70 & 18000 & 3.0 & 1.8 & Pesticides, heavy metals, industrial waste \\
+Northern Sea, Norway & 50 & 30000 & 4.5 & 2.0 & Oil spills, plastic debris, marine chemicals \\
+\rowcolor{lightgreen}
+Ganges River, India & 90 & 8000 & 1.8 & 1.0 & Sewage, heavy metals, chemical runoff \\
+\bottomrule
+\end{tabular}
+
+\end{document}

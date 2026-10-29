@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Problems Solved by Grade</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff;
+        }
+        #chart {
+            width: 100vw;
+            height: 1080px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+
+    <script>
+        $(document).ready(function() {
+            var chartDom = document.getElementById('chart');
+            var myChart = echarts.init(chartDom);
+
+            var option = {
+                title: {
+                    text: 'Number of Math Problems Solved by Grade',
+                    left: 'center',
+                    top: 10,
+                    textStyle: {
+                        fontSize: 22,
+                        fontWeight: 'bold',
+                        fontFamily: 'serif'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['Algebra', 'Geometry'],
+                    top: 40,
+                    left: 'center',
+                    itemWidth: 20,
+                    itemHeight: 10,
+                    textStyle: {
+                        fontSize: 16,
+                        fontWeight: 'bold',
+                        fontFamily: 'serif'
+                    }
+                },
+                grid: {
+                    left: '15%',
+                    right: '10%',
+                    bottom: '10%',
+                    top: '80'
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01],
+                    min: 0,
+                    max: 500,
+                    interval: 100,
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#dfe6f2',
+                            type: 'solid'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 14,
+                        fontWeight: 'bold',
+                        fontFamily: 'serif'
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['Grade 6', 'Grade 7', 'Grade 8', 'Grade 9', 'Grade 10'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 14,
+                        fontWeight: 'bold',
+                        fontFamily: 'serif'
+                    }
+                },
+                series: [
+                    {
+                        name: 'Algebra',
+                        type: 'bar',
+                        data: [120, 200, 250, 300, 400],
+                        itemStyle: {
+                            color: '#0056b3'
+                        },
+                        barWidth: 24
+                    },
+                    {
+                        name: 'Geometry',
+                        type: 'bar',
+                        data: [80, 160, 220, 280, 350],
+                        itemStyle: {
+                            color: '#e53935'
+                        },
+                        barWidth: 24
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            window.addEventListener('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\begin{document}
+\begin{tikzpicture}
+    \tikzset{
+        header/.style={fill=blue!60!black,text=white,font=\bfseries\LARGE,align=center,minimum height=1.05cm,inner xsep=6pt,inner ysep=3pt},
+        bodygray/.style={fill=gray!15,text=white,font=\Large,align=center,minimum height=0.55cm,inner xsep=6pt,inner ysep=3pt},
+        bodyorange/.style={fill=orange,text=white,font=\Large,align=center,minimum height=0.55cm,inner xsep=6pt,inner ysep=3pt},
+        firstgray/.style={bodygray,align=left},
+        firstorange/.style={bodyorange,align=left}
+    }
+
+    \matrix (m) [
+        matrix of nodes,
+        row sep=0pt,
+        column sep=0pt,
+        column 1/.style={nodes={minimum width=4.2cm}},
+        column 2/.style={nodes={minimum width=2.85cm}},
+        column 3/.style={nodes={minimum width=4.55cm}},
+        column 4/.style={nodes={minimum width=4.85cm}},
+        column 5/.style={nodes={minimum width=2.8cm}},
+        column 6/.style={nodes={minimum width=1.6cm}},
+        column 7/.style={nodes={minimum width=3.5cm}},
+        column 8/.style={nodes={minimum width=3.15cm}}
+    ] {
+        |[header,align=left]| Investment Bank & |[header]| \shortstack{ESG Score\\(0-100)} & |[header]| \shortstack{Carbon Neutrality\\Target} & |[header]| \shortstack{Sustainable Finance\\Commitment} & |[header]| \shortstack{D\&I Score\\(0-100)} & |[header]| \shortstack{ROE\\(\%)} & |[header]| \shortstack{Net Income\\(Billion USD)} & |[header]| \shortstack{Share Price\\Growth (\%)} \\
+        |[firstgray]| Goldman Sachs & |[bodygray]| 72 & |[bodygray]| 2030 & |[bodygray]| \$750B by 2030 & |[bodygray]| 85 & |[bodygray]| 11.3 & |[bodygray]| 21.64 & |[bodygray]| 15.2 \\
+        |[firstorange]| JPMorgan Chase & |[bodyorange]| 68 & |[bodyorange]| 2050 & |[bodyorange]| \$2.5T by 2030 & |[bodyorange]| 78 & |[bodyorange]| 13.7 & |[bodyorange]| 36.43 & |[bodyorange]| 18.7 \\
+        |[firstgray]| Morgan Stanley & |[bodygray]| 70 & |[bodygray]| 2022 & |[bodygray]| \$1T by 2030 & |[bodygray]| 82 & |[bodygray]| 10.9 & |[bodygray]| 11.03 & |[bodygray]| 12.8 \\
+        |[firstorange]| Citigroup & |[bodyorange]| 65 & |[bodyorange]| 2050 & |[bodyorange]| \$1T by 2030 & |[bodyorange]| 80 & |[bodyorange]| 9.5 & |[bodyorange]| 14.85 & |[bodyorange]| 8.6 \\
+        |[firstgray]| Bank of America & |[bodygray]| 71 & |[bodygray]| 2050 & |[bodygray]| \$1.5T by 2030 & |[bodygray]| 83 & |[bodygray]| 10.2 & |[bodygray]| 27.53 & |[bodygray]| 14.5 \\
+        |[firstorange]| Barclays & |[bodyorange]| 63 & |[bodyorange]| 2050 & |[bodyorange]| \pounds{}100B by 2030 & |[bodyorange]| 75 & |[bodyorange]| 8.1 & |[bodyorange]| 7.01 & |[bodyorange]| 6.9 \\
+        |[firstgray]| Credit Suisse & |[bodygray]| 59 & |[bodygray]| 2050 & |[bodygray]| CHF 300B by 2030 & |[bodygray]| 72 & |[bodygray]| 4.7 & |[bodygray]| 2.70 & |[bodygray]| -22.4 \\
+    };
+
+    \draw[black,line width=1pt] ([yshift=0.15cm]m-1-1.north west) -- ([yshift=0.15cm]m-1-8.north east);
+    \draw[black,line width=0.9pt] ([yshift=-0.08cm]m-1-1.south west) -- ([yshift=-0.08cm]m-1-8.south east);
+    \draw[black,line width=1pt] ([yshift=-0.10cm]m-8-1.south west) -- ([yshift=-0.10cm]m-8-8.south east);
+\end{tikzpicture}
+\end{document}

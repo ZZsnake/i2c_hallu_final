@@ -1,0 +1,21 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+
+% Axes
+\draw[-Latex] (-0.5, 0) -- (4.5, 0) node[right] {$U$};
+\draw[-Latex] (0, -0.5) -- (0, 3.5) node[above] {$i$};
+
+% Curve
+\draw[domain=0:4, smooth, variable=\x, black]
+    plot ({\x}, {0.1 * exp(\x - 2)});
+
+% Threshold Voltage Line
+\draw[dashed] (2, 0) -- (2, {0.1 * exp(0)});
+\node[below] at (2, 0) {$U_{\text{th}}$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,55 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\def\radi{4cm}    % overall radius
+\def\radii{1cm}   % radius of nodes
+\begin{tikzpicture}[rotate=70, every node/.style={font=\sffamily, text=blue!80!black}]
+    % Node definitions with new economics synonyms
+    \draw[line width=1.2pt, draw=teal!80!black, fill=cyan!10!white]
+        (0:\radi) node {
+            \parbox{1.5\radii}{\centering
+                market assessment
+            }
+        } circle (\radii);
+    \draw[line width=1.2pt, draw=teal!80!black, fill=cyan!10!white]
+        (-60:\radi) node {
+            \parbox{1.5\radii}{\centering
+                objective setting
+            }
+        } circle (\radii);
+    \draw[line width=1.2pt, draw=teal!80!black, fill=cyan!10!white]
+        (-120:\radi) node {
+            \parbox{1.5\radii}{\centering
+                resource allocation
+            }
+        } circle (\radii);
+    \draw[line width=1.2pt, draw=teal!80!black, fill=cyan!10!white]
+        (-180:\radi) node {
+            \parbox{1.5\radii}{\centering
+                strategic planning
+            }
+        } circle (\radii);
+    \draw[line width=1.2pt, draw=teal!80!black, fill=cyan!10!white]
+        (-240:\radi) node {
+            \parbox{1.5\radii}{\centering
+                execution \& monitoring
+            }
+        } circle (\radii);
+    \draw[line width=1.2pt, draw=teal!80!black, fill=cyan!10!white]
+        (-300:\radi) node {
+            \parbox{1.5\radii}{\centering
+                review \& adaptation
+            }
+        } circle (\radii);
+
+    % Arrows and connecting lines
+    \foreach \i in {0,60,...,360}
+    {
+        \draw[-{Stealth[length=5pt]}, ultra thick, draw=blue!60!black] (\i+15:\radi) arc (\i+15:\i+45:\radi);
+        \foreach \ii in {0,60,...,360}
+            \draw[line width=0.8pt, draw=gray!70!black] (\i:\radi-\radii) -- (\ii:\radi-\radii);
+    }
+\end{tikzpicture}
+\end{document}

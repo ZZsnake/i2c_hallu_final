@@ -1,0 +1,35 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+\definecolor{customblue}{RGB}{70,130,180}
+\definecolor{customgray}{RGB}{240,240,240}
+
+\begin{document}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=customgray,
+    colframe=customblue,
+    arc=8pt,
+    boxrule=1.5pt,
+    fontupper=\sffamily\large,
+    width=\textwidth
+]
+A vintage wedding decor rental business conducted a study to analyze the effect of different vintage decor styles on customer satisfaction ratings. They tested four styles: Rustic Farmhouse, Victorian Elegance, Art Deco Glam, and Bohemian Chic. Each style was used in 5 different weddings, and customers rated their satisfaction on a scale from 1 to 10. The following data was collected:
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+Rustic Farmhouse: & 8, 7, 9, 8, 7 \\
+Victorian Elegance: & 9, 8, 10, 9, 8 \\
+Art Deco Glam: & 7, 6, 8, 7, 6 \\
+Bohemian Chic: & 8, 9, 7, 8, 8
+\end{tabular}
+\vspace{0.5em}
+
+Conduct a one-way ANOVA at a significance level of $\alpha = 0.05$ to determine if there is a significant difference in customer satisfaction ratings among the different vintage decor styles. What is the F-statistic for this analysis?
+\end{tcolorbox}
+
+\end{document}

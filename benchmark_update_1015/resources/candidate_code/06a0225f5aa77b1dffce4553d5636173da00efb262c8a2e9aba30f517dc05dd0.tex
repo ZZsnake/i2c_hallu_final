@@ -1,0 +1,49 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, shapes}
+
+\begin{document}
+\begin{tikzpicture}[x=1.5cm, y=1cm, font=\sffamily]
+
+% Define colors
+\definecolor{barblue}{RGB}{0, 0, 200}
+\definecolor{barred}{RGB}{200, 0, 0}
+\definecolor{barturquoise}{RGB}{0, 128, 128}
+\definecolor{barorange}{RGB}{255, 165, 0}
+\definecolor{barmaroon}{RGB}{128, 0, 64}
+\definecolor{axistext}{RGB}{0, 128, 128}
+
+% Draw axes
+\draw[thick, axistext] (0,0) -- (6,0); % x-axis
+\draw[thick, axistext] (0,0) -- (0,5.5); % y-axis
+
+% Draw y-axis ticks and labels
+\foreach \y in {1,2,3,4,5} {
+    \draw[thick, axistext] (-0.1,\y) -- (0,\y) node[left, axistext] {\y};
+}
+
+% Draw bars
+\foreach \x/\label/\height/\color in {
+    1/Agriculture/2.7/barblue,
+    2/Industry/4.5/barred,
+    3/Services/3.6/barturquoise,
+    4/Construction/1.8/barorange,
+    5/Technology/5.0/barmaroon
+} {
+    \fill[\color, draw=black, thick] (\x-0.4,0) rectangle (\x+0.4,\height);
+    \node[above, red, font=\bfseries] at (\x,\height+0.2) {\height};
+    \node[below, rotate=45, blue, font=\bfseries] at (\x,-0.3) {\label};
+}
+
+% Draw x-axis label
+\node[below, axistext, font=\bfseries] at (3,-0.5) {Economic Sector};
+
+% Draw y-axis label
+\node[rotate=90, left, axistext, font=\bfseries] at (-0.7,2.5) {Growth (\%)};
+
+% Title
+\node[above, blue, font=\bfseries\Huge] at (3,5.5) {GDP Growth by Sector};
+\node[above, red, font=\bfseries\Large] at (5.5,5.5) {5.0};
+
+\end{tikzpicture}
+\end{document}

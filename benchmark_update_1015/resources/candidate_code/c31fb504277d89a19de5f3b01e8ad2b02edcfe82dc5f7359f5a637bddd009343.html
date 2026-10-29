@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algebra Test Score Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #chart {
+            width: 100%;
+            height: 600px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Algebra Test Score Distribution</h1>
+    <div id="chart"></div>
+
+    <script>
+        $(function() {
+            var chart = echarts.init(document.getElementById('chart'));
+            
+            var option = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function(params) {
+                        return params.seriesName + '<br/>' +
+                            'Min: ' + params.value[0] + '<br/>' +
+                            'Q1: ' + params.value[1] + '<br/>' +
+                            'Median: ' + params.value[2] + '<br/>' +
+                            'Q3: ' + params.value[3] + '<br/>' +
+                            'Max: ' + params.value[4];
+                    },
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                grid: {
+                    left: '10%',
+                    right: '10%',
+                    bottom: '15%'
+                },
+                xAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 100,
+                    name: 'Score',
+                    nameLocation: 'center',
+                    nameGap: 30,
+                    axisLabel: {
+                        formatter: '{value}'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            type: 'dashed'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['Group 5', 'Group 4', 'Group 3', 'Group 2', 'Group 1'],
+                    axisLabel: {
+                        align: 'right'
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                },
+                series: [{
+                    name: 'Scores',
+                    type: 'boxplot',
+                    data: [
+                        [90, 93, 94, 96, 99],    // Group 5
+                        [75, 79, 83, 85, 91],    // Group 4
+                        [84, 87, 89, 92, 95],    // Group 3
+                        [65, 69, 75, 78, 85],    // Group 2
+                        [78, 85, 90, 95, 100]    // Group 1
+                    ],
+                    itemStyle: {
+                        color: '#1f77b4',
+                        borderColor: '#1f77b4'
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            borderColor: '#000',
+                            borderWidth: 2
+                        }
+                    }
+                }]
+            };
+            
+            chart.setOption(option);
+        });
+    </script>
+</body>
+</html>

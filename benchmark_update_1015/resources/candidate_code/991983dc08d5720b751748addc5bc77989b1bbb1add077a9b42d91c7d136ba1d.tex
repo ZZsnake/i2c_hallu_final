@@ -1,0 +1,56 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\begin{document}
+\begin{tikzpicture}[
+    scale=1.2,
+    dot/.style={circle, fill=blue!80!black, minimum size=8pt, inner sep=0pt},
+    label/.style={font=\Large, blue!20!black}
+]
+
+% Axes
+\draw[-{Stealth[length=3mm]}, line width=1.2pt, teal!70!black] 
+    (0,0) -- (0,7) node[above, font=\Large] {precision};
+\draw[-{Stealth[length=3mm]}, line width=1.2pt, teal!70!black] 
+    (0,0) -- (11,0);
+\node[font=\Large, teal!70!black, align=right] at (10.5,-0.8) {algorithmic\\demand};
+
+% Diagonal dashed line with airplane
+\draw[dashed, line width=1.5pt, brown!70!orange] 
+    (0,0) -- (10.5,6.8);
+\node[font=\Huge, brown!70!orange] at (11,7.2) {✈};
+
+% X-axis labels
+\foreach \i/\x in {1/1, 2/2, 3/3.5, 4/5, 5/6.5, 6/7.5, 7/8.5, 8/10} {
+    \node[below, font=\large] at (\x, -0.1) {$S^{\i}$};
+}
+
+% Data points and labels
+\node[dot] (mf) at (1, 1.2) {};
+\node[label, below right=2pt of mf] {Mean Field};
+
+\node[dot] (dm) at (3.5, 2.8) {};
+\node[label, above left=2pt of dm] {Density Matrix};
+
+\node[dot] (sd) at (5, 3.5) {};
+\node[label, right=4pt of sd] {Slater Determinant};
+
+\node[dot] (vmc) at (4, 4.5) {};
+\node[label, above right=2pt of vmc] {Variational Monte Carlo};
+
+\node[dot] (pt) at (6.5, 4.2) {};
+\node[label, right=4pt of pt] {Perturbation Theory};
+
+\node[dot] (ed) at (7.5, 5.2) {};
+\node[label, below right=2pt of ed] {Exact Diagonalization};
+
+\node[dot] (tn) at (8.5, 6) {};
+\node[label, above right=2pt of tn] {Tensor Network};
+
+% Arrow from Slater Determinant to Mean Field
+\draw[-{Stealth[length=3mm]}, line width=1.8pt, purple!60!black] 
+    (sd) -- (mf);
+
+\end{tikzpicture}
+\end{document}

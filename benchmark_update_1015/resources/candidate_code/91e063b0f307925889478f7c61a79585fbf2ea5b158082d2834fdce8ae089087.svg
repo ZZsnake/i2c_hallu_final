@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 230">
+  <!-- Background -->
+  <rect x="0" y="0" width="260" height="230" fill="white"/>
+
+  <!-- Common styles via groups are not supported in raw XML, so we set per element -->
+
+  <!-- Left lane vertical line -->
+  <line x1="70" y1="25" x2="70" y2="200" stroke="black" stroke-width="1"/>
+
+  <!-- Right lane vertical line -->
+  <line x1="190" y1="25" x2="190" y2="200" stroke="black" stroke-width="1"/>
+
+  <!-- Top CLOSED boxes (dashed) -->
+  <rect x="40" y="10" width="60" height="20" rx="4" ry="4"
+        fill="#ccf7ff" stroke="#00a0c0" stroke-width="1"
+        stroke-dasharray="4 3"/>
+  <text x="70" y="25" font-family="sans-serif" font-size="9" text-anchor="middle">CLOSED</text>
+
+  <rect x="160" y="10" width="60" height="20" rx="4" ry="4"
+        fill="#ccf7ff" stroke="#00a0c0" stroke-width="1"
+        stroke-dasharray="4 3"/>
+  <text x="190" y="25" font-family="sans-serif" font-size="9" text-anchor="middle">CLOSED</text>
+
+  <!-- System call labels under CLOSED -->
+  <text x="70" y="42" font-family="sans-serif" font-size="8" text-anchor="middle">connect(2)</text>
+  <text x="190" y="42" font-family="sans-serif" font-size="8" text-anchor="middle">listen(2)</text>
+
+  <!-- send(2) label on left -->
+  <text x="70" y="65" font-family="sans-serif" font-size="8" text-anchor="middle" fill="black">send(2)</text>
+
+  <!-- syn/ack label on right near top-middle -->
+  <text x="190" y="65" font-family="sans-serif" font-size="8" text-anchor="middle" fill="black">syn/ack</text>
+
+  <!-- SYN-SENT state box (left, turquoise) -->
+  <rect x="40" y="80" width="60" height="20" rx="4" ry="4"
+        fill="#66e0ff" stroke="#0080a0" stroke-width="1"/>
+  <text x="70" y="95" font-family="sans-serif" font-size="9" text-anchor="middle">SYN-SENT</text>
+
+  <!-- LISTEN state box (right, turquoise) -->
+  <rect x="160" y="80" width="60" height="20" rx="4" ry="4"
+        fill="#66e0ff" stroke="#0080a0" stroke-width="1"/>
+  <text x="190" y="95" font-family="sans-serif" font-size="9" text-anchor="middle">LISTEN</text>
+
+  <!-- Central red SYN-SENT label above dashed line -->
+  <text x="130" y="72" font-family="sans-serif" font-size="8" text-anchor="middle" fill="red">SYN-SENT</text>
+
+  <!-- Red dashed connector line between lanes near SYN-SENT -->
+  <line x1="100" y1="75" x2="160" y2="75"
+        stroke="red" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- SYN-RECEIVED state box (left, mid) -->
+  <rect x="40" y="120" width="60" height="20" rx="4" ry="4"
+        fill="#66e0ff" stroke="#0080a0" stroke-width="1"/>
+  <text x="70" y="134" font-family="sans-serif" font-size="9" text-anchor="middle">SYN-RECEIVED</text>
+
+  <!-- Established state boxes (bottom) -->
+  <rect x="40" y="165" width="60" height="20" rx="4" ry="4"
+        fill="#66e0ff" stroke="#0080a0" stroke-width="1"/>
+  <text x="70" y="179" font-family="sans-serif" font-size="9" text-anchor="middle">ESTAB-</text>
+  <text x="70" y="187" font-family="sans-serif" font-size="9" text-anchor="middle">LISHED</text>
+
+  <rect x="160" y="165" width="60" height="20" rx="4" ry="4"
+        fill="#66e0ff" stroke="#0080a0" stroke-width="1"/>
+  <text x="190" y="179" font-family="sans-serif" font-size="9" text-anchor="middle">ESTAB-</text>
+  <text x="190" y="187" font-family="sans-serif" font-size="9" text-anchor="middle">LISHED</text>
+
+  <!-- Red labels and short connectors for ack and syn -->
+
+  <!-- ack from right to left (upper-middle) -->
+  <line x1="180" y1="110" x2="120" y2="110" stroke="red" stroke-width="1"/>
+  <polygon points="120,110 124,108 124,112" fill="red"/>
+  <text x="150" y="105" font-family="sans-serif" font-size="8" text-anchor="middle" fill="red">ack</text>
+
+  <!-- syn from left to right (lower-middle) -->
+  <line x1="80" y1="140" x2="170" y2="140" stroke="red" stroke-width="1"/>
+  <polygon points="170,140 166,138 166,142" fill="red"/>
+  <text x="125" y="135" font-family="sans-serif" font-size="8" text-anchor="middle" fill="red">syn</text>
+
+  <!-- Vertical alignment tweak lines between boxes (small gaps already covered by main lane lines) -->
+  <!-- (main vertical lines already drawn so no extra connectors needed) -->
+
+  <!-- Central CLOSED / recv(2) near bottom -->
+  <text x="130" y="160" font-family="sans-serif" font-size="9" text-anchor="middle">CLOSED</text>
+  <text x="130" y="173" font-family="sans-serif" font-size="8" text-anchor="middle">recv(2)</text>
+</svg>

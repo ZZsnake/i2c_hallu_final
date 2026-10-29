@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algebra Test Score Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            display: none;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #chart {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algebra Test Score Distribution</h1>
+    <div id="chart"></div>
+
+    <script>
+        $(function() {
+            var chart = echarts.init(document.getElementById('chart'));
+            
+            var option = {
+                title: {
+                    text: 'Algebra Test Score Distribution',
+                    left: 'center',
+                    textStyle: {
+                        color: '#222',
+                        fontWeight: 'bold',
+                        fontSize: 22,
+                        fontFamily: 'Arial'
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function(params) {
+                        return params.seriesName + '<br/>' +
+                            'Min: ' + params.value[0] + '<br/>' +
+                            'Q1: ' + params.value[1] + '<br/>' +
+                            'Median: ' + params.value[2] + '<br/>' +
+                            'Q3: ' + params.value[3] + '<br/>' +
+                            'Max: ' + params.value[4];
+                    },
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                grid: {
+                    left: '9%',
+                    right: '9%',
+                    bottom: '15%'
+                },
+                graphic: [{
+                    type: 'group',
+                    left: '10%',
+                    bottom: '7%',
+                    children: [{
+                        type: 'rect',
+                        shape: {
+                            width: 284,
+                            height: 34
+                        },
+                        style: {
+                            fill: '#ffffff',
+                            stroke: '#333333',
+                            lineWidth: 1
+                        }
+                    }, {
+                        type: 'text',
+                        left: 4,
+                        top: 3,
+                        style: {
+                            text: 'Boxplot: Q1, Q3, Median & Outliers\n(upper: Q3 + 1.5 × IQR, lower: Q1 - 1.5 × IQR)',
+                            fill: '#222222',
+                            font: 'bold 12px Arial',
+                            lineHeight: 14
+                        }
+                    }]
+                }],
+                xAxis: {
+                    type: 'value',
+                    name: 'Score',
+                    nameLocation: 'end',
+                    nameGap: 15,
+                    nameTextStyle: {
+                        color: '#222',
+                        fontWeight: 'bold',
+                        fontSize: 16,
+                        fontFamily: 'Arial'
+                    },
+                    axisLabel: {
+                        color: '#222',
+                        fontWeight: 'bold',
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                        formatter: '{value}'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333',
+                            width: 2
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            type: 'solid',
+                            color: '#dbe4f0',
+                            width: 1
+                        }
+                    },
+                    splitArea: {
+                        show: true,
+                        areaStyle: {
+                            color: ['rgba(255,255,255,0)', '#f4f7fc']
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['Group 1', 'Group 2', 'Group 3', 'Group 4', 'Group 5'],
+                    axisLabel: {
+                        color: '#222',
+                        fontWeight: 'bold',
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                        align: 'right'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333',
+                            width: 2
+                        }
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                },
+                series: [{
+                    name: 'Scores',
+                    type: 'boxplot',
+                    data: [
+                        [78, 85, 90, 95, 100],       // Group 1
+                        [65, 69, 73.5, 78, 85],      // Group 2
+                        [54, 58, 60.5, 63.3, 66],    // Group 3
+                        [45, 50, 52.5, 56.3, 61],    // Group 4
+                        [88, 91.7, 93.5, 96.3, 99]   // Group 5
+                    ],
+                    itemStyle: {
+                        color: '#2778cf',
+                        borderColor: '#0d47a1',
+                        borderWidth: 3
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            borderColor: '#000',
+                            borderWidth: 3
+                        }
+                    }
+                }]
+            };
+            
+            chart.setOption(option);
+            window.addEventListener('resize', chart.resize);
+        });
+    </script>
+</body>
+</html>

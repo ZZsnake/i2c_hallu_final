@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Sector Growth by Quarter</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 3px;
+        }
+        .legend-text {
+            font-size: 14px;
+            color: #555;
+        }
+        #mainChart {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <h2 class="chart-title">Economic Sector Growth by Quarter</h2>
+        <div class="chart-legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #1f77b4;"></div>
+                <div class="legend-text">Services</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2ca02c;"></div>
+                <div class="legend-text">Manufacturing</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #d62728;"></div>
+                <div class="legend-text">Agriculture</div>
+            </div>
+        </div>
+        <div id="mainChart"></div>
+    </div>
+
+    <script>
+        // Initialize ECharts
+        var myChart = echarts.init(document.getElementById('mainChart'));
+
+        // Define chart options
+        var option = {
+            title: {
+                text: 'Economic Sector Growth by Quarter',
+                left: 'center',
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            legend: {
+                data: ['Services', 'Manufacturing', 'Agriculture'],
+                top: '10%',
+                left: 'center'
+            },
+            grid: {
+                left: '10%',
+                right: '10%',
+                bottom: '10%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                name: 'Growth Value',
+                nameLocation: 'middle',
+                nameGap: 40,
+                axisLabel: {
+                    show: true,
+                    interval: 0,
+                    rotate: 0
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type: 'dashed',
+                        color: '#eaeaea'
+                    }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: ['Q1', 'Q2', 'Q3', 'Q4'],
+                name: 'Quarter',
+                nameLocation: 'middle',
+                nameGap: 30,
+                axisLabel: {
+                    show: true
+                }
+            },
+            series: [
+                {
+                    name: 'Services',
+                    type: 'bar',
+                    stack: 'Total',
+                    itemStyle: {
+                        color: '#1f77b4'
+                    },
+                    data: [180, 210, 195, 230],
+                    label: {
+                        show: true,
+                        position: 'insideRight',
+                        formatter: '{c}',
+                        color: '#fff'
+                    }
+                },
+                {
+                    name: 'Manufacturing',
+                    type: 'bar',
+                    stack: 'Total',
+                    itemStyle: {
+                        color: '#2ca02c'
+                    },
+                    data: [120, 135, 145, 155],
+                    label: {
+                        show: true,
+                        position: 'insideRight',
+                        formatter: '{c}',
+                        color: '#fff'
+                    }
+                },
+                {
+                    name: 'Agriculture',
+                    type: 'bar',
+                    stack: 'Total',
+                    itemStyle: {
+                        color: '#d62728'
+                    },
+                    data: [60, 50, 65, 70],
+                    label: {
+                        show: true,
+                        position: 'insideRight',
+                        formatter: '{c}',
+                        color: '#fff'
+                    }
+                }
+            ],
+            color: ['#1f77b4', '#2ca02c', '#d62728']
+        };
+
+        // Render the chart
+        myChart.setOption(option);
+
+        // Resize chart when window is resized
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

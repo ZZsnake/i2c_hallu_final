@@ -1,0 +1,101 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
+
+\begin{document}
+
+% Define custom colors to match the image
+\definecolor{layercolor}{HTML}{000080} % Navy Blue for layer text
+\definecolor{inputfill}{HTML}{800000}  % Maroon for input nodes
+\definecolor{hiddenfill}{HTML}{20B2AA} % LightSeaGreen, a nice cyan/teal
+\definecolor{outputfill}{HTML}{FFA500} % Orange
+\definecolor{nodeborder}{HTML}{006464} % Darker teal for border
+\definecolor{connectcolor}{HTML}{0000CD} % Medium Blue for connections
+
+\begin{tikzpicture}[
+    % Set default distances between nodes
+    node distance=1.2cm and 2.5cm,
+    % Set default font
+    font=\rmfamily,
+    % Define styles for different elements
+    layer_label/.style={
+        font=\bfseries,
+        color=layercolor,
+        align=center
+    },
+    neuron/.style={
+        shape=rounded rectangle,
+        rounded corners=3pt,
+        minimum size=9mm,
+        draw=nodeborder,
+        very thick,
+    },
+    input_neuron/.style={neuron, fill=inputfill},
+    hidden_neuron/.style={neuron, fill=hiddenfill},
+    output_neuron/.style={neuron, fill=outputfill},
+    connection/.style={
+        -Stealth,
+        color=connectcolor,
+        thick
+    },
+    label_arrow/.style={->, thick}
+]
+
+% --- Place Nodes using absolute coordinates for precise layout ---
+
+% Input Layer
+\node[input_neuron] (i1) at (0, 1.2) {};
+\node[input_neuron] (i2) at (0, 0) {};
+\node[input_neuron] (i3) at (0, -1.2) {};
+
+% Hidden/Processing Layer
+\node[hidden_neuron] (h1) at (3, 1.8) {};
+\node[hidden_neuron] (h2) at (3, 0.6) {};
+\node[hidden_neuron] (h3) at (3, -0.6) {};
+\node[hidden_neuron] (h4) at (3, -1.8) {};
+
+% Output Layer
+\node[output_neuron] (o1) at (6, 0) {};
+
+
+% --- Place Labels ---
+
+% Layer Labels
+\node[layer_label] at (0, 2.8) {Input Layer};
+\node[layer_label] at (3, 2.8) {Processing\\Layer};
+\node[layer_label] at (6, 2.8) {Output\\Layer};
+
+% Feature Labels (to the left of input nodes)
+\node[left=0.5cm of i1] (f1_label) {Feature \#1};
+\node[left=0.5cm of i2] (f2_label) {Feature \#2};
+\node[left=0.5cm of i3] (f3_label) {Feature \#3};
+
+% Prediction Label (to the right of output node)
+\node[right=0.5cm of o1] (pred_label) {Prediction};
+
+
+% --- Draw Arrows and Connections ---
+
+% Arrows from feature labels to input nodes
+\draw[label_arrow] (f1_label) -- (i1);
+\draw[label_arrow] (f2_label) -- (i2);
+\draw[label_arrow] (f3_label) -- (i3);
+
+% Arrow from output node to prediction label
+\draw[label_arrow] (o1) -- (pred_label);
+
+% Connections between layers
+% Input -> Hidden (fully connected)
+\foreach \i in {1,2,3} {
+    \foreach \j in {1,2,3,4} {
+        \draw[connection] (i\i) -- (h\j);
+    }
+}
+
+% Hidden -> Output (fully connected)
+\foreach \j in {1,2,3,4} {
+    \draw[connection] (h\j) -- (o1);
+}
+
+\end{tikzpicture}
+\end{document}

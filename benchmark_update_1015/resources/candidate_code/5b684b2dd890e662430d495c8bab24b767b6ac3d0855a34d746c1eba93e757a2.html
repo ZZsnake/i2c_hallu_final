@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Problem Types Solved Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #chart-container {
+            width: 95vw;
+            height: 90vh;
+            position: relative;
+        }
+        .y-axis-label {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chart-container">
+        <div class="y-axis-label">Problems Solved</div>
+        <div id="main-chart" style="width: 100%; height: 100%;"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var chartDom = document.getElementById('main-chart');
+            var myChart = echarts.init(chartDom);
+            
+            var dataValues = [34, 27, 19, 41, 23];
+            var maxVal = 50;
+
+            var option = {
+                title: {
+                    text: 'Number of Geometry Problem Types Solved',
+                    left: 'center',
+                    top: '10',
+                    textStyle: {
+                        fontSize: 18,
+                        fontWeight: 'bold',
+                        fontFamily: 'serif'
+                    }
+                },
+                grid: {
+                    left: '5%',
+                    right: '5%',
+                    bottom: '5%',
+                    top: '15%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['', '', '', '', ''],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#000',
+                            width: 2
+                        }
+                    },
+                    axisTick: { show: false },
+                    axisLabel: { show: false }
+                },
+                yAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 50,
+                    interval: 10,
+                    axisLine: { show: false },
+                    axisTick: { show: false },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#eee'
+                        }
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            color: '#000',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        // Background bars (light blue strips)
+                        type: 'bar',
+                        itemStyle: {
+                            color: '#E3F2FD'
+                        },
+                        barGap: '-100%',
+                        barWidth: '15%',
+                        data: [maxVal, maxVal, maxVal, maxVal, maxVal],
+                        animation: false,
+                        silent: true
+                    },
+                    {
+                        // Main data bars
+                        type: 'bar',
+                        barWidth: '15%',
+                        data: dataValues,
+                        itemStyle: {
+                            color: '#1565C0',
+                            borderColor: '#000',
+                            borderWidth: 1
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            distance: 10,
+                            color: '#000',
+                            fontSize: 14,
+                            fontFamily: 'sans-serif'
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            window.addEventListener('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

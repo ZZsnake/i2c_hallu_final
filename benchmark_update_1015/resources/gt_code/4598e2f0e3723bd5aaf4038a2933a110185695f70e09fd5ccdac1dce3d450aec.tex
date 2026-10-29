@@ -1,0 +1,33 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usepackage{tikz}
+
+\begin{document}
+\begin{circuitikz}[scale=0.8]
+    % Input
+    \draw (0,0) node[left]{Audio Input} to[short] (1,0);
+    \draw (1,0) to[C=$C_1$] (3,0);
+    
+    % Transistor
+    \draw (3,0) to[short] (4,0);
+    \draw (4,-2) node[npn](npn){} node[below]{Q1};
+    
+    % Biasing resistors
+    \draw (4,2) to[R, l_=$R_1$] (4,0);
+    \draw (4,-2) to[R, l_=$R_E$] (4,-4);
+    \draw (4,-4) to[short] (0,-4) to[battery1, l=9V] (0,2) to[short] (4,2);
+    
+    % Coupling capacitor
+    \draw (5,0) to[C, l=$C_2$] (7,0);
+    
+    % Output
+    \draw (7,0) to[short] (8,0) node[right]{Audio Output};
+    
+    % Bypass capacitor
+    \draw (4,-2) to[C, l=$C_E$] (6,-2) to[short] (6,-4);
+    
+    % Labels
+    \node[text width=3cm, align=center] at (4,-5.5) {\small Basic Audio Amplifier Circuit};
+    \node[text width=4cm, align=center] at (8,-5.5) {\small For Improved Sound in Older TVs/Radios};
+\end{circuitikz}
+\end{document}

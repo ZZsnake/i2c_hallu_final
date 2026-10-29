@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" width="700" height="500">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555555" />
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4682B4" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FF0000" />
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#800080" />
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FFA500" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#008000" />
+    </marker>
+  </defs>
+
+  <!-- Polygon -->
+  <path d="M100 100 L150 300 L250 350 L500 400 L550 150 L400 200 Z"
+        fill="#E0F2F7" stroke="#4682B4" stroke-width="2"/>
+
+  <!-- Vertices -->
+  <circle cx="100" cy="100" r="5" fill="#4682B4"/>
+  <circle cx="150" cy="300" r="5" fill="#4682B4"/>
+  <circle cx="250" cy="350" r="5" fill="#4682B4"/>
+  <circle cx="500" cy="400" r="5" fill="#4682B4"/>
+  <circle cx="550" cy="150" r="5" fill="#4682B4"/>
+  <circle cx="400" cy="200" r="5" fill="#FFA500"/> <!-- Mouth vertex -->
+
+  <!-- Dashed lines -->
+  <!-- Ear connection -->
+  <line x1="100" y1="100" x2="550" y2="150" stroke="#FFA500" stroke-width="2" stroke-dasharray="8 4"/>
+  <!-- Diagonal -->
+  <line x1="250" y1="350" x2="400" y2="200" stroke="#008000" stroke-width="2" stroke-dasharray="8 4"/>
+
+  <!-- External angle extension line -->
+  <line x1="250" y1="350" x2="200" y2="400" stroke="#800080" stroke-width="2" stroke-dasharray="8 4"/>
+
+  <!-- Angles -->
+  <!-- Internal angle at (250, 350) -->
+  <path d="M220 350 A30 30 0 0 1 250 380" fill="rgba(255,0,0,0.2)" stroke="#FF0000" stroke-width="2"/>
+  <!-- External angle at (250, 350) -->
+  <path d="M250 380 A30 30 0 0 1 220 390" fill="rgba(128,0,128,0.2)" stroke="#800080" stroke-width="2"/>
+
+  <!-- Text Labels -->
+  <text x="150" y="70" font-family="sans-serif" font-size="24" fill="#4682B4" text-anchor="middle">角或顶点</text>
+  <text x="80" y="250" font-family="sans-serif" font-size="24" fill="#555555" text-anchor="middle">外部</text>
+  <text x="300" y="250" font-family="sans-serif" font-size="24" fill="#4682B4" text-anchor="middle">内部</text>
+  <text x="300" y="330" font-family="sans-serif" font-size="24" fill="#FF0000" text-anchor="start">内角</text>
+  <text x="280" y="400" font-family="sans-serif" font-size="24" fill="#800080" text-anchor="start">外角</text>
+  <text x="450" y="180" font-family="sans-serif" font-size="24" fill="#FFA500" text-anchor="middle">嘴</text>
+  <text x="580" y="120" font-family="sans-serif" font-size="24" fill="#008000" text-anchor="start">耳</text>
+  <text x="580" y="300" font-family="sans-serif" font-size="24" fill="#4682B4" text-anchor="start">边或棱</text>
+  <text x="400" y="300" font-family="sans-serif" font-size="24" fill="#008000" text-anchor="middle">对角线</text>
+</svg>

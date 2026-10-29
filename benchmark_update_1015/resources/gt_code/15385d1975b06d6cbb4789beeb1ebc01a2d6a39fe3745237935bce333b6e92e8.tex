@@ -1,0 +1,78 @@
+\documentclass[border=3pt]{standalone}
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Sizes
+\def\cellheight{30pt}
+\def\fieldlinewidth{1pt}
+\pgfmathsetlengthmacro{\scalefactor}{5pt}
+
+% Tikz Set
+\tikzset{
+    instr_field/.style={
+        draw,
+        rectangle,
+        line width = \fieldlinewidth,
+        minimum height = \cellheight,
+        rounded corners=2pt,
+        fill=teal!15,
+        text=blue!80!black,
+    },
+    byte_values/.style={below, font=\tiny, text=red!80!black},
+    bytes/.style={above, font=\scriptsize, text=purple!90!black},
+    every text node part/.style={align=center}
+}
+
+% Instruction Fields (renamed for Computer Science semantics, values changed)
+\def\fields{
+    flag/31/29/101,
+    opcode/28/25/1100,
+    type/24/24/0,
+    func/23/20/0111,
+    ext/19/19/1,
+    src1/18/15/0010,
+    src2/14/11/1111,
+    shift/10/8/101,
+    imm5/7/3/01010
+}
+
+\begin{document}
+    \begin{tikzpicture}
+        % Widths
+        \foreach \field/\high/\low in \fields {
+            \pgfmathsetmacro{\width}{(\high-\low + 1) * \scalefactor}
+            \expandafter\xdef\csname \field w\endcsname{\width mm}
+        }
+
+        % Instruction Fields
+        \foreach \field/\high/\low/\value [count=\i from 0] in \fields {
+            \ifnum\i=0
+                \node[
+                    instr_field,
+                    anchor=west,
+                    minimum width=\csname\field w\endcsname
+                ] (tmp\i) {\field};
+            \else
+                \pgfmathsetmacro{\prev}{int(\i-1)}
+                \node[
+                    instr_field,
+                    anchor=west,
+                    minimum width=\csname\field w\endcsname
+                ] (tmp\i) at ($(tmp\prev.east)-(\fieldlinewidth,0)$) {\field};
+            \fi
+
+            \ifnum\high=\low
+                \node[bytes] at (tmp\i.north) {\high};
+            \else
+                \node[bytes] at (tmp\i.north) {\high:\low};
+            \fi
+
+            \node[byte_values] at (tmp\i.south) {\value};
+        }
+
+        % Example instruction name
+        \node[anchor=east, font=\small\bfseries, text=teal!80!black, xshift=-32pt] at (tmp0) {LOGIC-OP};
+    \end{tikzpicture}
+\end{document}

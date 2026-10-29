@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 160">
+  <!-- Styling -->
+  <defs>
+    <style type="text/css"><![CDATA[
+      .edge { fill:none; stroke:#000000; stroke-width:1.5; }
+      .label { font-family:Arial, Helvetica, sans-serif; font-size:10px; fill:#000000; }
+    ]]></style>
+  </defs>
+
+  <!-- Coordinates (approximate, in a simple grid)
+       Large right rectangle: F(80,40), G(200,40), H(200,140), L(80,140)
+       Left rectangle: A(10,80), C(80,80), L(80,140), K(10,140)
+       Internal vertical: through x=150
+       Mid horizontal: through y=80
+  -->
+
+  <!-- Left rectangle A-C-L-K -->
+  <rect x="10" y="80" width="70" height="60" class="edge"/>
+
+  <!-- Right large rectangle F-G-H-L -->
+  <rect x="80" y="40" width="120" height="100" class="edge"/>
+
+  <!-- Internal vertical (E-B-M) -->
+  <line x1="150" y1="40" x2="150" y2="140" class="edge"/>
+
+  <!-- Mid horizontal (A-C-B-D) -->
+  <line x1="10" y1="80" x2="200" y2="80" class="edge"/>
+
+  <!-- Diagonal F-H -->
+  <line x1="80" y1="40" x2="200" y2="140" class="edge"/>
+
+  <!-- Labels -->
+  <!-- Left rectangle points -->
+  <text x="8"  y="78"  class="label">A</text>
+  <text x="8"  y="152" class="label">K</text>
+
+  <!-- Shared vertical between rectangles -->
+  <text x="82" y="78"  class="label">C</text>
+  <text x="82" y="152" class="label">L</text>
+
+  <!-- Right rectangle top points -->
+  <text x="78"  y="38"  class="label">F</text>
+  <text x="148" y="38"  class="label">E</text>
+  <text x="202" y="38"  class="label">G</text>
+
+  <!-- Right rectangle midpoints on right side and internal vertical -->
+  <text x="152" y="86"  class="label">B</text>
+  <text x="202" y="86"  class="label">D</text>
+
+  <!-- Right rectangle bottom points -->
+  <text x="152" y="152" class="label">M</text>
+  <text x="202" y="152" class="label">H</text>
+</svg>

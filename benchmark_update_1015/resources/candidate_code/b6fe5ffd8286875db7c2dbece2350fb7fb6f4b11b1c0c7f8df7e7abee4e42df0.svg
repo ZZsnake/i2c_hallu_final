@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background rectangle -->
+  <rect x="10" y="10" width="80" height="80" fill="#ccc"/>
+  
+  <!-- Axes -->
+  <line x1="10" y1="90" x2="90" y2="90" stroke="#000" stroke-width="2"/>
+  <line x1="10" y1="10" x2="10" y2="90" stroke="#000" stroke-width="2"/>
+  
+  <!-- Labels for axes -->
+  <text x="5" y="95" font-size="10">X1</text>
+  <text x="95" y="5" font-size="10">X2</text>
+  
+  <!-- Points -->
+  <circle cx="40" cy="60" r="5" fill="orange"/>
+  <circle cx="70" cy="60" r="5" fill="green"/>
+  <circle cx="40" cy="30" r="5" fill="orange"/>
+  <circle cx="70" cy="30" r="5" fill="orange"/>
+  
+  <!-- Lines connecting points -->
+  <path d="M40,60 L70,60" stroke="#000" stroke-width="2"/>
+  <path d="M40,60 L40,30" stroke="#000" stroke-width="2"/>
+  <path d="M70,60 L70,30" stroke="#000" stroke-width="2"/>
+  
+  <!-- Text labels for points -->
+  <text x="35" y="65" font-size="10">0</text>
+  <text x="65" y="65" font-size="10">1</text>
+  <text x="35" y="35" font-size="10">1</text>
+  <text x="65" y="35" font-size="10">1</text>
+  
+  <!-- AND gate label -->
+  <text x="40" y="95" font-size="10">AND (X1 ∧ X2)</text>
+  
+  <!-- Diagonal line -->
+  <line x1="10" y1="10" x2="90" y2="90" stroke="#00f" stroke-dasharray="5,5"/>
+</svg>

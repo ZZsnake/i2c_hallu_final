@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parabola and Line Intersection</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+        #chart {
+            width: 100%;
+            height: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        $(function() {
+            var myChart = echarts.init(document.getElementById('chart'));
+            
+            // Generate parabola data
+            var parabolaData = [];
+            for (var x = -20; x <= 20; x++) {
+                parabolaData.push([x, 0.04 * x * x - 5]);
+            }
+            
+            // Generate line data
+            var lineData = [];
+            for (var x = -20; x <= 20; x++) {
+                lineData.push([x, 2 * x - 10]);
+            }
+            
+            var option = {
+                title: {
+                    text: 'Analytical Geometry: Parabola y= 0.04x² - 5 and Line y = 2x - 10',
+                    left: 'center',
+                    textStyle: {
+                        color: '#4A90E2',
+                        fontSize: 16
+                    }
+                },
+                legend: {
+                    data: ['Parabola', 'Line', 'Intersection'],
+                    top: 20,
+                    textStyle: {
+                        color: '#333'
+                    }
+                },
+                grid: {
+                    left: '8%',
+                    right: '8%',
+                    bottom: '8%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    name: 'x',
+                    min: -20,
+                    max: 20,
+                    axisLine: { lineStyle: { color: '#333' } },
+                    axisLabel: { color: '#333' }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'y',
+                    min: -30,
+                    max: 30,
+                    axisLine: { lineStyle: { color: '#333' } },
+                    axisLabel: { color: '#333' }
+                },
+                series: [
+                    {
+                        name: 'Parabola',
+                        type: 'line',
+                        data: parabolaData,
+                        smooth: true,
+                        symbol: 'circle',
+                        symbolSize: 0,
+                        itemStyle: { color: '#4A90E2' },
+                        lineStyle: { width: 2 }
+                    },
+                    {
+                        name: 'Line',
+                        type: 'line',
+                        data: lineData,
+                        symbol: 'none',
+                        itemStyle: { color: '#E64A19' },
+                        lineStyle: { 
+                            width: 2,
+                            type: 'dashed'
+                        }
+                    },
+                    {
+                        name: 'Intersection',
+                        type: 'scatter',
+                        data: [[2.5, -5]],
+                        symbolSize: 10,
+                        itemStyle: { color: '#2ECC71' },
+                        label: {
+                            show: true,
+                            position: 'right',
+                            formatter: 'Intersection',
+                            color: '#333'
+                        }
+                    }
+                ],
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255,255,255,0.9)',
+                    borderColor: '#ccc',
+                    textStyle: { color: '#333' },
+                    formatter: function(params) {
+                        return `x: ${params[0].value[0].toFixed(1)}<br/>y: ${params[0].value[1].toFixed(1)}`;
+                    }
+                }
+            };
+            
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

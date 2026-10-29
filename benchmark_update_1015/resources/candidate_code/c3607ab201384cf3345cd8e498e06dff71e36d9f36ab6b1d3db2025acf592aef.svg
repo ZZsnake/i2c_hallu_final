@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .edge { fill:none; stroke:#377eb8; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+      .poly-fill { fill:#cfe4ff; fill-opacity:0.7; }
+      .dash-orange { stroke:#ff9933; stroke-width:3; stroke-dasharray:8 6; fill:none; }
+      .dash-green { stroke:#3aa657; stroke-width:3; stroke-dasharray:8 6; fill:none; }
+      .dash-purple { stroke:#7040c8; stroke-width:3; stroke-dasharray:8 6; fill:none; }
+      .vertex-blue { fill:#1f78b4; }
+      .vertex-green { fill:#3aa657; }
+      .vertex-orange { fill:#ff9933; }
+      .angle-arc-inner { fill:none; stroke:#cc4b37; stroke-width:4; }
+      .angle-arc-outer { fill:none; stroke:#7040c8; stroke-width:4; marker-end:url(#arrowPurple); }
+      .label-blue { fill:#1f78b4; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:32px; }
+      .label-gray { fill:#b0b0b0; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:40px; }
+      .label-inner { fill:#1f78b4; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:40px; }
+      .label-diag { fill:#3aa657; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:36px; }
+      .label-ear { fill:#3aa657; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:32px; }
+      .label-edge { fill:#1f78b4; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:36px; }
+      .label-mouth { fill:#ff9933; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:30px; }
+      .label-inner-angle { fill:#cc4b37; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:32px; }
+      .label-outer-angle { fill:#7040c8; font-family:"Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size:32px; }
+    ]]></style>
+
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7040c8"/>
+    </marker>
+  </defs>
+
+  <!-- main polygon -->
+  <!-- vertices (approx): A(130,160) B(250,310) C(160,480) D(540,540) E(760,120) F(520,210) -->
+  <path class="edge poly-fill" d="M130 160 L250 310 L160 480 L540 540 L760 120 L520 210 Z"/>
+
+  <!-- outline on top of fill -->
+  <path class="edge" d="M130 160 L250 310 L160 480 L540 540 L760 120 L520 210 Z"/>
+
+  <!-- vertices -->
+  <circle class="vertex-blue" cx="130" cy="160" r="7"/>
+  <circle class="vertex-blue" cx="250" cy="310" r="7"/>
+  <circle class="vertex-blue" cx="160" cy="480" r="7"/>
+  <circle class="vertex-blue" cx="540" cy="540" r="7"/>
+  <circle class="vertex-green" cx="760" cy="120" r="7"/>
+  <circle class="vertex-orange" cx="520" cy="210" r="7"/>
+
+  <!-- orange dashed ear helper from left-top to right-top -->
+  <path class="dash-orange" d="M130 160 L760 120"/>
+
+  <!-- green dashed diagonal from orange vertex to bottom-right -->
+  <path class="dash-green" d="M520 210 L540 540"/>
+
+  <!-- purple dashed extension at left-bottom -->
+  <path class="dash-purple" d="M160 480 L80 520"/>
+
+  <!-- inner angle arc (red) at left-bottom -->
+  <path class="angle-arc-inner" d="M170 458
+                                   A35 35 0 0 0 138 452"/>
+
+  <!-- outer angle arc (purple) with arrow -->
+  <path class="angle-arc-outer" d="M135 460
+                                   A55 55 0 0 1 95 505"/>
+
+  <!-- labels -->
+
+  <!-- top-left: 角或顶点 -->
+  <text class="label-blue" x="150" y="140">角或顶点</text>
+
+  <!-- left side outside: 外部 -->
+  <text class="label-gray" x="90" y="300" transform="rotate(-5 90 300)">外部</text>
+
+  <!-- center inside: 内部 -->
+  <text class="label-inner" x="380" y="310">内部</text>
+
+  <!-- diagonal label: 对角线 -->
+  <text class="label-diag" x="555" y="340" transform="rotate(90 555 340)">对角线</text>
+
+  <!-- right edge label: 边或棱 -->
+  <text class="label-edge" x="775" y="360" writing-mode="tb">边或棱</text>
+
+  <!-- ear label near top-right vertex: 耳 -->
+  <text class="label-ear" x="785" y="125">耳</text>
+
+  <!-- mouth label near orange point: 嘴 -->
+  <text class="label-mouth" x="525" y="205">嘴</text>
+
+  <!-- inner angle label: 内角 -->
+  <text class="label-inner-angle" x="195" y="455">内角</text>
+
+  <!-- outer angle label: 外角 -->
+  <text class="label-outer-angle" x="75" y="470">外角</text>
+</svg>

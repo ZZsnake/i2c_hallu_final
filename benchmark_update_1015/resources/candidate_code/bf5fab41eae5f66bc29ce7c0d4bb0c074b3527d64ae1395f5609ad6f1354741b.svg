@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <title>Production mondiale en 1939</title>
+  <text x="50" y="50" font-size="20" font-family="Arial">Production mondiale en 1939: 136,5 millions de tonnes</text>
+  
+  <circle cx="400" cy="300" r="200" fill="lightblue" />
+  <path d="M400 300 L400 100 A200 200 0 0 1 590.93 209.07 Z" fill="darkblue" />
+  <path d="M400 300 L590.93 209.07 A200 200 0 0 1 600 300 Z" fill="orange" />
+  <path d="M400 300 L600 300 A200 200 0 0 1 590.93 390.93 Z" fill="yellow" />
+  <path d="M400 300 L590.93 390.93 A200 200 0 0 1 400 500 Z" fill="green" />
+  <path d="M400 300 L400 500 A200 200 0 0 1 209.07 390.93 Z" fill="gray" />
+  <path d="M400 300 L209.07 390.93 A200 200 0 0 1 100 300 Z" fill="lightblue" />
+  
+  <text x="50" y="100" font-size="14" font-family="Arial">Etats-Unis</text>
+  <text x="50" y="120" font-size="14" font-family="Arial">48,9</text>
+  <text x="50" y="140" font-size="14" font-family="Arial">Allemagne</text>
+  <text x="50" y="160" font-size="14" font-family="Arial">22,9</text>
+  <text x="50" y="180" font-size="14" font-family="Arial">Grande-France</text>
+  <text x="50" y="200" font-size="14" font-family="Arial">13,4</text>
+  <text x="50" y="220" font-size="14" font-family="Arial">Belgique</text>
+  <text x="50" y="240" font-size="14" font-family="Arial">8,0</text>
+  <text x="50" y="260" font-size="14" font-family="Arial">Luxembourg</text>
+  <text x="50" y="280" font-size="14" font-family="Arial">3,1</text>
+  <text x="50" y="300" font-size="14" font-family="Arial">Autres</text>
+  <text x="50" y="320" font-size="14" font-family="Arial">39,5</text>
+  <text x="50" y="340" font-size="14" font-family="Arial">Source: thèse de Françoise Berger (2008)</text>
+</svg>

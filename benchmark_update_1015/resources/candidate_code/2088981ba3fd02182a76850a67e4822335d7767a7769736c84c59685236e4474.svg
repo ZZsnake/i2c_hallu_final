@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <style>
+    .title { font-family: sans-serif; font-size: 54px; fill: #263238; text-anchor: middle; }
+    .axis-label { font-family: sans-serif; font-size: 16px; fill: #333; }
+    .y-axis-label-units { font-family: sans-serif; font-size: 28px; fill: #24189c; text-anchor: middle; }
+    .y-axis-tick-label { font-family: sans-serif; font-size: 34px; fill: #176b24; text-anchor: end; }
+    .x-axis-tick-label { font-family: sans-serif; font-size: 36px; fill: #222; text-anchor: middle; }
+    .legend-text { font-family: sans-serif; font-size: 38px; fill: #263238; }
+    .caption { font-family: sans-serif; font-size: 12px; fill: #263238; text-anchor: middle; }
+    .grid-line-major { stroke: #333; stroke-width: 1.5; stroke-dasharray: 6 10; }
+    .grid-line-minor { stroke: #333; stroke-width: 1.5; stroke-dasharray: 6 10; }
+    .chart-border { stroke: #2430b8; stroke-width: 2; fill: none; }
+    .supply-color { fill: #388e3c; }
+    .demand-color { fill: #d92f32; stroke: #333; stroke-width: 1; }
+    .arrow-color { fill: #2196F3; }
+  </style>
+
+  <!-- Title -->
+  <text x="600" y="60" class="title">Global Supply and Demand Trends</text>
+
+  <!-- Chart Area -->
+  <g transform="translate(120, 80)">
+    <!-- Y-axis labels and major grid lines -->
+    <text x="-60" y="30" class="y-axis-label-units">Million</text>
+    <text x="-60" y="60" class="y-axis-label-units">units</text>
+    <line x1="0" y1="0" x2="1030" y2="0" class="grid-line-major"/>
+    <line x1="0" y1="103.2" x2="1030" y2="103.2" class="grid-line-major"/>
+    <text x="-30" y="115" class="y-axis-tick-label">200</text>
+    <line x1="0" y1="206.4" x2="1030" y2="206.4" class="grid-line-major"/>
+    <text x="-30" y="218" class="y-axis-tick-label">150</text>
+    <line x1="0" y1="309.6" x2="1030" y2="309.6" class="grid-line-major"/>
+    <text x="-30" y="321" class="y-axis-tick-label">100</text>
+    <line x1="0" y1="412.8" x2="1030" y2="412.8" class="grid-line-major"/>
+    <text x="-30" y="424" class="y-axis-tick-label">50</text>
+    <line x1="0" y1="516" x2="1030" y2="516" class="grid-line-major"/>
+    <text x="-30" y="527" class="y-axis-tick-label">0</text>
+
+    <!-- Minor grid lines -->
+    <line x1="0" y1="51.6" x2="1030" y2="51.6" class="grid-line-minor"/>
+    <line x1="0" y1="154.8" x2="1030" y2="154.8" class="grid-line-minor"/>
+    <line x1="0" y1="258" x2="1030" y2="258" class="grid-line-minor"/>
+    <line x1="0" y1="361.2" x2="1030" y2="361.2" class="grid-line-minor"/>
+    <line x1="0" y1="464.4" x2="1030" y2="464.4" class="grid-line-minor"/>
+
+    <!-- Legend -->
+    <rect x="52" y="13" width="35" height="35" class="supply-color"/>
+    <text x="105" y="43" class="legend-text">Supply</text>
+    <rect x="52" y="56" width="35" height="35" class="demand-color"/>
+    <text x="105" y="87" class="legend-text">Demand</text>
+
+    <!-- Bar Data (heights are scaled: 1 unit = 2.064px) -->
+    <!-- 2018 -->
+    <g transform="translate(82, 0)">
+      <!-- Bar 1 -->
+      <rect x="0" y="355.008" width="44" height="160.992" class="supply-color"/>
+      <rect x="0" y="235.296" width="44" height="119.712" class="demand-color"/>
+      <!-- Bar 2 -->
+      <rect x="54" y="375.648" width="44" height="140.352" class="supply-color"/>
+      <rect x="54" y="272.448" width="44" height="103.2" class="demand-color"/>
+      <!-- Bar 3 -->
+      <rect x="108" y="423.12" width="44" height="92.88" class="supply-color"/>
+      <rect x="108" y="350.88" width="44" height="72.24" class="demand-color"/>
+      <!-- Bar 4 -->
+      <rect x="162" y="361.2" width="44" height="154.8" class="supply-color"/>
+      <rect x="162" y="241.488" width="44" height="119.712" class="demand-color"/>
+    </g>
+
+    <!-- 2021 -->
+    <g transform="translate(352, 0)">
+      <!-- Bar 1 -->
+      <rect x="0" y="396.288" width="44" height="119.712" class="supply-color"/>
+      <rect x="0" y="297.216" width="44" height="99.072" class="demand-color"/>
+      <!-- Bar 2 -->
+      <rect x="54" y="402.48" width="44" height="113.52" class="supply-color"/>
+      <rect x="54" y="315.792" width="44" height="86.688" class="demand-color"/>
+      <!-- Bar 3 -->
+      <rect x="108" y="454.08" width="44" height="61.92" class="supply-color"/>
+      <rect x="108" y="381.84" width="44" height="72.24" class="demand-color"/>
+      <!-- Bar 4 -->
+      <rect x="162" y="464.4" width="44" height="51.6" class="supply-color"/>
+      <rect x="162" y="406.608" width="44" height="57.792" class="demand-color"/>
+    </g>
+
+    <!-- 2024 -->
+    <g transform="translate(622, 0)">
+      <!-- Bar 1 -->
+      <rect x="0" y="423.12" width="44" height="92.88" class="supply-color"/>
+      <rect x="0" y="340.56" width="44" height="82.56" class="demand-color"/>
+      <!-- Bar 2 -->
+      <rect x="54" y="412.8" width="44" height="103.2" class="supply-color"/>
+      <rect x="54" y="319.92" width="44" height="92.88" class="demand-color"/>
+      <!-- Bar 3 -->
+      <rect x="108" y="433.44" width="44" height="82.56" class="supply-color"/>
+      <rect x="108" y="340.56" width="44" height="92.88" class="demand-color"/>
+      <!-- Bar 4 -->
+      <rect x="162" y="334.368" width="44" height="181.632" class="supply-color"/>
+      <rect x="162" y="117.648" width="44" height="216.72" class="demand-color"/>
+    </g>
+
+    <rect x="0" y="0" width="1030" height="516" class="chart-border"/>
+
+    <!-- X-axis labels -->
+    <text x="190" y="570" class="x-axis-tick-label">2018</text>
+    <path d="M190,535 L170,516 L210,516 Z" class="arrow-color"/>
+    <text x="460" y="570" class="x-axis-tick-label">2021</text>
+    <path d="M460,535 L440,516 L480,516 Z" class="arrow-color"/>
+    <text x="730" y="570" class="x-axis-tick-label">2024</text>
+    <path d="M730,535 L710,516 L750,516 Z" class="arrow-color"/>
+  </g>
+
+  <!-- Caption -->
+  <text x="600" y="670" class="caption">Supply and demand data compiled from global market reports. Values represent estimated totals in millions of units for selected years.</text>
+</svg>

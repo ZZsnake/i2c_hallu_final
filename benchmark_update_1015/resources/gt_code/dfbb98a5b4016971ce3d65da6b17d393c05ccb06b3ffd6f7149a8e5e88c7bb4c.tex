@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, positioning, decorations.markings}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}%
+
+\begin{document}
+
+\begin{tikzpicture}[
+    node distance=2cm,
+    every node/.style={font=\sffamily, align=center},
+    boxstyle/.style={draw=blue!80!black, fill=teal!10, thick, rounded corners, minimum width=4.2cm, minimum height=1.1cm},
+    arrowstyle/.style={-Stealth, very thick, color=blue!80!black, decoration={markings, mark=at position 1cm with {\arrow[scale=1.3, blue!80!black]{Stealth}}}, postaction=decorate}
+]
+
+% Nodes
+\node[boxstyle, yshift=2cm] (automation) {Automation Controller};
+\node[boxstyle, below=of automation, minimum width=5.2cm] (device) {Electrical Device};
+\node[boxstyle, below=of device, yshift=-2cm] (protection) {Protection Module};
+
+% Arrows
+\draw[arrowstyle] (automation.east) -- ++(1,0) |- ([yshift=-0.25cm] device.north east);
+\draw[arrowstyle] ([yshift=-0.25cm] device.north west) -- ++(-1,0) |- (automation.west);
+\draw[arrowstyle] ([yshift=0.25cm] device.south west) -- ++(-1,0) |- (protection.west);
+\draw[arrowstyle] (protection.east) -- ++(1,0) |- ([yshift=0.25cm] device.south east);
+
+\end{tikzpicture}
+
+\end{document}

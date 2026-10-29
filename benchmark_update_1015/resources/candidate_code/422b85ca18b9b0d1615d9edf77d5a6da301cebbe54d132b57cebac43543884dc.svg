@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 1600">
+  <!-- Start Node -->
+  <ellipse cx="250" cy="80" rx="120" ry="40" fill="#e8f5e8" stroke="#6b8e6b" stroke-width="2"/>
+  <text x="250" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5a8e5a">Start: User Input</text>
+  
+  <!-- Arrow to Tokenize -->
+  <path d="M 250 120 L 250 200" stroke="#4169e1" stroke-width="2" stroke-dasharray="6,6" fill="none" marker-end="url(#arrowblue)"/>
+  
+  <!-- Tokenize Source Code -->
+  <rect x="90" y="200" width="320" height="80" rx="5" fill="white" stroke="#4169e1" stroke-width="2"/>
+  <text x="250" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Tokenize Source Code</text>
+  
+  <!-- Arrow to Valid Tokens -->
+  <path d="M 250 280 L 250 340" stroke="#4169e1" stroke-width="2" stroke-dasharray="6,6" fill="none" marker-end="url(#arrowblue)"/>
+  
+  <!-- Valid Tokens Decision -->
+  <path d="M 250 340 L 330 380 L 250 420 L 170 380 Z" fill="white" stroke="#c41e3a" stroke-width="2"/>
+  <text x="250" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c41e3a">Valid Tokens?</text>
+  
+  <!-- No path to Error 1 -->
+  <path d="M 330 380 L 420 380" stroke="#c41e3a" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+  <text x="360" y="370" font-family="Arial, sans-serif" font-size="14" fill="#c41e3a">No</text>
+  
+  <!-- Error 1 -->
+  <rect x="420" y="350" width="70" height="60" rx="8" fill="white" stroke="#4169e1" stroke-width="2"/>
+  <text x="455" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c41e3a">Error</text>
+  
+  <!-- Yes path to Parse -->
+  <path d="M 250 420 L 250 460" stroke="#c41e3a" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+  <text x="230" y="445" font-family="Arial, sans-serif" font-size="14" fill="#c41e3a">Yes</text>
+  
+  <!-- Parse Syntax Tree -->
+  <rect x="90" y="460" width="320" height="80" rx="5" fill="white" stroke="#4169e1" stroke-width="2"/>
+  <text x="250" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Parse Syntax Tree</text>
+  
+  <!-- Arrow to Syntax OK -->
+  <path d="M 250 540 L 250 600" stroke="#4169e1" stroke-width="2" stroke-dasharray="6,6" fill="none" marker-end="url(#arrowblue)"/>
+  
+  <!-- Syntax OK Decision -->
+  <path d="M 250 600 L 330 640 L 250 680 L 170 640 Z" fill="white" stroke="#c41e3a" stroke-width="2"/>
+  <text x="250" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c41e3a">Syntax OK?</text>
+  
+  <!-- No path to Error 2 -->
+  <path d="M 330 640 L 420 640" stroke="#c41e3a" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+  <text x="360" y="630" font-family="Arial, sans-serif" font-size="14" fill="#c41e3a">No</text>
+  
+  <!-- Error 2 -->
+  <rect x="420" y="610" width="70" height="60" rx="8" fill="white" stroke="#4169e1" stroke-width="2"/>
+  <text x="455" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c41e3a">Error</text>
+  
+  <!-- Yes path to Semantic -->
+  <path d="M 250 680 L 250 720" stroke="#c41e3a" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+  <text x="230" y="705" font-family="Arial, sans-serif" font-size="14" fill="#c41e3a">Yes</text>
+  
+  <!-- Semantic Analysis -->
+  <rect x="90" y="720" width="320" height="80" rx="5" fill="white" stroke="#4169e1" stroke-width="2"/>
+  <text x="250" y="765" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Semantic Analysis</text>
+  
+  <!-- Arrow to Semantic OK -->
+  <path d="M 250 800 L 250 860" stroke="#4169e1" stroke-width="2" stroke-dasharray="6,6" fill="none" marker-end="url(#arrowblue)"/>
+  
+  <!-- Semantic OK Decision -->
+  <path d="M 250 860 L 330 900 L 250 940 L 170 900 Z" fill="white" stroke="#c41e3a" stroke-width="2"/>
+  <text x="250" y="905" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c41e3a">Semantic OK?</text>
+  
+  <!-- No path to Error 3 -->
+  <path d="M 330 900 L 420 900" stroke="#c41e3a" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+  <text x="360" y="890" font-family="Arial, sans-serif" font-size="14" fill="#c41e3a">No</text>
+  
+  <!-- Error 3 -->
+  <rect x="420" y="870" width="70" height="60" rx="8" fill="white" stroke="#4169e1" stroke-width="2"/>
+  <text x="455" y="905" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c41e3a">Error</text>
+  
+  <!-- Yes path to Generate -->
+  <path d="M 250 940 L 250 980" stroke="#c41e3a" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+  <text x="230" y="965" font-family="Arial, sans-serif" font-size="14" fill="#c41e3a">Yes</text>
+  
+  <!-- Generate Bytecode -->
+  <rect x="90" y="980" width="320" height="80" rx="5" fill="white" stroke="#4169e1" stroke-width="2"/>
+  <text x="250" y="1025" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Generate Bytecode</text>
+  
+  <!-- Arrow to End -->
+  <path d="M 250 1060 L 250 1100" stroke="#4169e1" stroke-width="2" stroke-dasharray="6,6" fill="none" marker-end="url(#arrowblue)"/>
+  
+  <!-- End Node -->
+  <ellipse cx="250" cy="1140" rx="130" ry="40" fill="#e8f5e8" stroke="#6b8e6b" stroke-width="2"/>
+  <text x="250" y="1150" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5a8e5a">End: Executable Output</text>
+  
+  <!-- Feedback loop (dotted red diagonal lines from errors back toward start) -->
+  <path d="M 455 350 L 374 140" stroke="#c41e3a" stroke-width="2" stroke-dasharray="3,8" fill="none" marker-end="url(#arrowblue)"/>
+  <path d="M 455 610 L 374 140" stroke="#c41e3a" stroke-width="2" stroke-dasharray="3,8" fill="none" marker-end="url(#arrowblue)"/>
+  <path d="M 455 870 L 374 140" stroke="#c41e3a" stroke-width="2" stroke-dasharray="3,8" fill="none" marker-end="url(#arrowblue)"/>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4169e1"/>
+    </marker>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4169e1"/>
+    </marker>
+  </defs>
+</svg>

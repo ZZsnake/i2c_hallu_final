@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: regular-tetragonal-toroid.tex
+% Description: 
+% A geometric representation of the 
+% regular tetragonal toroid with 18 faces is shown.
+% 
+% Date of creation: July, 22nd, 2021.
+% Date of last modification: October, 9th, 2022.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: page 477 of the 
+% Glosario Ilustrado de Matem\'aticas Escolares.
+% https://tinyurl.com/5udm2ufy
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{50}{115}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	% Change the value of the number at {\escala}{##} to scale the figure up or down
+	\pgfmathsetmacro{\escalaFigura}{2.0}
+	\pgfmathsetmacro{\cero}{sqrt(3.0) / 2.0}
+	\pgfmathsetmacro{\uno}{(2.0 + sqrt(3.0)) / 4.0}
+	\pgfmathsetmacro{\dos}{(3.0 + 2.0 * sqrt(3.0)) / 4.0}
+	\pgfmathsetmacro{\tres}{(2.0 + sqrt(3.0)) / 2.0}
+	% coordinates of the vertices
+	\coordinate(0) at (\escalaFigura*1.0, \escalaFigura*0.0, \escalaFigura*0.5);
+	\coordinate(1) at (\escalaFigura*1.0, \escalaFigura*0.0, -\escalaFigura*0.5);
+	\coordinate(2) at (\escalaFigura*\tres, \escalaFigura*0.0, \escalaFigura*0.0);
+	\coordinate(3) at (\escalaFigura*0.5, \escalaFigura*\cero, \escalaFigura*0.5);
+	\coordinate(4) at (\escalaFigura*0.5, \escalaFigura*\cero, -\escalaFigura*0.5);
+	\coordinate(5) at (\escalaFigura*\uno, \escalaFigura*\dos, \escalaFigura*0.0);
+	\coordinate(6) at (\escalaFigura*0.5, -\escalaFigura*\cero, \escalaFigura*0.5);
+	\coordinate(7) at (\escalaFigura*0.5, -\escalaFigura*\cero, -\escalaFigura*0.5);
+	\coordinate(8) at (\escalaFigura*\uno, -\escalaFigura*\dos, \escalaFigura*0.0);
+	\coordinate(9) at (-\escalaFigura*0.5, \escalaFigura*\cero, \escalaFigura*0.5);
+	\coordinate(10) at (-\escalaFigura*0.5, \escalaFigura*\cero, -\escalaFigura*0.5);
+	%
+	\coordinate(11) at (-\escalaFigura*\uno, \escalaFigura*\dos, \escalaFigura*0.0);
+	\coordinate(12) at (-\escalaFigura*0.5, -\escalaFigura*\cero, \escalaFigura*0.5);
+	\coordinate(13) at (-\escalaFigura*0.5, -\escalaFigura*\cero, -\escalaFigura*0.5);
+	\coordinate(14) at (-\escalaFigura*\uno, -\escalaFigura*\dos, \escalaFigura*0.0);
+	\coordinate(15) at (-\escalaFigura*1.0, \escalaFigura*0.0, \escalaFigura*0.5);
+	\coordinate(16) at (-\escalaFigura*1.0, \escalaFigura*0.0, -\escalaFigura*0.5);
+	\coordinate(17) at (-\escalaFigura*\tres, \escalaFigura*0.0, \escalaFigura*0.0);
+	% Faces of the polyhedron
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (3) -- (4) -- (1) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (1) -- (7) -- (6) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (4) -- (5) -- (2) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (2) -- (8) -- (7) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (10) -- (4) -- (3) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (10) -- (16) -- (17) -- (11) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (10) -- (11) -- (5) -- (4) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (12) -- (13) -- (16) -- (15) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (13) -- (7) -- (8) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (13) -- (14) -- (17) -- (16) -- cycle;
+	%
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (5) -- (3) -- (0) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (12) -- (6) -- (7) -- (13) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (15) -- (16) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (14) -- (12) -- (15) -- (17) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (14) -- (8) -- (6) -- (12) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (11) -- (17) -- (15) -- (9) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (0) -- (6) -- (8) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (11) -- (9) -- (3) -- (5) -- cycle;
+	%
+	\end{tikzpicture}
+	%
+\end{document}

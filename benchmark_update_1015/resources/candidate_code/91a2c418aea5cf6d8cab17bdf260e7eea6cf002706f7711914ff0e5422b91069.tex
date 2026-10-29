@@ -1,0 +1,40 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    % Axes
+    \draw[->] (-2,0) -- (3,0) node[right] {$x$};
+    \draw[->] (0,-2) -- (0,3) node[above] {$y$};
+    \draw[->] (0,0) -- (0,3) node[left] {$z$};
+
+    % Ellipse
+    \draw[blue, thick] (0,0) ellipse (1.5 and 1);
+
+    % Vector r(t)
+    \draw[blue, ->, thick] (0,0) -- (1,0.5) node[right] {$\vec{r}(t)$};
+
+    % Tangent vector T
+    \draw[red, thick] (0,0) circle (0.5);
+    \draw[red, ->, thick] (0.4,0.1) -- (0.6,0.2) node[right] {$\hat{T}$};
+
+    % Normal vector N
+    \draw[red, thick] (0,0) circle (0.5);
+    \draw[red, ->, thick] (0.2,0.4) -- (0.3,0.5) node[right] {$\hat{N}$};
+
+    % Grid lines
+    \foreach \x in {-1,0,1} {
+        \draw[gray!30,dashed] (0,\x) -- (3,\x);
+    }
+    \foreach \y in {-1,0,1} {
+        \draw[gray!30,dashed] (\y,0) -- (\y,3);
+    }
+
+    % Coordinate labels
+    \node at (1.5,0) [below right] {1};
+    \node at (-1.5,0) [below left] {-1};
+    \node at (0,1.5) [left above] {1};
+    \node at (0,-1.5) [below left] {-1};
+\end{tikzpicture}
+\end{document}

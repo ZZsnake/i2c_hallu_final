@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quadratic Function Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .chart-container {
+      width: 100%;
+      height: 550px;
+      margin-bottom: 40px;
+    }
+    .chart-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .chart-title.top {
+      color: #1a1a33;
+    }
+    .chart-title.bottom {
+      color: #8b0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-container" id="chart1"></div>
+  <div class="chart-container" id="chart2"></div>
+
+  <script>
+    // Generate data for f(x) = x² - 2x + 3 from x=1 to x=24
+    const xValues = Array.from({ length: 24 }, (_, i) => i + 1);
+    const yValues = xValues.map(x => x * x - 2 * x + 3);
+
+    // Chart 1: Quadratic Function
+    const chart1 = echarts.init(document.getElementById('chart1'));
+    const option1 = {
+      title: {
+        text: 'Quadratic Function: f(x) = x² - 2x + 3',
+        left: 'center',
+        textStyle: {
+          color: '#1a1a33',
+          fontSize: 16
+        }
+      },
+      tooltip: { show: true },
+      xAxis: {
+        type: 'category',
+        data: xValues.map(x => `x=${x}`),
+        axisLabel: { rotate: 0, interval: 0, color: '#1a1a33' },
+        axisLine: { show: true, lineStyle: { color: '#1a1a33' } },
+        axisTick: { show: true, lineStyle: { color: '#1a1a33' } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'f(x) Value',
+        nameLocation: 'end',
+        nameRotate: 0,
+        nameGap: 15,
+        nameTextStyle: {
+          color: '#1a1a33',
+          fontWeight: 'bold',
+          align: 'left'
+        },
+        min: 0,
+        max: 600,
+        axisLabel: { color: '#1a1a33' },
+        splitLine: { lineStyle: { color: '#ddd' } }
+      },
+      series: [{
+        data: yValues,
+        type: 'line',
+        smooth: false,
+        symbol: 'circle',
+        symbolSize: 8,
+        itemStyle: {
+          color: function (params) {
+            const t = params.dataIndex / (yValues.length - 1);
+            if (t <= 0.5) {
+              const u = t * 2;
+              return `rgb(255, ${Math.round(245 - 41 * u)}, ${Math.round(157 + 31 * u)})`;
+            }
+            const u = (t - 0.5) * 2;
+            return `rgb(${Math.round(255 - 11 * u)}, ${Math.round(204 - 137 * u)}, ${Math.round(188 - 134 * u)})`;
+          }
+        },
+        lineStyle: {
+          width: 4,
+          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+            { offset: 0, color: '#3749A6' },
+            { offset: 1, color: '#F54F29' }
+          ])
+        }
+      }],
+      grid: { left: '10%', right: '10%', top: '15%', bottom: '15%' }
+    };
+    chart1.setOption(option1);
+
+    // Chart 2: Function Value Progression (Second View)
+    const chart2 = echarts.init(document.getElementById('chart2'));
+    const option2 = {
+      title: {
+        text: 'Function Value Progression (Second View)',
+        left: 'center',
+        textStyle: {
+          color: '#8b0000',
+          fontSize: 16
+        }
+      },
+      tooltip: { show: true },
+      xAxis: {
+        type: 'category',
+        data: xValues.map(x => `x=${x}`),
+        axisLabel: { rotate: 0, interval: 0, color: '#c00020' },
+        axisLine: { show: true, lineStyle: { color: '#c00020' } },
+        axisTick: { show: true, lineStyle: { color: '#c00020' } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'f(x) Value',
+        nameLocation: 'end',
+        nameRotate: 0,
+        nameGap: 15,
+        nameTextStyle: {
+          color: '#c00020',
+          fontWeight: 'bold',
+          align: 'left'
+        },
+        min: 0,
+        max: 600,
+        axisLabel: { color: '#c00020' },
+        splitLine: { lineStyle: { color: '#ddd' } }
+      },
+      series: [{
+        data: yValues,
+        type: 'line',
+        smooth: false,
+        symbol: 'rect',
+        symbolSize: 8,
+        itemStyle: {
+          color: function (params) {
+            const t = params.dataIndex / (yValues.length - 1);
+            if (t <= 0.5) {
+              const u = t * 2;
+              return `rgb(255, ${Math.round(245 - 41 * u)}, ${Math.round(157 + 31 * u)})`;
+            }
+            const u = (t - 0.5) * 2;
+            return `rgb(${Math.round(255 - 11 * u)}, ${Math.round(204 - 137 * u)}, ${Math.round(188 - 134 * u)})`;
+          }
+        },
+        lineStyle: {
+          width: 3,
+          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+            { offset: 0, color: '#A91B34' },
+            { offset: 1, color: '#00A878' }
+          ])
+        }
+      }],
+      grid: { left: '10%', right: '10%', top: '15%', bottom: '15%' }
+    };
+    chart2.setOption(option2);
+
+    // Responsive resize
+    window.addEventListener('resize', () => {
+      chart1.resize();
+      chart2.resize();
+    });
+  </script>
+</body>
+</html>

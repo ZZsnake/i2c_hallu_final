@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Temperature Gauge</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            font-family: Arial, sans-serif;
+        }
+        #gaugeChart {
+            width: 600px;
+            height: 400px;
+        }
+        .temperature-value {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 40px;
+            color: #333;
+            font-weight: bold;
+        }
+        .unit {
+            font-size: 24px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="gaugeChart"></div>
+        <div class="temperature-value">
+            <span id="temperature">42.5</span> <span class="unit">°C</span>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            var chart = echarts.init(document.getElementById('gaugeChart'));
+            
+            var option = {
+                graphic: {
+                    elements: [{
+                        type: 'text',
+                        key: 'valueText',
+                        style: {
+                            text: '42.5',
+                            fontSize: 40,
+                            fontWeight: 'bold',
+                            fill: '#333'
+                        },
+                        position: [290, 320]
+                    }]
+                },
+                series: [{
+                    type: 'gauge',
+                    center: ['50%', '55%'],
+                    radius: '140%',
+                    startAngle: 180,
+                    endAngle: 0,
+                    min: -100,
+                    max: 200,
+                    splitNumber: 12,
+                    axisLine: {
+                        lineStyle: {
+                            width: 8,
+                            color: [
+                                [0.25, '#2998FF'],
+                                [0.5, '#FFA500'],
+                                [1, '#32CD32']
+                            ]
+                        }
+                    },
+                    axisTick: {
+                        length: 8,
+                        lineStyle: {
+                            width: 2,
+                            color: '#999'
+                        }
+                    },
+                    splitLine: {
+                        length: 18,
+                        lineStyle: {
+                            width: 3,
+                            color: '#999'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 12,
+                        color: '#666',
+                        formatter: function(v) {
+                            return v;
+                        }
+                    },
+                    detail: {
+                        formatter: function(value) {
+                            return '';
+                        },
+                        fontSize: 60
+                    },
+                    data: [{
+                        value: 42.5,
+                        name: 'Temperature',
+                        title: {
+                            fontSize: 20,
+                            offsetCenter: [0, '80%'],
+                            color: '#666'
+                        }
+                    }],
+                    pointer: {
+                        width: 4,
+                        length: '60%',
+                        color: '#2998FF'
+                    }
+                }]
+            };
+            
+            chart.setOption(option);
+        });
+    </script>
+</body>
+</html>

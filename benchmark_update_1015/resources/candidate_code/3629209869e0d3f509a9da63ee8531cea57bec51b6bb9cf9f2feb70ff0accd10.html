@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Growth of Mathematical Functions</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #fff;
+    }
+    #chart {
+      width: 100%;
+      height: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="chart"></div>
+
+  <script>
+    $(document).ready(function() {
+      const chart = echarts.init(document.getElementById('chart'));
+
+      // Generate sample data for n from 1 to 9
+      const nValues = Array.from({length: 9}, (_, i) => i + 1);
+      const exponentialData = nValues.map(n => Math.pow(2, n)); // 2^n
+      const quadraticData = nValues.map(n => n * n); // n^2
+      const linearData = nValues.map(n => n); // n
+
+      const option = {
+        title: {
+          text: 'Growth of Mathematical Functions',
+          left: 'center',
+          textStyle: {
+            fontSize: 16,
+            fontWeight: 'bold'
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross'
+          }
+        },
+        legend: {
+          data: ['Exponential', 'Quadratic', 'Linear'],
+          right: '10%',
+          top: '10%',
+          itemWidth: 15,
+          itemHeight: 15,
+          textStyle: {
+            fontSize: 12
+          }
+        },
+        xAxis: {
+          type: 'category',
+          name: 'n',
+          nameLocation: 'middle',
+          nameGap: 30,
+          nameTextStyle: {
+            fontSize: 14
+          },
+          data: nValues,
+          axisLine: {
+            lineStyle: {
+              color: '#333'
+            }
+          },
+          axisLabel: {
+            fontSize: 12
+          }
+        },
+        yAxis: {
+          type: 'log',
+          name: 'Value',
+          nameLocation: 'middle',
+          nameGap: 40,
+          nameTextStyle: {
+            fontSize: 14
+          },
+          min: 1,
+          max: 1000,
+          splitNumber: 4,
+          axisLine: {
+            lineStyle: {
+              color: '#333'
+            }
+          },
+          axisLabel: {
+            fontSize: 12
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#eee'
+            }
+          }
+        },
+        series: [
+          {
+            name: 'Exponential',
+            type: 'line',
+            data: exponentialData,
+            symbol: 'circle',
+            symbolSize: 8,
+            lineStyle: {
+              width: 2
+            },
+            itemStyle: {
+              color: '#0056b3'
+            },
+            emphasis: {
+              itemStyle: {
+                color: '#0056b3'
+              }
+            }
+          },
+          {
+            name: 'Quadratic',
+            type: 'line',
+            data: quadraticData,
+            symbol: 'triangle',
+            symbolSize: 8,
+            lineStyle: {
+              width: 2
+            },
+            itemStyle: {
+              color: '#d62728'
+            },
+            emphasis: {
+              itemStyle: {
+                color: '#d62728'
+              }
+            }
+          },
+          {
+            name: 'Linear',
+            type: 'line',
+            data: linearData,
+            symbol: 'rect',
+            symbolSize: 8,
+            lineStyle: {
+              width: 2
+            },
+            itemStyle: {
+              color: '#2ca02c'
+            },
+            emphasis: {
+              itemStyle: {
+                color: '#2ca02c'
+              }
+            }
+          }
+        ],
+        grid: {
+          left: '10%',
+          right: '10%',
+          top: '20%',
+          bottom: '15%'
+        }
+      };
+
+      chart.setOption(option);
+
+      window.addEventListener('resize', function() {
+        chart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

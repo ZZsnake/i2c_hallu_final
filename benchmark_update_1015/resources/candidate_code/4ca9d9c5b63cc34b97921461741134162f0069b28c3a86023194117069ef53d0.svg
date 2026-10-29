@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4CAF50"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#F44336"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9C27B0"/>
+    </marker>
+  </defs>
+
+  <!-- Left Column (Blue Nodes) -->
+  <rect x="50" y="50" rx="15" ry="15" width="200" height="60" fill="#4285F4" filter="url(#shadow)"/>
+  <text x="150" y="75" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Operating system</text>
+  <text x="150" y="95" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">loader</text>
+
+  <rect x="50" y="150" rx="15" ry="15" width="200" height="60" fill="#4285F4" filter="url(#shadow)"/>
+  <text x="150" y="185" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Boot code</text>
+
+  <rect x="50" y="250" rx="15" ry="15" width="200" height="60" fill="#4285F4" filter="url(#shadow)"/>
+  <text x="150" y="285" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Application</text>
+
+  <rect x="50" y="350" rx="15" ry="15" width="200" height="60" fill="#4285F4" filter="url(#shadow)"/>
+  <text x="150" y="385" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Driver</text>
+
+  <!-- Right Column (Orange Nodes) -->
+  <rect x="350" y="100" rx="15" ry="15" width="350" height="80" fill="#FB8C00" filter="url(#shadow)"/>
+  <text x="525" y="125" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Boot services</text>
+  <text x="525" y="145" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">are terminated;</text>
+  <text x="525" y="165" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">operation handed over to</text>
+  <text x="525" y="185" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">operating system loader</text>
+
+  <rect x="350" y="200" rx="15" ry="15" width="350" height="80" fill="#FB8C00" filter="url(#shadow)"/>
+  <text x="525" y="225" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Boot from ordered list of</text>
+  <text x="525" y="245" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">EFI operating system</text>
+  <text x="525" y="265" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">loaders is executed</text>
+
+  <rect x="350" y="300" rx="15" ry="15" width="350" height="60" fill="#FB8C00" filter="url(#shadow)"/>
+  <text x="525" y="325" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Drivers and applications</text>
+  <text x="525" y="345" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">are loaded iteratively</text>
+
+  <rect x="350" y="400" rx="15" ry="15" width="350" height="60" fill="#FB8C00" filter="url(#shadow)"/>
+  <text x="525" y="425" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Standard firmware</text>
+  <text x="525" y="445" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">platform initialization</text>
+
+  <!-- Arrows -->
+  <!-- Green Arrow: Boot code to Operating system loader -->
+  <path d="M150 150 L150 110" stroke="#4CAF50" stroke-width="4" fill="none" marker-end="url(#arrowGreen)"/>
+
+  <!-- Red Arrows: API-specified -->
+  <path d="M350 140 L250 180" stroke="#F44336" stroke-width="4" fill="none" marker-end="url(#arrowRed)"/>
+  <path d="M350 320 L250 280" stroke="#F44336" stroke-width="4" fill="none" marker-end="url(#arrowRed)"/>
+  <path d="M350 340 L250 380" stroke="#F44336" stroke-width="4" fill="none" marker-end="url(#arrowRed)"/>
+
+  <!-- Purple Arrows: Upon encountering an error -->
+  <path d="M350 230 L280 230 L280 185 L250 185" stroke="#9C27B0" stroke-width="4" fill="none" marker-end="url(#arrowPurple)"/>
+  <path d="M350 245 L280 245 L280 185" stroke="#9C27B0" stroke-width="4" fill="none"/>
+  <path d="M350 260 L280 260 L280 185" stroke="#9C27B0" stroke-width="4" fill="none"/>
+
+  <!-- Legend -->
+  <rect x="50" y="450" width="200" height="140" fill="white" stroke="#ccc" stroke-width="1"/>
+  <text x="60" y="470" font-family="Arial, sans-serif" font-size="16" fill="black" font-weight="bold">Legend</text>
+
+  <rect x="60" y="480" width="20" height="15" fill="#4285F4"/>
+  <text x="90" y="492" font-family="Arial, sans-serif" font-size="14" fill="black">EFI binaries</text>
+
+  <rect x="60" y="500" width="20" height="15" fill="#FB8C00"/>
+  <text x="90" y="512" font-family="Arial, sans-serif" font-size="14" fill="black">Boot manager</text>
+
+  <line x1="60" y1="530" x2="80" y2="530" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  <text x="90" y="532" font-family="Arial, sans-serif" font-size="14" fill="black">Value add implementation</text>
+
+  <line x1="60" y1="550" x2="80" y2="550" stroke="#F44336" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <text x="90" y="552" font-family="Arial, sans-serif" font-size="14" fill="black">API-specified</text>
+
+  <line x1="60" y1="570" x2="80" y2="570" stroke="#9C27B0" stroke-width="3" marker-end="url(#arrowPurple)"/>
+  <text x="90" y="572" font-family="Arial, sans-serif" font-size="14" fill="black">Upon encountering an error</text>
+
+</svg>

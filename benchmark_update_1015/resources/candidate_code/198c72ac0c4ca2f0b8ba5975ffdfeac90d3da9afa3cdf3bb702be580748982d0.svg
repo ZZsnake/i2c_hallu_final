@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Axes -->
+  <line x1="50" y1="50" x2="50" y2="550" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="550" x2="750" y2="550" stroke="black" stroke-width="2"/>
+  
+  <!-- Demand Curve -->
+  <line x1="50" y1="50" x2="750" y2="550" stroke="green" stroke-dasharray="5,5" stroke-width="2"/>
+  
+  <!-- Supply Curve -->
+  <line x1="50" y1="550" x2="750" y2="50" stroke="red" stroke-width="2"/>
+  
+  <!-- Price Ceiling -->
+  <line x1="150" y1="100" x2="750" y2="100" stroke="black" stroke-width="2"/>
+  <text x="160" y="110" font-family="Arial" font-size="12" fill="black">Price Ceiling</text>
+  
+  <!-- Price Floor -->
+  <line x1="150" y1="450" x2="750" y2="450" stroke="black" stroke-width="2"/>
+  <text x="160" y="460" font-family="Arial" font-size="12" fill="black">Price Floor</text>
+  
+  <!-- Equilibrium -->
+  <line x1="400" y1="300" x2="400" y2="550" stroke="black" stroke-width="1"/>
+  <line x1="400" y1="300" x2="50" y2="300" stroke="black" stroke-width="1"/>
+  <text x="410" y="310" font-family="Arial" font-size="12" fill="black">Eq Price</text>
+  <text x="410" y="560" font-family="Arial" font-size="12" fill="black">Q Eq</text>
+  
+  <!-- Tax -->
+  <line x1="400" y1="300" x2="400" y2="200" stroke="orange" stroke-width="2"/>
+  <text x="410" y="210" font-family="Arial" font-size="12" fill="orange">Tax</text>
+  
+  <!-- Quantities -->
+  <text x="160" y="560" font-family="Arial" font-size="12" fill="black">Q Floor</text>
+</svg>

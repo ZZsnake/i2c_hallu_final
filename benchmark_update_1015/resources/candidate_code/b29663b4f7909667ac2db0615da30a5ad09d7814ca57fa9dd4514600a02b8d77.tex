@@ -1,0 +1,74 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{3d, arrows.meta, shadings, calc}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    scale=1.2,
+    every node/.style={font=\small, inner sep=1pt},
+    axis/.style={->, >=Stealth, thick},
+    sphere/.style={ball color=gray!60, opacity=0.8, draw=black, thick},
+    edge/.style={thick},
+    dashededge/.style={dashed, thick},
+    face/.style={fill=gray!50, opacity=0.7}
+]
+
+% Title
+\node[font=\large\bfseries] at (0,6.5) {Pseudoscalar Quindecuplet for udsc quarks};
+
+% Coordinate axes
+\draw[axis] (0,0) -- (1.5,0) node[below] {Charge};
+\draw[axis] (0,0) -- (0,1.5) node[left] {Charm};
+\draw[axis] (0,0) -- (-0.8,0.8) node[above left] {Strangeness};
+
+% Define 3D coordinates for the quindecuplet vertices
+% We'll use a simplified 2D projection with z-depth implied
+\coordinate (pi+)  at (3,1);
+\coordinate (K+)   at (2.5,2.5);
+\coordinate (D0s+) at (1.5,4);
+\coordinate (D+)   at (2.5,3);
+\coordinate (D0)   at (0.5,3);
+\coordinate (pi-)  at (-1,1);
+\coordinate (K-)   at (-0.5,-0.5);
+\coordinate (D0s-) at (-1.5,-2);
+\coordinate (D-)   at (-0.5,-1);
+\coordinate (D0bar) at (1.5,-2);
+\coordinate (K0bar) at (1,-0.5);
+\coordinate (K0)   at (0.5,1.5);
+\coordinate (eta)  at (0,0.5);
+\coordinate (pi0)  at (0.5,0.5);
+\coordinate (etap) at (1,0.5);
+
+% Draw faces (shaded planes)
+\fill[face] (pi+) -- (K+) -- (D0s+) -- (D+) -- cycle;
+\fill[face] (pi-) -- (K-) -- (D0s-) -- (D-) -- cycle;
+\fill[face] (pi+) -- (D0bar) -- (D0s-) -- (K-) -- cycle;
+\fill[face] (pi-) -- (D0) -- (D0s+) -- (K+) -- cycle;
+\fill[face] (K0) -- (eta) -- (etap) -- (K0bar) -- cycle;
+
+% Draw edges (solid and dashed)
+\draw[edge] (pi+) -- (K+) -- (D0s+) -- (D+) -- (pi+);
+\draw[edge] (pi-) -- (K-) -- (D0s-) -- (D-) -- (pi-);
+\draw[edge] (pi+) -- (D0bar) -- (D0s-) -- (K-) -- (pi-);
+\draw[edge] (pi-) -- (D0) -- (D0s+) -- (K+) -- (pi+);
+\draw[edge] (K0) -- (eta) -- (etap) -- (K0bar) -- (K0);
+
+\draw[dashededge] (D0) -- (D+) -- (D0s+) -- (D0s-) -- (D-) -- (D0);
+\draw[dashededge] (K0) -- (K+) -- (K0bar) -- (K-) -- (K0);
+\draw[dashededge] (pi+) -- (D0bar) -- (pi-);
+\draw[dashededge] (eta) -- (D0s+) -- (etap) -- (D0s-) -- (eta);
+
+% Draw spheres (nodes)
+\foreach \point/\label in {
+    pi+/π⁺, K+/K⁺, D0s+/D_s⁰, D+/D⁺, D0/D⁰,
+    pi-/π⁻, K-/K⁻, D0s-/D_s⁻, D-/D⁻, D0bar/\overline{D}⁰,
+    K0bar/\overline{K}⁰, K0/K⁰, eta/η, pi0/π⁰, etap/η′
+} {
+    \shade[sphere] (\point) circle (0.3);
+    \node at (\point) {$\label$};
+}
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="500" width="500" version="1.0" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<style>
+ .text1{font-family:Bitstream Vera Sans;font-size:12px;fill:#000000}
+ .cl1{fill-rule:nonzero;fill:#000000;}
+ .cl2{fill:#000000;}
+ .cl3{font-size:23px;font-family:Bitstream Vera Sans;fill:#000000;}
+ .cl4{font-size:19px;font-family:Bitstream Vera Sans;fill:#000000;}
+ .cl5{ font-size:16px;;}
+</style>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <path style="stroke-linejoin:miter;stroke:#000000;stroke-linecap:butt;stroke-width:0.987px;fill:none" d="M 488.120,460 29.491,459 27.540,41.872"/>
+ <path style="stroke-linejoin:miter;stroke:#fffe40;stroke-linecap:round;stroke-width:2.200;fill:none" d="M 474.168,458.667 29.212,165.174"/>
+ <path style="stroke-linejoin:miter;stroke:#40ffff;stroke-linecap:round;stroke-width:2.200;fill:none" d="M 29.001,50.509 311.931,458.125"/>
+ <text class="cl3" y="484.238" x="476.377">Q</text>
+ <text class="cl4" y="25.920" x="21.189">2</text>
+ <text class="cl4" y="490.554" x="492.291">1</text>
+ <path class="cl1" d="m 27.317,30.084 6.925,17.257 c 0,0 -5.981,-8.428 -13.221,0 l 6.296,-17.257 z"/>
+ <path class="cl1" d="M 493.582,460.087 L 476.325,467.012 C 476.325,467.012 484.753,461.031 476.325,453.791 L 493.582,460.087 z"/>
+ <text class="cl3" y="21.606" x="4.221">Q</text>
+ <path class="cl2" d="m 328.361,171.638 a 4.343,4.343 0 1 1 -8.686,0 4.343,4.343 0 1 1 8.686,0 z" transform="translate(-213 183)"/>
+ <path class="cl2" d="m 328.361,171.638 a 4.343,4.343 0 1 1 -8.686,0 4.343,4.343 0 1 1 8.686,0 z" transform="translate(-149 89.4)"/>
+ <path class="cl2" d="m 328.361,171.638 a 4.343,4.343 0 1 1 -8.686,0 4.343,4.343 0 1 1 8.686,0 z" transform="translate(-295 -7.38)"/>
+ <text y="352.028" x="117.111" class="text1 cl5">D</text>
+ <path class="cl2" d="m 328.361,171.638 a 4.343,4.343 0 1 1 -8.686,0 4.343,4.343 0 1 1 8.686,0 z" transform="translate(-10.7 288)"/>
+ <text y="455.833" x="320.609" class="text1 cl5">A</text>
+ <text y="159.667" x="33.929" class="text1 cl5">B</text>
+ <text y="257.320" x="180.960" class="text1 cl5">C</text>
+ <text y="125.598" x="250.180" class="text1"><tspan x="250.180" y="125.598"/></text>
+ <text style="font-size:40px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;fill:#40ffff; font-size:15px;fill:#40ffff;" y="416.044" x="286.603">BR</text>
+ <text style="font-size:40px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;fill:#40ffff; font-size:12px;fill:#40ffff;" y="420.204" x="307.246">1</text>
+ <text style="font-size:40px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;fill:#40ffff; font-size:15px;fill:#fffe40;" y="415.859" x="413.802">BR</text>
+ <text style="font-size:40px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;fill:#40ffff; font-size:12px;fill:#fffe40;" y="420.019" x="434.445">2</text>
+</svg>

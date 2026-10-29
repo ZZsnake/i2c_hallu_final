@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>gauge-physics-temperature</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* High contrast axis & labels */
+    #container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height:100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // Physics domain: Gauge - Temperature measurement sample
+    option = {
+      series: [
+        {
+          type: 'gauge',
+          min: -100,
+          max: 200,
+          progress: {
+            show: true,
+            width: 22,
+            itemStyle: {
+              color: '#0e4af7' // Deep blue
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              width: 22,
+              color: [
+                [0.33, '#e53935'], // Red (low temp)
+                [0.66, '#ffa000'], // Orange (medium temp)
+                [1, '#388e3c']     // Green (high temp)
+              ]
+            }
+          },
+          axisTick: {
+            show: true,
+            distance: -22,
+            length: 8,
+            lineStyle: {
+              color: '#222',
+              width: 2
+            }
+          },
+          splitLine: {
+            distance: -22,
+            length: 22,
+            lineStyle: {
+              width: 3,
+              color: '#222'
+            }
+          },
+          axisLabel: {
+            distance: 32,
+            color: '#222',
+            fontSize: 18,
+            fontWeight: 'bold'
+          },
+          anchor: {
+            show: true,
+            showAbove: true,
+            size: 28,
+            itemStyle: {
+              borderWidth: 8,
+              borderColor: '#222'
+            }
+          },
+          pointer: {
+            show: true,
+            icon: 'rect',
+            width: 8,
+            length: '70%',
+            itemStyle: {
+              color: '#0e4af7'
+            }
+          },
+          title: {
+            show: true,
+            offsetCenter: [0, '40%'],
+            color: '#212121',
+            fontSize: 24,
+            fontWeight: 'bold',
+            text: 'Temperature (°C)'
+          },
+          detail: {
+            valueAnimation: true,
+            fontSize: 56,
+            fontWeight: 'bold',
+            offsetCenter: [0, '80%'],
+            color: '#17202A',
+            formatter: function(value) {
+              return value.toFixed(1) + ' °C';
+            }
+          },
+          data: [
+            {
+              value: 42.5
+            }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

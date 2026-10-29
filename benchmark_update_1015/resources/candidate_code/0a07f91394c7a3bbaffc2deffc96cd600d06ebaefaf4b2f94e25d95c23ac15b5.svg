@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 740">
+  <!-- Input box -->
+  <rect x="20" y="5" width="460" height="55" rx="10" fill="#F5E6D3" stroke="#000" stroke-width="2.5"/>
+  <text x="38" y="38" font-family="serif" font-size="24" font-weight="bold" fill="#800080">input:</text>
+  <text x="175" y="38" font-family="serif" font-size="24" font-style="italic">r</text>
+  <text x="285" y="38" font-family="serif" font-size="24">and</text>
+  <text x="365" y="38" font-family="serif" font-size="24" font-style="italic">s</text>
+  
+  <!-- Arrow from input to first decision -->
+  <path d="M 105 60 L 105 95" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- First decision diamond: s zero? -->
+  <path d="M 105 115 L 65 155 L 105 195 L 145 155 Z" fill="#87CEEB" stroke="#000" stroke-width="2"/>
+  <text x="75" y="162" font-family="serif" font-size="18" font-style="italic">s</text>
+  <text x="92" y="162" font-family="serif" font-size="16">zero?</text>
+  
+  <!-- Arrow and label: true -->
+  <path d="M 105 195 L 105 230" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="110" y="220" font-family="serif" font-size="14">true</text>
+  
+  <!-- Process box: d <- r -->
+  <rect x="28" y="230" width="115" height="40" fill="#F5E6D3" stroke="#000" stroke-width="2"/>
+  <text x="50" y="255" font-family="serif" font-size="18" font-style="italic">d</text>
+  <text x="65" y="255" font-family="serif" font-size="18"> ← </text>
+  <text x="95" y="255" font-family="serif" font-size="18" font-style="italic">r</text>
+  
+  <!-- Arrow down from d <- r -->
+  <path d="M 85 270 L 85 340" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow: false from first decision -->
+  <path d="M 145 155 L 265 155" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="175" y="150" font-family="serif" font-size="14">false</text>
+  
+  <!-- Loop region -->
+  <rect x="240" y="80" width="350" height="650" fill="#B0C4DE" stroke="#555" stroke-width="2.5" opacity="0.5"/>
+  <text x="370" y="175" font-family="sans-serif" font-size="48" font-weight="bold" fill="#004080">loop</text>
+  
+  <!-- Entry arrows to loop -->
+  <path d="M 265 105 L 265 155" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 265 155 L 265 185" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 265 185 L 265 215" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Loop back arrows at top -->
+  <path d="M 570 105 L 570 95 L 275 95 L 275 105" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 450 105 L 450 95" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Second decision diamond: r zero? -->
+  <path d="M 265 235 L 225 275 L 265 315 L 305 275 Z" fill="#87CEEB" stroke="#000" stroke-width="2"/>
+  <text x="235" y="282" font-family="serif" font-size="18" font-style="italic">r</text>
+  <text x="252" y="282" font-family="serif" font-size="16">zero?</text>
+  
+  <!-- Arrow and label: true from r zero? -->
+  <path d="M 265 315 L 265 345" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="270" y="335" font-family="serif" font-size="14">true</text>
+  
+  <!-- Process box: d <- s -->
+  <rect x="190" y="345" width="115" height="40" fill="#F5E6D3" stroke="#000" stroke-width="2"/>
+  <text x="212" y="370" font-family="serif" font-size="18" font-style="italic">d</text>
+  <text x="227" y="370" font-family="serif" font-size="18"> ← </text>
+  <text x="257" y="370" font-family="serif" font-size="18" font-style="italic">s</text>
+  
+  <!-- Arrow from d <- s merging with main flow -->
+  <path d="M 247 385 L 247 500 L 85 500" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow: false from r zero? -->
+  <path d="M 305 275 L 395 275" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="315" y="270" font-family="serif" font-size="14">false</text>
+  
+  <!-- Third decision diamond: r < s? -->
+  <path d="M 395 295 L 355 335 L 395 375 L 435 335 Z" fill="#87CEEB" stroke="#000" stroke-width="2"/>
+  <text x="365" y="342" font-family="serif" font-size="18" font-style="italic">r</text>
+  <text x="378" y="342" font-family="serif" font-size="18"> &lt; </text>
+  <text x="400" y="342" font-family="serif" font-size="18" font-style="italic">s</text>
+  <text x="413" y="342" font-family="serif" font-size="18"> ?</text>
+  
+  <!-- Arrow and label: true from r < s? -->
+  <path d="M 395 375 L 395 405" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="400" y="395" font-family="serif" font-size="14">true</text>
+  
+  <!-- Process box: swap -->
+  <rect x="345" y="405" width="160" height="85" fill="#F5DEB3" stroke="#000" stroke-width="2"/>
+  <text x="365" y="430" font-family="serif" font-size="18" font-style="italic">d</text>
+  <text x="380" y="430" font-family="serif" font-size="18"> ← </text>
+  <text x="410" y="430" font-family="serif" font-size="18" font-style="italic">s</text>
+  <text x="365" y="455" font-family="serif" font-size="18" font-style="italic">s</text>
+  <text x="380" y="455" font-family="serif" font-size="18"> ← </text>
+  <text x="410" y="455" font-family="serif" font-size="18" font-style="italic">r</text>
+  <text x="365" y="480" font-family="serif" font-size="18" font-style="italic">r</text>
+  <text x="380" y="480" font-family="serif" font-size="18"> ← </text>
+  <text x="410" y="480" font-family="serif" font-size="18" font-style="italic">d</text>
+  
+  <!-- Arrow down from swap box -->
+  <path d="M 425 490 L 425 540" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow: false from r < s? -->
+  <path d="M 435 335 L 530 335" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="445" y="330" font-family="serif" font-size="14">false</text>
+  
+  <!-- Arrow down and merge -->
+  <path d="M 530 335 L 530 540 L 425 540" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Process box: r <- r - s -->
+  <rect x="345" y="540" width="160" height="40" fill="#F5DEB3" stroke="#000" stroke-width="2"/>
+  <text x="365" y="565" font-family="serif" font-size="18" font-style="italic">r</text>
+  <text x="380" y="565" font-family="serif" font-size="18"> ← </text>
+  <text x="410" y="565" font-family="serif" font-size="18" font-style="italic">r</text>
+  <text x="425" y="565" font-family="serif" font-size="18"> - </text>
+  <text x="445" y="565" font-family="serif" font-size="18" font-style="italic">s</text>
+  
+  <!-- Arrow down from r <- r - s -->
+  <path d="M 425 580 L 425 620" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Loop back arrow -->
+  <path d="M 425 620 L 425 720 L 570 720 L 570 105" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 425 680 L 435 680" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Output box -->
+  <rect x="28" y="340" width="280" height="170" rx="10" fill="#F5E6D3" stroke="#000" stroke-width="2.5"/>
+  <text x="38" y="370" font-family="serif" font-size="24" font-weight="bold" fill="#800080">output:</text>
+  <text x="210" y="370" font-family="serif" font-size="24" font-style="italic">d</text>
+  <text x="38" y="400" font-family="serif" font-size="20">is the GCD of</text>
+  <text x="38" y="430" font-family="serif" font-size="20">the input values</text>
+  <text x="38" y="460" font-family="serif" font-size="20">given to </text>
+  <text x="160" y="460" font-family="serif" font-size="20" font-style="italic">r</text>
+  <text x="180" y="460" font-family="serif" font-size="20"> and </text>
+  <text x="240" y="460" font-family="serif" font-size="20" font-style="italic">s</text>
+  
+  <!-- Arrow to output -->
+  <path d="M 85 500 L 85 530" stroke="#000" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#000"/>
+    </marker>
+  </defs>
+</svg>

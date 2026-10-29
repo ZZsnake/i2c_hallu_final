@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="574.60181"
+   width="410.13245"
+   version="1.1"
+   preserveAspectRatio="none"
+   viewBox="0 0 410.13245 574.60181"
+   id="svg_econ_sample"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs/>
+  <title id="title_econ">Supply and Demand Over Years</title>
+  <desc id="desc_econ">Line graph showing the trends of Supply and Demand in an economic market over time.</desc>
+  <!-- Axes -->
+  <path
+     d="M 40,520 H 370"
+     id="x_axis"
+     style="stroke:#1a237e;stroke-width:2"/>
+  <path
+     d="M 40,520 V 60"
+     id="y_axis"
+     style="stroke:#1a237e;stroke-width:2"/>
+  <!-- Tick marks on Y axis -->
+  <g id="y_ticks">
+    <path d="M 40,520 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,470 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,420 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,370 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,320 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,270 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,220 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,170 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,120 H 50" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 40,70 H 50" style="stroke:#1a237e;stroke-width:2"/>
+  </g>
+  <!-- Tick marks on X axis -->
+  <g id="x_ticks">
+    <path d="M 70,520 V 510" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 120,520 V 510" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 170,520 V 510" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 220,520 V 510" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 270,520 V 510" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 320,520 V 510" style="stroke:#1a237e;stroke-width:2"/>
+    <path d="M 370,520 V 510" style="stroke:#1a237e;stroke-width:2"/>
+  </g>
+  <!-- Grid lines -->
+  <g id="grid">
+    <path d="M 50,470 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,420 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,370 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,320 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,270 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,220 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,170 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,120 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+    <path d="M 50,70 H 370" style="stroke:#cfd8dc;stroke-width:1;stroke-dasharray:4,3"/>
+  </g>
+  <!-- Line: Supply -->
+  <path
+     id="supply_line"
+     d="M 70,470 L 120,400 L 170,370 L 220,330 L 270,280 L 320,200 L 370,150"
+     style="fill:none;stroke:#d32f2f;stroke-width:3;stroke-dasharray:8,4"/>
+  <!-- Line: Demand -->
+  <path
+     id="demand_line"
+     d="M 70,120 L 120,180 L 170,250 L 220,320 L 270,380 L 320,440 L 370,490"
+     style="fill:none;stroke:#1976d2;stroke-width:3"/>
+  <!-- Data point markers (Supply) -->
+  <g id="supply_points">
+    <circle cx="70" cy="470" r="6" fill="#d32f2f" stroke="#212121" stroke-width="2"/>
+    <circle cx="120" cy="400" r="6" fill="#d32f2f" stroke="#212121" stroke-width="2"/>
+    <circle cx="170" cy="370" r="6" fill="#d32f2f" stroke="#212121" stroke-width="2"/>
+    <circle cx="220" cy="330" r="6" fill="#d32f2f" stroke="#212121" stroke-width="2"/>
+    <circle cx="270" cy="280" r="6" fill="#d32f2f" stroke="#212121" stroke-width="2"/>
+    <circle cx="320" cy="200" r="6" fill="#d32f2f" stroke="#212121" stroke-width="2"/>
+    <circle cx="370" cy="150" r="6" fill="#d32f2f" stroke="#212121" stroke-width="2"/>
+  </g>
+  <!-- Data point markers (Demand) -->
+  <g id="demand_points">
+    <rect x="64" y="114" width="12" height="12" fill="#1976d2" stroke="#212121" stroke-width="2" rx="3"/>
+    <rect x="114" y="174" width="12" height="12" fill="#1976d2" stroke="#212121" stroke-width="2" rx="3"/>
+    <rect x="164" y="244" width="12" height="12" fill="#1976d2" stroke="#212121" stroke-width="2" rx="3"/>
+    <rect x="214" y="314" width="12" height="12" fill="#1976d2" stroke="#212121" stroke-width="2" rx="3"/>
+    <rect x="264" y="374" width="12" height="12" fill="#1976d2" stroke="#212121" stroke-width="2" rx="3"/>
+    <rect x="314" y="434" width="12" height="12" fill="#1976d2" stroke="#212121" stroke-width="2" rx="3"/>
+    <rect x="364" y="484" width="12" height="12" fill="#1976d2" stroke="#212121" stroke-width="2" rx="3"/>
+  </g>
+  <!-- Axis labels -->
+  <text x="205" y="560" font-size="20" font-family="Tahoma, Arial, sans-serif" fill="#263238" text-anchor="middle">Year</text>
+  <text x="18" y="290" font-size="20" font-family="Tahoma, Arial, sans-serif" fill="#263238" text-anchor="middle" transform="rotate(-90 18,290)">Quantity</text>
+  <!-- Y axis values -->
+  <text x="32" y="525" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">0</text>
+  <text x="32" y="475" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">50</text>
+  <text x="32" y="425" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">100</text>
+  <text x="32" y="375" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">150</text>
+  <text x="32" y="325" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">200</text>
+  <text x="32" y="275" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">250</text>
+  <text x="32" y="225" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">300</text>
+  <text x="32" y="175" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">350</text>
+  <text x="32" y="125" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">400</text>
+  <text x="32" y="75" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="end">450</text>
+  <!-- X axis values (Years) -->
+  <text x="70" y="540" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="middle">2016</text>
+  <text x="120" y="540" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="middle">2017</text>
+  <text x="170" y="540" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="middle">2018</text>
+  <text x="220" y="540" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="middle">2019</text>
+  <text x="270" y="540" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="middle">2020</text>
+  <text x="320" y="540" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="middle">2021</text>
+  <text x="370" y="540" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="middle">2022</text>
+  <!-- Legend -->
+  <rect x="60" y="20" width="16" height="8" fill="#d32f2f"/>
+  <text x="80" y="28" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="start">Supply</text>
+  <rect x="160" y="20" width="16" height="8" fill="#1976d2"/>
+  <text x="180" y="28" font-size="16" font-family="Tahoma, Arial, sans-serif" fill="#212121" text-anchor="start">Demand</text>
+</svg>

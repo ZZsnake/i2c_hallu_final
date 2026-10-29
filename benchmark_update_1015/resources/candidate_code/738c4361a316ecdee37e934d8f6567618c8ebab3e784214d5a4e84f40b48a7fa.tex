@@ -1,0 +1,48 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \definecolor{darkpurple}{RGB}{60,40,60}
+  \definecolor{lightpurple}{RGB}{180,160,200}
+  
+  % Draw the matrix using nodes
+  \matrix (m) [matrix of nodes,
+    nodes={minimum width=2.5cm, minimum height=1cm, anchor=center, draw=white, line width=2pt},
+    column sep=-\pgflinewidth,
+    row sep=-\pgflinewidth,
+    nodes in empty cells,
+    row 1/.style={nodes={fill=darkpurple, text=white, font=\Large\bfseries}},
+    column 1/.style={nodes={fill=lightpurple, text=darkpurple, font=\Large\bfseries}},
+    row 2/.style={nodes={fill=lightpurple, text=black, font=\Large}},
+    row 3/.style={nodes={fill=lightpurple, text=black, font=\Large}},
+    row 4/.style={nodes={fill=lightpurple, text=black, font=\Large}},
+    row 5/.style={nodes={fill=darkpurple, text=white, font=\Large\bfseries}},
+  ]
+  {
+    |[fill=darkpurple]| Confusion & |[fill=darkpurple]| \multicolumn{3}{c}{Predicted} & |[fill=darkpurple]| Total \\
+    |[fill=darkpurple]| Matrix & |[fill=darkpurple]| Low & |[fill=darkpurple]| Medium & |[fill=darkpurple]| High & \\
+    Low & 2 & 0 & 0 & 2 \\
+    Medium & 0 & 2 & 0 & 2 \\
+    High & 0 & 0 & 2 & 2 \\
+    Total & 2 & 2 & 2 & 6 \\
+  };
+  
+  % Merge cells for "Confusion Matrix"
+  \fill[darkpurple] (m-1-1.north west) rectangle (m-2-1.south east);
+  \node[text=white, font=\Large\bfseries] at ($(m-1-1)!0.5!(m-2-1)$) {Confusion};
+  \node[text=white, font=\Large\bfseries] at ($(m-1-1)!0.5!(m-2-1)$) [yshift=-0.3cm] {Matrix};
+  
+  % Merge cells for "Predicted"
+  \fill[darkpurple] (m-1-2.north west) rectangle (m-1-4.south east);
+  \node[text=white, font=\Large\bfseries] at ($(m-1-2)!0.5!(m-1-4)$) {Predicted};
+  
+  % Merge cells for "Total" header
+  \fill[darkpurple] (m-1-5.north west) rectangle (m-2-5.south east);
+  \node[text=white, font=\Large\bfseries] at ($(m-1-5)!0.5!(m-2-5)$) {Total};
+  
+\end{tikzpicture}
+
+\end{document}

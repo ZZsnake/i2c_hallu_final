@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" width="247.65mm" height="71.12mm" viewBox="0 0 24765 7112" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="32" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+ <defs>
+  <linearGradient id="proc_grad1" x1="6467" y1="2704" x2="6467" y2="4609" gradientUnits="userSpaceOnUse">
+   <stop offset="0" style="stop-color:rgb(230,245,255)"/>
+   <stop offset="1" style="stop-color:rgb(150,200,255)"/>
+  </linearGradient>
+  <linearGradient id="proc_grad2" x1="13936" y1="1434" x2="13936" y2="4291" gradientUnits="userSpaceOnUse">
+   <stop offset="0" style="stop-color:rgb(230,255,230)"/>
+   <stop offset="1" style="stop-color:rgb(150,255,180)"/>
+  </linearGradient>
+  <linearGradient id="proc_grad3" x1="19643" y1="2704" x2="19643" y2="4609" gradientUnits="userSpaceOnUse">
+   <stop offset="0" style="stop-color:rgb(255,235,230)"/>
+   <stop offset="1" style="stop-color:rgb(255,180,150)"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <rect fill="none" stroke="none" x="0" y="0" width="24765" height="7112"/>
+  <!-- Main FlowChart Frame -->
+  <path fill="none" stroke="rgb(44,62,80)" stroke-width="180" stroke-dasharray="1200,400" stroke-linejoin="round" d="M 12499,6196 L 3450,6196 3450,799 21547,799 21547,6196 12499,6196 Z "/>
+  <!-- Inputs -->
+  <text x="850" y="2250" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">User Input</text>
+  <text x="870" y="3470" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Request</text>
+  <!-- Next State -->
+  <text x="8600" y="3450" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Process</text>
+  <!-- State -->
+  <text x="16650" y="3450" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Memory</text>
+  <!-- Output -->
+  <text x="22320" y="3860" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Response</text>
+  <!-- Lines -->
+  <path fill="none" stroke="rgb(44,62,80)" stroke-width="70" stroke-dasharray="600,200" stroke-linecap="round" d="M 8213,3657 L 11775,3657"/>
+  <path fill="none" stroke="rgb(44,62,80)" stroke-width="70" stroke-dasharray="600,200" stroke-linecap="round" d="M 2698,3340 L 4720,3340"/>
+  <path fill="none" stroke="rgb(44,62,80)" stroke-width="70" stroke-dasharray="600,200" stroke-linecap="round" d="M 16151,3657 L 18373,3657"/>
+  <path fill="none" stroke="rgb(44,62,80)" stroke-width="70" stroke-dasharray="600,200" stroke-linecap="round" d="M 20913,3657 L 22066,3658"/>
+  <path fill="none" stroke="rgb(44,62,80)" stroke-width="70" stroke-dasharray="600,200" stroke-linecap="round" d="M 2698,2070 L 11706,2069"/>
+  <path fill="none" stroke="rgb(44,62,80)" stroke-width="70" stroke-dasharray="600,200" stroke-linecap="round" d="M 17103,5562 L 17103,3657"/>
+  <path fill="none" stroke="rgb(52,152,219)" stroke-width="70" stroke-linecap="round" d="M 4086,5562 L 17103,5562"/>
+  <path fill="none" stroke="rgb(52,152,219)" stroke-width="70" stroke-linecap="round" d="M 4086,4292 L 4086,5562"/>
+  <path fill="none" stroke="rgb(52,152,219)" stroke-width="70" stroke-linecap="round" d="M 4086,4292 L 4721,4292"/>
+  <!-- Next State Logic Block -->
+  <g>
+    <path style="fill:url(#proc_grad1)" d="M 6467,4609 L 4721,4609 4721,2704 8213,2704 8213,4609 6467,4609 Z "/>
+    <path fill="none" stroke="rgb(44,62,80)" stroke-width="80" d="M 6467,4609 L 4721,4609 4721,2704 8213,2704 8213,4609 6467,4609 Z "/>
+    <text x="5038" y="3522" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">CPU Core</text>
+    <text x="5814" y="4233" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Execution</text>
+  </g>
+  <!-- State Register Block -->
+  <g>
+    <path style="fill:url(#proc_grad2)" d="M 13937,4291 L 11723,4291 11723,1434 16150,1434 16150,4291 13937,4291 Z "/>
+    <path fill="none" stroke="rgb(44,62,80)" stroke-width="80" d="M 13937,4291 L 11723,4291 11723,1434 16150,1434 16150,4291 13937,4291 Z "/>
+    <text x="12048" y="2728" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">RAM Module</text>
+    <text x="12543" y="3439" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Cache Unit</text>
+  </g>
+  <!-- Output Logic Block -->
+  <g>
+    <path style="fill:url(#proc_grad3)" d="M 19643,4609 L 18373,4609 18373,2704 20913,2704 20913,4609 19643,4609 Z "/>
+    <path fill="none" stroke="rgb(44,62,80)" stroke-width="80" d="M 19643,4609 L 18373,4609 18373,2704 20913,2704 20913,4609 19643,4609 Z "/>
+    <text x="18690" y="3522" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Network</text>
+    <text x="18990" y="4233" font-family="Roboto, Arial, sans-serif" font-size="635px" font-weight="bold" fill="rgb(44,62,80)">Adapter</text>
+  </g>
+ </g>
+</svg>

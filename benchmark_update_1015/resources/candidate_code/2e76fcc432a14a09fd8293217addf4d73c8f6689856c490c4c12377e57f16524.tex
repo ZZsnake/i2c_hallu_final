@@ -1,0 +1,34 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usetikzlibrary{matrix, positioning, arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}
+
+\node[inner sep=0pt, outer sep=0pt] (table) {%
+\renewcommand{\arraystretch}{1.12}%
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.3cm}>{\raggedright\arraybackslash}p{7.2cm}@{}}
+\toprule
+\multicolumn{2}{@{}l@{}}{\bfseries\Huge Common Dental Procedures and Recovery Times} \\
+\midrule
+\rowcolor{gray!15}\bfseries\LARGE Procedure & \bfseries\LARGE Average Recovery Time \\
+\midrule
+\LARGE Dental Cleaning & \LARGE Minimal (same day) \\
+\rowcolor{gray!15}\LARGE Tooth Extraction & \LARGE 3 to 7 days \\
+\LARGE Root Canal Therapy & \LARGE 2 to 3 days \\
+\rowcolor{gray!15}\LARGE Dental Implant Placement & \LARGE 3 to 6 months \\
+\LARGE Crown Placement & \LARGE 1 to 2 weeks \\
+\rowcolor{gray!15}\LARGE Bridges & \LARGE 1 to 2 weeks \\
+\LARGE Teeth Whitening & \LARGE Minimal (same day) \\
+\rowcolor{gray!15}\LARGE Veneers & \LARGE 1 week \\
+\LARGE Gum Surgery & \LARGE 1 to 2 weeks \\
+\rowcolor{gray!15}\LARGE Orthodontic Braces & \LARGE Ongoing (up to 2 years for full treatment) \\
+\bottomrule
+\end{tabular}%
+};
+
+\end{tikzpicture}
+\end{document}

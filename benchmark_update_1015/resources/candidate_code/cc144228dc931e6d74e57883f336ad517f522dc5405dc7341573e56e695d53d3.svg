@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 300 200" width="600" height="400">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Coordinate Axes -->
+  <line x1="-140" y1="0" x2="140" y2="0" stroke="black" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrowhead)"/>
+  <line x1="0" y1="-90" x2="0" y2="90" stroke="black" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrowhead)"/>
+  <text x="135" y="15" font-family="Arial" font-size="12" fill="black">x</text>
+  <text x="5" y="-80" font-family="Arial" font-size="12" fill="black">y</text>
+
+  <!-- Large Dashed Green Ellipse -->
+  <ellipse cx="0" cy="0" rx="130" ry="80" fill="none" stroke="green" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <!-- Parabola y = ax^2 + bx + c (dashed green arc) -->
+  <!-- Assuming a parabola like y = -0.005x^2 + 50 for visual representation -->
+  <path d="M -100 0 Q 0 50 100 0" fill="none" stroke="green" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="20" y="30" font-family="Arial" font-size="14" fill="firebrick" text-anchor="middle">y = ax² + bx + c</text>
+
+  <!-- Points A, B, C -->
+  <circle cx="-100" cy="0" r="5" fill="steelblue"/>
+  <text x="-100" y="-10" font-family="Arial" font-size="14" fill="black" text-anchor="middle">A</text>
+
+  <circle cx="100" cy="0" r="5" fill="steelblue"/>
+  <text x="100" y="-10" font-family="Arial" font-size="14" fill="black" text-anchor="middle">B</text>
+
+  <!-- Point C (approximate position on the ellipse) -->
+  <circle cx="0" cy="-75" r="5" fill="steelblue"/>
+  <text x="0" y="-65" font-family="Arial" font-size="14" fill="black" text-anchor="middle">C</text>
+
+  <!-- Point M (origin) -->
+  <circle cx="0" cy="0" r="3" fill="orange"/>
+  <text x="0" y="-10" font-family="Arial" font-size="10" fill="black" text-anchor="middle">M</text>
+  <text x="0" y="-20" font-family="Arial" font-size="10" fill="black" text-anchor="middle">|AB|</text>
+
+  <!-- Lines AB, AC, BC -->
+  <line x1="-100" y1="0" x2="100" y2="0" stroke="firebrick" stroke-width="2"/>
+  <line x1="-100" y1="0" x2="0" y2="-75" stroke="firebrick" stroke-width="2" stroke-dasharray="5 5"/>
+  <line x1="100" y1="0" x2="0" y2="-75" stroke="firebrick" stroke-width="2" stroke-dasharray="5 5"/>
+
+</svg>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="sans-serif" font-size="16px">
+    <!-- Optical Axis -->
+    <line x1="0" y1="250" x2="1000" y2="250" stroke="#888" stroke-width="1" />
+    <line x1="0" y1="500" x2="1000" y2="500" stroke="#888" stroke-width="1" />
+
+    <!-- Top Section: Compound Microscope -->
+
+    <!-- Object -->
+    <line x1="100" y1="250" x2="100" y2="200" stroke="blue" stroke-width="2" marker-end="url(#arrowheadBlue)" />
+    <text x="80" y="185" fill="blue">object</text>
+    <text x="85" y="225" fill="blue">h</text>
+
+    <!-- Objective Lens -->
+    <path d="M250 150 C230 200, 230 300, 250 350 C270 300, 270 200, 250 150 Z" fill="skyblue" stroke="blue" stroke-width="1" />
+    <text x="220" y="130" fill="blue">objective</text>
+
+    <!-- Objective Focal Point (left) -->
+    <circle cx="200" cy="250" r="3" fill="blue" />
+    <line x1="200" y1="170" x2="200" y2="180" stroke="black" stroke-width="1" />
+    <line x1="200" y1="170" x2="250" y2="170" stroke="black" stroke-width="1" />
+    <line x1="250" y1="170" x2="250" y2="180" stroke="black" stroke-width="1" />
+    <text x="205" y="160" fill="black">f<tspan baseline-shift="sub" font-size="0.7em">objective</tspan></text>
+
+    <!-- Objective Focal Point (right) -->
+    <circle cx="300" cy="250" r="3" fill="blue" />
+
+    <!-- Rays from Object through Objective -->
+    <line x1="100" y1="200" x2="300" y2="250" stroke="skyblue" stroke-width="1" />
+    <line x1="100" y1="200" x2="250" y2="250" stroke="skyblue" stroke-width="1" />
+    <line x1="250" y1="250" x2="400" y2="300" stroke="skyblue" stroke-width="1" />
+    <line x1="100" y1="200" x2="200" y2="250" stroke="skyblue" stroke-width="1" />
+    <line x1="200" y1="250" x2="400" y2="350" stroke="skyblue" stroke-width="1" />
+
+    <!-- Objective Image -->
+    <line x1="400" y1="250" x2="400" y2="350" stroke="darkgreen" stroke-width="2" marker-end="url(#arrowheadDarkGreen)" />
+    <text x="650" y="300" fill="darkgreen">objective</text>
+    <text x="650" y="320" fill="darkgreen">image</text>
+
+    <!-- Distance S -->
+    <line x1="300" y1="200" x2="300" y2="210" stroke="black" stroke-width="1" />
+    <line x1="300" y1="200" x2="400" y2="200" stroke="black" stroke-width="1" />
+    <line x1="400" y1="200" x2="400" y2="210" stroke="black" stroke-width="1" />
+    <text x="340" y="190" fill="black">S</text>
+
+    <!-- Eyepiece Lens -->
+    <path d="M700 150 C680 200, 680 300, 700 350 C720 300, 720 200, 700 150 Z" fill="lightgreen" stroke="green" stroke-width="1" />
+    <text x="710" y="130" fill="green">eyepiece</text>
+
+    <!-- Eyepiece Focal Point (left) -->
+    <circle cx="650" cy="250" r="3" fill="green" />
+    <line x1="650" y1="170" x2="650" y2="180" stroke="black" stroke-width="1" />
+    <line x1="650" y1="170" x2="700" y2="170" stroke="black" stroke-width="1" />
+    <line x1="700" y1="170" x2="700" y2="180" stroke="black" stroke-width="1" />
+    <text x="655" y="160" fill="black">f<tspan baseline-shift="sub" font-size="0.7em">eyepiece</tspan></text>
+
+    <!-- Eyepiece Focal Point (right) -->
+    <circle cx="750" cy="250" r="3" fill="green" />
+
+    <!-- Rays from Objective Image through Eyepiece -->
+    <line x1="400" y1="350" x2="700" y2="250" stroke="lightgreen" stroke-width="1" />
+    <line x1="700" y1="250" x2="800" y2="216.67" stroke="lightgreen" stroke-width="1" /> <!-- Diverging ray 1 -->
+    <line x1="400" y1="350" x2="650" y2="250" stroke="lightgreen" stroke-width="1" />
+    <line x1="650" y1="250" x2="800" y2="200" stroke="lightgreen" stroke-width="1" /> <!-- Diverging ray 2 -->
+    <line x1="400" y1="350" x2="700" y2="250" stroke="lightgreen" stroke-width="1" />
+    <line x1="700" y1="250" x2="800" y2="216.67" stroke="lightgreen" stroke-width="1" />
+
+    <!-- Extended rays to form Eyepiece Image (virtual) -->
+    <line x1="800" y1="200" x2="200" y2="450" stroke="lightgreen" stroke-width="1" stroke-dasharray="5,5" />
+    <line x1="800" y1="216.67" x2="200" y2="450" stroke="lightgreen" stroke-width="1" stroke-dasharray="5,5" />
+
+    <!-- Eyepiece Image -->
+    <line x1="200" y1="250" x2="200" y2="450" stroke="darkred" stroke-width="2" marker-end="url(#arrowheadDarkRed)" />
+    <text x="200" y="470" fill="darkred">eyepiece image</text>
+
+    <!-- Eye (top) -->
+    <rect x="800" y="240" width="20" height="20" fill="red" />
+    <text x="810" y="230" fill="red">eye</text>
+
+    <!-- Angle theta (top) -->
+    <path d="M800 250 A30 30 0 0 0 800 220" fill="none" stroke="green" stroke-width="1" />
+    <text x="820" y="230" fill="green">θ</text>
+
+    <!-- Description for top section -->
+    <text x="50" y="300" fill="black">Object magnified</text>
+    <text x="50" y="320" fill="black">by compound microscope</text>
+
+    <!-- Bottom Section: Unmagnified Object -->
+
+    <!-- Object (bottom) -->
+    <line x1="600" y1="500" x2="600" y2="470" stroke="blue" stroke-width="2" marker-end="url(#arrowheadBlue)" />
+    <text x="580" y="455" fill="blue">object</text>
+    <text x="585" y="485" fill="blue">h</text>
+
+    <!-- Eye (bottom) -->
+    <rect x="800" y="490" width="20" height="20" fill="red" />
+    <text x="810" y="480" fill="red">eye</text>
+
+    <!-- Rays from Object to Eye (bottom) -->
+    <line x1="600" y1="470" x2="800" y2="490" stroke="lightgreen" stroke-width="1" />
+    <line x1="600" y1="470" x2="800" y2="510" stroke="lightgreen" stroke-width="1" />
+
+    <!-- Angle theta (bottom) -->
+    <path d="M800 500 A30 30 0 0 0 800 470" fill="none" stroke="green" stroke-width="1" />
+    <text x="820" y="480" fill="green">θ</text>
+
+    <!-- Distance d -->
+    <line x1="600" y1="520" x2="600" y2="530" stroke="black" stroke-width="1" />
+    <line x1="600" y1="520" x2="800" y2="520" stroke="black" stroke-width="1" />
+    <line x1="800" y1="520" x2="800" y2="530" stroke="black" stroke-width="1" />
+    <text x="690" y="540" fill="black">d</text>
+
+    <!-- Description for bottom section -->
+    <text x="50" y="550" fill="black">Unmagnified object</text>
+    <text x="50" y="570" fill="black">at eye's near point</text>
+
+    <!-- Copyright -->
+    <text x="800" y="570" font-size="12px" fill="#888">XINGYZT CC BY 4.0</text>
+
+    <!-- Arrowhead definitions -->
+    <defs>
+        <marker id="arrowheadBlue" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="blue" />
+        </marker>
+        <marker id="arrowheadDarkGreen" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="darkgreen" />
+        </marker>
+        <marker id="arrowheadDarkRed" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="darkred" />
+        </marker>
+    </defs>
+</svg>

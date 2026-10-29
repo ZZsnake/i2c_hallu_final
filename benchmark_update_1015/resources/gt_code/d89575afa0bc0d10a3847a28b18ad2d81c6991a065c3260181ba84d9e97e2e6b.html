@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Bar Chart - Prime Numbers Count</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        text: 'Count of Prime Numbers Less Than n',
+        left: 'center',
+        top: 16,
+        textStyle: {
+          color: '#22223B',
+          fontFamily: 'Verdana, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 20
+        }
+      },
+      grid: {
+        left: '8%',
+        right: '8%',
+        bottom: '10%',
+        top: 60,
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        name: 'n',
+        nameTextStyle: {
+          color: '#22223B',
+          fontSize: 14,
+          fontFamily: 'Verdana, Arial, sans-serif'
+        },
+        axisLabel: {
+          color: '#22223B',
+          fontWeight: 'bold',
+          fontFamily: 'Verdana, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#4A4E69',
+            width: 2
+          }
+        },
+        data: ['10', '20', '30', '40', '50', '60', '70']
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Number of Primes',
+        nameTextStyle: {
+          color: '#22223B',
+          fontSize: 14,
+          fontFamily: 'Verdana, Arial, sans-serif'
+        },
+        axisLabel: {
+          color: '#22223B',
+          fontWeight: 'bold',
+          fontFamily: 'Verdana, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#4A4E69',
+            width: 2
+          }
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: '#9A8C98',
+            width: 1,
+            type: 'dashed'
+          }
+        }
+      },
+      series: [
+        {
+          name: 'Prime Count',
+          data: [4, 8, 10, 12, 15, 17, 19],
+          type: 'bar',
+          barWidth: '45%',
+          itemStyle: {
+            color: '#3A86FF'
+          },
+          label: {
+            show: true,
+            position: 'top',
+            color: '#22223B',
+            fontWeight: 'bold',
+            fontFamily: 'Verdana, Arial, sans-serif',
+            fontSize: 13
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

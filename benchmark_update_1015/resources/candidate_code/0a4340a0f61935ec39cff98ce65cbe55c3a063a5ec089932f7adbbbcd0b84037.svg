@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+  <rect x="570" y="10" width="200" height="100" stroke="black" fill="none" stroke-width="2"/>
+  <text x="580" y="90" font-size="30" fill="black">Algorithm</text>
+  
+  <polygon points="70,400 350,150 630,150" stroke="black" fill="none" stroke-width="2"/>
+  <polygon points="770,400 1090,150 1370,400" stroke="black" fill="none" stroke-width="2"/>
+  
+  <polygon points="350,400 700,150 1050,400" stroke="black" fill="none" stroke-width="2"/>
+  
+  <text x="100" y="750" font-size="30" fill="black">Start</text>
+  <text x="550" y="750" font-size="30" fill="blue">Process</text>
+  <text x="1000" y="750" font-size="30" fill="black">End</text>
+  
+  <text x="300" y="550" font-size="30" fill="blue">Data</text>
+  <text x="300" y="580" font-size="20" fill="green">[input]</text>
+  
+  <text x="1000" y="550" font-size="30" fill="blue">Data</text>
+  <text x="1000" y="580" font-size="20" fill="pink">[output]</text>
+  
+  <text x="550" y="450" font-size="30" fill="pink">Check</text>
+  
+  <text x="450" y="400" font-size="30" fill="pink">Stack</text>
+  <text x="800" y="400" font-size="30" fill="green">Queue</text>
+  
+  <line x1="400" y1="250" x2="600" y2="250" stroke="green" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="800" y1="250" x2="1000" y2="250" stroke="green" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <line x1="450" y1="300" x2="850" y2="300" stroke="pink" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <text x="300" y="170" font-size="30" fill="green">Input Buffer</text>
+  <text x="1000" y="170" font-size="30" fill="pink">Output Buffer</text>
+  
+  <text x="950" y="110" font-size="30" fill="blue">Core</text>
+</svg>

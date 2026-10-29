@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Test Score Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        #chart-container {
+            position: relative;
+            width: 95vw;
+            height: 90vh;
+            max-width: 1200px;
+            max-height: 700px;
+        }
+        #main {
+            width: 100%;
+            height: 100%;
+        }
+        .footer-note {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 11px;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.8);
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chart-container">
+    <div id="main"></div>
+    <div class="footer-note">
+        Boxplot: Q1, Q3, Median & Outliers<br>
+        (upper: Q3 + 1.5 × IQR, lower: Q1 - 1.5 × IQR)
+    </div>
+</div>
+
+<script type="text/javascript">
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    // Data format: [min, Q1, median, Q3, max]
+    // Estimated from the provided image
+    const data = [
+        [78, 85, 90, 95, 98], // Group 1
+        [65, 70, 75, 80, 85], // Group 2
+        [53, 57, 60, 63, 67], // Group 3
+        [45, 48, 52, 56, 62], // Group 4
+        [88, 91, 93, 95, 98]  // Group 5
+    ];
+
+    option = {
+        title: {
+            text: 'Algebra Test Score Distribution',
+            left: 'center',
+            top: 10,
+            textStyle: {
+                fontSize: 18,
+                fontWeight: 'normal',
+                color: '#000'
+            }
+        },
+        grid: {
+            left: '10%',
+            right: '10%',
+            bottom: '15%',
+            top: '10%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            name: 'Score',
+            nameLocation: 'end',
+            nameTextStyle: {
+                padding: [30, 0, 0, -20],
+                fontSize: 14,
+                fontWeight: 'bold'
+            },
+            min: 0,
+            max: 100,
+            interval: 20,
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    color: '#eee'
+                }
+            },
+            splitArea: {
+                show: true,
+                areaStyle: {
+                    color: ['#f8f9fb', '#ffffff']
+                }
+            },
+            axisLabel: {
+                fontSize: 12,
+                color: '#000'
+            }
+        },
+        yAxis: {
+            type: 'category',
+            data: ['Group 1', 'Group 2', 'Group 3', 'Group 4', 'Group 5'],
+            boundaryGap: true,
+            nameGap: 30,
+            splitArea: {
+                show: false
+            },
+            splitLine: {
+                show: false
+            },
+            axisLine: {
+                show: true,
+                lineStyle: {
+                    color: '#333'
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                fontSize: 12,
+                color: '#000',
+                margin: 20
+            }
+        },
+        series: [
+            {
+                name: 'boxplot',
+                type: 'boxplot',
+                data: data,
+                itemStyle: {
+                    color: '#1890ff',
+                    borderColor: '#0050b3',
+                    borderWidth: 1.5
+                },
+                emphasis: {
+                    itemStyle: {
+                        borderWidth: 2,
+                        shadowBlur: 5,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0,0,0,0.3)'
+                    }
+                },
+                // Adjusting box width
+                boxWidth: [15, 35] 
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+
+    window.addEventListener('resize', function() {
+        myChart.resize();
+    });
+</script>
+
+</body>
+</html>

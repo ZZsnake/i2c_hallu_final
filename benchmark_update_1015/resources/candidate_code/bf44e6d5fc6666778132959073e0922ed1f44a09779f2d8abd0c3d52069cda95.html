@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Connectivity Over Time</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        
+        #chartContainer {
+            width: 100%;
+            height: 100vh;
+            max-height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chartContainer"></div>
+    
+    <script>
+        var chartDom = document.getElementById('chartContainer');
+        var myChart = echarts.init(chartDom);
+        
+        var option = {
+            title: {
+                text: 'Device Connectivity Over Time',
+                left: 'center',
+                top: 0,
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            legend: {
+                data: ['Sensor A', 'Sensor B', 'Sensor C'],
+                top: 30,
+                left: 'center',
+                itemGap: 20
+            },
+            grid: {
+                left: '80px',
+                right: '50px',
+                top: '80px',
+                bottom: '60px',
+                containLabel: false
+            },
+            xAxis: {
+                type: 'category',
+                data: ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
+                boundaryGap: false,
+                axisLine: {
+                    lineStyle: {
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    color: '#666'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Active Connections',
+                nameLocation: 'middle',
+                nameGap: 50,
+                nameTextStyle: {
+                    fontSize: 12,
+                    color: '#333'
+                },
+                min: 0,
+                max: 25,
+                interval: 5,
+                splitLine: {
+                    lineStyle: {
+                        color: '#e0e0e0'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    color: '#666'
+                }
+            },
+            series: [
+                {
+                    name: 'Sensor A',
+                    type: 'line',
+                    step: 'end',
+                    data: [10, 15, 15, 14, 18, 20, 16, 16],
+                    lineStyle: {
+                        color: '#5470c6',
+                        width: 2
+                    },
+                    itemStyle: {
+                        color: '#5470c6'
+                    },
+                    symbol: 'circle',
+                    symbolSize: 6,
+                    smooth: false
+                },
+                {
+                    name: 'Sensor B',
+                    type: 'line',
+                    step: 'end',
+                    data: [8, 8, 12, 16, 16, 15, 13, 19, 18, 18],
+                    lineStyle: {
+                        color: '#ee6666',
+                        width: 2
+                    },
+                    itemStyle: {
+                        color: '#ee6666'
+                    },
+                    symbol: 'circle',
+                    symbolSize: 6,
+                    smooth: false
+                },
+                {
+                    name: 'Sensor C',
+                    type: 'line',
+                    step: 'end',
+                    data: [20, 20, 19, 19, 18, 18, 21, 24, 25],
+                    lineStyle: {
+                        color: '#5ac8c8',
+                        width: 2
+                    },
+                    itemStyle: {
+                        color: '#5ac8c8'
+                    },
+                    symbol: 'circle',
+                    symbolSize: 6,
+                    smooth: false
+                }
+            ]
+        };
+        
+        // Adjust data points to better match the visual
+        option.series[0].data = [
+            [0, 10],
+            [0.5, 15],
+            [2, 15],
+            [2.5, 14],
+            [4, 18],
+            [4.5, 20],
+            [5, 16],
+            [6, 16]
+        ];
+        
+        option.series[1].data = [
+            [0, 8],
+            [1, 8],
+            [1.5, 12],
+            [2.5, 16],
+            [3, 16],
+            [3.5, 15],
+            [4, 13],
+            [5, 19],
+            [5.5, 18],
+            [6, 18]
+        ];
+        
+        option.series[2].data = [
+            [0, 20],
+            [2, 20],
+            [2.5, 19],
+            [3, 18],
+            [4, 18],
+            [4.5, 21],
+            [5, 24],
+            [6, 25]
+        ];
+        
+        // Revert to simpler time-based approach
+        option.xAxis.data = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'];
+        
+        option.series[0].data = [10, 15, 14, 18, 20, 16, 16];
+        option.series[1].data = [8, 12, 16, 15, 13, 19, 18];
+        option.series[2].data = [20, 20, 19, 18, 21, 24, 25];
+        
+        myChart.setOption(option);
+        
+        // Responsive resize
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

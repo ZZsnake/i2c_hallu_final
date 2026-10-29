@@ -1,0 +1,168 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, shapes.misc, positioning, calc, arrows.meta, shadows}
+
+\tikzset{
+  note/.style={
+    draw, 
+    fill=blue!10, 
+    rectangle, 
+    rounded corners, 
+    minimum width=2cm, 
+    minimum height=1.5cm, 
+    text width=1.8cm, 
+    align=center, 
+    font=\sffamily\small,
+    append after command={% Add little corner fold
+      (\tikzlastnode.north east) -- ++(-3pt,0) |- ++(0,3pt) -- cycle
+    }
+  },
+  notePink/.style={
+    note, fill=red!10
+  },
+  cylinderShape/.style={
+    draw, 
+    fill=blue!40, 
+    cylinder, 
+    shape border rotate=90, 
+    aspect=0.5, 
+    minimum height=1.5cm, 
+    minimum width=1.2cm, 
+    text width=1cm, 
+    align=center, 
+    font=\sffamily\small
+  },
+  hexagon/.style={
+    draw, 
+    fill=orange, 
+    regular polygon, 
+    regular polygon sides=6, 
+    minimum size=2cm, 
+    text width=1.8cm, 
+    align=center, 
+    font=\sffamily\small\bfseries
+  },
+  stack/.style={
+    draw, 
+    fill=purple!70, 
+    rectangle, 
+    minimum width=2cm, 
+    minimum height=1.5cm, 
+    text width=1.8cm, 
+    align=center, 
+    font=\sffamily\small\bfseries,
+    append after command={
+      \pgfextra{
+        \draw (\tikzlastnode.south west) -- ++(0.2,-0.1) -- ++(1.6,0) -- ++(0.2,0.1);
+        \draw (\tikzlastnode.south west) ++(0.2,-0.1) -- ++(0,0.1) -- ++(1.6,0) -- ++(0,-0.1);
+      }
+    }
+  },
+  cube/.style={
+    draw, 
+    fill=blue!20, 
+    minimum size=1.5cm, 
+    shape=rectangle, 
+    path picture={
+      \draw[fill=blue!50] ($ (path picture bounding box.south west)!0.3!(path picture bounding box.north east) $) rectangle ($ (path picture bounding box.south west)!0.7!(path picture bounding box.north east) $);
+      \draw[fill=blue!30] ($ (path picture bounding box.south west)!0.3!(path picture bounding box.north east) $) -- ++(0.2,0.2) -- ++(0.4,0) -- ++(0,-0.4) -- cycle;
+      \draw[fill=blue!30] ($ (path picture bounding box.south west)!0.3!(path picture bounding box.north east) $) -- ++(0.2,0.2) -- ++(0,0.4) -- ++(-0.2,-0.2) -- cycle;
+    },
+    font=\sffamily\small,
+    align=center
+  },
+  cubeRed/.style={
+    cube, fill=red!70, draw=yellow!80!black, line width=1pt,
+    path picture={
+      \draw[fill=red!90] ($ (path picture bounding box.south west)!0.3!(path picture bounding box.north east) $) rectangle ($ (path picture bounding box.south west)!0.7!(path picture bounding box.north east) $);
+      \draw[fill=red!80] ($ (path picture bounding box.south west)!0.3!(path picture bounding box.north east) $) -- ++(0.2,0.2) -- ++(0.4,0) -- ++(0,-0.4) -- cycle;
+      \draw[fill=red!80] ($ (path picture bounding box.south west)!0.3!(path picture bounding box.north east) $) -- ++(0.2,0.2) -- ++(0,0.4) -- ++(-0.2,-0.2) -- cycle;
+    }
+  },
+  htmlBox/.style={
+    draw, 
+    fill=yellow, 
+    rectangle, 
+    minimum width=2cm, 
+    minimum height=1.5cm, 
+    text width=1.8cm, 
+    align=center, 
+    font=\sffamily\small\bfseries,
+    append after command={
+      (\tikzlastnode.north east) -- ++(-3pt,0) |- ++(0,3pt) -- cycle
+    }
+  },
+  dashedBox/.style={
+    draw, 
+    dashed, 
+    thick, 
+    rounded corners=5pt, 
+    inner sep=10pt
+  },
+  arrow/.style={
+    ->, 
+    >=Stealth, 
+    thick
+  }
+}
+
+\begin{document}
+\begin{tikzpicture}[node distance=1.5cm]
+
+% Source Group
+\node[draw, dashed, thick, rounded corners=5pt, inner sep=10pt, minimum width=6cm, minimum height=5cm, label={[font=\sffamily\large]above:Source}] (sourceGroup) {};
+
+% Universal Application Code sub-group
+\node[draw, dashed, thick, rounded corners=5pt, inner sep=8pt, minimum width=5cm, minimum height=4cm, label={[font=\sffamily\large]above:Universal Application Code}, above=0.5cm of sourceGroup.north] (universalGroup) {};
+
+% Elements inside Universal Application Code
+\node[cylinderShape, left=0.5cm of universalGroup.center] (store) {Store};
+\node[hexagon, right=0.5cm of universalGroup.center] (router) {Router};
+\node[stack, below=0.5cm of universalGroup.center] (components) {Components};
+
+% app.js node
+\node[note, below=1.5cm of universalGroup.south] (appjs) {app.js};
+
+% Server entity and Client entry
+\node[note, right=1.5cm of appjs, yshift=1cm] (serverEntity) {Server entity};
+\node[note, right=1.5cm of appjs, yshift=-1cm] (clientEntry) {Client entry};
+
+% Webpack build
+\node[cube, right=2cm of appjs] (webpack) {};
+\node[below=0.1cm of webpack] {\small Webpack\\build};
+
+% Server bundle and Client bundle
+\node[notePink, right=2cm of webpack, yshift=1cm] (serverBundle) {Server bundle};
+\node[notePink, right=2cm of webpack, yshift=-1cm] (clientBundle) {Client bundle};
+
+% Bundle Renderer (Node server)
+\node[cubeRed, right=1.5cm of serverBundle] (bundleRenderer) {};
+\node[below=0.1cm of bundleRenderer] {\small Bundle\\Renderer};
+
+% HTML (Browser)
+\node[htmlBox, right=1.5cm of clientBundle] (html) {HTML};
+
+% Node server group
+\node[draw, dashed, thick, rounded corners=5pt, inner sep=10pt, fit=(serverBundle) (bundleRenderer), label={[font=\sffamily\large]above:Node server}] (nodeServer) {};
+
+% Browser group
+\node[draw, dashed, thick, rounded corners=5pt, inner sep=10pt, fit=(clientBundle) (html), label={[font=\sffamily\large]below:Browser}] (browser) {};
+
+% Arrows
+\draw[arrow] (appjs) -- (serverEntity);
+\draw[arrow] (appjs) -- (clientEntry);
+\draw[arrow] (serverEntity) -- (webpack.west);
+\draw[arrow] (clientEntry) -- (webpack.west);
+\draw[arrow] (webpack.east) -- (serverBundle.west);
+\draw[arrow] (webpack.east) -- (clientBundle.west);
+\draw[arrow] (serverBundle.east) -- (bundleRenderer.west);
+\draw[arrow] (bundleRenderer.south) -- node[right, font=\sffamily] {Render} (html.north);
+\draw[arrow] (clientBundle.east) -- node[above, font=\sffamily] {Hydrate} (html.west);
+
+% Labels for groups
+\node[above=0.5cm of sourceGroup.north] {\textbf{Source}};
+\node[above=0.5cm of nodeServer.north] {\textbf{Node server}};
+\node[below=0.5cm of browser.south] {\textbf{Browser}};
+
+\end{tikzpicture}
+\end{document}

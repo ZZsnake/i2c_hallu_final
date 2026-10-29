@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Population Growth Trends by Region</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    option = {
+      title: {
+        text: 'Population Growth Trends in Selected Regions (2015-2021)',
+        left: 'center',
+        textStyle: {
+          color: '#1a1a1a',
+          fontWeight: 'bold',
+          fontFamily: 'Arial'
+        }
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      legend: {
+        data: ['Region A', 'Region B'],
+        top: 40,
+        textStyle: {
+          color: '#222222',
+          fontFamily: 'Arial',
+          fontWeight: 'bold'
+        }
+      },
+      toolbox: {
+        show: true,
+        feature: {
+          dataZoom: {
+            yAxisIndex: 'none'
+          },
+          dataView: { readOnly: false },
+          magicType: { type: ['line', 'bar'] },
+          restore: {},
+          saveAsImage: {}
+        }
+      },
+      grid: {
+        left: '8%',
+        right: '8%',
+        bottom: '10%'
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        axisLine: {
+          lineStyle: { color: '#222222', width: 2 }
+        },
+        axisTick: { show: true },
+        axisLabel: {
+          color: '#222222',
+          fontFamily: 'Arial',
+          fontWeight: 'bold'
+        },
+        data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021']
+      },
+      yAxis: {
+        type: 'value',
+        axisLine: {
+          lineStyle: { color: '#222222', width: 2 }
+        },
+        axisLabel: {
+          color: '#222222',
+          fontFamily: 'Arial',
+          fontWeight: 'bold',
+          formatter: '{value} K'
+        },
+        splitLine: {
+          lineStyle: { color: '#cccccc', type: 'dashed' }
+        }
+      },
+      series: [
+        {
+          name: 'Region A',
+          type: 'line',
+          data: [120, 128, 135, 143, 151, 160, 168],
+          symbolSize: 9,
+          lineStyle: {
+            color: '#1565c0',
+            width: 4
+          },
+          itemStyle: {
+            color: '#0d47a1',
+            borderColor: '#222222'
+          },
+          markPoint: {
+            data: [
+              { type: 'max', name: 'Max' },
+              { type: 'min', name: 'Min' }
+            ],
+            label: {
+              color: '#222222',
+              fontWeight: 'bold',
+              fontFamily: 'Arial'
+            }
+          },
+          markLine: {
+            data: [{ type: 'average', name: 'Avg' }],
+            lineStyle: {
+              color: '#1976d2',
+              width: 2,
+              type: 'dashed'
+            },
+            label: {
+              color: '#222222',
+              fontWeight: 'bold'
+            }
+          }
+        },
+        {
+          name: 'Region B',
+          type: 'line',
+          data: [90, 95, 101, 106, 110, 115, 121],
+          symbolSize: 9,
+          lineStyle: {
+            color: '#c62828',
+            width: 4
+          },
+          itemStyle: {
+            color: '#b71c1c',
+            borderColor: '#222222'
+          },
+          markPoint: {
+            data: [
+              { type: 'max', name: 'Max' },
+              { type: 'min', name: 'Min' }
+            ],
+            label: {
+              color: '#222222',
+              fontWeight: 'bold',
+              fontFamily: 'Arial'
+            }
+          },
+          markLine: {
+            data: [
+              { type: 'average', name: 'Avg' },
+              [
+                {
+                  symbol: 'none',
+                  x: '95%',
+                  yAxis: 'max'
+                },
+                {
+                  symbol: 'circle',
+                  label: {
+                    position: 'start',
+                    formatter: 'Max',
+                    color: '#222222',
+                    fontWeight: 'bold'
+                  },
+                  type: 'max',
+                  name: 'Max Point'
+                }
+              ]
+            ],
+            lineStyle: {
+              color: '#d32f2f',
+              width: 2,
+              type: 'dashed'
+            },
+            label: {
+              color: '#222222',
+              fontWeight: 'bold'
+            }
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

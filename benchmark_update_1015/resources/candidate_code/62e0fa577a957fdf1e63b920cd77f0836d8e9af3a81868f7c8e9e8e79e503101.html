@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Test Scores by Topic</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        #chart-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container"></div>
+    <script>
+        var chartDom = document.getElementById('chart-container');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: {
+                text: 'Math Test Scores by Topic',
+                subtext: 'Sample Dataset',
+                left: 'center',
+                top: 22,
+                textStyle: {
+                    color: '#20242e',
+                    fontWeight: 'bold'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                right: 4,
+                top: 'middle',
+                itemSize: 15,
+                itemGap: 12,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            legend: {
+                data: ['Average Score'],
+                right: 0,
+                top: 31,
+                textStyle: {
+                    color: '#20242e',
+                    fontWeight: 'bold'
+                }
+            },
+            grid: {
+                left: '8.6%',
+                right: '7%',
+                top: 60,
+                bottom: 130
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Algebra', 'Geometry', 'Calculus', 'Statistics', 'Trigonometry'],
+                axisLabel: {
+                    color: '#222',
+                    fontWeight: 'bold'
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#222',
+                        width: 2
+                    }
+                },
+                axisTick: {
+                    lineStyle: {
+                        color: '#222',
+                        width: 2
+                    }
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Score (%)',
+                min: 0,
+                max: 100,
+                nameTextStyle: {
+                    color: '#222',
+                    fontWeight: 'bold',
+                    fontSize: 14
+                },
+                axisLabel: {
+                    color: '#222',
+                    fontWeight: 'bold'
+                }
+            },
+            series: [
+                {
+                    name: 'Average Score',
+                    type: 'bar',
+                    data: [88, 75, 61, 92, 70],
+                    barWidth: '40%',
+                    itemStyle: {
+                        color: '#2b6cb0',
+                        borderColor: '#0d3f73',
+                        borderWidth: 3
+                    }
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+        window.addEventListener('resize', function () {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task Completion Funnel</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+    .page {
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #funnelChart {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div id="funnelChart"></div>
+  </div>
+
+  <script>
+    $(function () {
+      var chartDom = document.getElementById('funnelChart');
+      var myChart = echarts.init(chartDom);
+
+      var option = {
+        title: {
+          text: 'Task Completion Funnel',
+          left: 'center',
+          top: 10,
+          textStyle: {
+            fontSize: 20,
+            fontWeight: 'bold',
+            color: '#333333'
+          }
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b}: {c}'
+        },
+        legend: {
+          orient: 'horizontal',
+          top: 48,
+          left: 'center',
+          itemWidth: 25,
+          itemHeight: 10,
+          textStyle: {
+            fontSize: 12
+          },
+          data: ['Start', 'Progress', 'Review', 'Complete', 'Archive']
+        },
+        toolbox: {
+          show: true,
+          orient: 'horizontal',
+          right: 10,
+          top: 5,
+          feature: {
+            dataView: { show: true, readOnly: true },
+            restore: { show: true },
+            saveAsImage: { show: true }
+          }
+        },
+        series: [
+          {
+            name: 'Tasks',
+            type: 'funnel',
+            left: '12%',
+            top: 80,
+            width: '76%',
+            bottom: 60,
+            minSize: '0%',
+            maxSize: '100%',
+            sort: 'descending',
+            gap: 6,
+            label: {
+              show: true,
+              position: 'inside',
+              fontSize: 15,
+              fontWeight: 'bold',
+              color: '#000000',
+              formatter: '{b}'
+            },
+            labelLine: {
+              show: false
+            },
+            itemStyle: {
+              borderColor: '#000000',
+              borderWidth: 2
+            },
+            color: [
+              '#1f5fbf', // Start - blue
+              '#1f9d76', // Progress - teal/green
+              '#d84343', // Review - red
+              '#f0b626', // Complete - yellow/orange
+              '#7f4ad9'  // Archive - purple
+            ],
+            data: [
+              { value: 95, name: 'Start' },
+              { value: 80, name: 'Progress' },
+              { value: 60, name: 'Review' },
+              { value: 35, name: 'Complete' },
+              { value: 15, name: 'Archive' }
+            ]
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

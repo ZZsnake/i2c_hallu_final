@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Bar Chart - Algebraic Expression Frequencies</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0;">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- NEW JS CODE START ---
+    const labelRight = {
+      position: 'right',
+      color: '#222',
+      fontWeight: 'bold',
+      fontFamily: 'Segoe UI, Arial'
+    };
+
+    option = {
+      title: {
+        text: 'Frequency of Algebraic Expressions',
+        left: 'center',
+        textStyle: {
+          color: '#111',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial',
+          fontSize: 20
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      grid: {
+        top: 80,
+        bottom: 30,
+        left: 80,
+        right: 40
+      },
+      xAxis: {
+        type: 'value',
+        position: 'top',
+        splitLine: {
+          lineStyle: {
+            type: 'dotted',
+            color: '#888'
+          }
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#333',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#181818',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial',
+          fontSize: 14
+        }
+      },
+      yAxis: {
+        type: 'category',
+        axisLine: { 
+          show: true, 
+          lineStyle: { color: '#333', width: 2 }
+        },
+        axisLabel: { 
+          show: true, 
+          color: '#181818', 
+          fontWeight: 'bold', 
+          fontFamily: 'Segoe UI, Arial',
+          fontSize: 14 
+        },
+        axisTick: { show: true },
+        splitLine: { show: false },
+        data: [
+          'x + 2',
+          '2y - 3',
+          'a² + b²',
+          '5z',
+          'p/q',
+          '√n',
+          'm - 4',
+          't³',
+          'r + 1',
+          's² - s'
+        ]
+      },
+      series: [
+        {
+          name: 'Occurrences',
+          type: 'bar',
+          stack: 'Total',
+          barWidth: 18,
+          label: {
+            show: true,
+            position: 'right',
+            color: '#222',
+            fontWeight: 'bold',
+            fontFamily: 'Segoe UI, Arial',
+            fontSize: 13,
+            formatter: function(params) {
+              // Show value only for nonzero bars for clarity
+              return params.value !== 0 ? params.value : '';
+            }
+          },
+          itemStyle: {
+            color: function(params) {
+              // Alternate vivid color for each bar
+              var colors = [
+                '#2D99ED', '#D93F3F', '#0EAA4F', '#DAA520', '#6A32A3',
+                '#198C9A', '#E9620F', '#2B7B3C', '#A82E78', '#184A90'
+              ];
+              return colors[params.dataIndex % colors.length];
+            },
+            borderColor: '#444',
+            borderWidth: 1
+          },
+          data: [
+            7,
+            -3,
+            12,
+            4,
+            -2,
+            9,
+            0,
+            6,
+            -1,
+            10
+          ]
+        }
+      ]
+    };
+    // --- NEW JS CODE END ---
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

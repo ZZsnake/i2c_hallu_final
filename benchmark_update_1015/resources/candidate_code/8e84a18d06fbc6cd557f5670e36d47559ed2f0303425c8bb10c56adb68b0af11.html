@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>River Flow Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    #chartContainer {
+      width: 800px;
+      height: 600px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="chartContainer"></div>
+
+  <script>
+    $(function() {
+      var chartDom = document.getElementById('chartContainer');
+      var myChart = echarts.init(chartDom);
+      var option = {
+        title: {
+          text: 'Monthly River Flow: Amazon vs. Nile'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['Nile River (2023)', 'Amazon River (2023)']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'category',
+          data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          boundaryGap: false
+        },
+        yAxis: {
+          type: 'value',
+          name: 'Discharge (m³/s)'
+        },
+        series: [
+          {
+            name: 'Nile River (2023)',
+            type: 'line',
+            data: [185000, 175000, 170000, 165000, 160000, 155000, 145000, 150000, 160000, 170000, 175000, 180000],
+            itemStyle: {
+              color: 'green'
+            }
+          },
+          {
+            name: 'Amazon River (2023)',
+            type: 'line',
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            itemStyle: {
+              color: 'blue'
+            }
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+    });
+  </script>
+
+</body>
+</html>

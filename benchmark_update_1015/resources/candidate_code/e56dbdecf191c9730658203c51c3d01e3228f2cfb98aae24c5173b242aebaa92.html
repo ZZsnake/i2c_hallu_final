@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Miscellaneous Task Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .chart-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .chart-title {
+            position: absolute;
+            top: 22px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            z-index: 2;
+            color: #1f1f1f;
+        }
+        #taskChart {
+            width: 100%;
+            height: 100%;
+        }
+        .legend {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 0;
+            gap: 8px;
+            z-index: 2;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #2b2b2b;
+        }
+        .legend-color {
+            width: 23px;
+            height: 13px;
+            margin-right: 4px;
+            border: 2px solid #222;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">Miscellaneous Task Distribution</div>
+        <div id="taskChart"></div>
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background-color: #0d6ecb;"></div>Administrative</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #0b9b68;"></div>Support</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #ff3b12;"></div>Maintenance</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #ff7208;"></div>Logistics</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #b000c8;"></div>Miscellaneous</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #075ea8;"></div>Documentation</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #0a9696;"></div>Research</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #c42525;"></div>Coordination</div>
+        </div>
+    </div>
+
+    <script>
+        const chartDom = document.getElementById('taskChart');
+        const myChart = echarts.init(chartDom);
+
+        const colors = ['#0d6ecb', '#0b9b68', '#ff3b12', '#ff7208', '#b000c8', '#075ea8', '#0a9696', '#c42525'];
+
+        const option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a0}<br/>{b}: {c} ({d}%)'
+            },
+            toolbox: {
+                show: true,
+                right: 4,
+                top: 4,
+                itemSize: 15,
+                itemGap: 8,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            legend: {
+                show: false
+            },
+            series: [
+                {
+                    name: 'Tasks',
+                    type: 'pie',
+                    roseType: 'radius',
+                    radius: ['12%', '35%'],
+                    center: ['50%', '53%'],
+                    avoidLabelOverlap: true,
+                    startAngle: 90,
+                    minAngle: 5,
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        formatter: '{b}',
+                        color: '#2b2b2b',
+                        fontSize: 14,
+                        fontWeight: 'bold'
+                    },
+                    labelLine: {
+                        show: true,
+                        length: 24,
+                        length2: 15,
+                        smooth: false,
+                        lineStyle: {
+                            color: 'inherit',
+                            width: 1
+                        }
+                    },
+                    data: [
+                        { value: 45, name: 'Administrative' },
+                        { value: 35, name: 'Support' },
+                        { value: 30, name: 'Maintenance' },
+                        { value: 25, name: 'Logistics' },
+                        { value: 20, name: 'Miscellaneous' },
+                        { value: 18, name: 'Documentation' },
+                        { value: 16, name: 'Research' },
+                        { value: 12, name: 'Coordination' }
+                    ],
+                    itemStyle: {
+                        borderColor: '#222',
+                        borderWidth: 3,
+                        borderRadius: 10,
+                        color: function(params) {
+                            return colors[params.dataIndex];
+                        }
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

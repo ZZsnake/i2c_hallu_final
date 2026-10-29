@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frequency of Algebraic Expressions</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+    }
+    #chart-container {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      margin: 0 auto;
+    }
+    .title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Frequency of Algebraic Expressions</div>
+  <div id="chart-container"></div>
+
+  <script>
+    // Initialize the chart
+    const chart = echarts.init(document.getElementById('chart-container'));
+
+    // Define data
+    const data = [
+      { expression: 'x + 2', frequency: 7 },
+      { expression: '2y - 3', frequency: -3 },
+      { expression: 'a² + b²', frequency: 12 },
+      { expression: '5z', frequency: 4 },
+      { expression: 'p/q', frequency: -2 },
+      { expression: '√n', frequency: 9 },
+      { expression: 'm - 4', frequency: 0 },
+      { expression: 't³', frequency: 6 },
+      { expression: 'r + 1', frequency: -1 },
+      { expression: 's² - s', frequency: 10 }
+    ];
+
+    // Define colors for each bar (matching the image as closely as possible)
+    const colors = [
+      '#339fe5',   // blue for x + 2
+      '#e53935',   // red for 2y - 3
+      '#10ad4f',   // green for a² + b²
+      '#e3ad20',   // gold for 5z
+      '#7030a0',   // purple for p/q
+      '#1f929b',   // darker teal for √n
+      '#d62728',   // red for m - 4 (but it will be invisible due to 0)
+      '#287c38',   // green for t³
+      '#ad2d82',   // magenta for r + 1
+      '#1d5798'    // blue for s² - s
+    ];
+
+    // Configure chart options
+    const option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{c} ({d}%)'
+      },
+      xAxis: {
+        type: 'value',
+        position: 'top',
+        min: -3,
+        max: 12,
+        axisLabel: {
+          fontSize: 12,
+          fontWeight: 'bold',
+          color: '#333'
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dotted',
+            color: '#ccc'
+          }
+        },
+        axisLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: data.map(d => d.expression),
+        axisLabel: {
+          fontSize: 12,
+          fontWeight: 'bold',
+          color: '#333'
+        },
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        }
+      },
+      series: [
+        {
+          name: 'Frequency',
+          type: 'bar',
+          stack: 'total',
+          label: {
+            show: true,
+            position: 'right',
+            color: '#333',
+            fontSize: 12,
+            fontWeight: 'bold',
+            formatter: function(params) {
+              return params.value === 0 ? '' : params.value;
+            }
+          },
+          itemStyle: {
+            color: function(params) {
+              return colors[params.dataIndex];
+            },
+            borderColor: '#333',
+            borderWidth: 1
+          },
+          data: data.map(d => d.frequency),
+          barWidth: '18%',
+          barGap: '10%'
+        },
+        {
+          type: 'custom',
+          silent: true,
+          z: 10,
+          renderItem: function(params, api) {
+            const count = data.length;
+            const x = api.coord([0, 0])[0];
+            const band = api.size([0, 1])[1];
+            const yBottom = api.coord([0, 0])[1] + band / 2;
+            const yTop = api.coord([0, count - 1])[1] - band / 2;
+            const children = [
+              {
+                type: 'line',
+                shape: { x1: x, y1: yTop, x2: x, y2: yBottom },
+                style: { stroke: '#222', lineWidth: 1.5 }
+              }
+            ];
+            for (let i = 0; i < count; i++) {
+              const y = api.coord([0, i])[1];
+              children.push({
+                type: 'line',
+                shape: { x1: x - 5, y1: y, x2: x, y2: y },
+                style: { stroke: '#222', lineWidth: 1 }
+              });
+            }
+            return { type: 'group', children: children };
+          },
+          data: [0]
+        }
+      ],
+      grid: {
+        left: '10%',
+        right: '10%',
+        top: 80,
+        bottom: 30
+      },
+      title: {
+        text: '',
+        left: 'center',
+        top: 'top'
+      }
+    };
+
+    // Render the chart
+    chart.setOption(option);
+
+    // Handle window resize
+    window.onresize = function () {
+      chart.resize();
+    };
+  </script>
+</body>
+</html>

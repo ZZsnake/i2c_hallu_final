@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Pie Chart - Types of Numbers</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .echarts-title {
+      color: #222222;
+      font-weight: bold;
+      font-size: 22px;
+      text-align: center;
+      margin-top: 25px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div class="echarts-title">Distribution of Number Types in Mathematics</div>
+  <div id="container" style="height: 85%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // Math domain data for Pie Chart (Sunburst)
+    var data = [
+      {
+        name: 'Numbers',
+        children: [
+          {
+            name: 'Natural',
+            value: 20,
+            itemStyle: { color: '#3366CC' }
+          },
+          {
+            name: 'Whole',
+            value: 15,
+            itemStyle: { color: '#DC3912' }
+          },
+          {
+            name: 'Integers',
+            value: 25,
+            itemStyle: { color: '#FF9900' },
+            children: [
+              {
+                name: 'Positive',
+                value: 13,
+                itemStyle: { color: '#109618' }
+              },
+              {
+                name: 'Negative',
+                value: 12,
+                itemStyle: { color: '#990099' }
+              }
+            ]
+          },
+          {
+            name: 'Rational',
+            value: 18,
+            itemStyle: { color: '#0099C6' }
+          },
+          {
+            name: 'Irrational',
+            value: 10,
+            itemStyle: { color: '#DD4477' }
+          },
+          {
+            name: 'Real',
+            value: 12,
+            itemStyle: { color: '#66AA00' }
+          }
+        ]
+      }
+    ];
+
+    option = {
+      series: {
+        type: 'sunburst',
+        data: data,
+        radius: [70, '85%'],
+        itemStyle: {
+          borderRadius: 4,
+          borderWidth: 3,
+          borderColor: '#222222'
+        },
+        label: {
+          show: true,
+          color: '#1a1a1a',
+          fontWeight: 'bold',
+          fontSize: 15,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        }
+      }
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

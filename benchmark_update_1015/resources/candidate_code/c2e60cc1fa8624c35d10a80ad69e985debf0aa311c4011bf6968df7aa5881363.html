@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationships Between Math Concepts</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .chart-container {
+            width: 800px;
+            height: 600px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .chart {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <h1>Relationships Between Math Concepts</h1>
+        <div id="chart" class="chart"></div>
+    </div>
+
+    <script>
+        // Initialize ECharts instance
+        var chart = echarts.init(document.getElementById('chart'));
+
+        // Define the data for nodes
+        var nodes = [
+            { name: 'Algebra', x: 150, y: 300, symbol: 'circle', symbolSize: 60, itemStyle: { color: '#3498db' } },
+            { name: 'Calculus', x: 450, y: 100, symbol: 'circle', symbolSize: 60, itemStyle: { color: '#2ecc71' } },
+            { name: 'Functions', x: 750, y: 300, symbol: 'circle', symbolSize: 60, itemStyle: { color: '#e74c3c' } },
+            { name: 'Geometry', x: 450, y: 500, symbol: 'circle', symbolSize: 60, itemStyle: { color: '#f39c12' } }
+        ];
+
+        // Define the data for links
+        var links = [
+            { source: 'Algebra', target: 'Functions', name: 'defines', color: '#3498db', lineStyle: { width: 2, curveness: 0.2 } },
+            { source: 'Algebra', target: 'Geometry', name: 'supports', color: '#e74c3c', lineStyle: { width: 2, curveness: 0.2 } },
+            { source: 'Calculus', target: 'Geometry', name: 'applied to', color: '#f39c12', lineStyle: { width: 2, curveness: 0.2 } },
+            { source: 'Calculus', target: 'Functions', name: 'used in', color: '#2ecc71', lineStyle: { width: 2, curveness: 0.2 } },
+            { source: 'Geometry', target: 'Functions', name: 'models', color: '#34495e', lineStyle: { width: 2, curveness: 0.2 } }
+        ];
+
+        // Create the graph
+        var option = {
+            series: [{
+                type: 'graph',
+                layout: 'force',
+                data: nodes,
+                links: links,
+                roam: true,
+                label: {
+                    show: true,
+                    position: 'right',
+                    fontSize: 14
+                },
+                force: {
+                    repulsion: 1000,
+                    gravity: 0.1,
+                    layoutAnimation: true
+                },
+                lineStyle: {
+                    width: 2,
+                    color: '#333'
+                },
+                emphasis: {
+                    focus: 'self'
+                },
+                itemStyle: {
+                    borderWidth: 2,
+                    borderColor: '#333'
+                },
+                labelLayout: {
+                    hideOverlap: true
+                }
+            }]
+        };
+
+        // Set the option
+        chart.setOption(option);
+
+        // Resize chart when window is resized
+        window.addEventListener('resize', function() {
+            chart.resize();
+        });
+    </script>
+</body>
+</html>

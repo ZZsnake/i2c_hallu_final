@@ -1,0 +1,6 @@
+openai>=1.0.0
+tqdm>=4.0.0
+json-repair>=0.30.0
+# Optional for converting XLSX prediction files:
+# pandas>=2.0.0
+# openpyxl>=3.1.0

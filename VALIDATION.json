@@ -1,0 +1,56 @@
+{
+  "benchmark": "benchmark_update_1015",
+  "records": 1040,
+  "positive": 289,
+  "negative": 751,
+  "gt_errors": 4583,
+  "checks": [
+    "API validate-only passed (16 workers, no requests)",
+    "Local DRY_RUN passed: processor, weight shards, GPU memory plan, 1040 prompts",
+    "Benchmark resource SHA256 verified",
+    "Evaluation loaded all 1040 samples and prepared 2 judge requests without API calls",
+    "Evaluation errors-format parsing and unique record IDs verified",
+    "No broken or old-project symbolic links"
+  ],
+  "runtime": "/root/miniforge3/envs/image2code",
+  "full_inference_launched": false,
+  "retained_release": "1015 + V8 refined only",
+  "evaluation_rubric": "code_span_v6_half_credit_20261026",
+  "evaluation_checks": [
+    "7 delivered unit tests passed",
+    "1040 synthetic benchmark predictions converted, 0 failures",
+    "New default evaluator loaded 1040 samples and prepared 2 set-match requests in dry-run",
+    "No judge API calls made"
+  ],
+  "runtime_cleanup": {
+    "root_entrypoints": [
+      "run_api.sh",
+      "run_local.sh",
+      "run_convert.sh",
+      "run_eval.sh"
+    ],
+    "removed_paths": [
+      "data_pipline/VLMEvalKit/dual_infer_scripts/retry_i2c_hallu_update_1015_v8_refined_gpt56_sol_micu_api_failed.sh",
+      "data_pipline/VLMEvalKit/dual_infer_scripts/retry_i2c_hallu_update_1015_v8_refined_api_failed.sh",
+      "data_pipline/VLMEvalKit/dual_infer_scripts/run_i2c_hallu_update_1015_v8_refined_claude_opus_5_5_micu_api.sh",
+      "data_pipline/VLMEvalKit/dual_infer_scripts/run_i2c_hallu_update_1015_v8_refined_four_models_serial.py",
+      "data_pipline/VLMEvalKit/dual_infer_scripts/repair_i2c_hallu_update_1015_v8_refined_local_exports.py",
+      "data_pipline/VLMEvalKit/dual_infer_scripts/run_i2c_hallu_update_1015_v8_refined_gpt56_sol_micu_api.sh",
+      "data_pipline/VLMEvalKit/dual_infer_scripts/run_i2c_hallu_update_1015_v8_refined_claude_haiku_5_5_micu_api.sh",
+      "data_pipline/VLMEvalKit/dual_infer_scripts/__pycache__",
+      "data_pipline/VLMEvalKit/docs",
+      "data_pipline/VLMEvalKit/tests",
+      "data_pipline/VLMEvalKit/scripts",
+      "data_pipline/VLMEvalKit/vlmeval.egg-info",
+      "data_pipline/VLMEvalKit/Untitled",
+      "data_pipline/VLMEvalKit/slurm-24953.out",
+      "data_pipline/VLMEvalKit/.github",
+      "eval_pipeline/legacy_reproduction",
+      "eval_pipeline/test_code_span_input_compatibility.py",
+      "eval_pipeline/test_localization_half_credit.py",
+      "eval_pipeline/README_SOURCE_PACKAGE.md",
+      "eval_pipeline/SOURCE_PACKAGE_MANIFEST.sha256",
+      "run_evaluation.sh"
+    ]
+  }
+}

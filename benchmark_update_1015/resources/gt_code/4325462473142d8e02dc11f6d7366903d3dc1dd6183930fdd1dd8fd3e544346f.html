@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Topics - Bar Drilldown</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #1a1a1a;
+    }
+    .echarts-title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #1a1a1a;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- NEW JS CODE for Math Topic Drilldown Bar Chart ---
+    option = {
+      title: {
+        text: 'Math Branches Overview',
+        left: 'center',
+        top: 16,
+        textStyle: {
+          fontSize: 20,
+          fontWeight: 'bold',
+          color: '#2c2c2c',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      xAxis: {
+        data: ['Algebra', 'Geometry', 'Statistics'],
+        axisLine: {
+          lineStyle: {
+            color: "#222",
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: "#222",
+          fontWeight: "bold",
+          fontFamily: "Segoe UI, Arial, sans-serif"
+        }
+      },
+      yAxis: {
+        axisLine: {
+          lineStyle: {
+            color: "#222",
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: "#222",
+          fontWeight: "bold",
+          fontFamily: "Segoe UI, Arial, sans-serif"
+        }
+      },
+      dataGroupId: '',
+      animationDurationUpdate: 450,
+      series: {
+        type: 'bar',
+        id: 'mathTopics',
+        data: [
+          { value: 7, groupId: 'algebra' },
+          { value: 5, groupId: 'geometry' },
+          { value: 6, groupId: 'statistics' }
+        ],
+        universalTransition: {
+          enabled: true,
+          divideShape: 'clone'
+        },
+        itemStyle: {
+          color: function(params) {
+            // High contrast vivid colors
+            var colors = ['#1464C8', '#D32F2F', '#388E3C'];
+            return colors[params.dataIndex];
+          },
+          borderColor: "#222",
+          borderWidth: 2
+        },
+        barWidth: '55%'
+      }
+    };
+
+    const drilldownData = [
+      {
+        dataGroupId: 'algebra',
+        data: [
+          ['Linear Equations', 3],
+          ['Quadratic Equations', 2],
+          ['Polynomials', 1],
+          ['Matrices', 1]
+        ]
+      },
+      {
+        dataGroupId: 'geometry',
+        data: [
+          ['Triangles', 2],
+          ['Circles', 1],
+          ['Polygons', 1],
+          ['Coordinate Geometry', 1]
+        ]
+      },
+      {
+        dataGroupId: 'statistics',
+        data: [
+          ['Probability', 2],
+          ['Data Analysis', 2],
+          ['Distributions', 1],
+          ['Regression', 1]
+        ]
+      }
+    ];
+
+    myChart.on('click', function (event) {
+      if (event.data) {
+        var subData = drilldownData.find(function (data) {
+          return data.dataGroupId === event.data.groupId;
+        });
+        if (!subData) {
+          return;
+        }
+        myChart.setOption({
+          title: {
+            text: 'Details: ' + event.name,
+            left: 'center',
+            top: 16,
+            textStyle: {
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: '#2c2c2c',
+              fontFamily: 'Segoe UI, Arial, sans-serif'
+            }
+          },
+          xAxis: {
+            data: subData.data.map(function (item) {
+              return item[0];
+            }),
+            axisLine: {
+              lineStyle: {
+                color: "#222",
+                width: 2
+              }
+            },
+            axisLabel: {
+              color: "#222",
+              fontWeight: "bold",
+              fontFamily: "Segoe UI, Arial, sans-serif"
+            }
+          },
+          yAxis: {
+            axisLine: {
+              lineStyle: {
+                color: "#222",
+                width: 2
+              }
+            },
+            axisLabel: {
+              color: "#222",
+              fontWeight: "bold",
+              fontFamily: "Segoe UI, Arial, sans-serif"
+            }
+          },
+          series: {
+            type: 'bar',
+            id: 'mathTopics',
+            dataGroupId: subData.dataGroupId,
+            data: subData.data.map(function (item, idx) {
+              return {
+                value: item[1],
+                itemStyle: {
+                  color: ['#1464C8', '#D32F2F', '#388E3C', '#F9A825'][idx % 4],
+                  borderColor: "#222",
+                  borderWidth: 2
+                }
+              };
+            }),
+            universalTransition: {
+              enabled: true,
+              divideShape: 'clone'
+            },
+            barWidth: '55%'
+          },
+          graphic: [
+            {
+              type: 'text',
+              left: 32,
+              top: 20,
+              style: {
+                text: '← Back',
+                fontSize: 18,
+                fontWeight: 'bold',
+                fill: '#222',
+                fontFamily: 'Segoe UI, Arial, sans-serif',
+                cursor: 'pointer'
+              },
+              onclick: function () {
+                myChart.setOption(option);
+              }
+            }
+          ]
+        });
+      }
+    });
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

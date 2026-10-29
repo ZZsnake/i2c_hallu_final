@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math - Distribution of Prime Numbers</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // Generate sample Math data: Number of primes in intervals of 10 up to 100
+    var xAxisData = [];
+    var primeCounts = [];
+    var compositeCounts = [];
+    function isPrime(n) {
+      if (n < 2) return false;
+      for (var i = 2; i * i <= n; i++) {
+        if (n % i === 0) return false;
+      }
+      return true;
+    }
+    for (var intervalStart = 1; intervalStart <= 100; intervalStart += 10) {
+      var intervalEnd = intervalStart + 9;
+      var countPrimes = 0;
+      var countComposites = 0;
+      for (var n = intervalStart; n <= intervalEnd; n++) {
+        if (isPrime(n)) countPrimes++;
+        else if (n > 1) countComposites++;
+      }
+      xAxisData.push(intervalStart + '-' + intervalEnd);
+      primeCounts.push(countPrimes);
+      compositeCounts.push(countComposites);
+    }
+
+    option = {
+      title: {
+        text: 'Distribution of Primes and Composites (1-100)',
+        left: 'center',
+        textStyle: {
+          color: '#222A35',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI'
+        }
+      },
+      legend: {
+        data: ['Primes', 'Composites'],
+        top: 40,
+        textStyle: {
+          color: '#1A1A1A',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI'
+        }
+      },
+      tooltip: {},
+      toolbox: {
+        feature: {
+          dataView: {},
+          saveAsImage: { pixelRatio: 2 }
+        }
+      },
+      xAxis: {
+        data: xAxisData,
+        axisLine: { lineStyle: { color: '#222A35', width: 2 } },
+        axisLabel: { color: '#222A35', fontWeight: 'bold', fontSize: 14, fontFamily: 'Segoe UI' },
+        splitLine: { show: false }
+      },
+      yAxis: {
+        axisLine: { lineStyle: { color: '#222A35', width: 2 } },
+        axisLabel: { color: '#222A35', fontWeight: 'bold', fontSize: 14, fontFamily: 'Segoe UI' }
+      },
+      series: [
+        {
+          name: 'Primes',
+          type: 'bar',
+          data: primeCounts,
+          itemStyle: {
+            color: '#1976D2'
+          },
+          emphasis: {
+            focus: 'series',
+            itemStyle: {
+              color: '#1565C0'
+            }
+          },
+          barWidth: '40%',
+          animationDelay: function (idx) {
+            return idx * 60;
+          }
+        },
+        {
+          name: 'Composites',
+          type: 'bar',
+          data: compositeCounts,
+          itemStyle: {
+            color: '#E53935'
+          },
+          emphasis: {
+            focus: 'series',
+            itemStyle: {
+              color: '#B71C1C'
+            }
+          },
+          barWidth: '40%',
+          animationDelay: function (idx) {
+            return idx * 60 + 200;
+          }
+        }
+      ],
+      animationEasing: 'cubicOut',
+      animationDelayUpdate: function (idx) {
+        return idx * 30;
+      }
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

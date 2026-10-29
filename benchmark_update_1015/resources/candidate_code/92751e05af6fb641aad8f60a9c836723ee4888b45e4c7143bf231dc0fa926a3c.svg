@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1000 1000 1000">
+  <path d="M 0 900 A 900 900 0 1 1 0 -900 A 900 900 0 1 1 0 900" stroke="blue" stroke-dasharray="5,5" fill="none"/>
+  <line x1="0" y1="-900" x2="0" y2="900" stroke="black" stroke-width="1"/>
+  <line x1="-900" y1="0" x2="900" y2="0" stroke="black" stroke-width="1"/>
+  <text x="910" y="0" font-size="20" fill="black">X</text>
+  <text x="0" y="-910" font-size="20" fill="black">Y</text>
+  <text x="-910" y="0" font-size="20" fill="black">-X</text>
+  <text x="0" y="910" font-size="20" fill="black">-Y</text>
+  <text x="600" y="100" font-size="20" fill="red">r = 900</text>
+  <text x="-100" y="0" font-size="30" fill="green">Circle</text>
+</svg>

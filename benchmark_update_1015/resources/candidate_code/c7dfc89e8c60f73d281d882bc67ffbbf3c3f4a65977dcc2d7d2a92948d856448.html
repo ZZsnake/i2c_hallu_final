@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        #polarPlot {
+            width: 600px;
+            height: 600px;
+        }
+        .title {
+            text-align: center;
+            margin-top: 18px;
+            margin-bottom: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .legend {
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Polar Plot: r = 1 + 2·cos(θ)</div>
+    <div id="polarPlot"></div>
+    <script>
+        var chartDom = document.getElementById('polarPlot');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: {
+                text: '',
+                subtext: ''
+            },
+            legend: {
+                top: 8,
+                left: 'center',
+                data: ['Limacon Curve']
+            },
+            polar: {
+                radius: '72%',
+                center: ['50%', '58%']
+            },
+            angleAxis: {
+                type: 'value',
+                min: 0,
+                max: 360,
+                interval: 30,
+                startAngle: 0,
+                clockwise: true,
+                axisLine: {
+                    lineStyle: {
+                        color: 'blue'
+                    }
+                },
+                axisTick: {
+                    lineStyle: {
+                        color: 'blue'
+                    }
+                },
+                axisLabel: {
+                    color: 'black',
+                    formatter: function (value) {
+                        return value === 360 ? '' : value;
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#dbe6f7'
+                    }
+                }
+            },
+            radiusAxis: {
+                min: 0,
+                max: 3,
+                interval: 0.5,
+                axisLine: {
+                    lineStyle: {
+                        color: 'red'
+                    }
+                },
+                axisTick: {
+                    lineStyle: {
+                        color: 'red'
+                    }
+                },
+                axisLabel: {
+                    color: 'black'
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#dbe6f7'
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Limacon Curve',
+                    type: 'line',
+                    coordinateSystem: 'polar',
+                    data: function () {
+                        var data = [];
+                        for (var i = 0; i <= 360; i++) {
+                            var theta = i * Math.PI / 180;
+                            var r = 1 + 2 * Math.cos(theta);
+                            var angle = i;
+                            if (r < 0) {
+                                r = -r;
+                                angle = (i + 180) % 360;
+                            }
+                            data.push([r, angle]);
+                        }
+                        return data;
+                    }(),
+                    symbol: 'none',
+                    lineStyle: {
+                        color: 'blue',
+                        width: 2
+                    },
+                    itemStyle: {
+                        color: 'blue'
+                    }
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+    </script>
+</body>
+</html>

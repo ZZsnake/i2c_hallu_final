@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication Table Heatmap</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    #heatmapContainer {
+      width: 600px;
+      height: 600px;
+      margin: 20px auto;
+    }
+    #title {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">Multiplication Table Heatmap (1-6)</div>
+  <div id="heatmapContainer"></div>
+
+  <script>
+    $(function() {
+      var chartDom = document.getElementById('heatmapContainer');
+      var myChart = echarts.init(chartDom);
+      var option = {
+        tooltip: {
+          trigger: 'item',
+          formatter: function (params) {
+            return params.value[0] + ' x ' + params.value[1] + ' = ' + params.value[2];
+          }
+        },
+        visualMap: {
+          show: true,
+          min: 1,
+          max: 36,
+          inRange: {
+            color: ['#4682B4', '#228B22', '#DAA520', '#DC143C']
+          }
+        },
+        xAxis: {
+          data: [1, 2, 3, 4, 5, 6],
+          nameLocation: 'middle',
+          name: 'Column'
+        },
+        yAxis: {
+          data: [1, 2, 3, 4, 5, 6],
+          inverse: true,
+          nameLocation: 'middle',
+          name: 'Row'
+        },
+        series: [{
+          type: 'heatmap',
+          data: [],
+          markPoint: {
+            data: []
+          }
+        }]
+      };
+
+      let heatmapData = [];
+      for (let i = 1; i <= 6; i++) {
+        for (let j = 1; j <= 6; j++) {
+          heatmapData.push([i, j, i * j]);
+        }
+      }
+
+      option.series[0].data = heatmapData;
+
+      myChart.setOption(option);
+    });
+  </script>
+</body>
+</html>

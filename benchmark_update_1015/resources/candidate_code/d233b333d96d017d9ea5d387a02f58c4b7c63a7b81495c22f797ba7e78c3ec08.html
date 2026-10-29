@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Responses Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .chart-container {
+            width: 45%;
+            height: 450px;
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="chart-title">Survey Responses (Group A)</div>
+        <div id="chartA" class="chart-container"></div>
+    </div>
+    <div>
+        <div class="chart-title">Survey Responses (Group B)</div>
+        <div id="chartB" class="chart-container"></div>
+    </div>
+    <div>
+        <div class="chart-title">Survey Responses (Group C)</div>
+        <div id="chartC" class="chart-container"></div>
+    </div>
+    <div>
+        <div class="chart-title">Survey Responses (Group D)</div>
+        <div id="chartD" class="chart-container"></div>
+    </div>
+
+    <script>
+        const chartData = [
+            { group: 'A', agree: 40, neutral: 25, disagree: 20, noResponse: 15 },
+            { group: 'B', agree: 30, neutral: 35, disagree: 20, noResponse: 15 },
+            { group: 'C', agree: 35, neutral: 25, disagree: 25, noResponse: 15 },
+            { group: 'D', agree: 45, neutral: 20, disagree: 20, noResponse: 15 }
+        ];
+
+        function createChart(id, data) {
+            const chart = echarts.init(document.getElementById(id));
+            const option = {
+                series: [
+                    {
+                        type: 'pie',
+                        radius: ['40%', '80%'],
+                        data: [
+                            { value: data.agree, name: 'Agree', itemStyle: { color: '#1f77b4' } },
+                            { value: data.neutral, name: 'Neutral', itemStyle: { color: '#ff7f0e' } },
+                            { value: data.disagree, name: 'Disagree', itemStyle: { color: '#2ca02c' } },
+                            { value: data.noResponse, name: 'No Response', itemStyle: { color: '#ffbb78' } }
+                        ],
+                        label: {
+                            show: true,
+                            position: 'outside'
+                        }
+                    }
+                ]
+            };
+            chart.setOption(option);
+        }
+
+        $(document).ready(function() {
+            createChart('chartA', chartData[0]);
+            createChart('chartB', chartData[1]);
+            createChart('chartC', chartData[2]);
+            createChart('chartD', chartData[3]);
+        });
+    </script>
+</body>
+</html>

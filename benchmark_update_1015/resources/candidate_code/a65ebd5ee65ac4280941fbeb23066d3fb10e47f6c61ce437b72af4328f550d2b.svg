@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Triangle -->
+  <line x1="50" y1="150" x2="150" y2="150" stroke="black" stroke-dasharray="5,5" />
+  <line x1="50" y1="150" x2="100" y2="50" stroke="black" stroke-dasharray="5,5" />
+  <line x1="150" y1="150" x2="100" y2="50" stroke="black" stroke-dasharray="5,5" />
+  
+  <!-- Height -->
+  <line x1="100" y1="50" x2="100" y2="150" stroke="red" stroke-dasharray="5,5" />
+  
+  <!-- Labels -->
+  <text x="45" y="160" font-family="Arial" font-size="12" text-anchor="middle">A</text>
+  <text x="155" y="160" font-family="Arial" font-size="12" text-anchor="middle">B</text>
+  <text x="100" y="40" font-family="Arial" font-size="12" text-anchor="middle">C</text>
+  <text x="100" y="100" font-family="Arial" font-size="12" text-anchor="middle" fill="red">Height (h)</text>
+  <text x="100" y="160" font-family="Arial" font-size="12" text-anchor="middle">Base (b)</text>
+  
+  <!-- Area Formula -->
+  <text x="100" y="20" font-family="Arial" font-size="14" text-anchor="middle">Area = 1/2 × b × h</text>
+</svg>

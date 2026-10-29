@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Household Expenditure Breakdown - ECharts</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #222222;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .page {
+      position: relative;
+      width: 100vw;
+      max-width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0;
+    }
+
+    .chart-title {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .chart-title h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .chart-title h2 {
+      font-size: 14px;
+      font-weight: 400;
+      color: #333333;
+    }
+
+    .chart-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    #donutChart {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      .chart-wrapper {
+        padding: 0;
+      }
+      #donutChart {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="chart-title">
+      <h1>Household Expenditure Breakdown</h1>
+      <h2>Sample Data - Economics</h2>
+    </div>
+    <div class="chart-wrapper">
+      <div id="donutChart"></div>
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+      var chartDom = document.getElementById('donutChart');
+      var myChart = echarts.init(chartDom);
+
+      var option = {
+        title: {
+          // Titles handled via HTML, keep ECharts title off
+          show: false
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b}: {d}%'
+        },
+        legend: {
+          orient: 'vertical',
+          right: '0%',
+          top: 'center',
+          align: 'right',
+          itemWidth: 23,
+          itemHeight: 12,
+          textStyle: {
+            fontSize: 14,
+            fontWeight: 700,
+            color: '#222222'
+          }
+        },
+        series: [
+          {
+            name: 'Household Expenditure',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            center: ['50%', '50%'],
+            avoidLabelOverlap: true,
+            startAngle: 90,
+            label: {
+              show: true,
+              position: 'outside',
+              formatter: '{b}: {d}%',
+              fontSize: 16,
+              fontWeight: 700,
+              color: '#222222'
+            },
+            labelLine: {
+              show: true,
+              length: 20,
+              length2: 14,
+              smooth: false,
+              lineStyle: {
+                color: '#333333',
+                width: 3
+              }
+            },
+            itemStyle: {
+              borderColor: '#ffffff',
+              borderWidth: 2
+            },
+            data: [
+              { value: 29.79, name: 'Housing', itemStyle: { color: '#3374ff' } },
+              { value: 20.21, name: 'Food', itemStyle: { color: '#2ecc71' } },
+              { value: 14.89, name: 'Transportation', itemStyle: { color: '#ff6d2d' } },
+              { value: 11.7, name: 'Healthcare', itemStyle: { color: '#a335ff' } },
+              { value: 9.58, name: 'Education', itemStyle: { color: '#f1c40f' } },
+              { value: 7.45, name: 'Entertainment', itemStyle: { color: '#008b8b' } },
+              { value: 6.38, name: 'Other', itemStyle: { color: '#e41f35' } }
+            ]
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

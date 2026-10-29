@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="80" r="60" fill="#b3e5fc"/>
+  <circle cx="60" cy="140" r="60" fill="#b3e5fc"/>
+  <circle cx="140" cy="140" r="60" fill="#b3e5fc"/>
+  <circle cx="100" cy="120" r="20" fill="#ffcdd2"/>
+  <text x="100" y="30" text-anchor="middle" fill="#000">A</text>
+  <text x="60" y="170" text-anchor="middle" fill="#000">B</text>
+  <text x="140" y="170" text-anchor="middle" fill="#000">C</text>
+  <text x="100" y="80" text-anchor="middle" dominant-baseline="middle" fill="#000">a</text>
+  <text x="60" y="140" text-anchor="middle" dominant-baseline="middle" fill="#000">b</text>
+  <text x="140" y="140" text-anchor="middle" dominant-baseline="middle" fill="#000">c</text>
+  <text x="80" y="110" text-anchor="middle" dominant-baseline="middle" fill="#000">p</text>
+  <text x="120" y="110" text-anchor="middle" dominant-baseline="middle" fill="#000">r</text>
+  <text x="100" y="140" text-anchor="middle" dominant-baseline="middle" fill="#000">q</text>
+  <text x="100" y="120" text-anchor="middle" dominant-baseline="middle" fill="#000">s</text>
+</svg>

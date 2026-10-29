@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{math}
+\usepackage{ifthen}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{1pt}
+%
+% File name: differential-of-surface-area.tex
+% Description: 
+% A geometric representation of the differential of surface area is shown.
+% 
+% Date of creation: October, 23rd, 2021.
+% Date of last modification: October, 9th, 2022.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: page 120 of the 
+% Glosario Ilustrado de Matem\'aticas Escolares.
+% https://tinyurl.com/5udm2ufy
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+%
+\begin{center}
+\tdplotsetmaincoords{80}{100}
+%
+\begin{tikzpicture}[tdplot_main_coords,scale=1.5]
+	% the function $z = f(x,y)$
+	\tikzmath{function funcion(\x,\y) {return 1.125+0.25*sin((0.5*\x + 1.5*\y) r);};}
+	\pgfmathsetmacro{\step}{pi/50.0} % step size
+	\pgfmathsetmacro{\xi}{0}	% initial value for x
+	\pgfmathsetmacro{\xf}{1.0*pi}	% final value for x
+	\pgfmathsetmacro{\xe}{\xf+\step}
+	\pgfmathsetmacro{\xs}{\xi+\step}
+	\pgfmathsetmacro{\yi}{0}	% initial value for y
+	\pgfmathsetmacro{\yf}{1.0*pi}	% final value for y
+	\pgfmathsetmacro{\ys}{\yi+\step}
+	\pgfmathsetmacro{\ye}{\yf+\step}
+	\pgfmathsetmacro{\h}{1.0}
+	% Limits of the region in the xy plane
+	\pgfmathsetmacro{\a}{0.75}
+	\pgfmathsetmacro{\b}{\a+1.5}
+	\pgfmathsetmacro{\c}{1.0}
+	\pgfmathsetmacro{\d}{\c+1.5}
+	% Location of the differential of surface area
+	\pgfmathsetmacro{\px}{(0.45*\a+0.55*\b)}
+	\pgfmathsetmacro{\py}{0.5*(\c+\d)}
+	\pgfmathsetmacro{\dx}{0.25}
+	\pgfmathsetmacro{\dy}{0.25}
+	\pgfmathsetmacro{\dz}{0.25}
+	% Point A (\a,\c,0)
+	\pgfmathsetmacro{\zA}{funcion(\a,\c)}
+	\pgfmathsetmacro{\zB}{funcion(\b,\c)}
+	\pgfmathsetmacro{\zC}{funcion(\b,\d)}
+	\pgfmathsetmacro{\zD}{funcion(\a,\d)}
+	\pgfmathsetmacro{\zdA}{funcion(\px,\py)}
+	\pgfmathsetmacro{\zdB}{funcion(\px+\dx,\py)}
+	\pgfmathsetmacro{\zdC}{funcion(\px+\dx,\py+\dy)}
+	\pgfmathsetmacro{\zdD}{funcion(\px,\py+\dy)}
+	% 
+	\pgfmathsetmacro{\pz}{0.35*(\zA)}
+	% Coordinate axis
+	\draw[thick,->] (0,0,0) -- (\xf+0.25,0,0) node [below] {$x$}; % Eje x
+	\draw[thick,->] (0,0,0) -- (0,\yf+0.25,0) node [right] {$y$}; % Eje y
+	\draw[thick,->] (0,0,0) -- (0,0,\h+0.5,0) node [above] {$z = f(x,y)$}; 
+	% The region in the xy plane
+	\draw[white] (\a,\d,0) -- (\b,\d,0) node [black,below,sloped,midway] {$R$};
+	\fill[gray!25] (\a,\c,0) -- (\b,\c,0) -- (\b,\d,0) -- (\a,\d,0) -- (\a,\c,0);
+	\draw[dash dot dot] (\a,\c,0) -- (\b,\c,0) -- (\b,\d,0) -- (\a,\d,0) -- (\a,\c,0);
+	% boundary of the solid above the region of integration
+	\draw[dash dot dot] (\a,\c,0) -- (\a,\c,\zA);
+	\draw[dash dot dot] (\b,\c,0) -- (\b,\c,\zB);
+	\draw[dash dot dot] (\a,\d,0) -- (\a,\d,\zD);
+	\draw[dash dot dot] (\b,\d,0) -- (\b,\d,\zC);
+	% Indicating distances for $\Delta x$
+	\draw[dash dot dot] (\px,\py,0) -- (\px,0,0);
+	\draw[dash dot dot] (\px+\dx,\py,0) -- (\px+\dx,0,0);
+	\node[left] at (\px-\dx,0,0) {$dS$};
+	% Indicating distances for $\Delta y$
+	\draw[dash dot dot] (0,\py,0) -- (\px,\py,0);
+	\draw[dash dot dot] (0,\py+\dy,0) -- (\px,\py+\dy,0);
+	\node[above] at (0,\py+\dy,0) {$dy$};	
+	% Differential of area $dA$
+	\draw[fill=violet,opacity=0.5] (\px,\py,0) -- (\px,\py+\dy,0) -- (\px+\dx,\py+\dy,0) -- (\px+\dx,\py) -- (\px,\py,0);
+	\draw[dash dot dot] (\px,\py,0) -- (\px,\py,\zdA);
+	\draw[dash dot dot] (\px+\dx,\py,0) -- (\px+\dx,\py,\zdB);
+	\draw[dash dot dot] (\px,\py+\dy,0) -- (\px,\py+\dy,\zdD);
+	\draw[dash dot dot] (\px+\dx,\py+\dy,0) -- (\px+\dx,\py+\dy,\zdC);
+	\draw[dash dot dot] (\px+\dx,\py,0) -- (\px+\dx,\py+\dy,0);
+	\draw[dash dot dot] (\px,\py+\dy,0) -- (\px+\dx,\py+\dy,0);
+	% The surface: first quadrant
+	\foreach \x in {0,\step,...,\xf}{
+		\draw[cyan,opacity=0.5] plot[domain=0:\yf,smooth,variable=\t] ({\x},{\t},{funcion(\x,\t)});
+	}
+	\foreach \y in {0,\step,...,\yf}{
+		\draw[cyan,opacity=0.5] plot[domain=0:\yf,smooth,variable=\t] ({\t},{\y},{funcion(\t,\y)});
+	}
+	% The graph of $z = f(x,y)$ bounding the region of integration
+	\foreach \x in {\a,\b}
+		\draw[blue,thick,opacity=0.85] plot[domain=\c:\d,smooth,variable=\t] ({\x},{\t},{funcion(\x,\t)});
+	\foreach \y in {\c,\d}
+		\draw[blue,thick,opacity=0.85] plot[domain=\a:\b,smooth,variable=\t] ({\t},{\y},{funcion(\t,\y)});
+	% Differential of surface (upon the surface of $z = f(x,y)$)
+	\draw[red,fill=violet,opacity=0.75] (\px,\py,\zdA) -- (\px+\dx,\py,\zdB) 
+			-- (\px+\dx,\py+\dy,\zdC) -- (\px,\py+\dy,\zdD) -- (\px,\py,\zdA);
+	% Nodes to indicate the location of the differentials
+	\node[red,above] at (\px,\py,\zdA) {$dA$};
+	\node[blue,right] at (\px,\py+\dy,0) {$dx$};
+\end{tikzpicture}
+\end{center}
+%
+\end{document}

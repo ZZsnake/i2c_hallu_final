@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <style>
+    .line {
+      stroke: black;
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .dashed-line {
+      stroke: black;
+      stroke-width: 1;
+      stroke-dasharray: 4 2;
+      fill: none;
+    }
+    .terminal-circle {
+      stroke: black;
+      stroke-width: 1.5;
+      fill: white;
+    }
+    .ground-line {
+      stroke: black;
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .ground-fill {
+      fill: black;
+    }
+    .text {
+      font-family: sans-serif;
+      font-size: 16px;
+      fill: black;
+    }
+    .plus-sign {
+      stroke: black;
+      stroke-width: 1.5;
+      fill: none;
+    }
+  </style>
+
+  <!-- Input A -->
+  <circle cx="30" cy="50" r="3" class="terminal-circle"/>
+  <text x="15" y="55" class="text">A</text>
+  <line x1="30" y1="50" x2="70" y2="50" class="line"/>
+
+  <!-- Block 1 -->
+  <rect x="70" y="30" width="40" height="40" class="line"/>
+  <line x1="90" y1="70" x2="90" y2="85" class="line"/>
+  <!-- Ground 1 -->
+  <line x1="75" y1="85" x2="105" y2="85" class="ground-line"/>
+  <line x1="80" y1="90" x2="100" y2="90" class="ground-line"/>
+  <line x1="85" y1="95" x2="95" y2="95" class="ground-line"/>
+
+  <!-- Input B -->
+  <circle cx="30" cy="130" r="3" class="terminal-circle"/>
+  <text x="15" y="135" class="text">B</text>
+  <line x1="30" y1="130" x2="70" y2="130" class="line"/>
+
+  <!-- Block 2 -->
+  <rect x="70" y="110" width="40" height="40" class="line"/>
+  <line x1="90" y1="150" x2="90" y2="165" class="line"/>
+  <!-- Ground 2 -->
+  <line x1="75" y1="165" x2="105" y2="165" class="ground-line"/>
+  <line x1="80" y1="170" x2="100" y2="170" class="ground-line"/>
+  <line x1="85" y1="175" x2="95" y2="175" class="ground-line"/>
+
+  <!-- Dashed lines from blocks to switches -->
+  <line x1="110" y1="50" x2="160" y2="50" class="dashed-line"/>
+  <line x1="110" y1="130" x2="160" y2="130" class="dashed-line"/>
+
+  <!-- Top Switch Pole -->
+  <!-- Positive terminal -->
+  <circle cx="190" cy="30" r="3" class="terminal-circle"/>
+  <line x1="190" y1="27" x2="190" y2="33" class="plus-sign"/>
+  <line x1="187" y1="30" x2="193" y2="30" class="plus-sign"/>
+  <line x1="190" y1="30" x2="190" y2="50" class="line"/>
+  <!-- Fixed contact -->
+  <line x1="190" y1="50" x2="190" y2="60" class="line"/>
+  <!-- Moving contact (open) -->
+  <line x1="190" y1="50" x2="230" y2="70" class="line"/>
+
+  <!-- Bottom Switch Pole -->
+  <!-- Positive terminal -->
+  <circle cx="190" cy="110" r="3" class="terminal-circle"/>
+  <line x1="190" y1="107" x2="190" y2="113" class="plus-sign"/>
+  <line x1="187" y1="110" x2="193" y2="110" class="plus-sign"/>
+  <line x1="190" y1="110" x2="190" y2="130" class="line"/>
+  <!-- Fixed contact -->
+  <line x1="190" y1="130" x2="190" y2="140" class="line"/>
+  <!-- Moving contact (open) -->
+  <line x1="190" y1="130" x2="230" y2="150" class="line"/>
+
+  <!-- Output Y connection -->
+  <line x1="230" y1="70" x2="230" y2="150" class="line"/>
+  <line x1="230" y1="150" x2="250" y2="150" class="line"/>
+  <circle cx="250" cy="150" r="3" class="terminal-circle"/>
+  <text x="260" y="155" class="text">Y</text>
+</svg>

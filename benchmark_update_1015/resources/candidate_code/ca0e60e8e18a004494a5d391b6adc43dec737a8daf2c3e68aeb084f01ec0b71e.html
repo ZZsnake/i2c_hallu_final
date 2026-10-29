@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Heatmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .heatmap {
+            width: 800px;
+            height: 800px;
+            background-color: #fff;
+            border: 2px solid #333;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 2px;
+        }
+        .heatmap div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+        .heatmap div:hover {
+            background-color: #f0f0f0;
+        }
+        .heatmap div.color1 {
+            background-color: #ff6b6b;
+        }
+        .heatmap div.color2 {
+            background-color: #ffcc6b;
+        }
+        .heatmap div.color3 {
+            background-color: #ffff6b;
+        }
+        .heatmap div.color4 {
+            background-color: #6bff6b;
+        }
+        .heatmap div.color5 {
+            background-color: #6bffff;
+        }
+        .heatmap div.color6 {
+            background-color: #6b6bff;
+        }
+        .heatmap div.color7 {
+            background-color: #ff6bff;
+        }
+        .heatmap div.color8 {
+            background-color: #ff6bff;
+        }
+        .heatmap div.color9 {
+            background-color: #ff6b6b;
+        }
+        .heatmap div.color10 {
+            background-color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="heatmap">
+        <div class="color1">1</div>
+        <div class="color2">2</div>
+        <div class="color3">3</div>
+        <div class="color4">4</div>
+        <div class="color5">5</div>
+        <div class="color6">6</div>
+        <div class="color7">7</div>
+        <div class="color8">8</div>
+        <div class="color9">9</div>
+        <div class="color10">10</div>
+        <div class="color1">2</div>
+        <div class="color2">4</div>
+        <div class="color3">6</div>
+        <div class="color4">8</div>
+        <div class="color5">10</div>
+        <div class="color6">12</div>
+        <div class="color7">14</div>
+        <div class="color8">16</div>
+        <div class="color9">18</div>
+        <div class="color10">20</div>
+        <div class="color1">3</div>
+        <div class="color2">6</div>
+        <div class="color3">9</div>
+        <div class="color4">12</div>
+        <div class="color5">15</div>
+        <div class="color6">18</div>
+        <div class="color7">21</div>
+        <div class="color8">24</div>
+        <div class="color9">27</div>
+        <div class="color10">30</div>
+        <div class="color1">4</div>
+        <div class="color2">8</div>
+        <div class="color3">12</div>
+        <div class="color4">16</div>
+        <div class="color5">20</div>
+        <div class="color6">24</div>
+        <div class="color7">28</div>
+        <div class="color8">32</div>
+        <div class="color9">36</div>
+        <div class="color10">40</div>
+        <div class="color1">5</div>
+        <div class="color2">10</div>
+        <div class="color3">15</div>
+        <div class="color4">20</div>
+        <div class="color5">25</div>
+        <div class="color6">30</div>
+        <div class="color7">35</div>
+        <div class="color8">40</div>
+        <div class="color9">45</div>
+        <div class="color10">50</div>
+        <div class="color1">6</div>
+        <div class="color2">12</div>
+        <div class="color3">18</div>
+        <div class="color4">24</div>
+        <div class="color5">30</div>
+        <div class="color6">36</div>
+        <div class="color7">42</div>
+        <div class="color8">48</div>
+        <div class="color9">54</div>
+        <div class="color10">60</div>
+        <div class="color1">7</div>
+        <div class="color2">14</div>
+        <div class="color3">21</div>
+        <div class="color4">28</div>
+        <div class="color5">35</div>
+        <div class="color6">42</div>
+        <div class="color7">49</div>
+        <div class="color8">56</div>
+        <div class="color9">63</div>
+        <div class="color10">70</div>
+        <div class="color1">8</div>
+        <div class="color2">16</div>
+        <div class="color3">24</div>
+        <div class="color4">32</div>
+        <div class="color5">40</div>
+        <div class="color6">48</div>
+        <div class="color7">56</div>
+        <div class="color8">64</div>
+        <div class="color9">72</div>
+        <div class="color10">80</div>
+        <div class="color1">9</div>
+        <div class="color2">18</div>
+        <div class="color3">27</div>
+        <div class="color4">36</div>
+        <div class="color5">45</div>
+        <div class="color6">54</div>
+        <div class="color7">63</div>
+        <div class="color8">72</div>
+        <div class="color9">81</div>
+        <div class="color10">90</div>
+        <div class="color1">10</div>
+        <div class="color2">20</div>
+        <div class="color3">30</div>
+        <div class="color4">40</div>
+        <div class="color5">50</div>
+        <div class="color6">60</div>
+        <div class="color7">70</div>
+        <div class="color8">80</div>
+        <div class="color9">90</div>
+        <div class="color10">100</div>
+    </div>
+</body>
+</html>

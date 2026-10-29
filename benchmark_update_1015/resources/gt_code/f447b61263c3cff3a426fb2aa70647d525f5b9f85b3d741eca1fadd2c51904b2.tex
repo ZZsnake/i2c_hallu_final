@@ -1,0 +1,81 @@
+\documentclass{standalone}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes.geometric, positioning}
+
+\begin{document}
+% Custom TikZ styles with high-contrast colors
+\tikzset{
+  process/.style={
+    trapezium,
+    trapezium left angle=75,
+    trapezium right angle=105,
+    draw=teal!80!black,
+    fill=cyan!30!white,
+    minimum height=3.5em,
+    text width=8em,
+    font=\sffamily\bfseries\color{black},
+    align=center,
+    node distance=2.2cm
+  },
+  evaluate/.style={
+    ellipse,
+    draw=blue!80!black,
+    fill=blue!10!white,
+    minimum height=2.5em,
+    text width=7em,
+    font=\sffamily\bfseries\color{black},
+    align=center,
+    node distance=2.2cm
+  },
+  terminal/.style={
+    rectangle,
+    draw=red!80!black,
+    fill=red!10!white,
+    rounded corners=2pt,
+    minimum height=3em,
+    text width=6em,
+    font=\sffamily\bfseries\color{black},
+    align=center,
+    node distance=3cm
+  },
+  link/.style={
+    very thick,
+    color=teal!90!black,
+    -{Stealth[scale=1.2]}
+  },
+  feedback/.style={
+    thick,
+    dashed,
+    color=blue!90!black,
+    -{Stealth[scale=1.1]}
+  }
+}
+
+\begin{tikzpicture}[auto]
+  % Nodes (renamed for Computer Science domain)
+  \node [process] (data_input) {Data Acquisition};
+  \node [evaluate, below=of data_input] (preprocess) {Preprocessing Stage};
+  \node [process, below=of preprocess] (feature_extract) {Feature Extraction};
+  \node [process, below=of feature_extract] (model_train) {Model Training};
+  \node [process, below=of model_train] (model_test) {Model Validation};
+  \node [process, left=3cm of feature_extract] (iteration) {Iteration Check};
+  \node [terminal, below=of model_test] (terminate) {Process Complete};
+
+  % Invisible node for feedback loop
+  \node [draw=none, right=2.5cm of model_test] (feedback_point) {};
+
+  % Edges (with new color and arrow styles)
+  \draw[link] (data_input) -- (preprocess);
+  \draw[link] (preprocess) -- (feature_extract);
+  \draw[link] (feature_extract) -- (model_train);
+  \draw[link] (model_train) -- (model_test);
+  \draw[link] (model_test) -- (terminate);
+  \draw[feedback] (model_test) -| (feedback_point.center);
+  \draw[feedback] (feedback_point.center) |- (feature_extract);
+  \draw[link] (feature_extract) -- (iteration);
+  \draw[link] (iteration) -- (terminate);
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Device Connectivity Over Time</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #232323;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        text: 'Device Connectivity Over Time',
+        left: 'center',
+        textStyle: {
+          color: '#222B45',
+          fontWeight: 'bold',
+          fontSize: 21,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      legend: {
+        data: ['Sensor A', 'Sensor B', 'Sensor C'],
+        top: 35,
+        textStyle: {
+          color: '#212121',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      grid: {
+        left: '5%',
+        right: '6%',
+        bottom: '7%',
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {
+            title: 'Save'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
+        axisLabel: {
+          color: '#292929',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222B45',
+            width: 2
+          }
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Active Connections',
+        nameTextStyle: {
+          color: '#222B45',
+          fontWeight: 'bold',
+          fontSize: 15,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        axisLabel: {
+          color: '#292929',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222B45',
+            width: 2
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#C6D0F5',
+            width: 1
+          }
+        }
+      },
+      series: [
+        {
+          name: 'Sensor A',
+          type: 'line',
+          step: 'start',
+          data: [10, 15, 14, 18, 20, 17, 16],
+          lineStyle: {
+            color: '#0057B7',
+            width: 4
+          },
+          itemStyle: {
+            color: '#0057B7'
+          },
+          symbol: 'circle',
+          symbolSize: 10
+        },
+        {
+          name: 'Sensor B',
+          type: 'line',
+          step: 'middle',
+          data: [8, 12, 16, 15, 13, 19, 18],
+          lineStyle: {
+            color: '#F44336',
+            width: 4
+          },
+          itemStyle: {
+            color: '#F44336'
+          },
+          symbol: 'diamond',
+          symbolSize: 10
+        },
+        {
+          name: 'Sensor C',
+          type: 'line',
+          step: 'end',
+          data: [20, 19, 18, 21, 23, 25, 24],
+          lineStyle: {
+            color: '#00B894',
+            width: 4
+          },
+          itemStyle: {
+            color: '#00B894'
+          },
+          symbol: 'rect',
+          symbolSize: 10
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

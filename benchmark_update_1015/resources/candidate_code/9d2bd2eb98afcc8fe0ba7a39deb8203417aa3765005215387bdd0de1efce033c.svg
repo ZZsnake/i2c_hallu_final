@@ -1,0 +1,51 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EC1F7;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Outer blue irregular shape (chest cavity) -->
+  <path d="M200 100 C100 150, 100 450, 200 500 C300 550, 500 550, 600 500 C700 450, 700 150, 600 100 C500 50, 300 50, 200 100 Z"
+        fill="url(#blueGradient)" stroke="#000000" stroke-width="2" stroke-dasharray="8 4" />
+
+  <!-- Pharynx (咽部) -->
+  <path d="M390 100 C380 120, 380 140, 390 160 C400 140, 400 120, 390 100 Z" fill="#4CAF50" filter="url(#shadow)"/>
+  <text x="400" y="80" font-family="SimHei, sans-serif" font-size="24" fill="black" text-anchor="middle">咽部</text>
+  <line x1="400" y1="90" x2="400" y2="110" stroke="black" stroke-width="1" stroke-dasharray="4 2"/>
+
+  <!-- Trachea (气管) -->
+  <path d="M395 160 L395 300 C395 310, 390 315, 380 315 L370 315 C360 315, 355 310, 355 300 L355 160 Z" fill="#4CAF50" filter="url(#shadow)"/>
+  <text x="400" y="180" font-family="SimHei, sans-serif" font-size="24" fill="black" text-anchor="start">气管</text>
+  <line x1="400" y1="190" x2="380" y2="200" stroke="black" stroke-width="1" stroke-dasharray="4 2"/>
+
+  <!-- Esophagus (食管) - behind trachea -->
+  <path d="M405 160 L405 300 C405 310, 410 315, 420 315 L430 315 C440 315, 445 310, 445 300 L445 160 Z" fill="#8BC34A" opacity="0.7" filter="url(#shadow)"/>
+  <text x="400" y="400" font-family="SimHei, sans-serif" font-size="24" fill="black" text-anchor="start">食管</text>
+  <line x1="400" y1="390" x2="420" y2="350" stroke="black" stroke-width="1" stroke-dasharray="4 2"/>
+
+  <!-- Left Lung (左肺) -->
+  <ellipse cx="300" cy="380" rx="100" ry="120" fill="#F44336" filter="url(#shadow)"/>
+  <text x="280" y="360" font-family="SimHei, sans-serif" font-size="24" fill="black" text-anchor="middle">左肺</text>
+  <line x1="300" y1="370" x2="350" y2="320" stroke="black" stroke-width="1"/>
+
+  <!-- Right Lung (右肺) -->
+  <ellipse cx="500" cy="380" rx="100" ry="120" fill="#F44336" filter="url(#shadow)"/>
+  <text x="520" y="360" font-family="SimHei, sans-serif" font-size="24" fill="black" text-anchor="middle">右肺</text>
+  <line x1="500" y1="370" x2="450" y2="320" stroke="black" stroke-width="1"/>
+
+  <!-- Bronchi branching from trachea -->
+  <path d="M375 315 C360 320, 340 330, 320 340" stroke="#4CAF50" stroke-width="5" fill="none"/>
+  <path d="M425 315 C440 320, 460 330, 480 340" stroke="#4CAF50" stroke-width="5" fill="none"/>
+
+  <!-- Heart (心脏) -->
+  <path d="M400 480 C380 460, 360 470, 360 490 C360 510, 380 520, 400 500 C420 520, 440 510, 440 490 C440 470, 420 460, 400 480 Z"
+        fill="#FFC107" filter="url(#shadow)"/>
+  <text x="400" y="540" font-family="SimHei, sans-serif" font-size="24" fill="black" text-anchor="middle">心脏</text>
+  <line x1="400" y1="530" x2="400" y2="500" stroke="black" stroke-width="1"/>
+
+</svg>

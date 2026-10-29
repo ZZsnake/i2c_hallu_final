@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Interactive Math Line Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- Updated JS code for Math dataset ---
+    // Sample: Plotting a quadratic function with draggable points
+
+    const symbolSize = 18;
+    const data = [
+      [-4, 16],
+      [-2, 4],
+      [0, 0],
+      [2, 4],
+      [4, 16]
+    ];
+    option = {
+      title: {
+        text: 'Quadratic Function: y = x² (Drag the Points)',
+        left: 'center',
+        textStyle: {
+          color: '#173D7A',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI',
+          fontSize: 22
+        }
+      },
+      tooltip: {
+        triggerOn: 'none',
+        backgroundColor: '#fff',
+        borderColor: '#173D7A',
+        borderWidth: 1,
+        textStyle: {
+          color: '#173D7A',
+          fontSize: 16,
+          fontFamily: 'Segoe UI'
+        },
+        formatter: function (params) {
+          return (
+            '<span style="color:#0A7A1C;font-weight:bold">x</span>: ' +
+            params.data[0].toFixed(2) +
+            '<br><span style="color:#B31313;font-weight:bold">y</span>: ' +
+            params.data[1].toFixed(2)
+          );
+        }
+      },
+      grid: {
+        top: '10%',
+        bottom: '14%',
+        left: '10%',
+        right: '6%'
+      },
+      xAxis: {
+        min: -5,
+        max: 5,
+        type: 'value',
+        name: 'x',
+        nameTextStyle: {
+          color: '#173D7A',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          onZero: false,
+          lineStyle: {
+            color: '#173D7A',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#173D7A',
+          fontWeight: 'bold',
+          fontSize: 14
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#E3E3E3'
+          }
+        }
+      },
+      yAxis: {
+        min: -2,
+        max: 18,
+        type: 'value',
+        name: 'y',
+        nameTextStyle: {
+          color: '#B31313',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          onZero: false,
+          lineStyle: {
+            color: '#B31313',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#B31313',
+          fontWeight: 'bold',
+          fontSize: 14
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#E3E3E3'
+          }
+        }
+      },
+      dataZoom: [
+        {
+          type: 'slider',
+          xAxisIndex: 0,
+          filterMode: 'none',
+          backgroundColor: 'rgba(23,61,122,0.04)',
+          borderColor: '#173D7A',
+          height: 16
+        },
+        {
+          type: 'slider',
+          yAxisIndex: 0,
+          filterMode: 'none',
+          backgroundColor: 'rgba(179,19,19,0.04)',
+          borderColor: '#B31313',
+          width: 16
+        },
+        {
+          type: 'inside',
+          xAxisIndex: 0,
+          filterMode: 'none'
+        },
+        {
+          type: 'inside',
+          yAxisIndex: 0,
+          filterMode: 'none'
+        }
+      ],
+      series: [
+        {
+          id: 'math-quadratic',
+          type: 'line',
+          smooth: false,
+          symbolSize: symbolSize,
+          lineStyle: {
+            color: '#0A7A1C',
+            width: 4
+          },
+          itemStyle: {
+            color: '#B31313',
+            borderColor: '#173D7A',
+            borderWidth: 2
+          },
+          label: {
+            show: true,
+            position: 'top',
+            color: '#222',
+            fontWeight: 'bold',
+            fontSize: 13,
+            formatter: function(params) {
+              return '(' + params.data[0] + ', ' + params.data[1] + ')';
+            }
+          },
+          data: data
+        }
+      ]
+    };
+
+    setTimeout(function () {
+      myChart.setOption({
+        graphic: data.map(function (item, dataIndex) {
+          return {
+            type: 'circle',
+            position: myChart.convertToPixel('grid', item),
+            shape: {
+              cx: 0,
+              cy: 0,
+              r: symbolSize / 2
+            },
+            invisible: true,
+            draggable: true,
+            ondrag: function (dx, dy) {
+              onPointDragging(dataIndex, [this.x, this.y]);
+            },
+            onmousemove: function () {
+              showTooltip(dataIndex);
+            },
+            onmouseout: function () {
+              hideTooltip(dataIndex);
+            },
+            z: 100
+          };
+        })
+      });
+    }, 0);
+
+    window.addEventListener('resize', updatePosition);
+    myChart.on('dataZoom', updatePosition);
+
+    function updatePosition() {
+      myChart.setOption({
+        graphic: data.map(function (item, dataIndex) {
+          return {
+            position: myChart.convertToPixel('grid', item)
+          };
+        })
+      });
+    }
+    function showTooltip(dataIndex) {
+      myChart.dispatchAction({
+        type: 'showTip',
+        seriesIndex: 0,
+        dataIndex: dataIndex
+      });
+    }
+    function hideTooltip(dataIndex) {
+      myChart.dispatchAction({
+        type: 'hideTip'
+      });
+    }
+    function onPointDragging(dataIndex, pos) {
+      data[dataIndex] = myChart.convertFromPixel('grid', pos);
+
+      myChart.setOption({
+        series: [
+          {
+            id: 'math-quadratic',
+            data: data
+          }
+        ]
+      });
+    }
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

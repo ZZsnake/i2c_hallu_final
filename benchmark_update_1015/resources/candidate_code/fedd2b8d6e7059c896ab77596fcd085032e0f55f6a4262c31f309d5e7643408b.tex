@@ -1,0 +1,53 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[
+    >=Stealth,
+    node distance = 3cm,
+    every node/.style = {
+        circle,
+        draw=teal,
+        fill=blue!10,
+        thick,
+        text=blue,
+        align=center,
+        font=\sffamily,
+        minimum size=4cm
+    },
+    grayline/.style = {gray, thin},
+    bluearrow/.style = {->, blue, thick}
+]
+
+% Define coordinates
+\coordinate (A) at (90:3cm);
+\coordinate (B) at (30:3cm);
+\coordinate (C) at (-30:3cm);
+\coordinate (D) at (-90:3cm);
+\coordinate (E) at (-150:3cm);
+\coordinate (F) at (-210:3cm);
+
+% Draw gray lines between all pairs
+\foreach \p1/\p2 in {A/B, A/C, A/D, A/E, A/F, B/C, B/D, B/E, B/F, C/D, C/E, C/F, D/E, D/F, E/F} {
+    \draw[grayline] (\p1) -- (\p2);
+}
+
+% Draw nodes
+\node at (A) {market assessment};
+\node at (B) {objective setting};
+\node at (C) {resource allocation};
+\node at (D) {strategic planning};
+\node at (E) {execution \& monitoring};
+\node at (F) {review \& adaptation};
+
+% Draw blue arrows in cycle
+\draw[bluearrow] (A) -> (B);
+\draw[bluearrow] (B) -> (C);
+\draw[bluearrow] (C) -> (D);
+\draw[bluearrow] (D) -> (E);
+\draw[bluearrow] (E) -> (F);
+\draw[bluearrow] (F) -> (A);
+
+\end{tikzpicture}
+\end{document}

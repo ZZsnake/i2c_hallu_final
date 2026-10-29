@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Continents Oval -->
+  <ellipse cx="400" cy="60" rx="120" ry="40" fill="#b2f2bb" stroke="#2b6b3b"/>
+  <text x="400" y="65" font-family="Arial" font-size="16" text-anchor="middle" dy=".3em">Continents</text>
+  
+  <!-- Countries Oval -->
+  <ellipse cx="400" cy="160" rx="120" ry="40" fill="#ffd8a8" stroke="#c45b00"/>
+  <text x="400" y="165" font-family="Arial" font-size="16" text-anchor="middle" dy=".3em">Countries</text>
+  
+  <!-- Regions Oval -->
+  <ellipse cx="400" cy="260" rx="120" ry="40" fill="#d0bcf7" stroke="#4b32c3"/>
+  <text x="400" y="265" font-family="Arial" font-size="16" text-anchor="middle" dy=".3em">Regions</text>
+  
+  <!-- Cities Oval -->
+  <ellipse cx="400" cy="380" rx="180" ry="50" fill="#e9efc2" stroke="#7f9c21"/>
+  <text x="400" y="385" font-family="Arial" font-size="16" text-anchor="middle" dy=".3em">Cities</text>
+  
+  <!-- Coastal Zone Oval -->
+  <ellipse cx="150" cy="460" rx="80" ry="40" fill="#b3d9ff" stroke="#265c9c"/>
+  <text x="150" y="465" font-family="Arial" font-size="14" text-anchor="middle" dy=".3em">Coastal Zone</text>
+  
+  <!-- Mountain Zone Oval -->
+  <ellipse cx="650" cy="460" rx="100" ry="40" fill="#f4b2d2" stroke="#c1387a"/>
+  <text x="650" y="465" font-family="Arial" font-size="14" text-anchor="middle" dy=".3em">Mountain Zone</text>
+  
+  <!-- Connections -->
+  <line x1="400" y1="100" x2="400" y2="120" stroke="#2b6b3b" stroke-width="2"/>
+  <text x="400" y="115" font-family="Arial" font-size="12" text-anchor="middle">includes</text>
+  
+  <line x1="400" y1="200" x2="400" y2="220" stroke="#c45b00" stroke-width="2"/>
+  <text x="400" y="215" font-family="Arial" font-size="12" text-anchor="middle">contains</text>
+  
+  <line x1="400" y1="300" x2="400" y2="320" stroke="#4b32c3" stroke-width="2"/>
+  <text x="400" y="315" font-family="Arial" font-size="12" text-anchor="middle">grouped by</text>
+  
+  <line x1="230" y1="380" x2="150" y2="420" stroke="#265c9c" stroke-dasharray="5,5"/>
+  <text x="190" y="395" font-family="Arial" font-size="12" text-anchor="middle">adjacent to</text>
+  
+  <line x1="570" y1="380" x2="650" y2="420" stroke="#c1387a" stroke-dasharray="5,5"/>
+  <text x="610" y="395" font-family="Arial" font-size="12" text-anchor="middle">adjacent to</text>
+  
+  <!-- Title -->
+  <text x="400" y="570" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Geographic Hierarchy</text>
+</svg>

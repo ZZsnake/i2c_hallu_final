@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fff" />
+  
+  <!-- Media separation -->
+  <line x1="0" y1="300" x2="800" y2="300" stroke="#000" stroke-width="2" />
+  
+  <!-- Incident ray -->
+  <line x1="50" y1="500" x2="200" y2="300" stroke="yellow" stroke-width="3" />
+  <text x="40" y="520" font-size="16" fill="black">n₁</text>
+  
+  <!-- Refracted ray -->
+  <line x1="200" y1="300" x2="350" y2="100" stroke="yellow" stroke-width="3" />
+  <text x="360" y="80" font-size="16" fill="black">n₂</text>
+  
+  <!-- Reflected ray -->
+  <line x1="200" y1="300" x2="350" y2="500" stroke="yellow" stroke-width="3" />
+  
+  <!-- Normal line -->
+  <line x1="200" y1="300" x2="200" y2="0" stroke="#000" stroke-dasharray="5,5" stroke-width="2" />
+  
+  <!-- Critical angle -->
+  <line x1="200" y1="300" x2="300" y2="300" stroke="#000" stroke-dasharray="5,5" stroke-width="2" />
+  <text x="210" y="280" font-size="16" fill="black">θ₁</text>
+  <text x="310" y="280" font-size="16" fill="black">θ₂</text>
+  <text x="250" y="320" font-size="16" fill="black">θ_c</text>
+  
+  <!-- Total internal reflection label -->
+  <text x="450" y="150" font-size="16" fill="black">total reflection</text>
+</svg>

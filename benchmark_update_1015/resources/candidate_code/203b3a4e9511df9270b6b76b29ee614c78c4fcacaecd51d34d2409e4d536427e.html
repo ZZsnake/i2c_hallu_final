@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Function Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        #chart-container {
+            width: 95vw;
+            height: 90vh;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">Quadratic Function: y = x² + 2x + 1</div>
+    <div id="chart-container"></div>
+
+    <script>
+        $(document).ready(function() {
+            var chartDom = document.getElementById('chart-container');
+            var myChart = echarts.init(chartDom);
+            
+            // Generate data for y = x^2 + 2x + 1
+            const data = [];
+            for (let x = -4; x <= 7; x++) {
+                let y = Math.pow(x, 2) + 2 * x + 1;
+                data.push([x, y]);
+            }
+
+            var option = {
+                grid: {
+                    left: '5%',
+                    right: '5%',
+                    bottom: '10%',
+                    top: '10%',
+                    containLabel: false
+                },
+                xAxis: {
+                    type: 'value',
+                    min: -4,
+                    max: 8,
+                    interval: 2,
+                    name: 'x',
+                    nameLocation: 'middle',
+                    nameGap: 30,
+                    axisLine: {
+                        onZero: true,
+                        lineStyle: {
+                            color: '#000'
+                        }
+                    },
+                    axisTick: {
+                        show: true,
+                        alignWithLabel: true
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        color: '#333',
+                        fontSize: 10
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 70,
+                    interval: 10,
+                    name: 'y',
+                    nameLocation: 'middle',
+                    nameGap: 40,
+                    axisLine: {
+                        onZero: true,
+                        lineStyle: {
+                            color: '#000'
+                        }
+                    },
+                    axisTick: {
+                        show: true
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        color: '#333',
+                        fontSize: 10
+                    }
+                },
+                series: [{
+                    symbolSize: 12,
+                    data: data,
+                    type: 'scatter',
+                    itemStyle: {
+                        color: '#e57373',
+                        borderColor: '#333',
+                        borderWidth: 1
+                    }
+                }]
+            };
+
+            myChart.setOption(option);
+
+            window.addEventListener('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

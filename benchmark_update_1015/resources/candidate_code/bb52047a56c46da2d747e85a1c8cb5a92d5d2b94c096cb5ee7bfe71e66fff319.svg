@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
+  <!-- Define the donut chart structure -->
+  
+  <!-- Top-left quadrant: Algebra (mauve/dusty rose) -->
+  <path d="M 600 600 L 600 100 A 500 500 0 0 1 1100 600 Z" fill="#C17B8F" stroke="#000" stroke-width="8"/>
+  
+  <!-- Top-right quadrant: Geometry (steel blue) -->
+  <path d="M 600 600 L 1100 600 A 500 500 0 0 1 600 1100 Z" fill="#4A6D8C" stroke="#000" stroke-width="8"/>
+  
+  <!-- Bottom-right quadrant: Calculus (coral pink) -->
+  <path d="M 600 600 L 600 1100 A 500 500 0 0 1 100 600 Z" fill="#E87B8F" stroke="#000" stroke-width="8"/>
+  
+  <!-- Bottom-left quadrant: Probability and Statistics (muted purple) with dashed border -->
+  <path d="M 600 600 L 100 600 A 500 500 0 0 1 600 100 Z" fill="#6B6580" stroke="#000" stroke-width="8"/>
+  
+  <!-- Dashed border for bottom-left quadrant -->
+  <path d="M 100 600 A 500 500 0 0 1 600 100" fill="none" stroke="#000" stroke-width="8" stroke-dasharray="20,10"/>
+  
+  <!-- Center white circle -->
+  <circle cx="600" cy="600" r="200" fill="#FFFFFF" stroke="#000" stroke-width="8"/>
+  
+  <!-- Dividing lines -->
+  <line x1="600" y1="100" x2="600" y2="1100" stroke="#000" stroke-width="8"/>
+  <line x1="100" y1="600" x2="1100" y2="600" stroke="#000" stroke-width="8"/>
+  
+  <!-- Text labels -->
+  <text x="400" y="180" font-family="Arial, sans-serif" font-size="60" fill="#000">Algebra</text>
+  <text x="750" y="420" font-family="Arial, sans-serif" font-size="60" fill="#000">Geometry</text>
+  <text x="10" y="420" font-family="Arial, sans-serif" font-size="60" fill="#000">Probability and</text>
+  <text x="10" y="480" font-family="Arial, sans-serif" font-size="60" fill="#000">Statistics</text>
+  <text x="350" y="1100" font-family="Arial, sans-serif" font-size="60" fill="#000">Calculus</text>
+  <text x="350" y="680" font-family="Arial, sans-serif" font-size="70" font-weight="bold" fill="#000">Math Topics</text>
+</svg>

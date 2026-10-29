@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Test Score Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .chart-container {
+            width: 100%;
+            height: 600px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #555555;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        .axis-label {
+            font-size: 14px;
+            color: #333333;
+        }
+        .group-label {
+            font-size: 14px;
+            color: #333333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">Algebra Test Score Distribution</div>
+        <div id="mainChart" style="width: 100%; height: 500px;"></div>
+        <div class="legend">
+            Boxplot: Q1, Q3, Median & Outliers<br>
+            (upper: Q3 + 1.5 × IQR, lower: Q1 - 1.5 × IQR)
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize ECharts
+            var myChart = echarts.init(document.getElementById('mainChart'));
+            
+            // Define the data for each group
+            var groupData = [
+                {name: 'Group 1', data: [75, 80, 85, 90, 95]},
+                {name: 'Group 2', data: [65, 70, 75, 80, 85]},
+                {name: 'Group 3', data: [60, 65, 70, 75, 80]},
+                {name: 'Group 4', data: [55, 60, 65, 70, 75]},
+                {name: 'Group 5', data: [85, 90, 95, 100, 100]}
+            ];
+            
+            // Create the option configuration
+            var option = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    show: false
+                },
+                grid: {
+                    left: '10%',
+                    right: '10%',
+                    bottom: '20%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['Group 1', 'Group 2', 'Group 3', 'Group 4', 'Group 5'],
+                    axisLabel: {
+                        textStyle: {
+                            fontSize: 14,
+                            color: '#333333'
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333333'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Score',
+                    min: 0,
+                    max: 100,
+                    axisLabel: {
+                        textStyle: {
+                            fontSize: 14,
+                            color: '#333333'
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333333'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Score Distribution',
+                        type: 'boxplot',
+                        data: groupData.map(item => item.data),
+                        itemStyle: {
+                            color: '#1E90FF'
+                        },
+                        label: {
+                            show: true,
+                            position: 'top'
+                        }
+                    }
+                ]
+            };
+            
+            // Set the option
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

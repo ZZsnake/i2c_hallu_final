@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5, >=Stealth]
+
+% Axes
+\draw[thick, blue, ->] (0,0) -- (3.0,0) node[right] {$x$};
+\draw[thick, blue, ->] (0,0) -- (0,2.2) node[above] {$y$};
+
+% Lines
+\draw[thick, teal] (0,0) -- (2.2, 1.5) node[pos=0.8,right] {$y = 1.1x + 0$};
+\draw[thick, orange] (0,1.2) -- (2.667, 0) node[pos=0.7,below] {$y = -0.45x + 1.2$};
+
+% Intersection point
+\coordinate (P) at (1.06, 0.723);
+\fill[blue] (P) circle (1.5pt);
+
+% Dashed lines to axes
+\draw[dashed, purple] (P) -- (P |- 0,0) node[below] {$x^*$};
+\draw[dashed, purple] (P) -- (P -| 0,0) node[left] {$y^*$};
+
+% Label for intersection point
+\node[draw, thin, black, rounded corners=2pt, fill=white, align=center, font=\footnotesize, above right=2pt] at (P) {$(x^*, y^*)$};
+
+\end{tikzpicture}
+\end{document}

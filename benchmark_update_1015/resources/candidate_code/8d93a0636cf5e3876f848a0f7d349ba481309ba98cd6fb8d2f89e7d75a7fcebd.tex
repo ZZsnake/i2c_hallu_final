@@ -1,0 +1,19 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[thick, >=Stealth]
+  % Axes
+  \draw[->] (-3,0) -- (4,0) node[right] {$U$};
+  \draw[->] (0,-1) -- (0,4) node[above] {$i$};
+
+  % Curve
+  \draw[thick] (-3,0) -- (1.5,0);
+  \draw[thick, domain=1.5:3.5, smooth, samples=100] plot (\x, {exp(\x-2.5)});
+
+  % Threshold line and label
+  \draw[dashed] (2.5,0) -- (2.5,2.5);
+  \node[below] at (2.5,0) {$U_{\text{th}}$};
+\end{tikzpicture}
+\end{document}

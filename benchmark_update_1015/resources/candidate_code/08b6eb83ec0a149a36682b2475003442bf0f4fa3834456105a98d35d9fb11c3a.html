@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Line Graph: Exponential vs Polynomial Growth</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      color: #222222;
+      font-size: 22px;
+    }
+    .echarts-axis-label {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 500;
+      color: #1a1a1a;
+      font-size: 15px;
+    }
+    .echarts-legend {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 700;
+      color: #333333;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var chartInstance = echarts.init(chartDom);
+    var option;
+
+    // --- Rewritten JS Code: Math Domain, High Contrast, New Data ---
+    option = {
+      title: {
+        text: 'Growth of Mathematical Functions',
+        left: 'center',
+        textStyle: {
+          color: '#222222',
+          fontFamily: 'Montserrat, Arial, sans-serif',
+          fontWeight: 700,
+          fontSize: 22
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: '#f3f3f3',
+        borderColor: '#555555',
+        textStyle: {
+          color: '#1a1a1a',
+          fontFamily: 'Roboto, Arial, sans-serif'
+        }
+      },
+      legend: {
+        left: 'right',
+        data: ['Exponential', 'Quadratic', 'Linear'],
+        textStyle: {
+          color: '#333333',
+          fontFamily: 'Roboto, Arial, sans-serif',
+          fontWeight: 700,
+          fontSize: 15
+        }
+      },
+      xAxis: {
+        type: 'category',
+        name: 'n',
+        nameTextStyle: {
+          color: '#1a1a1a',
+          fontSize: 15,
+          fontWeight: 600,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        },
+        axisLabel: {
+          color: '#222222',
+          fontSize: 15,
+          fontWeight: 500,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        },
+        splitLine: { show: false },
+        data: ['1','2','3','4','5','6','7','8','9']
+      },
+      grid: {
+        left: '6%',
+        right: '7%',
+        bottom: '7%',
+        containLabel: true
+      },
+      yAxis: {
+        type: 'log',
+        name: 'Value',
+        nameTextStyle: {
+          color: '#1a1a1a',
+          fontSize: 15,
+          fontWeight: 600,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        },
+        axisLabel: {
+          color: '#222222',
+          fontSize: 15,
+          fontWeight: 500,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        },
+        minorSplitLine: {
+          show: true
+        }
+      },
+      series: [
+        {
+          name: 'Exponential',
+          type: 'line',
+          data: [2, 4, 8, 16, 32, 64, 128, 256, 512],
+          lineStyle: {
+            color: '#1769aa',
+            width: 4
+          },
+          itemStyle: {
+            color: '#1769aa',
+            borderWidth: 2,
+            borderColor: '#0d3059'
+          },
+          symbol: 'circle',
+          symbolSize: 9
+        },
+        {
+          name: 'Quadratic',
+          type: 'line',
+          data: [1, 4, 9, 16, 25, 36, 49, 64, 81],
+          lineStyle: {
+            color: '#d32f2f',
+            width: 4
+          },
+          itemStyle: {
+            color: '#d32f2f',
+            borderWidth: 2,
+            borderColor: '#720d1f'
+          },
+          symbol: 'triangle',
+          symbolSize: 9
+        },
+        {
+          name: 'Linear',
+          type: 'line',
+          data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          lineStyle: {
+            color: '#388e3c',
+            width: 4
+          },
+          itemStyle: {
+            color: '#388e3c',
+            borderWidth: 2,
+            borderColor: '#194d1d'
+          },
+          symbol: 'rect',
+          symbolSize: 9
+        }
+      ]
+    };
+
+    chartInstance.setOption(option);
+    window.addEventListener('resize', chartInstance.resize);
+  </script>
+</body>
+</html>

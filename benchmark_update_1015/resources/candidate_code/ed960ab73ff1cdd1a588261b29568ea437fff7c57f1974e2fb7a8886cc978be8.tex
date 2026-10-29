@@ -1,0 +1,27 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+\definecolor{questionbg}{RGB}{240,248,255}
+\definecolor{questionborder}{RGB}{70,130,180}
+
+\newcommand{\questionText}{A circular drum membrane with radius $R$ is modeled using the two-dimensional wave equation. The membrane is fixed at the boundary and initially at rest. At $t=0$, it is given an initial displacement of $u(r,\theta,0) = A J_0(\alpha r/R) \cos(2\theta)$, where $J_0$ is the Bessel function of the first kind of order zero, and $\alpha$ is the first positive root of $J_0(x)=0$. What is the general form of the solution $u(r,\theta,t)$ for the membrane's vibration?}
+
+\begin{document}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=questionbg,
+    colframe=questionborder,
+    boxrule=1pt,
+    arc=5pt,
+    outer arc=5pt,
+    drop fuzzy shadow=questionborder,
+    fontupper=\large\sffamily
+]
+\questionText
+\end{tcolorbox}
+
+\end{document}

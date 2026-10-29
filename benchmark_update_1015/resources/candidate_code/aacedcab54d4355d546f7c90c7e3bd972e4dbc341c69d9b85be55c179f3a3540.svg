@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400">
+  <!-- Left Section -->
+  <line x1="50" y1="350" x2="450" y2="150" stroke="yellow" stroke-width="3" marker-end="url(#arrowhead)" />
+  <line x1="50" y1="350" x2="450" y2="350" stroke="black" stroke-width="1" stroke-dasharray="5" />
+  <line x1="50" y1="350" x2="150" y2="50" stroke="black" stroke-width="1" stroke-dasharray="5" />
+  <text x="250" y="180" font-size="20" fill="black">F</text>
+  <text x="250" y="100" font-size="20" fill="black">もとの力</text>
+  <text x="470" y="360" font-size="20" fill="black">a</text>
+  <text x="130" y="30" font-size="20" fill="black">b</text>
+
+  <!-- Right Section -->
+  <line x1="550" y1="350" x2="950" y2="150" stroke="yellow" stroke-width="3" marker-end="url(#arrowhead)" />
+  <line x1="550" y1="350" x2="950" y2="350" stroke="black" stroke-width="1" stroke-dasharray="5" />
+  <line x1="550" y1="350" x2="650" y2="50" stroke="black" stroke-width="1" stroke-dasharray="5" />
+  <line x1="550" y1="350" x2="750" y2="100" stroke="blue" stroke-width="3" marker-end="url(#arrowhead)" />
+  <line x1="550" y1="350" x2="850" y2="300" stroke="blue" stroke-width="3" marker-end="url(#arrowhead)" />
+  <text x="750" y="130" font-size="20" fill="black">F1</text>
+  <text x="850" y="330" font-size="20" fill="black">F2</text>
+  <text x="750" y="80" font-size="20" fill="black">分力</text>
+  <text x="850" y="360" font-size="20" fill="black">分力</text>
+  <text x="750" y="200" font-size="20" fill="black">F</text>
+  <text x="750" y="100" font-size="20" fill="black">もとの力</text>
+  <text x="970" y="360" font-size="20" fill="black">a</text>
+  <text x="630" y="30" font-size="20" fill="black">b</text>
+
+  <!-- Transformation Arrow -->
+  <line x1="470" y1="200" x2="530" y2="200" stroke="black" stroke-width="5" marker-end="url(#arrowhead)" />
+
+  <!-- Arrowhead Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="currentColor" />
+    </marker>
+  </defs>
+</svg>

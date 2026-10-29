@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="61.5 33 278 310">
+  <style>
+    .class { fill: #f0f0f0; stroke: #333; stroke-width: 1; rx: 2.5; ry: 2.5; }
+    .method { fill: #00aa00; }
+    .arrow { stroke: #333; stroke-width: 1; marker-end: url(#arrowhead); fill: none; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; }
+    .title { font-weight: normal; }
+    .divider { stroke: #333; stroke-width: 1; }
+    .type-icon { fill: none; stroke: #333; stroke-width: 1; }
+    .type-icon-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; dominant-baseline: central; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0f0f0" stroke="#333" stroke-width="1" />
+    </marker>
+  </defs>
+
+  <!-- Animal Class -->
+  <rect class="class" x="150" y="40" width="81" height="64.2969" rx="2.5" ry="2.5"/>
+  <line class="divider" x1="150" y1="68" x2="231" y2="68" />
+  <line class="divider" x1="150" y1="76" x2="231" y2="76" />
+  <circle class="type-icon" cx="162" cy="54" r="11" />
+  <text class="type-icon-text" x="162" y="54">S</text>
+  <text class="label title" x="174" y="59" font-weight="bold">Animal</text>
+  <circle class="method" cx="162" cy="88" r="3" />
+  <text class="label" x="174" y="92">Eat()</text>
+
+  <!-- Mammal Class -->
+  <rect class="class" x="68.5" y="164" width="94" height="64.2969" rx="2.5" ry="2.5"/>
+  <line class="divider" x1="68.5" y1="192" x2="162.5" y2="192" />
+  <line class="divider" x1="68.5" y1="200" x2="162.5" y2="200" />
+  <circle class="type-icon" cx="80.5" cy="178" r="11" />
+  <text class="type-icon-text" x="80.5" y="178">S</text>
+  <text class="label title" x="92.5" y="183" font-weight="bold">Mammal</text>
+  <circle class="method" cx="80.5" cy="212" r="3" />
+  <text class="label" x="92.5" y="216">Breathe()</text>
+
+  <!-- WingedAnimal Class -->
+  <rect class="class" x="198" y="164" width="135" height="64.2969" rx="2.5" ry="2.5"/>
+  <line class="divider" x1="198" y1="192" x2="333" y2="192" />
+  <line class="divider" x1="198" y1="200" x2="333" y2="200" />
+  <circle class="type-icon" cx="210" cy="178" r="11" />
+  <text class="type-icon-text" x="210" y="178">S</text>
+  <text class="label title" x="222" y="183" font-weight="bold">WingedAnimal</text>
+  <circle class="method" cx="210" cy="212" r="3" />
+  <text class="label" x="222" y="216">Flap()</text>
+
+  <!-- Bat Class -->
+  <rect class="class" x="162" y="288" width="57" height="48" rx="2.5" ry="2.5"/>
+  <line class="divider" x1="162" y1="316" x2="219" y2="316" />
+  <line class="divider" x1="162" y1="324" x2="219" y2="324" />
+  <circle class="type-icon" cx="174" cy="302" r="11" />
+  <text class="type-icon-text" x="174" y="302">S</text>
+  <text class="label title" x="186" y="307" font-weight="bold">Bat</text>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="134.5848" y1="164" x2="171.38" y2="104.2969" />
+  <line class="arrow" x1="246.415" y1="164" x2="209.62" y2="104.2969" />
+  <line class="arrow" x1="175.266" y1="288" x2="135.9941" y2="228.2969" />
+  <line class="arrow" x1="205.734" y1="288" x2="245.006" y2="228.2969" />
+
+</svg>

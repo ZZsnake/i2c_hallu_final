@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urban vs Rural Population Growth</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            margin: 20px 0;
+        }
+        .chart-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .legend-item span {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
+        .legend-item .blue {
+            background-color: #0055AA;
+        }
+        .legend-item .red {
+            background-color: #CC0000;
+        }
+        .legend-item .green {
+            background-color: #00AA00;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-title">Urban vs Rural Population Growth (2010-2024)</div>
+    <div class="legend">
+        <div class="legend-item"><span class="blue"></span>Urban Population</div>
+        <div class="legend-item"><span class="red"></span>Rural Population</div>
+        <div class="legend-item"><span class="green"></span>Annual Growth Rate</div>
+    </div>
+    <div class="chart-container" id="chart"></div>
+
+    <script>
+        // Prepare data for the chart
+        const urbanData = [
+            [2010, 350],
+            [2012, 370],
+            [2014, 400],
+            [2016, 430],
+            [2018, 470],
+            [2020, 510],
+            [2022, 550],
+            [2024, 600]
+        ];
+        
+        const ruralData = [
+            [2010, 420],
+            [2012, 410],
+            [2014, 400],
+            [2016, 390],
+            [2018, 380],
+            [2020, 370],
+            [2022, 360],
+            [2024, 350]
+        ];
+        
+        const growthRateData = [
+            [2010, 3],
+            [2012, 3.5],
+            [2014, 3],
+            [2016, 2.5],
+            [2018, 3],
+            [2020, 3.5],
+            [2022, 4],
+            [2024, 4.5]
+        ];
+        
+        // Initialize the chart
+        const chart = echarts.init(document.getElementById('chart'));
+        
+        // Define the option for the chart
+        const option = {
+            title: {
+                text: 'Urban vs Rural Population Growth (2010-2024)',
+                left: 'center',
+                textStyle: {
+                    fontSize: 18
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            legend: {
+                data: ['Urban Population', 'Rural Population', 'Annual Growth Rate'],
+                right: '10%'
+            },
+            grid: {
+                left: '10%',
+                right: '10%',
+                bottom: '15%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: [2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024]
+            },
+            yAxis: [
+                {
+                    type: 'value',
+                    name: 'Urban Population (millions)',
+                    position: 'left',
+                    axisLabel: {
+                        formatter: '{value}M'
+                    },
+                    splitLine: {
+                        show: true
+                    }
+                },
+                {
+                    type: 'value',
+                    name: 'Rural Population (millions)',
+                    position: 'right',
+                    axisLabel: {
+                        formatter: '{value}M'
+                    },
+                    splitLine: {
+                        show: true
+                    }
+                },
+                {
+                    type: 'value',
+                    name: 'Annual Growth Rate (%)',
+                    position: 'right',
+                    axisLabel: {
+                        formatter: '{value}%'
+                    },
+                    splitLine: {
+                        show: true
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: 'Urban Population',
+                    type: 'line',
+                    data: urbanData.map(d => d[1]),
+                    smooth: true,
+                    itemStyle: {
+                        color: '#0055AA',
+                        borderColor: '#0055AA',
+                        borderWidth: 2
+                    },
+                    symbol: 'circle',
+                    symbolSize: 8,
+                    lineStyle: {
+                        width: 3
+                    }
+                },
+                {
+                    name: 'Rural Population',
+                    type: 'line',
+                    data: ruralData.map(d => d[1]),
+                    smooth: true,
+                    itemStyle: {
+                        color: '#CC0000',
+                        borderColor: '#CC0000',
+                        borderWidth: 2
+                    },
+                    symbol: 'diamond',
+                    symbolSize: 8,
+                    lineStyle: {
+                        type: 'dashed',
+                        width: 3
+                    }
+                },
+                {
+                    name: 'Annual Growth Rate',
+                    type: 'line',
+                    data: growthRateData.map(d => d[1]),
+                    smooth: true,
+                    itemStyle: {
+                        color: '#00AA00',
+                        borderColor: '#00AA00',
+                        borderWidth: 2
+                    },
+                    symbol: 'square',
+                    symbolSize: 8,
+                    lineStyle: {
+                        width: 3
+                    }
+                }
+            ]
+        };
+        
+        // Set the option
+        chart.setOption(option);
+    </script>
+</body>
+</html>

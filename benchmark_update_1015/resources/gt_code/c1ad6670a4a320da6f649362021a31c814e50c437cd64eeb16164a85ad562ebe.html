@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Bar Chart: Distribution of Problem Types</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #212121;
+    }
+    #container {
+      height: 100%;
+    }
+    .echarts-legend {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // Sample math-related data: proportion of problem types solved each day
+    // [Algebra, Geometry, Probability, Calculus, Logic]
+    const mathData = [
+      [18, 22, 17, 19, 25, 20, 21],    // Algebra
+      [15, 17, 16, 14, 14, 15, 13],    // Geometry
+      [10, 9, 12, 11, 12, 11, 10],     // Probability
+      [5, 8, 7, 6, 9, 7, 8],           // Calculus
+      [12, 13, 11, 14, 13, 12, 14]     // Logic
+    ];
+    // Calculate total per day
+    const totalProblems = [];
+    for (let i = 0; i < mathData[0].length; ++i) {
+      let sum = 0;
+      for (let j = 0; j < mathData.length; ++j) {
+        sum += mathData[j][i];
+      }
+      totalProblems.push(sum);
+    }
+    const grid = {
+      left: 80,
+      right: 80,
+      top: 65,
+      bottom: 60
+    };
+    const gridWidth = myChart.getWidth() - grid.left - grid.right;
+    const gridHeight = myChart.getHeight() - grid.top - grid.bottom;
+    const categoryWidth = gridWidth / mathData[0].length;
+    const barWidth = categoryWidth * 0.55;
+    const barPadding = (categoryWidth - barWidth) / 2;
+
+    const problemTypes = [
+      'Algebra',
+      'Geometry',
+      'Probability',
+      'Calculus',
+      'Logic'
+    ];
+
+    const series = problemTypes.map((name, idx) => {
+      return {
+        name,
+        type: 'bar',
+        stack: 'total',
+        barWidth: barWidth,
+        label: {
+          show: true,
+          color: '#252525',
+          fontWeight: 'bold',
+          fontSize: 13,
+          formatter: (params) => Math.round(params.value * 1000) / 10 + '%'
+        },
+        data: mathData[idx].map((d, did) =>
+          totalProblems[did] <= 0 ? 0 : d / totalProblems[did]
+        )
+      };
+    });
+
+    // High contrast vivid colors for visibility
+    const colorPalette = ['#1161a3', '#f04e23', '#28b732', '#fdc500', '#7c3aed'];
+
+    // Area transition elements (connect bars between categories)
+    const elements = [];
+    for (let j = 1, jlen = mathData[0].length; j < jlen; ++j) {
+      const leftX = grid.left + categoryWidth * j - barPadding;
+      const rightX = leftX + barPadding * 2;
+      let leftY = grid.top + gridHeight;
+      let rightY = leftY;
+      for (let i = 0, len = series.length; i < len; ++i) {
+        const points = [];
+        const leftBarHeight = (mathData[i][j - 1] / totalProblems[j - 1]) * gridHeight;
+        points.push([leftX, leftY]);
+        points.push([leftX, leftY - leftBarHeight]);
+        const rightBarHeight = (mathData[i][j] / totalProblems[j]) * gridHeight;
+        points.push([rightX, rightY - rightBarHeight]);
+        points.push([rightX, rightY]);
+        points.push([leftX, leftY]);
+        leftY -= leftBarHeight;
+        rightY -= rightBarHeight;
+        elements.push({
+          type: 'polygon',
+          shape: {
+            points
+          },
+          style: {
+            fill: colorPalette[i],
+            opacity: 0.18
+          }
+        });
+      }
+    }
+
+    option = {
+      title: {
+        text: 'Distribution of Math Problem Types by Day',
+        left: 'center',
+        top: 18,
+        textStyle: {
+          color: '#1a1a1a',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontSize: 20
+        }
+      },
+      legend: {
+        data: problemTypes,
+        top: 38,
+        left: 'center',
+        textStyle: {
+          color: '#222222',
+          fontWeight: 600,
+          fontSize: 15,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      grid,
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          color: '#1e293b',
+          fontSize: 13,
+          fontWeight: 'bold',
+          formatter: '{value}'
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: '#d0d0d0',
+            width: 1
+          }
+        },
+        name: 'Proportion',
+        nameTextStyle: {
+          color: '#212121',
+          fontWeight: 'bold',
+          fontSize: 14
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        axisLabel: {
+          color: '#1e293b',
+          fontWeight: 'bold',
+          fontSize: 13
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#1e293b',
+            width: 2
+          }
+        }
+      },
+      series: series,
+      color: colorPalette,
+      graphic: {
+        elements
+      }
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

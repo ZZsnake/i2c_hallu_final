@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="600" height="400">
+  <!-- Ellipse -->
+  <path d="M20,150a180,120 0 1 0 360,0a180,120 0 1 0 -360,0" fill="none" stroke="green" stroke-dasharray="5,5"/>
+  
+  <!-- Parabola -->
+  <path d="M50,200 Q200,50 350,200" fill="none" stroke="green" stroke-dasharray="5,5"/>
+  
+  <!-- Vertical axis -->
+  <line x1="200" y1="50" x2="200" y2="250" stroke="black" stroke-dasharray="5,5"/>
+  <text x="195" y="45" font-size="12">y</text>
+  
+  <!-- AB line -->
+  <line x1="50" y1="200" x2="350" y2="200" stroke="red" stroke-dasharray="5,5"/>
+  <circle cx="200" cy="200" r="5" fill="orange"/>
+  <text x="205" y="195" font-size="12" fill="red">|AB|</text>
+  
+  <!-- MC line -->
+  <line x1="200" y1="200" x2="200" y2="250" stroke="red" stroke-dasharray="5,5"/>
+  
+  <!-- Points A, B, C -->
+  <circle cx="50" cy="200" r="5" fill="blue"/>
+  <circle cx="350" cy="200" r="5" fill="blue"/>
+  <circle cx="200" cy="250" r="5" fill="blue"/>
+  <text x="45" y="195" font-size="12">A</text>
+  <text x="355" y="195" font-size="12">B</text>
+  <text x="205" y="255" font-size="12">C</text>
+  
+  <!-- Equation -->
+  <text x="220" y="100" font-size="14" fill="red">y = ax² + bx + c</text>
+</svg>

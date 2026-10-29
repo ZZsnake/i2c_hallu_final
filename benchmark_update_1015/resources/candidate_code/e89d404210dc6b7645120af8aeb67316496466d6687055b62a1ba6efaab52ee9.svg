@@ -1,0 +1,86 @@
+<svg width="300" height="350" viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+      <feOffset dx="1" dy="1" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <!-- Gradient for boxes -->
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9f9f9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8e8e8;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Arrowhead marker -->
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="white" stroke="#333" stroke-width="1" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="white" />
+
+  <!-- Inheritance Lines -->
+  <g stroke="#333" stroke-width="1" fill="none">
+    <!-- Bat to Mammal -->
+    <path d="M125,280 L90,215" marker-end="url(#arrowhead)" />
+    <!-- Bat to WingedAnimal -->
+    <path d="M175,280 L210,215" marker-end="url(#arrowhead)" />
+    <!-- Mammal to Animal -->
+    <path d="M80,145 L120,80" marker-end="url(#arrowhead)" />
+    <!-- WingedAnimal to Animal -->
+    <path d="M220,145 L180,80" marker-end="url(#arrowhead)" />
+  </g>
+
+  <!-- Class: Animal -->
+  <g transform="translate(100, 10)" filter="url(#shadow)">
+    <rect width="100" height="70" rx="3" ry="3" fill="url(#boxGrad)" stroke="#888" />
+    <line x1="0" y1="35" x2="100" y2="35" stroke="#888" />
+    <circle cx="18" cy="18" r="10" fill="white" stroke="black" />
+    <text x="18" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">S</text>
+    <text x="35" y="22" font-family="Arial, sans-serif" font-size="14" fill="black">Animal</text>
+    <circle cx="12" cy="52" r="3" fill="#4CAF50" />
+    <text x="20" y="56" font-family="Arial, sans-serif" font-size="13" fill="black">Eat()</text>
+  </g>
+
+  <!-- Class: Mammal -->
+  <g transform="translate(10, 145)" filter="url(#shadow)">
+    <rect width="115" height="70" rx="3" ry="3" fill="url(#boxGrad)" stroke="#888" />
+    <line x1="0" y1="35" x2="115" y2="35" stroke="#888" />
+    <circle cx="18" cy="18" r="10" fill="white" stroke="black" />
+    <text x="18" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">S</text>
+    <text x="35" y="22" font-family="Arial, sans-serif" font-size="14" fill="black">Mammal</text>
+    <circle cx="12" cy="52" r="3" fill="#4CAF50" />
+    <text x="20" y="56" font-family="Arial, sans-serif" font-size="13" fill="black">Breathe()</text>
+  </g>
+
+  <!-- Class: WingedAnimal -->
+  <g transform="translate(155, 145)" filter="url(#shadow)">
+    <rect width="165" height="70" rx="3" ry="3" fill="url(#boxGrad)" stroke="#888" />
+    <line x1="0" y1="35" x2="165" y2="35" stroke="#888" />
+    <line x1="0" y1="45" x2="165" y2="45" stroke="#888" />
+    <circle cx="18" cy="22" r="10" fill="white" stroke="black" />
+    <text x="18" y="26" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">S</text>
+    <text x="35" y="26" font-family="Arial, sans-serif" font-size="14" fill="black">WingedAnimal</text>
+    <circle cx="12" cy="58" r="3" fill="#4CAF50" />
+    <text x="20" y="62" font-family="Arial, sans-serif" font-size="13" fill="black">Flap()</text>
+  </g>
+
+  <!-- Class: Bat -->
+  <g transform="translate(115, 280)" filter="url(#shadow)">
+    <rect width="70" height="50" rx="3" ry="3" fill="url(#boxGrad)" stroke="#888" />
+    <line x1="0" y1="30" x2="70" y2="30" stroke="#888" />
+    <line x1="0" y1="40" x2="70" y2="40" stroke="#888" />
+    <circle cx="15" cy="15" r="8" fill="white" stroke="black" />
+    <text x="15" y="19" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">S</text>
+    <text x="28" y="19" font-family="Arial, sans-serif" font-size="14" fill="black">Bat</text>
+  </g>
+</svg>

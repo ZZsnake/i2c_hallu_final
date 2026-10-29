@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220">
+  <!-- Background -->
+  <rect x="0" y="0" width="200" height="220" fill="white"/>
+
+  <!-- Top main terminal -->
+  <line x1="100" y1="10" x2="100" y2="25" stroke="black" stroke-width="1.5"/>
+  <circle cx="100" cy="10" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="108" y="13" font-size="8" font-family="sans-serif">n</text>
+
+  <!-- Bottom main terminal -->
+  <line x1="100" y1="185" x2="100" y2="200" stroke="black" stroke-width="1.5"/>
+  <circle cx="100" cy="205" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="108" y="208" font-size="8" font-family="sans-serif">n</text>
+
+  <!-- Top gate bus bar -->
+  <rect x="30" y="35" width="120" height="8" fill="#f4f4f4" stroke="black" stroke-width="1"/>
+  <!-- Right extension for gate -->
+  <rect x="150" y="38" width="21" height="2" fill="black"/>
+  <circle cx="175" cy="39" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="183" y="42" font-size="8" font-family="sans-serif">G</text>
+
+  <!-- Vertical connection from bus bar to top terminal -->
+  <rect x="98.5" y="25" width="3" height="10" fill="black"/>
+
+  <!-- Connection dots on top of the bus (6 dots) -->
+  <circle cx="40" cy="35" r="2" fill="black"/>
+  <circle cx="60" cy="35" r="2" fill="black"/>
+  <circle cx="80" cy="35" r="2" fill="black"/>
+  <circle cx="100" cy="35" r="2" fill="black"/>
+  <circle cx="120" cy="35" r="2" fill="black"/>
+  <circle cx="140" cy="35" r="2" fill="black"/>
+
+  <!-- Vertical connections from bus down to upper layer contacts -->
+  <rect x="39" y="43" width="2" height="7" fill="black"/>
+  <rect x="59" y="43" width="2" height="7" fill="black"/>
+  <rect x="79" y="43" width="2" height="7" fill="black"/>
+  <rect x="99" y="43" width="2" height="7" fill="black"/>
+  <rect x="119" y="43" width="2" height="7" fill="black"/>
+
+  <!-- Upper P-type main layer -->
+  <rect x="20" y="50" width="160" height="20" fill="#ff9999" stroke="black" stroke-width="1"/>
+
+  <!-- Upper embedded blocks: n, p, A, K -->
+  <!-- n block -->
+  <rect x="30" y="52" width="30" height="12" fill="#99ccff" stroke="black" stroke-width="1"/>
+  <text x="45" y="61" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">n</text>
+
+  <!-- p block -->
+  <rect x="65" y="52" width="30" height="12" fill="#99ccff" stroke="black" stroke-width="1"/>
+  <text x="80" y="61" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">p</text>
+
+  <!-- A block -->
+  <rect x="100" y="52" width="30" height="12" fill="#99ccff" stroke="black" stroke-width="1"/>
+  <text x="115" y="61" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">A</text>
+
+  <!-- K block -->
+  <rect x="135" y="52" width="30" height="12" fill="#99ccff" stroke="black" stroke-width="1"/>
+  <text x="150" y="61" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">K</text>
+
+  <!-- Central N-type layer -->
+  <rect x="20" y="70" width="160" height="25" fill="#99ccff" stroke="black" stroke-width="1"/>
+
+  <!-- Lower composite layer base (P-type background) -->
+  <rect x="20" y="95" width="160" height="55" fill="#ff9999" stroke="black" stroke-width="1"/>
+
+  <!-- Lower alternating blocks on top of P background -->
+  <!-- pattern: p, n+, n, p, n+, n+, p, n, p (simplified row) -->
+  <!-- each cell width ~18 -->
+  <!-- cell 1: p -->
+  <rect x="22" y="97" width="18" height="22" fill="#ff9999" stroke="black" stroke-width="0.8"/>
+  <text x="31" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">p</text>
+
+  <!-- cell 2: n+ -->
+  <rect x="42" y="97" width="18" height="22" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <text x="51" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">n+</text>
+
+  <!-- cell 3: n -->
+  <rect x="62" y="97" width="18" height="22" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <text x="71" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">n</text>
+
+  <!-- cell 4: p -->
+  <rect x="82" y="97" width="18" height="22" fill="#ff9999" stroke="black" stroke-width="0.8"/>
+  <text x="91" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">p</text>
+
+  <!-- cell 5: n+ -->
+  <rect x="102" y="97" width="18" height="22" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <text x="111" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">n+</text>
+
+  <!-- cell 6: n+ -->
+  <rect x="122" y="97" width="18" height="22" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <text x="131" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">n+</text>
+
+  <!-- cell 7: p -->
+  <rect x="142" y="97" width="18" height="22" fill="#ff9999" stroke="black" stroke-width="0.8"/>
+  <text x="151" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">p</text>
+
+  <!-- cell 8: n -->
+  <rect x="162" y="97" width="18" height="22" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <text x="171" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">n</text>
+
+  <!-- Additional small p block at far right bottom row -->
+  <rect x="182" y="97" width="18" height="22" fill="#ff9999" stroke="black" stroke-width="0.8"/>
+  <text x="191" y="112" font-size="8" font-family="sans-serif" text-anchor="middle" fill="black">p</text>
+
+  <!-- Lower inner N+ strips (embedded inside P background under the row) -->
+  <!-- these mimic the blue inserts within the pink row near bottom -->
+  <rect x="32" y="123" width="16" height="18" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <rect x="72" y="123" width="16" height="18" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <rect x="112" y="123" width="16" height="18" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+  <rect x="152" y="123" width="16" height="18" fill="#99ccff" stroke="black" stroke-width="0.8"/>
+
+  <!-- Bottom edge conductor and terminal connection -->
+  <rect x="20" y="150" width="160" height="5" fill="black"/>
+  <rect x="98.5" y="155" width="3" height="30" fill="black"/>
+
+</svg>

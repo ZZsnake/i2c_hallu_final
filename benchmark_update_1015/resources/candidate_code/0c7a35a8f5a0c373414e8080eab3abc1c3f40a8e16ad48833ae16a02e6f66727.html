@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Skills Radar Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Times New Roman", Georgia, serif;
+            background-color: #ffffff;
+            color: #222222;
+        }
+        .page {
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            padding-top: 15px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 18px;
+            white-space: nowrap;
+        }
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            margin-right: 6px;
+        }
+        .lc-alpha { background-color: #1f78b4; }
+        .lc-beta { background-color: #e31a1c; }
+        .lc-gamma { background-color: #b2182b; }
+        .lc-quiz { background-color: #1b8a7a; }
+        .lc-homework { background-color: #2ca58d; }
+
+        .charts-row {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        .chart-container {
+            width: 30%;
+            min-width: 280px;
+            height: 260px;
+        }
+        #radar-left, #radar-center, #radar-right {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>Math Skills Radar Comparison</h1>
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color lc-alpha"></div>
+            <span>Student Alpha</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color lc-beta"></div>
+            <span>Student Beta</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color lc-gamma"></div>
+            <span>Student Gamma</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color lc-quiz"></div>
+            <span>Quiz Scores</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color lc-homework"></div>
+            <span>Homework Scores</span>
+        </div>
+    </div>
+
+    <div class="charts-row">
+        <div class="chart-container"><div id="radar-left"></div></div>
+        <div class="chart-container"><div id="radar-center"></div></div>
+        <div class="chart-container"><div id="radar-right"></div></div>
+    </div>
+</div>
+
+<script>
+$(function () {
+    // Left radar: core subjects
+    var leftChart = echarts.init(document.getElementById('radar-left'));
+    var leftOption = {
+        tooltip: { show: false },
+        radar: {
+            center: ['50%', '52%'],
+            radius: '70%',
+            indicator: [
+                { name: 'Algebra', max: 100 },
+                { name: 'Statistics', max: 100 },
+                { name: 'Calculus', max: 100 },
+                { name: 'Geometry', max: 100 }
+            ],
+            name: {
+                color: '#1f4b8f',
+                fontSize: 12
+            },
+            splitNumber: 4,
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(31,120,180,0.5)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(31,120,180,0.35)'
+                }
+            },
+            splitArea: {
+                areaStyle: {
+                    color: ['rgba(31,120,180,0.02)', 'rgba(31,120,180,0.05)']
+                }
+            }
+        },
+        series: [
+            {
+                type: 'radar',
+                data: [
+                    {
+                        value: [95, 90, 92, 88],
+                        name: 'Student Alpha',
+                        lineStyle: { color: '#1f78b4', width: 2 },
+                        areaStyle: { color: 'rgba(31,120,180,0.45)' },
+                        symbol: 'circle',
+                        symbolSize: 4,
+                        itemStyle: { color: '#1f78b4' }
+                    },
+                    {
+                        value: [85, 82, 80, 78],
+                        name: 'Student Beta',
+                        lineStyle: { color: '#4f9ddd', width: 2 },
+                        areaStyle: { color: 'rgba(79,157,221,0.35)' },
+                        symbol: 'circle',
+                        symbolSize: 4,
+                        itemStyle: { color: '#4f9ddd' }
+                    },
+                    {
+                        value: [72, 70, 68, 65],
+                        name: 'Student Gamma',
+                        lineStyle: { color: '#8ec4ff', width: 2 },
+                        areaStyle: { color: 'rgba(142,196,255,0.35)' },
+                        symbol: 'circle',
+                        symbolSize: 4,
+                        itemStyle: { color: '#8ec4ff' }
+                    }
+                ]
+            }
+        ]
+    };
+    leftChart.setOption(leftOption);
+
+    // Center radar: advanced topics
+    var centerChart = echarts.init(document.getElementById('radar-center'));
+    var centerOption = {
+        tooltip: { show: false },
+        radar: {
+            center: ['50%', '52%'],
+            radius: '72%',
+            indicator: [
+                { name: 'Number Theory', max: 100 },
+                { name: 'Discrete Math', max: 100 },
+                { name: 'Probability', max: 100 },
+                { name: 'Logic', max: 100 },
+                { name: 'Combinatorics', max: 100 }
+            ],
+            name: {
+                color: '#8b1a1a',
+                fontSize: 12
+            },
+            splitNumber: 4,
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(214,39,40,0.5)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(214,39,40,0.35)'
+                }
+            },
+            splitArea: {
+                areaStyle: {
+                    color: ['rgba(214,39,40,0.02)', 'rgba(214,39,40,0.05)']
+                }
+            }
+        },
+        series: [
+            {
+                type: 'radar',
+                data: [
+                    {
+                        value: [92, 90, 88, 86, 89],
+                        name: 'Student Alpha',
+                        lineStyle: { color: '#d62728', width: 2 },
+                        areaStyle: { color: 'rgba(214,39,40,0.45)' },
+                        symbol: 'circle',
+                        symbolSize: 4,
+                        itemStyle: { color: '#d62728' }
+                    },
+                    {
+                        value: [82, 80, 78, 76, 79],
+                        name: 'Student Beta',
+                        lineStyle: { color: '#ff6b6b', width: 2 },
+                        areaStyle: { color: 'rgba(255,107,107,0.38)' },
+                        symbol: 'circle',
+                        symbolSize: 4,
+                        itemStyle: { color: '#ff6b6b' }
+                    },
+                    {
+                        value: [70, 68, 65, 64, 66],
+                        name: 'Student Gamma',
+                        lineStyle: { color: '#ff9e9e', width: 2 },
+                        areaStyle: { color: 'rgba(255,158,158,0.4)' },
+                        symbol: 'circle',
+                        symbolSize: 4,
+                        itemStyle: { color: '#ff9e9e' }
+                    }
+                ]
+            }
+        ]
+    };
+    centerChart.setOption(centerOption);
+
+    // Right radar: weekly quiz/homework scores
+    var rightChart = echarts.init(document.getElementById('radar-right'));
+    var weeks = [];
+    for (var i = 1; i <= 12; i++) {
+        weeks.push('Week ' + i);
+    }
+    var rightOption = {
+        tooltip: { show: false },
+        radar: {
+            center: ['50%', '52%'],
+            radius: '78%',
+            indicator: weeks.map(function (w) { return { name: w, max: 100 }; }),
+            name: {
+                color: '#166b5d',
+                fontSize: 10
+            },
+            splitNumber: 5,
+            axisLine: {
+                lineStyle: { color: 'rgba(27,138,122,0.5)' }
+            },
+            splitLine: {
+                lineStyle: { color: 'rgba(27,138,122,0.3)' }
+            },
+            splitArea: {
+                areaStyle: {
+                    color: ['rgba(27,138,122,0.02)', 'rgba(27,138,122,0.05)']
+                }
+            }
+        },
+        series: [
+            {
+                type: 'radar',
+                data: [
+                    {
+                        name: 'Quiz Scores',
+                        value: [72, 74, 75, 77, 78, 80, 81, 83, 84, 86, 87, 88],
+                        lineStyle: { color: '#1b8a7a', width: 2 },
+                        areaStyle: { color: 'rgba(27,138,122,0.25)' },
+                        symbol: 'circle',
+                        symbolSize: 3,
+                        itemStyle: { color: '#1b8a7a' }
+                    },
+                    {
+                        name: 'Homework Scores',
+                        value: [78, 80, 82, 84, 86, 87, 88, 90, 92, 93, 94, 95],
+                        lineStyle: { color: '#2ca58d', width: 2 },
+                        areaStyle: { color: 'rgba(44,165,141,0.25)' },
+                        symbol: 'circle',
+                        symbolSize: 3,
+                        itemStyle: { color: '#2ca58d' }
+                    }
+                ]
+            }
+        ]
+    };
+    rightChart.setOption(rightOption);
+
+    window.addEventListener('resize', function () {
+        leftChart.resize();
+        centerChart.resize();
+        rightChart.resize();
+    });
+});
+</script>
+</body>
+</html>

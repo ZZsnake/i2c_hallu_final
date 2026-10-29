@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{math}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: directional-angles.tex
+% Description: 
+% The directional angles of a vector are geometrically represented.
+% 
+% Date of creation: July, 25th, 2021.
+% Date of last modification: October, 9th, 2022.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: page 11 of the 
+% Glosario Ilustrado de Matemáticas Escolares.
+% https://tinyurl.com/5udm2ufy
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+    \tdplotsetmaincoords{80}{120}
+    %
+    \begin{tikzpicture}[tdplot_main_coords,scale=0.75] 
+        % Indicate the components of the vector in rectangular coordinates
+        \pgfmathsetmacro{\vx}{4}
+        \pgfmathsetmacro{\vy}{4}
+        \pgfmathsetmacro{\vz}{3}
+        
+        % Length of each axis
+        \pgfmathsetmacro{\ejex}{\vx+0.5}
+        \pgfmathsetmacro{\ejey}{\vy+0.5}
+        \pgfmathsetmacro{\ejez}{\vz+0.5}
+        
+        % Magnitude of vector $\vec{v}$
+        \pgfmathsetmacro{\vmag}{sqrt(\vx*\vx+\vy*\vy+\vz*\vz)} 
+        
+        % Compute the angle $\theta$ (intermediate calc)
+        \pgfmathsetmacro{\angthetax}{pi*atan(\vy/\vx)/180}
+        \pgfmathsetmacro{\angthetay}{pi*atan(\vx/\vz)/180}
+        \pgfmathsetmacro{\angthetaz}{pi*atan(\vz/\vy)/180}
+        
+        % Compute the angle $\phi$ (intermediate calc)
+        \pgfmathsetmacro{\angphix}{pi*acos(\vx/\vmag)/180}
+        \pgfmathsetmacro{\angphiy}{pi*acos(\vy/\vmag)/180}
+        \pgfmathsetmacro{\angphiz}{pi*acos(\vz/\vmag)/180}
+        
+        % Compute rho sin(phi) to simplify computations
+        \pgfmathsetmacro{\costz}{cos(\angthetax r)}    
+        \pgfmathsetmacro{\sintz}{sin(\angthetax r)}    
+        \pgfmathsetmacro{\costy}{cos(\angthetay r)}    
+        \pgfmathsetmacro{\sinty}{sin(\angthetay r)}    
+        \pgfmathsetmacro{\costx}{cos(\angthetaz r)}    
+        \pgfmathsetmacro{\sintx}{sin(\angthetaz r)}    
+        
+        % Coordinate axis
+        \draw[thick,->] (0,0,0) -- (\ejex,0,0) node[below left] {$x$};
+        \draw[thick,->] (0,0,0) -- (0,\ejey,0) node[right] {$y$};
+        \draw[thick,->] (0,0,0) -- (0,0,\ejez) node[above] {$z$};
+        
+        % Projections of the components in the axis
+        \draw[darkgray,very thin,opacity=0.4] (0,0,0) -- (\vx,0,0) -- (\vx,\vy,0) -- (0,\vy,0) -- (0,0,0); % face on the plane z = 0
+        \draw[darkgray,very thin,opacity=0.4] (0,0,\vz) -- (\vx,0,\vz) -- (\vx,\vy,\vz) -- (0,\vy,\vz) -- (0,0,\vz); % face on the plane z = \vz
+        \draw[darkgray,very thin,opacity=0.4] (0,0,0) -- (0,0,\vz) -- (\vx,0,\vz) -- (\vx,0,0) -- (0,0,0); % face on the plane y = 0
+        \draw[darkgray,very thin,opacity=0.4] (0,\vy,0) -- (0,\vy,\vz) -- (\vx,\vy,\vz) -- (\vx,\vy,0) -- (0,\vy,0); % face on the plane y = \vy
+        \draw[darkgray,very thin,opacity=0.4] (0,0,0) -- (0,\vy,0) -- (0,\vy,\vz) -- (0,0,\vz) -- (0,0,0); % face on the plane x = 0
+        \draw[darkgray,very thin,opacity=0.4] (\vx,0,0) -- (\vx,\vy,0) -- (\vx,\vy,\vz) -- (\vx,0,\vz) -- (\vx,0,0); % face on the plane x = \vx
+        
+        % Arc indicating the angle \theta_x
+        % (angle formed by the vector \vec{v} and the x axis)
+        \draw[teal,thick] plot[domain=0:\angphix,smooth,variable=\t] ({cos(\t r)},{sin(\t r)*\costx},{sin(\t r)*\sintx});
+        
+        % Arc indicating the angle \theta_y
+        % (angle formed by the vector \vec{v} and the y axis)
+        \draw[teal,thick] plot[domain=0:\angphiy,smooth,variable=\t] ({sin(\t r)*\sinty},{cos(\t r)},{sin(\t r)*\costy});
+        
+        % Arc indicating the angle \theta_z
+        % (angle formed by the vector \vec{v} and the z axis)
+        \draw[teal,thick] plot[domain=0:\angphiz,smooth,variable=\t] ({sin(\t r)*\costz},{sin(\t r)*\sintz},{cos(\t r)});
+        
+        % Vector \vec{v}
+        \draw[violet,thick,->] (0,0,0) -- (\vx,\vy,\vz) node [below right] {$\vec{v}$};
+        
+        % Nodes indicating the direction angles
+        \pgfmathsetmacro{\xa}{1.85*cos(0.5*\angphix r)}
+        \pgfmathsetmacro{\ya}{1.85*sin(0.5*\angphix r)*\costx}
+        \pgfmathsetmacro{\za}{1.85*sin(0.5*\angphiz r)*\sintx}
+        \node[teal] at (\xa,\ya,\za) {\footnotesize$\theta_x$};
+        %
+        \pgfmathsetmacro{\xb}{1.5*sin(0.5*\angphiy r)*\sinty}
+        \pgfmathsetmacro{\yb}{1.5*cos(0.5*\angphiy r)}
+        \pgfmathsetmacro{\zb}{1.5*sin(0.5*\angphiy r)*\costy}
+        \node[teal] at (\xb,\yb,\zb) {\footnotesize$\theta_y$};
+        %
+        \pgfmathsetmacro{\xc}{1.5*sin(0.5*\angphiz r)*\costz}
+        \pgfmathsetmacro{\yc}{1.5*sin(0.5*\angphiz r)*\sintz}
+        \pgfmathsetmacro{\zc}{1.5*cos(0.5*\angphiz r)}
+        \node[teal] at (\xc,\yc,\zc) {\footnotesize$\theta_z$};
+        %
+    \end{tikzpicture}
+    %
+\end{document}

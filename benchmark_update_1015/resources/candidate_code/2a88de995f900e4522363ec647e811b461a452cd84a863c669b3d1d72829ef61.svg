@@ -1,0 +1,61 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background and Main Container -->
+  <rect x="203" y="0" width="394" height="200" fill="none" stroke="#333" stroke-width="1"/>
+  
+  <!-- Subsystems -->
+  <!-- Input Subsystem -->
+  <rect x="203" y="0" width="97" height="200" fill="#1e60ef" stroke="#003399" stroke-width="1"/>
+  <text x="251" y="100" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="black" text-anchor="middle" transform="rotate(-90, 251, 100)">INPUT SUBSYSTEM</text>
+  
+  <!-- Processing Subsystem -->
+  <rect x="300" y="0" width="200" height="100" fill="#4db8e5" stroke="#003399" stroke-width="1"/>
+  <text x="400" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="black" text-anchor="middle">PROCESSING</text>
+  <text x="400" y="55" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="black" text-anchor="middle">SUBSYSTEM</text>
+  
+  <!-- Storage Subsystem -->
+  <rect x="300" y="100" width="200" height="100" fill="#99ccff" stroke="#666" stroke-width="1"/>
+  <text x="400" y="145" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="black" text-anchor="middle">STORAGE</text>
+  <text x="400" y="170" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="black" text-anchor="middle">SUBSYSTEM</text>
+  
+  <!-- Output Subsystem -->
+  <rect x="500" y="0" width="97" height="200" fill="#1e88e5" stroke="#003399" stroke-width="1"/>
+  <text x="548" y="100" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="black" text-anchor="middle" transform="rotate(-90, 548, 100)">OUTPUT SUBSYSTEM</text>
+
+  <!-- Large Information Arrows -->
+  <!-- Left Arrow -->
+  <path d="M 2,68 L 138,68 L 138,34 L 201,100 L 138,166 L 138,132 L 2,132 Z" fill="#8e24aa" stroke="#4a148c" stroke-width="1"/>
+  <text x="101" y="108" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="black" text-anchor="middle">INFORMATION</text>
+  
+  <!-- Right Arrow -->
+  <path d="M 597,68 L 733,68 L 733,34 L 798,100 L 733,166 L 733,132 L 597,132 Z" fill="#e1bee7" stroke="#8e24aa" stroke-width="2"/>
+  <text x="697" y="108" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="black" text-anchor="middle">INFORMATION</text>
+
+  <!-- Internal Data Arrows -->
+  <!-- Input to Processing -->
+  <path d="M 280,42 L 310,42 L 310,36 L 326,48 L 310,60 L 310,54 L 280,54 Z" fill="#7b1fa2" stroke="#4a148c" stroke-width="0.5"/>
+  <text x="303" y="49" font-family="Arial, sans-serif" font-size="8" fill="black" text-anchor="middle">DATA</text>
+  
+  <!-- Processing to Output -->
+  <path d="M 476,42 L 506,42 L 506,36 L 522,48 L 506,60 L 506,54 L 476,54 Z" fill="#e1bee7" stroke="#7b1fa2" stroke-width="1"/>
+  <text x="499" y="49" font-family="Arial, sans-serif" font-size="8" fill="black" text-anchor="middle">DATA</text>
+  
+  <!-- Internal Processing Arrow -->
+  <defs>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#76ff03;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c6ff00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M 365,75 L 413,75 L 413,65 L 435,85 L 413,105 L 413,95 L 365,95 Z" fill="url(#greenGrad)" stroke="#2e7d32" stroke-width="1"/>
+  <text x="400" y="89" font-family="Arial, sans-serif" font-size="14" fill="black" text-anchor="middle">DATA</text>
+  
+  <!-- Processing to Storage (Left) -->
+  <path d="M 316,75 L 326,75 L 326,85 L 336,85 L 321,105 L 306,85 L 316,85 Z" fill="#7b1fa2" stroke="#4a148c" stroke-width="0.5"/>
+  <path d="M 316,105 L 326,105 L 326,115 L 336,115 L 321,135 L 306,115 L 316,115 Z" fill="#7b1fa2" stroke="#4a148c" stroke-width="0.5" transform="translate(0, -100) rotate(180, 321, 105)"/>
+  <text x="328" y="105" font-family="Arial, sans-serif" font-size="8" fill="black" text-anchor="middle" transform="rotate(-90, 328, 105)">DATA</text>
+
+  <!-- Processing to Storage (Right) -->
+  <path d="M 462,75 L 472,75 L 472,85 L 482,85 L 467,105 L 452,85 L 462,85 Z" fill="#e1bee7" stroke="#7b1fa2" stroke-width="0.5"/>
+  <path d="M 462,105 L 472,105 L 472,115 L 482,115 L 467,135 L 452,115 L 462,115 Z" fill="#e1bee7" stroke="#7b1fa2" stroke-width="0.5" transform="translate(0, -100) rotate(180, 467, 105)"/>
+  <text x="474" y="105" font-family="Arial, sans-serif" font-size="8" fill="black" text-anchor="middle" transform="rotate(-90, 474, 105)">DATA</text>
+</svg>

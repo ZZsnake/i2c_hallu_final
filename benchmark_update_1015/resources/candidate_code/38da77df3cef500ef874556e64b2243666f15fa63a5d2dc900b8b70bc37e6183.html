@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unemployment Rate vs GDP Growth</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .chart-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .chart-container {
+      width: 100%;
+      height: 600px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .legend {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .legend-dot-blue { background-color: #1f77b4; }
+    .legend-dot-red { background-color: #d62728; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chart-title">Unemployment Rate vs GDP Growth (Economics)</div>
+    <div class="chart-container" id="chart"></div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot legend-dot-blue"></div>
+        <span>2018</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot legend-dot-red"></div>
+        <span>2020</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize ECharts instance
+    const myChart = echarts.init(document.getElementById('chart'));
+
+    // Define data for 2018 (blue)
+    const data2018 = [
+      [2.5, 7.0, 10],
+      [1.8, 8.5, 8],
+      [3.2, 5.5, 12],
+      [2.1, 6.8, 6],
+      [4.0, 4.0, 15],
+      [5.5, 3.5, 20], // Large bubble
+      [2.9, 7.2, 7],
+      [3.8, 5.0, 9],
+      [2.7, 6.2, 5],
+      [1.5, 8.0, 11]
+    ];
+
+    // Define data for 2020 (red)
+    const data2020 = [
+      [-10.0, 6.5, 8],
+      [-7.0, 8.0, 30], // Very large bubble
+      [-5.5, 15.0, 12],
+      [-4.0, 13.5, 18],
+      [-3.0, 5.8, 6],
+      [-2.5, 4.2, 5],
+      [-6.5, 9.5, 10],
+      [-3.8, 2.5, 4],
+      [-4.8, 4.0, 7],
+      [-2.0, 4.1, 5]
+    ];
+
+    // Chart configuration
+    const option = {
+      backgroundColor: '#f0f2f5',
+      title: {
+        text: '',
+        show: false
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+          return `GDP Growth: ${params.data[0].toFixed(1)}%<br/>Unemployment Rate: ${params.data[1].toFixed(1)}%<br/>Size: ${params.data[2]}`
+        }
+      },
+      legend: {
+        show: false
+      },
+      xAxis: {
+        type: 'value',
+        name: 'GDP Growth (%)',
+        nameLocation: 'end',
+        nameGap: 10,
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#000'
+          }
+        },
+        axisTick: {
+          show: true,
+          interval: 3
+        },
+        axisLabel: {
+          color: '#333',
+          fontSize: 12
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#d3d3d3'
+          }
+        },
+        min: -12,
+        max: 9,
+        interval: 3
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Unemployment Rate (%)',
+        nameLocation: 'middle',
+        nameGap: 30,
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#000'
+          }
+        },
+        axisTick: {
+          show: true,
+          interval: 2
+        },
+        axisLabel: {
+          color: '#333',
+          fontSize: 12
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#d3d3d3'
+          }
+        },
+        min: 2,
+        max: 16,
+        interval: 2
+      },
+      series: [
+        {
+          name: '2018',
+          type: 'scatter',
+          symbolSize: function(val) {
+            return val[2] * 0.8; // Scale bubble size
+          },
+          itemStyle: {
+            color: '#1f77b4'
+          },
+          data: data2018,
+          zlevel: 1
+        },
+        {
+          name: '2020',
+          type: 'scatter',
+          symbolSize: function(val) {
+            return val[2] * 0.8;
+          },
+          itemStyle: {
+            color: '#d62728'
+          },
+          data: data2020,
+          zlevel: 1
+        }
+      ],
+      grid: {
+        left: '10%',
+        right: '10%',
+        top: '15%',
+        bottom: '10%'
+      }
+    };
+
+    // Render the chart
+    myChart.setOption(option);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      myChart.resize();
+    });
+  </script>
+</body>
+</html>

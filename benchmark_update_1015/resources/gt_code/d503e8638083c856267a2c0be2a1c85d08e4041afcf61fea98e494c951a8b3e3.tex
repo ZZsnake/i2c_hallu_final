@@ -1,0 +1,39 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{siunitx}
+
+\definecolor{lightblue}{RGB}{230,240,255}
+\definecolor{darkblue}{RGB}{0,51,102}
+
+\begin{document}
+
+\begin{tabular}{l S[table-format=5.0] S[table-format=5.0] S[table-format=5.0] S[table-format=5.0]}
+\toprule
+\rowcolor{darkblue}
+\textcolor{white}{\textbf{Category}} & \textcolor{white}{\textbf{Q1}} & \textcolor{white}{\textbf{Q2}} & \textcolor{white}{\textbf{Q3}} & \textcolor{white}{\textbf{Q4}} \\
+\midrule
+\rowcolor{lightblue}
+\textbf{Licensing Fees Revenue} & 35400 & 36900 & 38000 & 39200 \\
+\midrule
+\textbf{Expenditure} & & & & \\
+\quad Employee Salaries & 12000 & 12200 & 12400 & 12600 \\
+\rowcolor{lightblue}
+\quad Administrative Costs & 5000 & 5100 & 5200 & 5300 \\
+\quad Inspection Costs & 4300 & 4400 & 4600 & 4700 \\
+\rowcolor{lightblue}
+\quad Training Programs & 2500 & 2600 & 2700 & 2800 \\
+\quad Maintenance of Equipment & 2000 & 2100 & 2200 & 2300 \\
+\rowcolor{lightblue}
+\quad Miscellaneous & 600 & 700 & 800 & 900 \\
+\midrule
+\textbf{Total Expenditure} & 26400 & 27100 & 27900 & 28600 \\
+\midrule
+\rowcolor{lightblue}
+\textbf{Net Revenue} & 9000 & 9800 & 10100 & 10600 \\
+\bottomrule
+\end{tabular}
+
+\end{document}

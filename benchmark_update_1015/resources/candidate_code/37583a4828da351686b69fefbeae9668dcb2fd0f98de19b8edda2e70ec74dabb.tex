@@ -1,0 +1,45 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+\begin{tikzpicture}[font=\sffamily]
+
+% Left Section
+\node[draw, circle, fill=red!50, minimum size=6cm] (circle1) at (-3,0) {what you would like to do};
+\node[draw, circle, fill=green!50, minimum size=6cm] (circle2) at (3,0) {what you are able to do};
+
+\node[fill=blue!50, circle, minimum size=0.5cm] (overlap) at (0,-1.5) {};
+\node[below=0.5cm of overlap] {employment};
+\node[below=0.2cm of overlap] {\footnotesize you get paid enough for};
+
+\node[above=2cm of circle1.north] {\textbf{the universe of all jobs}};
+
+% Right Section
+\begin{scope}[xshift=12cm]
+    \node[draw, circle, fill=red!50, minimum size=6cm] (circle3) at (-3,0) {};
+    \node[draw, circle, fill=green!50, minimum size=6cm] (circle4) at (3,0) {};
+
+    \begin{scope}
+        \clip (circle3.center) circle (3cm);
+        \fill[purple!70] (circle4.center) circle (3cm);
+    \end{scope}
+
+    \begin{scope}
+        \clip (circle4.center) circle (3cm);
+        \fill[blue!70] (circle3.center) circle (3cm);
+    \end{scope}
+
+    \begin{scope}
+        \clip (circle3.center) circle (3cm);
+        \clip (circle4.center) circle (3cm);
+        \fill[blue!50] (circle3.center) -- (circle4.center) -- ++(0,3cm) -- cycle;
+        \fill[purple!50] (circle3.center) -- (circle4.center) -- ++(0,-3cm) -- cycle;
+    \end{scope}
+
+    \node[fill=blue!70, circle, minimum size=0.5cm] (perfectjob) at (0,1.5) {};
+    \node[right=0.2cm of perfectjob] {perfect job};
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

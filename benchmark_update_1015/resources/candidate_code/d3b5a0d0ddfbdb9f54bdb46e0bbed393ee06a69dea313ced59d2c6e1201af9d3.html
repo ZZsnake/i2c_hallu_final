@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geographical Features Distribution by Continent</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        #chart {
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="chart"></div>
+    </div>
+    
+    <script>
+        var chartDom = document.getElementById('chart');
+        var myChart = echarts.init(chartDom);
+        
+        var option = {
+            title: {
+                text: 'Geographical Features Distribution by Continent',
+                left: 'center',
+                top: 25,
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    fontFamily: 'Georgia, serif'
+                }
+            },
+            legend: {
+                data: ['Mountains', 'Plains', 'Coastal', 'Urban'],
+                top: 0,
+                left: 'center',
+                itemWidth: 25,
+                itemHeight: 14,
+                textStyle: {
+                    fontSize: 12
+                }
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                right: 10,
+                top: 'center',
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    magicType: { show: true, type: ['line', 'bar', 'stack'] },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            grid: {
+                left: '8%',
+                right: '5%',
+                top: '15%',
+                bottom: '10%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Africa', 'Asia', 'Europe', 'Americas', 'Oceania'],
+                axisLine: {
+                    lineStyle: {
+                        color: '#333'
+                    }
+                },
+                axisLabel: {
+                    fontSize: 13,
+                    color: '#000',
+                    fontWeight: 'bold'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                max: 350,
+                interval: 50,
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    fontSize: 12,
+                    color: '#333'
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#e0e0e0',
+                        type: 'solid'
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Mountains',
+                    type: 'bar',
+                    data: [180, 210, 130, 160, 90],
+                    itemStyle: {
+                        color: '#4169E1'
+                    },
+                    barWidth: '20%',
+                    barGap: '0%',
+                    label: {
+                        show: true,
+                        position: 'insideBottom',
+                        formatter: function(params) {
+                            return params.value + ' Mountains';
+                        },
+                        fontSize: 10,
+                        color: '#000',
+                        rotate: 90
+                    }
+                },
+                {
+                    name: 'Plains',
+                    type: 'bar',
+                    data: [220, 315, 250, 290, 110],
+                    itemStyle: {
+                        color: '#228B22'
+                    },
+                    barWidth: '20%',
+                    label: {
+                        show: true,
+                        position: 'insideBottom',
+                        formatter: function(params) {
+                            return params.value + ' Plains';
+                        },
+                        fontSize: 10,
+                        color: '#000',
+                        rotate: 90
+                    }
+                },
+                {
+                    name: 'Coastal',
+                    type: 'bar',
+                    data: [150, 270, 140, 230, 60],
+                    itemStyle: {
+                        color: '#FF8C00'
+                    },
+                    barWidth: '20%',
+                    label: {
+                        show: true,
+                        position: 'insideBottom',
+                        formatter: function(params) {
+                            return params.value + ' Coastal';
+                        },
+                        fontSize: 10,
+                        color: '#000',
+                        rotate: 90
+                    }
+                },
+                {
+                    name: 'Urban',
+                    type: 'bar',
+                    data: [100, 190, 220, 280, 40],
+                    itemStyle: {
+                        color: '#8B0000'
+                    },
+                    barWidth: '20%',
+                    label: {
+                        show: true,
+                        position: 'insideBottom',
+                        formatter: function(params) {
+                            return params.value + ' Urban';
+                        },
+                        fontSize: 10,
+                        color: '#000',
+                        rotate: 90
+                    }
+                }
+            ]
+        };
+        
+        myChart.setOption(option);
+        
+        // Responsive resize
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

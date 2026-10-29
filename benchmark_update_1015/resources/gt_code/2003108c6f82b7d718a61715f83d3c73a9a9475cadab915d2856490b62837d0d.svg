@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="402px" preserveAspectRatio="none" style="width:527px;height:402px;background:#FFFFFF;" version="1.1" viewBox="0 0 527 402" width="527px" zoomAndPan="magnify"><defs/><rect width="100%" height="100%" fill="#FFFFFF"/><g>
+<!-- Container: Software System -->
+<g id="cluster_system">
+<path d="M140.5,23.5 L326.5,23.5 A3.75,3.75 0 0 1 329,26 L336,45.7969 L397.5,45.7969 A2.5,2.5 0 0 1 400,48.2969 L400,388 A2.5,2.5 0 0 1 397.5,390.5 L140.5,390.5 A2.5,2.5 0 0 1 138,388 L138,26 A2.5,2.5 0 0 1 140.5,23.5 " fill="none" style="stroke:#1E2B5F;stroke-width:2.5;"/>
+<line style="stroke:#1E2B5F;stroke-width:2.5;" x1="138" x2="336" y1="45.7969" y2="45.7969"/>
+<text fill="#222222" font-family="monospace" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="185" x="142" y="38.4951">Software System</text>
+</g>
+
+<!-- Use Case: Check User Permissions -->
+<g id="elem_UC1">
+<ellipse cx="269.1" cy="87.4" fill="#E3F2FD" rx="90.1" ry="20.4" style="stroke:#1B5E20;stroke-width:1.3;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="142" x="198.1" y="90.2696">Check Permissions</text>
+</g>
+
+<!-- Use Case: Submit Data -->
+<g id="elem_UC2">
+<ellipse cx="268.8" cy="167.3" fill="#E3F2FD" rx="106.8" ry="23.7" style="stroke:#1B5E20;stroke-width:1.3;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="166" x="185.3" y="170.1122">Submit Data Entry</text>
+</g>
+
+<!-- Use Case: Validate Input -->
+<g id="elem_UC3">
+<ellipse cx="269.2" cy="249.3" fill="#E3F2FD" rx="102.2" ry="22.8" style="stroke:#1B5E20;stroke-width:1.3;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="163" x="188.7" y="252.1963">Validate Input Data</text>
+</g>
+
+<!-- Use Case: Generate Report -->
+<g id="elem_UC4">
+<ellipse cx="269.0" cy="327.3" fill="#E3F2FD" rx="87.0" ry="19.8" style="stroke:#1B5E20;stroke-width:1.3;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="130" x="204.5" y="330.154">Generate Report</text>
+</g>
+
+<!-- Actor: User -->
+<g id="actor_user">
+<ellipse cx="54" cy="141" fill="#E3F2FD" rx="8" ry="8" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<path d="M54,149 L54,176 M41,157 L67,157 M54,176 L41,191 M54,176 L67,191 " fill="none" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="53" x="28" y="205.4951">User</text>
+</g>
+
+<!-- Actor: Database -->
+<g id="actor_database">
+<ellipse cx="478" cy="75" fill="#E3F2FD" rx="8" ry="8" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<path d="M478,83 L478,110 M465,91 L491,91 M478,110 L465,125 M478,110 L491,125 " fill="none" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="77" x="439" y="139.4951">Database</text>
+</g>
+
+<!-- Actor: Validator -->
+<g id="actor_validator">
+<ellipse cx="478" cy="203" fill="#E3F2FD" rx="8" ry="8" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<path d="M478,211 L478,238 M465,219 L491,219 M478,238 L465,253 M478,238 L491,253 " fill="none" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="85" x="432" y="267.4951">Validator</text>
+</g>
+
+<!-- Actor: Analyst -->
+<g id="actor_analyst">
+<ellipse cx="478" cy="314" fill="#E3F2FD" rx="8" ry="8" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<path d="M478,322 L478,349 M465,330 L491,330 M478,349 L465,364 M478,349 L491,364 " fill="none" style="stroke:#B71C1C;stroke-width:1.2;"/>
+<text fill="#1B1818" font-family="monospace" font-size="14" lengthAdjust="spacing" textLength="63" x="447" y="378.4951">Analyst</text>
+</g>
+
+<!-- Note: Actor -->
+<g id="elem_note_actor">
+<path d="M447.5,6 L447.5,31.1328 L474,31.1328 L478,66.203 L482,31.1328 L508.5,31.1328 L508.5,16 L498.5,6 L447.5,6 " fill="#FFFDE7" style="stroke:#1B1818;stroke-width:1.1;"/>
+<path d="M498.5,6 L498.5,16 L508.5,16 L498.5,6 " fill="#FFFDE7" style="stroke:#1B1818;stroke-width:1.1;"/>
+<text fill="#2B2B2B" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="40" x="453.5" y="23.0669">Actor</text>
+</g>
+
+<!-- Note: System -->
+<g id="elem_note_system">
+<path d="M15.5,370 L15.5,395.1328 L92.5,395.1328 L92.5,380 L82.5,370 L15.5,370 " fill="#FFFDE7" style="stroke:#1B1818;stroke-width:1.2;"/>
+<path d="M82.5,370 L82.5,380 L92.5,380 L82.5,370 " fill="#FFFDE7" style="stroke:#1B1818;stroke-width:1.2;"/>
+<text fill="#2B2B2B" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="56" x="21.5" y="387.0669">System</text>
+</g>
+
+<!-- Note: Use Case -->
+<g id="elem_note_uc">
+<path d="M6,72 L6,97.1328 L102,97.1328 L102,90 L179.096,86.248 L102,82 L102,82 L92,72 L6,72 " fill="#FFFDE7" style="stroke:#1B1818;stroke-width:1.1;"/>
+<path d="M92,72 L92,82 L102,82 L92,72 " fill="#FFFDE7" style="stroke:#1B1818;stroke-width:1.1;"/>
+<text fill="#2B2B2B" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="87" x="12" y="89.0669">Use Case</text>
+</g>
+
+<!-- Links -->
+<g id="link_user_UC1">
+<path d="M90.6,144.1 C100.4,137.7 111.3,131.3 122,126.5 C146.7,115.5 175.1,107.0 200.3,100.8" fill="none" style="stroke:#283593;stroke-width:2.1;"/>
+</g>
+<g id="link_user_UC2">
+<path d="M90.7,170.0 C110.4,169.7 136.2,169.4 161.9,169.0" fill="none" style="stroke:#283593;stroke-width:2.1;"/>
+</g>
+<g id="link_user_UC4">
+<path d="M67.1,208.7 C77.6,235.4 95.2,269.9 122,290.5 C141.2,305.2 165.6,314.1 188.9,319.5" fill="none" style="stroke:#283593;stroke-width:2.1;"/>
+</g>
+<g id="link_UC1_database">
+<path d="M353.9,94.4 C382.1,96.7 412.4,99.2 435.9,101.1" fill="none" style="stroke:#283593;stroke-width:2.1;"/>
+</g>
+<g id="link_UC2_database">
+<path d="M337.1,149.0 C362.0,141.9 390.3,133.6 416,125.5 C422.4,123.5 429.2,121.2 435.8,119.0" fill="none" style="stroke:#283593;stroke-width:2.1;"/>
+</g>
+<g id="link_UC3_validator">
+<path d="M365.0,241.7 C398.2,239.0 432.5,236.2 454.3,234.4" fill="none" style="stroke:#283593;stroke-width:2.1;"/>
+</g>
+<g id="link_UC4_analyst">
+<path d="M351.8,333.8 C383.8,336.3 418.7,339.0 443.5,340.9" fill="none" style="stroke:#283593;stroke-width:2.1;"/>
+</g>
+<g id="link_note_system_package">
+<path d="M92.6,382.5 C100.1,382.5 108.4,382.5 117.3,382.5 C121.7,382.5 126.2,382.5 130.8,382.5 C133.1,382.5 135.5,382.5 137.8,382.5" fill="none" style="stroke:#E65100;stroke-width:1.6;stroke-dasharray:6.0,6.0;"/>
+</g>
+</g></svg>

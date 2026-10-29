@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Heatmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+        #main-container {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #chart-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #chart-dom {
+            width: 1000px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main-container">
+    <div id="chart-title">Multiplication Table Heatmap</div>
+    <div id="chart-dom"></div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var chartDom = document.getElementById('chart-dom');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        // Generate data for 10x10 multiplication table
+        const xData = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+        const yData = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+        
+        let data = [];
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                // ECharts heatmap data format: [xIndex, yIndex, value]
+                data.push([j, i, (i + 1) * (j + 1)]);
+            }
+        }
+
+        option = {
+            tooltip: {
+                position: 'top'
+            },
+            grid: {
+                height: '80%',
+                top: '15%',
+                left: '10%',
+                right: '10%',
+                bottom: '10%'
+            },
+            xAxis: {
+                type: 'category',
+                data: xData,
+                splitArea: {
+                    show: true
+                },
+                axisLine: {
+                    lineStyle: { color: '#333' }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: yData,
+                splitArea: {
+                    show: true
+                },
+                axisLine: {
+                    lineStyle: { color: '#333' }
+                }
+            },
+            visualMap: {
+                min: 1,
+                max: 100,
+                calculable: true,
+                orient: 'horizontal',
+                left: 'center',
+                top: '0%',
+                // Custom color gradient to match the image
+                inRange: {
+                    color: [
+                        '#eb6841', // Red/Orange for 1
+                        '#edc951', // Yellow
+                        '#6ab04c', // Green
+                        '#2980b9', // Blue
+                        '#3498db'  // Lighter Blue for 100
+                    ]
+                },
+                text: ['100', '1'],
+                itemWidth: 20,
+                itemHeight: 200
+            },
+            series: [{
+                name: 'Product',
+                type: 'heatmap',
+                data: data,
+                label: {
+                    show: true,
+                    color: '#333',
+                    fontSize: 10
+                },
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    });
+</script>
+
+</body>
+</html>

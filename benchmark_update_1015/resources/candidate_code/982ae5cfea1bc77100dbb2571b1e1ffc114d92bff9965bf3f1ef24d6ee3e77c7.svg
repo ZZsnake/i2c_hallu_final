@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750">
+  <rect width="100%" height="100%" fill="#000"/>
+  <title>Global average temperature change</title>
+  <defs>
+    <pattern id="annualBars" patternUnits="userSpaceOnUse" x="150" y="0" width="4.57" height="750">
+      <rect x="0" y="0" width="3.05" height="750" fill="#fff"/>
+    </pattern>
+    <mask id="barMask">
+      <rect x="150" y="60" width="800" height="630" fill="url(#annualBars)"/>
+    </mask>
+    <linearGradient id="negGrad" gradientUnits="userSpaceOnUse" x1="0" y1="420" x2="0" y2="610">
+      <stop offset="0" stop-color="#f4eadc"/>
+      <stop offset="0.35" stop-color="#e9c6aa"/>
+      <stop offset="0.7" stop-color="#d48a52"/>
+      <stop offset="1" stop-color="#b65f24"/>
+    </linearGradient>
+    <linearGradient id="posGrad" gradientUnits="userSpaceOnUse" x1="0" y1="420" x2="0" y2="80">
+      <stop offset="0" stop-color="#d7f6ff"/>
+      <stop offset="0.35" stop-color="#6fe8ff"/>
+      <stop offset="0.68" stop-color="#12c8cc"/>
+      <stop offset="1" stop-color="#00695f"/>
+    </linearGradient>
+  </defs>
+
+  <text x="550" y="39" text-anchor="middle" fill="#fff" font-size="40" font-family="Arial, Helvetica, sans-serif">Global average temperature change</text>
+
+  <g stroke="#8a8a8a" stroke-opacity="0.42" stroke-width="1">
+    <line x1="150" x2="950" y1="60" y2="60"/>
+    <line x1="150" x2="950" y1="150" y2="150"/>
+    <line x1="150" x2="950" y1="240" y2="240"/>
+    <line x1="150" x2="950" y1="330" y2="330"/>
+    <line x1="150" x2="950" y1="420" y2="420"/>
+    <line x1="150" x2="950" y1="510" y2="510"/>
+    <line x1="150" x2="950" y1="600" y2="600"/>
+    <line x1="150" x2="950" y1="690" y2="690"/>
+    <line x1="150" x2="150" y1="60" y2="690"/>
+    <line x1="264.3" x2="264.3" y1="60" y2="690"/>
+    <line x1="378.6" x2="378.6" y1="60" y2="690"/>
+    <line x1="492.9" x2="492.9" y1="60" y2="690"/>
+    <line x1="607.1" x2="607.1" y1="60" y2="690"/>
+    <line x1="721.4" x2="721.4" y1="60" y2="690"/>
+    <line x1="835.7" x2="835.7" y1="60" y2="690"/>
+    <line x1="950" x2="950" y1="60" y2="690"/>
+  </g>
+
+  <rect x="150" y="60" width="800" height="630" fill="none" stroke="#777" stroke-width="3"/>
+  <line x1="150" y1="420" x2="950" y2="420" stroke="#777" stroke-width="2"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#fff">
+    <text x="108" y="60" text-anchor="end" dy=".35em">+1.0</text>
+    <text x="108" y="240" text-anchor="end" dy=".35em">+0.5</text>
+    <text x="108" y="420" text-anchor="end" dy=".35em">0 °C</text>
+    <text x="108" y="600" text-anchor="end" dy=".35em">-0.5</text>
+    <text x="150" y="728" text-anchor="middle">1850</text>
+    <text x="264.3" y="728" text-anchor="middle">1875</text>
+    <text x="378.6" y="728" text-anchor="middle">1900</text>
+    <text x="492.9" y="728" text-anchor="middle">1925</text>
+    <text x="607.1" y="728" text-anchor="middle">1950</text>
+    <text x="721.4" y="728" text-anchor="middle">1975</text>
+    <text x="835.7" y="728" text-anchor="middle">2000</text>
+    <text x="950" y="728" text-anchor="middle">2025</text>
+  </g>
+
+  <g mask="url(#barMask)">
+    <path fill="url(#negGrad)" d="M150 420 L150 540 L154.6 548 L159.1 533 L163.7 552 L168.3 544 L172.9 520 L177.4 568 L182 535 L186.6 565 L191.1 575 L195.7 530 L200.3 585 L204.9 560 L209.4 550 L214 510 L218.6 502 L223.1 500 L227.7 520 L232.3 532 L236.9 535 L241.4 512 L246 526 L250.6 560 L255.1 548 L259.7 470 L264.3 420 L268.9 505 L273.4 530 L278 488 L282.6 540 L287.1 500 L291.7 568 L296.3 582 L300.9 585 L305.4 505 L310 558 L314.6 540 L319.1 495 L323.7 560 L328.3 548 L332.9 510 L337.4 492 L342 488 L346.6 535 L351.1 510 L355.7 462 L360.3 540 L364.9 548 L369.4 505 L374 565 L378.6 492 L383.1 552 L387.7 570 L392.3 595 L396.9 570 L401.4 548 L406 508 L410.6 535 L415.1 505 L419.7 598 L424.3 520 L428.9 505 L433.4 488 L438 520 L442.6 515 L447.1 498 L451.7 480 L456.3 445 L460.9 502 L465.4 548 L470 488 L474.6 450 L479.1 470 L483.7 500 L488.3 440 L492.9 420 L497.4 404 L502 420 L506.6 420 L511.1 400 L515.7 424 L520.3 450 L524.9 438 L529.4 445 L534 420 L538.6 480 L543.1 455 L547.7 465 L552.3 420 L556.9 432 L561.4 488 L566 420 L570.6 455 L575.1 430 L579.7 470 L584.3 420 L588.9 425 L593.4 440 L598 495 L602.6 452 L607.1 435 L611.7 420 L616.3 430 L620.9 420 L625.4 420 L630 410 L634.6 420 L639.1 420 L643.7 405 L648.3 420 L652.9 420 L657.4 400 L662 420 L666.6 425 L671.1 420 L675.7 415 L680.3 420 L684.9 400 L689.4 420 L694 440 L698.6 408 L703.1 420 L707.7 455 L712.3 418 L716.9 468 L721.4 420 L721.4 420 L150 420 Z"/>
+    <path fill="url(#posGrad)" d="M150 420 L264.3 420 L268.9 382 L273.4 420 L488.3 420 L492.9 412 L497.4 420 L502 392 L506.6 400 L511.1 412 L515.7 408 L520.3 420 L524.9 380 L529.4 420 L534 420 L538.6 376 L543.1 420 L547.7 420 L552.3 395 L556.9 390 L561.4 420 L566 392 L570.6 400 L575.1 385 L579.7 420 L584.3 408 L588.9 390 L593.4 420 L598 420 L602.6 418 L607.1 410 L611.7 420 L616.3 386 L620.9 420 L625.4 420 L630 375 L634.6 420 L639.1 420 L643.7 412 L648.3 420 L652.9 390 L657.4 420 L662 405 L666.6 420 L671.1 420 L675.7 415 L680.3 420 L684.9 386 L689.4 420 L694 405 L698.6 420 L703.1 378 L707.7 420 L712.3 412 L716.9 380 L721.4 420 L726 330 L730.6 342 L735.1 322 L739.7 365 L744.3 310 L748.9 365 L753.4 360 L758 330 L762.6 315 L767.1 340 L771.7 280 L776.3 305 L780.9 265 L785.4 300 L790 260 L794.6 245 L799.1 295 L803.7 270 L808.3 230 L812.9 205 L817.4 280 L822 235 L826.6 200 L831.1 210 L835.7 170 L840.3 125 L844.9 240 L849.4 210 L854 130 L858.6 200 L863.1 210 L867.7 165 L872.3 205 L876.9 180 L881.4 165 L886 125 L890.6 200 L895.1 170 L899.7 185 L904.3 150 L908.9 128 L913.4 60 L918 115 L922.6 92 L927.1 85 L931.7 420 L150 420 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,105 @@
+<svg width="600" height="500" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for reusable elements -->
+  <defs>
+    <!-- Stick Figure Actor -->
+    <g id="actor">
+      <circle cx="0" cy="-25" r="8" fill="none" stroke="#A52A2A" stroke-width="2"/>
+      <line x1="0" y1="-17" x2="0" y2="5" stroke="#A52A2A" stroke-width="2"/>
+      <line x1="-12" y1="-10" x2="12" y2="-10" stroke="#A52A2A" stroke-width="2"/>
+      <line x1="0" y1="5" x2="-12" y2="20" stroke="#A52A2A" stroke-width="2"/>
+      <line x1="0" y1="5" x2="12" y2="20" stroke="#A52A2A" stroke-width="2"/>
+    </g>
+    
+    <!-- Note Box -->
+    <g id="note">
+      <path d="M 0,0 L 80,0 L 95,15 L 95,35 L 0,35 Z" fill="#FFFFE0" stroke="black" stroke-width="1"/>
+      <path d="M 80,0 L 80,15 L 95,15" fill="none" stroke="black" stroke-width="1"/>
+    </g>
+  </defs>
+
+  <!-- System Boundary -->
+  <path d="M 160,55 L 370,55 L 385,70 L 450,70 L 450,470 L 160,470 Z" fill="none" stroke="#001f3f" stroke-width="2"/>
+  <text x="165" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16">Software System</text>
+
+  <!-- Use Cases -->
+  <g transform="translate(305, 110)">
+    <ellipse cx="0" cy="0" rx="100" ry="25" fill="#E0F2F7" stroke="#2F4F4F" stroke-width="1.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">Check Permissions</text>
+  </g>
+  
+  <g transform="translate(305, 205)">
+    <ellipse cx="0" cy="0" rx="115" ry="25" fill="#E0F2F7" stroke="#2F4F4F" stroke-width="1.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">Submit Data Entry</text>
+  </g>
+  
+  <g transform="translate(305, 305)">
+    <ellipse cx="0" cy="0" rx="110" ry="25" fill="#E0F2F7" stroke="#2F4F4F" stroke-width="1.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">Validate Input Data</text>
+  </g>
+  
+  <g transform="translate(305, 405)">
+    <ellipse cx="0" cy="0" rx="95" ry="25" fill="#E0F2F7" stroke="#2F4F4F" stroke-width="1.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">Generate Report</text>
+  </g>
+
+  <!-- Actors -->
+  <g transform="translate(70, 200)">
+    <use href="#actor"/>
+    <text x="0" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">User</text>
+  </g>
+  
+  <g transform="translate(530, 190)">
+    <use href="#actor"/>
+    <text x="0" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">Database</text>
+  </g>
+  
+  <g transform="translate(530, 330)">
+    <use href="#actor"/>
+    <text x="0" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">Validator</text>
+  </g>
+  
+  <g transform="translate(530, 450)">
+    <use href="#actor"/>
+    <text x="0" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">Analyst</text>
+  </g>
+
+  <!-- Associations -->
+  <!-- User connections -->
+  <path d="M 110,180 Q 150,130 205,110" fill="none" stroke="#003366" stroke-width="2"/>
+  <line x1="110" y1="210" x2="190" y2="210" stroke="#003366" stroke-width="2"/>
+  <path d="M 85,260 Q 120,380 210,405" fill="none" stroke="#003366" stroke-width="2"/>
+  
+  <!-- Database connections -->
+  <line x1="490" y1="180" x2="405" y2="125" stroke="#003366" stroke-width="2"/>
+  <line x1="490" y1="150" x2="380" y2="185" stroke="#003366" stroke-width="2"/>
+  
+  <!-- Validator connection -->
+  <line x1="510" y1="290" x2="415" y2="305" stroke="#003366" stroke-width="2"/>
+  
+  <!-- Analyst connection -->
+  <line x1="500" y1="425" x2="400" y2="415" stroke="#003366" stroke-width="2"/>
+
+  <!-- Notes and Callouts -->
+  <!-- Use Case Note -->
+  <g transform="translate(15, 180)">
+    <use href="#note"/>
+    <text x="10" y="22" font-family="Arial, sans-serif" font-size="14">Use Case</text>
+    <polygon points="95,15 205,15 95,25" fill="#FFFFE0" stroke="black" stroke-width="1"/>
+    <line x1="95" y1="15" x2="95" y2="25" stroke="#FFFFE0" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Actor Note -->
+  <g transform="translate(505, 10)">
+    <use href="#note" transform="scale(0.7, 1)"/>
+    <text x="5" y="22" font-family="Arial, sans-serif" font-size="14">Actor</text>
+    <polygon points="35,35 35,75 45,35" fill="#FFFFE0" stroke="black" stroke-width="1"/>
+    <line x1="35" y1="35" x2="45" y2="35" stroke="#FFFFE0" stroke-width="1.5"/>
+  </g>
+  
+  <!-- System Note -->
+  <g transform="translate(25, 460)">
+    <use href="#note" transform="scale(0.9, 1)"/>
+    <text x="10" y="22" font-family="Arial, sans-serif" font-size="14">System</text>
+    <line x1="85" y1="17" x2="160" y2="17" stroke="#A52A2A" stroke-width="1.5" stroke-dasharray="5,5"/>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\begin{document}
+\begin{tikzpicture}
+    \tikzset{
+        table/.style={
+            matrix of nodes,
+            row sep=-\pgflinewidth,
+            column sep=-\pgflinewidth,
+            nodes={
+                rectangle,
+                draw=black,
+                align=center,
+                minimum height=1.5em,
+                text width=4cm,
+                anchor=center,
+                inner sep=0pt,
+                outer sep=0pt,
+                text depth=.25ex,
+                text height=1.5ex,
+            },
+            column 1/.style={nodes={text width=2cm}},
+            column 2/.style={nodes={text width=3cm}},
+            column 3/.style={nodes={text width=2cm}},
+            column 4/.style={nodes={text width=2cm}},
+            column 5/.style={nodes={text width=6cm}},
+            column 6/.style={nodes={text width=3cm}},
+            column 7/.style={nodes={text width=6cm}},
+            row 1/.style={nodes={fill=blue!50, text=white, font=\bfseries}},
+            oddrow/.style={nodes={fill=blue!10}},
+            evenrow/.style={},
+        }
+    }
+
+    \matrix[table] (m) {
+        Date & Customer Name & Delivery Satisfaction & Arrangement Satisfaction & Feedback & Service Type & Elder Story Connection \\
+        2023-01 & Emily Johnson & 4.5 & 5.0 & The bouquet was stunning and brightened my day! & Standard Delivery & Inspired by my grandmother’s love for daisies. \\
+        2023-02 & Michael Smith & 3.0 & 4.0 & Delivery was late, but the flowers were beautiful. & Same Day Delivery & Reminded me of my grandfather who used to bring me flowers. \\
+        2023-03 & Sarah Brown & 5.0 & 5.0 & Absolutely perfect! Exceeded my expectations. & Next Day Delivery & Echoes my aunt’s stories of flower markets in the 60s. \\
+        2023-04 & David Wilson & 2.5 & 3.0 & Flowers were wilted upon arrival. & Standard Delivery & Reminded me of my uncle’s tales of wildflowers. \\
+        2023-05 & Linda Garcia & 4.8 & 4.5 & Great service! Very pleased with the arrangements. & Scheduled Delivery & Connected to my mother’s floral recipes from her garden. \\
+        2023-06 & James Martinez & 3.5 & 4.0 & Decent experience but expected more variety in flowers. & Same Day Delivery & My grandma’s tales of exotic flowers influence my taste. \\
+        2023-07 & Patricia Davis & 5.0 & 5.0 & The arrangement captured the essence of summer beautifully. & Next Day Delivery & Inspired by my great-aunt’s summer garden parties. \\
+        2023-08 & Robert Hernandez & 4.0 & 3.5 & Good quality but the delivery was a bit late. & Standard Delivery & Similar to my dad’s stories about waiting for deliveries. \\
+        2023-09 & Jennifer Clark & 4.7 & 5.0 & A beautiful surprise for my mother’s birthday! & Scheduled Delivery & Evokes memories of my mother’s favorite flowers. \\
+        2023-10 & William Lewis & 3.0 & 3.0 & Flowers were nice, but I expected more personalization. & Same Day Delivery & Reminds me of the times my grandfather would personalize gifts. \\
+    };
+
+    % Apply alternating row colors
+    \foreach \i in {2,4,...,10} {
+        \pgfmathtruncatemacro{\j}{\i+1}
+        \path (m-\i-1.north west) rectangle (m-\j-7.south east);
+    }
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly Device Usage Trends</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            height: 100%;
+        }
+        #main {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="main"></div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                title: {
+                    text: 'Weekly Device Usage Trends',
+                    left: 'center',
+                    textStyle: {
+                        fontSize: 22,
+                        fontWeight: 'bold'
+                    }
+                },
+                toolbox: {
+                    show: true,
+                    right: 0,
+                    top: 0,
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                legend: {
+                    data: ['Smartphone', 'Tablet', 'Laptop', 'Desktop', 'Other Devices'],
+                    top: 20,
+                    textStyle: {
+                        fontSize: 14,
+                        fontWeight: 'bold'
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    axisLabel: {
+                        fontSize: 12
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 1000,
+                    axisLabel: {
+                        fontSize: 12
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#dddddd',
+                            type: 'dashed'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Smartphone',
+                        type: 'line',
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        data: [210, 185, 240, 260, 220, 300, 250],
+                        lineStyle: { color: '#1565c0', width: 3 },
+                        itemStyle: { color: '#ffffff', borderColor: '#1565c0', borderWidth: 2 }
+                    },
+                    {
+                        name: 'Tablet',
+                        type: 'line',
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        data: [300, 280, 320, 380, 330, 430, 375],
+                        lineStyle: { color: '#2e7d32', width: 3 },
+                        itemStyle: { color: '#ffffff', borderColor: '#2e7d32', borderWidth: 2 }
+                    },
+                    {
+                        name: 'Laptop',
+                        type: 'line',
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        data: [480, 450, 480, 580, 520, 640, 580],
+                        lineStyle: { color: '#c62828', width: 3 },
+                        itemStyle: { color: '#ffffff', borderColor: '#c62828', borderWidth: 2 }
+                    },
+                    {
+                        name: 'Desktop',
+                        type: 'line',
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        data: [560, 530, 550, 670, 600, 740, 675],
+                        lineStyle: { color: '#6d4c41', width: 3 },
+                        itemStyle: { color: '#ffffff', borderColor: '#6d4c41', borderWidth: 2 }
+                    },
+                    {
+                        name: 'Other Devices',
+                        type: 'line',
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        data: [600, 580, 610, 730, 650, 820, 750],
+                        lineStyle: { color: '#ad1457', width: 3 },
+                        itemStyle: { color: '#ffffff', borderColor: '#ad1457', borderWidth: 2 }
+                    }
+                ],
+                grid: {
+                    left: 60,
+                    right: '4%',
+                    bottom: 60,
+                    top: 80
+                }
+            };
+            myChart.setOption(option);
+            window.onresize = function() {
+                myChart.resize();
+            };
+        });
+    </script>
+</body>
+</html>

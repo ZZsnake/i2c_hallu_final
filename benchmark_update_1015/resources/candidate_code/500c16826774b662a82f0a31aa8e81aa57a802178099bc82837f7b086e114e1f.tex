@@ -1,0 +1,53 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+\begin{tikzpicture}
+    % Axes
+    \draw[->] (0,0) -- (12,0) node[right] {$\tau_L$};
+    \draw[->] (0,0) -- (0,4) node[above] {$\sigma_s$};
+
+    % Vertical dashed lines
+    \draw[dashed] (4,0) -- (4,4);
+    \draw[dashed] (8,0) -- (8,4);
+
+    % Horizontal dashed lines
+    \draw[dashed] (0,2) -- (12,2);
+
+    % Labels
+    \node at (2,3.5) {I};
+    \node at (6,3.5) {II};
+    \node at (10,3.5) {III};
+    \node at (2,1.5) {IV};
+    \node at (6,1.5) {V};
+    \node at (10,1.5) {VI};
+
+    % Vertical dashed lines for second plot
+    \draw[dashed] (14,0) -- (14,4);
+    \draw[dashed] (18,0) -- (18,4);
+
+    % Horizontal dashed lines for second plot
+    \draw[dashed] (12,2) -- (24,2);
+
+    % Labels for second plot
+    \node at (16,3.5) {VII};
+    \node at (20,3.5) {VIII};
+    \node at (24,3.5) {IX};
+    \node at (16,1.5) {X};
+    \node at (20,1.5) {XI};
+    \node at (24,1.5) {XII};
+
+    % Notations
+    \node at (0,4) [left] {$\sigma_s^A$};
+    \node at (0,2) [left] {$\sigma_s^B$};
+    \node at (4,0) [below] {$\tau_L^A$};
+    \node at (8,0) [below] {$\tau_L^B$};
+    \node at (12,0) [below] {$\tau_L^A$};
+    \node at (16,0) [below] {$\tau_L^B$};
+    \node at (14,0) [below] {$\tau_L^A$};
+    \node at (18,0) [below] {$\tau_L^B$};
+    \node at (22,0) [below] {$\tau_L^A$};
+    \node at (26,0) [below] {$\tau_L^B$};
+\end{tikzpicture}
+\end{document}

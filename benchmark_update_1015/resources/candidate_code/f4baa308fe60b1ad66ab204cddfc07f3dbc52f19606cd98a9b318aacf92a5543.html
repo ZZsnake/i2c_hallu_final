@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Distribution of Math Exam Scores</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #ffffff;
+      color: #333333;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .chart-title {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .chart-container {
+      height: 600px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .legend-box {
+      margin-top: 15px;
+      padding: 5px 10px;
+      border: 1px solid #000000;
+      font-size: 0.8em;
+      display: inline-block;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chart-title">Distribution of Math Exam Scores</div>
+    <div id="main" class="chart-container"></div>
+    <div class="legend-box">Boxplot: Q3 + 1.5×IQR (upper), Q1 - 1.5×IQR (lower)</div>
+  </div>
+
+  <script>
+    // Define mock data for the boxplots based on visual inspection
+    const data = [
+      [75, 85, 90, 95, 100], // Class 0: min, Q1, median, Q3, max
+      [70, 80, 83, 88, 90], // Class 1
+      [85, 92, 95, 98, 100], // Class 2
+      [65, 70, 75, 80, 85], // Class 3
+      [80, 85, 88, 90, 95]  // Class 4
+    ];
+
+    // Initialize ECharts instance
+    const myChart = echarts.init(document.getElementById('main'));
+
+    // Set chart options
+    const option = {
+      tooltip: {
+        trigger: 'axis',
+        formatter: function(params) {
+          const item = params[0];
+          return `Class ${item.name}:<br/>Min: ${item.data[0]}<br/>Q1: ${item.data[1]}<br/>Median: ${item.data[2]}<br/>Q3: ${item.data[3]}<br/>Max: ${item.data[4]}`;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Class 0', 'Class 1', 'Class 2', 'Class 3', 'Class 4'],
+        axisLabel: {
+          color: '#333333',
+          fontSize: 12
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#003366'
+          }
+        },
+        axisTick: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Score (out of 100)',
+        min: 0,
+        max: 100,
+        interval: 20,
+        axisLabel: {
+          color: '#333333',
+          fontSize: 12
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#e0e0e0'
+          }
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#003366'
+          }
+        }
+      },
+      series: [{
+        name: 'Scores',
+        type: 'boxplot',
+        data: data,
+        itemStyle: {
+          color: '#1E90FF', // Bright blue fill
+          borderColor: '#003366' // Dark blue border
+        },
+        emphasis: {
+          itemStyle: {
+            color: '#1E90FF',
+            borderColor: '#003366'
+          }
+        }
+      }],
+      grid: {
+        left: '10%',
+        right: '10%',
+        top: '10%',
+        bottom: '15%'
+      },
+      color: ['#1E90FF'] // Ensure consistent box color
+    };
+
+    // Render the chart
+    myChart.setOption(option);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      myChart.resize();
+    });
+  </script>
+</body>
+</html>

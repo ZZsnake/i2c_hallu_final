@@ -1,0 +1,99 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+
+\begin{document}
+\begin{tikzpicture}[scale=2.1,
+    axis/.style={line width=0.9pt,-{Latex[length=3pt]}},
+    vec/.style={line width=0.9pt,-{Latex[length=3pt]},color=brown!70!black},
+    angle/.style={line width=0.6pt},
+    angle dash/.style={line width=0.6pt,dashed},
+    mydash/.style={dash pattern=on 2pt off 2pt},
+    >=Latex
+]
+
+%--- basic coordinates (rough perspective) ---
+\coordinate (O) at (0,0);
+\coordinate (X) at (-1.3,-0.6);
+\coordinate (Y) at (2.0,0.2);
+\coordinate (Z) at (0,2.2);
+
+% point where primed frame is attached
+\coordinate (P) at (0.9,1.2);
+
+% projection of P onto xy-plane
+\coordinate (Pxy) at (0.9,0);
+
+% primed axes
+\coordinate (Xp) at ($(P)+(1.0,-1.4)$);
+\coordinate (Yp) at ($(P)+(1.1,0.5)$);
+\coordinate (Zp) at ($(P)+(-0.4,1.1)$);
+
+% small auxiliary orange direction from P (in primed "plane")
+\coordinate (A) at ($(P)+(0.9,0.2)$);
+\coordinate (Aproj) at ($(P)+(0.9,0)$);
+
+%--- draw original axes ---
+\draw[axis] (O) -- (X) node[below left] {$x$};
+\draw[axis] (O) -- (Y) node[right] {$y$};
+\draw[axis] (O) -- (Z) node[above] {$z$};
+
+% floor big dashed circle arc (indicating rotation around z)
+\draw[angle dash,mydash] (1.8,0.4) arc[start angle=15,end angle=215,radius=2.0];
+
+% radius vector from origin to P
+\draw[vec] (O) -- (P);
+
+% vertical projection from P to floor
+\draw[angle dash,color=cyan!70!black] (P) -- (Pxy);
+
+%--- primed axes from P ---
+\draw[axis] (P) -- (Xp) node[below right] {$x'$};
+\draw[axis] (P) -- (Yp) node[right] {$y'$};
+\draw[axis] (P) -- (Zp) node[above] {$z'$};
+
+%--- base azimuthal angle phi between x and projection of OP ---
+\coordinate (Px) at ($(Pxy)!0.75!(Y)$); % to guide arc orientation
+% angle from x-axis direction to Pxy direction (in xy plane)
+\begin{scope}
+  \clip (-2,-1.5) rectangle (2.2,1.6);
+  \draw[angle,color=purple!70!black]
+    (O) ++(-155:0.5) arc[start angle=-155,end angle=-15,radius=0.5];
+\end{scope}
+\node[color=purple!70!black] at (-0.4,-0.55) {$\phi$};
+
+% dashed projection of OP in xy plane (to show foot of angle phi)
+\draw[angle dash,color=purple!60!black]
+   (O) -- (Pxy);
+
+%--- polar angle theta between z and OP ---
+\begin{scope}
+  \clip (-0.4,-0.1) rectangle (1.1,2.4);
+  \draw[angle]
+    (O) ++(90:0.5)  arc[start angle=90,end angle=38,radius=0.5];
+\end{scope}
+\node at (0.2,0.9) {$\theta$};
+
+%--- primed polar angle theta' at P between z' and y' ---
+\begin{scope}
+  \clip ($(P)+(-0.6,-0.4)$) rectangle ($(P)+(0.9,0.9)$);
+  \draw[angle,color=magenta!80!black]
+    (P) ++(65:0.45) arc[start angle=65,end angle=-5,radius=0.45];
+\end{scope}
+\node[color=magenta!80!black] at ($(P)+(0.2,0.4)$) {$\theta'$};
+
+%--- primed azimuthal angle phi' between x' and orange direction ---
+\draw[angle,color=red!80!black]
+   (P) ++(-55:0.48) arc[start angle=-55,end angle=10,radius=0.48];
+\node[color=red!80!black] at ($(P)+(0.0,-0.25)$) {$\phi'$};
+
+%--- orange auxiliary vector and its dashed continuation ---
+\draw[vec,color=orange!80!black] (P) -- (A);
+\draw[angle dash,color=orange!80!black] (P) -- (Aproj);
+
+%--- dashed vertical circle through P (indicating inclination) ---
+\draw[angle dash,mydash]
+   ($(P)+(0.2,-1.8)$) arc[start angle=-70,end angle=110,radius=1.85];
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{soul}
+
+\definecolor{darkred}{RGB}{139,0,0}
+\definecolor{darkgray}{RGB}{64,64,64}
+\definecolor{lightgray}{RGB}{211,211,211}
+
+\begin{document}
+
+\begin{tabular}{>{\columncolor{lightgray}}c|>{\columncolor{white}}c|>{\columncolor{white}}c|>{\columncolor{white}}c|>{\columncolor{white}}c}
+\toprule
+\rowcolor{darkred}\textcolor{white}{\textbf{Year}} & \textcolor{white}{\textbf{Coverage (\%)}} & \textcolor{white}{\textbf{Notable Incident}} & \textcolor{white}{\textbf{Violence Type}} & \textcolor{white}{\textbf{Public Reaction}} \\
+\midrule
+2013 & 45 & \ul{Syrian Civil War escalation} & Armed conflict & High awareness \\
+2014 & 50 & \ul{ISIS rise in Iraq and Syria} & Terrorism & Shock and fear \\
+2015 & 60 & \ul{Paris Attacks} & Terrorism & Widespread outrage \\
+2016 & 58 & \ul{Civilian casualties in Aleppo} & Humanitarian crisis & Empathy and activism \\
+2017 & 55 & \ul{Las Vegas shooting} & Mass shooting & Gun control debate reignited \\
+2018 & 62 & \ul{Khashoggi murder} & Political assassination & International condemnation \\
+2019 & 70 & \ul{Sri Lanka Easter bombings} & Terrorism & Global solidarity \\
+2020 & 75 & \ul{George Floyd protests} & Police brutality & Widespread protests \\
+2021 & 80 & \ul{Taliban takeover of Afghanistan} & Political overthrow & International concern \\
+2022 & 85 & \ul{Russian invasion of Ukraine} & Armed conflict & Global outrage \\
+2023 & 90 & \ul{Escalation of violence in Gaza} & Conflict escalation & Intense international response \\
+\bottomrule
+\end{tabular}
+
+\end{document}

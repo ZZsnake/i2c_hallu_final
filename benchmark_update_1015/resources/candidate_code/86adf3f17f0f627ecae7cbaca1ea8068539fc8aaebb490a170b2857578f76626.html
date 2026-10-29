@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarterly GDP Growth Rate</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .chart-wrapper {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            width: 90%;
+            max-width: 1000px;
+            box-sizing: border-box;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .chart-titles {
+            text-align: center;
+            flex: 1;
+        }
+
+        .main-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a237e;
+            margin: 0;
+        }
+
+        .sub-title {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin: 5px 0 0;
+        }
+
+        .download-icon {
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+            /* Using a simple SVG for the download icon */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 24px;
+            height: 24px;
+            opacity: 0.7;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .download-icon:hover {
+            opacity: 1;
+        }
+
+        #chart-container {
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-wrapper">
+        <div class="chart-header">
+            <div class="chart-titles">
+                <h1 class="main-title">Quarterly GDP Growth Rate</h1>
+                <p class="sub-title">Sample Economics Data</p>
+            </div>
+            <div class="download-icon" title="Download"></div>
+        </div>
+        <div id="chart-container"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('chart-container'));
+
+            var option = {
+                title: {
+                    // Titles are handled by HTML for better SEO and accessibility
+                    show: false
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: function (params) {
+                        var param = params[0];
+                        return param.name + '<br/>' +
+                               'Growth Rate: ' + param.value.toFixed(2) + '%';
+                    },
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022', 'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#ccc'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#666'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 3.5,
+                    interval: 0.5,
+                    axisLabel: {
+                        formatter: '{value} %',
+                        color: '#666'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#eee'
+                        }
+                    },
+                    axisLine: {
+                        show: false // Hide Y-axis line
+                    }
+                },
+                series: [
+                    {
+                        name: 'GDP Growth',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'circle',
+                        symbolSize: 8,
+                        lineStyle: {
+                            color: '#d9534f', // Red line
+                            width: 2
+                        },
+                        itemStyle: {
+                            color: '#fff',
+                            borderColor: function(params) {
+                                var quarter = params.name;
+                                if (quarter === 'Q1 2022' || quarter === 'Q2 2022') {
+                                    return '#007bff';
+                                }
+                                if (quarter === 'Q1 2023' || quarter === 'Q2 2023' || quarter === 'Q3 2023' || quarter === 'Q4 2023') {
+                                    return '#2e7d32';
+                                }
+                                return '#d9534f';
+                            },
+                            borderWidth: 2,
+                            opacity: 1
+                        },
+                        data: [2.1, 2.4, 2.0, 2.7, 3.2, 2.9, 3.5, 3.1], // Approximate data points
+                        markArea: {
+                            itemStyle: {
+                                color: 'rgba(66, 139, 202, 0.1)' // Light blue transparent
+                            },
+                            data: [
+                                [
+                                    {
+                                        name: 'Growth Surge',
+                                        xAxis: 'Q1 2023'
+                                    },
+                                    {
+                                        xAxis: 'Q3 2023'
+                                    }
+                                ]
+                            ],
+                            label: {
+                                show: true,
+                                position: 'top',
+                                color: '#333',
+                                formatter: 'Growth Surge',
+                                fontSize: 12,
+                                offset: [0, -10] // Adjust position slightly
+                            }
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            // Make chart responsive
+            $(window).on('resize', function() {
+                if (myChart != null && myChart != undefined) {
+                    myChart.resize();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

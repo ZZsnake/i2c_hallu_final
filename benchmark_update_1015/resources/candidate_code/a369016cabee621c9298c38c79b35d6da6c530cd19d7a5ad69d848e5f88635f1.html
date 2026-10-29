@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers Less Than 20</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #chart {
+            width: 80%;
+            height: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var chart = echarts.init(document.getElementById('chart'));
+            var option = {
+                title: {
+                    text: 'Prime Numbers Less Than 20',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['1', '2', '3', '4', '5', '6', '7', '8'],
+                    axisLabel: {
+                        color: '#333'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        color: '#333'
+                    }
+                },
+                series: [{
+                    data: [
+                        {value: 2, name: '2'},
+                        {value: 3, name: '3'},
+                        {value: 5, name: '5'},
+                        {value: 7, name: '7'},
+                        {value: 11, name: '11'},
+                        {value: 13, name: '13'},
+                        {value: 17, name: '17'},
+                        {value: 19, name: '19'}
+                    ],
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: {
+                        color: '#3388ff'
+                    },
+                    lineStyle: {
+                        color: '#3388ff'
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {offset: 0, color: '#3388ff'},
+                            {offset: 1, color: '#3388ff00'}
+                        ])
+                    }
+                }]
+            };
+            chart.setOption(option);
+        });
+    </script>
+</body>
+</html>

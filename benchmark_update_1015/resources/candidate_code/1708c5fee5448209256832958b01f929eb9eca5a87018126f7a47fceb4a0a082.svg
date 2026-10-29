@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Main Software System rectangle -->
+  <rect x="50" y="50" width="600" height="500" fill="none" stroke="#00008B" stroke-width="2"/>
+  <text x="60" y="70" font-family="Arial" font-size="14">Software System</text>
+  
+  <!-- Ovals inside the system -->
+  <path d="M100 120 a30 15 0 0 0 60 0 30 15 0 0 0 -60 0" fill="#E0F7FA" stroke="#000"/>
+  <text x="110" y="125" font-family="Arial" font-size="12">Check Permissions</text>
+  
+  <path d="M100 180 a30 15 0 0 0 60 0 30 15 0 0 0 -60 0" fill="#E0F7FA" stroke="#000"/>
+  <text x="110" y="185" font-family="Arial" font-size="12">Submit Data Entry</text>
+  
+  <path d="M100 240 a30 15 0 0 0 60 0 30 15 0 0 0 -60 0" fill="#E0F7FA" stroke="#000"/>
+  <text x="110" y="245" font-family="Arial" font-size="12">Validate Input Data</text>
+  
+  <path d="M100 300 a30 15 0 0 0 60 0 30 15 0 0 0 -60 0" fill="#E0F7FA" stroke="#000"/>
+  <text x="110" y="305" font-family="Arial" font-size="12">Generate Report</text>
+  
+  <!-- Actors -->
+  <!-- User -->
+  <circle cx="50" cy="400" r="10" fill="none" stroke="red"/>
+  <line x1="50" y1="410" x2="50" y2="430" stroke="red"/>
+  <line x1="40" y1="420" x2="60" y2="420" stroke="red"/>
+  <text x="30" y="440" font-family="Arial" font-size="12">User</text>
+  
+  <!-- Database -->
+  <circle cx="650" cy="120" r="10" fill="none" stroke="red"/>
+  <line x1="650" y1="130" x2="650" y2="150" stroke="red"/>
+  <line x1="640" y1="140" x2="660" y2="140" stroke="red"/>
+  <text x="660" y="160" font-family="Arial" font-size="12">Database</text>
+  
+  <!-- Validator -->
+  <circle cx="650" cy="240" r="10" fill="none" stroke="red"/>
+  <line x1="650" y1="250" x2="650" y2="270" stroke="red"/>
+  <line x1="640" y1="260" x2="660" y2="260" stroke="red"/>
+  <text x="660" y="280" font-family="Arial" font-size="12">Validator</text>
+  
+  <!-- Analyst -->
+  <circle cx="650" cy="300" r="10" fill="none" stroke="red"/>
+  <line x1="650" y1="310" x2="650" y2="330" stroke="red"/>
+  <line x1="640" y1="320" x2="660" y2="320" stroke="red"/>
+  <text x="660" y="340" font-family="Arial" font-size="12">Analyst</text>
+  
+  <!-- Connections -->
+  <line x1="50" y1="400" x2="100" y2="120" stroke="#000"/>
+  <line x1="50" y1="400" x2="100" y2="180" stroke="#000"/>
+  <line x1="50" y1="400" x2="100" y2="240" stroke="#000"/>
+  <line x1="50" y1="400" x2="100" y2="300" stroke="#000"/>
+  
+  <line x1="650" y1="120" x2="160" y2="120" stroke="#000"/>
+  <line x1="650" y1="240" x2="160" y2="240" stroke="#000"/>
+  <line x1="650" y1="300" x2="160" y2="300" stroke="#000"/>
+  
+  <!-- Use Case label -->
+  <rect x="10" y="80" width="80" height="30" fill="#FFFFCC" stroke="#000"/>
+  <line x1="90" y1="100" x2="100" y2="120" stroke="#000"/>
+  <text x="15" y="100" font-family="Arial" font-size="12">Use Case</text>
+  
+  <!-- System label -->
+  <rect x="10" y="520" width="60" height="30" fill="#FFFFCC" stroke="#000"/>
+  <line x1="70" y1="540" x2="100" y2="300" stroke="#000" stroke-dasharray="5,5"/>
+  <text x="15" y="540" font-family="Arial" font-size="12">System</text>
+</svg>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="480"
+   height="410"
+   id="svg_new_sample"
+   version="1.0">
+  <defs>
+    <marker
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#222244;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+  </defs>
+  <g>
+    <!-- Axes -->
+    <path id="y_axis" d="M 44.5,400 L 44.5,20" style="stroke:#222244;stroke-width:2.5;stroke-dasharray:10,4;fill:none;marker-end:url(#Arrow1Mend)" />
+    <path id="x_axis" d="M 18,359 L 465,359" style="stroke:#222244;stroke-width:2.5;stroke-dasharray:10,4;fill:none;marker-end:url(#Arrow1Mend)" />
+    <!-- Function: y = sin(x) + 1.5, mapped to SVG coords -->
+    <path
+      id="function_sine"
+      d="M 60,250
+         C 100,200 180,400 220,250
+         S 340,100 420,250"
+      style="fill:none;stroke:#e63946;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:0;stroke-opacity:1" />
+    <!-- y = cos(x) - 1, mapped to SVG coords -->
+    <path
+      id="function_cosine"
+      d="M 60,320
+         C 120,170 210,170 270,320
+         S 390,470 420,320"
+      style="fill:none;stroke:#457b9d;stroke-width:2.6;stroke-linecap:round;stroke-dasharray:12,7;stroke-opacity:1" />
+    <!-- y = x^2, mapped to SVG coords -->
+    <path
+      id="function_parabola"
+      d="M 60,350
+         Q 240,60 420,350"
+      style="fill:none;stroke:#14213d;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:7,3;stroke-opacity:1" />
+    <!-- Points of interest -->
+    <circle cx="240" cy="204" r="11"
+      style="fill:#00c853;stroke:#222244;stroke-width:2" />
+    <text x="256" y="210" style="font-size:18px;fill:#14213d;font-family:'Courier New', Courier, monospace;font-weight:bold;">A</text>
+    <circle cx="120" cy="320" r="9"
+      style="fill:#ee9b00;stroke:#222244;stroke-width:2" />
+    <text x="134" y="325" style="font-size:18px;fill:#e63946;font-family:'Courier New', Courier, monospace;font-weight:bold;">B</text>
+    <!-- Function equation label -->
+    <text x="105" y="65" style="font-size:28px;fill:#222244;font-family:'Arial Black', Arial, sans-serif;">y = sin(x) + 1.5</text>
+    <text x="105" y="100" style="font-size:28px;fill:#457b9d;font-family:'Arial Black', Arial, sans-serif;">y = cos(x) - 1</text>
+    <text x="105" y="135" style="font-size:28px;fill:#14213d;font-family:'Arial Black', Arial, sans-serif;">y = x²</text>
+    <!-- Tick marks and labels for axes -->
+    <g>
+      <line x1="115" y1="359" x2="115" y2="367" style="stroke:#222244;stroke-width:2"/>
+      <text x="110" y="384" style="font-size:18px;fill:#222244;font-family:'Courier New', Courier, monospace;">π</text>
+      <line x1="240" y1="359" x2="240" y2="367" style="stroke:#222244;stroke-width:2"/>
+      <text x="235" y="384" style="font-size:18px;fill:#222244;font-family:'Courier New', Courier, monospace;">2π</text>
+      <line x1="365" y1="359" x2="365" y2="367" style="stroke:#222244;stroke-width:2"/>
+      <text x="360" y="384" style="font-size:18px;fill:#222244;font-family:'Courier New', Courier, monospace;">3π</text>
+    </g>
+    <g>
+      <line x1="44.5" y1="140" x2="37" y2="140" style="stroke:#222244;stroke-width:2"/>
+      <text x="18" y="145" style="font-size:18px;fill:#222244;font-family:'Courier New', Courier, monospace;">2</text>
+      <line x1="44.5" y1="250" x2="37" y2="250" style="stroke:#222244;stroke-width:2"/>
+      <text x="18" y="255" style="font-size:18px;fill:#222244;font-family:'Courier New', Courier, monospace;">1</text>
+      <line x1="44.5" y1="320" x2="37" y2="320" style="stroke:#222244;stroke-width:2"/>
+      <text x="18" y="325" style="font-size:18px;fill:#222244;font-family:'Courier New', Courier, monospace;">0</text>
+    </g>
+    <!-- Axis labels -->
+    <text x="445" y="398" style="font-size:26px;fill:#222244;font-family:'Arial Black', Arial, sans-serif;">x</text>
+    <text x="10" y="42" style="font-size:26px;fill:#222244;font-family:'Arial Black', Arial, sans-serif;">y</text>
+  </g>
+</svg>

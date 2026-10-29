@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Economics Line Graph Sample</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    // Economics Line Graph: Quarterly GDP Growth Rate
+    var option = {
+      title: {
+        text: 'Quarterly GDP Growth Rate',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#222C3A',
+          fontWeight: 'bold',
+          fontSize: 22,
+          fontFamily: 'Segoe UI'
+        }
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Q1', 'Q2', 'Q3', 'Q4'],
+        name: 'Quarter',
+        nameTextStyle: {
+          color: '#1E2336',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#1E2336',
+            width: 3
+          }
+        },
+        axisLabel: {
+          color: '#1E2336',
+          fontSize: 14
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'GDP Growth (%)',
+        nameTextStyle: {
+          color: '#1E2336',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#1E2336',
+            width: 3
+          }
+        },
+        axisLabel: {
+          color: '#1E2336',
+          fontSize: 14
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#E0E6F1'
+          }
+        }
+      },
+      series: [
+        {
+          name: 'GDP Growth',
+          type: 'line',
+          data: [2.6, 3.1, 2.4, 2.9],
+          lineStyle: {
+            color: '#1565C0',
+            width: 5
+          },
+          itemStyle: {
+            color: '#D32F2F',
+            borderColor: '#222C3A',
+            borderWidth: 2
+          },
+          symbol: 'circle',
+          symbolSize: 12,
+          label: {
+            show: true,
+            color: '#222C3A',
+            fontWeight: 'bold',
+            fontSize: 14,
+            formatter: '{c}%'
+          }
+        }
+      ],
+      grid: {
+        left: '10%',
+        right: '8%',
+        top: 70,
+        bottom: 60
+      }
+    };
+
+    myChart.setOption(option);
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

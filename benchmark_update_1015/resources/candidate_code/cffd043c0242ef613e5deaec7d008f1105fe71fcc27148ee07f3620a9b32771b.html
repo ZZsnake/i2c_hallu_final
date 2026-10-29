@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly River Flow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .chart-container {
+            width: 600px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Monthly River Flow: Nile vs. Amazon (2023)</h1>
+    <div id="nile-chart" class="chart-container"></div>
+    <div id="amazon-chart" class="chart-container"></div>
+
+    <script>
+        // ECharts configuration for Nile River
+        var nileOption = {
+            title: {
+                text: 'Nile River (2023)',
+                left: 'center'
+            },
+            tooltip: {},
+            xAxis: {
+                type: 'category',
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                type: 'value',
+                min: 0,
+                max: 200000
+            },
+            series: [{
+                name: 'Discharge (m³/s)',
+                type: 'line',
+                data: [170000, 165000, 160000, 155000, 150000, 145000, 140000, 145000, 150000, 155000, 160000, 165000],
+                itemStyle: {
+                    color: '#007BFF'
+                }
+            }]
+        };
+
+        // ECharts configuration for Amazon River
+        var amazonOption = {
+            title: {
+                text: 'Amazon River (2023)',
+                left: 'center'
+            },
+            tooltip: {},
+            xAxis: {
+                type: 'category',
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                type: 'value',
+                min: 0,
+                max: 200000
+            },
+            series: [{
+                name: 'Discharge (m³/s)',
+                type: 'line',
+                data: [100000, 95000, 90000, 85000, 80000, 75000, 70000, 75000, 80000, 85000, 90000, 95000],
+                itemStyle: {
+                    color: '#28A745'
+                }
+            }]
+        };
+
+        // Initialize and render the charts
+        var nileChart = echarts.init(document.getElementById('nile-chart'));
+        nileChart.setOption(nileOption);
+
+        var amazonChart = echarts.init(document.getElementById('amazon-chart'));
+        amazonChart.setOption(amazonOption);
+    </script>
+</body>
+</html>

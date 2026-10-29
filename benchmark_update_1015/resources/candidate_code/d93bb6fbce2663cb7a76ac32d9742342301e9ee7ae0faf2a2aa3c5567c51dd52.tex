@@ -1,0 +1,97 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+
+\begin{document}
+\begin{tikzpicture}[x=0.2cm,y=1cm,
+  axis/.style={thick},
+  grid/.style={gray!60,dashed},
+  meas/.style={line width=1.1pt,teal!70!black},
+  thr/.style={line width=1.1pt,orange!80!black,dashed},
+  crit/.style={line width=1.1pt,magenta!80!black,dashed},
+  measmark/.style={square*,inner sep=1.4pt,teal!70!black},
+  thrmark/.style={square*,inner sep=1.6pt,orange!80!black}
+]
+
+%--------------------------------------------------
+% Axes limits (data coordinates)
+\def\xmin{0}
+\def\xmax{40}
+\def\ymin{0}
+\def\ymax{5}
+
+%--------------------------------------------------
+% Axes
+\draw[axis] (\xmin,0) -- (\xmin,\ymax); % y-axis
+\draw[axis] (\xmin,0) -- (\xmax,0);     % x-axis
+
+% Grid: vertical at 10,20,30; horizontal at 0,2,4
+\foreach \x in {10,20,30}{
+  \draw[grid] (\x,\ymin) -- (\x,\ymax);
+}
+\foreach \y in {0,2,4}{
+  \draw[grid] (\xmin,\y) -- (\xmax,\y);
+}
+
+%--------------------------------------------------
+% Tick labels (only some shown to match figure)
+\node[below] at (0,0) {$0$};
+\node[below] at (40,0) {$40$};
+\node[left] at (0,0) {$0$};
+\node[left] at (0,2) {$2$};
+\node[left] at (0,4) {$4$};
+
+%--------------------------------------------------
+% Threshold line y = 3
+\def\ythr{3}
+\draw[thr] (\xmin,\ythr) -- (\xmax,\ythr);
+
+% Threshold markers (every unit)
+\foreach \x in {0,1,...,40}{
+  \node[thrmark] at (\x,\ythr) {};
+}
+
+%--------------------------------------------------
+% Measured response data (approximate U-shape)
+\draw[meas]
+  (15,4.1) node[measmark] {}
+  -- (16,3.0) node[measmark] {}
+  -- (17,2.0) node[measmark] {}
+  -- (18,1.4) node[measmark] {}
+  -- (19,1.1) node[measmark] {}
+  -- (20,1.0) node[measmark] {}
+  -- (21,1.1) node[measmark] {}
+  -- (22,1.5) node[measmark] {}
+  -- (23,2.0) node[measmark] {}
+  -- (24,3.0) node[measmark] {}
+  -- (25,4.1) node[measmark] {}
+  -- (26,5.0);
+
+%--------------------------------------------------
+% Critical vertical line at xcrit
+\def\xcrit{16}
+\draw[crit] (\xcrit,0) -- (\xcrit,2.8);
+
+\node[below,magenta!80!black,font=\itshape] at (\xcrit,-0.3) {$x_{\mathrm{crit}}$};
+
+%--------------------------------------------------
+% Axis labels
+\node[teal!80!black,font=\itshape] at (\xmax+2,-0.2) {Index};
+\node[teal!80!black,font=\itshape,rotate=90] at (-3,\ymax) {Output Value};
+
+%--------------------------------------------------
+% Legend
+\begin{scope}[shift={(32,4.5)}]
+  % Measured response legend entry
+  \draw[meas] (0,0) -- (2,0);
+  \node[measmark] at (1,0) {};
+  \node[right] at (2.3,0) {Measured response};
+
+  % Threshold legend entry
+  \draw[thr,yshift=-0.9em] (0,0) -- (2,0);
+  \node[thrmark,yshift=-0.9em] at (1,0) {};
+  \node[right,yshift=-0.9em] at (2.3,0) {Threshold};
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

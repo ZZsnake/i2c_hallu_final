@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Sector Performance</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        #chart-container {
+            width: 600px;
+            height: 600px;
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .legend-item span {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .legend-item.blue span {
+            background-color: blue;
+        }
+        .legend-item.red span {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Economic Sector Performance (2024)</div>
+    <div class="legend">
+        <div class="legend-item blue">
+            <span></span>
+            <div>Projected Growth</div>
+        </div>
+        <div class="legend-item red">
+            <span></span>
+            <div>Actual Growth</div>
+        </div>
+    </div>
+    <div id="chart-container"></div>
+    <script>
+        var chartDom = document.getElementById('chart-container');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: {
+                text: 'Economic Sector Performance (2024)',
+                left: 'center'
+            },
+            legend: {
+                data: ['Projected Growth', 'Actual Growth'],
+                left: 'center',
+                top: 'bottom'
+            },
+            radar: {
+                shape: 'polygon',
+                indicator: [
+                    { name: 'GDP Growth', max: 100 },
+                    { name: 'Consumer Confidence', max: 100 },
+                    { name: 'Exports', max: 100 },
+                    { name: 'Foreign Investment', max: 100 },
+                    { name: 'Inflation Rate', max: 100 },
+                    { name: 'Unemployment Rate', max: 100 }
+                ]
+            },
+            series: [
+                {
+                    name: 'Growth',
+                    type: 'radar',
+                    data: [
+                        {
+                            value: [80, 70, 60, 50, 40, 30],
+                            name: 'Projected Growth',
+                            itemStyle: { color: 'blue' }
+                        },
+                        {
+                            value: [70, 60, 50, 40, 30, 20],
+                            name: 'Actual Growth',
+                            itemStyle: { color: 'red' }
+                        }
+                    ]
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+    </script>
+</body>
+</html>

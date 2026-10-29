@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #chart-container {
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart-container"></div>
+
+    <script>
+        var chartDom = document.getElementById('chart-container');
+        var myChart = echarts.init(chartDom);
+
+        var option = {
+            title: {
+                text: 'Student Performance by Math Topic',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['Homework', 'Quiz', 'Exam'],
+                top: '5%'
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01],
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#000',
+                        width: 3
+                    }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                inverse: true,
+                data: ['Trigonometry', 'Statistics', 'Calculus', 'Geometry', 'Algebra'],
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#000',
+                        width: 3
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Homework',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        color: '#000'
+                    },
+                    itemStyle: {
+                        color: 'blue'
+                    },
+                    data: [70, 90, 65, 75, 80]
+                },
+                {
+                    name: 'Quiz',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        color: '#000'
+                    },
+                    itemStyle: {
+                        color: 'green'
+                    },
+                    data: [50, 60, 70, 55, 60]
+                },
+                {
+                    name: 'Exam',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        color: '#000'
+                    },
+                    itemStyle: {
+                        color: 'red'
+                    },
+                    data: [95, 75, 80, 85, 90]
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

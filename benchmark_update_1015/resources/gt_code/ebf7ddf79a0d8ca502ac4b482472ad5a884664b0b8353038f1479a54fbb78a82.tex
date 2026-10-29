@@ -1,0 +1,46 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{tikz}
+
+\definecolor{headercolor}{RGB}{70,130,180}
+\definecolor{rowcolor1}{RGB}{240,248,255}
+\definecolor{rowcolor2}{RGB}{230,230,250}
+
+\begin{document}
+
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{2cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{4cm}}
+\toprule
+\rowcolor{headercolor}
+\textcolor{white}{\textbf{Date}} & \textcolor{white}{\textbf{Customer Name}} & \textcolor{white}{\textbf{Delivery Satisfaction}} & \textcolor{white}{\textbf{Arrangement Satisfaction}} & \textcolor{white}{\textbf{Feedback}} & \textcolor{white}{\textbf{Service Type}} & \textcolor{white}{\textbf{Elder Story Connection}} \\
+\midrule
+\rowcolor{rowcolor1}
+2023-01 & Emily Johnson & 4.5 & 5.0 & The bouquet was stunning and brightened my day! & Standard Delivery & Inspired by my grandmother's love for daisies. \\
+\rowcolor{rowcolor2}
+2023-02 & Michael Smith & 3.0 & 4.0 & Delivery was late, but the flowers were beautiful. & Same Day Delivery & Reminded me of my grandfather who used to bring me flowers. \\
+\rowcolor{rowcolor1}
+2023-03 & Sarah Brown & 5.0 & 5.0 & Absolutely perfect! Exceeded my expectations. & Next Day Delivery & Echoes my aunt's stories of flower markets in the 60s. \\
+\rowcolor{rowcolor2}
+2023-04 & David Wilson & 2.5 & 3.0 & Flowers were wilted upon arrival. & Standard Delivery & Reminded me of my uncle's tales of wildflowers. \\
+\rowcolor{rowcolor1}
+2023-05 & Linda Garcia & 4.8 & 4.5 & Great service! Very pleased with the arrangements. & Scheduled Delivery & Connected to my mother's floral recipes from her garden. \\
+\rowcolor{rowcolor2}
+2023-06 & James Martinez & 3.5 & 4.0 & Decent experience but expected more variety in flowers. & Same Day Delivery & My grandma's tales of exotic flowers influence my taste. \\
+\rowcolor{rowcolor1}
+2023-07 & Patricia Davis & 5.0 & 5.0 & The arrangement captured the essence of summer beautifully. & Next Day Delivery & Inspired by my great-aunt's summer garden parties. \\
+\rowcolor{rowcolor2}
+2023-08 & Robert Hernandez & 4.0 & 3.5 & Good quality but the delivery was a bit late. & Standard Delivery & Similar to my dad's stories about waiting for deliveries. \\
+\rowcolor{rowcolor1}
+2023-09 & Jennifer Clark & 4.7 & 5.0 & A beautiful surprise for my mother's birthday! & Scheduled Delivery & Evokes memories of my mother's favorite flowers. \\
+\rowcolor{rowcolor2}
+2023-10 & William Lewis & 3.0 & 3.0 & Flowers were nice, but I expected more personalization. & Same Day Delivery & Reminds me of the times my grandfather would personalize gifts. \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+
+\end{document}

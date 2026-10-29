@@ -1,0 +1,81 @@
+\documentclass{standalone}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes.geometric, positioning}
+
+\begin{document}
+% Custom TikZ styles with high-contrast colors
+\tikzset{
+  process/.style={
+    trapezium,
+    trapezium left angle=75,
+    trapezium right angle=105,
+    draw=teal!80!black,
+    fill=cyan!30!white,
+    minimum height=3.5em,
+    text width=8em,
+    font=\sffamily\bfseries\color{black},
+    align=center,
+    node distance=2.2cm
+  },
+  evaluate/.style={
+    ellipse,
+    draw=blue!80!black,
+    fill=blue!10!white,
+    minimum height=2.5em,
+    text width=7em,
+    font=\sffamily\bfseries\color{black},
+    align=center,
+    node distance=2.2cm
+  },
+  terminal/.style={
+    rectangle,
+    draw=red!80!black,
+    fill=red!10!white,
+    rounded corners=2pt,
+    minimum height=3em,
+    text width=6em,
+    font=\sffamily\bfseries\color{black},
+    align=center,
+    node distance=3cm
+  },
+  link/.style={
+    very thick,
+    color=teal!90!black,
+    -{Stealth[scale=1.2]}
+  },
+  feedback/.style={
+    thick,
+    dashed,
+    color=blue!90!black,
+    -{Stealth[scale=1.1]}
+  }
+}
+
+\begin{tikzpicture}[auto]
+  % Nodes (renamed for Computer Science domain)
+  \node [process] (acquisition_node) {Data Acquisition};
+  \node [evaluate, below=of acquisition_node] (preprocess_node) {Preprocessing Stage};
+  \node [process, below=of preprocess_node] (feature_node) {Feature Extraction};
+  \node [process, below=of feature_node] (training_node) {Model Training};
+  \node [process, below=of training_node] (validation_node) {Model Validation};
+  \node [process, left=3cm of feature_node] (iteration_node) {Iteration Check};
+  \node [terminal, below=of validation_node] (terminal_node) {Process Complete};
+
+  % Invisible node for feedback loop
+  \node [draw=none, right=2.5cm of validation_node] (feedback_anchor) {};
+
+  % Edges (with new color and arrow styles)
+  \draw[link] (acquisition_node) -- (preprocess_node);
+  \draw[link] (preprocess_node) -- (feature_node);
+  \draw[link] (feature_node) -- (training_node);
+  \draw[link] (training_node) -- (validation_node);
+  \draw[link] (validation_node) -- (terminal_node);
+  \draw[feedback] (validation_node) -| (feedback_anchor.center);
+  \draw[feedback] (feedback_anchor.center) |- (feature_node);
+  \draw[link] (feature_node) -- (iteration_node);
+  \draw[link] (iteration_node) -- (terminal_node);
+
+\end{tikzpicture}
+\end{document}

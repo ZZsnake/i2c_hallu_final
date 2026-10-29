@@ -1,0 +1,94 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[
+    trapezium node/.style={
+        trapezium,
+        trapezium left angle=60,
+        trapezium right angle=120,
+        minimum width=3cm,
+        minimum height=1.5cm,
+        draw,
+        thick,
+        top color=yellow!30!white,
+        bottom color=red!30!white,
+        append after command={
+            \pgfextra{
+                \draw[thick, red!50!black] 
+                    (\tikzlastnode.south west) -- (\tikzlastnode.north west);
+            }
+        }
+    },
+    box/.style={
+        rectangle,
+        draw,
+        dashed,
+        inner sep=10pt,
+        rounded corners=2pt
+    },
+    node box/.style={
+        rectangle,
+        draw,
+        rounded corners=3pt,
+        minimum size=0.8cm,
+        fill=white
+    },
+    cylinder node/.style={
+        cylinder,
+        shape border rotate=90,
+        aspect=0.4,
+        minimum height=1.5cm,
+        minimum width=1cm,
+        draw,
+        thick,
+        top color=red!30!white,
+        bottom color=red!50!white
+    }
+]
+
+% Top part
+\node[trapezium node] (sigma1) {$\Sigma_1$};
+\node[trapezium node, right=4cm of sigma1] (sigma2) {$\Sigma_2$};
+\draw[->, thick] (sigma1) to[bend left] node[above] {$M$} (sigma2);
+\node[below=0.2cm of sigma1] {source signature};
+\node[below=0.2cm of sigma2] {target signature};
+
+% Bottom part
+\node[box, below=2cm of sigma1.south west, anchor=north west] (box1) {
+    \begin{tikzpicture}[inner sep=0pt]
+        \node[rectangle, minimum width=4cm, minimum height=3cm, top color=yellow!30!white, bottom color=yellow!10!white] (bg) {};
+        \node[node box] (A1) at (0,0) {$A_1$};
+        \node[node box, below left=0.8cm and 0.5cm of A1] (B1) {$B_1$};
+        \node[node box, below right=0.8cm and 0.5cm of A1] (C1) {$C_1$};
+        \node[node box, above right=0.5cm and 0.8cm of C1] (D1) {$D_1$};
+        \draw[->] (B1) -- (A1);
+        \draw[->] (C1) -- (B1);
+        \draw[->] (D1) -- (A1);
+        \node[above right=0.2cm and 0.2cm of bg.south west] {$\mathcal{T}_1$};
+    \end{tikzpicture}
+};
+
+\node[cylinder node, below=0.5cm of box1] (A1cyl) {$\mathcal{A}_1$};
+\node[below=0.2cm of A1cyl] {source KB $\mathcal{K}_1$};
+
+\node[box, right=2cm of box1, anchor=west] (box2) {
+    \begin{tikzpicture}[inner sep=0pt]
+        \node[rectangle, minimum width=4cm, minimum height=3cm, top color=blue!10!white, bottom color=blue!30!white] (bg) {};
+        \node[node box] (A2) at (0,0) {$A_2$};
+        \node[node box, below left=0.8cm and 0.5cm of A2] (B2) {$B_2$};
+        \node[node box, below right=0.8cm and 0.5cm of A2] (C2) {$C_2$};
+        \draw[->] (B2) -- (A2);
+        \draw[->] (C2) -- (B2);
+        \node[above right=0.2cm and 0.2cm of bg.south west] {$\mathcal{T}_2$};
+    \end{tikzpicture}
+};
+
+\node[cylinder node, below=0.5cm of box2] (A2cyl) {$\mathcal{A}_2$};
+\node[below=0.2cm of A2cyl] {target KB $\mathcal{K}_2$};
+
+\draw[->, dashed, thick] (box1.east) -- (box2.west);
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background Grid -->
+  <rect width="800" height="600" fill="none"/>
+  <g stroke="#ccc" opacity="0.5">
+    <line x1="0" y1="600" x2="800" y2="600" stroke-width="1"/>
+    <line x1="0" y1="600" x2="0" y2="0" stroke-width="1"/>
+    <line x1="800" y1="600" x2="800" y2="0" stroke-width="1"/>
+    <line x1="100" y1="600" x2="100" y2="0" stroke-width="1"/>
+    <line x1="200" y1="600" x2="200" y2="0" stroke-width="1"/>
+    <line x1="300" y1="600" x2="300" y2="0" stroke-width="1"/>
+    <line x1="400" y1="600" x2="400" y2="0" stroke-width="1"/>
+    <line x1="0" y1="500" x2="800" y2="500" stroke-width="1"/>
+    <line x1="0" y1="400" x2="800" y2="400" stroke-width="1"/>
+    <line x1="0" y1="300" x2="800" y2="300" stroke-width="1"/>
+    <line x1="0" y1="200" x2="800" y2="200" stroke-width="1"/>
+    <line x1="0" y1="100" x2="800" y2="100" stroke-width="1"/>
+  </g>
+  
+  <!-- Axes -->
+  <text x="400" y="610" font-size="14" text-anchor="middle">Market Supply (units)</text>
+  <text x="790" y="300" font-size="14" transform="rotate(-90 790,300)">Market Demand (units)</text>
+  
+  <!-- Data Points and Labels -->
+  <circle cx="50" cy="50" r="5" fill="purple"/>
+  <text x="55" y="55" font-size="12" text-anchor="middle">Retail</text>
+  <circle cx="100" cy="100" r="5" fill="blue"/>
+  <text x="105" y="105" font-size="12" text-anchor="middle">Manufacturing</text>
+  <circle cx="150" cy="150" r="5" fill="green"/>
+  <text x="155" y="155" font-size="12" text-anchor="middle">Agriculture</text>
+  <circle cx="200" cy="200" r="5" fill="orange"/>
+  <text x="205" y="205" font-size="12" text-anchor="middle">Transport</text>
+  <circle cx="250" cy="250" r="5" fill="red"/>
+  <text x="255" y="255" font-size="12" text-anchor="middle">Healthcare</text>
+  <circle cx="300" cy="300" r="5" fill="teal"/>
+  <text x="305" y="305" font-size="12" text-anchor="middle">Technology</text>
+  <circle cx="350" cy="350" r="5" fill="brown"/>
+  <text x="355" y="355" font-size="12" text-anchor="middle">Finance</text>
+  <circle cx="400" cy="400" r="5" fill="pink"/>
+  <text x="405" y="405" font-size="12" text-anchor="middle">Energy</text>
+  <circle cx="450" cy="450" r="5" fill="maroon"/>
+  <text x="455" y="455" font-size="12" text-anchor="middle">Real Estate</text>
+  <circle cx="500" cy="500" r="5" fill="navy"/>
+  <text x="505" y="505" font-size="12" text-anchor="middle">Services</text>
+  
+  <!-- Trend Line -->
+  <path d="M50,50 L500,500" stroke="red" stroke-width="2"/>
+  
+  <!-- Legend -->
+  <text x="750" y="50" font-size="12">
+    <tspan x="750" dy="0">Legend:</tspan>
+    <tspan x="750" dy="15">Retail: purple</tspan>
+    <tspan x="750" dy="30">Manufacturing: blue</tspan>
+    <tspan x="750" dy="45">Agriculture: green</tspan>
+    <tspan x="750" dy="60">Transport: orange</tspan>
+    <tspan x="750" dy="75">Healthcare: red</tspan>
+    <tspan x="750" dy="90">Technology: teal</tspan>
+    <tspan x="750" dy="105">Finance: brown</tspan>
+    <tspan x="750" dy="120">Energy: pink</tspan>
+    <tspan x="750" dy="135">Real Estate: maroon</tspan>
+    <tspan x="750" dy="150">Services: navy</tspan>
+  </text>
+  
+  <!-- Source Information -->
+  <text x="400" y="590" font-size="12" text-anchor="middle">Source: Hypothetical Economics Dataset, Market Sectors</text>
+  <text x="400" y="600" font-size="12" text-anchor="middle">CC BY-SA 4.0</text>
+</svg>

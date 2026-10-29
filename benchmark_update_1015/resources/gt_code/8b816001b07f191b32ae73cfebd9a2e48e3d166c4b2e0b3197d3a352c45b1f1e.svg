@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1246 918">
+  <defs>
+    <style>
+      .link {fill:none;stroke:#252525;stroke-width:4;stroke-dasharray:8,4;}
+      .entity {fill:#e53935;stroke:#252525;stroke-width:4;}
+      .entity-secondary {fill:#3949ab;stroke:#252525;stroke-width:4;}
+      .entity-tertiary {fill:#43a047;stroke:#252525;stroke-width:4;}
+      .text-label {font-family:'Roboto Mono',monospace;font-size:32px;fill:#212121;font-weight:bold;}
+      .relation-label {font-family:'Roboto Mono',monospace;font-size:22px;fill:#212121;font-weight:bold;}
+    </style>
+  </defs>
+
+  <!-- Entities -->
+  <rect class="entity" x="140" y="90" width="210" height="90" rx="20"/>
+  <rect class="entity-secondary" x="140" y="340" width="210" height="90" rx="20"/>
+  <rect class="entity-tertiary" x="900" y="90" width="210" height="90" rx="20"/>
+  <rect class="entity-secondary" x="900" y="340" width="210" height="90" rx="20"/>
+  <rect class="entity" x="520" y="600" width="210" height="90" rx="20"/>
+
+  <!-- Entity Labels -->
+  <text class="text-label" x="245" y="150" text-anchor="middle" alignment-baseline="middle">Algorithm</text>
+  <text class="text-label" x="245" y="400" text-anchor="middle" alignment-baseline="middle">Data Structure</text>
+  <text class="text-label" x="1005" y="150" text-anchor="middle" alignment-baseline="middle">Database</text>
+  <text class="text-label" x="1005" y="400" text-anchor="middle" alignment-baseline="middle">Operating System</text>
+  <text class="text-label" x="625" y="660" text-anchor="middle" alignment-baseline="middle">Network</text>
+
+  <!-- Relationships (Links) -->
+  <!-- Algorithm --> Data Structure -->
+  <path class="link" d="M245 180 C245 220, 245 220, 245 340"/>
+  <text class="relation-label" x="265" y="260" text-anchor="start" alignment-baseline="middle">uses</text>
+
+  <!-- Data Structure --> Database -->
+  <path class="link" d="M350 385 C550 200, 800 200, 1005 135"/>
+  <text class="relation-label" x="700" y="190" text-anchor="middle" alignment-baseline="middle">stores</text>
+
+  <!-- Database --> Operating System -->
+  <path class="link" d="M1005 180 C1005 220, 1005 220, 1005 340"/>
+  <text class="relation-label" x="1025" y="260" text-anchor="start" alignment-baseline="middle">managed by</text>
+
+  <!-- Operating System --> Network -->
+  <path class="link" d="M1005 430 C900 600, 730 640, 625 690"/>
+  <text class="relation-label" x="900" y="620" text-anchor="end" alignment-baseline="middle">connects to</text>
+
+  <!-- Algorithm --> Network -->
+  <path class="link" d="M245 180 C350 350, 500 620, 625 690"/>
+  <text class="relation-label" x="420" y="480" text-anchor="middle" alignment-baseline="middle">implemented in</text>
+
+  <!-- Data Structure --> Network -->
+  <path class="link" d="M245 430 C320 540, 500 680, 625 690"/>
+  <text class="relation-label" x="400" y="600" text-anchor="middle" alignment-baseline="middle">transmitted via</text>
+
+  <!-- Database --> Network -->
+  <path class="link" d="M1005 180 C900 350, 900 600, 625 690"/>
+  <text class="relation-label" x="780" y="520" text-anchor="middle" alignment-baseline="middle">accessed through</text>
+</svg>

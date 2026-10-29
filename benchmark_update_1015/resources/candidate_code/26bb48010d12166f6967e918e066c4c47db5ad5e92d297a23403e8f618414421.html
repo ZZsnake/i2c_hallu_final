@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabola and Line Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #chart-container {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #chart-container #parabola-chart {
+            width: 50%;
+            height: 50%;
+        }
+        #chart-container #line-chart {
+            width: 50%;
+            height: 50%;
+        }
+        .chart-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .chart-legend {
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        .chart-axis-label {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container">
+        <div id="parabola-chart" class="chart"></div>
+        <div id="line-chart" class="chart"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var parabolaChart = echarts.init(document.getElementById('parabola-chart'));
+            var lineChart = echarts.init(document.getElementById('line-chart'));
+
+            var parabolaOption = {
+                title: {
+                    text: 'Parabola y = 0.04x^2 - 5',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: {
+                    type: 'value',
+                    name: 'x',
+                    nameLocation: 'middle',
+                    nameGap: 30
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'y',
+                    nameLocation: 'middle',
+                    nameGap: 30
+                },
+                legend: {
+                    data: ['Parabola']
+                },
+                series: [{
+                    name: 'Parabola',
+                    type: 'line',
+                    data: []
+                }]
+            };
+
+            var lineOption = {
+                title: {
+                    text: 'Line y = 2x - 10',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: {
+                    type: 'value',
+                    name: 'x',
+                    nameLocation: 'middle',
+                    nameGap: 30
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'y',
+                    nameLocation: 'middle',
+                    nameGap: 30
+                },
+                legend: {
+                    data: ['Line']
+                },
+                series: [{
+                    name: 'Line',
+                    type: 'line',
+                    data: []
+                }]
+            };
+
+            // Generate data for the parabola
+            for (let x = -20; x <= 20; x++) {
+                let y = 0.04 * x * x - 5;
+                parabolaOption.series[0].data.push([x, y]);
+            }
+
+            // Generate data for the line
+            for (let x = -20; x <= 20; x++) {
+                let y = 2 * x - 10;
+                lineOption.series[0].data.push([x, y]);
+            }
+
+            parabolaChart.setOption(parabolaOption);
+            lineChart.setOption(lineOption);
+        });
+    </script>
+</body>
+</html>

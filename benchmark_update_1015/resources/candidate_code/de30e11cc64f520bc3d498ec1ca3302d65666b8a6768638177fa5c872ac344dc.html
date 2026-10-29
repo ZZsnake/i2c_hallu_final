@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frequency of Algebraic Expressions</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+    }
+    #chart-container {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin: 0 auto;
+    }
+    .title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Frequency of Algebraic Expressions</div>
+  <div id="chart-container"></div>
+
+  <script>
+    // Initialize the chart
+    const chart = echarts.init(document.getElementById('chart-container'));
+
+    // Define data
+    const data = [
+      { expression: 'x + 2', frequency: 7 },
+      { expression: '2y - 3', frequency: -3 },
+      { expression: 'a² + b²', frequency: 12 },
+      { expression: '5z', frequency: 4 },
+      { expression: 'p/q', frequency: -2 },
+      { expression: '√n', frequency: 9 },
+      { expression: 'm - 4', frequency: 0 },
+      { expression: 't³', frequency: 6 },
+      { expression: 'r + 1', frequency: -1 },
+      { expression: 's² - s', frequency: 10 }
+    ];
+
+    // Define colors for each bar (matching the image as closely as possible)
+    const colors = [
+      '#1f77b4',   // blue for x + 2
+      '#d62728',   // red for 2y - 3
+      '#2ca02c',   // green for a² + b²
+      '#ff7f0e',   // orange for 5z
+      '#9467bd',   // purple for p/q
+      '#17becf',   // teal for √n
+      '#d62728',   // red for m - 4 (but it will be invisible due to 0)
+      '#2ca02c',   // green for t³
+      '#d62728',   // red for r + 1
+      '#1f77b4'    // blue for s² - s
+    ];
+
+    // Configure chart options
+    const option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{c} ({d}%)'
+      },
+      xAxis: {
+        type: 'value',
+        min: -3,
+        max: 12,
+        axisLabel: {
+          fontSize: 12,
+          color: '#333'
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dotted',
+            color: '#ccc'
+          }
+        },
+        axisLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: data.map(d => d.expression),
+        axisLabel: {
+          fontSize: 12,
+          color: '#333'
+        },
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        }
+      },
+      series: [{
+        name: 'Frequency',
+        type: 'bar',
+        stack: 'total',
+        label: {
+          show: true,
+          position: 'right',
+          color: '#333',
+          fontSize: 12,
+          formatter: function(params) {
+            return params.value;
+          }
+        },
+        itemStyle: {
+          color: function(params) {
+            return colors[params.dataIndex];
+          }
+        },
+        data: data.map(d => d.frequency),
+        barWidth: '60%',
+        barGap: '10%'
+      }],
+      grid: {
+        left: '10%',
+        right: '10%',
+        top: '10%',
+        bottom: '10%'
+      },
+      title: {
+        text: '',
+        left: 'center',
+        top: 'top'
+      }
+    };
+
+    // Render the chart
+    chart.setOption(option);
+
+    // Handle window resize
+    window.onresize = function () {
+      chart.resize();
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distribution of Number Types</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        const chartDom = document.getElementById('chart');
+        const myChart = echarts.init(chartDom);
+        
+        const options = {
+            title: {
+                text: 'Distribution of Number Types in Mathematics',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                show: false
+            },
+            series: [
+                {
+                    name: 'Numbers',
+                    type: 'pie',
+                    radius: ['0%', '50%'],
+                    itemStyle: {
+                        borderRadius: 0
+                    },
+                    label: {
+                        show: false
+                    },
+                    data: [
+                        {
+                            value: 1,
+                            name: 'Numbers',
+                            itemStyle: {
+                                color: '#bdc3c7'
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: 'Types',
+                    type: 'pie',
+                    radius: ['51%', '100%'],
+                    itemStyle: {
+                        borderRadius: 0
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside'
+                    },
+                    data: [
+                        {value: 1, name: 'Positive', itemStyle: {color: '#27ae60'}},
+                        {value: 1, name: 'Integers', itemStyle: {color: '#e67e22'}},
+                        {value: 1, name: 'Negative', itemStyle: {color: '#8e44ad'}},
+                        {value: 1, name: 'Irrational', itemStyle: {color: '#e74c3c'}},
+                        {value: 1, name: 'Real', itemStyle: {color: '#2ecc71'}},
+                        {value: 1, name: 'Whole', itemStyle: {color: '#c0392b'}},
+                        {value: 1, name: 'Rational', itemStyle: {color: '#3498db'}},
+                        {value: 1, name: 'Natural', itemStyle: {color: '#2980b9'}}
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        
+        myChart.setOption(options);
+    </script>
+</body>
+</html>

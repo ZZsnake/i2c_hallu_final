@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Distribution of Math Exam Scores - Boxplot</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chart-container {
+      width: 90vw;
+      max-width: 1300px;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+    .chart-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .y-label {
+      position: absolute;
+      top: 70px;
+      left: 40px;
+      font-size: 11px;
+    }
+    #boxplot {
+      width: 100%;
+      height: 520px;
+    }
+    .footnote-wrapper {
+      width: 100%;
+      margin-top: 5px;
+      display: flex;
+      justify-content: center;
+    }
+    .footnote {
+      font-size: 10px;
+      padding: 4px 10px;
+      border: 1px solid #bdbdbd;
+      background-color: #ffffff;
+      color: #222;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="chart-container">
+    <div class="chart-title">Distribution of Math Exam Scores</div>
+    <div class="y-label">Score (out of 100)</div>
+    <div id="boxplot"></div>
+    <div class="footnote-wrapper">
+      <div class="footnote">
+        Boxplot: Q3 + 1.5×IQR (upper), Q1 - 1.5×IQR (lower)
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    var chartDom = document.getElementById('boxplot');
+    var myChart = echarts.init(chartDom);
+
+    // Approximate boxplot stats inferred from the image:
+    // Format: [min, Q1, median, Q3, max]
+    var data = [
+      [75, 84, 88, 92, 97],  // Class 0
+      [72, 78, 82, 85, 90],  // Class 1
+      [90, 93, 95, 97, 99],  // Class 2
+      [68, 72, 74, 76, 79],  // Class 3
+      [82, 86, 88, 89.5, 92] // Class 4
+    ];
+
+    var option = {
+      backgroundColor: '#ffffff',
+      grid: {
+        left: 70,
+        right: 40,
+        top: 60,
+        bottom: 80
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Class 0', 'Class 1', 'Class 2', 'Class 3', 'Class 4'],
+        axisLine: {
+          lineStyle: { color: '#555', width: 1 }
+        },
+        axisTick: {
+          lineStyle: { color: '#555' }
+        },
+        axisLabel: {
+          fontSize: 11,
+          margin: 12
+        }
+      },
+      yAxis: {
+        type: 'value',
+        min: 0,
+        max: 100,
+        interval: 20,
+        axisLine: {
+          lineStyle: { color: '#555', width: 1 }
+        },
+        axisTick: {
+          lineStyle: { color: '#555' }
+        },
+        axisLabel: {
+          fontSize: 11,
+          margin: 6
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: '#dcdcdc',
+            width: 1
+          }
+        },
+        // Custom background bands via split areas
+        splitArea: {
+          show: true,
+          areaStyle: {
+            color: ['#f6f7fb', '#ffffff']  // alternating stripes
+          }
+        }
+      },
+      series: [
+        {
+          name: 'Scores',
+          type: 'boxplot',
+          data: data,
+          itemStyle: {
+            color: '#1f78b4',          // box fill
+            borderColor: '#12558a',   // box border
+            borderWidth: 1
+          },
+          lineStyle: {
+            color: '#12558a',
+            width: 1
+          },
+          emphasis: {
+            itemStyle: {
+              borderWidth: 1.5
+            }
+          },
+          boxWidth: [18, 40] // narrow-ish boxes to mimic the chart
+        }
+      ],
+      tooltip: {
+        trigger: 'item',
+        axisPointer: {
+          type: 'shadow'
+        }
+      }
+    };
+
+    myChart.setOption(option);
+    window.addEventListener('resize', function() {
+      myChart.resize();
+    });
+  });
+</script>
+</body>
+</html>

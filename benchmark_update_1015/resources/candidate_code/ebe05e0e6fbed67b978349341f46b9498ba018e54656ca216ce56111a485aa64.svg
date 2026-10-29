@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 400">
+  <rect width="420" height="400" fill="#ffffff" />
+
+  <defs>
+    <clipPath id="top-circle">
+      <circle cx="210" cy="145" r="130" />
+    </clipPath>
+    <clipPath id="left-circle">
+      <circle cx="145" cy="257" r="130" />
+    </clipPath>
+    <clipPath id="right-circle">
+      <circle cx="275" cy="257" r="130" />
+    </clipPath>
+  </defs>
+
+  <!-- Define the circles -->
+  <circle cx="145" cy="257" r="130" fill="#ff7378" />
+  <circle cx="275" cy="257" r="130" fill="#7d96f4" />
+  <circle cx="210" cy="145" r="130" fill="#86f875" />
+
+  <!-- Define the intersection regions -->
+  <g clip-path="url(#top-circle)">
+    <circle cx="145" cy="257" r="130" fill="#fff878" />
+  </g>
+  <g clip-path="url(#top-circle)">
+    <circle cx="275" cy="257" r="130" fill="#78eadc" />
+  </g>
+  <g clip-path="url(#left-circle)">
+    <circle cx="275" cy="257" r="130" fill="#c870ee" />
+  </g>
+  <g clip-path="url(#top-circle)">
+    <g clip-path="url(#left-circle)">
+      <circle cx="275" cy="257" r="130" fill="white" />
+    </g>
+  </g>
+
+  <!-- Define the text labels -->
+  <text x="196" y="92" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="20">Bearable</text>
+  <text x="85" y="290" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="20">Social</text>
+  <text x="336" y="287" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="20">Équitable</text>
+  <text x="210" y="231" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="20">Durable</text>
+
+  <!-- Define the intersection labels -->
+  <text x="126" y="169" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="20">Vivable</text>
+  <text x="292" y="176" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="20">Viable</text>
+  <text x="196" y="313" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="20">Social</text>
+</svg>

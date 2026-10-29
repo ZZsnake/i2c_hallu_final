@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 751 756">
+  <!-- Background -->
+  <rect width="751" height="756" fill="#C8FFFF"/>
+  
+  <!-- Top face of cube -->
+  <polygon points="99,115 524,59 651,242 226,298" fill="none" stroke="none"/>
+  
+  <!-- Top face triangles (pinwheel pattern) -->
+  <polygon points="376,178 99,115 312,86" fill="#FF0000"/>
+  <polygon points="376,178 312,86 524,59" fill="#FFFF00"/>
+  <polygon points="376,178 524,59 588,151" fill="#FF0000"/>
+  <polygon points="376,178 588,151 651,242" fill="#FFFF00"/>
+  <polygon points="376,178 651,242 439,270" fill="#FF0000"/>
+  <polygon points="376,178 439,270 226,298" fill="#FFFF00"/>
+  <polygon points="376,178 226,298 163,206" fill="#FF0000"/>
+  <polygon points="376,178 163,206 99,115" fill="#FFFF00"/>
+  
+  <!-- Left face of cube -->
+  <polygon points="99,115 226,298 226,697 99,514" fill="none"/>
+  
+  <!-- Left face triangles (pinwheel pattern) -->
+  <polygon points="163,406 99,115 163,206" fill="#8B0000"/>
+  <polygon points="163,406 163,206 226,298" fill="#898900"/>
+  <polygon points="163,406 226,298 226,498" fill="#8B0000"/>
+  <polygon points="163,406 226,498 226,697" fill="#898900"/>
+  <polygon points="163,406 226,697 163,604" fill="#8B0000"/>
+  <polygon points="163,406 163,604 99,514" fill="#898900"/>
+  <polygon points="163,406 99,514 99,315" fill="#8B0000"/>
+  <polygon points="163,406 99,315 99,115" fill="#898900"/>
+  
+  <!-- Right face of cube -->
+  <polygon points="226,298 651,242 651,643 226,697" fill="none"/>
+  
+  <!-- Right face triangles (pinwheel pattern) -->
+  <polygon points="439,470 226,298 439,270" fill="#AE0000"/>
+  <polygon points="439,470 439,270 651,242" fill="#AEAE00"/>
+  <polygon points="439,470 651,242 651,443" fill="#AE0000"/>
+  <polygon points="439,470 651,443 651,643" fill="#AEAE00"/>
+  <polygon points="439,470 651,643 439,670" fill="#AE0000"/>
+  <polygon points="439,470 439,670 226,697" fill="#AEAE00"/>
+  <polygon points="439,470 226,697 226,498" fill="#AE0000"/>
+  <polygon points="439,470 226,498 226,298" fill="#AEAE00"/>
+  
+  <!-- Signature -->
+  <text x="707" y="738" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0000FF">RK</text>
+</svg>

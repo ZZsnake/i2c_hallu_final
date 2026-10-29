@@ -1,0 +1,29 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{multirow}
+
+\definecolor{oceanblue}{RGB}{0,119,190}
+\definecolor{coralred}{RGB}{255,127,80}
+\definecolor{seagreen}{RGB}{46,139,87}
+
+\begin{document}
+
+\begin{tabular}{>{\columncolor{oceanblue!20}}l>{\columncolor{oceanblue!10}}l>{\columncolor{oceanblue!10}}r>{\columncolor{oceanblue!10}}l}
+\toprule
+\rowcolor{oceanblue!30}\textcolor{white}{\textbf{Organization}} & \textcolor{oceanblue}{\textbf{Endangered Species}} & \textcolor{oceanblue}{\textbf{Funding (\$)}} & \textcolor{oceanblue}{\textbf{Status}} \\
+\midrule
+Ocean Conservancy & Hawksbill Turtle & 150,000 & \textcolor{coralred}{Critically Endangered} \\
+WWF & Vaquita & 250,000 & \textcolor{coralred}{Critically Endangered} \\
+Marine Conservation Society & Bluefin Tuna & 100,000 & \textcolor{seagreen}{Endangered} \\
+Greenpeace & Northern Right Whale & 200,000 & \textcolor{coralred}{Critically Endangered} \\
+Seacology & Coral Reefs & 80,000 & \textcolor{oceanblue}{Threatened} \\
+Shark Trust & Hammerhead Shark & 120,000 & \textcolor{seagreen}{Endangered} \\
+Wildlife Conservation Society & Yangtze Giant Softshell Turtle & 300,000 & \textcolor{coralred}{Critically Endangered} \\
+Oceana & Leatherback Turtle & 175,000 & \textcolor{oceanblue}{Vulnerable} \\
+\bottomrule
+\end{tabular}
+
+\end{document}

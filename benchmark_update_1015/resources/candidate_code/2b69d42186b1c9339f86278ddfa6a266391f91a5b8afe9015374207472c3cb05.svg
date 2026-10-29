@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+
+
+  <!-- Polygon -->
+  <polygon points="212,206 818,285 1046,124 894,813 231,586 402,400" fill="#eaf0f7" stroke="#7ea5d0" stroke-width="5"/>
+  <line x1="894" y1="813" x2="1046" y2="124" stroke="#3e7bb8" stroke-width="8"/>
+  <!-- Vertices -->
+  <circle cx="212" cy="206" r="14" fill="#2f75b5"/>
+  <circle cx="402" cy="400" r="10" fill="#2f75b5"/>
+  <circle cx="231" cy="586" r="10" fill="#2f75b5"/>
+  <circle cx="894" cy="813" r="10" fill="#2f75b5"/>
+
+  <!-- Internal angle -->
+  <path d="M231,586 L266,548 A52,52 0 0,1 280,603 Z" fill="#d9534f" opacity="0.35" stroke="none"/>
+  <path d="M266,548 A52,52 0 0,1 280,603" fill="none" stroke="#d9534f" stroke-width="5"/>
+  <text x="312" y="590" fill="#c8504d" font-size="50" font-family="'MicrosoftJhengHeiBold'">内角</text>
+
+  <!-- External angle -->
+  <line x1="120" y1="710" x2="231" y2="586" stroke="#7e57c2" stroke-width="6" stroke-dasharray="12,10"/>
+  <path d="M201,616 A45,45 0 0,0 274,631" fill="none" stroke="#7e57c2" stroke-width="5"/>
+  <polygon points="274.5,627.236 255,614.61 277.601,600.14" fill="#7e57c2"/>  <text x="212" y="725" fill="#7e57c2" font-size="56" font-family="'MicrosoftJhengHeiBold'">外角</text>
+
+  <!-- Ear (convex vertex) -->
+  <circle cx="1046" cy="124" r="10" fill="#3aa657"/>
+  <text x="1080" y="150" fill="#3aa657" font-size="58" font-family="'MicrosoftJhengHeiBold'">耳</text>
+
+  <!-- Mouth point -->
+  <circle cx="818" cy="285" r="10" fill="#ff8c26"/>
+  <text x="770" y="268" fill="#ff8c26" font-size="50" font-family="'MicrosoftJhengHeiBold'">嘴</text>
+
+  <!-- Diagonal -->
+  <line x1="818" y1="285" x2="894" y2="813" stroke="#4f8f52" stroke-width="5" stroke-dasharray="12,10"/>
+  <text x="660" y="575" fill="#4f8f52" font-size="54" font-family="'MicrosoftJhengHeiBold'">对角线</text>
+
+  <!-- Dashed line connecting top vertices -->
+  <line x1="212" y1="206" x2="1046" y2="124" stroke="#ff8c26" stroke-width="5" stroke-dasharray="12,10"/>
+  <text x="98" y="138" fill="#2f75b5" font-size="58" font-family="'MicrosoftJhengHeiBold'">角<tspan font-size="30">或</tspan>顶点</text>
+
+  <!-- Labels -->
+  <text x="90" y="420" fill="#888888" font-size="58" font-family="'MicrosoftJhengHeiBold'">外部</text>
+  <text x="555" y="450" fill="#3a6f9f" font-size="58" font-family="'MicrosoftJhengHeiBold'">内部</text>
+  <text x="990" y="500" fill="#2f75b5" font-size="58" font-family="'MicrosoftJhengHeiBold'">边<tspan font-size="30">或</tspan>棱</text>
+</svg>

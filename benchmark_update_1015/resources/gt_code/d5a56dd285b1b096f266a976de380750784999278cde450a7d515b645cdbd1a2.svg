@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1775" height="1950">
+
+<style type="text/css">
+ rect { stroke-width:5; fill:white; }
+ rect.R { stroke:#1845b1; }
+ rect.G { stroke:#0c7c37; }
+ rect.B { stroke:#6b179e; }
+ rect.bg { fill:#f8f8f8; }
+
+ path { stroke-width:1.5; stroke:#222; }
+ path.Rd { fill:#e0e4ff; }
+ path.Gr { fill:#d1f2e2; }
+ path.Bl { fill:#e8e0f4; }
+ path.arr { stroke-width:5; fill:#222; stroke-linejoin:round; }
+</style>
+
+<rect class="bg" width="1775" height="1950" x="0" y="0"/>
+
+     <g id="TEXT_GLOBAL" font-size="40px" font-family="Consolas, monospace" text-anchor="middle">
+
+<path class="Rd" d="M25,200 h1725 v175 h-525 v200 h-1100 v150 h450 v575 H25 z"/>
+<path class="Gr" d="M25,1350 h600 v-625 h1000 v-150 h-375 v-175 h500 v1100 H25 z"/>
+<path class="Bl" d="M25,1525 h1725 v400 H25 z"/>
+
+<switch><text x="850" y="100" font-size="70px" font-weight="bold" fill="#1845b1" id="trsvg54"><tspan id="trsvg1">Computer Science: Data Flow Diagram</tspan></text></switch>
+<switch><text x="850" y="170" font-size="50px" fill="#1845b1" id="trsvg55"><tspan id="trsvg2">Process and Information Flow</tspan></text></switch>
+<switch><text x="200" y="425" font-size="70px" font-style="italic" fill="#1845b1" id="trsvg56"><tspan id="trsvg3">Input Sources</tspan></text></switch>
+
+<g font-size="30px" fill="#1845b1">
+<switch><text x="450" y="510" text-anchor="end" id="trsvg57"><tspan id="trsvg4">User Input,</tspan></text></switch>
+<switch><text x="450" y="545" text-anchor="end" id="trsvg58"><tspan id="trsvg5">Sensor Data</tspan></text></switch>
+<switch><text x="1185" y="510" text-anchor="start" id="trsvg59"><tspan id="trsvg6">Network Packets</tspan></text></switch>
+</g>
+
+ <g id="TOP_ROW" transform="translate(0,300)" fill="#1845b1">
+<g transform="translate(325,0)">
+<rect class="R" x="-150" y="-50" width="300" height="75"/>
+<path class="arr" d=" M0,25 v25 M0,50 h1000 M1000,50 v-25"/>
+<switch><text x="0" y="0" id="trsvg60"><tspan id="trsvg7">Database</tspan></text></switch>
+</g>
+
+<g transform="translate(825,0)">
+<rect class="R" x="-250" y="-50" width="500" height="75"/>
+<path class="arr" d="M0,25 v70 l10,-20 h-20 l10,20"/>
+<switch><text x="0" y="5" font-size="50px" font-weight="bold" id="trsvg61"><tspan id="trsvg8">User Interface</tspan></text></switch>
+</g>
+
+<g transform="translate(1325,0)">
+<rect class="R" x="-150" y="-50" width="300" height="75"/>
+<switch><text x="0" y="0" id="trsvg62"><tspan id="trsvg9">API Gateway</tspan></text></switch>
+</g>
+ </g>
+
+ <g id="SECOND_ROW" transform="translate(0,450)">
+<g transform="translate(825,0)" fill="#1845b1">
+<rect class="R" x="-350" y="-50" width="700" height="150"/>
+<path class="arr" d="M350,25 h120 l-20,-10 v20 l20,-10"/>
+<path class="arr" d="M0,100 v45 l10,-20 h-20 l10,20"/>
+<switch><text font-size="55px" font-weight="bold" x="0" y="0" id="trsvg63"><tspan id="trsvg10">Data Processing</tspan></text></switch>
+<switch><text x="0" y="45" id="trsvg64"><tspan id="trsvg11">Parsing, Validation, Filtering</tspan></text></switch>
+<switch><text x="0" y="85" id="trsvg65"><tspan id="trsvg12">Transformation, Aggregation...</tspan></text></switch>
+</g>
+
+<g transform="translate(1450,25)" fill="#0c7c37">
+<rect class="G" x="-150" y="-50" width="300" height="100"/>
+<switch><text x="0" y="-10" id="trsvg66"><tspan id="trsvg13">External API</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg67"><tspan id="trsvg14">Integration</tspan></text></switch>
+</g>
+ </g>
+
+<g id="CENTER_TITLE" transform="translate(850,650)" fill="#1845b1">
+<rect class="R" x="-700" y="-50" width="1450" height="100"/>
+<path class="arr" d=" M-250,50 v725 M-250,775 h-45 l20,-10 v20 l-20,-10"/>
+<path class="arr" d=" M-250,275 h-45 l20,-10 v20 l-20,-10 M-250,425 h-45 l20,-10 v20 l-20,-10 M-250,550 h-45 l20,-10 v20 l-20,-10 M-250,235 h45 l-20,-10 v20 l20,-10 M-250,510 h45 l-20,-10 v20 l20,-10 M-250,645 h45 l-20,-10 v20 l20,-10 M-250,775 h45 l-20,-10 v20 l20,-10"/>
+<switch><text font-size="75px" x="0" y="25" id="trsvg68"><tspan id="trsvg15">Central Processing Unit</tspan></text></switch>
+</g>
+
+ <g id="LEFT_COLUMN" transform="translate(350,0)"> 
+
+<switch><text font-style="italic" font-size="70px" fill="#1845b1" x="0" y="810" id="trsvg69"><tspan id="trsvg16">Auxiliary Modules</tspan></text></switch>
+
+<g transform="translate(0,900)" fill="#1845b1">
+<rect class="R" x="-200" y="-50" width="400" height="150"/>
+<path class="arr" stroke-dasharray="14,10" d="  M-200,25 h-50  M-250,25 v-275  M-250,-250 h50"/>
+<path class="arr" d="M-225,-250 h20 l-20,-10 v20 l20,-10"/>
+<switch><text x="0" y="-5" id="trsvg70"><tspan id="trsvg17">Encryption</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg71"><tspan id="trsvg18">Hashing</tspan></text></switch>
+<switch><text x="0" y="80" id="trsvg72"><tspan id="trsvg19">Compression</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1075)" fill="#1845b1">
+<rect class="R" x="-200" y="-50" width="400" height="100"/>
+<path class="arr" d="M-200,0 h-75" stroke-dasharray="14,10"/>
+<switch><text x="0" y="-10" id="trsvg73"><tspan id="trsvg20">Authentication</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg74"><tspan id="trsvg21">Session Control</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1200)" fill="#1845b1">
+<rect class="R" x="-200" y="-50" width="400" height="100"/>
+<path class="arr" stroke-dasharray="14,10" d=" M-200,0 h-75 M-275,0 v-725 M-275,-725 h400"/>
+<path class="arr" d="M100,-725 h20 l-20,-10 v20 l20,-10"/>
+<switch><text x="0" y="-10" id="trsvg75"><tspan id="trsvg22">Cache Update</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg76"><tspan id="trsvg23">Result Storage</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1425)" fill="#0c7c37">
+<rect class="G" x="-200" y="-50" width="400" height="100"/>
+<path class="arr" d="M0,50 v70 l10,-20 h-20 l10,20"/>
+<switch><text x="0" y="-10" id="trsvg77"><tspan id="trsvg24">Event Log</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg78"><tspan id="trsvg25">Monitoring</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1600)" fill="#6b179e">
+<rect class="B" x="-200" y="-50" width="400" height="100"/>
+<switch><text x="0" y="-10" id="trsvg79"><tspan id="trsvg26">System Alert</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg80"><tspan id="trsvg27">Error Handler</tspan></text></switch>
+</g>
+
+ </g>
+
+<g font-style="italic" font-size="70px" fill="#6b179e">
+<switch><text x="350" y="1775" id="trsvg81"><tspan id="trsvg28">Output</tspan></text></switch>
+<switch><text x="350" y="1850" id="trsvg82"><tspan id="trsvg29">Result Channels</tspan></text></switch>
+</g>
+
+ <g id="WIDE_BLOCKS" transform="translate(1100,0)" fill="#0c7c37">
+
+<switch><text font-style="italic" font-size="70px" x="25" y="810" id="trsvg83"><tspan id="trsvg30">System Services</tspan></text></switch>
+
+<g transform="translate(0,900)">
+<rect class="G" x="-450" y="-50" width="950" height="75"/>
+<path class="arr" d="M-225,25 v45 l10,-20 h-20 l10,20"/>
+<path class="arr" d="M275,25 v45 l10,-20 h-20 l10,20"/>
+<switch><text x="25" y="0" id="trsvg84"><tspan id="trsvg31">Logging</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1150)">
+<rect class="G" x="-450" y="-50" width="950" height="125"/>
+<path class="arr" d=" M500,10 h100 M600,10 v690 M600,700 h-645"/>
+<path class="arr" d="M-25,700 h-20 l20,-10 v20 l-20,-10"/>
+<switch><text x="0" y="0" id="trsvg85"><tspan id="trsvg32">Backup, Redundancy</tspan></text></switch>
+<switch><text x="0" y="50" id="trsvg86"><tspan id="trsvg33">Failover, Synchronization...</tspan></text></switch>
+</g>
+ </g>
+
+ <g id="CENTER_COLUMN" transform="translate(875,0)">
+
+<g transform="translate(0,1025)" fill="#0c7c37">
+<rect class="G" x="-225" y="-50" width="450" height="100"/>
+<switch><text x="0" y="-10" id="trsvg87"><tspan id="trsvg34">Scheduler</tspan></text></switch>
+<switch><text x="0" y="35" font-size="35" id="trsvg88"><tspan id="trsvg35">Task Queue, Priority</tspan></text></switch>
+</g>
+
+<g transform="translate(-25,1300)" fill="#0c7c37">
+<rect class="G" x="-200" y="-50" width="400" height="100"/>
+<path class="arr" d="M200,0 h95 l-20,-10 v20 l20,-10"/>
+<path class="arr" d="M250,0 v125"/>
+<path class="arr" d=" M250,125 h45 M275,125 h20 l-20,-10 v20 l20,-10"/>
+<switch><text x="0" y="-10" id="trsvg89"><tspan id="trsvg36">Job Dispatcher</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg90"><tspan id="trsvg37">Worker Pool</tspan></text></switch>
+</g>
+
+<g transform="translate(-25,1425)" fill="#0c7c37">
+<rect class="G" x="-200" y="-50" width="400" height="100"/>
+<switch><text x="0" y="-10" id="trsvg91"><tspan id="trsvg38">Load Balancer</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg92"><tspan id="trsvg39">Routing Logic</tspan></text></switch>
+</g>
+
+<g transform="translate(-25,1600)" fill="#6b179e">
+<rect class="B" x="-200" y="-50" width="400" height="100"/>
+<switch><text x="0" y="-10" id="trsvg93"><tspan id="trsvg40">User Notification</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg94"><tspan id="trsvg41">Messaging Queue</tspan></text></switch>
+</g>
+
+<g transform="translate(-25,1850)" fill="#6b179e">
+<rect class="B" x="-200" y="-50" width="400" height="100"/>
+<switch><text x="0" y="-10" id="trsvg95"><tspan id="trsvg42">Export</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg96"><tspan id="trsvg43">Reporting</tspan></text></switch>
+</g>
+ </g>
+
+ <g id="RIGHT_COLUMN" transform="translate(1375,0)">
+
+<g transform="translate(0,1025)" fill="#0c7c37">
+<rect class="G" x="-225" y="-50" width="450" height="100"/>
+<switch><text x="0" y="-10" id="trsvg97"><tspan id="trsvg44">Access Control</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg98"><tspan id="trsvg45">Permission Check</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1300)" fill="#0c7c37">
+<rect class="G" x="-225" y="-50" width="450" height="100"/>
+<path class="arr" d=" M225,0 h50 M275,0 v450 M275,450 h-45"/>
+<path class="arr" d="M250,450 h-20 l20,-10 v20 l-20,-10"/>
+<switch><text x="0" y="-10" id="trsvg99"><tspan id="trsvg46">Resource Manager</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg100"><tspan id="trsvg47">Quota Enforcement</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1425)" fill="#0c7c37">
+<rect class="G" x="-225" y="-50" width="450" height="100"/>
+<path class="arr" d="M0,50 v70 l10,-20 h-20 l10,20"/>
+<switch><text x="0" y="-10" id="trsvg101"><tspan id="trsvg48">Data Export</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg102"><tspan id="trsvg49">External Storage</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1600)" fill="#6b179e">
+<rect class="B" x="-225" y="-50" width="450" height="100"/>
+<path class="arr" d="M-225,0 h-95 l20,-10 v20 l-20,-10"/>
+<path class="arr" d="M0,50 v45 l10,-20 h-20 l10,20"/>
+<switch><text x="0" y="-10" id="trsvg103"><tspan id="trsvg50">Notification Service</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg104"><tspan id="trsvg51">SMS/Email</tspan></text></switch>
+</g>
+
+<g transform="translate(0,1750)" fill="#6b179e">
+<rect class="B" x="-225" y="-50" width="450" height="100"/>
+<path class="arr" d=" M-225,0 h-275 M-500,0 v-95"/>
+<path class="arr" d="M-500,-80 v-15 l-10,20 h20 l-10,-20"/>
+<path class="arr" d="M0,100 v-45 l10,20 h-20 l10,-20"/>
+<switch><text x="0" y="-10" id="trsvg105"><tspan id="trsvg52">Audit Trail</tspan></text></switch>
+<switch><text x="0" y="35" id="trsvg106"><tspan id="trsvg53">System Log</tspan></text></switch>
+</g>
+ </g>
+
+     </g>
+</svg>

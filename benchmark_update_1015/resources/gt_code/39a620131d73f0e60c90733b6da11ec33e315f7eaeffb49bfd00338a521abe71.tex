@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}
+\begin{document}
+\begin{tikzpicture}[scale=0.37]\small
+  \pgfmathsetmacro{\xmin}{-0.5}
+  \pgfmathsetmacro{\xmax}{18.5}
+  \pgfmathsetmacro{\ymin}{-0.5}
+  \pgfmathsetmacro{\ymax}{18.5}
+  
+  % Draw grid with high-contrast lines
+  \draw[step=1cm,teal!80!black,very thin] (\xmin,\ymin) grid (\xmax,\ymax);
+
+  % Axis ticks and labels -- using synonymous terms
+  \foreach \x/\xlabel in {9/\frac{2}{3}, 18/2}
+    \draw[teal!80!black,xshift=\x cm] (0,0.4) -- (0,0) node[below,black] {$\xlabel$};
+  \foreach \y/\ylabel in {9/\frac{2}{3}, 18/2}
+    \draw[teal!80!black,yshift=\y cm] (0.4,0) -- (0,0) node[left,black] {$\ylabel$};
+  
+  % Origin node
+  \draw[teal!80!black] (0,0) node[anchor=north east] {$Q$};
+
+  % Axes
+  \draw[teal!80!black,thick,<->] (\xmin,0) -- (\xmax,0) node[right,black] {$u$};
+  \draw[teal!80!black,thick,<->] (0,\ymin) -- (0,\ymax) node[above,black] {$v$};
+
+  % Solid geometry representation (rectangles)
+  \begin{scope}[thick,blue!80!black]
+    \foreach \a in {18, 9, 4.5, 2.25, 1.125, 0.5625, 0.28125}
+      \draw (18-\a, 18-\a) rectangle (18,18);
+
+    \foreach \a in {18, 9, 4.5, 2.25, 1.125, 0.5625, 0.28125}
+      \filldraw[thin,blue!60!black,opacity=.3] (18-\a, 18-\a)
+        rectangle (18-0.5*\a, 18-0.5*\a);
+
+    \foreach \a in {18, 9, 4.5, 2.25, 1.125, 0.5625, 0.28125}{
+      \filldraw[thin,red!80!black,opacity=.22] (18-\a, 18-0.5*\a)
+        rectangle (18-0.5*\a,18);
+      \filldraw[thin,red!80!black,opacity=.22] (18-0.5*\a, 18-\a)
+        rectangle (18,18-0.5*\a);}
+  \end{scope}
+
+  % Equation annotation with modified coefficients
+  \node[draw,rounded corners,fill=white,very thick,text=blue!80!black,right] at (12,2) {$S = \frac{2}{3} + \frac{2}{9} + \frac{2}{27} + \cdots$};
+\end{tikzpicture}
+\end{document}

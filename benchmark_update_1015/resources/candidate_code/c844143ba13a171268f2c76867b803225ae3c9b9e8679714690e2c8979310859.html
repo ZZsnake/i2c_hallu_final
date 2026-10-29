@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationships Between Math Concepts</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #main {
+            width: 1000px;
+            height: 800px;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Relationships Between Math Concepts</div>
+    <div id="main"></div>
+
+    <script type="text/javascript">
+        var chartDom = document.getElementById('main');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        const colors = {
+            calculus: '#45b39d',
+            algebra: '#2e86c1',
+            functions: '#ec7063',
+            geometry: '#f4d03f'
+        };
+
+        option = {
+            tooltip: {},
+            animationDurationUpdate: 1500,
+            animationEasingUpdate: 'quinticInOut',
+            series: [
+                {
+                    type: 'graph',
+                    layout: 'none',
+                    symbolSize: 70,
+                    roam: false,
+                    label: {
+                        show: true,
+                        color: '#000',
+                        fontSize: 14,
+                        fontWeight: 'bold'
+                    },
+                    edgeSymbol: ['none', 'arrow'],
+                    edgeSymbolSize: [4, 10],
+                    edgeLabel: {
+                        show: true,
+                        fontSize: 12,
+                        formatter: '{c}',
+                        color: '#333'
+                    },
+                    data: [
+                        {
+                            name: 'Calculus',
+                            x: 500,
+                            y: 100,
+                            itemStyle: { color: colors.calculus }
+                        },
+                        {
+                            name: 'Algebra',
+                            x: 200,
+                            y: 450,
+                            itemStyle: { color: colors.algebra }
+                        },
+                        {
+                            name: 'Functions',
+                            x: 800,
+                            y: 450,
+                            itemStyle: { color: colors.functions }
+                        },
+                        {
+                            name: 'Geometry',
+                            x: 500,
+                            y: 800,
+                            itemStyle: { color: colors.geometry }
+                        }
+                    ],
+                    links: [
+                        {
+                            source: 'Algebra',
+                            target: 'Functions',
+                            value: 'defines',
+                            lineStyle: { curveness: 0.2, color: colors.algebra, width: 2 },
+                            label: { position: 'middle' }
+                        },
+                        {
+                            source: 'Algebra',
+                            target: 'Geometry',
+                            value: 'supports',
+                            lineStyle: { curveness: -0.2, color: colors.functions, width: 2 },
+                            label: { position: 'middle' }
+                        },
+                        {
+                            source: 'Functions',
+                            target: 'Calculus',
+                            value: 'used in',
+                            lineStyle: { curveness: 0.2, color: colors.calculus, width: 2 },
+                            label: { position: 'middle' }
+                        },
+                        {
+                            source: 'Geometry',
+                            target: 'Calculus',
+                            value: 'applied to',
+                            lineStyle: { curveness: -0.1, color: colors.geometry, width: 2 },
+                            label: { position: 'middle', rotate: 90 }
+                        },
+                        {
+                            source: 'Geometry',
+                            target: 'Functions',
+                            value: 'models',
+                            lineStyle: { curveness: 0.1, color: '#000', width: 1.5 },
+                            label: { position: 'middle' }
+                        }
+                    ],
+                    lineStyle: {
+                        opacity: 0.9,
+                        width: 2,
+                        curveness: 0
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[
+    >={Stealth[length=2.5mm, width=2mm]} % Arrow style for all arrows
+]
+
+% --- Define Colors ---
+\definecolor{myblue}{RGB}{0, 32, 96}
+\definecolor{myteal}{RGB}{0, 107, 107}
+\definecolor{myorange}{RGB}{217, 145, 89}
+\definecolor{mypurple}{RGB}{112, 48, 160}
+
+% --- Axes ---
+\draw[myteal, thick, ->] (0,0) -- (14, 0) node[below right=2mm and -10mm, align=center, font=\sffamily] {algorithmic\\demand};
+\draw[myteal, thick, ->] (0,0) -- (0, 9.5) node[above left, font=\sffamily] {precision};
+
+% --- X-axis Labels (S^n) ---
+\foreach \n in {1,...,8} {
+    \pgfmathsetmacro{\xpos}{1.5 * \n + 0.5}
+    \node[myteal, below, font=\sffamily] at (\xpos, 0) {$S^{\n}$};
+}
+
+% --- Dashed Trend Line ---
+% Corresponds roughly to y = 0.7x + 0.5
+\draw[myorange, thick, dashed, ->] (1, 1.2) -- (12, 8.9);
+
+% --- Data Points and Labels ---
+% The main font is serif (default), which matches the point labels.
+
+% Points on the line
+\node (mf) [circle, fill=myblue, inner sep=2.2pt, label={[myblue]right:Mean Field}] at (2.5, 2.25) {};
+\node (sd) [circle, fill=myblue, inner sep=2.2pt, label={[myblue]below right:Slater Determinant}] at (5, 4) {};
+\node (pt) [circle, fill=myblue, inner sep=2.2pt, label={[myblue]right:Perturbation Theory}] at (7, 5.4) {};
+\node (ed) [circle, fill=myblue, inner sep=2.2pt, label={[myblue]right:Exact Diagonalization}] at (9, 6.8) {};
+\node (tn) [circle, fill=myblue, inner sep=2.2pt, label={[myblue]right:Tensor Network}] at (10.5, 7.85) {};
+
+% Points off the line
+\node (dm) [circle, fill=myblue, inner sep=2.2pt, label={[myblue]right:Density Matrix}] at (4, 5) {};
+\node (vmc) [circle, fill=myblue, inner sep=2.2pt, label={[myblue]right:Variational Monte Carlo}] at (5.5, 7.5) {};
+
+% --- Purple Arrow ---
+\draw[mypurple, semithick, ->] (5, 3.5) -- (3, 2.5);
+
+\end{tikzpicture}
+\end{document}

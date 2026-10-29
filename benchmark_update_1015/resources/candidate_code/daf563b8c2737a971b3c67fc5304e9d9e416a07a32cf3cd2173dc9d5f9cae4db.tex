@@ -1,0 +1,38 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    >={Stealth},
+    right angle/.style = {thick}
+]
+% Coordinates
+\coordinate [label=left:Q] (Q) at (0,0);
+\coordinate (R) at (4,1);
+\coordinate (S) at (2,-4);
+
+% Draw lines with arrows
+\draw [->, thick, blue] (Q) -- (R);
+\draw [->, thick, blue] (Q) -- (S);
+
+% Right angle marks at R and S
+\draw [thick, blue] 
+    ($(R) + (0.15,0.3)$) -- (R) -- ($(R) + (0.3,-0.075)$);
+\draw [thick, blue] 
+    ($(S) + (-0.15,0.3)$) -- (S) -- ($(S) + (-0.3,-0.075)$);
+
+% Labels R and S with squares
+\node [draw, blue, thick, minimum size=5pt, inner sep=0pt, fill=white] at (R) {};
+\node [draw, blue, thick, minimum size=5pt, inner sep=0pt, fill=white] at (S) {};
+\node [above, blue] at (R) {R};
+\node [below, blue] at (S) {S};
+
+% Function label
+\node [blue] at ($(S) + (1.2,-0.8)$) {$f(x) = 3x + 2$};
+
+% Point Q
+\fill [blue] (Q) circle (3pt);
+
+\end{tikzpicture}
+\end{document}

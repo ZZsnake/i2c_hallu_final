@@ -1,0 +1,87 @@
+<svg width="160mm" height="112mm" viewBox="0 0 16000 11200" version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" stroke-width="36" stroke-linejoin="bevel" xml:space="preserve">
+ <path fill="rgb(255,255,255)" stroke="none" d="M 8000,11209 L 0,11209 0,0 15999,0 15999,11209 8000,11209 Z"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 8700,10338 L 1682,10338 1682,2469 15679,2469 15679,10338 8700,10338 Z"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,10337 L 1682,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,9550 L 1682,9550"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,8763 L 1682,8763"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,7976 L 1682,7976"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,7189 L 1682,7189"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,6402 L 1682,6402"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,5615 L 1682,5615"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,4829 L 1682,4829"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,4041 L 1682,4041"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,3254 L 1682,3254"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" stroke-dasharray="180 50" d="M 15678,2467 L 1682,2467"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1682,10487 L 1682,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 3237,10487 L 3237,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 4792,10487 L 4792,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 6347,10487 L 6347,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 7903,10487 L 7903,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 9457,10487 L 9457,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 11012,10487 L 11012,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 12568,10487 L 12568,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 14123,10487 L 14123,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 15678,10487 L 15678,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1682,10337 L 15678,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,10337 L 1682,10337"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,9550 L 1682,9550"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,8763 L 1682,8763"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,7976 L 1682,7976"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,7189 L 1682,7189"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,6402 L 1682,6402"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,5614 L 1682,5614"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,4828 L 1682,4828"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,4041 L 1682,4041"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,3254 L 1682,3254"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1532,2467 L 1682,2467"/>
+ <path fill="none" stroke="rgb(40,40,120)" stroke-linejoin="bevel" d="M 1682,10337 L 1682,2467"/>
+ <!-- Bars (new dataset: GDP Growth by Sector, 2016-2024) -->
+ <path fill="rgb(60,180,75)" stroke="none" d="M 14512,10337 L 15290,10337 15290,7780 14512,7780 14512,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 12957,10337 L 13734,10337 13734,8420 12957,8420 12957,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 11401,10337 L 12179,10337 12179,8930 11401,8930 11401,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 9846,10337 L 10624,10337 10624,9100 9846,9100 9846,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 8291,10337 L 9068,10337 9068,9480 8291,9480 8291,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 6736,10337 L 7514,10337 7514,10120 6736,10120 6736,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 5181,10337 L 5959,10337 5959,8880 5181,8880 5181,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 3626,10337 L 4403,10337 4403,6140 3626,6140 3626,10337 Z"/>
+ <path fill="rgb(60,180,75)" stroke="none" d="M 2070,10337 L 2848,10337 2848,4260 2070,4260 2070,10337 Z"/>
+ <!-- X Axis: Years -->
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="2088" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2016</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="3643" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2017</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="5199" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2018</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="6754" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2019</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="8310" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2020</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="9865" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2021</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="11420" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2022</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="12975" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2023</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="14531" y="10905"><tspan fill="rgb(18,18,18)" stroke="none">2024</tspan></tspan></tspan></text>
+ <!-- Y Axis: GDP (Millions USD) -->
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="1247" y="10458"><tspan fill="rgb(18,18,18)" stroke="none">0</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="506" y="9671"><tspan fill="rgb(18,18,18)" stroke="none">10,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="506" y="8884"><tspan fill="rgb(18,18,18)" stroke="none">20,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="506" y="8097"><tspan fill="rgb(18,18,18)" stroke="none">30,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="506" y="7310"><tspan fill="rgb(18,18,18)" stroke="none">40,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="321" y="6523"><tspan fill="rgb(18,18,18)" stroke="none">50,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="321" y="5735"><tspan fill="rgb(18,18,18)" stroke="none">60,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="321" y="4948"><tspan fill="rgb(18,18,18)" stroke="none">70,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="321" y="4161"><tspan fill="rgb(18,18,18)" stroke="none">80,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="321" y="3374"><tspan fill="rgb(18,18,18)" stroke="none">90,000</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="353px" font-weight="700"><tspan class="TextPosition" x="321" y="2587"><tspan fill="rgb(18,18,18)" stroke="none">100,000</tspan></tspan></tspan></text>
+ <!-- Chart Title & Axis Label -->
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="459px" font-weight="900"><tspan class="TextPosition" x="5698" y="895"><tspan fill="rgb(18,18,18)" stroke="none">GDP Growth by Sector (2016-2024)</tspan></tspan></tspan></text>
+ <switch>
+  <text class="TextShape" systemLanguage="es"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="388px" font-weight="700"><tspan class="TextPosition" x="4269" y="1849"><tspan fill="rgb(18,18,18)" stroke="none">Crecimiento del PIB por Sector (Millones USD)</tspan></tspan></tspan></text>
+  <text class="TextShape" systemLanguage="de"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="388px" font-weight="700"><tspan class="TextPosition" x="4269" y="1849"><tspan fill="rgb(18,18,18)" stroke="none">BIP-Wachstum nach Sektor (Millionen USD)</tspan></tspan></tspan></text>
+  <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="388px" font-weight="700"><tspan class="TextPosition" x="4269" y="1849"><tspan fill="rgb(18,18,18)" stroke="none">GDP Growth by Sector (Millions USD)</tspan></tspan></tspan></text>
+ </switch>
+ <!-- Bar Labels (Sectors) -->
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="2150" y="4100"><tspan fill="rgb(32,32,32)" stroke="none">Agriculture</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="3705" y="6000"><tspan fill="rgb(32,32,32)" stroke="none">Manufacturing</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="5255" y="8750"><tspan fill="rgb(32,32,32)" stroke="none">Energy</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="6810" y="10010"><tspan fill="rgb(32,32,32)" stroke="none">Construction</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="8360" y="9350"><tspan fill="rgb(32,32,32)" stroke="none">Services</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="9915" y="8940"><tspan fill="rgb(32,32,32)" stroke="none">Technology</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="11470" y="8800"><tspan fill="rgb(32,32,32)" stroke="none">Trade</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="13025" y="8280"><tspan fill="rgb(32,32,32)" stroke="none">Finance</tspan></tspan></tspan></text>
+ <text class="TextShape"><tspan class="TextParagraph" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="320px" font-weight="400"><tspan class="TextPosition" x="14580" y="7600"><tspan fill="rgb(32,32,32)" stroke="none">Mining</tspan></tspan></tspan></text>
+</svg>

@@ -1,0 +1,51 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.2, every node/.style={font=\small}]
+
+% Left diagram: w vs c
+\draw[->] (0,0) -- (4,0) node[right] {$c$};
+\draw[->] (0,0) -- (0,4) node[above] {$w$};
+
+% Draw the curve (approximate convex downward-sloping curve)
+\draw[thick] (0.5,3.5) .. controls (2,2.5) and (3,1.5) .. (3.5,0.5);
+
+% Point A on the curve
+\coordinate (A) at (3,1.5);
+\fill (A) circle (1.5pt) node[right] {$A$};
+
+% Horizontal dotted line from A to w-axis
+\draw[dotted] (A) -- (0,1.5) node[left] {$w^*$};
+
+% Right diagram: w vs N
+\begin{scope}[xshift=6cm]
+\draw[->] (0,0) -- (4,0) node[right] {$N$};
+\draw[->] (0,0) -- (0,4) node[above] {$w$};
+
+% Labor demand: downward-sloping line
+\draw[thick] (0.5,3.5) -- (3.5,0.5) node[above right] {$D_N$};
+
+% Labor supply: upward-sloping line
+\draw[thick] (0.5,0.5) -- (3.5,3.5) node[above right] {$S_N$};
+
+% Intersection point
+\coordinate (Eq) at (2,2);
+
+% Horizontal dotted line from equilibrium to left diagram (aligns with w*)
+\draw[dotted] (Eq) -- (-1,2) node[left] {$w^*$};
+
+% Vertical dotted lines to N-axis
+\draw[dotted] (Eq) -- (2,0) node[below] {$N_s$};
+\draw[dotted] (Eq) -- (2.5,0) node[below] {$N_d$};
+
+% Note: In equilibrium, N_s and N_d should coincide, but here they are drawn slightly offset for clarity.
+% Adjust if needed to show exact equilibrium.
+
+\end{scope}
+
+\end{tikzpicture}
+
+\end{document}

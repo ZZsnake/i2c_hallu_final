@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <path d="M30 920 L30 40 L550 40 L570 180 L970 180 L970 920 Z" stroke="black" fill="white" />
+  <rect x="60" y="220" width="700" height="500" stroke="black" fill="white" />
+  <rect x="60" y="220" width="700" height="100" stroke="black" fill="lightgray" />
+  <rect x="60" y="320" width="700" height="1" stroke="black" fill="black" />
+  <rect x="60" y="360" width="700" height="1" stroke="black" fill="black" />
+  <circle cx="185" cy="290" r="50" stroke="black" fill="lightgreen" />
+  <text x="195" y="295" font-size="50" fill="white">C</text>
+  <text x="350" y="300" font-size="50" fill="black">FooBar</text>
+  <circle cx="170" cy="430" r="20" stroke="black" fill="lightgreen" />
+  <text x="200" y="445" font-size="50" fill="black">foo() : void</text>
+  <circle cx="170" cy="570" r="20" stroke="black" fill="lightgreen" />
+  <text x="200" y="585" font-size="50" fill="black">phpstar</text>
+  <text x="70" y="110" font-size="50" fill="black">bar() : void</text>
+</svg>

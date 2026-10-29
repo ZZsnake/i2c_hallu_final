@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="chart-root" width="1200" height="675" xmlns="http://www.w3.org/2000/svg" font-size="40px" font-family="DejaVu Sans, sans-serif" text-anchor="middle" fill="black">
+
+<rect width="1200" height="675" x="0" y="0" fill="#f8f8f8"/>
+<rect width="1030" height="515" x="120" y="80" stroke="#1a237e" stroke-width="2" fill="white"/>
+
+<text x="635" y="60" font-size="50px" fill="#263238">Global Supply and Demand Trends</text>
+
+<path stroke="#212121" stroke-width="1.5" stroke-dasharray="6,10" d="
+M110,80 h1040
+M110,131.5 h1040
+M110,183 h1040
+M110,234.5 h1040
+M110,286 h1040
+M110,337.5 h1040
+M110,389 h1040
+M110,440.5 h1040
+M110,492 h1040
+M110,543.5 h1040
+M110,595 h1040
+"/>
+
+<g font-size="25" transform="translate(60,110)">
+<text y="0" fill="#311b92">Million</text>
+<text y="30" fill="#311b92">units</text>
+</g>
+<g font-size="35" font-family="DejaVu Serif, serif" transform="translate(60,0)">
+<text y="195.25" fill="#1b5e20">200</text>
+<text y="298.25" fill="#1b5e20">150</text>
+<text y="401.25" fill="#1b5e20">100</text>
+<text y="504.25" fill="#1b5e20">50</text>
+<text y="607.25" fill="#1b5e20">0</text>
+</g>
+
+<path fill="#0288d1" d="
+M288.503,600 h44 l-22,15 z
+M559.105,600 h44 l-22,15 z
+M830.158,600 h44 l-22,15 z
+"/>
+<g font-size="35" font-family="DejaVu Serif, serif" transform="translate(0,650)">
+<text x="309.74" fill="#212121">2018</text>
+<text x="580.79" fill="#212121">2021</text>
+<text x="851.84" fill="#212121">2024</text>
+</g>
+
+<text x="600" y="670" font-size="14" fill="#263238">Supply and demand data compiled from global market reports. Values represent estimated totals in millions of units for selected years.</text>
+
+<g stroke="#424242" stroke-width="1">
+
+<!-- FIRST SERIES (Supply) -->
+<path fill="#388e3c" d="
+M179.632,595 v-165 h44 v165 z
+M233.842,595 v-135 h44 v135 z
+M288.053,595 v-90 h44 v90 z
+M342.263,595 v-145 h44 v145 z
+M396.474,595 v-155 h44 v155 z
+M450.684,595 v-120 h44 v120 z
+M504.895,595 v-110 h44 v110 z
+M559.105,595 v-70 h44 v70 z
+M613.316,595 v-60 h44 v60 z
+M667.526,595 v-95 h44 v95 z
+M721.737,595 v-80 h44 v80 z
+M775.947,595 v-100 h44 v100 z
+M830.158,595 v-55 h44 v55 z
+M884.368,595 v-90 h44 v90 z
+M938.579,595 v-180 h44 v180 z
+"/>
+
+<!-- SECOND SERIES (Demand) -->
+<path fill="#d32f2f" d="
+M179.632,430 v-120 h44 v120 z
+M233.842,460 v-110 h44 v110 z
+M288.053,505 v-80 h44 v80 z
+M342.263,450 v-140 h44 v140 z
+M396.474,440 v-125 h44 v125 z
+M450.684,475 v-100 h44 v100 z
+M504.895,485 v-90 h44 v90 z
+M559.105,525 v-60 h44 v60 z
+M613.316,535 v-50 h44 v50 z
+M667.526,500 v-80 h44 v80 z
+M721.737,515 v-70 h44 v70 z
+M775.947,495 v-90 h44 v90 z
+M830.158,540 v-40 h44 v40 z
+M884.368,505 v-85 h44 v85 z
+M938.579,415 v-210 h44 v210 z
+"/>
+
+</g>
+
+<g transform="translate(0,-13.5)">
+
+<path d="M171.5,105.75 h35 v35 h-35 z" fill="#388e3c"/>
+<path d="M171.5,149.5 h35 v35 h-35 z" fill="#d32f2f"/>
+
+<g text-anchor="start" font-size="35" font-family="Montserrat, Arial, sans-serif" transform="translate(224,0)">
+<text y="137.25" fill="#263238">Supply</text>
+<text y="181" fill="#263238">Demand</text>
+</g>
+</g>
+
+<!-- Cover edges' grid lines  -->
+<rect width="1030" height="515" x="120" y="80" stroke="#1a237e" stroke-width="2" fill="none"/>
+
+</svg>

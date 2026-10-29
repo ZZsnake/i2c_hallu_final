@@ -1,0 +1,36 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc}
+
+\tikzset{
+    block/.style={rectangle, draw, fill=blue!10, text width=5em, text centered, rounded corners, minimum height=4em, line width=1.5pt},
+    terminator/.style={ellipse, draw, fill=blue!10, text width=5em, text centered, minimum height=4em, line width=1.5pt},
+    process/.style={rectangle, draw, fill=green!10, text width=5em, text centered, rounded corners, minimum height=4em, line width=1.5pt},
+    decision/.style={diamond, draw, fill=orange!10, text width=5em, text centered, minimum height=4em, line width=1.5pt},
+    arrow/.style={-Stealth, line width=1.5pt},
+    label/.style={font=\small, midway, above, align=center},
+    mathlabel/.style={font=\small\color{violet}, align=center}
+}
+
+\begin{document}
+\begin{tikzpicture}[node distance=2cm]
+
+    % Nodes
+    \node [terminator, draw=blue!50!black, fill=blue!10] (input) {Input Data};
+    \node [process, draw=teal!50!black, fill=teal!10, right of=input] (preprocess) {Preprocessing};
+    \node [terminator, draw=violet!50!black, fill=violet!10, right of=preprocess] (feature) {Feature Extraction};
+    \node [decision, draw=orange!50!black, fill=orange!10, right of=feature] (classify) {Classification};
+    \node [block, draw=blue!50!black, fill=blue!10, below of=classify, node distance=3cm] (output) {Output Label};
+
+    % Arrows
+    \draw [arrow, blue!50!black] (input) -- node[label, blue!50!black] {Clean} (preprocess);
+    \draw [arrow, teal!50!black] (preprocess) -- node[label, teal!50!black] {Extract} (feature);
+    \draw [arrow, violet!50!black] (feature) -- node[label, violet!50!black] {Infer} (classify);
+    \draw [arrow, orange!50!black] (classify) -- node[label, orange!50!black] {Result} (output);
+    \draw [arrow, orange!50!black] (output) to[out=135, in=270] node[label, orange!50!black, below left] {Review} (classify);
+
+    % Math formula
+    \node [mathlabel] at ($(feature.south) + (0,-1.5)$) {$\mathbf{f(x)} = Wx + b$};
+
+\end{tikzpicture}
+\end{document}

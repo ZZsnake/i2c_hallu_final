@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Concepts Pie Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100vh;
+      width: 100vw;
+    }
+    .echarts-title {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #1C1C1C;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0; background-color: #fff;">
+  <div class="echarts-title">Distribution of Math Branches</div>
+  <div id="container"></div>
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var chartInstance = echarts.init(chartDom);
+
+    var chartOption = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {c} ({d}%)',
+        textStyle: {
+          fontFamily: 'Trebuchet MS, Verdana, sans-serif',
+          fontSize: 16,
+          color: '#222'
+        }
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left',
+        top: 'middle',
+        textStyle: {
+          color: '#202020',
+          fontWeight: 'bold',
+          fontSize: 16,
+          fontFamily: 'Arial, sans-serif'
+        },
+        data: ['Algebra', 'Geometry', 'Calculus', 'Probability', 'Statistics']
+      },
+      series: [
+        {
+          name: 'Math Branch',
+          type: 'pie',
+          radius: ['40%', '75%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: true,
+            position: 'outside',
+            color: '#151515',
+            fontSize: 15,
+            fontFamily: 'Arial, sans-serif',
+            fontWeight: 'bold',
+            formatter: '{b}\n{d}%'
+          },
+          labelLine: {
+            show: true,
+            lineStyle: {
+              color: '#222',
+              width: 3
+            }
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          data: [
+            {value: 30, name: 'Algebra', itemStyle: {color: '#2367D1'}},
+            {value: 25, name: 'Geometry', itemStyle: {color: '#F94D1B'}},
+            {value: 20, name: 'Calculus', itemStyle: {color: '#1AC47D'}},
+            {value: 15, name: 'Probability', itemStyle: {color: '#EFA81A'}},
+            {value: 10, name: 'Statistics', itemStyle: {color: '#991ECB'}}
+          ]
+        }
+      ]
+    };
+
+    if (chartOption && typeof chartOption === 'object') {
+      chartInstance.setOption(chartOption);
+    }
+
+    window.addEventListener('resize', chartInstance.resize);
+  </script>
+</body>
+</html>

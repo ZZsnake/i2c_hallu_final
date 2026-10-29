@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="480" version="1.1" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg">
+ <title>Sine Function Plot</title>
+ <desc>Sine function plot sample for math dataset, axes and grid, high contrast colors.</desc>
+ <defs>
+  <path id="axis-label-x" d="M2.5,0 L7.5,0 M5,0 L5,10" />
+  <path id="axis-label-y" d="M0,2.5 L0,7.5 M0,5 L10,5" />
+ </defs>
+ <g fill="none">
+  <!-- Axes -->
+  <g stroke="#222">
+    <path d="M60 440 V60"/>
+    <path d="M60 250 H540"/>
+    <!-- Arrow heads -->
+    <path d="M60 60 L55 75 L65 75 Z"/>
+    <path d="M540 250 L525 245 L525 255 Z"/>
+  </g>
+  <!-- Grid lines -->
+  <g stroke="#009688" stroke-width="1" stroke-dasharray="5,5">
+   <path d="M120 440 V60"/>
+   <path d="M180 440 V60"/>
+   <path d="M240 440 V60"/>
+   <path d="M300 440 V60"/>
+   <path d="M360 440 V60"/>
+   <path d="M420 440 V60"/>
+   <path d="M480 440 V60"/>
+   <path d="M540 440 V60"/>
+   <path d="M60 370 H540"/>
+   <path d="M60 310 H540"/>
+   <path d="M60 190 H540"/>
+   <path d="M60 130 H540"/>
+   <path d="M60 70 H540"/>
+  </g>
+  <!-- Sine curve -->
+  <g stroke="#1a37c8" stroke-width="2.8">
+    <path d="M60,250
+      C90,130 150,130 180,250
+      S270,370 300,250
+      S390,130 420,250
+      S510,370 540,250"/>
+  </g>
+  <!-- Dots at key points -->
+  <g fill="#e94709" stroke-width=".8667">
+    <circle cx="60" cy="250" r="4"/>
+    <circle cx="120" cy="130" r="4"/>
+    <circle cx="180" cy="250" r="4"/>
+    <circle cx="240" cy="370" r="4"/>
+    <circle cx="300" cy="250" r="4"/>
+    <circle cx="360" cy="130" r="4"/>
+    <circle cx="420" cy="250" r="4"/>
+    <circle cx="480" cy="370" r="4"/>
+    <circle cx="540" cy="250" r="4"/>
+  </g>
+  <!-- Labels -->
+  <g font-family="Verdana" font-size="14" fill="#232323" stroke="none">
+    <!-- X-axis labels -->
+    <text x="120" y="465" text-anchor="middle">-2π</text>
+    <text x="180" y="465" text-anchor="middle">-π</text>
+    <text x="240" y="465" text-anchor="middle">-π/2</text>
+    <text x="300" y="465" text-anchor="middle">0</text>
+    <text x="360" y="465" text-anchor="middle">π/2</text>
+    <text x="420" y="465" text-anchor="middle">π</text>
+    <text x="480" y="465" text-anchor="middle">2π</text>
+    <!-- Y-axis labels -->
+    <text x="48" y="370" text-anchor="end">-1</text>
+    <text x="48" y="250" text-anchor="end">0</text>
+    <text x="48" y="130" text-anchor="end">1</text>
+    <!-- Function label -->
+    <text x="320" y="80" text-anchor="middle" font-size="18" fill="#1a37c8">y = sin(x)</text>
+    <!-- Axis labels -->
+    <text x="550" y="270" text-anchor="start" font-size="16" fill="#232323">x</text>
+    <text x="45" y="65" text-anchor="middle" font-size="16" fill="#232323">y</text>
+  </g>
+</g>
+</svg>

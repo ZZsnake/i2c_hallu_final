@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Outer boundary circle -->
+  <circle cx="200" cy="140" r="110" fill="none" stroke="#4a7c59" stroke-width="2"/>
+  
+  <!-- Electron orbits (dashed circles) -->
+  <circle cx="200" cy="140" r="85" fill="none" stroke="#2c5aa0" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="200" cy="140" r="50" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="200" cy="140" r="25" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"/>
+  
+  <!-- Nucleus -->
+  <circle cx="200" cy="140" r="15" fill="#c41e3a" stroke="#8b0000" stroke-width="1.5"/>
+  
+  <!-- Nucleus labels -->
+  <text x="193" y="137" font-family="Arial, sans-serif" font-size="11" fill="#fff" font-weight="bold">N</text>
+  <text x="205" y="145" font-family="Arial, sans-serif" font-size="11" fill="#fff" font-weight="bold">P</text>
+  
+  <!-- Electrons -->
+  <!-- n=1 orbit electron (blue, left) -->
+  <circle cx="175" cy="140" r="8" fill="#4169e1" stroke="#1e3a8a" stroke-width="1.5"/>
+  
+  <!-- n=2 orbit electron (orange/yellow, top) -->
+  <circle cx="200" cy="90" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+  
+  <!-- n=3 orbit electron (green, right-bottom) -->
+  <circle cx="255" cy="180" r="8" fill="#5a9367" stroke="#2d5f3a" stroke-width="1.5"/>
+  
+  <!-- Orbit labels -->
+  <text x="145" y="225" font-family="Arial, sans-serif" font-size="12" fill="#2c5aa0">n=3</text>
+  <text x="175" y="165" font-family="Arial, sans-serif" font-size="12" fill="#000">n=1</text>
+  <text x="210" y="125" font-family="Arial, sans-serif" font-size="12" fill="#000">n=2</text>
+  
+  <!-- Energy level indicator -->
+  <text x="265" y="105" font-family="Arial, sans-serif" font-size="10" fill="#000">Increasing Energy</text>
+  <text x="265" y="118" font-family="Arial, sans-serif" font-size="10" fill="#000">Emission (E=hv)</text>
+  
+  <!-- Arrow pointing outward -->
+  <line x1="220" y1="95" x2="260" y2="100" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d97706"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <title>Market Trends</title>
+  <defs>
+    <style>
+      .grid { stroke: #ddd; stroke-dasharray: 2; }
+      .axis { stroke: #000; }
+      .supply { stroke: blue; stroke-width: 2; }
+      .demand { stroke: orange; stroke-width: 2; stroke-dasharray: 5; }
+      .equilibrium { stroke: green; stroke-width: 2; stroke-dasharray: 3 3; }
+      .legend { font-family: sans-serif; font-size: 14px; }
+    </style>
+  </defs>
+  <rect x="20" y="20" width="560" height="560" stroke="black" fill="none" />
+  <g class="grid">
+    <line x1="100" y1="20" x2="100" y2="580" />
+    <line x1="200" y1="20" x2="200" y2="580" />
+    <line x1="300" y1="20" x2="300" y2="580" />
+    <line x1="400" y1="20" x2="400" y2="580" />
+    <line x1="500" y1="20" x2="500" y2="580" />
+    <line x1="20" y1="100" x2="580" y2="100" />
+    <line x1="20" y1="200" x2="580" y2="200" />
+    <line x1="20" y1="300" x2="580" y2="300" />
+    <line x1="20" y1="400" x2="580" y2="400" />
+    <line x1="20" y1="500" x2="580" y2="500" />
+  </g>
+  <g class="axis">
+    <line x1="20" y1="20" x2="580" y2="20" />
+    <line x1="20" y1="580" x2="580" y2="580" />
+    <line x1="20" y1="20" x2="20" y2="580" />
+    <line x1="580" y1="20" x2="580" y2="580" />
+  </g>
+  <path class="supply" d="M20,580 L580,20" />
+  <path class="demand" d="M20,580 L300,300 L580,200" />
+  <path class="equilibrium" d="M20,580 L300,300 L580,100" />
+  <text x="300" y="20" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold">Market Trends</text>
+  <text x="50" y="40" class="legend">Supply</text>
+  <rect x="30" y="30" width="10" height="10" fill="blue" />
+  <text x="150" y="40" class="legend">Demand</text>
+  <rect x="130" y="30" width="10" height="10" fill="orange" />
+  <text x="250" y="40" class="legend">Market Equilibrium</text>
+  <rect x="230" y="30" width="10" height="10" fill="green" />
+  <text x="10" y="590" text-anchor="end" font-family="sans-serif" font-size="14">Q1</text>
+  <text x="110" y="590" text-anchor="end" font-family="sans-serif" font-size="14">Q2</text>
+  <text x="210" y="590" text-anchor="end" font-family="sans-serif" font-size="14">Q3</text>
+  <text x="310" y="590" text-anchor="end" font-family="sans-serif" font-size="14">Q4</text>
+  <text x="410" y="590" text-anchor="end" font-family="sans-serif" font-size="14">Q5</text>
+  <text x="510" y="590" text-anchor="end" font-family="sans-serif" font-size="14">Q6</text>
+  <text x="590" y="590" text-anchor="end" font-family="sans-serif" font-size="14">0</text>
+  <text x="590" y="510" text-anchor="end" font-family="sans-serif" font-size="14">20</text>
+  <text x="590" y="430" text-anchor="end" font-family="sans-serif" font-size="14">40</text>
+  <text x="590" y="350" text-anchor="end" font-family="sans-serif" font-size="14">60</text>
+  <text x="590" y="270" text-anchor="end" font-family="sans-serif" font-size="14">80</text>
+  <text x="590" y="190" text-anchor="end" font-family="sans-serif" font-size="14">100</text>
+</svg>

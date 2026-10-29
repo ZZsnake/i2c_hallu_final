@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 750">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ec3ff"/>
+      <stop offset="100%" stop-color="#1b71d8"/>
+    </linearGradient>
+    <radialGradient id="heartGrad" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ffd94a"/>
+      <stop offset="100%" stop-color="#ff8a00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer blue blob -->
+  <path d="M140 170
+           C 120 260 120 380 160 470
+           C 200 560 280 630 400 650
+           C 520 670 620 640 680 570
+           C 740 500 750 390 730 300
+           C 710 210 640 150 550 130
+           C 460 110 340 120 250 130
+           C 190 140 155 150 140 170 Z"
+        fill="url(#bgGrad)"
+        stroke="#00408a"
+        stroke-width="6"
+        stroke-dasharray="10 8"/>
+
+  <!-- Lungs -->
+  <ellipse cx="340" cy="360" rx="110" ry="150"
+           fill="#e6322b"/>
+  <ellipse cx="460" cy="360" rx="110" ry="150"
+           fill="#e6322b"/>
+
+  <!-- Bronchi (green forks) -->
+  <path d="M400 270
+           C 390 290 370 315 355 340"
+        fill="none"
+        stroke="#3bb54a"
+        stroke-width="6"
+        stroke-linecap="round"/>
+  <path d="M400 270
+           C 410 290 430 315 445 340"
+        fill="none"
+        stroke="#3bb54a"
+        stroke-width="6"
+        stroke-linecap="round"/>
+
+  <!-- Trachea -->
+  <rect x="382" y="170" width="36" height="110"
+        rx="8" ry="8"
+        fill="#4ac45b"
+        stroke="#148c2e"
+        stroke-width="4"/>
+  <!-- Tracheal rings -->
+  <path d="M388 185h24 M388 205h24 M388 225h24 M388 245h24"
+        stroke="#148c2e"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+  <!-- Dashed extension above trachea -->
+  <path d="M400 170 L 410 130"
+        fill="none"
+        stroke="#00408a"
+        stroke-width="4"
+        stroke-dasharray="6 6"/>
+
+  <!-- Esophagus label position line (subtle, optional) -->
+  <!-- none drawn; only text -->
+
+  <!-- Lower organ (heart/stomach) -->
+  <ellipse cx="400" cy="510" rx="65" ry="55"
+           fill="url(#heartGrad)"/>
+
+  <!-- Text: top label 咽部 -->
+  <text x="425" y="125"
+        font-family="sans-serif"
+        font-size="32"
+        fill="#00408a">咽部</text>
+
+  <!-- Text: 気管 next to trachea -->
+  <text x="430" y="220"
+        font-family="sans-serif"
+        font-size="32"
+        fill="#1ba23c">気管</text>
+
+  <!-- Text: 左肺 on left lung -->
+  <text x="300" y="340"
+        font-family="sans-serif"
+        font-size="40"
+        fill="#bf2522"
+        fill-opacity="0.7">左肺</text>
+
+  <!-- Text: 右肺 on right lung -->
+  <text x="440" y="340"
+        font-family="sans-serif"
+        font-size="40"
+        fill="#bf2522"
+        fill-opacity="0.7">右肺</text>
+
+  <!-- Text: 食管 centered between lungs -->
+  <text x="395" y="410"
+        font-family="sans-serif"
+        font-size="36"
+        fill="#00408a"
+        text-anchor="middle">食管</text>
+
+  <!-- Text: 心臓 on orange organ -->
+  <text x="400" y="520"
+        font-family="sans-serif"
+        font-size="32"
+        fill="#ff7b00"
+        fill-opacity="0.85"
+        text-anchor="middle">心臓</text>
+</svg>

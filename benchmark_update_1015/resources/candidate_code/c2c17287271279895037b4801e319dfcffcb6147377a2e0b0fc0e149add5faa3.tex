@@ -1,0 +1,28 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usepackage{amsmath}
+
+\definecolor{boxpurple}{RGB}{145,0,50}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{scope}[
+    every node/.style={font=\sffamily\Large},
+    ]
+    \node[
+      draw=boxpurple,
+      fill=gray!7,
+      text=boxpurple,
+      line width=2.2pt,
+      rounded corners=16pt,
+      drop shadow={shadow xshift=5pt, shadow yshift=-5pt, opacity=0.65, fill=black},
+      inner sep=20pt,
+      text width=13cm,
+      align=justify,
+      ] (text_box) at (0,0) {
+Consider a spherical black hole with a Schwarzschild radius $R_s = 2GM/c^2$, where $G$ is the gravitational constant, $M$ is the mass of the black hole, and $c$ is the speed of light. Using the Bekenstein-Hawking formula, calculate the entanglement entropy $S$ of the black hole's event horizon. How does this result challenge the notion of information conservation in quantum mechanics?
+    };
+  \end{scope}
+\end{tikzpicture}
+\end{document}

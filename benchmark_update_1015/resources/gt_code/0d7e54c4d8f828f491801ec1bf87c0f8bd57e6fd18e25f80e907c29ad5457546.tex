@@ -1,0 +1,30 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm, compat=1.10}
+\usepgfplotslibrary{fillbetween}
+\pgfmathdeclarefunction{quad}{0}{\pgfmathparse{2*x^2 - 4*x + 1}}
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis y line = left,
+    axis x line = bottom,
+    xtick       = {0.5,2.5,4},
+    xticklabels = {$p$,$\eta$,$q$},
+    ytick       = {5},
+    yticklabels = {$g(\eta)$},
+    samples     = 160,
+    domain      = 0.5:4,
+    xmin = 0, xmax = 5,
+    ymin = -2, ymax = 8,
+  ]
+  \addplot[name path=quad, teal!80!black, ultra thick, mark=none] {quad};
+  \addplot[name path=const, blue!80!black, no markers, line width=1.2pt] {5};
+  \addplot fill between[
+    of = quad and const,
+    split,
+    every even segment/.style = {red!80!black, opacity=0.7},
+    every odd segment/.style  = {cyan!70!black, opacity=0.7}
+  ];
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    >=Stealth,
+    axis/.style={thick, blue, ->},
+    vector/.style={thick, teal, -},
+    angle/.style={purple, ->, shorten <=2pt, shorten >=2pt},
+    dot/.style={circle, fill, inner sep=1.5pt}
+]
+
+% Draw the sphere (approximated by a circle in 2D)
+\draw[blue, thick] (0,0) circle (2.5cm);
+
+% Draw the coordinate axes
+\draw[axis] (0,0) -- (2.5,0) node[right] {$f_2$};
+\draw[axis] (0,0) -- (0,2.5) node[above] {$f_3$};
+\draw[axis] (0,0) -- (-2.5,0) node[left] {$f_1$};
+
+% Draw the vector v
+\coordinate (v) at (1.2,1.8);
+\draw[vector] (0,0) -- (v) node[right, midway] {$\vec{v}$};
+
+% Draw the dashed ellipse (projection onto f2-f3 plane)
+\draw[dashed, teal] (0,0) ellipse (2.2cm and 1.5cm);
+
+% Draw the projections of the vector onto the axes
+\draw[dashed] (v) -- (v |- 0,0); % projection onto f2 axis
+\draw[dashed] (v) -- (0, v);     % projection onto f3 axis
+
+% Draw the angles
+\draw[angle] (0,0) arc (0:30:0.3) node[midway, right] {$\alpha$};
+\draw[angle] (0,0) arc (90:120:0.3) node[midway, left] {$\beta$};
+
+% Add dots at the ends of the vector and its projections
+\node[dot] at (0,0) {};
+\node[dot] at (v) {};
+
+\end{tikzpicture}
+\end{document}

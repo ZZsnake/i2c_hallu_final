@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect x="50" y="250" width="700" height="100" fill="#FFCCCC" />
+  <line x1="200" y1="50" x2="400" y2="250" stroke="black" stroke-width="2" />
+  <line x1="400" y1="250" x2="600" y2="50" stroke="black" stroke-width="2" />
+  <line x1="400" y1="250" x2="600" y2="450" stroke="black" stroke-width="2" />
+  <line x1="400" y1="0" x2="400" y2="600" stroke="black" stroke-dasharray="5" stroke-width="2" />
+  <path d="M390,240 L400,250 L410,240" fill="black" />
+  <path d="M590,440 L600,450 L610,440" fill="black" />
+  <path d="M590,40 L600,50 L610,40" fill="black" />
+  <path d="M290,40 L300,50 L310,40" fill="black" />
+  <text x="100" y="150" font-size="20">Incident Ray</text>
+  <text x="650" y="150" font-size="20">Reflected Ray</text>
+  <text x="650" y="200" font-size="20">(Partial Reflection)</text>
+  <text x="650" y="600" font-size="20">Refracted Ray</text>
+  <text x="150" y="380" font-size="20">Angle of Incidence</text>
+  <text x="550" y="580" font-size="20">Angle of Refraction</text>
+  <text x="420" y="580" font-size="20">r</text>
+  <text x="420" y="380" font-size="20">i</text>
+  <text x="420" y="1000" font-size="30">Normal</text>
+  <path d="M400,250 A 50,50 0 0,1 450,250" stroke="black" stroke-width="1" fill="none" />
+  <path d="M400,250 A 50,50 0 0,0 350,250" stroke="black" stroke-width="1" fill="none" />
+  <path d="M400,450 A 50,50 0 0,1 450,450" stroke="black" stroke-width="1" fill="none" />
+</svg>

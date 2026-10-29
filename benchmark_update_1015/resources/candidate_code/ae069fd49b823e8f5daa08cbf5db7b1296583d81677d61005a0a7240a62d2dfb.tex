@@ -1,0 +1,38 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC, positioning}
+
+\begin{document}
+\begin{tikzpicture}[circuit ee IEC, every info/.style={font=\footnotesize}, small circuit symbols]
+
+% Transformer Core
+\filldraw[green!50!black] (0,0) rectangle (4,6);
+
+% Secondary Winding
+\foreach \i in {1,...,5} {
+    \draw (0.5,\i) circle (0.2);
+}
+\node at (1.5,3) {$N_s$};
+
+% Primary Winding
+\foreach \i in {1,...,8} {
+    \draw (3.5,\i) circle (0.2);
+}
+\node at (2.5,2) {$N_p$};
+
+% Input Voltage Source
+\draw (0,3) -- (-2,3) to [voltage source={info=$U_{in}$}] (-2,2) -- (0,2);
+\draw[->] (-1.5,2.5) -- node[left]{$i_1$} (-1.5,2);
+
+% Output Load
+\draw (4,3) -- (6,3) to [resistor={info=$Z_L$}] (6,2) -- (4,2);
+\draw[->] (5.5,2.5) -- node[right]{$i_2$} (5.5,2);
+
+% Magnetic Flux Label
+\draw (2,6) -- node[above]{$\varphi(t)$} (2,5.5);
+
+% Switch
+\draw (3.5,4) -- ++(0.5,0) to [switch={info=$K$}] ++(1,0);
+
+\end{tikzpicture}
+\end{document}

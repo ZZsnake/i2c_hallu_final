@@ -1,0 +1,60 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="white" />
+  
+  <!-- Plot Area Frame -->
+  <rect x="80" y="40" width="680" height="420" fill="none" stroke="black" stroke-width="1.5" />
+
+  <!-- Grid Lines -->
+  <g stroke="#999999" stroke-width="1" stroke-dasharray="5,5">
+    <!-- Vertical Grid -->
+    <line x1="208" y1="40" x2="208" y2="460" />
+    <line x1="336" y1="40" x2="336" y2="460" />
+    <line x1="464" y1="40" x2="464" y2="460" />
+    <line x1="592" y1="40" x2="592" y2="460" />
+    <line x1="720" y1="40" x2="720" y2="460" />
+    <!-- Horizontal Grid -->
+    <line x1="80" y1="355" x2="760" y2="355" />
+    <line x1="80" y1="250" x2="760" y2="250" />
+    <line x1="80" y1="145" x2="760" y2="145" />
+    <line x1="80" y1="40" x2="760" y2="40" />
+  </g>
+
+  <!-- Axes Labels -->
+  <g font-family="Arial, sans-serif" font-size="18" font-style="italic">
+    <text x="40" y="35" text-anchor="middle">f(x)</text>
+    <text x="420" y="490" text-anchor="middle">x</text>
+  </g>
+
+  <!-- Tick Labels -->
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    <!-- X-axis -->
+    <text x="80" y="480" text-anchor="middle">0</text>
+    <text x="208" y="480" text-anchor="middle">1</text>
+    <text x="336" y="480" text-anchor="middle">2</text>
+    <text x="464" y="480" text-anchor="middle">3</text>
+    <text x="592" y="480" text-anchor="middle">4</text>
+    <text x="720" y="480" text-anchor="middle">5</text>
+    <!-- Y-axis -->
+    <text x="60" y="465" text-anchor="end">0</text>
+    <text x="60" y="360" text-anchor="end">2</text>
+    <text x="60" y="255" text-anchor="end">4</text>
+    <text x="60" y="150" text-anchor="end">6</text>
+    <text x="60" y="45" text-anchor="end">8</text>
+  </g>
+
+  <!-- Horizontal Line y = 4 -->
+  <line x1="80" y1="250" x2="760" y2="250" stroke="#8b0000" stroke-width="1.5" stroke-dasharray="8,4" />
+  <text x="100" y="240" font-family="Arial, sans-serif" font-size="14" fill="#8b0000">y = 4</text>
+
+  <!-- Function Curve f(x) -->
+  <!-- Approximated path based on visual points: (0,1), (1,4), (3,7), (3.5, 7.2), (5,4), (5.3, 1) -->
+  <!-- Mapping: x=0 -> 80, x=1 -> 208, x=3 -> 464, x=5 -> 720. y=0 -> 460, y=4 -> 250, y=7 -> 92.5 -->
+  <path d="M 80 410 C 120 350 160 290 208 250 C 300 170 380 120 464 92.5 C 520 75 580 100 620 140 C 680 200 700 280 720 250 C 740 220 750 350 760 410" 
+        fill="none" stroke="#1a7a2a" stroke-width="3" />
+
+  <!-- Point P -->
+  <circle cx="464" cy="92.5" r="6" fill="#b22222" stroke="black" stroke-width="1" />
+  <text x="475" y="85" font-family="Arial, sans-serif" font-size="16" fill="#8b0000">P</text>
+
+</svg>

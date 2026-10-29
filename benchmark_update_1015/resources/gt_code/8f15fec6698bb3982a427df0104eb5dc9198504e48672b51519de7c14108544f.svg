@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="font-family:Roboto, 'Segoe UI', Arial, sans-serif;font-size:18px;background-color:white;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased" width="850" height="600">
+  <g class="HeaderView">
+    <text font-size="26" x="15" y="35" fill="#1a1a1a" font-family="Roboto, Arial, sans-serif">
+      <tspan x="15" y="35">Average Wage Growth</tspan>
+    </text>
+    <text font-size="15" x="15" y="57" fill="#333" font-family="Roboto, Arial, sans-serif">
+      <tspan x="15" y="57">Real wage growth adjusted for inflation, showing trends across regions and sectors over time.</tspan>
+      <tspan x="15" y="74">Measured in constant 2020 USD.</tspan>
+    </text>
+  </g>
+  <g class="LineChart">
+    <defs>
+      <clipPath id="boundsClip-2024">
+        <rect x="68" y="0" width="830" height="870"></rect>
+      </clipPath>
+    </defs>
+    <g class="AxisBoxView">
+      <g class="HorizontalAxis">
+        <text x="79" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">1990</text>
+        <text x="150" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">1995</text>
+        <text x="221" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">2000</text>
+        <text x="292" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">2005</text>
+        <text x="363" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">2010</text>
+        <text x="434" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">2015</text>
+        <text x="505" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">2020</text>
+        <text x="576" y="529" fill="#222" text-anchor="middle" font-size="17" font-family="Roboto, Arial, sans-serif">2022</text>
+      </g>
+      <g class="VerticalAxis">
+        <text x="73" y="507" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="17" font-family="Roboto, Arial, sans-serif">$0</text>
+        <text x="73" y="427" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="17" font-family="Roboto, Arial, sans-serif">$10,000</text>
+        <text x="73" y="347" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="17" font-family="Roboto, Arial, sans-serif">$20,000</text>
+        <text x="73" y="267" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="17" font-family="Roboto, Arial, sans-serif">$30,000</text>
+        <text x="73" y="187" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="17" font-family="Roboto, Arial, sans-serif">$40,000</text>
+        <text x="73" y="107" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="17" font-family="Roboto, Arial, sans-serif">$50,000</text>
+      </g>
+      <g class="AxisGridLines">
+        <line x1="78" y1="507" x2="576" y2="507" stroke="#b3b3b3" stroke-width="1.2"></line>
+        <line x1="78" y1="427" x2="576" y2="427" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="4,2"></line>
+        <line x1="78" y1="347" x2="576" y2="347" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="4,2"></line>
+        <line x1="78" y1="267" x2="576" y2="267" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="4,2"></line>
+        <line x1="78" y1="187" x2="576" y2="187" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="4,2"></line>
+        <line x1="78" y1="107" x2="576" y2="107" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="4,2"></line>
+      </g>
+    </g>
+    <g clip-path="url(#boundsClip-2024)">
+      <g class="HeightedLegend" style="cursor:pointer">
+        <g class="legendMark">
+          <rect x="580" y="94" width="140" height="14" fill="#fff" opacity="0"></rect>
+          <text font-size="14" x="584" y="106" fill="#006699" font-family="Roboto, Arial, sans-serif">
+            <tspan x="584" y="106">North America</tspan>
+          </text>
+        </g>
+        <g class="legendMark">
+          <rect x="580" y="120" width="137" height="14" fill="#fff" opacity="0"></rect>
+          <text font-size="14" x="584" y="132" fill="#db2e2e" font-family="Roboto, Arial, sans-serif">
+            <tspan x="584" y="132">Europe</tspan>
+          </text>
+        </g>
+        <g class="legendMark">
+          <rect x="580" y="146" width="130" height="14" fill="#fff" opacity="0"></rect>
+          <text font-size="14" x="584" y="158" fill="#008c55" font-family="Roboto, Arial, sans-serif">
+            <tspan x="584" y="158">Asia-Pacific</tspan>
+          </text>
+        </g>
+        <g class="legendMark">
+          <rect x="580" y="172" width="143" height="14" fill="#fff" opacity="0"></rect>
+          <text font-size="14" x="584" y="184" fill="#ff7600" font-family="Roboto, Arial, sans-serif">
+            <tspan x="584" y="184">Latin America</tspan>
+          </text>
+        </g>
+        <g class="legendMark">
+          <rect x="580" y="198" width="120" height="14" fill="#fff" opacity="0"></rect>
+          <text font-size="14" x="584" y="210" fill="#5e1edc" font-family="Roboto, Arial, sans-serif">
+            <tspan x="584" y="210">Africa</tspan>
+          </text>
+        </g>
+        <g class="legendMark">
+          <rect x="580" y="224" width="100" height="14" fill="#fff" opacity="0"></rect>
+          <text font-size="14" x="584" y="236" fill="#0d8f8f" font-family="Roboto, Arial, sans-serif">
+            <tspan x="584" y="236">Global</tspan>
+          </text>
+        </g>
+      </g>
+      <g class="Lines">
+        <rect x="79" y="94" width="497" height="414" fill="rgba(255,255,255,0)" opacity="0"></rect>
+        <!-- North America -->
+        <path stroke="#006699" stroke-linecap="round" stroke-width="2.5" stroke-dasharray="8,3" fill="none"
+          d="M79 450 L150 440 L221 430 L292 410 L363 400 L434 370 L505 350 L576 340" />
+        <!-- Europe -->
+        <path stroke="#db2e2e" stroke-linecap="round" stroke-width="2.5" fill="none"
+          d="M79 430 L150 420 L221 410 L292 390 L363 370 L434 355 L505 340 L576 330" />
+        <!-- Asia-Pacific -->
+        <path stroke="#008c55" stroke-linecap="round" stroke-width="2.5" stroke-dasharray="5,5" fill="none"
+          d="M79 410 L150 400 L221 390 L292 370 L363 350 L434 340 L505 330 L576 325" />
+        <!-- Latin America -->
+        <path stroke="#ff7600" stroke-linecap="round" stroke-width="2.5" fill="none"
+          d="M79 390 L150 385 L221 380 L292 370 L363 365 L434 360 L505 350 L576 345" />
+        <!-- Africa -->
+        <path stroke="#5e1edc" stroke-linecap="round" stroke-width="2.5" stroke-dasharray="2,6" fill="none"
+          d="M79 350 L150 345 L221 340 L292 335 L363 330 L434 325 L505 320 L576 315" />
+        <!-- Global -->
+        <path stroke="#0d8f8f" stroke-linecap="round" stroke-width="2.5" fill="none"
+          d="M79 420 L150 415 L221 410 L292 400 L363 390 L434 380 L505 370 L576 360" />
+      </g>
+    </g>
+  </g>
+  <g class="SourcesFooter">
+    <text font-size="13" x="15" y="554" fill="#444" font-family="Roboto, Arial, sans-serif">
+      <tspan x="15" y="554">Source: International Wage Database (2024)</tspan>
+    </text>
+    <text font-size="13" x="15" y="570" fill="#444" font-family="Roboto, Arial, sans-serif">
+      <tspan x="15" y="570">Note: Data represents inflation-adjusted average wages. Regional averages are weighted by sectoral employment.</tspan>
+      <tspan x="15" y="585">For more info visit: www.econwagedata.org</tspan>
+    </text>
+    <text font-size="13" x="796" y="554" fill="#444" font-family="Roboto, Arial, sans-serif">
+      <a style="fill: #444;" href="http://creativecommons.org/licenses/by/4.0/deed.en_US" target="_blank">CC BY</a>
+    </text>
+  </g>
+</svg>

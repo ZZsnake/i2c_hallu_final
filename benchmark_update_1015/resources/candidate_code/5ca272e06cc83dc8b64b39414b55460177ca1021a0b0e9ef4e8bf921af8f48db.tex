@@ -1,0 +1,38 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+\begin{circuitikz}[scale=1.2, transform shape]
+    % Input voltage
+    \draw (0,0) node[left] {$V_{in}$} to[short] (0.5,0);
+    
+    % R1
+    \draw (0.5,0) to[R, l=$R_1$] (2,0);
+    
+    % Junction point
+    \draw (2,0) to[short] (2.5,0);
+    
+    % R2 to ground
+    \draw (2.5,0) to[R, l=$R_2$] (2.5,-1.5) node[ground]{};
+    
+    % Op-amp
+    \draw (3,0) node[op amp, yscale=-1] (opamp) {};
+    \draw (2.5,0) -- (opamp.+) node[above, yshift=2pt] {+};
+    \draw (opamp.-) -- (3.5,0) node[above, yshift=2pt] {−};
+    \draw (opamp.out) -- (4.5,0) node[above, yshift=2pt] {out};
+    
+    % Output
+    \draw (4.5,0) to[short] (5.5,0) node[right] {$V_{out}$};
+    
+    % Diode D1
+    \draw (4.5,0) to[short] (4.5,-0.5);
+    \draw (4.5,-0.5) to[diode, l=$D1$] (4.5,-1.5) node[ground]{};
+    
+    % R3 to ground
+    \draw (5.5,0) to[R, l=$R_3$] (5.5,-1.5) node[ground]{};
+    
+    % Text label below
+    \node[align=center, text width=6cm, font=\footnotesize] at (4.5,-2.5) {Precision Rectifier for\\Audio Transcription in\\Court Proceedings};
+\end{circuitikz}
+\end{document}

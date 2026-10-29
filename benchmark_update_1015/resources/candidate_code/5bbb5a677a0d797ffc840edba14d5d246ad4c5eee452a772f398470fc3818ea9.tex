@@ -1,0 +1,53 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    node distance=1cm,
+    block/.style = {rectangle, draw, fill=blue!20, text width=5em, text centered, minimum height=4em},
+    proc/.style = {rectangle, draw, fill=red!20, text width=6em, text centered, minimum height=6em},
+    container/.style = {rectangle, draw, fill=yellow!20, dashed, text width=10em, text centered, minimum height=10em},
+    output/.style = {rectangle, draw, fill=white, text width=4em, text centered, minimum height=2em},
+    arrow/.style = {thick, ->, >=Stealth}
+]
+
+% Draw the INS container
+\node[container] (ins) at (0,0) {};
+\node[below=0.5cm of ins] {\textbf{INS}};
+
+% Draw the IMU container inside INS
+\node[container, minimum width=5cm, minimum height=6cm] (imu) at (-2,0) {};
+\node[below=0.5cm of imu] {\textbf{IMU}};
+
+% Draw Gyros and Accelerometers inside IMU
+\node[block] (gyros) at (-2,2) {Gyros};
+\node[block] (accel) at (-2,1) {Accelerometers};
+
+% Draw Navigation equations
+\node[proc] (nav) at (0,1.5) {Navigation equations};
+
+% Draw outputs
+\node[right=1cm of nav] (vel) {Velocity};
+\node[right=1cm of nav, below=0.5cm] (att) {Attitude};
+\node[right=1cm of nav, below=1cm] (pos) {Horizontal position};
+\node[right=1cm of nav, below=1.5cm] (depth) {Depth};
+
+% Draw arrows from IMU to Navigation equations
+\draw[arrow] (gyros.east) -- node[above, midway] {$\boldsymbol{\omega}_{ib}^b$} (nav.west);
+\draw[arrow] (accel.east) -- node[above, midway] {$\mathbf{f}^b$} (nav.west);
+
+% Draw arrows from Navigation equations to outputs
+\draw[arrow] (nav.east) -- node[above, midway] {$\mathbf{v}^l$} (vel.east);
+\draw[arrow] (nav.east) -- node[above, midway] {$\mathbf{R}_l^b$} (att.east);
+\draw[arrow] (nav.east) -- node[above, midway] {$\mathbf{R}_e^l$} (pos.east);
+\draw[arrow] (nav.east) -- node[above, midway] {$z$} (depth.east);
+
+% Draw IMU container border
+\draw[dashed] (-2.5, 2.5) rectangle (0.5, -1.5);
+
+% Draw INS container border
+\draw[dashed] (-3, 3) rectangle (1, -2);
+
+\end{tikzpicture}
+\end{document}

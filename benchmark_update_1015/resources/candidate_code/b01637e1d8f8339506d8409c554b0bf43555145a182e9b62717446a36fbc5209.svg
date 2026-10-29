@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <style>
+    .axis-line {
+      stroke: #333;
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .label {
+      font-family: sans-serif;
+      font-size: 18px;
+      fill: #333;
+    }
+    .demand-curve {
+      stroke: #e41a1c; /* Red */
+      stroke-width: 2;
+      fill: none;
+    }
+    .supply-curve {
+      stroke: #4daf4a; /* Green */
+      stroke-width: 2;
+      fill: none;
+    }
+    .dashed-line {
+      stroke: #666;
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+      fill: none;
+    }
+    .equilibrium-point {
+      fill: #4daf4a; /* Green */
+      stroke: #4daf4a;
+      stroke-width: 1;
+    }
+  </style>
+
+  <!-- Axes -->
+  <line x1="70" y1="400" x2="550" y2="400" class="axis-line" />
+  <line x1="70" y1="400" x2="70" y2="50" class="axis-line" />
+
+  <!-- Axis Arrows -->
+  <path d="M550 400 L540 395 L540 405 Z" fill="#333" />
+  <path d="M70 50 L65 60 L75 60 Z" fill="#333" />
+
+  <!-- Axis Labels -->
+  <text x="540" y="425" class="label">Qu</text>
+  <text x="20" y="60" class="label">Price</text>
+  <text x="55" y="425" class="label">0</text>
+
+  <!-- Demand Curve (Red, convex, downward sloping) -->
+  <path d="M100 80 C150 50, 250 100, 300 200 C350 300, 450 350, 500 380" class="demand-curve" />
+  <path d="M500 380 L495 375 L495 385 Z" fill="#e41a1c" /> <!-- Arrow for Demand -->
+  <text x="460" y="340" class="label" fill="#e41a1c">Demand</text>
+
+  <!-- Supply Curve (Green, upward sloping line) -->
+  <line x1="100" y1="300" x2="500" y2="100" class="supply-curve" />
+  <path d="M500 100 L495 110 L505 110 Z" fill="#4daf4a" /> <!-- Arrow for Supply -->
+  <text x="460" y="80" class="label" fill="#4daf4a">Supply</text>
+
+  <!-- Equilibrium Point (Intersection of curves) -->
+  <!-- Approximate intersection: (300, 200) -->
+  <circle cx="300" cy="200" r="5" class="equilibrium-point" />
+
+  <!-- Dashed lines and labels for equilibrium -->
+  <line x1="300" y1="200" x2="300" y2="400" class="dashed-line" />
+  <line x1="300" y1="200" x2="70" y2="200" class="dashed-line" />
+  <text x="300" y="425" class="label">Q</text>
+  <text x="45" y="205" class="label">P</text>
+
+  <!-- Other P label on Y-axis -->
+  <text x="45" y="90" class="label">P</text>
+
+  <!-- Other Q labels and dashed lines on X-axis -->
+  <!-- First Q (leftmost) -->
+  <line x1="150" y1="400" x2="150" y2="270" class="dashed-line" />
+  <text x="150" y="425" class="label">Q</text>
+  <text x="150" y="270" class="label">Q</text> <!-- This Q is above the line, near the demand curve -->
+
+  <!-- Second Q (middle left) -->
+  <line x1="220" y1="400" x2="220" y2="240" class="dashed-line" />
+  <text x="220" y="425" class="label">Q</text>
+  <text x="220" y="240" class="label">Q</text> <!-- This Q is above the line, near the supply curve -->
+
+  <!-- Third Q (rightmost) -->
+  <line x1="400" y1="400" x2="400" y2="320" class="dashed-line" />
+  <text x="400" y="425" class="label">Q</text>
+  <text x="400" y="320" class="label">Q</text> <!-- This Q is above the line, near the demand curve -->
+
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <!-- Rectangles -->
+  <rect x="10" y="10" width="90" height="60" fill="#e0fcb4" stroke="black" stroke-dasharray="5,5"/>
+  <rect x="120" y="10" width="90" height="60" fill="#ffd1dc" stroke="black" stroke-dasharray="5,5"/>
+  <rect x="230" y="10" width="90" height="60" fill="#b3f0ff" stroke="black" stroke-dasharray="5,5"/>
+  <rect x="120" y="120" width="90" height="60" fill="#ffef96" stroke="black" stroke-dasharray="5,5"/>
+  <!-- Lines -->
+  <!-- Client to Server -->
+  <line x1="100" y1="30" x2="120" y2="30" stroke="blue" marker-end="url(#arrow)"/>
+  <line x1="120" y1="50" x2="100" y2="50" stroke="red" marker-end="url(#arrow)"/>
+  <!-- Server to Database -->
+  <line x1="210" y1="30" x2="230" y2="30" stroke="green" marker-end="url(#arrow)"/>
+  <line x1="230" y1="50" x2="210" y2="50" stroke="purple" marker-end="url(#arrow)"/>
+  <!-- Error connections -->
+  <line x1="55" y1="70" x2="120" y2="150" stroke="orange" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <line x1="275" y1="70" x2="210" y2="150" stroke="orange" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <!-- Text labels -->
+  <text x="65" y="25" font-size="12">API Request</text>
+  <text x="65" y="55" font-size="12" fill="red">Response</text>
+  <text x="185" y="25" font-size="12" fill="green">Query</text>
+  <text x="185" y="55" font-size="12" fill="purple">Result</text>
+  <text x="60" y="105" font-size="12" fill="orange">Timeout</text>
+  <text x="240" y="105" font-size="12" fill="orange">DB Error</text>
+</svg>

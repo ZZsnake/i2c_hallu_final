@@ -1,0 +1,18 @@
+\documentclass[border=20pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[node distance=2.5cm, minimum height=1cm, auto, text width/.style={minimum width=2.7cm}, >={Stealth}]
+    \node [ellipse, draw=teal!70!black, line width=1.2pt, fill=blue!10, text=teal!70!black, font=\sffamily\bfseries, text width=3cm, align=center] (source) {Source Code};
+    \node [rectangle, rounded corners=3pt, draw=blue, line width=1.2pt, fill=cyan!10, text=teal!70!black, font=\sffamily\bfseries, align=center, right=2.5cm of source] (compile) {Compile (e.g., \LaTeX)};
+    \node [rectangle, rounded corners=3pt, draw=blue, line width=1.2pt, fill=cyan!10, text=teal!70!black, font=\sffamily\bfseries, text width=5cm, align=center, right=2.5cm of compile] (resolve) {Resolve Citations (\texttt{biber})};
+    \node [rectangle, rounded corners=3pt, draw=blue, line width=1.2pt, fill=cyan!10, text=teal!70!black, font=\sffamily\bfseries, text width=5cm, align=center, right=2.5cm of resolve] (generate) {Generate Index (\texttt{makeindex})};
+    \node [ellipse, draw=teal!70!black, line width=1.2pt, fill=blue!10, text=teal!70!black, font=\sffamily\bfseries, text width=3cm, align=center, right=2.5cm of generate] (pdf) {Final PDF};
+
+    \path [->, draw=blue, line width=1.2pt] (source) edge node {} (compile);
+    \path [->, draw=blue, line width=1.2pt] (compile) edge node {} (resolve);
+    \path [->, draw=blue, line width=1.2pt] (resolve) edge node {} (generate);
+    \path [->, draw=blue, line width=1.2pt] (generate) edge node {} (pdf);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Function Line Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      color: #232323;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // Math: Demonstration of y = 2x + 1 for x = 0 to 6
+    const axisData = ['x=0', 'x=1', 'x=2', 'x=3', 'x=4', 'x=5', 'x=6'];
+    const data = axisData.map(function(item, i) {
+      return {
+        value: 2 * i + 1,
+        name: item
+      };
+    });
+    const links = data.map(function(item, i) {
+      return {
+        source: i,
+        target: i + 1
+      };
+    });
+    links.pop();
+
+    option = {
+      title: {
+        text: 'Linear Function: y = 2x + 1',
+        left: 'center',
+        top: 18,
+        textStyle: {
+          color: '#232323',
+          fontFamily: 'Roboto, Arial, sans-serif',
+          fontSize: 22,
+          fontWeight: 'bold'
+        }
+      },
+      tooltip: {
+        formatter: function(params) {
+          return params.data.name + '<br>y = ' + params.data.value;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: axisData,
+        axisLine: {
+          lineStyle: {
+            color: '#1a237e',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#212121',
+          fontFamily: 'Roboto, Arial, sans-serif',
+          fontSize: 15,
+          fontWeight: 'bold'
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'y',
+        nameTextStyle: {
+          color: '#212121',
+          fontFamily: 'Roboto, Arial, sans-serif',
+          fontSize: 16,
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#1a237e',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#212121',
+          fontFamily: 'Roboto, Arial, sans-serif',
+          fontSize: 15,
+          fontWeight: 'bold'
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#8e99f3',
+            type: 'dashed'
+          }
+        }
+      },
+      series: [
+        {
+          type: 'graph',
+          layout: 'none',
+          coordinateSystem: 'cartesian2d',
+          symbolSize: 30,
+          label: {
+            show: true,
+            color: '#283593',
+            fontFamily: 'Roboto, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14,
+            borderColor: '#283593',
+            borderWidth: 0
+          },
+          edgeSymbol: ['circle', 'arrow'],
+          edgeSymbolSize: [5, 13],
+          data: data,
+          links: links,
+          lineStyle: {
+            color: '#e53935',
+            width: 4
+          },
+          itemStyle: {
+            color: '#3949ab',
+            borderColor: '#1a237e',
+            borderWidth: 2
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

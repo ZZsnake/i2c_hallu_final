@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 215">
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="215" fill="white"/>
+
+  <!-- Cell body (soma) -->
+  <path d="M70,115
+           C50,100 45,85 48,75
+           C52,65 60,65 63,55
+           C65,47 60,40 62,35
+           C65,28 75,30 82,37
+           C90,45 98,47 110,45
+           C125,43 135,45 142,52
+           C150,60 150,70 150,80
+           C150,90 148,98 140,108
+           C132,118 120,125 108,127
+           C96,129 84,125 70,115Z"
+        fill="#c3d79b" stroke="#6b7f55" stroke-width="1.2"/>
+
+  <!-- Dendrites (left) -->
+  <path d="M70,110
+           C55,110 45,112 35,118
+           C30,122 27,128 25,134" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M74,104
+           C60,100 50,95 40,90
+           C32,85 27,80 22,76" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M80,98
+           C70,88 60,80 50,74
+           C42,70 35,68 30,67" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M86,96
+           C80,82 78,70 78,60
+           C78,52 80,46 82,42" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M60,112
+           C48,118 40,124 32,132
+           C26,138 22,145 18,152" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M64,120
+           C55,130 49,138 45,148
+           C42,156 41,162 41,168" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+
+  <!-- Axon emerging from soma -->
+  <path d="M140,115
+           C155,115 165,117 178,118" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+
+  <!-- Myelin sheath segments (blue capsules) -->
+  <g fill="#4f92d3" stroke="#295c94" stroke-width="1">
+    <rect x="178" y="104" width="32" height="24" rx="12" ry="12"/>
+    <rect x="220" y="104" width="32" height="24" rx="12" ry="12"/>
+    <rect x="262" y="104" width="32" height="24" rx="12" ry="12"/>
+    <rect x="304" y="104" width="32" height="24" rx="12" ry="12"/>
+  </g>
+
+  <!-- Axon segments between myelin sheaths -->
+  <g stroke="#6b7f55" stroke-width="1.2" fill="none">
+    <line x1="210" y1="116" x2="220" y2="116"/>
+    <line x1="252" y1="116" x2="262" y2="116"/>
+    <line x1="294" y1="116" x2="304" y2="116"/>
+  </g>
+
+  <!-- Axon terminal branches -->
+  <path d="M336,116
+           C348,116 360,118 372,122
+           C380,125 386,130 392,136" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M336,110
+           C348,106 360,104 372,104
+           C380,104 386,105 392,106" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M336,122
+           C348,126 360,132 370,140
+           C378,146 384,152 388,160" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+  <path d="M332,108
+           C340,100 346,94 352,90
+           C360,86 366,84 372,84" 
+        fill="none" stroke="#6b7f55" stroke-width="1.2"/>
+
+  <!-- Nucleus -->
+  <ellipse cx="96" cy="110" rx="10" ry="14" fill="#b03a7a" stroke="#7a274f" stroke-width="1"/>
+
+  <!-- Labels -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#000000">
+    <!-- Dendrite label -->
+    <text x="32" y="40">Dendrite</text>
+
+    <!-- Nucleus label -->
+    <text x="50" y="145">Nucleus</text>
+
+    <!-- Cell body label -->
+    <text x="90" y="60">Cell body</text>
+
+    <!-- Axon label -->
+    <text x="150" y="140">Axon</text>
+
+    <!-- Myelin sheath label -->
+    <text x="215" y="155">Myelin sheath</text>
+
+    <!-- Schwann cell label -->
+    <text x="245" y="90">Schwann cell</text>
+
+    <!-- Node of Ranvier label -->
+    <text x="250" y="70">Node of</text>
+    <text x="252" y="82">Ranvier</text>
+
+    <!-- Axon terminal label -->
+    <text x="290" y="40">Axon Terminal</text>
+  </g>
+
+  <!-- Leader lines from labels to structures -->
+  <g stroke="#000000" stroke-width="0.6" fill="none">
+    <!-- Dendrite leader -->
+    <line x1="55" y1="44" x2="70" y2="80"/>
+    <!-- Nucleus leader -->
+    <line x1="68" y1="138" x2="90" y2="118"/>
+    <!-- Axon leader -->
+    <line x1="175" y1="136" x2="190" y2="120"/>
+    <!-- Myelin sheath leader -->
+    <line x1="245" y1="150" x2="245" y2="128"/>
+    <!-- Schwann cell leader -->
+    <line x1="270" y1="92" x2="278" y2="104"/>
+    <!-- Node of Ranvier leader -->
+    <line x1="270" y1="84" x2="258" y2="114"/>
+    <!-- Axon terminal leader -->
+    <line x1="315" y1="44" x2="342" y2="96"/>
+  </g>
+</svg>

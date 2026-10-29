@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>pie-chart-other-domain-sample</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222222;
+    }
+    #container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- New Dataset (Other Domain) ---
+    // Sample: Distribution of Activity Preferences in a Community Survey
+    option = {
+      title: [
+        {
+          text: 'Community Activity Preferences (Survey)',
+          left: 'center',
+          top: 10,
+          textStyle: {
+            color: '#222222',
+            fontWeight: 'bold',
+            fontSize: 22,
+            fontFamily: 'Segoe UI'
+          }
+        },
+        {
+          text: 'Year: 2021',
+          left: 'center',
+          top: '22%',
+          textStyle: {
+            color: '#222222',
+            fontSize: 15,
+            fontFamily: 'Segoe UI'
+          }
+        },
+        {
+          text: 'Year: 2022',
+          left: 'center',
+          top: '48%',
+          textStyle: {
+            color: '#222222',
+            fontSize: 15,
+            fontFamily: 'Segoe UI'
+          }
+        },
+        {
+          text: 'Year: 2023',
+          left: 'center',
+          top: '74%',
+          textStyle: {
+            color: '#222222',
+            fontSize: 15,
+            fontFamily: 'Segoe UI'
+          }
+        }
+      ],
+      dataset: [
+        {
+          source: [
+            ['Activity', 'Participants', 'Location', 'Year'],
+            ['Volunteering', 68, 'Park', 2021],
+            ['Yoga', 52, 'Community Center', 2021],
+            ['Gardening', 43, 'Garden', 2021],
+            ['Book Club', 37, 'Library', 2021],
+            ['Painting', 21, 'Studio', 2021],
+            ['Volunteering', 75, 'Park', 2022],
+            ['Yoga', 61, 'Community Center', 2022],
+            ['Gardening', 49, 'Garden', 2022],
+            ['Book Club', 33, 'Library', 2022],
+            ['Painting', 28, 'Studio', 2022],
+            ['Volunteering', 82, 'Park', 2023],
+            ['Yoga', 55, 'Community Center', 2023],
+            ['Gardening', 56, 'Garden', 2023],
+            ['Book Club', 29, 'Library', 2023],
+            ['Painting', 32, 'Studio', 2023]
+          ]
+        },
+        {
+          transform: {
+            type: 'filter',
+            config: { dimension: 'Year', value: 2021 }
+          }
+        },
+        {
+          transform: {
+            type: 'filter',
+            config: { dimension: 'Year', value: 2022 }
+          }
+        },
+        {
+          transform: {
+            type: 'filter',
+            config: { dimension: 'Year', value: 2023 }
+          }
+        }
+      ],
+      color: ['#2166ac', '#b2182b', '#67a963', '#fdb863', '#5e4fa2'],
+      series: [
+        {
+          type: 'pie',
+          radius: 55,
+          center: ['50%', '25%'],
+          datasetIndex: 1,
+          label: {
+            color: '#222222',
+            fontSize: 14,
+            fontWeight: 'bold',
+            fontFamily: 'Segoe UI'
+          },
+          labelLine: {
+            lineStyle: {
+              color: '#222222',
+              width: 2
+            }
+          },
+          emphasis: {
+            itemStyle: {
+              borderColor: '#222222',
+              borderWidth: 2
+            }
+          }
+        },
+        {
+          type: 'pie',
+          radius: 55,
+          center: ['50%', '50%'],
+          datasetIndex: 2,
+          label: {
+            color: '#222222',
+            fontSize: 14,
+            fontWeight: 'bold',
+            fontFamily: 'Segoe UI'
+          },
+          labelLine: {
+            lineStyle: {
+              color: '#222222',
+              width: 2
+            }
+          },
+          emphasis: {
+            itemStyle: {
+              borderColor: '#222222',
+              borderWidth: 2
+            }
+          }
+        },
+        {
+          type: 'pie',
+          radius: 55,
+          center: ['50%', '75%'],
+          datasetIndex: 3,
+          label: {
+            color: '#222222',
+            fontSize: 14,
+            fontWeight: 'bold',
+            fontFamily: 'Segoe UI'
+          },
+          labelLine: {
+            lineStyle: {
+              color: '#222222',
+              width: 2
+            }
+          },
+          emphasis: {
+            itemStyle: {
+              borderColor: '#222222',
+              borderWidth: 2
+            }
+          }
+        }
+      ],
+      media: [
+        {
+          query: { minAspectRatio: 1 },
+          option: {
+            series: [
+              { center: ['25%', '50%'] },
+              { center: ['50%', '50%'] },
+              { center: ['75%', '50%'] }
+            ]
+          }
+        },
+        {
+          option: {
+            series: [
+              { center: ['50%', '25%'] },
+              { center: ['50%', '50%'] },
+              { center: ['50%', '75%'] }
+            ]
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

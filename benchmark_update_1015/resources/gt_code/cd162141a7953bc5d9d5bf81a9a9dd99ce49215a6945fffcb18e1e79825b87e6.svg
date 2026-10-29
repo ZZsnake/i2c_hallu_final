@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg viewBox="0 0 640 904" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter_blur" x="-0.07875" y="-0.252" width="1.1575" height="1.504">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+  </defs>
+  <title>Computer Science Flowchart</title>
+  <desc/>
+  <polygon fill="rgb(34,34,180)" points="443,704 502,704 510,712 510,719 443,719 443,704" stroke="rgb(34,34,180)" style="filter:url(#filter_blur);opacity:0.8;fill-opacity:1"/>
+  <rect fill="rgb(34,34,180)" height="40" stroke="rgb(34,34,180)" style="filter:url(#filter_blur);opacity:0.8;fill-opacity:1" width="128" x="67" y="46"/>
+  <rect fill="rgb(34,34,180)" height="40" stroke="rgb(34,34,180)" style="filter:url(#filter_blur);opacity:0.8;fill-opacity:1" width="128" x="259" y="46"/>
+  <rect fill="rgb(34,34,180)" height="40" stroke="rgb(34,34,180)" style="filter:url(#filter_blur);opacity:0.8;fill-opacity:1" width="128" x="451" y="46"/>
+  <path d="M128 80 L128 892" fill="none" stroke="rgb(20,20,20)" stroke-width="2.2" stroke-dasharray="10 6"/>
+  <path d="M320 80 L320 892" fill="none" stroke="rgb(20,20,20)" stroke-width="2.2" stroke-dasharray="10 6"/>
+  <path d="M512 80 L512 892" fill="none" stroke="rgb(20,20,20)" stroke-width="2.2" stroke-dasharray="10 6"/>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(34,34,180)" stroke-width="2.4" width="128" x="64" y="40"/>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="128" y="66">User</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(34,34,180)" stroke-width="2.4" width="128" x="256" y="40"/>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="320" y="66">Server</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(34,34,180)" stroke-width="2.4" width="128" x="448" y="40"/>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="512" y="66">Database</text>
+  <path d="M136 135 L504 165" fill="none" stroke="rgb(220,40,40)" stroke-width="2.4"/>
+  <polygon fill="rgb(220,40,40)" points="496,161 504,165 496,169" stroke="rgb(220,40,40)"/>
+  <path d="M136 260 L504 230" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4"/>
+  <polygon fill="rgb(20,20,20)" points="144,256 136,260 144,264" stroke="rgb(20,20,20)"/>
+  <path d="M136 325 L504 355" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4"/>
+  <polygon fill="rgb(20,20,20)" points="496,351 504,355 496,359" stroke="rgb(20,20,20)"/>
+  <path d="M136 450 L504 420" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4"/>
+  <polygon fill="rgb(20,20,20)" points="144,446 136,450 144,454" stroke="rgb(20,20,20)"/>
+  <path d="M136 515 L504 545" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4"/>
+  <polygon fill="rgb(20,20,20)" points="496,541 504,545 496,549" stroke="rgb(20,20,20)"/>
+  <path d="M328 610 L504 640" fill="none" stroke="rgb(34,180,34)" stroke-width="2.4"/>
+  <polygon fill="rgb(34,180,34)" points="496,636 504,640 496,644" stroke="rgb(34,180,34)"/>
+  <path d="M136 705 L408 720" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4"/>
+  <polygon fill="rgb(20,20,20)" points="400,716 408,720 400,724" stroke="rgb(20,20,20)"/>
+  <path d="M416 712 L432 728" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4" stroke-dasharray="5 3"/>
+  <path d="M416 728 L432 712" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4" stroke-dasharray="5 3"/>
+  <polygon fill="rgb(34,180,180)" points="440,698 499,698 507,706 507,713 440,713 440,698" stroke="rgb(20,20,20)" stroke-width="2.2"/>
+  <path d="M499 698 L499 706" fill="none" stroke="rgb(20,20,20)" stroke-width="2.2"/>
+  <path d="M499 706 L507 706" fill="none" stroke="rgb(20,20,20)" stroke-width="2.2"/>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="469" y="711">Access Denied</text>
+  <path d="M136 830 L504 800" fill="none" stroke="rgb(20,20,20)" stroke-width="2.4"/>
+  <polygon fill="rgb(20,20,20)" points="144,826 136,830 144,834" stroke="rgb(20,20,20)"/>
+  <text fill="rgb(220,40,40)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="207" y="133">Login Request</text>
+  <text fill="rgb(34,180,34)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="434" y="228">Login Success</text>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="197" y="323">Query Data</text>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="443" y="418">Query Result</text>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="152" y="513">Update</text>
+  <text fill="rgb(34,180,34)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="380" y="608">Logout</text>
+  <text fill="rgb(20,20,20)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="152" y="703">Update</text>
+  <text fill="rgb(34,180,34)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" x="455" y="798">Logout</text>
+</svg>

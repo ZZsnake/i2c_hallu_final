@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth of Mathematical Functions</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        var chart = echarts.init(document.getElementById('chart'));
+        var option = {
+            title: {
+                text: 'Growth of Mathematical Functions',
+                left: 'center',
+                top: 0
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['Exponential', 'Quadratic', 'Linear'],
+                right: 0,
+                top: 0
+            },
+            xAxis: {
+                type: 'category',
+                data: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+                name: 'n'
+            },
+            yAxis: {
+                type: 'log',
+                name: 'Value',
+                minorSplitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#edf2f7',
+                        width: 1
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Exponential',
+                    type: 'line',
+                    data: [2, 4, 8, 16, 32, 64, 128, 256, 512],
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    itemStyle: {
+                        color: 'blue',
+                        borderColor: '#333',
+                        borderWidth: 2
+                    }
+                },
+                {
+                    name: 'Quadratic',
+                    type: 'line',
+                    data: [1, 4, 9, 16, 25, 36, 49, 64, 81],
+                    symbol: 'triangle',
+                    symbolSize: 10,
+                    itemStyle: {
+                        color: 'red',
+                        borderColor: '#333',
+                        borderWidth: 2
+                    }
+                },
+                {
+                    name: 'Linear',
+                    type: 'line',
+                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                    symbol: 'square',
+                    symbolSize: 10,
+                    itemStyle: {
+                        color: 'green',
+                        borderColor: '#333',
+                        borderWidth: 2
+                    }
+                }
+            ]
+        };
+        chart.setOption(option);
+    </script>
+</body>
+</html>

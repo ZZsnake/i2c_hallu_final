@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetic Field Gauge</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        #chart-container {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chart-container"></div>
+
+<script>
+    $(document).ready(function() {
+        var chartDom = document.getElementById('chart-container');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            series: [
+                {
+                    type: 'gauge',
+                    startAngle: 210,
+                    endAngle: -30,
+                    min: 0,
+                    max: 120,
+                    splitNumber: 8,
+                    radius: '80%',
+                    axisLine: {
+                        lineStyle: {
+                            width: 10,
+                            color: [
+                                [0.5, '#2b49c2'], // Blue part
+                                [1, '#10a050']    // Green part
+                            ]
+                        }
+                    },
+                    pointer: {
+                        icon: 'path://M12.8,0.7l12,40.1H0.7L12.8,0.7z',
+                        length: '70%',
+                        width: 12,
+                        offsetCenter: [0, '5%'],
+                        itemStyle: {
+                            color: '#1a2a5a'
+                        }
+                    },
+                    axisTick: {
+                        distance: -25,
+                        length: 8,
+                        lineStyle: {
+                            color: '#000',
+                            width: 2
+                        }
+                    },
+                    splitLine: {
+                        distance: -30,
+                        length: 15,
+                        lineStyle: {
+                            color: '#000',
+                            width: 3
+                        }
+                    },
+                    axisLabel: {
+                        distance: -55,
+                        color: '#333',
+                        fontSize: 16
+                    },
+                    anchor: {
+                        show: false
+                    },
+                    title: {
+                        show: false
+                    },
+                    detail: {
+                        valueAnimation: true,
+                        width: 'auto',
+                        lineHeight: 40,
+                        borderRadius: 8,
+                        offsetCenter: [0, '45%'],
+                        fontSize: 35,
+                        fontWeight: 'normal',
+                        color: '#000',
+                        formatter: function (value) {
+                            return '{value|' + value.toFixed(1) + '} {unit|mT}';
+                        },
+                        rich: {
+                            value: {
+                                fontSize: 35,
+                                fontWeight: 'bold',
+                                color: '#000'
+                            },
+                            unit: {
+                                fontSize: 18,
+                                color: '#666',
+                                padding: [0, 0, -10, 5]
+                            }
+                        },
+                        backgroundColor: '#fff',
+                        borderWidth: 1,
+                        borderColor: '#333',
+                        padding: [10, 20]
+                    },
+                    data: [
+                        {
+                            value: 73.5
+                        }
+                    ]
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    });
+</script>
+
+</body>
+</html>

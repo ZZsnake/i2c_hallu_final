@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{center}
+\setlength\PreviewBorder{10pt}%
+\usetikzlibrary{arrows.meta,shapes,positioning}
+
+% Custom 'database' shape for data store representation
+\makeatletter
+\pgfdeclareshape{datastore}{
+  \inheritsavedanchors[from=rectangle]
+  \inheritanchorborder[from=rectangle]
+  \inheritanchor[from=rectangle]{center}
+  \inheritanchor[from=rectangle]{base}
+  \inheritanchor[from=rectangle]{north}
+  \inheritanchor[from=rectangle]{north east}
+  \inheritanchor[from=rectangle]{east}
+  \inheritanchor[from=rectangle]{south east}
+  \inheritanchor[from=rectangle]{south}
+  \inheritanchor[from=rectangle]{south west}
+  \inheritanchor[from=rectangle]{west}
+  \inheritanchor[from=rectangle]{north west}
+  \backgroundpath{
+    \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+    \northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+    \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@ya}}
+    \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@yb}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yb}}
+ }
+}
+\makeatother
+
+\begin{document}
+\begin{center}
+\begin{tikzpicture}[
+  font=\sffamily,
+  every matrix/.style={ampersand replacement=\&,column sep=2.2cm,row sep=2.2cm},
+  input/.style={draw,thick,rounded corners,fill=teal!60!black,inner sep=.3cm,text=white},
+  processor/.style={draw,thick,diamond,fill=blue!80!black,minimum width=2cm,minimum height=1cm,text=white},
+  output/.style={draw,thick,rounded corners,fill=red!80!black,inner sep=.3cm,text=white},
+  datastore/.style={draw,very thick,shape=datastore,fill=gray!10,inner sep=.35cm},
+  to/.style={-Stealth,thick,draw=black},
+  every node/.style={align=center}
+]
+
+% Matrix positioning
+\matrix{
+  \node[input] (user) {User Interface}; \&
+    \node[processor] (controller) {Controller}; \& \\
+
+  \& \node[datastore] (cache) {Cache}; \& \\
+
+  \node[datastore] (database) {Database}; \&
+    \node[processor] (analytics) {Analytics Engine}; \&
+    \node[output] (report) {Report Generator}; \\
+};
+
+% Arrows and labels
+\draw[to] (user) -- node[midway,above,black] {request} node[midway,below,black] {step 1} (controller);
+\draw[to] (controller) -- node[midway,right,black] {query data\\step 2} (cache);
+\draw[to] (cache) -- node[midway,right,black] {cached result\\step 3} (analytics);
+\draw[to] (analytics) to[bend right=55] node[midway,above,black] {aggregate} node[midway,below,black] {step 4} (database);
+\draw[to] (database) to[bend right=55] node[midway,above,black] {data fetch} node[midway,below,black] {step 5} (analytics);
+\draw[to] (analytics) -- node[midway,above,black] {output} node[midway,below,black] {step 6} (report);
+
+\end{tikzpicture}
+\end{center}
+\end{document}

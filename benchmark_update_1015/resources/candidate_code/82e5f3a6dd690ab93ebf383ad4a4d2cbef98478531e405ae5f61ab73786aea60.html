@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polygon in Cartesian Plane</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .chart-wrapper {
+            width: 90%;
+            max-width: 1350px;
+            height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #polygonChart {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="chart-wrapper">
+    <div id="polygonChart"></div>
+</div>
+
+<script>
+$(function () {
+    var chartDom = document.getElementById('polygonChart');
+    var myChart = echarts.init(chartDom);
+
+    var data = [
+        [20, 300],
+        [90, 380],
+        [180, 350],
+        [250, 260],
+        [150, 180],
+        [60, 220]
+    ];
+
+    var option = {
+        title: {
+            text: 'Polygon in Cartesian Plane',
+            left: 'center',
+            top: 10,
+            textStyle: {
+                fontSize: 14,
+                fontWeight: 'bold',
+                color: '#222'
+            }
+        },
+        grid: {
+            left: 60,
+            right: 40,
+            top: 60,
+            bottom: 60
+        },
+        legend: {
+            data: ['Polygon'],
+            top: 32,
+            left: 'center',
+            itemWidth: 16,
+            itemHeight: 10,
+            textStyle: {
+                color: '#333',
+                fontSize: 11
+            }
+        },
+        xAxis: {
+            type: 'value',
+            name: 'X',
+            nameLocation: 'middle',
+            nameGap: 35,
+            min: 0,
+            max: 300,
+            interval: 50,
+            axisLine: {
+                lineStyle: {
+                    color: '#000',
+                    width: 2
+                }
+            },
+            axisTick: {
+                show: true
+            },
+            axisLabel: {
+                color: '#333'
+            },
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    color: '#e0e0e0',
+                    type: 'dotted'
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            name: 'Y',
+            nameLocation: 'middle',
+            nameGap: 40,
+            min: 0,
+            max: 400,
+            interval: 100,
+            axisLine: {
+                lineStyle: {
+                    color: '#000',
+                    width: 2
+                }
+            },
+            axisTick: {
+                show: true
+            },
+            axisLabel: {
+                color: '#333'
+            },
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    color: '#e0e0e0',
+                    type: 'dotted'
+                }
+            }
+        },
+        series: [
+            {
+                name: 'Polygon',
+                type: 'line',
+                data: data,
+                symbol: 'circle',
+                symbolSize: 8,
+                showSymbol: true,
+                lineStyle: {
+                    color: '#12315a',
+                    width: 2
+                },
+                itemStyle: {
+                    color: '#c2185b',
+                    borderColor: '#1a237e',
+                    borderWidth: 2
+                },
+                areaStyle: {
+                    color: 'rgba(33, 150, 243, 0.9)'
+                },
+                label: {
+                    show: true,
+                    formatter: function (params) {
+                        return '(' + params.value[0] + ', ' + params.value[1] + ')';
+                    },
+                    position: 'top',
+                    color: '#111',
+                    fontSize: 10,
+                    padding: [2, 4, 2, 4]
+                },
+                smooth: false,
+                // ensure polygon closes visually
+                emphasis: {
+                    focus: 'series'
+                }
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    });
+});
+</script>
+</body>
+</html>

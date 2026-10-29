@@ -1,0 +1,54 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Radial gradient for the masses -->
+    <radialGradient id="massGradient" cx="40%" cy="40%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" style="stop-color:#ffcc33; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6600; stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Pattern for the ceiling hatching -->
+    <pattern id="hatch" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="15" style="stroke:black; stroke-width:2" />
+    </pattern>
+  </defs>
+
+  <!-- Ceiling -->
+  <rect x="20" y="10" width="360" height="30" fill="url(#hatch)" />
+  <line x1="20" y1="40" x2="380" y2="40" stroke="black" stroke-width="3" />
+
+  <!-- Pivot point 1 -->
+  <circle cx="180" cy="40" r="2" fill="black" />
+
+  <!-- Vertical reference line 1 -->
+  <line x1="180" y1="40" x2="180" y2="180" stroke="black" stroke-width="1" stroke-dasharray="5,5" />
+
+  <!-- Rod 1 (L1) -->
+  <line x1="180" y1="40" x2="220" y2="240" stroke="black" stroke-width="2" />
+  <text x="215" y="150" font-family="serif" font-size="40" font-style="italic">L<tspan baseline-shift="sub" font-size="25" font-style="normal">1</tspan></text>
+
+  <!-- Angle theta 1 -->
+  <path d="M 180 110 A 70 70 0 0 1 194 110" fill="none" stroke="black" stroke-width="1" />
+  <path d="M 194 110 L 190 106 M 194 110 L 190 114" fill="none" stroke="black" stroke-width="1" />
+  <text x="140" y="115" font-family="serif" font-size="30" font-style="italic">θ<tspan baseline-shift="sub" font-size="20" font-style="normal">1</tspan></text>
+
+  <!-- Mass 1 (m1) -->
+  <circle cx="220" cy="240" r="25" fill="url(#massGradient)" />
+  <text x="250" y="245" font-family="serif" font-size="30" font-style="italic">m<tspan baseline-shift="sub" font-size="20" font-style="normal">1</tspan></text>
+
+  <!-- Vertical reference line 2 -->
+  <line x1="220" y1="240" x2="220" y2="450" stroke="black" stroke-width="1" stroke-dasharray="5,5" />
+
+  <!-- Rod 2 (L2) -->
+  <line x1="220" y1="240" x2="280" y2="440" stroke="black" stroke-width="2" />
+  <text x="270" y="360" font-family="serif" font-size="40" font-style="italic">L<tspan baseline-shift="sub" font-size="25" font-style="normal">2</tspan></text>
+
+  <!-- Angle theta 2 -->
+  <path d="M 220 390 A 150 150 0 0 1 265 390" fill="none" stroke="black" stroke-width="1" />
+  <path d="M 265 390 L 258 386 M 265 390 L 260 395" fill="none" stroke="black" stroke-width="1" />
+  <text x="160" y="395" font-family="serif" font-size="30" font-style="italic">θ<tspan baseline-shift="sub" font-size="20" font-style="normal">2</tspan></text>
+
+  <!-- Mass 2 (m2) -->
+  <circle cx="280" cy="440" r="25" fill="url(#massGradient)" />
+  <text x="310" y="455" font-family="serif" font-size="30" font-style="italic">m<tspan baseline-shift="sub" font-size="20" font-style="normal">2</tspan></text>
+
+</svg>

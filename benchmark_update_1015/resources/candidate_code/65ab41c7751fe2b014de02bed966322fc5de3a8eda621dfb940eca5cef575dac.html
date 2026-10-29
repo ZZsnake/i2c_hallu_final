@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Problem Types Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .chart-container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        .title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .icons {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Distribution of Math Problem Types</div>
+    <div class="container">
+        <div class="chart-container" id="chart1">
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #1f77b4;"></div>
+                    <span>Algebra</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #17becf;"></div>
+                    <span>Geometry</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #ffbb00;"></div>
+                    <span>Calculus</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #9400d3;"></div>
+                    <span>Probability</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #d65000;"></div>
+                    <span>Number Theory</span>
+                </div>
+            </div>
+        </div>
+        <div class="chart-container" id="chart2"></div>
+        <div class="chart-container" id="chart3"></div>
+        <div class="chart-container" id="chart4"></div>
+    </div>
+    <div class="icons">
+        <div class="icon">📄</div>
+        <div class="icon">🔄</div>
+        <div class="icon">⬇️</div>
+    </div>
+
+    <script>
+        const data = [
+            { value: 30, name: 'Algebra' },
+            { value: 25, name: 'Geometry' },
+            { value: 20, name: 'Calculus' },
+            { value: 15, name: 'Probability' },
+            { value: 10, name: 'Number Theory' }
+        ];
+
+        const colors = ['#1f77b4', '#17becf', '#ffbb00', '#9400d3', '#d65000'];
+
+        function initChart(id, orient, data) {
+            const chart = echarts.init(document.getElementById(id));
+            const option = {
+                color: colors,
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a0}<br/>{b}: {c} ({d}%)'
+                },
+                series: [
+                    {
+                        name: 'Math Problem Types',
+                        type: 'funnel',
+                        left: '10%',
+                        top: '10%',
+                        width: '80%',
+                        height: '80%',
+                        orient: orient, // 'vertical' or 'horizontal'
+                        data: data,
+                        gap: 2,
+                        label: {
+                            show: true,
+                            formatter: '{b}'
+                        },
+                        labelLine: {
+                            length: 10,
+                            lineStyle: {
+                                width: 1,
+                                type: 'solid'
+                            }
+                        },
+                        itemStyle: {
+                            borderColor: '#fff',
+                            borderWidth: 1
+                        }
+                    }
+                ]
+            };
+            chart.setOption(option);
+            window.addEventListener('resize', function() {
+                chart.resize();
+            });
+        }
+
+        initChart('chart1', 'vertical', data);
+        initChart('chart2', 'vertical', data.reverse());
+        initChart('chart3', 'vertical', data.reverse());
+        initChart('chart4', 'vertical', data);
+
+        // Adjust chart2 and chart3 to be inverted by reversing data and setting orient to 'vertical' (ECharts doesn't have direct invert, so we reverse data order)
+        // For chart2 and chart3, we'll use the same data but reverse the order to simulate inversion
+        // Note: ECharts funnel doesn't have a direct 'invert' option, so we reverse the data array to change the order
+    </script>
+</body>
+</html>

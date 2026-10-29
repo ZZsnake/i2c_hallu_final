@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <!-- Background -->
+  <rect width="1000" height="600" fill="white" />
+
+  <!-- Title -->
+  <text x="500" y="60" font-family="serif" font-size="32" font-weight="bold" text-anchor="middle">Production mondiale en 1939 : 136,5 millions de tonnes</text>
+
+  <!-- Pie Chart -->
+  <g transform="translate(630, 320)">
+    <!-- Etats-Unis: 48.9 / 136.5 * 360 = 129.0 degrees -->
+    <path d="M 0,0 L 0,-250 A 250,250 0 0,1 128.5,214.3 Z" fill="#004c99" transform="rotate(-90)" />
+    <!-- Allemagne: 22.9 / 136.5 * 360 = 60.4 degrees -->
+    <path d="M 0,0 L 128.5,214.3 A 250,250 0 0,1 -118.5,220.1 Z" fill="#ff5511" transform="rotate(-90)" />
+    <!-- France: 13.4 / 136.5 * 360 = 35.3 degrees -->
+    <path d="M 0,0 L -118.5,220.1 A 250,250 0 0,1 -225.5,107.8 Z" fill="#ffcc33" transform="rotate(-90)" />
+    <!-- Grande-Bretagne: 8.0 / 136.5 * 360 = 21.1 degrees -->
+    <path d="M 0,0 L -225.5,107.8 A 250,250 0 0,1 -248.8,24.5 Z" fill="#55aa33" transform="rotate(-90)" />
+    <!-- Belgique: 3.1 / 136.5 * 360 = 8.2 degrees -->
+    <path d="M 0,0 L -248.8,24.5 A 250,250 0 0,1 -249.9,-8.2 Z" fill="#880022" transform="rotate(-90)" />
+    <!-- Luxembourg: 1.8 / 136.5 * 360 = 4.7 degrees -->
+    <path d="M 0,0 L -249.9,-8.2 A 250,250 0 0,1 -248.3,-28.8 Z" fill="#88ccff" transform="rotate(-90)" />
+    <!-- Autres: 39.5 / 136.5 * 360 = 104.2 degrees -->
+    <path d="M 0,0 L -248.3,-28.8 A 250,250 0 0,1 0,-250 Z" fill="#bbbbbb" transform="rotate(-90)" />
+
+    <!-- Labels on Chart -->
+    <text x="-100" y="-50" font-family="serif" font-size="28" font-weight="bold" fill="white">Luxembourg</text>
+    <text x="45" y="-65" font-family="serif" font-size="28" font-weight="bold" fill="black">3,1</text>
+    <text x="120" y="110" font-family="serif" font-size="28" font-weight="bold" fill="black">8,0</text>
+    <text x="70" y="160" font-family="serif" font-size="28" font-weight="bold" fill="black">13,4</text>
+    <text x="-60" y="140" font-family="serif" font-size="28" font-weight="bold" fill="white">22,9</text>
+    
+    <!-- Leader lines and external labels -->
+    <line x1="200" y1="30" x2="250" y2="50" stroke="black" stroke-width="1" />
+    <text x="255" y="60" font-family="serif" font-size="28" font-weight="bold" fill="black">Grande-</text>
+    <line x1="200" y1="60" x2="250" y2="100" stroke="black" stroke-width="1" />
+    <text x="255" y="105" font-family="serif" font-size="28" font-weight="bold" fill="black">France</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(50, 180)">
+    <rect x="0" y="0" width="20" height="20" fill="#004c99" />
+    <text x="30" y="18" font-family="serif" font-size="32">Etats-Unis</text>
+    
+    <rect x="0" y="40" width="20" height="20" fill="#ff5511" />
+    <text x="30" y="58" font-family="serif" font-size="32">Allemagne</text>
+    
+    <text x="30" y="98" font-family="serif" font-size="32">48,9</text>
+    
+    <rect x="0" y="120" width="20" height="20" fill="#55aa33" />
+    <text x="30" y="138" font-family="serif" font-size="32">1,8</text>
+    
+    <rect x="0" y="160" width="20" height="20" fill="#880022" />
+    <text x="30" y="178" font-family="serif" font-size="32">Belgique</text>
+    
+    <rect x="0" y="200" width="20" height="20" fill="#88ccff" />
+    <text x="30" y="218" font-family="serif" font-size="32">Source : thèse de Françoise Berger (2000)</text>
+    
+    <rect x="0" y="240" width="20" height="20" fill="#bbbbbb" />
+    <text x="30" y="258" font-family="serif" font-size="32">Autres</text>
+    
+    <text x="200" y="360" font-family="serif" font-size="28">39,5</text>
+  </g>
+</svg>

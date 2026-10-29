@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Skills Radar Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+        .color-box {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        .charts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 0 10%;
+        }
+        .chart {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Skills Radar Comparison</h1>
+    <div class="legend">
+        <div class="legend-item"><div class="color-box" style="background: #4e79a7"></div>Student Alpha</div>
+        <div class="legend-item"><div class="color-box" style="background: #f28e2c"></div>Student Beta</div>
+        <div class="legend-item"><div class="color-box" style="background: #e15759"></div>Student Gamma</div>
+        <div class="legend-item"><div class="color-box" style="background: #76b7b2"></div>Quiz Scores</div>
+        <div class="legend-item"><div class="color-box" style="background: #59a14f"></div>Homework Scores</div>
+    </div>
+    <div class="charts">
+        <div id="chart1" class="chart"></div>
+        <div id="chart2" class="chart"></div>
+        <div id="chart3" class="chart"></div>
+    </div>
+    <script>
+        // Chart 1: Student Alpha
+        var chart1 = echarts.init(document.getElementById('chart1'));
+        var option1 = {
+            radar: {
+                shape: 'polygon',
+                indicator: [
+                    { name: 'Algebra', max: 100 },
+                    { name: 'Statistics', max: 100 },
+                    { name: 'Calculus', max: 100 },
+                    { name: 'Geometry', max: 100 }
+                ],
+                splitArea: { show: false },
+                axisLine: { lineStyle: { color: 'rgba(0,0,0,0.1)' } }
+            },
+            series: [{
+                name: 'Student Alpha',
+                type: 'radar',
+                data: [{ value: [85, 75, 80, 90] }],
+                areaStyle: { color: 'rgba(78,121,167,0.2)' },
+                lineStyle: { color: '#4e79a7' }
+            }]
+        };
+        chart1.setOption(option1);
+
+        // Chart 2: Student Beta
+        var chart2 = echarts.init(document.getElementById('chart2'));
+        var option2 = {
+            radar: {
+                shape: 'polygon',
+                indicator: [
+                    { name: 'Number Theory', max: 100 },
+                    { name: 'Combinatorics', max: 100 },
+                    { name: 'Logic', max: 100 },
+                    { name: 'Probability', max: 100 },
+                    { name: 'Discrete Math', max: 100 }
+                ],
+                splitArea: { show: false },
+                axisLine: { lineStyle: { color: 'rgba(0,0,0,0.1)' } }
+            },
+            series: [{
+                name: 'Student Beta',
+                type: 'radar',
+                data: [{ value: [70, 75, 85, 80, 78] }],
+                areaStyle: { color: 'rgba(225,87,89,0.2)' },
+                lineStyle: { color: '#e15759' }
+            }]
+        };
+        chart2.setOption(option2);
+
+        // Chart 3: Weekly Scores
+        var chart3 = echarts.init(document.getElementById('chart3'));
+        var weeks = ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 
+                    'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'];
+        var option3 = {
+            radar: {
+                shape: 'polygon',
+                indicator: weeks.map(week => ({ name: week, max: 100 })),
+                splitArea: { show: false },
+                axisLine: { lineStyle: { color: 'rgba(0,0,0,0.1)' } }
+            },
+            series: [{
+                name: 'Quiz Scores',
+                type: 'radar',
+                data: [{ value: Array(12).fill(85) }],
+                areaStyle: { color: 'rgba(118,183,178,0.3)' },
+                lineStyle: { color: '#59a14f' }
+            }]
+        };
+        chart3.setOption(option3);
+    </script>
+</body>
+</html>

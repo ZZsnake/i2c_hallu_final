@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Population Growth Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div id="populationChart" style="width: 100%; height: 500px;"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var chartDom = document.getElementById('populationChart');
+            var myChart = echarts.init(chartDom);
+            
+            var option = {
+                title: {
+                    text: 'Population Growth in Major Cities (2020)',
+                    left: 'center',
+                    textStyle: {
+                        color: '#2c3e50',
+                        fontSize: 16
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                grid: {
+                    left: '12%',
+                    right: '8%',
+                    bottom: '15%'
+                },
+                xAxis: {
+                    type: 'value',
+                    name: 'Population (Millions)',
+                    nameLocation: 'center',
+                    nameGap: 30,
+                    min: 0,
+                    max: 21,
+                    interval: 3,
+                    axisLine: {
+                        lineStyle: {
+                            color: '#2c3e50'
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value} M'
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['Toronto', 'Rio', 'Cairo', 'Sydney', 'Paris', 'Delhi', 'Tokyo', 'London', 'New York'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#2c3e50'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Population',
+                    type: 'line',
+                    smooth: true,
+                    symbol: 'rect',
+                    symbolSize: 8,
+                    itemStyle: {
+                        color: '#d9534f'
+                    },
+                    lineStyle: {
+                        color: '#d9534f',
+                        width: 2
+                    },
+                    data: [
+                        {value: [3, 0]},
+                        {value: [6, 1]},
+                        {value: [9, 2]},
+                        {value: [5, 3]},
+                        {value: [2, 4]},
+                        {value: [18, 5]},
+                        {value: [13, 6]},
+                        {value: [8, 7]},
+                        {value: [0, 8]}
+                    ]
+                }]
+            };
+            
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

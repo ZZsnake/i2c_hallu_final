@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Node 1 -->
+  <circle cx="15" cy="15" r="10" fill="#00f"/>
+  <text x="15" y="15" font-size="8" text-anchor="middle">c lu</text>
+  
+  <!-- Node 6 -->
+  <circle cx="40" cy="15" r="10" fill="#00f"/>
+  <text x="40" y="15" font-size="8" text-anchor="middle">n lu</text>
+  
+  <!-- Node 3 -->
+  <circle cx="65" cy="15" r="10" fill="#00f"/>
+  <text x="65" y="15" font-size="8" text-anchor="middle">début</text>
+  
+  <!-- Node 4 -->
+  <circle cx="90" cy="15" r="10" fill="#00f"/>
+  <text x="90" y="15" font-size="8" text-anchor="middle">7</text>
+  
+  <!-- Node 2 -->
+  <circle cx="50" cy="50" r="10" fill="#ff0000"/>
+  <text x="50" y="50" font-size="8" text-anchor="middle">échec</text>
+  
+  <!-- Node non e succès -->
+  <circle cx="90" cy="50" r="10" fill="#00ff00"/>
+  <text x="90" y="50" font-size="8" text-anchor="middle">non e succès</text>
+  
+  <!-- Arrows and Labels -->
+  <path d="M15 15 L40 15" stroke="black" stroke-width="2"/>
+  <text x="27.5" y="15" font-size="8" text-anchor="middle">n</text>
+  
+  <path d="M40 15 L65 15" stroke="black" stroke-width="2"/>
+  <text x="52.5" y="15" font-size="8" text-anchor="middle">i</text>
+  
+  <path d="M65 15 L90 15" stroke="black" stroke-width="2"/>
+  <text x="77.5" y="15" font-size="8" text-anchor="middle">c</text>
+  
+  <path d="M40 15 L50 50" stroke="black" stroke-width="2"/>
+  <text x="45" y="32.5" font-size="8" text-anchor="middle">non n</text>
+  
+  <path d="M65 15 L50 50" stroke="black" stroke-width="2"/>
+  <text x="60" y="32.5" font-size="8" text-anchor="middle">non c</text>
+  
+  <path d="M90 15 L50 50" stroke="black" stroke-width="2"/>
+  <text x="72.5" y="32.5" font-size="8" text-anchor="middle">non i</text>
+  
+  <path d="M50 50 L90 50" stroke="black" stroke-width="2"/>
+  <text x="70" y="57.5" font-size="8" text-anchor="middle">i lu</text>
+</svg>

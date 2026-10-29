@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Math Branches Overview</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+    }
+    .page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    #chart {
+      width: 90vw;
+      max-width: 1100px;
+      height: 75vh;
+      max-height: 650px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div id="chart"></div>
+  </div>
+
+  <script>
+    $(function () {
+      var chartDom = document.getElementById('chart');
+      var myChart = echarts.init(chartDom);
+
+      var option = {
+        title: {
+          text: 'Math Branches Overview',
+          left: 'center',
+          top: 10,
+          textStyle: {
+            fontSize: 20,
+            fontWeight: 'bold'
+          }
+        },
+        grid: {
+          left: '10%',
+          right: '10%',
+          top: 50,
+          bottom: 60
+        },
+        xAxis: {
+          type: 'category',
+          data: ['Algebra', 'Geometry', 'Statistics'],
+          axisLine: {
+            lineStyle: {
+              color: '#000000'
+            }
+          },
+          axisTick: {
+            alignWithLabel: true
+          },
+          axisLabel: {
+            fontSize: 11
+          }
+        },
+        yAxis: {
+          type: 'value',
+          min: 0,
+          max: 7,
+          interval: 1,
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            fontSize: 11
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#e0e0e0'
+            }
+          }
+        },
+        tooltip: {
+          show: false
+        },
+        legend: {
+          show: false
+        },
+        series: [
+          {
+            type: 'bar',
+            data: [7, 5, 6],
+            barWidth: '55%',
+            itemStyle: {
+              color: function (params) {
+                var colors = ['#1464C8', '#D32F2F', '#388E3C'];
+                return colors[params.dataIndex];
+              },
+              borderColor: '#1a1a1a',
+              borderWidth: 2
+            }
+          }
+        ],
+        animation: false
+      };
+
+      myChart.setOption(option);
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

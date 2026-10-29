@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .face-blue { fill: #4c66aa; }
+      .face-blue-dark { fill: #3f579b; }
+      .face-blue-side { fill: #536db3; }
+      .face-rose { fill: #d77b98; }
+      .face-rose-dark { fill: #b74459; }
+      .edge { fill: none; stroke: #071846; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+      .thin { fill: none; stroke: #071846; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+      .dashed { fill: none; stroke: #071846; stroke-width: 2; stroke-dasharray: 6 4; stroke-linecap: round; }
+      .label { fill: #17245c; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; }
+      .red-label { fill: #ff1738; font-family: Arial, sans-serif; font-size: 18px; }
+    </style>
+  </defs>
+
+  <polygon points="101,211 326,214 326,397 101,389" class="face-blue"/>
+  <polygon points="62,169 101,211 101,389 62,342" class="face-blue-side"/>
+  <polygon points="101,389 326,397 363,340 151,320 62,342" class="face-blue-dark"/>
+  <polygon points="326,214 363,169 363,340 326,397" class="face-rose-dark"/>
+  <polygon points="62,169 363,169 326,214 101,211" class="face-rose"/>
+  <polygon points="62,169 325,34 363,169" class="face-rose"/>
+  <polygon points="101,211 325,34 326,214" class="face-rose"/>
+
+  <polyline points="141,122 151,320 279,321 285,122 141,122" class="dashed"/>
+  <line x1="62" y1="342" x2="151" y2="320" class="dashed"/>
+  <line x1="151" y1="320" x2="363" y2="340" class="dashed"/>
+  <line x1="279" y1="321" x2="363" y2="340" class="dashed"/>
+  <line x1="325" y1="34" x2="285" y2="122" class="dashed"/>
+  <line x1="285" y1="122" x2="363" y2="169" class="dashed"/>
+
+  <polyline points="62,169 325,34 363,169 326,214 101,211 62,169" class="edge"/>
+  <polyline points="62,169 62,342 101,389 326,397 363,340 363,169" class="edge"/>
+  <line x1="101" y1="211" x2="101" y2="389" class="edge"/>
+  <line x1="326" y1="214" x2="326" y2="397" class="edge"/>
+  <line x1="101" y1="211" x2="325" y2="34" class="edge"/>
+  <line x1="326" y1="214" x2="325" y2="34" class="edge"/>
+  <line x1="326" y1="397" x2="363" y2="169" class="edge"/>
+  <line x1="62" y1="169" x2="363" y2="169" class="thin"/>
+  <line x1="101" y1="211" x2="326" y2="214" class="thin"/>
+  <line x1="62" y1="342" x2="101" y2="389" class="thin"/>
+
+  <text x="199" y="69" class="red-label">l</text>
+  <text x="171" y="190" class="red-label">h</text>
+  <text x="220" y="340" class="red-label">w</text>
+  <text x="51" y="169" class="label">B</text>
+  <text x="82" y="204" class="label">A</text>
+  <text x="326" y="216" class="label">D</text>
+  <text x="365" y="169" class="label">G</text>
+  <text x="326" y="28" class="label">C</text>
+  <text x="55" y="357" class="label">H</text>
+  <text x="101" y="405" class="label">E</text>
+  <text x="326" y="414" class="label">F</text>
+</svg>

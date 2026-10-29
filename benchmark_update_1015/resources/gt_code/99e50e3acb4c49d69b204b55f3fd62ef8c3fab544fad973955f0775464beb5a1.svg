@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg  width="1200" height="675" xmlns="http://www.w3.org/2000/svg" font-size="40" font-family="Liberation Sans,sans-serif" text-anchor="middle" fill="black">
+
+   <defs>
+<linearGradient id="gradient1" x1="0" y1="1" x2="0" y2="0">
+ <stop offset="20%" stop-color="white"/>
+ <stop offset="70%" stop-color="#fafffa"/>
+</linearGradient>
+   </defs>
+
+<rect width="1200" height="675" fill="#f8f8f8"/>
+<rect width="950" height="540" x="200" y="50" fill="url(#gradient1)"/>
+
+<path stroke="black" stroke-width="0.5" stroke-dasharray="10,20" d="
+M190,50 h960
+M190,158 h960
+M190,266 h960
+M190,374 h960
+M190,482 h960
+M190,590 h960
+"/>
+
+<g font-size="35" transform="translate(100,0)" fill="#080">
+<text y="62.25">$2.5</text>
+<text y="100">trillion</text>
+<text y="170.25">$2.0T</text>
+<text y="278.25">$1.5T</text>
+<text y="386.25">$1.0T</text>
+<text y="494.25">$500B</text>
+<text y="602.25">0</text>
+</g>
+
+<g font-size="35" transform="translate(0,641.25)">
+<text x="245.97">2005</text>
+<text x="399.19">2010</text>
+<text x="552.42">2015</text>
+<text x="705.65">2020</text>
+</g>
+
+   <g stroke="black" stroke-width="0.3">
+
+<!-- FIRST SERIES (bottom)-->
+<path fill="#27b" d="
+M203.1,590 v-5.8 h24.8 v5.8 z M233.7,590 v-10.7 h24.8 v10.7 z M264.4,590 v-16.5 h24.8 v16.5 z M295,590 v-22.3 h24.8 v22.3 z M325.6,590 v-32.9 h24.8 v32.9 z M356.3,590 v-32 h24.8 v32 z M386.9,590 v-45.5 h24.8 v45.5 z M417.6,590 v-57.1 h24.8 v57.1 z M448.2,590 v-50.4 h24.8 v50.4 z M478.9,590 v-45.5 h24.8 v45.5 z 
+M509.5,590 v-55.2 h24.8 v55.2 z M540.2,590 v-63 h24.8 v63 z M570.8,590 v-61 h24.8 v61 z M601.5,590 v-67.8 h24.8 v67.8 z M632.1,590 v-66.8 h24.8 v66.8 z M662.7,590 v-73.6 h24.8 v73.6 z M693.4,590 v-78.5 h24.8 v78.5 z M724,590 v-108.5 h24.8 v108.5 z M754.7,590 v-123 h24.8 v123 z M785.3,590 v-133.7 h24.8 v133.7 z 
+M816,590 v-161.1 h24.8 v161.1 z 
+"/>
+
+<path fill="#4a4" d="
+M509.5,534.8 v-2.9 h24.8 v2.9 z M540.2,527 v-6.8 h24.8 v6.8 z M570.8,529 v-15.5 h24.8 v15.5 z M601.5,522.2 v-17.4 h24.8 v17.4 z M632.1,523.2 v-24.2 h24.8 v24.2 z M662.7,516.4 v-24.2 h24.8 v24.2 z M693.4,511.5 v-33.9 h24.8 v33.9 z M724,481.5 v-63.9 h24.8 v63.9 z M754.7,467 v-99.8 h24.8 v99.8 z M785.3,456.3 v-136.6 h24.8 v136.6 z 
+M816,428.9 v-169.6 h24.8 v169.6 z 
+"/>
+
+<path fill="#aaf" d="
+M693.4,477.6 v-60.1 h24.8 v60.1 z M724,417.6 v-61 h24.8 v61 z M754.7,367.2 v-63 h24.8 v63 z M785.3,319.7 v-65.9 h24.8 v65.9 z 
+M816,259.3 v-84 h24.8 v84 z 
+"/>
+
+<path fill="#fc4" d="
+M509.5,531.9 v-4.8 h24.8 v4.8 z M540.2,520.2 v-5.8 h24.8 v5.8 z M570.8,513.5 v-5.8 h24.8 v5.8 z M601.5,504.8 v-6.8 h24.8 v6.8 z M632.1,499 v-8.7 h24.8 v8.7 z M662.7,492.2 v-8.7 h24.8 v8.7 z M693.4,417.5 v-9.7 h24.8 v9.7 z M724,356.6 v-12.6 h24.8 v12.6 z M754.7,304.2 v-13.6 h24.8 v13.6 z M785.3,253.8 v-12.6 h24.8 v12.6 z 
+M816,175.3 v-16.8 h24.8 v16.8 z 
+"/>
+
+<path fill="#d02" d="
+M540.2,514.4 v-4.8 h24.8 v4.8 z M570.8,507.7 v-4.8 h24.8 v4.8 z M601.5,498 v-4.8 h24.8 v4.8 z M632.1,490.2 v-6.8 h24.8 v6.8 z M662.7,483.5 v-5.8 h24.8 v5.8 z M693.4,407.9 v-5.8 h24.8 v5.8 z M724,344 v-5.8 h24.8 v5.8 z M754.7,290.7 v-6.8 h24.8 v6.8 z M785.3,241.3 v-6.8 h24.8 v6.8 z 
+M816,158.4 v-6.9 h24.8 v6.9 z 
+"/>
+
+<path fill="#888" d="
+M632.1,483.4 v-3.9 h24.8 v3.9 z M662.7,477.7 v-4.8 h24.8 v4.8 z M693.4,402.1 v-6.8 h24.8 v6.8 z M724,338.2 v-8.7 h24.8 v8.7 z M754.7,283.9 v-9.7 h24.8 v9.7 z M785.3,234.5 v-10.7 h24.8 v10.7 z 
+M816,151.5 v-6.9 h24.8 v6.9 z 
+"/>
+
+<path fill="#f9d" d="
+M724,329.5 v-1 h24.8 v1 z M754.7,274.2 v-3.9 h24.8 v3.9 z M785.3,223.8 v-7.7 h24.8 v7.7 z 
+M816,144.6 v-4.1 h24.8 v4.1 z 
+"/>
+
+   </g>
+
+<path stroke="none" fill="#aaa" d="
+M233.7,595 h25 l-12.5,15 z
+M386.9,595 h25 l-12.5,15 z
+M540.2,595 h25 l-12.5,15 z
+M693.4,595 h25 l-12.5,15 z
+"/>
+
+<g fill="#080" font-size="50" transform="translate(465,110)">
+<text y="34">Global investment</text>
+<text y="87">in</text>
+<text y="141">energy transition</text>
+</g>
+
+<g text-anchor="start" transform="translate(850,0)">
+   <g font-size="30" transform="translate(20,10)">
+<text y="101">Storage</text>
+<text y="128">Clean Industry</text>
+<text y="155">Nuclear</text>
+<text y="182">Elec. Heat</text>
+   </g>
+<text y="260">Power grids</text>
+<text y="370">Elec. Transport</text>
+<text y="525">Renewable</text>
+</g>
+
+<text x="1190" y="670" font-size="10" text-anchor="end">Purposely omitted from this chart: (smaller) investments in carbon capture and storage, hydrogen, clean shipping. Bloomberg NEF states that "Start years differ by sector but all sectors are present from 2020 onwards."</text>
+
+
+<!-- Cover edges' grid lines  -->
+<rect width="950" height="540" x="200" y="50" stroke="#888888" stroke-width="1" fill="none"/>
+
+</svg>

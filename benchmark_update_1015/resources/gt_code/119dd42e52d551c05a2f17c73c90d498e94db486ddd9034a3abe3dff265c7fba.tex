@@ -1,0 +1,28 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+
+\begin{document}
+\begin{tikzpicture}[
+    node distance=2.8cm,
+    every node/.style={font=\sffamily\bfseries, text=teal!95!black},
+    process/.style={rectangle, draw=blue!80!black, fill=cyan!10, line width=1.2pt, minimum height=1cm, minimum width=2.7cm, rounded corners=3pt},
+    startstop/.style={ellipse, draw=teal!90!black, fill=blue!10, line width=1.2pt, minimum height=1cm, minimum width=2.5cm},
+    arrow/.style={-Stealth, thick, draw=blue!80!black}
+]
+
+% Nodes
+\node[startstop] (start) {Source Code};
+\node[process, right=of start] (compile) {Compile (e.g., \LaTeX)};
+\node[process, right=of compile] (reference) {Resolve Citations (\texttt{biber})};
+\node[process, right=of reference] (index) {Generate Index (\texttt{makeindex})};
+\node[startstop, right=of index] (output) {Final PDF};
+
+% Arrows
+\draw[arrow] (start) -- (compile);
+\draw[arrow] (compile) -- (reference);
+\draw[arrow] (reference) -- (index);
+\draw[arrow] (index) -- (output);
+
+\end{tikzpicture}
+\end{document}

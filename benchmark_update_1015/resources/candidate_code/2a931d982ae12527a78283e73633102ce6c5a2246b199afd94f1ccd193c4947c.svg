@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260">
+  <!-- Background -->
+  <rect x="0" y="0" width="260" height="260" fill="white"/>
+
+  <!-- Main solid (front-facing polygon approximation) -->
+  <!-- Drawn as a single polygon to get the light-blue body -->
+  <polygon
+    points="20,220 35,185 120,220 180,220 215,190 200,80 160,40 110,35 70,55 45,90"
+    fill="#bde7ff" fill-opacity="0.75" stroke="#006400" stroke-width="2"/>
+
+  <!-- Top rim polyline -->
+  <polyline
+    points="70,55 90,45 110,35 140,40 160,40 180,70"
+    fill="none" stroke="#006400" stroke-width="2"/>
+
+  <!-- Right front vertical edge -->
+  <polyline
+    points="180,70 180,170 180,220"
+    fill="none" stroke="#006400" stroke-width="2"/>
+
+  <!-- Left front vertical-ish edge -->
+  <polyline
+    points="20,220 35,185 45,90"
+    fill="none" stroke="#006400" stroke-width="2"/>
+
+  <!-- Bottom front edge -->
+  <polyline
+    points="20,220 120,220 180,220 215,190"
+    fill="none" stroke="#006400" stroke-width="2"/>
+
+  <!-- Back-ish edges (suggesting depth) -->
+  <polyline
+    points="45,90 70,55"
+    fill="none" stroke="#006400" stroke-width="2"/>
+  <polyline
+    points="200,80 160,40"
+    fill="none" stroke="#006400" stroke-width="2"/>
+  <polyline
+    points="200,80 215,190"
+    fill="none" stroke="#006400" stroke-width="2"/>
+
+  <!-- Horizontal mid segment (O-T) -->
+  <line
+    x1="45" y1="90" x2="180" y2="170"
+    stroke="#006400" stroke-width="2"/>
+
+  <!-- Interior dashed diagonals -->
+  <g stroke="#006400" stroke-width="1.5" stroke-dasharray="6,4" fill="none">
+    <!-- V to Q (hidden/back diagonal) -->
+    <line x1="20" y1="220" x2="90" y2="75"/>
+    <!-- r to P -->
+    <line x1="35" y1="185" x2="125" y2="165"/>
+    <!-- P to M -->
+    <line x1="125" y1="165" x2="140" y2="55"/>
+    <!-- P to S -->
+    <line x1="125" y1="165" x2="215" y2="190"/>
+  </g>
+
+  <!-- Points (small circles) -->
+  <g fill="#004000" stroke="#004000" stroke-width="1">
+    <!-- Base/front vertices -->
+    <circle cx="20" cy="220" r="3"/>   <!-- V -->
+    <circle cx="35" cy="185" r="3"/>   <!-- r -->
+    <circle cx="120" cy="220" r="3"/>  <!-- between r and h (unlabeled base point) -->
+    <circle cx="180" cy="220" r="3"/>  <!-- h -->
+    <circle cx="215" cy="190" r="3"/>  <!-- S -->
+
+    <!-- Mid right vertical point T -->
+    <circle cx="180" cy="170" r="3"/>
+
+    <!-- Top rim points -->
+    <circle cx="45" cy="90" r="3"/>    <!-- O (on side) -->
+    <circle cx="70" cy="55" r="3"/>    <!-- near O-top -->
+    <circle cx="90" cy="45" r="3"/>    <!-- Q approx -->
+    <circle cx="110" cy="35" r="3"/>   <!-- between Q and M -->
+    <circle cx="140" cy="40" r="3"/>   <!-- M approx -->
+    <circle cx="160" cy="40" r="3"/>   <!-- between M and N -->
+    <circle cx="180" cy="70" r="3"/>   <!-- N approx -->
+
+    <!-- Back upper point (near Q on dashed) -->
+    <circle cx="90" cy="75" r="3"/>    <!-- Q on dashed -->
+
+    <!-- Interior P -->
+    <circle cx="125" cy="165" r="3"/>  <!-- P -->
+  </g>
+
+  <!-- Labels -->
+  <g font-family="sans-serif" font-size="16" fill="black">
+    <!-- Base labels -->
+    <text x="12" y="238">V</text>
+    <text x="28" y="185">r</text>
+    <text x="174" y="238">h</text>
+    <text x="220" y="197">S</text>
+
+    <!-- Interior label -->
+    <text x="132" y="172">P</text>
+
+    <!-- Side/top labels -->
+    <text x="34" y="95">O</text>
+    <text x="86" y="45">Q</text>
+    <text x="144" y="38">M</text>
+    <text x="186" y="72">N</text>
+    <text x="188" y="172">T</text>
+  </g>
+</svg>

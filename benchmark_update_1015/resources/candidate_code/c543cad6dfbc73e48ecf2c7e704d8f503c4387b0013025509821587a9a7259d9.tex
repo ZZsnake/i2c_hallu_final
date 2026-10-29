@@ -1,0 +1,74 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    node distance=1.5cm,
+    every node/.style={draw, thick, rounded corners, text width=4cm, align=center, inner sep=10pt, font=\sffamily},
+    every path/.style={->, >=Stealth, blue, line width=1pt},
+    base/.style={fill=white},
+    theory/.style={base, fill=red!30},
+    projection/.style={base, fill=green!50},
+    algorithm/.style={base, fill=blue!30},
+    result/.style={base, fill=orange!80},
+    estimate/.style={base, fill=blue!50, text width=3cm},
+    final/.style={base, fill=orange!50, text width=4cm}
+]
+
+% Top level
+\node[theory] (cs) {Compressed Sensing Theory};
+
+% Branches from top
+\node[projection, below left=of cs] (pm) {Projection Matrix Theory};
+\node[algorithm, below right=of cs] (ra) {Reconstruction Algorithms};
+
+% Projection Matrix Theory children
+\node[projection, below left=of pm] (opm) {Optimise Projection Matrix};
+\node[projection, below right=of pm] (rnm) {Reduce Number of Measurements};
+
+% Reconstruction Algorithms children
+\node[algorithm, below left=of ra] (cr) {Convex Relaxation};
+\node[algorithm, below=of cr] (s1) {Sparse Signal Estimate};
+
+\node[algorithm, below right=of ra] (gp) {Greedy Pursuits};
+\node[algorithm, below=of gp] (s2) {Sparse Signal Estimate};
+
+\node[algorithm, below=of ra, right=of cr] (nc) {Non-Convex Minimisation Methods};
+\node[algorithm, below=of nc] (s3) {Sparse Signal Estimate};
+
+\node[algorithm, below=of ra, right=of gp] (ca) {Combinatorial Algorithms};
+\node[algorithm, below=of ca] (s4) {Sparse Signal Estimate};
+
+% Our Work
+\node[result, below=of s1.south -| s2.south] (ow) {Our Work};
+
+% Final result
+\node[final, below=of ow] (f) {Improved Sparse Signal Estimate!};
+
+% Connections
+\draw (cs) -- (pm);
+\draw (cs) -- (ra);
+
+\draw (pm) -- (opm);
+\draw (pm) -- (rnm);
+
+\draw (ra) -- (cr);
+\draw (ra) -- (gp);
+\draw (ra) -- (nc);
+\draw (ra) -- (ca);
+
+\draw (cr) -- (s1);
+\draw (gp) -- (s2);
+\draw (nc) -- (s3);
+\draw (ca) -- (s4);
+
+\draw (s1) -- (ow);
+\draw (s2) -- (ow);
+\draw (s3) -- (ow);
+\draw (s4) -- (ow);
+
+\draw (ow) -- (f);
+
+\end{tikzpicture}
+\end{document}

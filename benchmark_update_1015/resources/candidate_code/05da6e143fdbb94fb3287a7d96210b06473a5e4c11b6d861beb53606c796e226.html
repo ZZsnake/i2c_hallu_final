@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Gauge</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+        #gauge {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="gauge"></div>
+
+    <script>
+        $(document).ready(function() {
+            var gaugeChart = echarts.init(document.getElementById('gauge'));
+
+            var option = {
+                series: [{
+                    type: 'gauge',
+                    radius: '100%',
+                    splitLine: {
+                        length: 15,
+                        lineStyle: {
+                            width: 2,
+                            color: '#fff'
+                        }
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: [
+                                [0.25, '#464655'],
+                                [0.5, '#75757f'],
+                                [1, '#ef5350']
+                            ],
+                            width: 10
+                        }
+                    },
+                    axisTick: {
+                        length: 0
+                    },
+                    axisLabel: {
+                        show: false
+                    },
+                    detail: {
+                        formatter: '{value}%',
+                        fontSize: 20,
+                        offsetCenter: [0, '70%']
+                    },
+                    data: [{
+                        value: 72,
+                        name: 'Progress'
+                    }]
+                }]
+            };
+
+            gaugeChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

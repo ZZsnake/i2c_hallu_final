@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population by Region</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .chart-container {
+            width: 80%;
+            margin-top: 20px;
+        }
+        .chart-container #myChart {
+            width: 100%;
+            height: 600px;
+        }
+        .legend {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .legend li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .legend li span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        .legend li label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Population by Region</h1>
+        <div class="chart-container">
+            <div id="myChart"></div>
+        </div>
+        <ul class="legend">
+            <li><span style="background-color: blue;"></span><label>Urban</label></li>
+            <li><span style="background-color: green;"></span><label>Rural</label></li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var chart = echarts.init(document.getElementById('myChart'));
+            var option = {
+                title: {
+                    text: 'Population by Region',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['Urban', 'Rural']
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Oceania']
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Population (millions)',
+                    nameLocation: 'middle',
+                    nameGap: 30
+                },
+                series: [
+                    {
+                        name: 'Urban',
+                        type: 'bar',
+                        data: [320, 100, 400, 200, 950, 35]
+                    },
+                    {
+                        name: 'Rural',
+                        type: 'bar',
+                        data: [140, 100, 80, 150, 400, 12]
+                    }
+                ]
+            };
+            chart.setOption(option);
+        });
+    </script>
+</body>
+</html>

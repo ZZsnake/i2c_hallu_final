@@ -1,0 +1,67 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc, decorations.pathmorphing, positioning, arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,
+    resistor/.style={
+        draw,
+        decoration={
+            zigzag,
+            segment length=3mm,
+            amplitude=1mm,
+            pre length=2mm,
+            post length=2mm
+        },
+        decorate
+    }
+]
+
+% Coordinates for the main structure
+\coordinate (vin_plus) at (0, 3.5);
+\coordinate (vin_minus) at (0, 0);
+\coordinate (top_left) at (1.5, 3.5);
+\coordinate (top_right) at (5.5, 3.5);
+\coordinate (bot_left) at (1.5, 0);
+\coordinate (bot_right) at (5.5, 0);
+\coordinate (junction) at (3.5, 1.9);
+
+% Voltage Source
+\node[draw, circle, minimum size=0.8cm] (v_circle) at (0, 1.75) {};
+\node at (v_circle.center) {$+$};
+\node at ($(v_circle.center)+(0,-0.3)$) {$-$};
+\node[left=0.2cm of v_circle, rotate=90] {$V_{in}$};
+\draw (v_circle.north) -- (vin_plus);
+\draw (v_circle.south) -- (vin_minus);
+
+% Main wiring
+\draw (vin_plus) -- (top_left);
+\draw (vin_minus) -- (bot_left);
+\draw (top_left) -- (top_right);
+\draw (bot_left) -- (bot_right);
+
+% Resistors
+\draw[resistor] (top_left) -- node[pos=0.5, right] {$R_1$} (bot_left);
+\draw[resistor] (top_right) -- node[pos=0.5, right] {$R_3$} (bot_right);
+\draw[resistor] (top_left) -- node[pos=0.5, sloped, above] {$R_2$} (junction);
+\draw[resistor] (junction) -- node[pos=0.5, sloped, above] {$R_4$} (top_right);
+
+% Strain Gauge Symbol
+\node[draw, minimum size=4mm] (sg_box) at (3.5, 3.3) {};
+\draw (sg_box.south west) -- (sg_box.north east);
+
+% Voltmeter
+\node[draw, circle, minimum size=0.8cm] (vm) at (6.5, 0.875) {V};
+\draw[-{Stealth[length=2mm]}] ($(vm.south west)+(0.15,0.15)$) -- ($(vm.north east)-(0.15,0.15)$);
+\draw (top_right) -- (vm.160);
+\draw (bot_right) -- (vm.200);
+\draw (vm.east) -- ++(0.5,0) node[right] {$V_{out}$};
+
+% Text
+\node[align=center] at (3.5, 4.7) {Strain Gauge Bridge};
+\node[align=center] at (3.5, 4.2) {Strain Gauge};
+\node[align=center, anchor=north] at (3.5, -0.7) {Exotic Plant \\ Growth Monitor};
+
+\end{tikzpicture}
+\end{document}

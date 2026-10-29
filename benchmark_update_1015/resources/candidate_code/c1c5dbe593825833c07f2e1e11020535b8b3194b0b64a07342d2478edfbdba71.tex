@@ -1,0 +1,39 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\begin{document}
+\begin{tikzpicture}[
+    header/.style={fill=green!50!black, text=white, font=\bfseries, align=left},
+    data/.style={fill=green!10, align=left},
+    data-right/.style={fill=green!10, align=right},
+    footer/.style={fill=blue!50, text=white, font=\bfseries, align=center, text width=8cm}
+]
+
+\matrix (m) [matrix of nodes,
+    nodes={minimum height=0.8cm, inner sep=4pt, outer sep=0, draw=black},
+    column 1/.style={nodes=data, text width=4cm},
+    column 2/.style={nodes=data-right, text width=2cm},
+    column 3/.style={nodes=data-right, text width=2cm},
+    row 1/.style={nodes=header},
+    column sep=-\pgflinewidth,
+    row sep=-\pgflinewidth,
+    ]
+{
+    Region & Temp. Increase (°C) & Yield Variation (\%) \\
+    Midwestern United States & 1.5 & $-10$ \\
+    Punjab, India & 1.2 & $-5$ \\
+    Western Europe & 0.9 & $-3$ \\
+    Brazilian Cerrado & 2.0 & $-15$ \\
+    Southeast Asia & 1.8 & $-12$ \\
+    East Africa & 1.1 & $-8$ \\
+};
+
+% Footer node
+\node[footer, below=0pt of m-6-1.south west, anchor=north west, minimum height=0.8cm] (footer) {Correlation Analysis: Temperature Changes and Agricultural Yield};
+
+% Draw bottom line of the table
+\draw (m-6-1.south west) rectangle (m-6-3.south east);
+
+\end{tikzpicture}
+\end{document}

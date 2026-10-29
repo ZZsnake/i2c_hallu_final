@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="133.394" height="101.269" viewBox="0 0 133.394 101.269">
+  <!-- Plane Geometry: Hexagon with diagonals, Math labels -->
+  <!-- Shape fill: light gray, background remains white/transparent -->
+  <polygon points="30,80 15,50 30,20 65,10 100,20 115,50 100,80 65,90" fill="#f6f6f6" stroke="#233062" stroke-width="2.1"/>
+  <!-- Diagonals and edges: vivid blue, dashed for diagonals -->
+  <line x1="15" y1="50" x2="100" y2="80" stroke="#2050a0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="30" y1="20" x2="115" y2="50" stroke="#2050a0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="65" y1="10" x2="100" y2="80" stroke="#2050a0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="65" y1="90" x2="30" y2="20" stroke="#2050a0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="65" y1="10" x2="65" y2="90" stroke="#2050a0" stroke-width="1.5"/>
+  <!-- Vertices: dark circles -->
+  <circle cx="30" cy="80" r="2.7" fill="#0b1736"/>
+  <circle cx="15" cy="50" r="2.7" fill="#0b1736"/>
+  <circle cx="30" cy="20" r="2.7" fill="#0b1736"/>
+  <circle cx="65" cy="10" r="2.7" fill="#0b1736"/>
+  <circle cx="100" cy="20" r="2.7" fill="#0b1736"/>
+  <circle cx="115" cy="50" r="2.7" fill="#0b1736"/>
+  <circle cx="100" cy="80" r="2.7" fill="#0b1736"/>
+  <circle cx="65" cy="90" r="2.7" fill="#0b1736"/>
+  <!-- Math labels at vertices -->
+  <text x="22" y="84" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">A</text>
+  <text x="3" y="52" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">B</text>
+  <text x="22" y="14" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">C</text>
+  <text x="62" y="5" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">D</text>
+  <text x="103" y="18" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">E</text>
+  <text x="118" y="52" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">F</text>
+  <text x="103" y="87" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">G</text>
+  <text x="62" y="100" font-family="Roboto, Arial, sans-serif" font-size="13" fill="#272727" font-weight="bold">H</text>
+  <!-- Side length label -->
+  <text x="47" y="97" font-family="Roboto, Arial, sans-serif" font-size="12" fill="#d32f2f" font-weight="bold">s</text>
+  <!-- Diagonal label -->
+  <text x="90" y="62" font-family="Roboto, Arial, sans-serif" font-size="12" fill="#00796b" font-weight="bold">d</text>
+  <!-- Angle label (example) -->
+  <text x="34" y="66" font-family="Roboto, Arial, sans-serif" font-size="11" fill="#ea7a0a" font-weight="bold">120°</text>
+</svg>

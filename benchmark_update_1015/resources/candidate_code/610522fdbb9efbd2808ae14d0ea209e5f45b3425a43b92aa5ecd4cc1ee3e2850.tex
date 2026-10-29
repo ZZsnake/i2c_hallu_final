@@ -1,0 +1,109 @@
+\documentclass[border=40pt]{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\definecolor{headernavy}{RGB}{0,0,85}
+\definecolor{sectiongray}{RGB}{242,242,242}
+\definecolor{totalgray}{RGB}{205,205,205}
+
+% Column geometry
+\def\W{18.4}
+\def\COne{3.4}
+\def\CW{2.5}
+
+% Sparse booktabs-style rules and bands
+\draw[black, line width=0.55pt] (0,0) -- (\W,0);
+\fill[headernavy] (0,-0.15) rectangle (\W,-0.90);
+\draw[black, line width=0.45pt] (0,-1.03) -- (\W,-1.03);
+
+\fill[sectiongray] (0,-1.25) rectangle (\W,-1.85);
+\fill[sectiongray] (0,-3.65) rectangle (\W,-4.25);
+
+\draw[black, line width=0.45pt] (0,-6.15) -- (\W,-6.15);
+\fill[totalgray] (0,-6.30) rectangle (\W,-6.90);
+\draw[black, line width=0.55pt] (0,-7.00) -- (\W,-7.00);
+
+% Limited vertical separators only
+\foreach \x in {3.4,5.9,8.4,10.9,13.4,15.9} {
+  \draw[gray!55, line width=0.35pt] (\x,-0.15) -- (\x,-0.90);
+}
+\draw[black!65, line width=0.45pt] (\COne,-1.85) -- (\COne,-3.65);
+\draw[black!65, line width=0.45pt] (\COne,-4.25) -- (\COne,-6.15);
+\draw[black!65, line width=0.45pt] (\COne,-6.30) -- (\COne,-6.90);
+
+% Header row
+\node[anchor=west, text=white, font=\rmfamily\bfseries\Large] at (0.25,-0.525) {Category};
+\node[text=white, font=\rmfamily\bfseries\Large] at (4.65,-0.525) {January};
+\node[text=white, font=\rmfamily\bfseries\Large] at (7.15,-0.525) {February};
+\node[text=white, font=\rmfamily\bfseries\Large] at (9.65,-0.525) {March};
+\node[text=white, font=\rmfamily\bfseries\Large] at (12.15,-0.525) {April};
+\node[text=white, font=\rmfamily\bfseries\Large] at (14.65,-0.525) {May};
+\node[text=white, font=\rmfamily\bfseries\Large] at (17.15,-0.525) {June};
+
+% Section headers merged across all columns
+\node[anchor=west, font=\rmfamily\bfseries\Large] at (0.25,-1.55) {Jersey Sales};
+\node[anchor=west, font=\rmfamily\bfseries\Large] at (0.25,-3.95) {Memorabilia Sales};
+
+% Jersey Sales rows
+\node[anchor=west, font=\rmfamily\Large] at (0.25,-2.15) {Home Jersey};
+\node[font=\rmfamily\Large] at (4.65,-2.15) {\$45,000};
+\node[font=\rmfamily\Large] at (7.15,-2.15) {\$40,000};
+\node[font=\rmfamily\Large] at (9.65,-2.15) {\$60,000};
+\node[font=\rmfamily\Large] at (12.15,-2.15) {\$48,000};
+\node[font=\rmfamily\Large] at (14.65,-2.15) {\$53,000};
+\node[font=\rmfamily\Large] at (17.15,-2.15) {\$51,000};
+
+\node[anchor=west, font=\rmfamily\Large] at (0.25,-2.75) {Away Jersey};
+\node[font=\rmfamily\Large] at (4.65,-2.75) {\$30,000};
+\node[font=\rmfamily\Large] at (7.15,-2.75) {\$35,000};
+\node[font=\rmfamily\Large] at (9.65,-2.75) {\$25,000};
+\node[font=\rmfamily\Large] at (12.15,-2.75) {\$28,000};
+\node[font=\rmfamily\Large] at (14.65,-2.75) {\$31,000};
+\node[font=\rmfamily\Large] at (17.15,-2.75) {\$33,000};
+
+\node[anchor=west, font=\rmfamily\Large] at (0.25,-3.35) {Third Jersey};
+\node[font=\rmfamily\Large] at (4.65,-3.35) {\$15,000};
+\node[font=\rmfamily\Large] at (7.15,-3.35) {\$10,000};
+\node[font=\rmfamily\Large] at (9.65,-3.35) {\$12,000};
+\node[font=\rmfamily\Large] at (12.15,-3.35) {\$15,000};
+\node[font=\rmfamily\Large] at (14.65,-3.35) {\$14,000};
+\node[font=\rmfamily\Large] at (17.15,-3.35) {\$10,000};
+
+% Memorabilia Sales rows
+\node[anchor=west, font=\rmfamily\Large] at (0.25,-4.55) {Signed Balls};
+\node[font=\rmfamily\Large] at (4.65,-4.55) {\$20,000};
+\node[font=\rmfamily\Large] at (7.15,-4.55) {\$15,000};
+\node[font=\rmfamily\Large] at (9.65,-4.55) {\$22,000};
+\node[font=\rmfamily\Large] at (12.15,-4.55) {\$17,000};
+\node[font=\rmfamily\Large] at (14.65,-4.55) {\$18,000};
+\node[font=\rmfamily\Large] at (17.15,-4.55) {\$19,000};
+
+\node[anchor=west, font=\rmfamily\Large] at (0.25,-5.15) {Player Posters};
+\node[font=\rmfamily\Large] at (4.65,-5.15) {\$10,000};
+\node[font=\rmfamily\Large] at (7.15,-5.15) {\$12,000};
+\node[font=\rmfamily\Large] at (9.65,-5.15) {\$9,000};
+\node[font=\rmfamily\Large] at (12.15,-5.15) {\$11,000};
+\node[font=\rmfamily\Large] at (14.65,-5.15) {\$10,500};
+\node[font=\rmfamily\Large] at (17.15,-5.15) {\$9,000};
+
+\node[anchor=west, font=\rmfamily\Large] at (0.25,-5.75) {Scarves};
+\node[font=\rmfamily\Large] at (4.65,-5.75) {\$5,000};
+\node[font=\rmfamily\Large] at (7.15,-5.75) {\$4,000};
+\node[font=\rmfamily\Large] at (9.65,-5.75) {\$6,000};
+\node[font=\rmfamily\Large] at (12.15,-5.75) {\$7,000};
+\node[font=\rmfamily\Large] at (14.65,-5.75) {\$8,000};
+\node[font=\rmfamily\Large] at (17.15,-5.75) {\$7,500};
+
+% Total row
+\node[anchor=west, font=\rmfamily\bfseries\Large] at (0.25,-6.60) {Total Income};
+\node[font=\rmfamily\bfseries\Large] at (4.65,-6.60) {\$125,000};
+\node[font=\rmfamily\bfseries\Large] at (7.15,-6.60) {\$116,000};
+\node[font=\rmfamily\bfseries\Large] at (9.65,-6.60) {\$134,000};
+\node[font=\rmfamily\bfseries\Large] at (12.15,-6.60) {\$126,000};
+\node[font=\rmfamily\bfseries\Large] at (14.65,-6.60) {\$134,500};
+\node[font=\rmfamily\bfseries\Large] at (17.15,-6.60) {\$129,500};
+
+\end{tikzpicture}
+\end{document}

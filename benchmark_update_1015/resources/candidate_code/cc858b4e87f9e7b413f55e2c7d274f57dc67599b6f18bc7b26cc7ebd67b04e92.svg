@@ -1,0 +1,30 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Digestive System Diagram</title>
+
+  <!-- Abdominal Cavity -->
+  <path d="M100,150 C50,50 250,50 350,150 C450,250 400,450 200,450 C100,400 50,250 100,150 Z" fill="#ADD8E6" stroke="#0000FF" stroke-dasharray="5,5"/>
+
+  <!-- Stomach -->
+  <path d="M200,200 C150,220 150,280 200,300 C250,320 300,300 300,250 C300,200 250,180 200,200 Z" fill="#FF0000"/>
+
+  <!-- Liver -->
+  <path d="M350,180 C400,200 450,250 450,300 C450,350 400,400 350,380 C300,360 300,300 350,180 Z" fill="#FF0000"/>
+
+  <!-- Esophagus -->
+  <path d="M250,100 L250,200" stroke="#008000" stroke-width="5"/>
+
+  <!-- Intestines -->
+  <path d="M200,300 C150,350 100,400 100,450 C100,500 150,550 200,500 C250,450 300,400 300,350" fill="#FF0000"/>
+  <path d="M300,350 C350,300 400,250 450,200" fill="#FF0000"/>
+
+  <!-- Spleen -->
+  <circle cx="150" cy="250" r="20" fill="#FFFF00"/>
+
+  <!-- Text Labels -->
+  <text x="260" y="80" font-size="16">喉部</text>
+  <text x="220" y="250" font-size="16">胃</text>
+  <text x="100" y="130" font-size="16">左肺</text>
+  <text x="400" y="130" font-size="16">右肺</text>
+  <text x="270" y="150" font-size="16">食管</text>
+  <text x="130" y="230" font-size="16">脾</text>
+</svg>

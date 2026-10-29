@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Topics Distribution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .chart-container {
+            width: 60%;
+            height: 60%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .chart-title {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #echarts-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">Distribution of Math Topics in Exam</div>
+        <div id="echarts-container"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const option = {
+            title: {
+                text: 'Distribution of Math Topics in Exam',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['Algebra', 'Geometry', 'Calculus', 'Probability', 'Number Theory']
+            },
+            series: [
+                {
+                    name: 'Math Topics',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: 37.93, name: 'Algebra' },
+                        { value: 23.23, name: 'Geometry' },
+                        { value: 14.69, name: 'Calculus' },
+                        { value: 12.20, name: 'Probability' },
+                        { value: 11.95, name: 'Number Theory' }
+                    ]
+                }
+            ]
+        };
+
+        var myChart = echarts.init(document.getElementById('echarts-container'));
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

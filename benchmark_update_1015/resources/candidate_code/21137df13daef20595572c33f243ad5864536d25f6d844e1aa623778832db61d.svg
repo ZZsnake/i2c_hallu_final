@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="562px" height="365.333px" viewBox="0 0 562 365.333" enable-background="new 0 0 562 365.333" xml:space="preserve">
+<g id="BoxLayer" stroke="#000000" stroke-width="2" stroke-miterlimit="10">
+	<rect x="117.047" y="99.916" fill="#95a0d5" width="92" height="34"/>
+	<rect x="117.047" y="145.416" fill="#95a0d5" width="92" height="34"/>
+	<rect x="117.047" y="190.916" fill="#95a0d5" width="92" height="34"/>
+	<rect x="224.38" y="47.416" fill="#a9d595" width="92" height="34"/>
+	<rect x="223.38" y="102.35" fill="#d595bc" width="92" height="34"/>
+	<rect x="223.344" y="221.35" fill="#d5bf95" width="92" height="34"/>
+	<rect x="330.068" y="23.235" fill="#a9d595" width="92" height="34"/>
+	<rect x="330.068" y="68.416" fill="#a9d595" width="92" height="34"/>
+	<rect x="330.068" y="133.666" fill="#d5bf95" width="92" height="34"/>
+	<rect x="330.068" y="177.541" fill="#d5bf95" width="92" height="34"/>
+	<rect x="330.068" y="221.416" fill="#d5bf95" width="92" height="34"/>
+	<rect x="330.068" y="264.477" fill="#d5bf95" width="92" height="34"/>
+	<rect x="330.068" y="309.166" fill="#d5bf95" width="92" height="34"/>
+	<rect x="438.318" y="58.541" fill="#d595bc" width="92" height="34"/>
+	<rect x="438.318" y="102.416" fill="#d595bc" width="92" height="34"/>
+	<rect x="438.318" y="146.291" fill="#d595bc" width="92" height="34"/>
+	<rect x="438.318" y="190.166" fill="#d595bc" width="92" height="34"/>
+	<rect x="438.318" y="234.041" fill="#d595bc" width="92" height="34"/>
+	<rect x="22.88" y="34.213" fill="#beb3a8" width="172.667" height="48.536"/>
+</g>
+<g id="Lines" fill="none" stroke="#000000" stroke-miterlimit="10">
+	<polyline points="117.047,207.916 109.214,207.916 109.214,82.749"/>
+	<line x1="109.214" y1="116.916" x2="117.047" y2="116.916"/>
+	<line x1="109.214" y1="162.416" x2="117.047" y2="162.416"/>
+	<polyline points="209.047,207.916 216.547,207.916 216.547,64.416 224.38,64.416"/>
+	<line x1="216.547" y1="119.416" x2="224.38" y2="119.416"/>
+	<polyline points="216.547,207.916 216.547,238.416 224.38,238.416"/>
+	<polyline points="330.068,40.235 323.255,40.235 323.255,85.416 330.068,85.416"/>
+	<line x1="323.255" y1="64.416" x2="316.38" y2="64.416"/>
+	<line x1="316.38" y1="237.416" x2="330.068" y2="237.416"/>
+	<polyline points="330.068,152.666 323.13,152.666 323.13,237.416 323.13,326.166 330.068,326.166"/>
+	<line x1="330.068" y1="194.541" x2="323.13" y2="194.541"/>
+	<line x1="330.068" y1="281.477" x2="323.13" y2="281.477"/>
+	<polyline points="438.318,75.541 430.193,75.541 430.193,251.041 438.318,251.041"/>
+	<polyline points="316.38,119.416 430.193,119.416 438.318,119.416"/>
+	<line x1="438.318" y1="163.291" x2="430.193" y2="163.291"/>
+	<line x1="438.318" y1="207.166" x2="430.193" y2="207.166"/>
+</g>
+<g id="Labels" font-family="Liberation Sans, Arial, Helvetica, sans-serif">
+	<text transform="matrix(1 0 0 1 131.7086 120.1171)" font-size="12">Ariane5 ME</text>
+	<text transform="matrix(1 0 0 1 153.3761 165.617)" font-size="12">IXV</text>
+	<text transform="matrix(1 0 0 1 150.9271 211.1171)" font-size="12">NGL</text>
+	<text transform="matrix(1 0 0 1 249.2572 61.0836)" font-size="10">Launcher</text>
+	<text transform="matrix(1 0 0 1 249.2572 73.0836)" font-size="10">Concepts</text>
+	<text transform="matrix(1 0 0 1 241.0289 122.5512)" font-size="12">Propulsion</text>
+	<text transform="matrix(1 0 0 1 238.9897 241.5512)" font-size="12">Technology</text>
+	<text transform="matrix(1 0 0 1 350.7172 43.4361)" font-size="12">Reusable</text>
+	<text transform="matrix(1 0 0 1 344.3741 88.6171)" font-size="12">Expendable</text>
+	<text transform="matrix(1 0 0 1 359.8428 153.8668)" font-size="12">CUST</text>
+	<text transform="matrix(1 0 0 1 351.7276 197.7421)" font-size="12">Materials</text>
+	<text transform="matrix(1 0 0 1 353.8433 241.6171)" font-size="12">Avionics</text>
+	<text transform="matrix(1 0 0 1 341.7198 284.6779)" font-size="12">Pyrotechnics</text>
+	<text transform="matrix(1 0 0 1 346.0482 322.8337)" font-size="10">Breakthrough</text>
+	<text transform="matrix(1 0 0 1 346.3262 334.8337)" font-size="10">Technologies</text>
+	<text transform="matrix(1 0 0 1 465.9806 78.7419)" font-size="12">VINCE</text>
+	<text transform="matrix(1 0 0 1 456.6498 122.6169)" font-size="12">SCORE-D</text>
+	<text transform="matrix(1 0 0 1 465.3154 166.4919)" font-size="12">POD-X</text>
+	<text transform="matrix(1 0 0 1 449.308 210.3669)" font-size="12">Hybrid Demo</text>
+	<text transform="matrix(1 0 0 1 446.8544 247.9711)" font-size="10">Storable (3-5kN)</text>
+	<text transform="matrix(1 0 0 1 470.1964 259.9711)" font-size="10">Demo</text>
+	<text transform="matrix(1 0 0 1 58.5389 54.6654)" font-size="12">Future Launchers</text>
+	<text transform="matrix(1 0 0 1 40.5179 69.0654)" font-size="12">Preparatory Programme</text>
+</g>
+<g id="Legend" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="9">
+	<text transform="matrix(1 0 0 1 27.8805 286.6777)">IXV</text>
+	<text transform="matrix(1 0 0 1 27.8805 297.4777)">NGL</text>
+	<text transform="matrix(1 0 0 1 27.8805 308.2777)">SCORE-D</text>
+	<text transform="matrix(1 0 0 1 27.8805 319.0777)">POD-X</text>
+	<text transform="matrix(1 0 0 1 27.8805 329.8777)">CUST</text>
+	<text transform="matrix(1 0 0 1 86.3805 286.6779)">Intermediate eXperimental Vehicle</text>
+	<text transform="matrix(1 0 0 1 86.3805 297.4779)">Next Generation Launcher</text>
+	<text transform="matrix(1 0 0 1 86.3805 308.2779)">Staged Combustion Rocket Engine - Demonstrator</text>
+	<text transform="matrix(1 0 0 1 86.3805 319.0779)">Pressure Oscillation Demonstrator - eXperimental</text>
+	<text transform="matrix(1 0 0 1 86.3805 329.8779)">Cryogenic Upper Stage Technologies</text>
+</g>
+</svg>

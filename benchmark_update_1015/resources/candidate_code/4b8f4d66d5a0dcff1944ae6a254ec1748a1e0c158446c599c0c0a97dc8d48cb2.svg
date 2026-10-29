@@ -1,0 +1,81 @@
+<svg width="600" height="800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <style>
+      .box {
+        fill: #ADD8E6;
+        stroke: #00008B;
+        stroke-width: 2;
+        stroke-dasharray: 5,5;
+      }
+      .error {
+        fill: #F08080;
+        stroke: #00008B;
+        stroke-width: 2;
+        stroke-dasharray: 5,5;
+      }
+      .display {
+        fill: #FFB6C1;
+        stroke: #00008B;
+        stroke-width: 2;
+        stroke-dasharray: 5,5;
+      }
+      .arrow {
+        stroke: #00008B;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+      .text {
+        font-family: sans-serif;
+        font-size: 14;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+
+  <!-- User inputs data -->
+  <rect x="50" y="50" width="500" height="60" class="box" />
+  <text x="300" y="80" class="text">User inputs data</text>
+
+  <!-- System receives input -->
+  <rect x="50" y="150" width="500" height="60" class="box" />
+  <text x="300" y="180" class="text">System receives input</text>
+
+  <!-- Input validation -->
+  <rect x="50" y="250" width="500" height="60" class="box" />
+  <text x="300" y="280" class="text">Input validation</text>
+
+  <!-- Run core algorithm -->
+  <rect x="50" y="350" width="500" height="60" class="box" />
+  <text x="300" y="380" class="text">Run core algorithm</text>
+
+  <!-- Process results -->
+  <rect x="50" y="450" width="500" height="60" class="box" />
+  <text x="300" y="480" class="text">Process results</text>
+
+  <!-- Result valid? -->
+  <polygon x="50" y="550" points="250,550 300,520 350,550 300,580" class="box" />
+  <text x="300" y="550" class="text">Result valid?</text>
+
+  <!-- Display results -->
+  <rect x="50" y="650" width="500" height="60" class="display" />
+  <text x="300" y="680" class="text">Display results</text>
+
+  <!-- Error detected -->
+  <rect x="350" y="550" width="200" height="60" class="error" />
+  <text x="450" y="580" class="text">Error detected</text>
+  <text x="450" y="600" class="text">Halt execution</text>
+
+  <!-- Arrows -->
+  <path d="M300,110 C300,130 300,130 300,150" class="arrow" />
+  <path d="M300,210 C300,230 300,230 300,250" class="arrow" />
+  <path d="M300,310 C300,330 300,330 300,350" class="arrow" />
+  <path d="M300,410 C300,430 300,430 300,450" class="arrow" />
+  <path d="M300,510 C300,530 300,530 300,550" class="arrow" />
+  <path d="M350,580 C400,580 400,600 450,600" class="arrow" />
+  <path d="M250,580 C200,580 200,620 250,650" class="arrow" />
+</svg>

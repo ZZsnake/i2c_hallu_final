@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450">
+  <defs>
+    <style>
+      .dashed-blue-line {
+        fill: none;
+        stroke: #4682B4; /* SteelBlue */
+        stroke-width: 2;
+        stroke-dasharray: 5 5;
+      }
+      .city-point {
+        fill: #FF0000; /* Red */
+        stroke: black;
+        stroke-width: 1;
+      }
+      .region-text {
+        font-family: sans-serif;
+        font-size: 16px;
+        fill: black;
+        text-anchor: middle;
+      }
+      .city-text {
+        font-family: sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        fill: black;
+        text-anchor: middle;
+      }
+      .river-text {
+        font-family: sans-serif;
+        font-size: 14px;
+        fill: black;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <!-- Outer Boundary -->
+  <rect x="20" y="20" width="460" height="410" rx="15" ry="15" class="dashed-blue-line"/>
+
+  <!-- Coastal Plains Region -->
+  <path d="M 40 100 Q 30 50 150 40 L 250 150 Q 260 200 150 220 Q 50 200 40 100 Z" fill="#ADD8E6" class="dashed-blue-line"/>
+  <text x="140" y="170" class="region-text">Coastal Plains</text>
+
+  <!-- Central Highlands Region -->
+  <path d="M 280 50 Q 300 30 450 60 Q 470 150 450 220 Q 350 250 280 180 Q 270 100 280 50 Z" fill="#FFA500" class="dashed-blue-line"/>
+  <text x="370" y="170" class="region-text">Central Highlands</text>
+
+  <!-- Green Valley Region -->
+  <path d="M 40 300 Q 30 250 200 260 L 300 350 Q 310 400 200 410 Q 50 400 40 300 Z" fill="#6B8E23" class="dashed-blue-line"/>
+  <text x="170" y="360" class="region-text">Green Valley</text>
+
+  <!-- Blue River Line -->
+  <path d="M 100 30 L 400 420" class="dashed-blue-line"/>
+  <text x="300" y="280" transform="rotate(45 300 280)" class="river-text">Blue River</text>
+
+  <!-- City Points and Labels -->
+  <circle cx="120" cy="70" r="6" class="city-point"/>
+  <text x="120" y="50" class="city-text">Riverton</text>
+
+  <circle cx="270" cy="150" r="6" class="city-point"/>
+  <text x="270" y="130" class="city-text">Hillport</text>
+
+  <circle cx="380" cy="370" r="6" class="city-point"/>
+  <text x="380" y="350" class="city-text">Southgate</text>
+
+</svg>

@@ -1,0 +1,78 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <title>GDP Growth by Sector (2016-2024)</title>
+  <text x="400" y="50" text-anchor="middle" font-size="20">GDP Growth by Sector (2016-2024)</text>
+  <text x="400" y="80" text-anchor="middle" font-size="14">GDP Growth by Sector (Millions USD)</text>
+
+  <g>
+    <text x="50" y="550" font-size="12">2016</text>
+    <text x="150" y="550" font-size="12">2017</text>
+    <text x="250" y="550" font-size="12">2018</text>
+    <text x="350" y="550" font-size="12">2019</text>
+    <text x="450" y="550" font-size="12">2020</text>
+    <text x="550" y="550" font-size="12">2021</text>
+    <text x="650" y="550" font-size="12">2022</text>
+    <text x="750" y="550" font-size="12">2024</text>
+  </g>
+
+  <g>
+    <text x="10" y="100" font-size="12">Agriculture</text>
+    <text x="10" y="200" font-size="12">Manufacturing</text>
+    <text x="10" y="300" font-size="12">Energy</text>
+    <text x="10" y="400" font-size="12">Construction</text>
+    <text x="10" y="500" font-size="12">Services</text>
+  </g>
+
+  <g>
+    <text x="10" y="100" font-size="12">Agriculture</text>
+    <rect x="50" y="50" width="50" height="75000/1000" fill="green" />
+    <rect x="150" y="50" width="50" height="52000/1000" fill="green" />
+    <rect x="250" y="50" width="50" height="0" fill="green" />
+    <rect x="350" y="50" width="50" height="0" fill="green" />
+    <rect x="450" y="50" width="50" height="0" fill="green" />
+    <rect x="550" y="50" width="50" height="0" fill="green" />
+    <rect x="650" y="50" width="50" height="0" fill="green" />
+    <rect x="750" y="50" width="50" height="0" fill="green" />
+
+    <rect x="50" y="150" width="50" height="0" fill="green" />
+    <rect x="150" y="150" width="50" height="52000/1000" fill="green" />
+    <rect x="250" y="150" width="50" height="0" fill="green" />
+    <rect x="350" y="150" width="50" height="0" fill="green" />
+    <rect x="450" y="150" width="50" height="0" fill="green" />
+    <rect x="550" y="150" width="50" height="0" fill="green" />
+    <rect x="650" y="150" width="50" height="0" fill="green" />
+    <rect x="750" y="150" width="50" height="0" fill="green" />
+
+    <rect x="50" y="250" width="50" height="22000/1000" fill="green" />
+    <rect x="150" y="250" width="50" height="0" fill="green" />
+    <rect x="250" y="250" width="50" height="22000/1000" fill="green" />
+    <rect x="350" y="250" width="50" height="0" fill="green" />
+    <rect x="450" y="250" width="50" height="0" fill="green" />
+    <rect x="550" y="250" width="50" height="0" fill="green" />
+    <rect x="650" y="250" width="50" height="0" fill="green" />
+    <rect x="750" y="250" width="50" height="0" fill="green" />
+
+    <rect x="50" y="350" width="50" height="5000/1000" fill="green" />
+    <rect x="150" y="350" width="50" height="0" fill="green" />
+    <rect x="250" y="350" width="50" height="0" fill="green" />
+    <rect x="350" y="350" width="50" height="0" fill="green" />
+    <rect x="450" y="350" width="50" height="0" fill="green" />
+    <rect x="550" y="350" width="50" height="0" fill="green" />
+    <rect x="650" y="350" width="50" height="0" fill="green" />
+    <rect x="750" y="350" width="50" height="0" fill="green" />
+
+    <rect x="50" y="450" width="50" height="12000/1000" fill="green" />
+    <rect x="150" y="450" width="50" height="0" fill="green" />
+    <rect x="250" y="450" width="50" height="0" fill="green" />
+    <rect x="350" y="450" width="50" height="0" fill="green" />
+    <rect x="450" y="450" width="50" height="0" fill="green" />
+    <rect x="550" y="450" width="50" height="0" fill="green" />
+    <rect x="650" y="450" width="50" height="0" fill="green" />
+    <rect x="750" y="450" width="50" height="0" fill="green" />
+  </g>
+
+  <line x1="0" y1="100" x2="800" y2="100" stroke="black" stroke-dasharray="5,5"/>
+  <line x1="0" y1="200" x2="800" y2="200" stroke="black" stroke-dasharray="5,5"/>
+  <line x1="0" y1="300" x2="800" y2="300" stroke="black" stroke-dasharray="5,5"/>
+  <line x1="0" y1="400" x2="800" y2="400" stroke="black" stroke-dasharray="5,5"/>
+  <line x1="0" y1="500" x2="800" y2="500" stroke="black" stroke-dasharray="5,5"/>
+</svg>

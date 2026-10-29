@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        #temperature-gauge {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="temperature-gauge"></div>
+
+    <script>
+        var myChart = echarts.init(document.getElementById('temperature-gauge'));
+
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b}: {c} °C'
+            },
+            series: [{
+                name: 'Temperature',
+                type: 'gauge',
+                startAngle: 90,
+                endAngle: -270,
+                min: -100,
+                max: 200,
+                splitNumber: 5,
+                axisLine: {
+                    lineStyle: {
+                        width: 10,
+                        color: [[0.25, '#007BFF'], [0.5, '#FFA500'], [0.75, '#2E8B57'], [1, '#2E8B57']]
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: true,
+                    formatter: '{value}°C',
+                    color: '#333',
+                    fontSize: 12
+                },
+                pointer: {
+                    show: true,
+                    itemStyle: {
+                        color: '#007BFF'
+                    }
+                },
+                title: {
+                    show: true,
+                    offsetCenter: [0, '50%'],
+                    textStyle: {
+                        fontSize: 16,
+                        fontWeight: 'bold',
+                        color: '#333'
+                    }
+                },
+                detail: {
+                    show: true,
+                    offsetCenter: [0, '50%'],
+                    fontSize: 24,
+                    fontWeight: 'bold',
+                    color: '#333',
+                    formatter: function (value) {
+                        return value + ' °C';
+                    }
+                },
+                data: [{
+                    value: 42.5,
+                    name: 'Temperature'
+                }]
+            }]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multiplication Table Heatmap</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    #container {
+      width: 100%;
+      height: 700px;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+    .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .colorbar-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+    .colorbar {
+      width: 200px;
+      height: 20px;
+      background: linear-gradient(to right, #d62728, #ff7f0e, #2ca02c, #1f77b4);
+      border-radius: 4px;
+      position: relative;
+    }
+    .colorbar-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+      font-size: 0.8em;
+      color: #333;
+      margin-top: 5px;
+    }
+    .colorbar-label {
+      width: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Multiplication Table Heatmap</div>
+
+  <div class="colorbar-container">
+    <div class="colorbar"></div>
+    <div class="colorbar-labels">
+      <div class="colorbar-label">1</div>
+      <div class="colorbar-label">100</div>
+    </div>
+  </div>
+
+  <div id="container"></div>
+
+  <script>
+    // Generate multiplication table data
+    const data = [];
+    for (let i = 1; i <= 10; i++) {
+      for (let j = 1; j <= 10; j++) {
+        data.push([j, i, i * j]);
+      }
+    }
+
+    // Initialize ECharts instance
+    const myChart = echarts.init(document.getElementById('container'));
+
+    // Define color mapping function
+    const colorMap = [
+      '#d62728', // Red for low values
+      '#ff7f0e',
+      '#d62728',
+      '#ff7f0e',
+      '#2ca02c',
+      '#1f77b4'
+    ];
+
+    // Create a smooth color gradient from red to blue
+    const getColor = (value) => {
+      const minVal = 1;
+      const maxVal = 100;
+      const normalized = (value - minVal) / (maxVal - minVal);
+      const r = Math.floor(255 * (1 - normalized));
+      const g = Math.floor(255 * (normalized * 0.5 + 0.5));
+      const b = Math.floor(255 * normalized);
+      return `rgb(${r}, ${g}, ${b})`;
+    };
+
+    // Set options for heatmap
+    const option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{c}'
+      },
+      xAxis: {
+        type: 'category',
+        data: Array.from({ length: 10 }, (_, i) => String(i + 1)),
+        axisLabel: {
+          fontSize: 12,
+          color: '#333'
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#ccc'
+          }
+        },
+        axisTick: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: Array.from({ length: 10 }, (_, i) => String(10 - i)), // Reverse order for top-to-bottom
+        axisLabel: {
+          fontSize: 12,
+          color: '#333',
+          rotate: -90,
+          interval: 0
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#ccc'
+          }
+        },
+        axisTick: {
+          show: false
+        }
+      },
+      visualMap: {
+        show: false,
+        min: 1,
+        max: 100,
+        calculable: true,
+        seriesIndex: 0,
+        inRange: {
+          color: ['#d62728', '#ff7f0e', '#2ca02c', '#1f77b4']
+        }
+      },
+      series: [{
+        name: 'Multiplication Table',
+        type: 'heatmap',
+        data: data,
+        itemStyle: {
+          borderColor: '#fff',
+          borderWidth: 0.5
+        },
+        label: {
+          show: true,
+          color: '#fff',
+          fontSize: 12,
+          fontWeight: 'bold',
+          position: 'center'
+        },
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowColor: 'rgba(0, 0, 0, 0.3)'
+          }
+        },
+        animation: false
+      }]
+    };
+
+    // Apply options
+    myChart.setOption(option);
+
+    // Resize on window resize
+    window.addEventListener('resize', () => {
+      myChart.resize();
+    });
+  </script>
+</body>
+</html>

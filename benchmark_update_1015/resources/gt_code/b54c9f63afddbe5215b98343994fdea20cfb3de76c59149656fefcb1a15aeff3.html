@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Geography Bar Chart Sample</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- Geography Bar Chart Sample ---
+    const posList = [
+      'left',
+      'right',
+      'top',
+      'bottom',
+      'inside',
+      'insideTop',
+      'insideLeft',
+      'insideRight',
+      'insideBottom',
+      'insideTopLeft',
+      'insideTopRight',
+      'insideBottomLeft',
+      'insideBottomRight'
+    ];
+    app.configParameters = {
+      rotate: {
+        min: -90,
+        max: 90
+      },
+      align: {
+        options: {
+          left: 'left',
+          center: 'center',
+          right: 'right'
+        }
+      },
+      verticalAlign: {
+        options: {
+          top: 'top',
+          middle: 'middle',
+          bottom: 'bottom'
+        }
+      },
+      position: {
+        options: posList.reduce(function (map, pos) {
+          map[pos] = pos;
+          return map;
+        }, {})
+      },
+      distance: {
+        min: 0,
+        max: 100
+      }
+    };
+    app.config = {
+      rotate: 90,
+      align: 'left',
+      verticalAlign: 'middle',
+      position: 'insideBottom',
+      distance: 15,
+      onChange: function () {
+        const labelOption = {
+          rotate: app.config.rotate,
+          align: app.config.align,
+          verticalAlign: app.config.verticalAlign,
+          position: app.config.position,
+          distance: app.config.distance
+        };
+        myChart.setOption({
+          series: [
+            { label: labelOption },
+            { label: labelOption },
+            { label: labelOption },
+            { label: labelOption }
+          ]
+        });
+      }
+    };
+    const labelOption = {
+      show: true,
+      position: app.config.position,
+      distance: app.config.distance,
+      align: app.config.align,
+      verticalAlign: app.config.verticalAlign,
+      rotate: app.config.rotate,
+      formatter: '{c}  {name|{a}}',
+      fontSize: 15,
+      color: '#212121',
+      rich: {
+        name: {
+          fontWeight: 'bold'
+        }
+      }
+    };
+    option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      legend: {
+        data: ['Mountains', 'Plains', 'Coastal', 'Urban'],
+        textStyle: {
+          color: '#212121',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI'
+        }
+      },
+      toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+          mark: { show: true },
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar', 'stack'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      xAxis: [
+        {
+          type: 'category',
+          axisTick: { show: false },
+          axisLine: { lineStyle: { color: '#222', width: 2 } },
+          axisLabel: { color: '#222', fontWeight: 'bold', fontFamily: 'Segoe UI', fontSize: 14 },
+          data: ['Africa', 'Asia', 'Europe', 'Americas', 'Oceania']
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          axisLine: { lineStyle: { color: '#222', width: 2 } },
+          axisLabel: { color: '#222', fontWeight: 'bold', fontFamily: 'Segoe UI', fontSize: 14 }
+        }
+      ],
+      series: [
+        {
+          name: 'Mountains',
+          type: 'bar',
+          barGap: 0,
+          label: labelOption,
+          emphasis: { focus: 'series' },
+          itemStyle: {
+            color: '#3355CC'
+          },
+          data: [180, 210, 130, 160, 90]
+        },
+        {
+          name: 'Plains',
+          type: 'bar',
+          label: labelOption,
+          emphasis: { focus: 'series' },
+          itemStyle: {
+            color: '#008D36'
+          },
+          data: [220, 315, 250, 290, 110]
+        },
+        {
+          name: 'Coastal',
+          type: 'bar',
+          label: labelOption,
+          emphasis: { focus: 'series' },
+          itemStyle: {
+            color: '#F56B00'
+          },
+          data: [150, 270, 140, 230, 60]
+        },
+        {
+          name: 'Urban',
+          type: 'bar',
+          label: labelOption,
+          emphasis: { focus: 'series' },
+          itemStyle: {
+            color: '#C90000'
+          },
+          data: [100, 190, 220, 280, 40]
+        }
+      ],
+      title: {
+        text: 'Geographical Features Distribution by Continent',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#212121',
+          fontSize: 22,
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI'
+        }
+      }
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .node-red { fill: #E74C3C; stroke: #000; stroke-width: 3; }
+      .node-blue { fill: #4A5FA5; stroke: #000; stroke-width: 3; }
+      .node-green { fill: #52A552; stroke: #000; stroke-width: 3; }
+      .node-text { font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #000; }
+      .edge { stroke: #000; stroke-width: 2; stroke-dasharray: 8,5; fill: none; }
+      .label-text { font-family: Arial, sans-serif; font-size: 20px; fill: #000; }
+    </style>
+  </defs>
+  
+  <!-- Algorithm Node (top-left) -->
+  <rect x="140" y="90" width="210" height="100" rx="15" class="node-red"/>
+  <text x="245" y="155" text-anchor="middle" class="node-text">Algorithm</text>
+  
+  <!-- Database Node (top-right) -->
+  <rect x="900" y="90" width="210" height="100" rx="15" class="node-green"/>
+  <text x="1005" y="155" text-anchor="middle" class="node-text">Database</text>
+  
+  <!-- Data Structure Node (middle-left) -->
+  <rect x="140" y="340" width="220" height="100" rx="15" class="node-blue"/>
+  <text x="250" y="405" text-anchor="middle" class="node-text">Data Structure</text>
+  
+  <!-- Operating System Node (middle-right) -->
+  <rect x="900" y="340" width="220" height="100" rx="15" class="node-blue"/>
+  <text x="1010" y="405" text-anchor="middle" class="node-text">Operating System</text>
+  
+  <!-- Network Node (bottom-center) -->
+  <rect x="520" y="600" width="210" height="100" rx="15" class="node-red"/>
+  <text x="625" y="665" text-anchor="middle" class="node-text">Network</text>
+  
+  <!-- Edges (dashed lines) -->
+  <!-- Algorithm to Data Structure -->
+  <path d="M 245 190 L 250 340" class="edge"/>
+  <text x="265" y="270" class="label-text">uses</text>
+  
+  <!-- Algorithm to Network -->
+  <path d="M 300 190 L 560 600" class="edge"/>
+  
+  <!-- Data Structure to Network -->
+  <path d="M 300 440 L 560 600" class="edge"/>
+  <text x="320" y="600" class="label-text">transmitted via</text>
+  
+  <!-- Data Structure to Network (implemented in) -->
+  <path d="M 360 410 L 520 640" class="edge"/>
+  <text x="340" y="490" class="label-text">implemented in</text>
+  
+  <!-- Network to Operating System -->
+  <path d="M 730 640 L 920 440" class="edge"/>
+  <text x="750" y="630" class="label-text">connects to</text>
+  
+  <!-- Operating System to Network (accessed through) -->
+  <path d="M 980 440 L 680 600" class="edge"/>
+  <text x="685" y="530" class="label-text">accessed through</text>
+  
+  <!-- Database to Operating System -->
+  <path d="M 1005 190 L 1010 340" class="edge"/>
+  <text x="1025" y="270" class="label-text">managed by</text>
+  
+  <!-- Database to Data Structure (stores) -->
+  <path d="M 900 140 L 360 370" class="edge"/>
+  <text x="665" y="200" class="label-text">stores</text>
+</svg>

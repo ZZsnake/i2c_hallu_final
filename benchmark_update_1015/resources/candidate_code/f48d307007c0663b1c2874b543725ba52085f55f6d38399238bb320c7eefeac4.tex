@@ -1,0 +1,81 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+
+\begin{tikzpicture}[>=Stealth, scale=1.2]
+    % Left diagram
+    \begin{scope}
+        % Axes
+        \draw[->] (0,0) -- (0,5);
+        \draw[->] (0,0) -- (5,0);
+        
+        % Step function outline
+        \draw[thick] (0,3.5) -- (3,3.5) -- (3,0);
+        \draw (0,2.4) -- (4.5,2.4) -- (4.5,0);
+        
+        % Vertical dashed line
+        \draw[dashed] (2,0) -- (2,5);
+        
+        % Horizontal reference lines
+        \draw[thin] (0,3.5) -- (0.2,3.5);
+        \draw[thin] (0,2.4) -- (0.2,2.4);
+        
+        % Labels on y-axis
+        \node[left] at (0,3.5) {$\alpha_s^\mathcal{A}$};
+        \node[left] at (0,2.4) {$\alpha_s^\mathcal{B}$};
+        
+        % Labels on x-axis
+        \node[below] at (2,0) {$\hat{r}_L$};
+        \node[below] at (3,0) {$NV_s^\mathcal{A}$};
+        \node[below] at (4.5,0) {$NV_s^\mathcal{B}$};
+        
+        % Region labels
+        \node at (1,2.95) {I};
+        \node at (2.5,2.95) {II};
+        \node at (1,1.2) {III};
+        \node at (2.5,1.2) {IV};
+        \node at (3.75,1.2) {V};
+    \end{scope}
+    
+    % Right diagram
+    \begin{scope}[xshift=6.5cm]
+        % Axes
+        \draw[->] (0,0) -- (0,5);
+        \draw[->] (0,0) -- (5,0);
+        
+        % Step function outline
+        \draw[thick] (0,3.5) -- (3,3.5) -- (3,0);
+        \draw (0,2.4) -- (4.5,2.4) -- (4.5,0);
+        
+        % Vertical dashed lines
+        \draw[dashed] (1.5,0) -- (1.5,5);
+        \draw[dotted] (2.5,0) -- (2.5,5);
+        
+        % Horizontal reference lines
+        \draw[thin] (0,3.5) -- (0.2,3.5);
+        \draw[thin] (0,2.4) -- (0.2,2.4);
+        
+        % Labels on y-axis
+        \node[left] at (0,3.5) {$\alpha_s^\mathcal{A}$};
+        \node[left] at (0,2.4) {$\alpha_s^\mathcal{B}$};
+        
+        % Labels on x-axis
+        \node[below] at (2,0) {$r_L^\mathcal{A}$};
+        \node[below] at (3,0) {$r_L^\mathcal{B}$};
+        \node[below] at (3.5,0) {$NV_s^\mathcal{A}$};
+        \node[below] at (4.5,0) {$NV_s^\mathcal{B}$};
+        
+        % Region labels
+        \node at (0.75,2.95) {VI};
+        \node at (2,2.95) {VII};
+        \node at (2.75,2.95) {VIII};
+        \node at (0.75,1.2) {IX};
+        \node at (2,1.2) {X};
+        \node at (2.75,1.2) {XI};
+        \node at (3.75,1.2) {XII};
+    \end{scope}
+\end{tikzpicture}
+
+\end{document}

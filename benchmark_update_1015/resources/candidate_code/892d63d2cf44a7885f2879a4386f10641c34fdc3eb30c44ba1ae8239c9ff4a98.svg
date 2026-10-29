@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420">
+  <!-- Background -->
+  <rect x="40" y="40" width="320" height="320" fill="#d0d0d0"/>
+  <polygon points="200,40 360,40 360,220 200,60" fill="#4f4f4f"/>
+
+  <!-- Axes -->
+  <!-- x1 axis -->
+  <line x1="40" y1="200" x2="385" y2="200" stroke="#000" stroke-width="4"/>
+  <!-- x1 arrow -->
+  <path d="M385 200 L370 194 L370 206 Z" fill="#000"/>
+  <!-- x2 axis -->
+  <line x1="200" y1="360" x2="200" y2="15" stroke="#000" stroke-width="4"/>
+  <!-- x2 arrow -->
+  <path d="M200 15 L194 30 L206 30 Z" fill="#000"/>
+
+  <!-- Dashed decision boundary (blue) -->
+  <line x1="180" y1="40" x2="370" y2="230"
+        stroke="#2f6bb2" stroke-width="3" stroke-dasharray="8 6"/>
+
+  <!-- Grid connections between points -->
+  <!-- vertical from top-left to bottom-left -->
+  <line x1="200" y1="120" x2="200" y2="200" stroke="#000" stroke-width="4"/>
+  <!-- horizontal from bottom-left to bottom-right -->
+  <line x1="200" y1="200" x2="280" y2="200" stroke="#000" stroke-width="4"/>
+  <!-- horizontal from top-left to top-right -->
+  <line x1="200" y1="120" x2="280" y2="120" stroke="#000" stroke-width="4"/>
+  <!-- vertical at x1=1 from top-right to bottom-right -->
+  <line x1="280" y1="120" x2="280" y2="200" stroke="#000" stroke-width="4"/>
+
+  <!-- Points (circles) -->
+  <!-- Top-left (x1=0, x2=0) orange -->
+  <circle cx="200" cy="120" r="16" fill="#ff6a00" stroke="#000" stroke-width="5"/>
+  <!-- Bottom-left (x1=0, x2=1) orange -->
+  <circle cx="200" cy="200" r="16" fill="#ff6a00" stroke="#000" stroke-width="5"/>
+  <!-- Bottom-right (x1=1, x2=1) orange -->
+  <circle cx="280" cy="200" r="16" fill="#ff6a00" stroke="#000" stroke-width="5"/>
+  <!-- Top-right (x1=1, x2=0) green -->
+  <circle cx="280" cy="120" r="16" fill="#59ff5a" stroke="#000" stroke-width="5"/>
+
+  <!-- Axis tick labels -->
+  <!-- x2 tick "0" near top-left point -->
+  <text x="180" y="125" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="end" alignment-baseline="middle">0</text>
+  <!-- x2 tick "1" near bottom-left -->
+  <text x="185" y="205" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="end" alignment-baseline="middle">1</text>
+  <!-- x1 tick "1" near bottom-right -->
+  <text x="280" y="220" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">1</text>
+
+  <!-- Axis labels -->
+  <text x="340" y="190" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="start">X₁</text>
+  <text x="210" y="60" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="start">X₂</text>
+
+  <!-- Caption -->
+  <text x="200" y="390" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">
+    AND (X₁&#8745;X₂)
+  </text>
+</svg>

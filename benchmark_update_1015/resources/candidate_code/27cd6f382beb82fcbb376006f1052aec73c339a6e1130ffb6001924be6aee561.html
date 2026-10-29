@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution of Math Branches</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: none;
+            position: relative;
+        }
+
+        .legend-container {
+            margin-right: 30px;
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .legend-color-box {
+            width: 24px;
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 3px; /* Rounded corners for the horizontal markers */
+        }
+
+        #donut-chart {
+            width: 600px; /* Explicit width for ECharts container */
+            height: 450px; /* Explicit height for ECharts container */
+        }
+    </style>
+</head>
+<body>
+    <h1>Distribution of Math Branches</h1>
+
+    <div class="chart-container">
+        <div class="legend-container">
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #2367D1;"></div>
+                <span>Algebra</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #F94D1B;"></div>
+                <span>Geometry</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #1AC47D;"></div>
+                <span>Calculus</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #EFA81A;"></div>
+                <span>Probability</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #991ECB;"></div>
+                <span>Statistics</span>
+            </div>
+        </div>
+        <div id="donut-chart"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('donut-chart'));
+
+            var option = {
+                color: ['#2367D1', '#F94D1B', '#1AC47D', '#EFA81A', '#991ECB'],
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{b}: {d}%'
+                },
+                series: [
+                    {
+                        name: 'Math Branches',
+                        type: 'pie',
+                        radius: ['38%', '70%'], /* Inner and outer radius for donut chart */
+                        avoidLabelOverlap: false,
+                        label: {
+                            show: true,
+                            formatter: '{b}\n{d}%', /* Show name and percentage */
+                            position: 'outside', /* Labels outside the donut */
+                            alignTo: 'labelLine',
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            color: '#333'
+                        },
+                        labelLine: {
+                            show: true,
+                            length: 15, /* Length of the first segment of the label line */
+                            length2: 15, /* Length of the second segment of the label line */
+                            smooth: false,
+                            lineStyle: {
+                                width: 3,
+                                color: '#222'
+                            }
+                        },
+                        data: [
+                            { value: 30, name: 'Algebra' },
+                            { value: 25, name: 'Geometry' },
+                            { value: 20, name: 'Calculus' },
+                            { value: 15, name: 'Probability' },
+                            { value: 10, name: 'Statistics' }
+                        ]
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            // Make chart responsive
+            $(window).on('resize', function() {
+                if (myChart != null && myChart != undefined) {
+                    myChart.resize();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

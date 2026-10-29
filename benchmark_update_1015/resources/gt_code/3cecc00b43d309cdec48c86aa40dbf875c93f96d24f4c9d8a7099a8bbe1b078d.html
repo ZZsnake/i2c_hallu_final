@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Boxplot - Algebra Exam Scores</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    option = {
+      title: [
+        {
+          text: 'Algebra Test Score Distribution',
+          left: 'center',
+          textStyle: {
+            color: '#222', // high contrast
+            fontWeight: 'bold',
+            fontSize: 22,
+            fontFamily: 'Arial'
+          }
+        },
+        {
+          text: 'Boxplot: Q1, Q3, Median & Outliers\n(upper: Q3 + 1.5 × IQR, lower: Q1 - 1.5 × IQR)',
+          borderColor: '#444',
+          borderWidth: 1,
+          textStyle: {
+            fontSize: 13,
+            color: '#222',
+            fontFamily: 'Arial'
+          },
+          left: '10%',
+          top: '89%'
+        }
+      ],
+      dataset: [
+        {
+          source: [
+            [78, 85, 90, 88, 92, 95, 100, 96, 91, 80, 85, 89, 87, 93, 98, 85, 97, 99, 79, 82],
+            [65, 70, 72, 68, 75, 80, 83, 85, 78, 74, 69, 71, 76, 79, 81, 77, 73, 68, 67, 66],
+            [55, 60, 59, 62, 58, 61, 57, 63, 65, 54, 60, 58, 66, 62, 64, 59, 57, 65, 62, 66],
+            [48, 50, 52, 54, 53, 56, 60, 61, 57, 58, 45, 49, 51, 47, 55, 52, 53, 50, 59, 48],
+            [88, 90, 93, 91, 92, 94, 95, 97, 99, 98, 96, 94, 92, 90, 89, 93, 97, 95, 92, 98]
+          ]
+        },
+        {
+          transform: {
+            type: 'boxplot',
+            config: {
+              itemNameFormatter: function (params) {
+                return 'Group ' + (params.value + 1);
+              }
+            }
+          }
+        },
+        {
+          fromDatasetIndex: 1,
+          fromTransformResult: 1
+        }
+      ],
+      tooltip: {
+        trigger: 'item',
+        axisPointer: {
+          type: 'shadow'
+        },
+        textStyle: {
+          color: '#1a1a1a', // high contrast
+          fontFamily: 'Arial'
+        }
+      },
+      grid: {
+        left: '9%',
+        right: '9%',
+        bottom: '15%'
+      },
+      yAxis: {
+        type: 'category',
+        boundaryGap: true,
+        nameGap: 30,
+        splitArea: {
+          show: false
+        },
+        splitLine: {
+          show: false
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16,
+          fontFamily: 'Arial'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#333',
+            width: 2
+          }
+        }
+      },
+      xAxis: {
+        type: 'value',
+        name: 'Score',
+        splitArea: {
+          show: true
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16,
+          fontFamily: 'Arial'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#333',
+            width: 2
+          }
+        },
+        nameTextStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16,
+          fontFamily: 'Arial'
+        }
+      },
+      series: [
+        {
+          name: 'Boxplot',
+          type: 'boxplot',
+          datasetIndex: 1,
+          itemStyle: {
+            color: '#1976D2', // vivid blue
+            borderColor: '#0D47A1', // dark blue
+            borderWidth: 3
+          },
+          boxWidth: [10, 40]
+        },
+        {
+          name: 'Outlier',
+          type: 'scatter',
+          encode: { x: 1, y: 0 },
+          datasetIndex: 2,
+          itemStyle: {
+            color: '#E53935', // vivid red
+            borderColor: '#B71C1C',
+            borderWidth: 2
+          },
+          symbolSize: 14
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quadratic Function Scatter Plot</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Overall page layout */
+    .page {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    /* Chart container sizing mimics the wide, short image */
+    #chart {
+      width: 100vw;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div id="chart"></div>
+  </div>
+
+  <script>
+    $(function () {
+      var chartDom = document.getElementById('chart');
+      var myChart = echarts.init(chartDom);
+
+      // Data points for y = x^2 + 2x + 1, x from -4 to 7
+      var data = [
+        [-4, 9],
+        [-3, 4],
+        [-2, 1],
+        [-1, 0],
+        [0, 1],
+        [1, 4],
+        [2, 9],
+        [3, 16],
+        [4, 25],
+        [5, 36],
+        [6, 49],
+        [7, 64]
+      ];
+
+      var option = {
+        backgroundColor: '#ffffff',
+        title: {
+          text: 'Quadratic Function: y = x² + 2x + 1',
+          left: 'center',
+          top: 8,
+          textStyle: {
+            fontSize: 20,
+            fontWeight: 'bold',
+            color: '#000000'
+          }
+        },
+        grid: {
+          left: 60,
+          right: 40,
+          top: 70,
+          bottom: 60
+        },
+        tooltip: {
+          show: false
+        },
+        xAxis: {
+          name: 'x',
+          nameLocation: 'middle',
+          nameGap: 28,
+          nameTextStyle: {
+            fontWeight: 'bold',
+            fontSize: 16
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#222222',
+              width: 2
+            }
+          },
+          axisLabel: {
+            color: '#333333',
+            fontSize: 14
+          },
+          splitLine: {
+            show: false
+          }
+        },
+        yAxis: {
+          name: 'y',
+          nameLocation: 'middle',
+          nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 'bold',
+            fontSize: 16
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#222222',
+              width: 2
+            }
+          },
+          axisLabel: {
+            color: '#333333',
+            fontSize: 14
+          },
+          splitLine: {
+            show: false
+          }
+        },
+        series: [
+          {
+            type: 'scatter',
+            data: data,
+            symbolSize: 18,
+            itemStyle: {
+              color: '#D32F2F',
+              borderColor: '#333333',
+              borderWidth: 2
+            }
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+
+      // Handle resize for responsiveness
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

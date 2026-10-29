@@ -1,0 +1,32 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{graphicx}
+
+\definecolor{lightblue}{RGB}{173,216,230}
+\definecolor{lightyellow}{RGB}{255,255,224}
+\definecolor{lightgreen}{RGB}{144,238,144}
+
+\begin{document}
+
+\begin{tabular}{>{\columncolor{lightblue}}l|c|c|c}
+\toprule
+\rowcolor{lightgreen}\multirow{2}{*}{\textbf{Project Type}} & \multicolumn{3}{c}{\textbf{Swagger-play2 Feature}} \\
+\cmidrule{2-4}
+\rowcolor{lightgreen} & \textbf{API Documentation} & \textbf{Code Generation} & \textbf{API Testing} \\
+\midrule
+E-commerce & 85\% & - & 80\% \\
+\rowcolor{lightyellow}Social Media & 78\% & 70\% & - \\
+Financial Services & - & - & 90\% \\
+\rowcolor{lightyellow}Healthcare & 75\% & - & - \\
+Travel & - & 60\% & - \\
+\rowcolor{lightyellow}Gaming & 92\% & - & - \\
+Education & - & - & 67\% \\
+\rowcolor{lightyellow}Real Estate & - & 55\% & - \\
+\bottomrule
+\end{tabular}
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC, calc}
+
+\begin{document}
+\begin{tikzpicture}[circuit ee IEC, unit voltage=V, unit current=A]
+    % Coordinates
+    \coordinate (A) at (0,4);
+    \coordinate (B) at (0,2);
+    \coordinate (C) at (2,2);
+    \coordinate (D) at (4,2);
+    \coordinate (E) at (2,0);
+    \coordinate (F) at (0,0);
+    
+    % Resistors
+    \draw (A) to [resistor={info=$R_1$}] (B);
+    \draw (B) to [resistor={info=$R_2$}] (F);
+    \draw (C) to [resistor={info=$R_3$}] (E);
+    \draw (C) to [resistor={info=$R_4$}] (D);
+    
+    % Connections
+    \draw (B) -- (C);
+    \draw (E) -- (F);
+    
+    % Current arrows
+    \draw[->, gray] ($(A)+(-0.3,0)$) -- ($(B)+(-0.3,0)$) node[midway, left] {$I_{R_1}$};
+    \draw[->, gray] ($(B)+(-0.3,0)$) -- ($(F)+(-0.3,0)$) node[midway, left] {$I_{R_2}$};
+    \draw[->, gray] ($(C)+(0.3,0)$) -- ($(E)+(0.3,0)$) node[midway, right] {$I_{R_3}$};
+    \draw[->, gray] (C) -- ($(D)+(-0.2,0)$) node[midway, above] {$I_{R_4}$};
+    
+    % Voltage labels
+    \draw[->, gray] ($(A)+(-0.7,0.3)$) -- ($(B)+(-0.7,0.3)$) node[midway, left] {$V_{R_1}$};
+    \draw[->, gray] ($(B)+(-0.7,0.3)$) -- ($(F)+(-0.7,0.3)$) node[midway, left] {$V_{R_2}$};
+    \draw[->, gray] ($(C)+(0.7,-0.3)$) -- ($(E)+(0.7,-0.3)$) node[midway, right] {$V_{R_3}$};
+    \draw[->, gray] (C) -- ($(D)+(-0.4,0)$) node[midway, above] {$V_{R_4}=0$};
+    
+    % Node labels
+    \node[left] at (A) {A};
+    \node[left] at (B) {B};
+    \node[above] at (C) {C};
+    \node[right] at (D) {D};
+    \node[below] at (E) {E};
+    \node[left] at (F) {F};
+    \node[left] at ($(A)+(0,0.3)$) {$V_{CC}$};
+    
+    % Ground
+    \draw (F) to [ground] ++(0,-0.5);
+    
+\end{tikzpicture}
+\end{document}

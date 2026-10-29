@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="solid_geometry_sample" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="425.2px" height="425.2px" viewBox="0 0 425.2 425.2" xml:space="preserve">
+<g>
+	<g>
+		<polygon fill="#4760A6" points="60,340 100,390 100,210 60,170"/>
+		<polygon fill="#4159A1" points="100,390 325,400 325,215 100,210"/>
+		<polygon fill="#3A4C8E" points="100,210 325,215 325,30 100,210"/>
+		<polygon fill="#203669" points="60,170 100,210 325,30 60,170"/>
+		<polygon fill="#A63F4C" points="365,340 325,390 325,215 365,170"/>
+		<polygon fill="#B7546A" points="325,390 325,215 325,400 365,340"/>
+		<polygon fill="#C7657D" points="365,170 325,215 325,30 365,170"/>
+		<polygon fill="#D97F99" points="365,170 325,30 60,170 365,170"/>
+	</g>
+	<g>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="60" y1="340" x2="150" y2="320"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="140" y1="120" x2="150" y2="320"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="140" y1="120" x2="60" y2="170"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="140" y1="120" x2="325" y2="30"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="285" y1="120" x2="365" y2="170"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="285" y1="120" x2="275" y2="320"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="285" y1="120" x2="325" y2="30"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="365" y1="340" x2="275" y2="320"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="140" y1="120" x2="285" y2="120"/>
+		<line stroke="#1B2A3A" stroke-width="2" stroke-dasharray="6,2" x1="275" y1="320" x2="150" y2="320"/>
+	</g>
+	<g>
+		<line stroke="#10182B" stroke-width="4" x1="100" y1="210" x2="60" y2="170"/>
+		<line stroke="#10182B" stroke-width="4" x1="60" y1="170" x2="325" y2="30"/>
+		<line stroke="#10182B" stroke-width="4" x1="325" y1="30" x2="100" y2="210"/>
+		<line stroke="#10182B" stroke-width="4" x1="100" y1="210" x2="325" y2="215"/>
+		<line stroke="#10182B" stroke-width="4" x1="100" y1="210" x2="100" y2="390"/>
+		<line stroke="#10182B" stroke-width="4" x1="100" y1="390" x2="60" y2="340"/>
+		<line stroke="#10182B" stroke-width="4" x1="60" y1="340" x2="60" y2="170"/>
+		<line stroke="#10182B" stroke-width="4" x1="325" y1="30" x2="325" y2="215"/>
+		<line stroke="#10182B" stroke-width="4" x1="325" y1="215" x2="325" y2="400"/>
+		<line stroke="#10182B" stroke-width="4" x1="100" y1="390" x2="325" y2="400"/>
+		<line stroke="#10182B" stroke-width="4" x1="365" y1="170" x2="325" y2="215"/>
+		<line stroke="#10182B" stroke-width="4" x1="365" y1="170" x2="325" y2="30"/>
+		<line stroke="#10182B" stroke-width="4" x1="325" y1="30" x2="365" y2="170"/>
+		<line stroke="#10182B" stroke-width="4" x1="365" y1="170" x2="325" y2="215"/>
+		<line stroke="#10182B" stroke-width="4" x1="365" y1="170" x2="365" y2="340"/>
+		<line stroke="#10182B" stroke-width="4" x1="365" y1="340" x2="325" y2="390"/>
+		<line stroke="#10182B" stroke-width="4" x1="325" y1="390" x2="365" y2="170"/>
+		<line stroke="#10182B" stroke-width="4" x1="325" y1="390" x2="325" y2="400"/>
+	</g>
+	<!-- Math Labels -->
+	<text x="82" y="205" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">A</text>
+	<text x="50" y="170" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">B</text>
+	<text x="325" y="28" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">C</text>
+	<text x="325" y="217" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">D</text>
+	<text x="100" y="405" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">E</text>
+	<text x="325" y="415" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">F</text>
+	<text x="365" y="170" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">G</text>
+	<text x="60" y="355" fill="#232E56" font-family="Roboto, Arial" font-size="24" font-weight="bold">H</text>
+	<!-- Dimension lines -->
+	<text x="170" y="190" fill="#C33B46" font-family="Roboto, Arial" font-size="18">h</text>
+	<text x="220" y="340" fill="#C33B46" font-family="Roboto, Arial" font-size="18">w</text>
+	<text x="200" y="70" fill="#C33B46" font-family="Roboto, Arial" font-size="18">l</text>
+</g>
+</svg>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Math Competency Radar</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .legend-container {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 10px;
+            border-radius: 3px;
+        }
+
+        .charts-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 50px;
+        }
+
+        .chart-wrapper {
+            width: 45%;
+            height: 500px;
+        }
+
+        #radar-left, #radar-right {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Student Math Competency Radar</h1>
+        <div class="legend-container">
+            <div class="legend-item"><div class="legend-color" style="background-color: #5470c6;"></div> Alice</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #ee6666;"></div> Bob</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: rgba(84, 112, 198, 0.4);"></div> Class Average</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: rgba(238, 102, 102, 0.4);"></div> Practice Target</div>
+        </div>
+    </div>
+
+    <div class="charts-container">
+        <div class="chart-wrapper">
+            <div id="radar-left"></div>
+        </div>
+        <div class="chart-wrapper">
+            <div id="radar-right"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Left Radar Chart
+            var leftChart = echarts.init(document.getElementById('radar-left'));
+            var leftOption = {
+                radar: {
+                    indicator: [
+                        { name: 'Algebra', max: 100 },
+                        { name: 'Logic', max: 100 },
+                        { name: 'Statistics', max: 100 },
+                        { name: 'Calculus', max: 100 },
+                        { name: 'Geometry', max: 100 }
+                    ],
+                    shape: 'polygon',
+                    splitNumber: 4,
+                    axisName: {
+                        color: '#333',
+                        fontWeight: 'bold'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#ccc'
+                        }
+                    },
+                    splitArea: {
+                        show: true,
+                        areaStyle: {
+                            color: ['rgba(114, 172, 255, 0.2)', 'rgba(114, 172, 255, 0.4)', 'rgba(114, 172, 255, 0.6)', 'rgba(114, 172, 255, 0.8)']
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Student Comparison',
+                        type: 'radar',
+                        data: [
+                            {
+                                value: [90, 85, 70, 75, 80],
+                                name: 'Alice',
+                                lineStyle: { color: '#5470c6', width: 2 },
+                                itemStyle: { color: '#5470c6' },
+                                symbol: 'none'
+                            },
+                            {
+                                value: [70, 95, 85, 60, 65],
+                                name: 'Bob',
+                                lineStyle: { color: '#ee6666', width: 2 },
+                                itemStyle: { color: '#ee6666' },
+                                symbol: 'none'
+                            }
+                        ]
+                    }
+                ]
+            };
+            leftChart.setOption(leftOption);
+
+            // Right Radar Chart
+            var rightChart = echarts.init(document.getElementById('radar-right'));
+            var rightOption = {
+                radar: {
+                    indicator: [
+                        { name: 'Arithmetic', max: 120 },
+                        { name: 'Set Theory', max: 120 },
+                        { name: 'Number Theory', max: 120 },
+                        { name: 'Probability', max: 120 },
+                        { name: 'Discrete Math', max: 120 },
+                        { name: 'Trigonometry', max: 120 }
+                    ],
+                    shape: 'polygon',
+                    splitNumber: 5,
+                    axisName: {
+                        color: '#333',
+                        fontWeight: 'bold'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#e67e22',
+                            type: 'dashed'
+                        }
+                    },
+                    splitArea: {
+                        show: true,
+                        areaStyle: {
+                            color: ['#f39c12', '#e67e22', '#d35400'].map(c => echarts.format.lerp(0, [0, 1], [c, '#f1c40f'], 0.5))
+                            // Simplified gradient-like effect
+                            ,color: ['rgba(255, 165, 0, 0.3)', 'rgba(255, 140, 0, 0.5)', 'rgba(255, 69, 0, 0.7)']
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Advanced Math',
+                        type: 'radar',
+                        data: [
+                            {
+                                value: [80, 70, 60, 90, 75, 65],
+                                name: 'Alice',
+                                lineStyle: { color: '#5470c6', width: 2 },
+                                itemStyle: { color: '#5470c6' },
+                                symbol: 'circle',
+                                label: {
+                                    show: true,
+                                    formatter: function(params) {
+                                        const vals = [100, 90, 70, 110, 85, 75]; // Matching labels in image
+                                        return vals[params.dimensionIndex];
+                                    },
+                                    position: 'top',
+                                    color: '#333',
+                                    fontWeight: 'bold'
+                                }
+                            },
+                            {
+                                value: [95, 85, 75, 100, 80, 70],
+                                name: 'Bob',
+                                lineStyle: { color: '#ee6666', width: 2 },
+                                itemStyle: { color: '#ee6666' },
+                                symbol: 'none'
+                            }
+                        ]
+                    }
+                ]
+            };
+            rightChart.setOption(rightOption);
+
+            window.addEventListener('resize', function() {
+                leftChart.resize();
+                rightChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

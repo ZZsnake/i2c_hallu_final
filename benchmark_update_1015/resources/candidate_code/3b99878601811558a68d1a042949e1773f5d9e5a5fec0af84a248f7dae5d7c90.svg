@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="400" height="400">
+  <!-- Heptagon -->
+  <path d="M100,250 L50,200 L60,140 L150,80 L240,140 L250,200 L200,250 Z" fill="none" stroke="black" stroke-width="2"/>
+  <!-- Vertical line D to H -->
+  <path d="M150,80 L150,250" fill="none" stroke="black" stroke-width="2"/>
+  <!-- Dashed lines -->
+  <path d="M60,140 L150,250" fill="none" stroke="blue" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M240,140 L200,250" fill="none" stroke="blue" stroke-width="2" stroke-dasharray="5,5"/>
+  <!-- Points -->
+  <circle cx="100" cy="250" r="3" fill="black"/>
+  <circle cx="50" cy="200" r="3" fill="black"/>
+  <circle cx="60" cy="140" r="3" fill="black"/>
+  <circle cx="150" cy="80" r="3" fill="black"/>
+  <circle cx="240" cy="140" r="3" fill="black"/>
+  <circle cx="250" cy="200" r="3" fill="black"/>
+  <circle cx="200" cy="250" r="3" fill="black"/>
+  <circle cx="150" cy="250" r="3" fill="black"/>
+  <!-- Labels -->
+  <text x="110" y="230" fill="orange" font-size="12">120°</text>
+  <text x="145" y="270" fill="red" font-size="12">s</text>
+  <text x="210" y="230" fill="blue" font-size="12">d</text>
+</svg>

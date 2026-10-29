@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Approximation Gauge</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #gauge-container {
+            width: 600px; /* Adjust as needed */
+            height: 400px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div id="gauge-container"></div>
+
+    <script>
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('gauge-container'));
+
+            var option = {
+                series: [
+                    {
+                        type: 'gauge',
+                        startAngle: 225, // Start from bottom-left
+                        endAngle: -45,  // End at bottom-right (225 - 270 = -45)
+                        min: 0,
+                        max: 4,
+                        splitNumber: 10, // 0, 0.4, 0.8, ..., 4.0 (10 splits for 4 units)
+                        axisLine: {
+                            lineStyle: {
+                                width: 20,
+                                color: [
+                                    [0.3, '#4285F4'], // Blue (0 to 1.2, which is 1.2/4 = 0.3)
+                                    [0.7, '#34A853'], // Green (1.2 to 2.8, which is 2.8/4 = 0.7)
+                                    [1, '#EA4335']    // Red (2.8 to 4.0, which is 4.0/4 = 1)
+                                ]
+                            }
+                        },
+                        pointer: {
+                            icon: 'path://M12.711,1.071C12.711,0.48,12.231,0,11.64,0H0.971C0.38,0,-0.1,0.48,-0.1,1.071C-0.1,1.662,0.38,2.142,0.971,2.142H11.64C12.231,2.142,12.711,1.662,12.711,1.071Z', // Custom path for a wider base, tapering needle
+                            length: '60%',
+                            width: 10,
+                            offsetCenter: [0, '5%'], // Adjust to make it look like it's coming from the center
+                            itemStyle: {
+                                color: '#333' // Dark color for the needle
+                            }
+                        },
+                        axisTick: {
+                            distance: -25,
+                            length: 8,
+                            lineStyle: {
+                                color: '#999',
+                                width: 2
+                            }
+                        },
+                        splitLine: {
+                            distance: -30,
+                            length: 15,
+                            lineStyle: {
+                                color: '#999',
+                                width: 3
+                            }
+                        },
+                        axisLabel: {
+                            distance: -5,
+                            color: '#333',
+                            fontSize: 14,
+                            formatter: function(value) {
+                                if (value === 0) return '0';
+                                if (value === 4) return '4';
+                                return value.toFixed(1); // Format to one decimal place
+                            }
+                        },
+                        anchor: {
+                            show: false // Hide the default anchor point
+                        },
+                        title: {
+                            show: false // Hide default title
+                        },
+                        detail: {
+                            valueAnimation: true,
+                            width: '60%',
+                            lineHeight: 40,
+                            borderRadius: 8,
+                            offsetCenter: [0, '60%'], // Position below the gauge
+                            fontSize: 36,
+                            fontWeight: 'bold',
+                            formatter: '{value}',
+                            color: '#333'
+                        },
+                        data: [
+                            {
+                                value: 3.14,
+                                name: 'π Approx.'
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            // Add custom text for "π Approx."
+            option.graphic = [
+                {
+                    type: 'text',
+                    left: 'center',
+                    top: '75%', // Position below the value
+                    style: {
+                        text: 'π Approx.',
+                        fontSize: 18,
+                        fontWeight: 'normal',
+                        fill: '#333'
+                    }
+                }
+            ];
+
+            myChart.setOption(option);
+
+            // Adjust pointer icon path to be more like the image
+            // The path provided is a simple rectangle. For a tapering needle, a more complex path is needed.
+            // ECharts' default pointer is often sufficient, but if a very specific shape is required,
+            // a custom SVG path can be used. The current path is a simple rectangle for demonstration.
+            // For a more accurate tapering needle, the path would be something like:
+            // 'path://M-10,0 L0,-100 L10,0 Z' (triangle) or more complex.
+            // The provided path is a simple rectangle, which is a good approximation for the base.
+            // The default ECharts pointer is actually quite good for this. Let's revert to default and adjust width.
+            option.series[0].pointer = {
+                length: '60%',
+                width: 10, // Width at the base
+                itemStyle: {
+                    color: '#333'
+                }
+            };
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

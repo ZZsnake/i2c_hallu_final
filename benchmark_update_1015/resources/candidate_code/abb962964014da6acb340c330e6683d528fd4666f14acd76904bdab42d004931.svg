@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect x="0" y="0" width="800" height="600" fill="white" stroke="#4169E1" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" fill="black" text-anchor="middle">Computer Science Flow</text>
+
+  <!-- Define common styles -->
+  <defs>
+    <marker id="arrowheadBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4169E1" />
+    </marker>
+    <marker id="arrowheadRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#DC143C" />
+    </marker>
+
+    <rect id="rectDashedPurple" width="120" height="50" rx="5" ry="5" fill="#D8D0F0" stroke="#6A5ACD" stroke-width="2" stroke-dasharray="5,5"/>
+    <rect id="rectDashedGreen" width="120" height="50" rx="5" ry="5" fill="#D0F0D0" stroke="#3CB371" stroke-width="2" stroke-dasharray="5,5"/>
+    <rect id="rectSolidRed" width="120" height="50" rx="5" ry="5" fill="#F0D0D0" stroke="#DC143C" stroke-width="2"/>
+    <polygon id="diamondSolidYellow" points="60 0, 120 25, 60 50, 0 25" fill="#F0F0D0" stroke="#DAA520" stroke-width="2"/>
+    <ellipse id="ovalSolidBlue" cx="60" cy="25" rx="60" ry="25" fill="#D0D0F0" stroke="#6495ED" stroke-width="2"/>
+  </defs>
+
+  <!-- Nodes -->
+  <g transform="translate(100, 100)">
+    <use href="#rectDashedPurple" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Input Data</text>
+  </g>
+
+  <g transform="translate(100, 200)">
+    <use href="#rectDashedGreen" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Validation</text>
+  </g>
+
+  <g transform="translate(300, 250)">
+    <use href="#rectSolidRed" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Preprocessing</text>
+  </g>
+
+  <g transform="translate(500, 100)">
+    <use href="#rectDashedPurple" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Algorithm</text>
+  </g>
+
+  <g transform="translate(500, 200)">
+    <use href="#rectDashedGreen" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Data Structures</text>
+  </g>
+
+  <g transform="translate(680, 100)">
+    <use href="#rectSolidRed" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Output</text>
+  </g>
+
+  <g transform="translate(300, 350)">
+    <use href="#diamondSolidYellow" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Condition?</text>
+  </g>
+
+  <g transform="translate(300, 450)">
+    <use href="#ovalSolidBlue" x="0" y="0"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="16" fill="black" text-anchor="middle">Result</text>
+  </g>
+
+  <!-- Arrows -->
+  <!-- Input Data to Validation -->
+  <path d="M160 150 L160 200" stroke="#4169E1" stroke-width="2" fill="none" marker-end="url(#arrowheadBlue)"/>
+  <!-- Input Data to Preprocessing -->
+  <path d="M220 125 L300 275" stroke="#4169E1" stroke-width="2" fill="none" marker-end="url(#arrowheadBlue)"/>
+  <!-- Validation to Preprocessing -->
+  <path d="M220 225 L300 275" stroke="#4169E1" stroke-width="2" fill="none" marker-end="url(#arrowheadBlue)"/>
+  <!-- Preprocessing to Algorithm -->
+  <path d="M360 250 L360 125 L500 125" stroke="#4169E1" stroke-width="2" fill="none" marker-end="url(#arrowheadBlue)"/>
+  <!-- Preprocessing to Data Structures -->
+  <path d="M360 300 L360 225 L500 225" stroke="#4169E1" stroke-width="2" fill="none" marker-end="url(#arrowheadBlue)"/>
+  <!-- Algorithm to Output -->
+  <path d="M620 125 L680 125" stroke="#DC143C" stroke-width="2" fill="none" marker-end="url(#arrowheadRed)"/>
+  <!-- Preprocessing to Condition? -->
+  <path d="M360 300 L360 350" stroke="#4169E1" stroke-width="2" fill="none" marker-end="url(#arrowheadBlue)"/>
+  <!-- Condition? to Result -->
+  <path d="M360 400 L360 450" stroke="#4169E1" stroke-width="2" fill="none" marker-end="url(#arrowheadBlue)"/>
+
+</svg>

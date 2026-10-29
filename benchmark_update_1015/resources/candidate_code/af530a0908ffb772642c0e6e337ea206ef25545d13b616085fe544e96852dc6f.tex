@@ -1,0 +1,40 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usepackage{tikz}
+
+\begin{document}
+\begin{circuitikz}[scale=0.8]
+    % Microphone input
+    \draw (0,0) node[left] {Mic} to[short] (1,0);
+    \draw (1,0) to[C, l=$C_1$] (3,0);
+    
+    % Input stage
+    \draw (3,0) to[R, l=$R_1$] (5,0);
+    \draw (5,0) -- (5,-2) to[R, l=$R_2$] (5,-4);
+    \draw (5,0) -- (7,0);
+    \draw (5,-4) -- (7,-4);
+    
+    % Operational Amplifier
+    \draw (7,-2) node[op amp] (ampnode) {};
+    \draw (ampnode.-) -- (7,0);
+    \draw (ampnode.+) -- (7,-4);
+    \draw (ampnode.out) -- (9,-2);
+    
+    % Feedback network
+    \draw (9,-2) -- (9,0) to[R, l=$R_f$] (7,0);
+    \draw (9,-2) -- (11,-2);
+    
+    % Power supply
+    \draw (6,1) to[short] (6,-5);
+    \draw (6,1) node[vcc] {$V_{CC}$};
+    \draw (6,-5) node[vee] {$V_{EE}$};
+    
+    % Output stage
+    \draw (11,-2) to[C, l=$C_2$] (13,-2);
+    \draw (13,-2) node[right] {Output};
+    
+    % Labels
+    \node[above] at (5,0.5) {Low-noise Microphone Preamplifier};
+    \node[below] at (7,-4.5) {Crystal-clear Audio Recording};
+\end{circuitikz}
+\end{document}

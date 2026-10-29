@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 600">
+  <!-- Background -->
+  <rect width="850" height="600" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="15" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">Average Wage Growth</text>
+  <text x="15" y="52" font-family="Arial, sans-serif" font-size="13" fill="#555">Real wage growth adjusted for inflation, showing trends across regions and sectors over time.</text>
+  <text x="15" y="68" font-family="Arial, sans-serif" font-size="13" fill="#555">Measured in constant 2020 USD.</text>
+  
+  <!-- Grid lines -->
+  <line x1="75" y1="425" x2="580" y2="425" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="75" y1="345" x2="580" y2="345" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="75" y1="265" x2="580" y2="265" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="75" y1="185" x2="580" y2="185" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="75" y1="105" x2="580" y2="105" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <!-- Y-axis labels -->
+  <text x="15" y="510" font-family="Arial, sans-serif" font-size="14" fill="#333">$0</text>
+  <text x="15" y="430" font-family="Arial, sans-serif" font-size="14" fill="#333">$10,000</text>
+  <text x="15" y="350" font-family="Arial, sans-serif" font-size="14" fill="#333">$20,000</text>
+  <text x="15" y="270" font-family="Arial, sans-serif" font-size="14" fill="#333">$30,000</text>
+  <text x="15" y="190" font-family="Arial, sans-serif" font-size="14" fill="#333">$40,000</text>
+  <text x="15" y="110" font-family="Arial, sans-serif" font-size="14" fill="#333">$50,000</text>
+  
+  <!-- X-axis labels -->
+  <text x="60" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">1990</text>
+  <text x="130" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">1995</text>
+  <text x="200" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">2000</text>
+  <text x="270" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">2005</text>
+  <text x="340" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">2010</text>
+  <text x="410" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">2015</text>
+  <text x="480" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">2020</text>
+  <text x="550" y="530" font-family="Arial, sans-serif" font-size="14" fill="#333">2022</text>
+  
+  <!-- Data lines -->
+  <!-- Africa (purple, dotted) -->
+  <path d="M 75 345 L 580 315" stroke="#7b5fb5" stroke-width="2.5" stroke-dasharray="2,4" fill="none"/>
+  
+  <!-- North America (dark blue, dotted) -->
+  <path d="M 75 340 L 580 310" stroke="#2c5aa0" stroke-width="2.5" stroke-dasharray="2,4" fill="none"/>
+  
+  <!-- Latin America (orange) -->
+  <path d="M 75 375 L 580 335" stroke="#e8a040" stroke-width="2.5" fill="none"/>
+  
+  <!-- Europe (red-orange) -->
+  <path d="M 75 385 L 580 340" stroke="#d85a45" stroke-width="2.5" fill="none"/>
+  
+  <!-- Global (dark teal, dashed) -->
+  <path d="M 75 395 L 580 345" stroke="#3a7a7a" stroke-width="2.5" stroke-dasharray="6,4" fill="none"/>
+  
+  <!-- Asia-Pacific (teal) -->
+  <path d="M 75 445 L 250 410 L 400 370 L 580 350" stroke="#4a9b8e" stroke-width="2.5" fill="none"/>
+  
+  <!-- Legend -->
+  <text x="585" y="105" font-family="Arial, sans-serif" font-size="13" fill="#2c5aa0">North America</text>
+  <text x="585" y="130" font-family="Arial, sans-serif" font-size="13" fill="#d85a45">Europe</text>
+  <text x="585" y="155" font-family="Arial, sans-serif" font-size="13" fill="#4a9b8e">Asia-Pacific</text>
+  <text x="585" y="180" font-family="Arial, sans-serif" font-size="13" fill="#e8a040">Latin America</text>
+  <text x="585" y="205" font-family="Arial, sans-serif" font-size="13" fill="#7b5fb5">Africa</text>
+  <text x="585" y="230" font-family="Arial, sans-serif" font-size="13" fill="#3a7a7a">Global</text>
+  
+  <!-- Source and notes -->
+  <text x="15" y="560" font-family="Arial, sans-serif" font-size="11" fill="#666">Source: International Wage Database (2024)</text>
+  <text x="15" y="575" font-family="Arial, sans-serif" font-size="11" fill="#666">Note: Data represents inflation-adjusted average wages. Regional averages are weighted by sectoral employment.</text>
+  <text x="15" y="590" font-family="Arial, sans-serif" font-size="11" fill="#666">For more info visit: www.econwagedata.org</text>
+  
+  <!-- CC BY -->
+  <text x="795" y="560" font-family="Arial, sans-serif" font-size="11" fill="#666">CC BY</text>
+</svg>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Operations Pie Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .chart-title {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      color: #21243d;
+      margin: 24px 0 0 0;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div class="chart-title">Distribution of Mathematical Topics Studied</div>
+  <div id="container" style="height: calc(100% - 40px);"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // Sample Math data
+    var mathTopics = [
+      {value: 23, name: 'Algebra'},
+      {value: 17, name: 'Geometry'},
+      {value: 13, name: 'Calculus'},
+      {value: 19, name: 'Probability'},
+      {value: 9, name: 'Statistics'},
+      {value: 14, name: 'Number Theory'},
+      {value: 8, name: 'Logic'}
+    ];
+
+    option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}<br/>Problems: {c} ({d}%)',
+        backgroundColor: '#f3f6fc',
+        borderColor: '#3642a6',
+        borderWidth: 2,
+        textStyle: {
+          color: '#181b26',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left',
+        top: 'middle',
+        textStyle: {
+          color: '#232950',
+          fontWeight: 'bold',
+          fontSize: 15,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      series: [
+        {
+          name: 'Math Topics',
+          type: 'pie',
+          radius: ['35%', '70%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 3
+          },
+          label: {
+            show: true,
+            position: 'outside',
+            color: '#181b26',
+            fontWeight: 'bold',
+            fontSize: 16,
+            fontFamily: 'Segoe UI, Arial, sans-serif'
+          },
+          labelLine: {
+            show: true,
+            length: 22,
+            length2: 18,
+            lineStyle: {
+              color: '#232950',
+              width: 3
+            }
+          },
+          data: mathTopics,
+          color: [
+            '#3256E6', // vivid blue
+            '#E63238', // vivid red
+            '#17B978', // vivid green
+            '#F9A602', // strong orange
+            '#8E44AD', // purple
+            '#21243d', // dark blue
+            '#F95C19'  // vivid orange-red
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

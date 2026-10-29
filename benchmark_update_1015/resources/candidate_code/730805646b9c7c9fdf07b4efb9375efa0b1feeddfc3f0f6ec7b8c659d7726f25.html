@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Problem Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 80%;
+        }
+        .chart {
+            width: 100%;
+            height: 400px;
+        }
+        .legend {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-item span {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .legend-item span.algebra { background-color: blue; }
+        .legend-item span.geometry { background-color: teal; }
+        .legend-item span.calculus { background-color: yellow; }
+        .legend-item span.probability { background-color: purple; }
+        .legend-item span.number-theory { background-color: orange; }
+    </style>
+</head>
+<body>
+    <h1>Distribution of Math Problem Types</h1>
+    <div class="container">
+        <div id="chart1" class="chart"></div>
+        <div id="chart2" class="chart"></div>
+        <div id="chart3" class="chart"></div>
+        <div id="chart4" class="chart"></div>
+    </div>
+    <div class="legend">
+        <div class="legend-item"><span class="algebra"></span>Algebra</div>
+        <div class="legend-item"><span class="geometry"></span>Geometry</div>
+        <div class="legend-item"><span class="calculus"></span>Calculus</div>
+        <div class="legend-item"><span class="probability"></span>Probability</div>
+        <div class="legend-item"><span class="number-theory"></span>Number Theory</div>
+    </div>
+    <script>
+        function initChart(id, data) {
+            const chart = echarts.init(document.getElementById(id));
+            chart.setOption({
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01]
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['Algebra', 'Geometry', 'Calculus', 'Probability', 'Number Theory']
+                },
+                series: [
+                    {
+                        name: 'Distribution',
+                        type: 'bar',
+                        data: data,
+                        itemStyle: {
+                            color: function(params) {
+                                const colorMap = {
+                                    'Algebra': 'blue',
+                                    'Geometry': 'teal',
+                                    'Calculus': 'yellow',
+                                    'Probability': 'purple',
+                                    'Number Theory': 'orange'
+                                };
+                                return colorMap[params.name];
+                            }
+                        }
+                    }
+                ]
+            });
+        }
+
+        const data1 = [100, 80, 60, 40, 20];
+        const data2 = [20, 40, 60, 80, 100];
+        const data3 = [100, 80, 60, 40, 20];
+        const data4 = [20, 40, 60, 80, 100];
+
+        initChart('chart1', data1);
+        initChart('chart2', data2);
+        initChart('chart3', data3);
+        initChart('chart4', data4);
+    </script>
+</body>
+</html>

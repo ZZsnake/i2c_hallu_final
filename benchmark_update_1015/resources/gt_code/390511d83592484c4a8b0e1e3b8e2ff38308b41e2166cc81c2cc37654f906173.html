@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>pie-chart-household-expenditure</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      width: 100%;
+    }
+    .pie-label {
+      font-family: 'Trebuchet MS', Arial, sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      color: #212121;
+      text-shadow: 1px 1px 0 #fff;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    // Economics context: Household Expenditure Distribution (sample dataset)
+    var option = {
+      title: {
+        text: 'Household Expenditure Breakdown',
+        left: 'center',
+        top: 25,
+        textStyle: {
+          color: '#1a1a1a',
+          fontFamily: 'Trebuchet MS, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 22
+        },
+        subtext: 'Sample Data - Economics',
+        subtextStyle: {
+          color: '#323232',
+          fontSize: 15,
+          fontFamily: 'Trebuchet MS, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+          return params.data.name + '<br>Share: <b>' + params.data.value + '%</b>';
+        },
+        backgroundColor: '#ffffff',
+        borderColor: '#444',
+        borderWidth: 1,
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Trebuchet MS, Arial, sans-serif',
+          fontSize: 15
+        }
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Trebuchet MS, Arial, sans-serif',
+          fontSize: 15,
+          fontWeight: 'bold'
+        }
+      },
+      series: [
+        {
+          name: 'Expenditure',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: true,
+          label: {
+            show: true,
+            position: 'outside',
+            formatter: '{b}: {d}%',
+            color: '#171717',
+            fontFamily: 'Trebuchet MS, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 16,
+            lineHeight: 24,
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          labelLine: {
+            show: true,
+            length: 20,
+            length2: 14,
+            lineStyle: {
+              color: '#313131',
+              width: 3
+            }
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 4,
+            shadowBlur: 0
+          },
+          data: [
+            { value: 28, name: 'Housing', itemStyle: { color: '#2563eb' } },        // vivid blue
+            { value: 19, name: 'Food', itemStyle: { color: '#20b94e' } },           // vivid green
+            { value: 14, name: 'Transportation', itemStyle: { color: '#f94d1c' } }, // vivid orange-red
+            { value: 11, name: 'Healthcare', itemStyle: { color: '#8d30c9' } },     // strong purple
+            { value: 9, name: 'Education', itemStyle: { color: '#eab308' } },       // strong yellow (not light)
+            { value: 7, name: 'Entertainment', itemStyle: { color: '#028090' } },   // deep teal
+            { value: 6, name: 'Other', itemStyle: { color: '#d90429' } }            // vivid red
+          ]
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

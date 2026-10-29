@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="font-family:Roboto, 'Arial Black', Arial, sans-serif;font-size:18px;background-color:white;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased" width="850" height="600">
+  <g>
+    <g class="HeaderView">
+      <a href="https://example.com/economics/interest-vs-inflation" style="font-family:'Merriweather', Georgia, serif" target="_blank">
+        <text font-size="26" x="15" y="36" fill="#21214C">
+          <tspan x="15" y="36">Interest Rate vs Inflation Rate, 1950 to 2020</tspan>
+        </text>
+      </a>
+      <text font-size="15" x="15" y="57" fill="#333">
+        <tspan x="15" y="57">Vertical axis: Average annual inflation rate (%).</tspan>
+        <tspan x="15" y="74">Horizontal axis: Central bank interest rate (%).</tspan>
+        <tspan x="15" y="91">Data covers major economies, 1950–2020.</tspan>
+      </text>
+    </g>
+    <g>
+      <g class="AxisBoxView">
+        <g class="HorizontalAxis">
+          <text font-size="13" x="220" y="526" fill="#353535">
+            <tspan x="220" y="526">Central bank interest rate (%)</tspan>
+          </text>
+          <text x="100" y="506" fill="#21214C" text-anchor="middle" font-size="16">1%</text>
+          <text x="300" y="506" fill="#21214C" text-anchor="middle" font-size="16">5%</text>
+          <text x="500" y="506" fill="#21214C" text-anchor="middle" font-size="16">10%</text>
+          <text x="700" y="506" fill="#21214C" text-anchor="middle" font-size="16">15%</text>
+        </g>
+        <g class="VerticalAxis">
+          <text font-size="13" x="-415" y="25" transform="rotate(-90)">
+            <tspan x="-415" y="25">Average annual inflation rate (%)</tspan>
+          </text>
+          <text x="80" y="485" fill="#21214C" dominant-baseline="middle" text-anchor="end" font-size="16">0%</text>
+          <text x="80" y="405" fill="#21214C" dominant-baseline="middle" text-anchor="end" font-size="16">2%</text>
+          <text x="80" y="325" fill="#21214C" dominant-baseline="middle" text-anchor="end" font-size="16">4%</text>
+          <text x="80" y="245" fill="#21214C" dominant-baseline="middle" text-anchor="end" font-size="16">6%</text>
+          <text x="80" y="165" fill="#21214C" dominant-baseline="middle" text-anchor="end" font-size="16">8%</text>
+          <text x="80" y="85" fill="#21214C" dominant-baseline="middle" text-anchor="end" font-size="16">10%</text>
+        </g>
+        <g class="AxisGridLines">
+          <line x1="100" y1="485" x2="750" y2="485" stroke="#B7B7B7" stroke-dasharray="4,3"/>
+          <line x1="100" y1="405" x2="750" y2="405" stroke="#B7B7B7" stroke-dasharray="4,3"/>
+          <line x1="100" y1="325" x2="750" y2="325" stroke="#B7B7B7" stroke-dasharray="4,3"/>
+          <line x1="100" y1="245" x2="750" y2="245" stroke="#B7B7B7" stroke-dasharray="4,3"/>
+          <line x1="100" y1="165" x2="750" y2="165" stroke="#B7B7B7" stroke-dasharray="4,3"/>
+          <line x1="100" y1="85" x2="750" y2="85" stroke="#B7B7B7" stroke-dasharray="4,3"/>
+        </g>
+        <g class="AxisGridLines">
+          <line x1="300" y1="485" x2="300" y2="85" stroke="#D32E2E" stroke-dasharray="5,4"/>
+          <line x1="500" y1="485" x2="500" y2="85" stroke="#2E3DD3" stroke-dasharray="5,4"/>
+        </g>
+      </g>
+      <g class="PointsWithLabels" font-family="Roboto, 'Arial Black', Arial, sans-serif">
+        <rect x="100" y="85" width="650" height="400" fill="rgba(255,255,255,0)"></rect>
+        <g>
+          <!-- USA Line -->
+          <circle cx="120" cy="410" r="2.2" fill="#D32E2E" stroke="#222" opacity="0.85"></circle>
+          <polyline stroke-linecap="round" stroke="#D32E2E" stroke-width="3.3" points="120,410 200,390 320,360 420,300 520,250 600,200 720,110"
+            fill="none" opacity="0.85"></polyline>
+          <polygon points="718,116 720,108 722,114" fill="#D32E2E" stroke="#222" stroke-width="0.4" opacity="0.85" transform="rotate(90,720,110)"></polygon>
+          <text x="135" y="405" font-size="13" fill="#16161D">USA</text>
+        </g>
+        <g>
+          <!-- UK Line -->
+          <circle cx="140" cy="440" r="2.2" fill="#2E3DD3" stroke="#222" opacity="0.85"></circle>
+          <polyline stroke-linecap="round" stroke="#2E3DD3" stroke-width="3.3" points="140,440 220,430 340,395 440,340 540,270 640,210 740,130"
+            fill="none" opacity="0.85"></polyline>
+          <polygon points="738,136 740,128 742,134" fill="#2E3DD3" stroke="#222" stroke-width="0.4" opacity="0.85" transform="rotate(90,740,130)"></polygon>
+          <text x="155" y="435" font-size="13" fill="#16161D">UK</text>
+        </g>
+        <g>
+          <!-- Germany Line -->
+          <circle cx="160" cy="470" r="2.2" fill="#F79F1F" stroke="#222" opacity="0.85"></circle>
+          <polyline stroke-linecap="round" stroke="#F79F1F" stroke-width="3.3" points="160,470 240,450 360,430 460,380 560,340 660,260 760,180"
+            fill="none" opacity="0.85"></polyline>
+          <polygon points="758,186 760,178 762,184" fill="#F79F1F" stroke="#222" stroke-width="0.4" opacity="0.85" transform="rotate(90,760,180)"></polygon>
+          <text x="175" y="465" font-size="13" fill="#16161D">Germany</text>
+        </g>
+        <g>
+          <!-- Japan Line -->
+          <circle cx="180" cy="400" r="2.2" fill="#009C72" stroke="#222" opacity="0.85"></circle>
+          <polyline stroke-linecap="round" stroke="#009C72" stroke-width="3.3" points="180,400 260,390 380,350 480,310 580,270 680,220 780,180"
+            fill="none" opacity="0.85"></polyline>
+          <polygon points="778,186 780,178 782,184" fill="#009C72" stroke="#222" stroke-width="0.4" opacity="0.85" transform="rotate(90,780,180)"></polygon>
+          <text x="195" y="395" font-size="13" fill="#16161D">Japan</text>
+        </g>
+        <g>
+          <!-- Brazil Line -->
+          <circle cx="200" cy="480" r="2.2" fill="#4C2ECD" stroke="#222" opacity="0.85"></circle>
+          <polyline stroke-linecap="round" stroke="#4C2ECD" stroke-width="3.3" points="200,480 300,470 400,420 500,400 600,350 700,300 800,200"
+            fill="none" opacity="0.85"></polyline>
+          <polygon points="798,206 800,198 802,204" fill="#4C2ECD" stroke="#222" stroke-width="0.4" opacity="0.85" transform="rotate(90,800,200)"></polygon>
+          <text x="215" y="475" font-size="13" fill="#16161D">Brazil</text>
+        </g>
+        <g>
+          <!-- India Line -->
+          <circle cx="220" cy="460" r="2.2" fill="#D17D00" stroke="#222" opacity="0.85"></circle>
+          <polyline stroke-linecap="round" stroke="#D17D00" stroke-width="3.3" points="220,460 320,450 420,430 520,410 620,370 720,320 820,250"
+            fill="none" opacity="0.85"></polyline>
+          <polygon points="818,256 820,248 822,254" fill="#D17D00" stroke="#222" stroke-width="0.4" opacity="0.85" transform="rotate(90,820,250)"></polygon>
+          <text x="235" y="455" font-size="13" fill="#16161D">India</text>
+        </g>
+      </g>
+      <!-- Legend -->
+      <g class="ScatterColorLegend" style="cursor:pointer">
+        <g class="legendMark">
+          <rect x="735" y="112" width="6" height="6" fill="#D32E2E"></rect>
+          <text font-size="13" x="746" y="118" fill="#21214C">USA</text>
+        </g>
+        <g class="legendMark">
+          <rect x="735" y="130" width="6" height="6" fill="#2E3DD3"></rect>
+          <text font-size="13" x="746" y="136" fill="#21214C">UK</text>
+        </g>
+        <g class="legendMark">
+          <rect x="735" y="148" width="6" height="6" fill="#F79F1F"></rect>
+          <text font-size="13" x="746" y="154" fill="#21214C">Germany</text>
+        </g>
+        <g class="legendMark">
+          <rect x="735" y="166" width="6" height="6" fill="#009C72"></rect>
+          <text font-size="13" x="746" y="172" fill="#21214C">Japan</text>
+        </g>
+        <g class="legendMark">
+          <rect x="735" y="184" width="6" height="6" fill="#4C2ECD"></rect>
+          <text font-size="13" x="746" y="190" fill="#21214C">Brazil</text>
+        </g>
+        <g class="legendMark">
+          <rect x="735" y="202" width="6" height="6" fill="#D17D00"></rect>
+          <text font-size="13" x="746" y="208" fill="#21214C">India</text>
+        </g>
+      </g>
+      <!-- Footer -->
+      <g class="SourcesFooter">
+        <text font-size="13" x="15" y="553" fill="#6B6B6B">
+          <tspan x="15" y="553">Source: Central Bank Annual Reports, IMF World Economic Outlook, World Bank Data.</tspan>
+          <tspan x="15" y="570">Compiled by Economics Data Viz Team.</tspan>
+        </text>
+        <text font-size="13" x="15" y="590" fill="#6B6B6B">
+          <tspan x="15" y="590">
+            <a style="fill:#6B6B6B;" href="http://creativecommons.org/licenses/by/4.0/deed.en_US" target="_blank">CC BY</a>
+          </tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

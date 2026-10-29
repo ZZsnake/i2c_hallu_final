@@ -1,0 +1,39 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+
+\definecolor{headergray}{RGB}{217,217,217}
+\definecolor{columnblue}{RGB}{173,216,230}
+\definecolor{columnorange}{RGB}{255,224,186}
+
+\begin{document}
+\begingroup
+\Huge
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.14}
+\begin{tabular}{%
+>{\columncolor{columnblue}\raggedright\arraybackslash}p{6.2cm}%
+>{\columncolor{columnorange}\raggedright\arraybackslash}p{1.9cm}%
+>{\columncolor{columnblue}\centering\arraybackslash}p{3.8cm}%
+>{\columncolor{columnorange}\centering\arraybackslash}p{3.0cm}%
+>{\columncolor{columnblue}\raggedright\arraybackslash}p{4.0cm}%
+}
+\toprule[1.6pt]
+\rowcolor{headergray}
+\textbf{Title} & \textbf{Genre} & \textbf{Box Office (USD)} & \textbf{Release Date} & \textbf{Director} \\
+\midrule[1.2pt]
+El Hombre que Aprendió a Volar & Comedy & \$1,200,000 & 2022-02-25 & Juan Manuel Méndez \\
+La Isla de los Sueños & Drama & \$800,000 & 2022-08-15 & María José Corsino \\
+Cuento de la Selva & Family & \$950,000 & 2022-12-01 & Luis Alfredo Torres \\
+Bajo el Mismo Cielo & Romance & \$650,000 & 2022-05-20 & Claudia Morán \\
+Cuando El Sol Brille & Action & \$1,700,000 & 2022-10-10 & Carlos Alberto Pérez \\
+Las Huellas del Pasado & Thriller & \$900,000 & 2022-09-30 & Ricardo Méndez \\
+Voces en la Noche & Horror & \$300,000 & 2022-04-15 & Gabriela Ortiz \\
+Sangre Nueva & Action & \$2,100,000 & 2022-06-22 & Fernando Reyes \\
+Amores Eternos & Romance & \$500,000 & 2022-03-14 & Samantha Pérez \\
+Historias de la Revolución & Drama & \$750,000 & 2022-11-05 & Javier Quintero \\
+\bottomrule[1.6pt]
+\end{tabular}
+\endgroup
+\end{document}

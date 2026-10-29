@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <text x="200" y="30" font-size="20" text-anchor="middle" font-family="Arial">Atom Model</text>
+  <circle cx="200" cy="150" r="30" fill="#A0522D"/>
+  <circle cx="185" cy="140" r="6" fill="#0000FF"/>
+  <circle cx="215" cy="140" r="6" fill="#0000FF"/>
+  <circle cx="190" cy="165" r="6" fill="#008000"/>
+  <circle cx="210" cy="165" r="6" fill="#008000"/>
+  <circle cx="200" cy="150" r="6" fill="#0000FF"/>
+  <ellipse cx="200" cy="150" rx="100" ry="50" fill="none" stroke="red" stroke-dasharray="5,5"/>
+  <ellipse cx="200" cy="150" rx="150" ry="75" fill="none" stroke="#0000FF" stroke-dasharray="5,5"/>
+  <circle cx="200" cy="100" r="6" fill="red"/>
+  <circle cx="100" cy="150" r="6" fill="red"/>
+  <circle cx="300" cy="150" r="6" fill="red"/>
+  <circle cx="200" cy="75" r="6" fill="red"/>
+  <circle cx="200" cy="225" r="6" fill="red"/>
+  <circle cx="50" cy="150" r="6" fill="red"/>
+  <circle cx="350" cy="150" r="6" fill="red"/>
+  <text x="200" y="280" font-size="16" text-anchor="middle" font-family="Arial">Physics: Atomic Structure</text>
+</svg>

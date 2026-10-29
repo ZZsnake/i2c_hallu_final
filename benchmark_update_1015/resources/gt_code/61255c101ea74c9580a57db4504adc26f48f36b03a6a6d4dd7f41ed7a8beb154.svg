@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="288"
+   height="288"
+   viewBox="-4.425 -6.167 288 288"
+   xml:space="preserve">
+  <defs>
+    <radialGradient id="electronGradient1" cx="70" cy="170" r="9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#1572b6"/>
+    </radialGradient>
+    <radialGradient id="electronGradient2" cx="200" cy="180" r="9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#228b22"/>
+    </radialGradient>
+    <radialGradient id="nucleusGradient" cx="123.856" cy="130.923" r="13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a80000"/>
+    </radialGradient>
+  </defs>
+  <!-- Electron shells -->
+  <circle
+    cx="123.856"
+    cy="130.923"
+    r="38"
+    style="fill:none;stroke:#1a1a1a;stroke-width:3;stroke-dasharray:7,3"/>
+  <circle
+    cx="123.856"
+    cy="130.923"
+    r="72"
+    style="fill:none;stroke:#0033cc;stroke-width:2;stroke-dasharray:4,2"/>
+  <circle
+    cx="123.856"
+    cy="130.923"
+    r="110"
+    style="fill:none;stroke:#228b22;stroke-width:2"/>
+  <!-- Nucleus -->
+  <circle
+    cx="123.856"
+    cy="130.923"
+    r="13"
+    style="fill:url(#nucleusGradient);stroke:#a80000;stroke-width:2"/>
+  <!-- Electrons -->
+  <circle
+    cx="70"
+    cy="170"
+    r="9"
+    style="fill:url(#electronGradient1);stroke:#0033cc;stroke-width:2"/>
+  <circle
+    cx="200"
+    cy="180"
+    r="9"
+    style="fill:url(#electronGradient2);stroke:#228b22;stroke-width:2"/>
+  <circle
+    cx="123.856"
+    cy="68"
+    r="9"
+    style="fill:#ffae00;stroke:#ff6600;stroke-width:2"/>
+  <!-- Quantum numbers labels -->
+  <text
+    x="103"
+    y="130"
+    style="font-size:14px;font-family:'Verdana';fill:#111111;stroke:#1a1a1a;stroke-width:0.3">n = 1</text>
+  <text
+    x="103"
+    y="58"
+    style="font-size:14px;font-family:'Verdana';fill:#0033cc;stroke:none">n = 2</text>
+  <text
+    x="103"
+    y="215"
+    style="font-size:14px;font-family:'Verdana';fill:#228b22;stroke:none">n = 3</text>
+  <!-- Photon emission arrow -->
+  <line
+    x1="123.856"
+    y1="68"
+    x2="123.856"
+    y2="130.923"
+    style="stroke:#ff6600;stroke-width:3;stroke-dasharray:5,3"/>
+  <polygon
+    points="123.856,130.923 118.856,124.923 128.856,124.923"
+    style="fill:#ff6600"/>
+  <!-- Energy increase arrow -->
+  <line
+    x1="123.856"
+    y1="130.923"
+    x2="210"
+    y2="110"
+    style="stroke:#0033cc;stroke-width:2;stroke-dasharray:6,4"/>
+  <polygon
+    points="210,110 206,116 214,116"
+    style="fill:#0033cc"/>
+  <text
+    x="190"
+    y="95"
+    style="font-size:13px;font-family:'Verdana';fill:#0033cc;stroke:none">Increasing Energy</text>
+  <!-- Photon emission label -->
+  <text
+    x="150"
+    y="115"
+    style="font-size:13px;font-family:'Verdana';fill:#ff6600;stroke:none">Photon Emission (E=hf)</text>
+  <!-- Nucleus label -->
+  <text
+    x="123.856"
+    y="140"
+    style="font-size:12px;font-family:'Verdana';text-anchor:middle;fill:#a80000;stroke:none">Nucleus</text>
+</svg>

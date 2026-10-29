@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Mathematical Concepts Relationship Diagram</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var relationshipChart = echarts.init(chartDom);
+    var app = {};
+    var chartOption;
+
+    chartOption = {
+      title: {
+        text: 'Relationships Between Math Concepts',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#21243b',
+          fontWeight: 700,
+          fontFamily: 'Arial, sans-serif',
+          fontSize: 26
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: '#fff',
+        borderColor: '#21243b',
+        borderWidth: 1,
+        textStyle: {
+          color: '#21243b',
+          fontWeight: 700,
+          fontFamily: 'Arial, sans-serif'
+        }
+      },
+      animationDurationUpdate: 1200,
+      animationEasingUpdate: 'cubicOut',
+      series: [
+        {
+          type: 'graph',
+          layout: 'none',
+          symbolSize: 56,
+          roam: true,
+          label: {
+            show: true,
+            color: '#21243b',
+            fontWeight: 'bold',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: 17
+          },
+          edgeSymbol: ['circle', 'arrow'],
+          edgeSymbolSize: [6, 16],
+          edgeLabel: {
+            fontSize: 15,
+            color: '#134e13',
+            fontWeight: 700,
+            fontFamily: 'Arial, sans-serif'
+          },
+          data: [
+            {
+              name: 'Algebra',
+              x: 350,
+              y: 300,
+              itemStyle: {
+                color: '#3887be',
+                borderColor: '#21243b',
+                borderWidth: 3
+              }
+            },
+            {
+              name: 'Functions',
+              x: 720,
+              y: 300,
+              itemStyle: {
+                color: '#f45b69',
+                borderColor: '#21243b',
+                borderWidth: 3
+              }
+            },
+            {
+              name: 'Calculus',
+              x: 540,
+              y: 120,
+              itemStyle: {
+                color: '#43aa8b',
+                borderColor: '#21243b',
+                borderWidth: 3
+              }
+            },
+            {
+              name: 'Geometry',
+              x: 540,
+              y: 500,
+              itemStyle: {
+                color: '#faae2b',
+                borderColor: '#21243b',
+                borderWidth: 3
+              }
+            }
+          ],
+
+          links: [
+            {
+              source: 'Algebra',
+              target: 'Functions',
+              symbolSize: [8, 18],
+              label: {
+                show: true,
+                formatter: 'defines',
+                color: '#134e13'
+              },
+              lineStyle: {
+                width: 4,
+                curveness: 0.24,
+                color: '#3887be'
+              }
+            },
+            {
+              source: 'Functions',
+              target: 'Calculus',
+              label: {
+                show: true,
+                formatter: 'used in',
+                color: '#134e13'
+              },
+              lineStyle: {
+                width: 3,
+                curveness: 0.19,
+                color: '#43aa8b'
+              }
+            },
+            {
+              source: 'Calculus',
+              target: 'Geometry',
+              label: {
+                show: true,
+                formatter: 'applied to',
+                color: '#134e13'
+              },
+              lineStyle: {
+                width: 3,
+                curveness: 0.13,
+                color: '#faae2b'
+              }
+            },
+            {
+              source: 'Algebra',
+              target: 'Geometry',
+              label: {
+                show: true,
+                formatter: 'supports',
+                color: '#134e13'
+              },
+              lineStyle: {
+                width: 3,
+                curveness: 0.22,
+                color: '#f45b69'
+              }
+            },
+            {
+              source: 'Geometry',
+              target: 'Functions',
+              label: {
+                show: true,
+                formatter: 'models',
+                color: '#134e13'
+              },
+              lineStyle: {
+                width: 2,
+                curveness: 0.17,
+                color: '#21243b'
+              }
+            }
+          ],
+          lineStyle: {
+            opacity: 0.95,
+            width: 2.5,
+            curveness: 0,
+            color: '#21243b'
+          }
+        }
+      ]
+    };
+
+    if (chartOption && typeof chartOption === 'object') {
+      relationshipChart.setOption(chartOption);
+    }
+
+    window.addEventListener('resize', relationshipChart.resize);
+  </script>
+</body>
+</html>

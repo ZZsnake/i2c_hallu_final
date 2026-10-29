@@ -1,0 +1,40 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+
+\definecolor{tableheader}{RGB}{70,130,180}
+\definecolor{oddrow}{RGB}{240,248,255}
+\definecolor{evenrow}{RGB}{255,250,240}
+
+\begin{document}
+
+\begin{tabular}{>{\columncolor{tableheader}\color{white}\bfseries}l|*{4}{>{\color{black}}S[table-format=5.2]}}
+\toprule
+\multirow{2}{*}{\textbf{Retailer}} & \multicolumn{2}{c}{\textbf{Units Sold}} & \multicolumn{2}{c}{\textbf{Revenue (\$)}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+& \textbf{Total} & \textbf{Average} & \textbf{Total} & \textbf{Average} \\
+\midrule
+\rowcolor{oddrow}
+Amazon & 3700 & 1850.00 & 40500.00 & 20250.00 \\
+\rowcolor{evenrow}
+Blick Art Materials & 600 & 600.00 & 9000.00 & 9000.00 \\
+\rowcolor{oddrow}
+Dollar Tree & 4800 & 2400.00 & 9600.00 & 4800.00 \\
+\rowcolor{evenrow}
+Hobby Lobby & 1250 & 625.00 & 11175.00 & 5587.50 \\
+\rowcolor{oddrow}
+JOANN & 1900 & 950.00 & 15200.00 & 7600.00 \\
+\rowcolor{evenrow}
+Michaels & 2150 & 1075.00 & 32250.00 & 16125.00 \\
+\rowcolor{oddrow}
+Target & 3250 & 1625.00 & 18750.00 & 9375.00 \\
+\rowcolor{evenrow}
+Walmart & 3200 & 1600.00 & 24400.00 & 12200.00 \\
+\bottomrule
+\end{tabular}
+
+\end{document}

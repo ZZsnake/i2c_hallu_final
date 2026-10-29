@@ -1,0 +1,166 @@
+<svg width="100%" height="100%" viewBox="0 0 1096 375" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1,-13.1103,-43.9167)">
+        <rect x="52.624" y="109.2" width="1031.88" height="291.9" style="fill:white;"/>
+    </g>
+    <!-- X-axis labels (Economics: GDP scale) -->
+    <g transform="matrix(1,0,0,1,-13.1103,-43.9167)">
+        <g>
+            <g>
+                <g transform="matrix(1,0,0,1,52.6239,416)">
+                    <text x="-3.814px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">0</text>
+                </g>
+                <g transform="matrix(1,0,0,1,258.999,416)">
+                    <text x="-25.069px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">25B</text>
+                </g>
+                <g transform="matrix(1,0,0,1,465.374,416)">
+                    <text x="-25.069px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">50B</text>
+                </g>
+                <g transform="matrix(1,0,0,1,671.75,416)">
+                    <text x="-25.069px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">75B</text>
+                </g>
+                <g transform="matrix(1,0,0,1,878.125,416)">
+                    <text x="-25.069px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">100B</text>
+                </g>
+                <g transform="matrix(1,0,0,1,1084.5,416)">
+                    <text x="-25.069px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">125B</text>
+                </g>
+            </g>
+        </g>
+        <!-- Y-axis labels (Economics: Sectors) -->
+        <g>
+            <g>
+                <g transform="matrix(1,0,0,1,48.6239,121)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Agriculture</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,136)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Manufacturing</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,152)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Services</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,168)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Construction</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,183)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Retail</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,199)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Finance</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,215)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Healthcare</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,230)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Transport</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,246)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Technology</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,262)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Energy</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,277)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Education</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,293)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Tourism</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,309)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Mining</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,324)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Utilities</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,340)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Real Estate</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,356)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Public Admin</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,371)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Arts</text>
+                </g>
+                <g transform="matrix(1,0,0,1,48.6239,387)">
+                    <text x="-41px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(20,20,20);">Other</text>
+                </g>
+            </g>
+        </g>
+    </g>
+    <!-- Grid lines (high contrast) -->
+    <g transform="matrix(1,0,0,1,-13.1103,-43.9167)">
+        <path d="M53,401.1L53,109.2" style="fill:none;stroke:rgb(70,70,70);stroke-width:2.5px;stroke-dasharray:5,3;"/>
+        <path d="M259,401.1L259,109.2" style="fill:none;stroke:rgb(70,70,70);stroke-width:2.5px;stroke-dasharray:5,3;"/>
+        <path d="M465,401.1L465,109.2" style="fill:none;stroke:rgb(70,70,70);stroke-width:2.5px;stroke-dasharray:5,3;"/>
+        <path d="M672,401.1L672,109.2" style="fill:none;stroke:rgb(70,70,70);stroke-width:2.5px;stroke-dasharray:5,3;"/>
+        <path d="M878,401.1L878,109.2" style="fill:none;stroke:rgb(70,70,70);stroke-width:2.5px;stroke-dasharray:5,3;"/>
+        <path d="M1085,401.1L1085,109.2" style="fill:none;stroke:rgb(70,70,70);stroke-width:2.5px;stroke-dasharray:5,3;"/>
+    </g>
+    <!-- Bar data (GDP by sector: 2023, two groups: "Domestic" and "Foreign-Owned") -->
+    <g transform="matrix(1,0,0,1,-13.1103,-43.9167)">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <!-- Domestic bars (vivid blue) -->
+                        <rect x="52.5" y="110.5" width="180" height="13" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="126.5" width="290" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="142.5" width="430" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="157.5" width="370" height="13" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="173.5" width="510" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="189.5" width="640" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="204.5" width="600" height="13" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="220.5" width="450" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="236.5" width="520" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="251.5" width="590" height="13" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="267.5" width="620" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="283.5" width="480" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="298.5" width="410" height="13" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="314.5" width="350" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="330.5" width="340" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="345.5" width="320" height="13" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="361.5" width="295" height="12" style="fill:rgb(0,83,179);"/>
+                        <rect x="52.5" y="377.5" width="180" height="12" style="fill:rgb(0,83,179);"/>
+                    </g>
+                    <g>
+                        <!-- Foreign-Owned bars (vivid red) -->
+                        <rect x="232.5" y="110.5" width="55" height="13" style="fill:rgb(220,30,30);"/>
+                        <rect x="342.5" y="126.5" width="40" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="482.5" y="142.5" width="60" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="422.5" y="157.5" width="80" height="13" style="fill:rgb(220,30,30);"/>
+                        <rect x="562.5" y="173.5" width="120" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="702.5" y="189.5" width="45" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="652.5" y="204.5" width="75" height="13" style="fill:rgb(220,30,30);"/>
+                        <rect x="502.5" y="220.5" width="120" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="572.5" y="236.5" width="90" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="642.5" y="251.5" width="105" height="13" style="fill:rgb(220,30,30);"/>
+                        <rect x="672.5" y="267.5" width="140" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="532.5" y="283.5" width="110" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="462.5" y="298.5" width="90" height="13" style="fill:rgb(220,30,30);"/>
+                        <rect x="402.5" y="314.5" width="130" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="392.5" y="330.5" width="115" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="372.5" y="345.5" width="98" height="13" style="fill:rgb(220,30,30);"/>
+                        <rect x="347.5" y="361.5" width="90" height="12" style="fill:rgb(220,30,30);"/>
+                        <rect x="232.5" y="377.5" width="80" height="12" style="fill:rgb(220,30,30);"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+    <!-- Chart title -->
+    <g transform="matrix(0.795425,0,0,0.795425,166.907,-21.0786)">
+        <text x="169px" y="59px" style="font-family:'Roboto', sans-serif;font-size:42px;fill:rgb(30,30,30);">GDP by Sector and Ownership</text>
+    </g>
+    <!-- Subtitle -->
+    <g transform="matrix(0.795425,0,0,0.795425,166.907,12.7675)">
+        <text x="365px" y="59px" style="font-family:'Roboto', sans-serif;font-size:23px;fill:rgb(30,30,30);">Country X, 2023</text>
+    </g>
+    <!-- Legend -->
+    <g transform="matrix(1.31535,0,0,1.31535,946.316,33.584)">
+        <rect x="-32" y="-11" width="18" height="14" style="fill:rgb(0,83,179);"/>
+        <text x="-10px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(30,30,30);">Domestic</text>
+    </g>
+    <g transform="matrix(1.31535,0,0,1.31535,946.316,53.251)">
+        <rect x="-32" y="-11" width="18" height="14" style="fill:rgb(220,30,30);"/>
+        <text x="-10px" y="0px" style="font-family:'Roboto', sans-serif;font-size:12px;fill:rgb(30,30,30);">Foreign-Owned</text>
+    </g>
+</svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="500" width="500" version="1.0" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<style>
+ .cl1{fill-rule:nonzero;fill:#174e79;}
+ .cl2{font-size:25px;font-family:Arial Black, Arial, sans-serif;fill:#1a1a1a;}
+ .dashed{stroke-linejoin:miter;stroke:#721f1f;stroke-linecap:butt;stroke-dasharray:6, 3;stroke-width:1.2;fill:none;}
+ .cl5{font-size:20px;font-family:Arial Black, Arial, sans-serif;fill:#22224a;}
+</style>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <!-- Axes -->
+ <path style="stroke-linejoin:miter;stroke:#22224a;stroke-linecap:butt;stroke-width:1.5px;fill:none" d="M 480,460 L 40,460 L 40,40"/>
+ <!-- Supply Curve -->
+ <path style="stroke-linejoin:miter;stroke:#009e4c;stroke-linecap:round;stroke-width:3;fill:none" d="M 90,430 C 250,320 420,130 420,130"/>
+ <!-- Demand Curve -->
+ <path style="stroke-linejoin:miter;stroke:#e83e1e;stroke-linecap:round;stroke-width:3;fill:none" d="M 120,70 C 210,400 390,400 390,400"/>
+ <!-- Dashed Horizontal and Vertical Lines -->
+ <path class="dashed" d="M 40,250 L 220,250"/>
+ <path class="dashed" d="M 130,300 L 130,460"/>
+ <path class="dashed" d="M 40,90 L 110,90"/>
+ <path class="dashed" d="M 210,250 L 210,460"/>
+ <path class="dashed" d="M 130,410 L 290,410"/>
+ <path class="dashed" d="M 290,410 L 290,460"/>
+ <!-- Axes Arrows -->
+ <path class="cl1" d="M 33,45 L 46,60 C 46,60 38,52 27,60 L 33,45 z"/>
+ <path class="cl1" d="M 480,465 L 465,458 C 465,458 473,464 465,472 L 480,465 z"/>
+ <!-- Curve Arrowheads -->
+ <path class="cl1" d="M 420,130 L 428,145 C 428,145 422,136 414,145 L 420,130 z"/>
+ <path class="cl1" d="M 390,400 L 398,415 C 398,415 392,406 384,415 L 390,400 z"/>
+ <!-- Intersection Point -->
+ <circle cx="210" cy="250" r="7" fill="#2c2c2c" stroke="#009e4c" stroke-width="2"/>
+ <!-- Labels -->
+ <text class="cl2" y="35" x="16">Price</text>
+ <text class="cl2" y="490" x="470">Quantity</text>
+ <text class="cl2" y="120" x="430">Supply</text>
+ <text class="cl2" y="395" x="400">Demand</text>
+ <text class="cl5" y="85" x="10">P<sub>max</sub></text>
+ <text class="cl5" y="255" x="10">P<sub>E</sub></text>
+ <text class="cl5" y="315" x="135">Q<sub>min</sub></text>
+ <text class="cl5" y="255" x="220">Q<sub>E</sub></text>
+ <text class="cl5" y="420" x="295">Q<sub>max</sub></text>
+ <text class="cl5" y="458" x="135">Q<sub>1</sub></text>
+ <text class="cl5" y="458" x="215">Q<sub>2</sub></text>
+ <text class="cl5" y="458" x="295">Q<sub>3</sub></text>
+ <text class="cl5" y="460" x="50">0</text>
+</svg>

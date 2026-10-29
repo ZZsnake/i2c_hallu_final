@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Urban Population vs. Elevation (Geography Scatter Plot)</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // Geography scatter plot: Urban population vs. city elevation (meters)
+    const cityData = [
+      // [Elevation (m), Urban Population (millions), Area (km^2), City Name, Year]
+      [12, 21.6, 1485, 'Dhaka', 2020],
+      [2, 8.9, 1214, 'Lagos', 2020],
+      [38, 18.7, 1577, 'Cairo', 2020],
+      [15, 25.1, 2451, 'Shanghai', 2020],
+      [1560, 8.8, 573, 'Mexico City', 2020],
+      [430, 11.5, 1284, 'Johannesburg', 2020],
+      [650, 3.3, 776, 'Nairobi', 2020],
+      [5, 13.9, 789, 'Jakarta', 2020],
+      [120, 9.5, 1360, 'Bangkok', 2020],
+      [765, 7.0, 605, 'Addis Ababa', 2020],
+      [20, 6.2, 1050, 'Buenos Aires', 2020],
+      [580, 3.6, 606, 'Bogotá', 2020],
+      [200, 2.9, 520, 'Kampala', 2020],
+      [50, 8.3, 784, 'Kinshasa', 2020],
+      [7, 3.5, 1100, 'Manila', 2020]
+    ];
+
+    option = {
+      title: {
+        text: 'Urban Population vs. Elevation of Major Cities',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#1a1a1a',
+          fontWeight: 'bold',
+          fontSize: 22,
+          fontFamily: 'Segoe UI'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: function (param) {
+          return `<strong>${param.data[3]}</strong><br/>Elevation: ${param.data[0]} m<br/>Urban Population: ${param.data[1]} million<br/>Area: ${param.data[2]} km²`;
+        },
+        backgroundColor: '#fff',
+        borderColor: '#222',
+        borderWidth: 1,
+        textStyle: {
+          color: '#222',
+          fontSize: 15,
+          fontFamily: 'Arial'
+        }
+      },
+      xAxis: {
+        name: 'Elevation (meters)',
+        nameTextStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: { color: '#222', width: 2 }
+        },
+        axisLabel: {
+          color: '#222',
+          fontSize: 14
+        },
+        splitLine: {
+          lineStyle: { color: '#e0e0e0', width: 1 }
+        },
+        min: 0
+      },
+      yAxis: {
+        name: 'Urban Population (millions)',
+        nameTextStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: { color: '#222', width: 2 }
+        },
+        axisLabel: {
+          color: '#222',
+          fontSize: 14
+        },
+        splitLine: {
+          lineStyle: { color: '#e0e0e0', width: 1 }
+        },
+        min: 0
+      },
+      series: [
+        {
+          name: 'Cities',
+          data: cityData,
+          type: 'scatter',
+          symbolSize: function (data) {
+            // Symbol size based on city area (km^2)
+            return Math.sqrt(data[2]) / 3;
+          },
+          emphasis: {
+            focus: 'self'
+          },
+          labelLayout: {
+            y: 22,
+            align: 'center',
+            hideOverlap: true,
+            moveOverlap: 'shiftY'
+          },
+          labelLine: {
+            show: true,
+            length2: 8,
+            lineStyle: {
+              color: '#1950a5',
+              width: 2
+            }
+          },
+          label: {
+            show: true,
+            formatter: function (param) {
+              return param.data[3];
+            },
+            minMargin: 12,
+            position: 'top',
+            color: '#1b2a3b',
+            fontWeight: 'bold',
+            fontSize: 14,
+            fontFamily: 'Segoe UI'
+          },
+          itemStyle: {
+            color: '#e83e1e',
+            borderColor: '#1b2a3b',
+            borderWidth: 2,
+            shadowBlur: 5,
+            shadowColor: 'rgba(30,50,90,0.2)'
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

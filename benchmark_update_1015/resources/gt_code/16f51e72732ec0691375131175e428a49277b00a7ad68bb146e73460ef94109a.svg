@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="font-family:'Roboto Slab', Georgia, 'Times New Roman', serif;font-size:18px;background-color:white;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased" width="850" height="600">
+  <g>
+    <g>
+      <g>
+        <text font-size="18" x="180" y="560" fill="#222" font-family="Roboto Slab, serif">Market Supply (units)</text>
+        <text x="240" y="535" fill="#283593" text-anchor="middle" font-size="15" font-family="Roboto Slab, serif">100</text>
+        <text x="370" y="535" fill="#283593" text-anchor="middle" font-size="15" font-family="Roboto Slab, serif">200</text>
+        <text x="500" y="535" fill="#283593" text-anchor="middle" font-size="15" font-family="Roboto Slab, serif">300</text>
+        <text x="630" y="535" fill="#283593" text-anchor="middle" font-size="15" font-family="Roboto Slab, serif">400</text>
+      </g>
+      <g>
+        <text font-size="18" x="-500" y="35" transform="rotate(-90)" fill="#222" font-family="Roboto Slab, serif">Market Demand (units)</text>
+        <text x="115" y="505" fill="#283593" dominant-baseline="middle" text-anchor="end" font-size="15" font-family="Roboto Slab, serif">0</text>
+        <text x="115" y="430" fill="#283593" dominant-baseline="middle" text-anchor="end" font-size="15" font-family="Roboto Slab, serif">100</text>
+        <text x="115" y="355" fill="#283593" dominant-baseline="middle" text-anchor="end" font-size="15" font-family="Roboto Slab, serif">200</text>
+        <text x="115" y="280" fill="#283593" dominant-baseline="middle" text-anchor="end" font-size="15" font-family="Roboto Slab, serif">300</text>
+        <text x="115" y="205" fill="#283593" dominant-baseline="middle" text-anchor="end" font-size="15" font-family="Roboto Slab, serif">400</text>
+        <text x="115" y="130" fill="#283593" dominant-baseline="middle" text-anchor="end" font-size="15" font-family="Roboto Slab, serif">500</text>
+      </g>
+      <g>
+        <line x1="120" y1="505" x2="720" y2="505" stroke="#1a237e" stroke-width="1.5"></line>
+        <line x1="120" y1="430" x2="720" y2="430" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+        <line x1="120" y1="355" x2="720" y2="355" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+        <line x1="120" y1="280" x2="720" y2="280" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+        <line x1="120" y1="205" x2="720" y2="205" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+        <line x1="120" y1="130" x2="720" y2="130" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+      </g>
+      <g>
+        <line x1="240" y1="505" x2="240" y2="80" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+        <line x1="370" y1="505" x2="370" y2="80" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+        <line x1="500" y1="505" x2="500" y2="80" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+        <line x1="630" y1="505" x2="630" y2="80" stroke="#3949ab" stroke-width="1" stroke-dasharray="6,3"></line>
+      </g>
+    </g>
+    <g>
+      <path d="M120,500 L150,470 L190,430 L240,400 L300,355 L370,320 L450,280 L540,230 L630,180 L720,130" fill="none" stroke="#c62828" stroke-width="2.5"></path>
+    </g>
+    <g>
+      <rect x="120" y="80" width="600" height="425" fill="rgba(255,255,255,0)"></rect>
+      <g>
+        <circle cx="150" cy="470" r="12" fill="#6a1b9a" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="190" cy="430" r="10" fill="#0288d1" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="240" cy="400" r="11" fill="#43a047" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="300" cy="355" r="8" fill="#fbc02d" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="370" cy="320" r="9" fill="#c62828" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="450" cy="280" r="7" fill="#3949ab" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="540" cy="230" r="10" fill="#00897b" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="630" cy="180" r="13" fill="#e65100" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+        <circle cx="720" cy="130" r="14" fill="#ad1457" opacity="0.85" stroke="#212121" stroke-width="2"></circle>
+      </g>
+      <g>
+        <text x="150" y="455" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Retail</text>
+        <text x="190" y="415" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Manufacturing</text>
+        <text x="240" y="385" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Agriculture</text>
+        <text x="300" y="340" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Transport</text>
+        <text x="370" y="305" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Healthcare</text>
+        <text x="450" y="265" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Technology</text>
+        <text x="540" y="215" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Finance</text>
+        <text x="630" y="165" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Energy</text>
+        <text x="720" y="115" font-size="13" fill="#212121" font-family="Roboto Slab, serif">Real Estate</text>
+      </g>
+    </g>
+    <g>
+      <g>
+        <rect x="740" y="87" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="92" width="8" height="8" fill="#6a1b9a"></rect>
+        <text font-size="13" x="755" y="100" fill="#212121" font-family="Roboto Slab, serif">Services</text>
+      </g>
+      <g>
+        <rect x="740" y="110" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="115" width="8" height="8" fill="#0288d1"></rect>
+        <text font-size="13" x="755" y="123" fill="#212121" font-family="Roboto Slab, serif">Industry</text>
+      </g>
+      <g>
+        <rect x="740" y="133" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="138" width="8" height="8" fill="#43a047"></rect>
+        <text font-size="13" x="755" y="146" fill="#212121" font-family="Roboto Slab, serif">Agriculture</text>
+      </g>
+      <g>
+        <rect x="740" y="156" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="161" width="8" height="8" fill="#fbc02d"></rect>
+        <text font-size="13" x="755" y="169" fill="#212121" font-family="Roboto Slab, serif">Transport</text>
+      </g>
+      <g>
+        <rect x="740" y="179" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="184" width="8" height="8" fill="#c62828"></rect>
+        <text font-size="13" x="755" y="192" fill="#212121" font-family="Roboto Slab, serif">Healthcare</text>
+      </g>
+      <g>
+        <rect x="740" y="202" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="207" width="8" height="8" fill="#3949ab"></rect>
+        <text font-size="13" x="755" y="215" fill="#212121" font-family="Roboto Slab, serif">Technology</text>
+      </g>
+      <g>
+        <rect x="740" y="225" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="230" width="8" height="8" fill="#00897b"></rect>
+        <text font-size="13" x="755" y="238" fill="#212121" font-family="Roboto Slab, serif">Finance</text>
+      </g>
+      <g>
+        <rect x="740" y="248" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="253" width="8" height="8" fill="#e65100"></rect>
+        <text font-size="13" x="755" y="261" fill="#212121" font-family="Roboto Slab, serif">Energy</text>
+      </g>
+      <g>
+        <rect x="740" y="271" width="45" height="18" fill="#fff" opacity="0"></rect>
+        <rect x="740" y="276" width="8" height="8" fill="#ad1457"></rect>
+        <text font-size="13" x="755" y="284" fill="#212121" font-family="Roboto Slab, serif">Real Estate</text>
+      </g>
+    </g>
+    <g>
+      <text font-size="13" x="25" y="585" fill="#555" font-family="Roboto Slab, serif">
+        Source: Hypothetical Economics Dataset, Market Sectors
+      </text>
+      <text font-size="13" x="795" y="585" fill="#555" font-family="Roboto Slab, serif">
+        <a style="fill: #555;" href="http://creativecommons.org/licenses/by/4.0/deed.en_US" target="_blank">CC BY</a>
+      </text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <style>
+      .p-type { fill: #ffcccc; stroke: black; stroke-width: 0.5; }
+      .n-type { fill: #cceeff; stroke: black; stroke-width: 0.5; }
+      .n-type-thick { fill: #99ccff; stroke: black; stroke-width: 0.5; }
+      .contact { fill: #888; stroke: black; stroke-width: 0.5; }
+      .line { stroke: black; stroke-width: 1; fill: none; }
+      .terminal-circle { fill: white; stroke: black; stroke-width: 1; }
+      .label { font-family: sans-serif; font-size: 10px; fill: black; text-anchor: middle; }
+      .label-left { text-anchor: start; }
+      .label-right { text-anchor: end; }
+    </style>
+  </defs>
+
+  <!-- Main Layers -->
+  <!-- Top P-layer (A) -->
+  <rect x="50" y="40" width="200" height="20" class="p-type" />
+  <text x="150" y="55" class="label">A</text>
+
+  <!-- Thick N-layer -->
+  <rect x="50" y="60" width="200" height="40" class="n-type-thick" />
+
+  <!-- Middle P-layer -->
+  <rect x="50" y="100" width="200" height="20" class="p-type" />
+
+  <!-- Bottom N-layer -->
+  <rect x="50" y="120" width="200" height="20" class="n-type" />
+
+  <!-- Bottom P-layer (for N+/P+ diffusions) -->
+  <rect x="50" y="140" width="200" height="20" class="p-type" />
+
+  <!-- Top Diffused Regions and Contacts -->
+  <!-- N regions -->
+  <rect x="60" y="30" width="15" height="10" class="n-type" />
+  <rect x="90" y="30" width="15" height="10" class="n-type" />
+  <rect x="120" y="30" width="15" height="10" class="n-type" />
+  <rect x="150" y="30" width="15" height="10" class="n-type" />
+  <rect x="180" y="30" width="15" height="10" class="n-type" />
+
+  <!-- P regions (Gate) -->
+  <rect x="75" y="30" width="15" height="10" class="p-type" />
+  <rect x="105" y="30" width="15" height="10" class="p-type" />
+  <rect x="135" y="30" width="15" height="10" class="p-type" />
+  <rect x="165" y="30" width="15" height="10" class="p-type" />
+  <rect x="195" y="30" width="15" height="10" class="p-type" /> <!-- This one is K, not G -->
+
+  <!-- Top Contact Lines -->
+  <path d="M 67.5 30 V 20 H 20 M 97.5 30 V 20 H 20 M 127.5 30 V 20 H 20 M 157.5 30 V 20 H 20 M 187.5 30 V 20 H 20" class="line" />
+  <path d="M 75 30 V 20 H 20" class="line" /> <!-- This is the first P region connected to the main top contact -->
+
+  <!-- Top Main Terminal (n) -->
+  <circle cx="20" cy="20" r="4" class="terminal-circle" />
+  <text x="20" y="10" class="label">n</text>
+
+  <!-- Gate Terminal (G) -->
+  <path d="M 202.5 30 V 20 H 250" class="line" />
+  <circle cx="250" cy="20" r="4" class="terminal-circle" />
+  <text x="260" y="25" class="label label-left">G</text>
+  <text x="202.5" y="35" class="label">K</text> <!-- Label for the last P region -->
+
+  <!-- Bottom Diffused Regions and Contacts -->
+  <!-- P+ regions -->
+  <rect x="60" y="150" width="15" height="10" class="p-type" />
+  <rect x="90" y="150" width="15" height="10" class="p-type" />
+  <rect x="120" y="150" width="15" height="10" class="p-type" />
+  <rect x="150" y="150" width="15" height="10" class="p-type" />
+  <rect x="180" y="150" width="15" height="10" class="p-type" />
+
+  <!-- N+ regions -->
+  <rect x="75" y="150" width="15" height="10" class="n-type" />
+  <rect x="105" y="150" width="15" height="10" class="n-type" />
+  <rect x="135" y="150" width="15" height="10" class="n-type" />
+  <rect x="165" y="150" width="15" height="10" class="n-type" />
+  <rect x="195" y="150" width="15" height="10" class="n-type" />
+
+  <!-- Bottom Contact Lines -->
+  <path d="M 67.5 160 V 170 H 20 M 97.5 160 V 170 H 20 M 127.5 160 V 170 H 20 M 157.5 160 V 170 H 20 M 187.5 160 V 170 H 20" class="line" />
+  <path d="M 75 160 V 170 H 20 M 105 160 V 170 H 20 M 135 160 V 170 H 20 M 165 160 V 170 H 20 M 195 160 V 170 H 20" class="line" />
+
+  <!-- Bottom Main Terminal (n) -->
+  <circle cx="20" cy="170" r="4" class="terminal-circle" />
+  <text x="20" y="180" class="label">n</text>
+
+  <!-- Labels for diffused regions -->
+  <text x="67.5" y="25" class="label">n</text>
+  <text x="82.5" y="25" class="label">p</text>
+  <text x="97.5" y="25" class="label">n</text>
+  <text x="112.5" y="25" class="label">p</text>
+  <text x="127.5" y="25" class="label">n</text>
+  <text x="142.5" y="25" class="label">p</text>
+  <text x="157.5" y="25" class="label">n</text>
+  <text x="172.5" y="25" class="label">p</text>
+  <text x="187.5" y="25" class="label">n</text>
+
+  <text x="67.5" y="145" class="label">p</text>
+  <text x="82.5" y="145" class="label">n+</text>
+  <text x="97.5" y="145" class="label">n</text>
+  <text x="112.5" y="145" class="label">n+</text>
+  <text x="127.5" y="145" class="label">p</text>
+  <text x="142.5" y="145" class="label">n+</text>
+  <text x="157.5" y="145" class="label">p</text>
+  <text x="172.5" y="145" class="label">n+</text>
+  <text x="187.5" y="145" class="label">p</text>
+</svg>

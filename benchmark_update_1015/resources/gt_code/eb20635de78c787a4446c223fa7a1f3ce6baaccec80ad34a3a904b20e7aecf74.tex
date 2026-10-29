@@ -1,0 +1,37 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+
+\definecolor{headercolor}{RGB}{41,128,185}
+\definecolor{rowcolor1}{RGB}{236,240,241}
+\definecolor{rowcolor2}{RGB}{255,140,0}
+
+\begin{document}
+
+\begin{tabular}{>{\columncolor{headercolor}\color{white}}l*{7}{>{\columncolor{headercolor}\color{white}}c}}
+\toprule
+\textbf{Investment Bank} & \textbf{ESG Score} & \textbf{Carbon Neutrality} & \textbf{Sustainable Finance} & \textbf{D\&I Score} & \textbf{ROE} & \textbf{Net Income} & \textbf{Share Price} \\
+& \textbf{(0-100)} & \textbf{Target} & \textbf{Commitment} & \textbf{(0-100)} & \textbf{(\%)} & \textbf{(Billion USD)} & \textbf{Growth (\%)} \\
+\midrule
+\rowcolor{rowcolor1}
+Goldman Sachs & 72 & 2030 & \$750B by 2030 & 85 & 11.3 & 21.64 & 15.2 \\
+\rowcolor{rowcolor2}
+JPMorgan Chase & 68 & 2050 & \$2.5T by 2030 & 78 & 13.7 & 36.43 & 18.7 \\
+\rowcolor{rowcolor1}
+Morgan Stanley & 70 & 2022 & \$1T by 2030 & 82 & 10.9 & 11.03 & 12.8 \\
+\rowcolor{rowcolor2}
+Citigroup & 65 & 2050 & \$1T by 2030 & 80 & 9.5 & 14.85 & 8.6 \\
+\rowcolor{rowcolor1}
+Bank of America & 71 & 2050 & \$1.5T by 2030 & 83 & 10.2 & 27.53 & 14.5 \\
+\rowcolor{rowcolor2}
+Barclays & 63 & 2050 & £100B by 2030 & 75 & 8.1 & 7.01 & 6.9 \\
+\rowcolor{rowcolor1}
+Credit Suisse & 59 & 2050 & CHF 300B by 2030 & 72 & 4.7 & 2.70 & -22.4 \\
+\bottomrule
+\end{tabular}
+
+\end{document}

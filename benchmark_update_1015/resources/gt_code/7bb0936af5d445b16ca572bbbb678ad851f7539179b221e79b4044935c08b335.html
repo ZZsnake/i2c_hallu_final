@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Bar Chart Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #1A1A1A;
+      letter-spacing: 1px;
+    }
+    .echarts-axis-label {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 14px;
+      color: #22223B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- NEW JS CODE: Math domain; high contrast; changed data & visuals ---
+
+    // Sample: Visualizing Frequency of Math Topics in a Quiz
+    const categories = [
+      'Algebra',
+      'Geometry',
+      'Calculus',
+      'Statistics',
+      'Number Theory',
+      'Combinatorics',
+      'Logic'
+    ];
+    // Random dummy data for counts (e.g., number of questions per topic)
+    const counts = [15, 24, 9, 17, 12, 5, 13];
+
+    option = {
+      title: {
+        text: 'Math Quiz Topic Frequency',
+        left: 'center',
+        textStyle: {
+          color: '#181818',
+          fontFamily: 'Montserrat, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 20
+        }
+      },
+      grid: {
+        left: 60,
+        right: 40,
+        bottom: 80,
+        top: 80
+      },
+      toolbox: {
+        feature: {
+          dataView: {show: true, readOnly: true},
+          saveAsImage: {pixelRatio: 2}
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {type: 'shadow'}
+      },
+      xAxis: {
+        type: 'category',
+        data: categories,
+        axisLabel: {
+          color: '#22223B',
+          fontFamily: 'Roboto Mono, monospace',
+          fontSize: 14,
+          fontWeight: 500
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#3D5A80',
+            width: 2
+          }
+        },
+        axisTick: {
+          lineStyle: {
+            color: '#3D5A80',
+            width: 2
+          }
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Number of Questions',
+        nameTextStyle: {
+          color: '#22223B',
+          fontFamily: 'Roboto Mono, monospace',
+          fontSize: 15,
+          fontWeight: 'bold'
+        },
+        axisLabel: {
+          color: '#22223B',
+          fontFamily: 'Roboto Mono, monospace',
+          fontSize: 14
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#3D5A80',
+            width: 2
+          }
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: '#BF1A2F',
+            width: 1,
+            type: 'dashed'
+          }
+        }
+      },
+      series: [
+        {
+          name: 'Questions',
+          type: 'bar',
+          data: counts,
+          itemStyle: {
+            color: function(params) {
+              // High contrast, vivid colors across categories
+              const palette = [
+                '#006D77', // teal
+                '#FF595E', // red
+                '#1982C4', // blue
+                '#6A4C93', // purple
+                '#FFCA3A', // orange
+                '#8AC926', // green
+                '#FF7F11'  // vivid orange
+              ];
+              return palette[params.dataIndex % palette.length];
+            },
+            borderColor: '#181818',
+            borderWidth: 2
+          },
+          barWidth: '45%',
+          label: {
+            show: true,
+            position: 'top',
+            color: '#181818',
+            fontWeight: 'bold',
+            fontFamily: 'Montserrat, Arial, sans-serif',
+            fontSize: 14
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

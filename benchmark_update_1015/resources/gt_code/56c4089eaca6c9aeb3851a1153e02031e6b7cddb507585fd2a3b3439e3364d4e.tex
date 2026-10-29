@@ -1,0 +1,24 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+\definecolor{questionbg}{RGB}{240,248,255}
+\definecolor{questionborder}{RGB}{70,130,180}
+
+\begin{document}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=questionbg,
+    colframe=questionborder,
+    arc=8pt,
+    boxrule=1.5pt,
+    fontupper=\large\sffamily,
+    drop fuzzy shadow=questionborder
+]
+A ballet dancer-turned-physicist is studying the motion of charged particles in a magnetic field. She models a particle with charge $q$ and mass $m$ moving in a uniform magnetic field $\mathbf{B} = B_0\hat{k}$. The initial velocity of the particle is $\mathbf{v}_0 = v_0\hat{i}$. Determine the differential equations describing the particle's trajectory in the x-y plane and solve them to find the particle's position as a function of time.
+\end{tcolorbox}
+
+\end{document}

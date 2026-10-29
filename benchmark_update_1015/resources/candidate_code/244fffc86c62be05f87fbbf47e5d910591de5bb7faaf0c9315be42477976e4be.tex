@@ -1,0 +1,57 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+
+% Left Plot
+\draw[->] (-1,0) -- (4,0) node[right] {$\hat{r}_L$};
+\draw[->] (0,-1) -- (0,4) node[above] {$\alpha_s^{\mathcal{A}}$};
+\draw[dashed] (1,0) -- (1,4);
+\draw[dashed] (2,0) -- (2,4);
+\draw[dashed] (0,1) -- (4,1);
+\draw[dashed] (0,2) -- (4,2);
+
+\node at (0.5, 0.5) {III};
+\node at (0.5, 1.5) {I};
+\node at (0.5, 2.5) {};
+\node at (1.5, 0.5) {IV};
+\node at (1.5, 1.5) {II};
+\node at (1.5, 2.5) {};
+\node at (2.5, 0.5) {V};
+
+\node[below] at (1,0) {$NV_s^{\mathcal{A}}$};
+\node[below] at (2,0) {$NV_s^{\mathcal{B}}$};
+\node[left] at (0,1) {$\alpha_s^{\mathcal{B}}$};
+
+% Right Plot
+\draw[->] (5,0) -- (12,0) node[right] {$r_L^{\mathcal{A}}$};
+\draw[->] (6,-1) -- (6,4) node[above] {$\alpha_s^{\mathcal{A}}$};
+\draw[dashed] (7,0) -- (7,4);
+\draw[dashed] (8,0) -- (8,4);
+\draw[dashed] (9,0) -- (9,4);
+\draw[dashed] (6,1) -- (12,1);
+\draw[dashed] (6,2) -- (12,2);
+
+\node at (6.5, 0.5) {IX};
+\node at (6.5, 1.5) {VI};
+\node at (6.5, 2.5) {};
+\node at (7.5, 0.5) {X};
+\node at (7.5, 1.5) {VII};
+\node at (7.5, 2.5) {};
+\node at (8.5, 0.5) {XI};
+\node at (8.5, 1.5) {VIII};
+\node at (8.5, 2.5) {};
+\node at (9.5, 0.5) {XII};
+\node at (9.5, 1.5) {};
+\node at (9.5, 2.5) {};
+
+\node[below] at (7,0) {$r_L^{\mathcal{B}}$};
+\node[below] at (8,0) {$NV_s^{\mathcal{A}}$};
+\node[below] at (9,0) {$NV_s^{\mathcal{B}}$};
+\node[left] at (6,1) {$\alpha_s^{\mathcal{B}}$};
+
+\end{tikzpicture}
+\end{document}

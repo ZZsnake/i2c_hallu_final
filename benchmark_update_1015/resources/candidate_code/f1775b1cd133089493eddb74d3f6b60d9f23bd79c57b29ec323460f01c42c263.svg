@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="600" y="55" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#2c2c2c">
+    Global Supply and Demand Trends
+  </text>
+  
+  <!-- Chart border -->
+  <rect x="120" y="80" width="1030" height="520" fill="white" stroke="black" stroke-width="2"/>
+  
+  <!-- Gridlines -->
+  <line x1="120" y1="600" x2="1150" y2="600" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="120" y1="495" x2="1150" y2="495" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="120" y1="390" x2="1150" y2="390" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="120" y1="285" x2="1150" y2="285" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="120" y1="180" x2="1150" y2="180" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Y-axis labels -->
+  <text x="100" y="610" font-family="Arial, sans-serif" font-size="24" text-anchor="end" fill="#2c2c2c">0</text>
+  <text x="100" y="500" font-family="Arial, sans-serif" font-size="24" text-anchor="end" fill="#2c2c2c">50</text>
+  <text x="100" y="395" font-family="Arial, sans-serif" font-size="24" text-anchor="end" fill="#2c2c2c">100</text>
+  <text x="100" y="290" font-family="Arial, sans-serif" font-size="24" text-anchor="end" fill="#2c2c2c">150</text>
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="24" text-anchor="end" fill="#2c2c2c">200</text>
+  <text x="60" y="120" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#2c2c2c">Million</text>
+  <text x="60" y="145" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#2c2c2c">units</text>
+  
+  <!-- Legend -->
+  <rect x="200" y="95" width="30" height="25" fill="#4A7C4E"/>
+  <text x="240" y="115" font-family="Arial, sans-serif" font-size="28" fill="#2c2c2c">Supply</text>
+  <rect x="200" y="130" width="30" height="25" fill="#C93B3B"/>
+  <text x="240" y="150" font-family="Arial, sans-serif" font-size="28" fill="#2c2c2c">Demand</text>
+  
+  <!-- 2018 Q1 -->
+  <rect x="180" y="430" width="35" height="170" fill="#4A7C4E"/>
+  <rect x="180" y="430" width="35" height="0" fill="#C93B3B"/>
+  
+  <!-- 2018 Q2 -->
+  <rect x="220" y="430" width="35" height="170" fill="#4A7C4E"/>
+  <rect x="220" y="305" width="35" height="125" fill="#C93B3B"/>
+  
+  <!-- 2018 Q3 -->
+  <rect x="260" y="465" width="35" height="135" fill="#4A7C4E"/>
+  <rect x="260" y="390" width="35" height="75" fill="#C93B3B"/>
+  
+  <!-- 2018 Q4 -->
+  <rect x="300" y="445" width="35" height="155" fill="#4A7C4E"/>
+  <rect x="300" y="305" width="35" height="140" fill="#C93B3B"/>
+  
+  <!-- 2019 Q1 -->
+  <rect x="350" y="445" width="35" height="155" fill="#4A7C4E"/>
+  <rect x="350" y="315" width="35" height="130" fill="#C93B3B"/>
+  
+  <!-- 2019 Q2 -->
+  <rect x="390" y="465" width="35" height="135" fill="#4A7C4E"/>
+  <rect x="390" y="360" width="35" height="105" fill="#C93B3B"/>
+  
+  <!-- 2019 Q3 -->
+  <rect x="430" y="465" width="35" height="135" fill="#4A7C4E"/>
+  <rect x="430" y="390" width="35" height="75" fill="#C93B3B"/>
+  
+  <!-- 2019 Q4 -->
+  <rect x="470" y="465" width="35" height="135" fill="#4A7C4E"/>
+  <rect x="470" y="390" width="35" height="75" fill="#C93B3B"/>
+  
+  <!-- 2020 Q1 -->
+  <rect x="520" y="495" width="35" height="105" fill="#4A7C4E"/>
+  <rect x="520" y="465" width="35" height="30" fill="#C93B3B"/>
+  
+  <!-- 2020 Q2 -->
+  <rect x="560" y="510" width="35" height="90" fill="#4A7C4E"/>
+  <rect x="560" y="465" width="35" height="45" fill="#C93B3B"/>
+  
+  <!-- 2020 Q3 -->
+  <rect x="600" y="510" width="35" height="90" fill="#4A7C4E"/>
+  <rect x="600" y="480" width="35" height="30" fill="#C93B3B"/>
+  
+  <!-- 2020 Q4 -->
+  <rect x="640" y="525" width="35" height="75" fill="#4A7C4E"/>
+  <rect x="640" y="465" width="35" height="60" fill="#C93B3B"/>
+  
+  <!-- 2021 Q1 -->
+  <rect x="690" y="540" width="35" height="60" fill="#4A7C4E"/>
+  <rect x="690" y="510" width="35" height="30" fill="#C93B3B"/>
+  
+  <!-- 2021 Q2 -->
+  <rect x="730" y="525" width="35" height="75" fill="#4A7C4E"/>
+  <rect x="730" y="480" width="35" height="45" fill="#C93B3B"/>
+  
+  <!-- 2021 Q3 -->
+  <rect x="770" y="555" width="35" height="45" fill="#4A7C4E"/>
+  <rect x="770" y="525" width="35" height="30" fill="#C93B3B"/>
+  
+  <!-- 2021 Q4 -->
+  <rect x="810" y="540" width="35" height="60" fill="#4A7C4E"/>
+  <rect x="810" y="465" width="35" height="75" fill="#C93B3B"/>
+  
+  <!-- 2022 Q1 -->
+  <rect x="860" y="525" width="35" height="75" fill="#4A7C4E"/>
+  <rect x="860" y="465" width="35" height="60" fill="#C93B3B"/>
+  
+  <!-- 2022 Q2 -->
+  <rect x="900" y="540" width="35" height="60" fill="#4A7C4E"/>
+  <rect x="900" y="480" width="35" height="60" fill="#C93B3B"/>
+  
+  <!-- 2022 Q3 -->
+  <rect x="940" y="525" width="35" height="75" fill="#4A7C4E"/>
+  <rect x="940" y="435" width="35" height="90" fill="#C93B3B"/>
+  
+  <!-- 2022 Q4 -->
+  <rect x="980" y="555" width="35" height="45" fill="#4A7C4E"/>
+  <rect x="980" y="510" width="35" height="45" fill="#C93B3B"/>
+  
+  <!-- 2023 Q1 -->
+  <rect x="1030" y="555" width="35" height="45" fill="#4A7C4E"/>
+  <rect x="1030" y="510" width="35" height="45" fill="#C93B3B"/>
+  
+  <!-- 2023 Q2 -->
+  <rect x="1070" y="540" width="35" height="60" fill="#4A7C4E"/>
+  <rect x="1070" y="480" width="35" height="60" fill="#C93B3B"/>
+  
+  <!-- 2023 Q3 -->
+  <rect x="1110" y="420" width="35" height="180" fill="#4A7C4E"/>
+  <rect x="1110" y="210" width="35" height="210" fill="#C93B3B"/>
+  
+  <!-- X-axis year labels -->
+  <text x="270" y="640" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#2c2c2c">2018</text>
+  <text x="550" y="640" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#2c2c2c">2021</text>
+  <text x="1050" y="640" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#2c2c2c">2024</text>
+  
+  <!-- Blue triangular markers -->
+  <polygon points="270,615 280,605 260,605" fill="#1a5490"/>
+  <polygon points="550,615 560,605 540,605" fill="#1a5490"/>
+  <polygon points="1050,615 1060,605 1040,605" fill="#1a5490"/>
+  
+  <!-- Caption -->
+  <text x="600" y="675" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">
+    Supply and demand data compiled from global market reports. Values represent estimated totals in millions of units for selected years.
+  </text>
+</svg>

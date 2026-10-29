@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Semicircle Gauge</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      padding-top: 40px;
+    }
+    #gauge {
+      width: 900px;
+      height: 420px;
+      max-width: 95vw;
+    }
+    .value-box {
+      margin-top: -40px;
+      padding: 8px 18px;
+      border-radius: 16px;
+      border: 2px solid #123a7a;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+      display: inline-flex;
+      align-items: baseline;
+      background-color: #ffffff;
+    }
+    .value-main {
+      font-size: 26px;
+      font-weight: 700;
+      color: #123a7a;
+      line-height: 1;
+      margin-right: 6px;
+    }
+    .value-unit {
+      font-size: 12px;
+      font-weight: 500;
+      color: #64748b;
+      text-transform: none;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      #gauge {
+        width: 100%;
+        height: 300px;
+      }
+      .value-box {
+        margin-top: -30px;
+        padding: 6px 14px;
+      }
+      .value-main {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="gauge"></div>
+    <div class="value-box">
+      <span class="value-main">73.5</span>
+      <span class="value-unit">mT</span>
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+      var chartDom = document.getElementById('gauge');
+      var myChart = echarts.init(chartDom);
+
+      var currentValue = 73.5;
+
+      var option = {
+        backgroundColor: '#ffffff',
+        series: [
+          // Colored arc split into blue and green halves
+          {
+            type: 'gauge',
+            startAngle: 200,
+            endAngle: -20,
+            center: ['50%', '70%'],
+            min: 0,
+            max: 120,
+            splitNumber: 8,
+            radius: '90%',
+            axisLine: {
+              lineStyle: {
+                width: 16,
+                color: [
+                  [0.67, '#2156d6'], // 0 - ~80 (blue)
+                  [1, '#1ab25b']    // ~80 - 120 (green)
+                ],
+                cap: 'round'
+              }
+            },
+            pointer: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            splitLine: {
+              show: false
+            },
+            axisLabel: {
+              show: false
+            },
+            detail: { show: false }
+          },
+          // Inner tick marks and labels
+          {
+            type: 'gauge',
+            startAngle: 200,
+            endAngle: -20,
+            center: ['50%', '70%'],
+            min: 0,
+            max: 120,
+            radius: '78%',
+            splitNumber: 8,
+            axisLine: {
+              lineStyle: {
+                width: 0
+              }
+            },
+            axisTick: {
+              show: true,
+              splitNumber: 4,
+              length: 5,
+              lineStyle: {
+                color: '#000000',
+                width: 1
+              }
+            },
+            splitLine: {
+              show: true,
+              length: 10,
+              lineStyle: {
+                color: '#000000',
+                width: 1.4
+              }
+            },
+            axisLabel: {
+              distance: 20,
+              color: '#444444',
+              fontSize: 12,
+              formatter: function (value) {
+                // Show labels only at 0, 15, 30, 45, 60, 75, 90, 105, 120
+                var labels = [0, 15, 30, 45, 60, 75, 90, 105, 120];
+                if (labels.indexOf(value) !== -1) {
+                  return value;
+                }
+                return '';
+              }
+            },
+            pointer: {
+              show: true,
+              icon: 'rect',
+              length: '40%',
+              width: 4,
+              offsetCenter: [0, '0%'],
+              itemStyle: {
+                color: '#0b2757'
+              }
+            },
+            anchor: {
+              show: true,
+              showAbove: true,
+              size: 6,
+              itemStyle: {
+                color: '#0b2757'
+              }
+            },
+            detail: {
+              show: false
+            },
+            data: [
+              {
+                value: currentValue
+              }
+            ]
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

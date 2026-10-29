@@ -1,0 +1,357 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <style>
+      .class-box {
+        fill: #f0f0f0;
+        stroke: #333;
+        stroke-width: 1;
+        rx: 5;
+        ry: 5;
+      }
+      .class-name {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        text-anchor: middle;
+        fill: #000;
+      }
+      .method-name {
+        font-family: sans-serif;
+        font-size: 12px;
+        fill: #000;
+      }
+      .method-bullet {
+        fill: #00aa00;
+      }
+      .stereotype-s {
+        fill: #333;
+        stroke: #333;
+        stroke-width: 1;
+      }
+      .stereotype-text {
+        font-family: sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        fill: #fff;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+      .inheritance-arrow {
+        stroke: #333;
+        stroke-width: 1;
+        fill: none;
+      }
+      .inheritance-arrowhead {
+        fill: #333;
+        stroke: #333;
+        stroke-width: 1;
+      }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" class="inheritance-arrowhead" fill="white" stroke="#333" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- Animal Class -->
+  <rect x="80" y="10" width="140" height="60" class="class-box"/>
+  <circle cx="95" cy="25" r="7" class="stereotype-s"/>
+  <text x="95" y="25" class="stereotype-text">S</text>
+  <text x="150" y="25" class="class-name">Animal</text>
+  <circle cx="95" cy="45" r="4" class="method-bullet"/>
+  <text x="105" y="49" class="method-name">Eat()</text>
+
+  <!-- Mammal Class -->
+  <rect x="10" y="100" width="140" height="60" class="class-box"/>
+  <circle cx="25" cy="115" r="7" class="stereotype-s"/>
+  <text x="25" y="115" class="stereotype-text">S</text>
+  <text x="80" y="115" class="class-name">Mammal</text>
+  <circle cx="25" cy="135" r="4" class="method-bullet"/>
+  <text x="35" y="139" class="method-name">Breathe()</text>
+
+  <!-- WingedAnimal Class -->
+  <rect x="150" y="100" width="140" height="60" class="class-box"/>
+  <circle cx="165" cy="115" r="7" class="stereotype-s"/>
+  <text x="165" y="115" class="stereotype-text">S</text>
+  <text x="220" y="115" class="class-name">WingedAnimal</text>
+  <circle cx="165" cy="135" r="4" class="method-bullet"/>
+  <text x="175" y="139" class="method-name">Flap()</text>
+
+  <!-- Bat Class -->
+  <rect x="80" y="200" width="140" height="40" class="class-box"/>
+  <circle cx="95" cy="215" r="7" class="stereotype-s"/>
+  <text x="95" y="215" class="stereotype-text">S</text>
+  <text x="150" y="215" class="class-name">Bat</text>
+
+  <!-- Inheritance Arrows -->
+  <!-- Mammal -> Animal -->
+  <line x1="80" y1="100" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <!-- WingedAnimal -> Animal -->
+  <line x1="220" y1="70" x2="220" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="220" y1="70" x2="220" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 220 70 L 220 70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="220" y1="70" x2="220" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150" y1="70" x2="150" y2="70" class="inheritance-arrow" marker-end="url(#arrowhead)"/>
+  <line x1="150"

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quadratic Function Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+    .chart-container {
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin: 0 auto;
+    }
+    .title {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chart" class="chart-container"></div>
+
+  <script>
+    // Initialize the chart
+    const chart = echarts.init(document.getElementById('chart'));
+
+    // Define data points
+    const data = [
+      { x: -2, y: 20 },
+      { x: 0, y: 6 },
+      { x: 2, y: 0 },
+      { x: 4, y: 2 },
+      { x: 6, y: 12 }
+    ];
+
+    // Prepare data for ECharts
+    const xAxisData = data.map(d => d.x);
+    const yAxisData = data.map(d => d.y);
+
+    // Chart configuration
+    const option = {
+      title: {
+        text: 'Quadratic Function: y = x² - 5x + 6',
+        left: 'center',
+        top: 10,
+        textStyle: {
+          color: '#193366',
+          fontWeight: 'bold',
+          fontSize: 20,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        formatter: '{a} <br/>{c}',
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderColor: '#ccc',
+        borderWidth: 1,
+      },
+      xAxis: {
+        type: 'value',
+        name: 'x',
+        nameLocation: 'end',
+        nameGap: 10,
+        nameTextStyle: {
+          fontSize: 15,
+          color: '#193366',
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#193366',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#193366',
+          fontSize: 13,
+          fontWeight: 'bold',
+          showMinLabel: true,
+          showMaxLabel: true
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#cccccc'
+          }
+        },
+        min: -3,
+        max: 7
+      },
+      yAxis: {
+        type: 'value',
+        name: 'y',
+        nameLocation: 'end',
+        nameGap: 10,
+        nameTextStyle: {
+          fontSize: 15,
+          color: '#193366',
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#193366',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#193366',
+          fontSize: 13,
+          fontWeight: 'bold'
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#cccccc'
+          }
+        },
+        min: -5,
+        max: 25
+      },
+      grid: {
+        left: '8%',
+        right: '8%',
+        top: '15%',
+        bottom: '10%',
+        containLabel: true
+      },
+      series: [{
+        name: 'y = x² - 5x + 6',
+        type: 'line',
+        smooth: false,
+        symbol: 'circle',
+        symbolSize: 14,
+        itemStyle: {
+          color: '#ff2b2b',
+          borderColor: '#0b2a66',
+          borderWidth: 2
+        },
+        lineStyle: {
+          color: '#ff2b2b',
+          width: 4
+        },
+        data: data.map(d => [d.x, d.y]),
+        xAxisIndex: 0,
+        yAxisIndex: 0
+      }]
+    };
+
+    // Render the chart
+    chart.setOption(option);
+
+    // Resize chart on window resize
+    window.addEventListener('resize', () => {
+      chart.resize();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{scopes}
+
+\begin{document}
+
+\def\inclineang{27} % New angle for the inclined plane
+\def\down{-90}
+\def\arcrad{0.6cm} % New arc radius
+
+\begin{tikzpicture}[
+    force/.style={>=latex,draw=teal!80!black,thick,-stealth},
+    axis/.style={densely dashed,black!80,font=\small},
+    block/.style={rectangle,draw=teal!80!black,fill=cyan!30!white,minimum size=0.5cm,thick},
+    mass/.style={rectangle,draw=black!90,fill=cyan!30!white,minimum size=0.35cm,thick},
+    ramp/.style={draw=black!90,fill=teal!20},
+    rope/.style={draw=purple!80!black, thick},
+    wheel/.style={thick,draw=black!90},
+]
+
+\matrix[column sep=1.1cm] {
+    %% Schematic
+    \draw[ramp] (0,-1.3) coordinate (base)
+                     -- coordinate[pos=0.5] (mid) ++(\inclineang:3.2) coordinate (top)
+                     |- (base) -- cycle;
+    \path (mid) node[block,rotate=\inclineang,yshift=0.25cm] (A) {};
+    \draw[wheel] (top) -- ++(\inclineang:0.28) circle (0.22cm)
+                   ++ (90-\inclineang:0.55) coordinate (wheel);
+    \draw[rope] (A.east) -- ++(\inclineang:1.6cm) arc (90+\inclineang:0:0.22)
+                  -- ++(0,-1.1) node[mass] {};
+
+    \draw[->,black!80] (base)++(\arcrad,0) arc (0:\inclineang:\arcrad);
+    \path (base)++(\inclineang*0.5:\arcrad+7pt) node[font=\bfseries,black!80] {$\theta$};
+    %%
+&
+    %% Free body diagram of Block A
+    \begin{scope}[rotate=\inclineang]
+        \node[block,transform shape] (A) {};
+        % Axes
+        {[axis,->]
+            \draw (0,-1.2) -- (0,2.2) node[right] {$y'$};
+            \draw (A) -- ++(2.1,0) node[right] {$x'$};
+            % Angle indication
+            \draw[solid,shorten >=1pt,black!80] (\down-\inclineang:\arcrad)
+                arc(\down-\inclineang:\down:\arcrad);
+            \node at (\down-0.5*\inclineang:1.35*\arcrad) {$\theta$};
+        }
+        % Forces
+        {[force]
+            % Normal and other forces
+            \draw (A.center) -- ++(0,{1.08*cos(\inclineang)}) node[above right] {$F_n$};
+            \draw (A.west) -- ++(-1.1,0) node[left] {$F_{fr}$};
+            \draw (A.east) -- ++(1.1,0) node[above] {$T$};
+        }
+    \end{scope}
+    % Gravity force (not rotated)
+    \draw[force] (A.center) -- ++(0,-1.1) node[below] {$M_A g$};
+    %%
+&
+    %%%
+    % Free body diagram of hanging mass
+    \node[mass] (B) {};
+    \draw[axis,->] (B) -- ++(0,-2.2) node[left] {$z$};
+    {[force]
+        \draw (B.north) -- ++(0,1.1) node[above] {$T'$};
+        \draw (B.south) -- ++(0,-1.1) node[right] {$M_B g$};
+    }
+\\
+};
+\end{tikzpicture}
+
+\end{document}

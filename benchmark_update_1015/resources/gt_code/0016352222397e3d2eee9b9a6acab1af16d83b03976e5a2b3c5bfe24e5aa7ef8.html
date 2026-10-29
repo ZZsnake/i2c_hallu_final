@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Bar Chart: Geometry Problem Types</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-family: 'Roboto Slab', serif;
+      font-size: 22px;
+      font-weight: bold;
+      color: #21243a;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div class="echarts-title">Number of Geometry Problem Types Solved</div>
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      color: ['#1565c0'],
+      xAxis: {
+        type: 'category',
+        data: ['Triangles', 'Circles', 'Polygons', 'Angles', 'Lines'],
+        axisLabel: {
+          fontFamily: 'Roboto Mono, monospace',
+          fontSize: 15,
+          color: '#1a1a1a',
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222a45',
+            width: 3
+          }
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Problems Solved',
+        nameTextStyle: {
+          fontFamily: 'Roboto Slab, serif',
+          fontSize: 16,
+          color: '#222a45',
+          fontWeight: 'bold'
+        },
+        axisLabel: {
+          fontFamily: 'Roboto Mono, monospace',
+          fontSize: 15,
+          color: '#222a45',
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222a45',
+            width: 3
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#e0e0e0'
+          }
+        }
+      },
+      series: [
+        {
+          data: [34, 27, 19, 41, 23],
+          type: 'bar',
+          barWidth: '48%',
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(28, 126, 214, 0.12)'
+          },
+          itemStyle: {
+            borderColor: '#003366',
+            borderWidth: 2,
+            borderRadius: [4, 4, 0, 0]
+          },
+          label: {
+            show: true,
+            position: 'top',
+            fontFamily: 'Roboto Mono, monospace',
+            fontSize: 15,
+            color: '#2c2c2c',
+            fontWeight: 'bold'
+          }
+        }
+      ],
+      grid: {
+        left: '8%',
+        right: '6%',
+        top: 45,
+        bottom: 40
+      }
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GDP Growth Rate Chart</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fafafa;
+      font-family: "Segoe UI", Tahoma, Helvetica, Arial, sans-serif;
+      color: #222;
+    }
+
+    .chart-wrapper {
+      width: 90vw;
+      max-width: 1200px;
+      height: 90vh;
+      max-height: 700px;
+      background: #ffffff;
+      padding: 20px 40px 30px;
+    }
+
+    #gdpChart {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="chart-wrapper">
+    <div id="gdpChart"></div>
+  </div>
+
+  <script>
+    $(function () {
+
+      var chartDom = document.getElementById('gdpChart');
+      var myChart = echarts.init(chartDom);
+
+      var years = [
+        '2013',
+        '2014',
+        '2015',
+        '2016',
+        '2017',
+        '2018',
+        '2019',
+        '2020',
+        '2021',
+        '2022'
+      ];
+
+      // 只显示这些 Y 轴刻度数字
+      var shownYTicks = [-3, -2, 0, 2, 4, 5];
+
+      var option = {
+
+        title: {
+          text: 'GDP Growth Rate (2013–2022)',
+          left: 'center',
+          top: 10,
+          textStyle: {
+            fontSize: 16,
+            fontWeight: 600
+          }
+        },
+
+        grid: {
+          top: 80,
+          left: 70,
+          right: 40,
+          bottom: 70
+        },
+
+        legend: {
+          top: 40,
+          left: 'center',
+          itemWidth: 25,
+          itemHeight: 14,
+          textStyle: {
+            fontSize: 11,
+            fontWeight: 'bold'
+          },
+          data: [
+            'Country A',
+            'Country B',
+            'Country C'
+          ]
+        },
+
+        tooltip: {
+          trigger: 'axis',
+          valueFormatter: function (value) {
+            return value + '%';
+          }
+        },
+
+        xAxis: {
+          type: 'category',
+          data: years,
+
+          name: 'Year',
+          nameLocation: 'middle',
+          nameGap: 28,
+
+          nameTextStyle: {
+            fontSize: 11
+          },
+
+          axisLine: {
+            lineStyle: {
+              color: '#000',
+              width: 1
+            }
+          },
+
+          axisTick: {
+            alignWithLabel: true
+          },
+
+          axisLabel: {
+            fontSize: 10,
+            fontWeight: 'bold'
+          }
+        },
+
+        yAxis: {
+          type: 'value',
+
+          min: -3,
+          max: 5,
+          interval: 1,
+
+          axisLine: {
+            show: false
+          },
+
+          axisTick: {
+            show: false
+          },
+
+          /*
+           * 关闭 ECharts 自动生成的所有水平网格线。
+           *
+           * 原本会自动产生：
+           * -3, -2, -1, 0, 1, 2, 3, 4, 5
+           *
+           * 这里关闭后，再通过 markLine
+           * 手动添加需要的水平线。
+           */
+          splitLine: {
+            show: false
+          },
+
+          axisLabel: {
+            fontSize: 10,
+            fontWeight: 'bold',
+
+            formatter: function (value) {
+              return shownYTicks.indexOf(value) !== -1
+                ? value
+                : '';
+            }
+          },
+
+          name: 'GDP Growth (%)',
+          nameLocation: 'middle',
+          nameGap: 45,
+          nameRotate: 90,
+
+          nameTextStyle: {
+            fontSize: 11
+          }
+        },
+
+        series: [
+
+          /* ========================
+             Country A
+             ======================== */
+          {
+            name: 'Country A',
+
+            type: 'line',
+
+            smooth: true,
+
+            data: [
+              2.3,
+              2.7,
+              2.5,
+              2.6,
+              3.1,
+              3.4,
+              2.9,
+              -0.8,
+              2.2,
+              2.8
+            ],
+
+            symbol: 'circle',
+            symbolSize: 6,
+
+            lineStyle: {
+              width: 3,
+              color: '#1f4e94'
+            },
+
+            itemStyle: {
+              color: '#1f4e94',
+              borderColor: '#222',
+              borderWidth: 1.2
+            },
+
+            /*
+             * 手动绘制水平参考线。
+             *
+             * 虚线：
+             * y = -3
+             * y = -2
+             * y = 2
+             * y = 4
+             * y = 5
+             *
+             * 实线：
+             * y = 0
+             *
+             * 不再绘制：
+             * y = -1
+             * y = 1
+             * y = 3
+             */
+            markLine: {
+              silent: true,
+              symbol: 'none',
+
+              label: {
+                show: false
+              },
+
+              data: [
+
+                /* y = -3 */
+                {
+                  yAxis: -3,
+                  lineStyle: {
+                    color: '#dcdcdc',
+                    type: 'dashed',
+                    width: 1
+                  }
+                },
+
+                /* y = -2 */
+                {
+                  yAxis: -2,
+                  lineStyle: {
+                    color: '#dcdcdc',
+                    type: 'dashed',
+                    width: 1
+                  }
+                },
+
+                /* y = 0 */
+                {
+                  yAxis: 0,
+                  lineStyle: {
+                    color: '#000',
+                    type: 'solid',
+                    width: 1.2
+                  }
+                },
+
+                /* y = 2 */
+                {
+                  yAxis: 2,
+                  lineStyle: {
+                    color: '#dcdcdc',
+                    type: 'dashed',
+                    width: 1
+                  }
+                },
+
+                /* y = 4 */
+                {
+                  yAxis: 4,
+                  lineStyle: {
+                    color: '#dcdcdc',
+                    type: 'dashed',
+                    width: 1
+                  }
+                },
+
+                /* y = 5 */
+                {
+                  yAxis: 5,
+                  lineStyle: {
+                    color: '#dcdcdc',
+                    type: 'dashed',
+                    width: 1
+                  }
+                }
+
+              ]
+            }
+          },
+
+
+          /* ========================
+             Country B
+             ======================== */
+          {
+            name: 'Country B',
+
+            type: 'line',
+
+            smooth: true,
+
+            data: [
+              1.8,
+              2.0,
+              2.2,
+              1.9,
+              2.3,
+              2.6,
+              2.4,
+              -1.2,
+              1.7,
+              2.1
+            ],
+
+            symbol: 'circle',
+            symbolSize: 6,
+
+            lineStyle: {
+              width: 3,
+              color: '#d95b2b'
+            },
+
+            itemStyle: {
+              color: '#d95b2b',
+              borderColor: '#222',
+              borderWidth: 1.2
+            }
+          },
+
+
+          /* ========================
+             Country C
+             ======================== */
+          {
+            name: 'Country C',
+
+            type: 'line',
+
+            smooth: true,
+
+            data: [
+              3.0,
+              3.1,
+              2.8,
+              2.9,
+              3.5,
+              3.8,
+              3.2,
+              -2.0,
+              2.9,
+              3.0
+            ],
+
+            symbol: 'circle',
+            symbolSize: 6,
+
+            lineStyle: {
+              width: 3,
+              color: '#1f8a3b'
+            },
+
+            itemStyle: {
+              color: '#1f8a3b',
+              borderColor: '#222',
+              borderWidth: 1.2
+            }
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+
+    });
+  </script>
+
+</body>
+</html>

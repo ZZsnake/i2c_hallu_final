@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566 403">
+  <!-- Nodes -->
+  <circle cx="120.5" cy="271.5" r="40" fill="#e0f8e0" stroke="#187733" stroke-width="3.5"/>
+  <circle cx="280.5" cy="41.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="444.5" cy="121.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="41.5" cy="201.5" r="40" fill="#fff" stroke="#951e1e" stroke-width="3.5"/>
+  <circle cx="201.5" cy="201.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="281.5" cy="281.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="364.5" cy="201.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="524.5" cy="201.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="201.5" cy="361.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="360.5" cy="361.5" r="40" fill="#fff" stroke="#22227a" stroke-width="3.5"/>
+  <circle cx="121.5" cy="121.5" r="40" fill="#e0e7ff" stroke="#3337b8" stroke-width="3.5"/>
+  <!-- Relationships (edges/arrows) -->
+  <path d="M253.5,70.5l-93,21.7" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M94.5,150.5,77.7,167.3" transform="translate(-1 -1)" fill="none" stroke="#951e1e" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M72.1,172.9l2.8-8.5,5.7,5.7Z" transform="translate(-1 -1)" fill="#951e1e" stroke="#951e1e" stroke-width="2.5"/>
+  <path d="M150.5,150.5l16.8,16.8" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M172.9,172.9l-8.5-2.8,5.7-5.7Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M230.5,230.5l16.8,16.8" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M252.9,252.9l-8.5-2.8,5.7-5.7Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M254.5,310.5l-16.8,16.8" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M232.1,332.9l2.8-8.5,5.7,5.7Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M310.5,310.5l15.9,16.6" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M332,332.9l-8.4-3,5.8-5.5Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M417.5,150.5l-16.8,16.8" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M395.1,172.9l2.8-8.5,5.7,5.7Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M473.5,150.5l16.8,16.8" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M495.9,172.9l-8.5-2.8,5.7-5.7Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M309.5,70.5l98,21.8" transform="translate(-1 -1)" fill="none" stroke="#22227a" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M415.3,94l-8.7,2.2,1.7-7.8Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M70.5,230.5l12.2,10.4" transform="translate(-1 -1)" fill="none" stroke="#951e1e" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <path d="M152.7,94l6.9-5.7,1.8,7.8Z" transform="translate(-1 -1)" stroke="#22227a" stroke-width="2.5"/>
+  <path d="M88.8,246.1l-8.7-2.1,5.2-6.1Z" transform="translate(-1 -1)" fill="#951e1e" stroke="#951e1e" stroke-width="2.5"/>
+  <line x1="93.5" y1="91.3" x2="149.5" y2="149.5" fill="none" stroke="#3337b8" stroke-width="3.5" stroke-dasharray="2,4"/>
+  <line x1="93.5" y1="149.5" x2="149.5" y2="92.9" fill="none" stroke="#3337b8" stroke-width="3.5" stroke-dasharray="2,4"/>
+  <!-- Node labels -->
+  <text x="95" y="280" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Database</text>
+  <text x="280" y="46" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Algorithm</text>
+  <text x="444" y="126" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Networking</text>
+  <text x="41" y="206" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Security</text>
+  <text x="201" y="206" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Programming</text>
+  <text x="281" y="286" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Operating System</text>
+  <text x="364" y="206" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Data Structure</text>
+  <text x="524" y="206" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Cloud</text>
+  <text x="201" y="366" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">AI</text>
+  <text x="360" y="366" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Machine Learning</text>
+  <text x="121" y="126" font-family="Verdana" font-size="18" font-weight="bold" fill="#222" text-anchor="middle">Web</text>
+</svg>

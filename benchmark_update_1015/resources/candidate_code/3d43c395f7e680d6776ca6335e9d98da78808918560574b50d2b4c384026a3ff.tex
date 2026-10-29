@@ -1,0 +1,51 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=0.8]
+    % Draw the Earth's surface
+    \draw[fill=blue!10] (0,0) circle (6.37);
+    
+    % Draw the 25th parallel
+    \draw[fill=orange!20] (0,0) -- (0,6.37) arc (90:-90:6.37) -- cycle;
+    
+    % Draw the meridian
+    \draw[thick] (0,0) -- (0,6.37);
+    
+    % Label the meridian
+    \node at (0,6.37) [above] {N};
+    
+    % Draw the chord representing the distance between Burdsch and Mileiha
+    \draw[thick, green] (0,0) -- (6.37,0) node [midway, above] {6370 km};
+    
+    % Label the chord
+    \node at (6.37,0) [right] {Mileiha};
+    
+    % Draw the chord representing the distance between Chalifa and Mileiha
+    \draw[thick, green] (0,0) -- (6.37*cos(25),6.37*sin(25)) node [midway, above] {6370 km};
+    
+    % Label the chord
+    \node at (6.37*cos(25),6.37*sin(25)) [above] {Chalifa};
+    
+    % Draw the chord representing the distance between Burdsch and Chalifa
+    \draw[thick, green] (0,0) -- (6.37*cos(25),0) node [midway, above] {6370 km};
+    
+    % Label the chord
+    \node at (6.37*cos(25),0) [above] {Burdsch};
+    
+    % Draw the angle
+    \draw[thick, gray] (6.37*cos(25),6.37*sin(25)) -- (6.37*cos(25),0) -- (6.37*cos(25),6.37*sin(25)) node [midway, right] {25°};
+    
+    % Label the angle
+    \node at (6.37*cos(25),6.37*sin(25)) [above right] {25°};
+    
+    % Draw the 25th parallel label
+    \draw[thick, dashed] (0,0) -- (6.37*cos(25),6.37*sin(25)) node [midway, left] {25. Breitengrad};
+    
+    % Label the 25th parallel
+    \node at (6.37*cos(25),6.37*sin(25)) [above left] {25. Breitengrad};
+\end{tikzpicture}
+
+\end{document}

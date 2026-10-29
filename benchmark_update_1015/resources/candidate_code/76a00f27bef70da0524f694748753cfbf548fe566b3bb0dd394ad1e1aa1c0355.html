@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Activity Preferences (Survey)</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+    }
+
+    header {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .year-sections {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .year-container {
+      width: 250px;
+      text-align: center;
+    }
+
+    .year-label {
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 0.9em;
+    }
+
+    .chart-container {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .chart-label {
+      margin-top: 10px;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <header>Community Activity Preferences (Survey)</header>
+
+  <div class="year-sections">
+    <!-- Year 2021 -->
+    <div class="year-container">
+      <div class="year-label">Year: 2021</div>
+      <div id="chart-2021" class="chart-container"></div>
+      <div class="chart-label">Painting — Volunteering<br>Book Club — Gardening — Yoga</div>
+    </div>
+
+    <!-- Year 2022 -->
+    <div class="year-container">
+      <div class="year-label">Year: 2022</div>
+      <div id="chart-2022" class="chart-container"></div>
+      <div class="chart-label">Painting — Volunteering<br>Book Club — Gardening — Yoga</div>
+    </div>
+
+    <!-- Year 2023 -->
+    <div class="year-container">
+      <div class="year-label">Year: 2023</div>
+      <div id="chart-2023" class="chart-container"></div>
+      <div class="chart-label">Painting — Volunteering<br>Book Club — Gardening — Yoga</div>
+    </div>
+  </div>
+
+  <script>
+    // Data for pie charts (same for all years as per image)
+    const pieData = [
+      { value: 20, name: 'Painting', itemStyle: { color: '#6a0dad' } },
+      { value: 30, name: 'Volunteering', itemStyle: { color: '#1e56b7' } },
+      { value: 15, name: 'Book Club', itemStyle: { color: '#f5a623' } },
+      { value: 20, name: 'Gardening', itemStyle: { color: '#3cb371' } },
+      { value: 15, name: 'Yoga', itemStyle: { color: '#b22222' } }
+    ];
+
+    // Chart options
+    const option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      },
+      legend: {
+        show: false
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: '70%',
+          center: ['50%', '50%'],
+          data: pieData,
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.1)'
+            }
+          },
+          label: {
+            show: true,
+            position: 'outside',
+            distance: 10,
+            fontSize: 12,
+            color: '#000',
+            formatter: '{b}',
+            connectorLine: {
+              show: true,
+              length: 20,
+              strokeDashArray: 0,
+              color: '#000'
+            }
+          }
+        }
+      ]
+    };
+
+    // Initialize charts
+    const chart2021 = echarts.init(document.getElementById('chart-2021'));
+    const chart2022 = echarts.init(document.getElementById('chart-2022'));
+    const chart2023 = echarts.init(document.getElementById('chart-2023'));
+
+    chart2021.setOption(option);
+    chart2022.setOption(option);
+    chart2023.setOption(option);
+
+    // Resize on window resize
+    window.addEventListener('resize', function () {
+      chart2021.resize();
+      chart2022.resize();
+      chart2023.resize();
+    });
+  </script>
+</body>
+</html>

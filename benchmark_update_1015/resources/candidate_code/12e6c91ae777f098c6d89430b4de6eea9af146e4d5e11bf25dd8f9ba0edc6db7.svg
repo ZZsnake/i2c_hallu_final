@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Background with border -->
+  <rect x="2" y="2" width="116" height="116" fill="#888888" stroke="#000000" stroke-width="4"/>
+
+  <!-- Venn circles -->
+  <circle cx="45" cy="45" r="25" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+  <circle cx="75" cy="45" r="25" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+  <circle cx="60" cy="75" r="25" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+
+  <!-- Central triple-overlap region (approximation) -->
+  <circle cx="60" cy="48" r="12" fill="#333333"/>
+
+  <!-- Labels: light cyan, low contrast -->
+  <text x="38" y="42" font-family="sans-serif" font-size="8" fill="#c0ffff" opacity="0.7">A</text>
+  <text x="72" y="42" font-family="sans-serif" font-size="8" fill="#c0ffff" opacity="0.7">B</text>
+  <text x="56" y="80" font-family="sans-serif" font-size="8" fill="#c0ffff" opacity="0.7">C</text>
+
+  <!-- Pairwise intersection hints -->
+  <text x="49" y="58" font-family="sans-serif" font-size="7" fill="#c0ffff" opacity="0.4">AC</text>
+  <text x="66" y="58" font-family="sans-serif" font-size="7" fill="#c0ffff" opacity="0.4">BC</text>
+</svg>

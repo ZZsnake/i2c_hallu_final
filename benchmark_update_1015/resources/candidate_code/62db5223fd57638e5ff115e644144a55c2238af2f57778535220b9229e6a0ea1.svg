@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <!-- Antenna -->
+  <path d="M40 40 L80 80 L40 120 L0 80 Z" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Plus Circle -->
+  <circle cx="120" cy="100" r="20" fill="none" stroke="black" stroke-width="2"/>
+  <line x1="110" y1="100" x2="130" y2="100" stroke="black" stroke-width="2"/>
+  <line x1="120" y1="90" x2="120" y2="110" stroke="black" stroke-width="2"/>
+  
+  <!-- Bandpass Filter -->
+  <rect x="150" y="70" width="80" height="60" fill="#AFEBE6" stroke="black" stroke-width="2"/>
+  <path d="M160 90 Q170 110 180 90 T200 90" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M160 110 Q170 90 180 110 T200 110" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- RF Amplifier & Detector -->
+  <polygon points="260 70 320 100 260 130" fill="#FFC0CB" stroke="black" stroke-width="2"/>
+  <text x="300" y="105" font-family="Arial" font-size="16">A</text>
+  
+  <!-- Audio Amplifier -->
+  <polygon points="350 100 410 70 410 130" fill="#C1E1C1" stroke="black" stroke-width="2"/>
+  <text x="420" y="105" font-family="Arial" font-size="16">Audio Amplifier</text>
+  
+  <!-- Speaker -->
+  <rect x="420" y="80" width="20" height="40" fill="none" stroke="black" stroke-width="2"/>
+  <polygon points="440 80 460 100 440 120" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Feedback Network -->
+  <rect x="150" y="200" width="100" height="60" fill="#AFEBE6" stroke="black" stroke-width="2"/>
+  <text x="170" y="235" font-family="Arial" font-size="20" font-style="italic">β</text>
+  
+  <!-- Connections -->
+  <path d="M80 80 H100" stroke="black" stroke-width="2"/>
+  <path d="M140 100 H150" stroke="black" stroke-width="2"/>
+  <path d="M230 100 H260" stroke="black" stroke-width="2"/>
+  <path d="M320 100 H350" stroke="black" stroke-width="2"/>
+  <path d="M320 100 V200 H170 V160" stroke="black" stroke-width="2"/>
+  
+  <!-- Labels -->
+  <text x="160" y="50" font-family="Arial" font-size="16">Bandpass Filter</text>
+  <text x="260" y="50" font-family="Arial" font-size="16">RF Amplifier & Detector</text>
+  <text x="150" y="280" font-family="Arial" font-size="16">Feedback Network</text>
+</svg>

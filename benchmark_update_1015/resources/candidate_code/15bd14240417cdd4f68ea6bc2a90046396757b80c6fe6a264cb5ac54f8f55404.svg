@@ -1,0 +1,70 @@
+<svg width="400" height="400" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    circle {
+      fill: none;
+      stroke: black;
+      stroke-width: 0.5;
+    }
+  </style>
+
+  <!-- Outer large circle -->
+  <circle cx="50" cy="50" r="49.5" />
+
+  <!-- Medium circles -->
+  <!-- Let R be the radius of the large circle (approx 50) -->
+  <!-- Let r_m be the radius of the medium circles -->
+  <!-- The centers of the medium circles form an equilateral triangle. -->
+  <!-- The distance from the center of the large circle to the center of a medium circle is R - r_m -->
+  <!-- The distance between centers of two medium circles is 2 * r_m -->
+  <!-- In an equilateral triangle, the distance from the centroid to a vertex is 2/3 of the median length. -->
+  <!-- Or, more simply, the distance from the center of the large circle to the center of a medium circle is (2/sqrt(3)) * r_m -->
+  <!-- So, R - r_m = (2/sqrt(3)) * r_m -->
+  <!-- R = r_m * (1 + 2/sqrt(3)) -->
+  <!-- r_m = R / (1 + 2/sqrt(3)) = R / ((sqrt(3)+2)/sqrt(3)) = R * sqrt(3) / (sqrt(3)+2) -->
+  <!-- r_m = 50 * 1.732 / (1.732 + 2) = 50 * 1.732 / 3.732 = 50 * 0.464 = 23.2 -->
+  <!-- Let's use a more precise calculation: r_m = R * (2*sqrt(3) - 3) / 3 -->
+  <!-- r_m = 50 * (2*1.73205 - 3) / 3 = 50 * (3.4641 - 3) / 3 = 50 * 0.4641 / 3 = 50 * 0.1547 = 7.735 -->
+  <!-- This is incorrect. Let's re-evaluate. -->
+  <!-- The centers of the three medium circles form an equilateral triangle. Let its side length be 's'. -->
+  <!-- s = 2 * r_m -->
+  <!-- The distance from the center of the large circle (50,50) to the center of a medium circle is 'd'. -->
+  <!-- d = R - r_m -->
+  <!-- For an equilateral triangle with side 's', the distance from its centroid to a vertex is s / sqrt(3). -->
+  <!-- So, d = s / sqrt(3) = (2 * r_m) / sqrt(3) -->
+  <!-- R - r_m = (2 * r_m) / sqrt(3) -->
+  <!-- R = r_m * (1 + 2/sqrt(3)) -->
+  <!-- r_m = R / (1 + 2/sqrt(3)) = R / ((sqrt(3)+2)/sqrt(3)) = R * sqrt(3) / (sqrt(3)+2) -->
+  <!-- r_m = 49.5 * 1.73205 / (1.73205 + 2) = 49.5 * 1.73205 / 3.73205 = 49.5 * 0.46409 = 22.972 -->
+  <!-- Let's approximate r_m = 23 -->
+  <g id="medium-circles">
+    <circle cx="50" cy="27" r="23" /> <!-- Top medium circle -->
+    <circle cx="29.02" cy="60.5" r="23" /> <!-- Bottom-left medium circle -->
+    <circle cx="70.98" cy="60.5" r="23" /> <!-- Bottom-right medium circle -->
+  </g>
+
+  <!-- Small circles within each medium circle -->
+  <!-- Let r_m be the radius of a medium circle (approx 23) -->
+  <!-- Let r_s be the radius of the small circles -->
+  <!-- Using the same ratio as above: r_s = r_m * sqrt(3) / (sqrt(3)+2) -->
+  <!-- r_s = 23 * 0.46409 = 10.674 -->
+  <!-- Let's approximate r_s = 10.7 -->
+  <g id="small-circles">
+    <!-- Group 1: Top medium circle (center 50, 27) -->
+    <circle cx="50" cy="27" r="10.7" /> <!-- Center small circle -->
+    <circle cx="50" cy="16.3" r="10.7" /> <!-- Top small circle -->
+    <circle cx="40.75" cy="32.35" r="10.7" /> <!-- Bottom-left small circle -->
+    <circle cx="59.25" cy="32.35" r="10.7" /> <!-- Bottom-right small circle -->
+
+    <!-- Group 2: Bottom-left medium circle (center 29.02, 60.5) -->
+    <circle cx="29.02" cy="60.5" r="10.7" /> <!-- Center small circle -->
+    <circle cx="29.02" cy="49.8" r="10.7" /> <!-- Top small circle -->
+    <circle cx="19.77" cy="65.85" r="10.7" /> <!-- Bottom-left small circle -->
+    <circle cx="38.27" cy="65.85" r="10.7" /> <!-- Bottom-right small circle -->
+
+    <!-- Group 3: Bottom-right medium circle (center 70.98, 60.5) -->
+    <circle cx="70.98" cy="60.5" r="10.7" /> <!-- Center small circle -->
+    <circle cx="70.98" cy="49.8" r="10.7" /> <!-- Top small circle -->
+    <circle cx="61.73" cy="65.85" r="10.7" /> <!-- Bottom-left small circle -->
+    <circle cx="80.23" cy="65.85" r="10.7" /> <!-- Bottom-right small circle -->
+  </g>
+</svg>

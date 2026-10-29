@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frequency of Algebraic Expressions</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .chart-container {
+      width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    #main {
+      width: 100%;
+      height: 400px;
+    }
+    .grid-line {
+      stroke: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chart-container">
+    <h2>Frequency of Algebraic Expressions</h2>
+    <div id="main"></div>
+  </div>
+
+  <script>
+    $(function() {
+      var chartDom = document.getElementById('main');
+      var myChart = echarts.init(chartDom);
+      var option = {
+        xAxis: {
+          type: 'value',
+          min: -3,
+          max: 12,
+          axisLine: {
+            lineStyle: {
+              color: '#ccc'
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              type: 'solid',
+              color: '#ddd'
+            }
+          }
+        },
+        yAxis: {
+          type: 'category',
+          data: ['s² - s', 'r + 1', 't', 'm - 4', 'v/n', 'p/q', '5z', 'a² + b²', '2y - 3', 'x + 2'],
+          axisLine: {
+            lineStyle: {
+              color: '#ccc'
+            }
+          }
+        },
+        series: [{
+          name: 'Frequency',
+          type: 'bar',
+          data: [10, -1, 6, 0, 9, -2, 4, 12, -3, 7],
+          itemStyle: {
+            color: function(params) {
+              return params.value >= 0 ? '#5470c6' : '#e91e63';
+            }
+          }
+        }]
+      };
+      myChart.setOption(option);
+    });
+  </script>
+
+</body>
+</html>

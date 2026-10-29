@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Box Plot: Math Test Scores</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      font-family: 'Roboto', 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    // Dummy math test scores for box plot
+    var data = [
+      [65, 78, 80, 92, 95], // [min, Q1, median, Q3, max]
+      [70, 74, 82, 88, 94],
+      [60, 69, 75, 85, 90],
+      [68, 72, 77, 84, 89]
+    ];
+
+    var option = {
+      title: {
+        text: 'Box Chart of Math Test Scores',
+        left: 'center',
+        textStyle: {
+          color: '#1a1a1a',
+          fontWeight: 'bold',
+          fontFamily: 'Roboto, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: '#ffffff',
+        borderColor: '#333366',
+        borderWidth: 2,
+        textStyle: {
+          color: '#222266',
+          fontWeight: 'bold'
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Class A', 'Class B', 'Class C', 'Class D'],
+        axisLine: {
+          lineStyle: {
+            color: '#222266',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#222266',
+          fontWeight: 'bold',
+          fontSize: 14,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Score',
+        nameTextStyle: {
+          color: '#222266',
+          fontWeight: 'bold',
+          fontSize: 16,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222266',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#222266',
+          fontWeight: 'bold',
+          fontSize: 14,
+          fontFamily: 'Roboto, Arial, sans-serif'
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#bbbbbb',
+            width: 1
+          }
+        }
+      },
+      series: [{
+        name: 'Math Scores',
+        type: 'boxplot',
+        data: data,
+        itemStyle: {
+          color: '#2e86de',
+          borderColor: '#0c2461',
+          borderWidth: 3
+        },
+        boxWidth: [30, 50], // min-max px
+        emphasis: {
+          itemStyle: {
+            borderColor: '#ea2027',
+            borderWidth: 4
+          }
+        }
+      }]
+    };
+
+    myChart.setOption(option);
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

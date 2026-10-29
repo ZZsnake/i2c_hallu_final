@@ -1,0 +1,45 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <style>
+      .label {
+        font-family: sans-serif;
+        font-size: 12px;
+        fill: black;
+      }
+    </style>
+  </defs>
+
+  <!-- Cell Body -->
+  <ellipse cx="100" cy="150" rx="50" ry="30" fill="#a0c49d" stroke="black" stroke-width="1"/>
+
+  <!-- Dendrites -->
+  <path d="M50 130 C 30 100, 30 180, 50 160" stroke="#a0c49d" stroke-width="3" fill="none"/>
+  <path d="M50 170 C 20 140, 20 200, 50 190" stroke="#a0c49d" stroke-width="3" fill="none"/>
+  <path d="M50 110 C 10 80, 10 140, 50 130" stroke="#a0c49d" stroke-width="3" fill="none"/>
+
+  <!-- Nucleus -->
+  <circle cx="100" cy="150" r="10" fill="#8b4513"/>
+
+  <!-- Axon -->
+  <path d="M150 150 C 200 150, 300 150, 400 150" stroke="black" stroke-width="3" fill="none"/>
+
+  <!-- Myelin Sheath and Nodes of Ranvier -->
+  <rect x="200" y="140" width="40" height="20" fill="#6495ed" stroke="black" stroke-width="1"/>
+  <rect x="250" y="140" width="40" height="20" fill="#6495ed" stroke="black" stroke-width="1"/>
+  <rect x="300" y="140" width="40" height="20" fill="#6495ed" stroke="black" stroke-width="1"/>
+  <rect x="350" y="140" width="40" height="20" fill="#6495ed" stroke="black" stroke-width="1"/>
+
+  <!-- Axon Terminal -->
+  <path d="M440 150 C 460 130, 460 170, 440 160" stroke="black" stroke-width="3" fill="none"/>
+  <path d="M440 150 C 480 140, 480 160, 440 150" stroke="black" stroke-width="3" fill="none"/>
+
+  <!-- Labels -->
+  <text x="20" y="140" class="label">Dendrite</text>
+  <text x="70" y="140" class="label">Cell body</text>
+  <text x="80" y="130" class="label">Nucleus</text>
+  <text x="170" y="130" class="label">Axon</text>
+  <text x="220" y="130" class="label">Myelin sheath</text>
+  <text x="270" y="130" class="label">Node of Ranvier</text>
+  <text x="400" y="130" class="label">Axon Terminal</text>
+  <text x="220" y="160" class="label">Schwann cell</text>
+</svg>

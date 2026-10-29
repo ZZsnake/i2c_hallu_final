@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .chart-container {
+            width: 90%;
+            max-width: 1200px;
+            height: 600px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .echarts {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="chart-container" id="mainChart"></div>
+
+    <script>
+        var myChart = echarts.init(document.getElementById('mainChart'));
+        var option = {
+            title: {
+                text: 'Distribution of Primes and Composites (1-100)',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: { type: 'shadow' }
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['Primes', 'Composites']
+            },
+            xAxis: {
+                type: 'category',
+                data: ['1-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70', '71-80', '81-90', '91-100'],
+                axisLabel: {
+                    interval: 0,
+                    formatter: function(value) {
+                        return value.split('-')[0];
+                    }
+                }
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: 'Primes',
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    },
+                    data: [4, 4, 2, 2, 3, 2, 2, 3, 2, 1],
+                    itemStyle: {
+                        color: '#5473e8'
+                    }
+                },
+                {
+                    name: 'Composites',
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    },
+                    data: [6, 6, 6, 6, 4, 6, 6, 4, 6, 9],
+                    itemStyle: {
+                        color: '#ff4569'
+                    }
+                }
+            ]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

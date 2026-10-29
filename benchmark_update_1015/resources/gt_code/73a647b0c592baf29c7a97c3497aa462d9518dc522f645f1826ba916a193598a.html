@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Geography - River Flow Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #191919;
+    }
+    #container {
+      height: 100%;
+    }
+    .echarts-legend {
+      font-weight: 600;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // --- Updated JS Code for Geography: River Flow Comparison ---
+    const colors = ['#1B5E20', '#1565C0']; // Deep green and vivid blue
+    option = {
+      color: colors,
+      tooltip: {
+        trigger: 'none',
+        axisPointer: {
+          type: 'cross'
+        }
+      },
+      legend: {
+        textStyle: {
+          color: '#232323',
+          fontWeight: 'bold',
+          fontSize: 15
+        }
+      },
+      grid: {
+        top: 70,
+        bottom: 55,
+        left: 60,
+        right: 30
+      },
+      title: {
+        text: 'Monthly River Flow: Amazon vs. Nile',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#232323',
+          fontWeight: 700,
+          fontSize: 20,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      xAxis: [
+        {
+          type: 'category',
+          axisTick: {
+            alignWithLabel: true
+          },
+          axisLine: {
+            onZero: false,
+            lineStyle: {
+              color: colors[1],
+              width: 3
+            }
+          },
+          axisLabel: {
+            color: '#232323',
+            fontWeight: 600,
+            fontSize: 13
+          },
+          axisPointer: {
+            label: {
+              formatter: function (params) {
+                return (
+                  'Amazon River, ' +
+                  params.value +
+                  (params.seriesData.length ? ': ' + params.seriesData[0].data + ' m³/s' : '')
+                );
+              }
+            }
+          },
+          data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        {
+          type: 'category',
+          axisTick: {
+            alignWithLabel: true
+          },
+          axisLine: {
+            onZero: false,
+            lineStyle: {
+              color: colors[0],
+              width: 3
+            }
+          },
+          axisLabel: {
+            color: '#232323',
+            fontWeight: 600,
+            fontSize: 13
+          },
+          axisPointer: {
+            label: {
+              formatter: function (params) {
+                return (
+                  'Nile River, ' +
+                  params.value +
+                  (params.seriesData.length ? ': ' + params.seriesData[0].data + ' m³/s' : '')
+                );
+              }
+            }
+          },
+          data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: 'Discharge (m³/s)',
+          nameTextStyle: {
+            color: '#232323',
+            fontWeight: 600,
+            fontSize: 14
+          },
+          axisLabel: {
+            color: '#232323',
+            fontWeight: 500,
+            fontSize: 13
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#CCCCCC'
+            }
+          }
+        }
+      ],
+      series: [
+        {
+          name: 'Nile River (2023)',
+          type: 'line',
+          xAxisIndex: 1,
+          smooth: true,
+          symbol: 'circle',
+          symbolSize: 8,
+          lineStyle: {
+            width: 4
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          data: [
+            2560, 2400, 2350, 2220, 2050, 1920, 1850, 1870, 1900, 2010, 2180, 2450
+          ]
+        },
+        {
+          name: 'Amazon River (2023)',
+          type: 'line',
+          smooth: true,
+          symbol: 'triangle',
+          symbolSize: 8,
+          lineStyle: {
+            width: 4
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          data: [
+            180000, 175000, 170000, 165000, 162000, 158000, 155000, 160000, 170000, 178000, 182000, 185000
+          ]
+        }
+      ]
+    };
+
+    // --- End of Updated JS Code ---
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

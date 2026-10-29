@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150">
+  <!-- Left Circuit -->
+  <!-- Top horizontal line with S2 and C -->
+  <line x1="20" y1="30" x2="60" y2="30" stroke="black" stroke-width="1"/>
+  <line x1="75" y1="30" x2="120" y2="30" stroke="black" stroke-width="1"/>
+  <line x1="135" y1="30" x2="155" y2="30" stroke="black" stroke-width="1"/>
+  
+  <!-- S2 switch -->
+  <line x1="60" y1="30" x2="70" y2="22" stroke="black" stroke-width="1"/>
+  <circle cx="60" cy="30" r="1.5" fill="black"/>
+  <circle cx="75" cy="30" r="1.5" fill="black"/>
+  <text x="48" y="15" font-family="serif" font-size="10" font-style="italic">S</text>
+  <text x="56" y="18" font-family="serif" font-size="7">2</text>
+  
+  <!-- Capacitor C (top) -->
+  <line x1="120" y1="23" x2="120" y2="37" stroke="black" stroke-width="1.5"/>
+  <line x1="125" y1="23" x2="125" y2="37" stroke="black" stroke-width="1.5"/>
+  <text x="117" y="15" font-family="serif" font-size="10" font-style="italic">C</text>
+  
+  <!-- Right vertical line -->
+  <line x1="155" y1="30" x2="155" y2="120" stroke="black" stroke-width="1"/>
+  
+  <!-- Left vertical line to S1 -->
+  <line x1="20" y1="30" x2="20" y2="70" stroke="black" stroke-width="1"/>
+  
+  <!-- S1 switch -->
+  <line x1="20" y1="70" x2="20" y2="85" stroke="black" stroke-width="1"/>
+  <line x1="20" y1="85" x2="20" y2="100" stroke="black" stroke-width="1"/>
+  <circle cx="20" cy="85" r="1.5" fill="black"/>
+  <circle cx="20" cy="100" r="1.5" fill="black"/>
+  <line x1="20" y1="100" x2="20" y2="120" stroke="black" stroke-width="1"/>
+  <text x="8" y="90" font-family="serif" font-size="10" font-style="italic">S</text>
+  <text x="16" y="93" font-family="serif" font-size="7">1</text>
+  
+  <!-- Inductor L (middle) -->
+  <line x1="70" y1="75" x2="85" y2="75" stroke="black" stroke-width="1"/>
+  <path d="M 85 75 Q 88 70 91 75 Q 94 80 97 75 Q 100 70 103 75 Q 106 80 109 75 Q 112 70 115 75" 
+        fill="none" stroke="black" stroke-width="1"/>
+  <line x1="115" y1="75" x2="130" y2="75" stroke="black" stroke-width="1"/>
+  <text x="95" y="68" font-family="serif" font-size="10" font-style="italic">L</text>
+  
+  <!-- Horizontal lines connecting to inductor -->
+  <line x1="20" y1="75" x2="70" y2="75" stroke="black" stroke-width="1"/>
+  <line x1="130" y1="75" x2="155" y2="75" stroke="black" stroke-width="1"/>
+  
+  <!-- Bottom horizontal line with R and source -->
+  <line x1="20" y1="120" x2="50" y2="120" stroke="black" stroke-width="1"/>
+  <line x1="90" y1="120" x2="120" y2="120" stroke="black" stroke-width="1"/>
+  <line x1="135" y1="120" x2="155" y2="120" stroke="black" stroke-width="1"/>
+  
+  <!-- Resistor R -->
+  <path d="M 50 120 L 55 115 L 60 125 L 65 115 L 70 125 L 75 115 L 80 125 L 85 115 L 90 120" 
+        fill="none" stroke="black" stroke-width="1"/>
+  <text x="65" y="138" font-family="serif" font-size="10" font-style="italic">R</text>
+  
+  <!-- Battery source -->
+  <line x1="120" y1="110" x2="120" y2="130" stroke="black" stroke-width="1.5"/>
+  <line x1="135" y1="114" x2="135" y2="126" stroke="black" stroke-width="1.5"/>
+  <text x="122" y="138" font-family="serif" font-size="10" font-style="italic">ε</text>
+  
+  <!-- Right Circuit -->
+  <!-- Top horizontal line with C -->
+  <line x1="225" y1="30" x2="250" y2="30" stroke="black" stroke-width="1"/>
+  <line x1="265" y1="30" x2="290" y2="30" stroke="black" stroke-width="1"/>
+  
+  <!-- Capacitor C -->
+  <line x1="250" y1="23" x2="250" y2="37" stroke="black" stroke-width="1.5"/>
+  <line x1="255" y1="23" x2="255" y2="37" stroke="black" stroke-width="1.5"/>
+  <text x="257" y="15" font-family="serif" font-size="10" font-style="italic">C</text>
+  
+  <!-- Vertical lines -->
+  <line x1="225" y1="30" x2="225" y2="90" stroke="black" stroke-width="1"/>
+  <line x1="290" y1="30" x2="290" y2="90" stroke="black" stroke-width="1"/>
+  
+  <!-- Bottom horizontal line with L -->
+  <line x1="225" y1="90" x2="250" y2="90" stroke="black" stroke-width="1"/>
+  <line x1="290" y1="90" x2="275" y2="90" stroke="black" stroke-width="1"/>
+  
+  <!-- Inductor L -->
+  <path d="M 250 90 Q 252.5 84 255 90 Q 257.5 84 260 90 Q 262.5 84 265 90 Q 267.5 84 270 90 Q 272.5 84 275 90" 
+        fill="none" stroke="black" stroke-width="1"/>
+  <text x="265" y="108" font-family="serif" font-size="10" font-style="italic">L</text>
+</svg>

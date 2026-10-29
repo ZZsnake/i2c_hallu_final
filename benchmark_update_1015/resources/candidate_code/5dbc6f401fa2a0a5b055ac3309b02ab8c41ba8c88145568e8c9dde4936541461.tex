@@ -1,0 +1,52 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix, shapes, arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}
+% Define colors
+\definecolor{headerblue}{RGB}{0,0,102}
+\definecolor{lightblue}{RGB}{230,243,255}
+
+% Create matrix for the table
+\matrix (m) [matrix of nodes,
+             nodes={align=center, text width=2.5cm, minimum height=1cm, font=\sffamily\footnotesize},
+             column 1/.style={nodes={align=left, text width=3.5cm}},
+             row 1/.style={nodes={fill=headerblue, text=white, font=\sffamily\bfseries\footnotesize}},
+             row 2/.style={nodes={fill=lightblue}},
+             row 3/.style={nodes={fill=lightblue}},
+             row 4/.style={nodes={fill=lightblue}},
+             row 5/.style={nodes={fill=lightblue}},
+             row 6/.style={nodes={fill=lightblue}},
+             column sep=-\pgflinewidth,
+             row sep=-\pgflinewidth,
+             inner sep=0pt,
+             nodes in empty cells,
+             every outer xsep=0pt,
+             every outer ysep=0pt,
+             draw=black,
+             thick,
+             inner sep=0.5mm,
+             ] {
+    \textbf{School} & \textbf{Parent Engagement} & \textbf{Avg. GPA} & \textbf{Attendance} & \textbf{Test Scores (M/R/S)} & \textbf{Rehab. Program} \\
+    Lincoln High School & 85 & 3.6 & 95\% & 720/710/730 & 15\% \\
+    Roosevelt High School & 78 & 3.2 & 92\% & 680/675/690 & 22\% \\
+    Washington Academy & \textbf{90} & \textbf{3.8} & \textbf{97\%} & \textbf{740/735/750} & 10\% \\
+    Jefferson High School & 65 & 2.9 & 88\% & 650/640/660 & \textbf{30\%} \\
+    Madison Prep & 82 & 3.5 & 93\% & 700/685/710 & 18\% \\
+};
+
+% Add vertical lines between columns
+\foreach \i in {2,3,4,5,6} {
+    \draw[thick] (m-1-\i.north west) -- (m-6-\i.south west);
+}
+
+% Add horizontal lines
+\draw[thick, double distance=1pt] (m-1-1.north west) -- (m-1-6.north east);
+\draw[thick] (m-6-1.south west) -- (m-6-6.south east);
+
+% Add bold formatting for highest values (already handled in matrix content)
+
+% Optional: Add extra spacing or styling if needed
+\end{tikzpicture}
+\end{document}

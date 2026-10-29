@@ -1,0 +1,33 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC}
+
+\begin{document}
+\begin{tikzpicture}[circuit ee IEC, small circuit symbols, set resistor graphic=var resistor IEC graphic, set inductor graphic=var inductor IEC graphic, set capacitor graphic=var capacitor IEC graphic, font=\sffamily]
+
+% Power Source
+\draw (0,0) to [battery, l=Honey Extractor Power] (0,4);
+
+% Resistor R1
+\draw (0,4) to [resistor, l=$R_1$] (3,4);
+
+% Capacitor C1
+\draw (3,4) to [capacitor, l=$C_1$] (6,4);
+
+% Resistor R2
+\draw (6,4) to [resistor, l=$R_2$] (9,4);
+
+% Inductor L1
+\draw (9,4) to [inductor, l=$L_1$, l'={\small To Extraction Motor}] (12,4);
+
+% Ground Connection
+\draw (0,0) -- (12,0);
+
+% Output Current Arrow
+\draw [-latex] (9,4) -- (10,4) node [above, midway] {$I_{\text{out}}$};
+
+% Title
+\node at (6,-1) {\textbf{RC Timing Circuit for Automated Honey Extraction Process Control}};
+
+\end{tikzpicture}
+\end{document}

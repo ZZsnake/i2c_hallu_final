@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="349" width="305">
+<marker id="a" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="5">
+	<path d="m0 0 15 5-15 5" fill="#002147"/>
+</marker>
+<g fill="#fff" stroke="#1a237e">
+	<ellipse cx="176" cy="31" rx="35" ry="24" stroke-width="3"/>
+	<ellipse cx="176" cy="128" rx="35" ry="24" stroke-width="3"/>
+	<ellipse cx="44" cy="223" rx="35" ry="24" stroke-width="3"/>
+	<ellipse cx="140" cy="225" rx="35" ry="24" stroke-width="3"/>
+	<ellipse cx="140" cy="319" rx="35" ry="24" stroke-width="3"/>
+	<ellipse cx="263" cy="320" rx="35" ry="24" stroke-width="3"/>
+	<g marker-end="url(#a)" fill="none" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="5,4">
+		<path d="m175 55v48"/>
+		<path d="m151 144-84 62"/>
+		<path d="m166 150-19 51"/>
+		<path d="m186 150 67 148"/>
+		<path d="m63 243 56 57"/>
+		<path d="m140 249v46"/>
+		<path d="m157 298c46-53 37-100 26-147"/>
+	</g>
+</g>
+<g font-size="16" font-family="Consolas, monospace" fill="#263238">
+	<text x="144" y="37">Start</text>
+	<text x="140" y="133">Input Data</text>
+	<text x="9" y="229">Parse</text>
+	<text x="110" y="230">Process</text>
+	<text x="112" y="325">Decision</text>
+	<text x="230" y="325">Output</text>
+</g>
+</svg>

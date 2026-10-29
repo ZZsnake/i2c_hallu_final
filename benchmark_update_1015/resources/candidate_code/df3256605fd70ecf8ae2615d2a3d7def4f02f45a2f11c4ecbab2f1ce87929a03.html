@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Function Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var chart = echarts.init(document.getElementById('chart'));
+            var option = {
+                title: {
+                    text: 'Quadratic Function: y = x² + 2x + 1',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['-4', '-3', '-2', '-1', '0', '1', '2', '3', '4', '5', '6', '7', '8']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    data: [
+                        {value: 9, name: '-4'},
+                        {value: 4, name: '-3'},
+                        {value: 1, name: '-2'},
+                        {value: 0, name: '-1'},
+                        {value: 1, name: '0'},
+                        {value: 4, name: '1'},
+                        {value: 9, name: '2'},
+                        {value: 16, name: '3'},
+                        {value: 25, name: '4'},
+                        {value: 36, name: '5'},
+                        {value: 49, name: '6'},
+                        {value: 64, name: '7'},
+                        {value: 81, name: '8'}
+                    ],
+                    type: 'scatter',
+                    symbolSize: 10,
+                    itemStyle: {
+                        color: '#d9534f'
+                    }
+                }]
+            };
+            chart.setOption(option);
+        });
+    </script>
+</body>
+</html>

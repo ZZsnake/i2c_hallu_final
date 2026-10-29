@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="800" height="400">
+  <!-- Background -->
+  <rect width="400" height="200" fill="white" />
+
+  <!-- Cell Body and Dendrites -->
+  <path d="M128,116 L120,110 L130,100 L120,90 L110,105 L100,95 L115,80 L105,70 L90,85 L85,75 L95,65 L80,55 L75,65 L65,50 L55,60 L60,75 L45,85 L50,95 L35,90 L30,105 L40,115 L30,130 L45,125 L40,145 L55,135 L50,155 L65,145 L60,170 L75,160 L80,175 L90,160 L105,170 L100,150 L115,155 L110,135 L125,145 L120,125 Z" fill="#d1e0b5" stroke="black" stroke-width="0.5" />
+  
+  <!-- Nucleus -->
+  <ellipse cx="90" cy="125" rx="8" ry="6" fill="#7b4a7b" stroke="black" stroke-width="0.5" transform="rotate(-20, 90, 125)" />
+
+  <!-- Axon (underneath myelin) -->
+  <path d="M128,116 Q200,140 280,90" fill="none" stroke="black" stroke-width="0.5" />
+
+  <!-- Myelin Sheath Segments (Schwann Cells) -->
+  <g fill="#6495ed" stroke="black" stroke-width="0.5">
+    <rect x="128" y="115" width="35" height="15" rx="7" transform="rotate(15, 145, 122)" />
+    <rect x="165" y="125" width="35" height="15" rx="7" transform="rotate(10, 182, 132)" />
+    <rect x="205" y="128" width="35" height="15" rx="7" transform="rotate(5, 222, 135)" />
+    <rect x="245" y="115" width="30" height="15" rx="7" transform="rotate(-20, 260, 122)" />
+    <rect x="272" y="85" width="30" height="15" rx="7" transform="rotate(-50, 287, 92)" />
+  </g>
+  
+  <!-- Schwann Cell Nuclei (dots) -->
+  <g fill="#add8e6">
+    <circle cx="145" cy="125" r="1.5" />
+    <circle cx="182" cy="135" r="1.5" />
+    <circle cx="222" cy="138" r="1.5" />
+    <circle cx="260" cy="125" r="1.5" />
+    <circle cx="285" cy="100" r="1.5" />
+  </g>
+
+  <!-- Axon Terminal -->
+  <path d="M295,85 L310,75 L305,65 L315,60 L325,70 L335,55 L345,65 L335,75 L350,85 L340,95 L355,110 L345,120 L355,135 L345,140 L335,125 L325,135 L315,120 L325,110 L310,105 L320,95 L305,90 Z" fill="#d1e0b5" stroke="black" stroke-width="0.5" />
+
+  <!-- Labels and Leader Lines -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="black">
+    <!-- Dendrite -->
+    <line x1="75" y1="15" x2="75" y2="60" stroke="black" stroke-width="0.5" />
+    <text x="42" y="12">Dendrite</text>
+
+    <!-- Cell body -->
+    <line x1="115" y1="105" x2="135" y2="75" stroke="black" stroke-width="0.5" />
+    <text x="138" y="73">Cell body</text>
+
+    <!-- Nucleus -->
+    <line x1="90" y1="130" x2="45" y2="185" stroke="black" stroke-width="0.5" />
+    <text x="0" y="195">Nucleus</text>
+
+    <!-- Axon -->
+    <line x1="130" y1="125" x2="140" y2="150" stroke="black" stroke-width="0.5" />
+    <text x="138" y="162">Axon</text>
+
+    <!-- Myelin sheath -->
+    <line x1="225" y1="145" x2="220" y2="170" stroke="black" stroke-width="0.5" />
+    <text x="218" y="183">Myelin sheath</text>
+
+    <!-- Node of Ranvier -->
+    <line x1="270" y1="110" x2="255" y2="65" stroke="black" stroke-width="0.5" />
+    <text x="225" y="45">Node of</text>
+    <text x="225" y="60">Ranvier</text>
+
+    <!-- Schwann cell -->
+    <line x1="270" y1="130" x2="305" y2="148" stroke="black" stroke-width="0.5" />
+    <text x="308" y="158">Schwann cell</text>
+
+    <!-- Axon Terminal -->
+    <line x1="350" y1="100" x2="350" y2="30" stroke="black" stroke-width="0.5" />
+    <text x="298" y="25">Axon Terminal</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, shapes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.0, >=Latex]
+
+% Define coordinates
+\coordinate (O) at (0,0); % Base joint
+\coordinate (A) at (2,1.5); % End of L1
+\coordinate (B) at (3,3); % End of L2
+\coordinate (C) at (3,4.5); % End of L3
+
+% Ground
+\draw[thick, pattern=north east lines, pattern color=black!50] (-0.5,-0.5) rectangle (0.5,0);
+
+% Links
+\draw[thick] (O) -- (A) node[midway, above left] {$L_1$};
+\draw[thick] (A) -- (B) node[midway, above right] {$L_2$};
+\draw[thick] (B) -- (C) node[midway, left] {$L_3$};
+
+% Joints
+\draw[fill=white] (O) circle (0.15);
+\draw[fill=black] (O) circle (0.05);
+\draw[fill=white] (A) circle (0.15);
+\draw[fill=black] (A) circle (0.05);
+\draw[fill=white] (B) circle (0.15);
+\draw[fill=black] (B) circle (0.05);
+
+% Base joint symbol
+\draw[thick] (O) ++(0,-0.2) -- ++(0,0.4);
+\draw[thick] (O) ++(-0.1,-0.2) -- ++(0.2,0.4);
+\draw[thick] (O) ++(0.1,-0.2) -- ++(-0.2,0.4);
+
+% End-effector symbol (vertical bar)
+\draw[thick] (C) ++(-0.1,0) -- ++(0.2,0);
+\draw[thick] (C) ++(-0.1,0) -- ++(0,0.2);
+\draw[thick] (C) ++(0.1,0) -- ++(0,0.2);
+
+% Angle theta1
+\draw[dashed, red] (O) -- ++(2,0); % Horizontal reference
+\draw[red, thick, ->] (O) ++(0.3,0) arc (0:45:0.5) node[midway, right] {$\theta_1$};
+
+% Angle theta2
+\draw[dashed, red] (A) -- ++(1.5,1.5); % Extension of L1
+\draw[red, thick, ->] (A) ++(0.3,0.3) arc (0:45:0.5) node[midway, right] {$\theta_2$};
+
+% Angle theta3
+\draw[dashed, red] (B) -- ++(0,1.5); % Vertical reference
+\draw[red, thick, ->] (B) ++(0,0.3) arc (90:135:0.5) node[midway, above left] {$\theta_3$};
+
+% Length indicators
+% L1
+\draw[blue, thick, <->] (O) ++(0,0.1) -- ++(2,1.5) node[midway, above left] {$L_1$};
+% L2
+\draw[blue, thick, <->] (A) ++(0,0.1) -- ++(1,1.5) node[midway, above right] {$L_2$};
+% L3
+\draw[blue, thick, <->] (B) ++(-0.1,0) -- ++(0,1.5) node[midway, left] {$L_3$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg2"
+   x="0px"
+   y="0px"
+   width="783px"
+   height="747.15px"
+   viewBox="-161.5 -63.5 783 747.15"
+   xml:space="preserve">
+  <defs>
+    <linearGradient id="torso_grad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" style="stop-color:#8ED1FC"/>
+      <stop offset="1" style="stop-color:#1976D2"/>
+    </linearGradient>
+    <linearGradient id="organ_grad" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" style="stop-color:#F44336"/>
+      <stop offset="1" style="stop-color:#B71C1C"/>
+    </linearGradient>
+    <linearGradient id="vessel_grad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" style="stop-color:#43A047"/>
+      <stop offset="1" style="stop-color:#1B5E20"/>
+    </linearGradient>
+    <radialGradient id="heart_grad" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" style="stop-color:#FFB300"/>
+      <stop offset="1" style="stop-color:#F57C00"/>
+    </radialGradient>
+  </defs>
+  <g id="layer1" transform="translate(-753.4052,-294.8229)">
+    <!-- Torso outline -->
+    <path
+      id="torso_outline"
+      d="M950,350 C1000,340 1100,370 1150,390 C1200,420 1220,520 1200,600 C1190,660 1150,760 1050,770 C950,780 850,770 800,700 C760,640 780,540 820,470 C860,400 900,355 950,350 Z"
+      fill="url(#torso_grad)"
+      stroke="#1A237E"
+      stroke-width="3"
+      stroke-dasharray="12,5"
+      />
+    <!-- Lungs -->
+    <ellipse
+      id="lung_left"
+      cx="990"
+      cy="540"
+      rx="55"
+      ry="90"
+      fill="url(#organ_grad)"
+      stroke="#B71C1C"
+      stroke-width="2.5"
+      />
+    <ellipse
+      id="lung_right"
+      cx="1085"
+      cy="540"
+      rx="55"
+      ry="90"
+      fill="url(#organ_grad)"
+      stroke="#B71C1C"
+      stroke-width="2.5"
+      />
+    <!-- Trachea -->
+    <rect
+      id="trachea"
+      x="1035"
+      y="420"
+      width="20"
+      height="70"
+      rx="10"
+      fill="#43A047"
+      stroke="#1B5E20"
+      stroke-width="3"
+      />
+    <!-- Heart -->
+    <ellipse
+      id="heart"
+      cx="1045"
+      cy="640"
+      rx="35"
+      ry="28"
+      fill="url(#heart_grad)"
+      stroke="#F57C00"
+      stroke-width="2.5"
+      />
+    <!-- Esophagus -->
+    <path
+      id="esophagus"
+      d="M1018,390 Q1045,430 1045,500"
+      fill="none"
+      stroke="#0D47A1"
+      stroke-width="4"
+      stroke-dasharray="8,4"
+      />
+    <!-- Main Bronchi -->
+    <path
+      id="bronchus_left"
+      d="M1045,490 Q1000,520 990,540"
+      fill="none"
+      stroke="#388E3C"
+      stroke-width="3"
+      />
+    <path
+      id="bronchus_right"
+      d="M1055,490 Q1100,520 1085,540"
+      fill="none"
+      stroke="#388E3C"
+      stroke-width="3"
+      />
+    <!-- Labels -->
+    <text
+      x="1010"
+      y="380"
+      font-family="Arial Black"
+      font-size="36"
+      fill="#1A237E"
+      font-weight="bold"
+      >咽部</text>
+    <text
+      x="1030"
+      y="440"
+      font-family="Arial Black"
+      font-size="33"
+      fill="#388E3C"
+      font-weight="bold"
+      >气管</text>
+    <text
+      x="940"
+      y="520"
+      font-family="Arial Black"
+      font-size="32"
+      fill="#B71C1C"
+      font-weight="bold"
+      >左肺</text>
+    <text
+      x="1105"
+      y="520"
+      font-family="Arial Black"
+      font-size="32"
+      fill="#B71C1C"
+      font-weight="bold"
+      >右肺</text>
+    <text
+      x="1045"
+      y="670"
+      font-family="Arial Black"
+      font-size="32"
+      fill="#F57C00"
+      font-weight="bold"
+      text-anchor="middle"
+      >心脏</text>
+    <text
+      x="990"
+      y="600"
+      font-family="Arial Black"
+      font-size="28"
+      fill="#0D47A1"
+      font-weight="bold"
+      >食管</text>
+  </g>
+</svg>

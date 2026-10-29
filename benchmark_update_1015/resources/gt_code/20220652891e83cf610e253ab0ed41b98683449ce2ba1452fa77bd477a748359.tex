@@ -1,0 +1,40 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{makecell}
+
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\definecolor{lightgray}{gray}{0.9}
+
+\begin{document}
+
+\begin{tabular}{P{5cm}P{5cm}}
+\toprule
+\multicolumn{2}{c}{\Large\textbf{Common Dental Procedures and Recovery Times}} \\
+\midrule
+\rowcolor{lightgray}
+\textbf{Procedure} & \textbf{Average Recovery Time} \\
+\midrule
+Dental Cleaning & Minimal (same day) \\
+\rowcolor{lightgray}
+Tooth Extraction & 3 to 7 days \\
+Root Canal Therapy & 2 to 3 days \\
+\rowcolor{lightgray}
+Dental Implant Placement & 3 to 6 months \\
+Crown Placement & 1 to 2 weeks \\
+\rowcolor{lightgray}
+Bridges & 1 to 2 weeks \\
+Teeth Whitening & Minimal (same day) \\
+\rowcolor{lightgray}
+Veneers & 1 week \\
+Gum Surgery & 1 to 2 weeks \\
+\rowcolor{lightgray}
+Orthodontic Braces & Ongoing (up to 2 years for full treatment) \\
+\bottomrule
+\end{tabular}
+
+\end{document}

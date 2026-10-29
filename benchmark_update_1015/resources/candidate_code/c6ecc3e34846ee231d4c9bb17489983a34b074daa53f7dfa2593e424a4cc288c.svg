@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80">
+  <rect x="0" y="0" width="160" height="80" fill="white" stroke="black" stroke-width="1"/>
+  <line x1="0" y1="40" x2="160" y2="40" stroke="black" stroke-width="1"/>
+  <line x1="80" y1="0" x2="80" y2="80" stroke="black" stroke-width="1"/>
+  <text x="85" y="10" font-size="4" fill="black">y</text>
+  <text x="150" y="45" font-size="4" fill="black">x</text>
+  <text x="55" y="10" font-size="4" fill="black">x = 6</text>
+  <line x1="60" y1="0" x2="60" y2="80" stroke="blue" stroke-width="1" stroke-dasharray="3"/>
+  <path d="M0,40 Q60,0 160,40" stroke="red" stroke-width="1" stroke-dasharray="3" fill="none"/>
+  <circle cx="20" cy="40" r="2" fill="blue"/>
+  <text x="25" y="45" font-size="4" fill="black">Vertex</text>
+  <text x="30" y="55" font-size="4" fill="black">f(x) = 0.03(x-2)^2 + 8</text>
+</svg>

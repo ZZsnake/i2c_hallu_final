@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz Topic Frequency</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff; /* Ensure white background */
+        }
+        #chart-container {
+            width: 900px; /* Adjusted width to better match the original aspect ratio */
+            height: 500px; /* Adjusted height */
+            /* Optional: Add a subtle border or shadow if desired, though not prominent in original */
+            /* border: 1px solid #ccc; */
+            /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('chart-container'));
+
+            var option = {
+                title: {
+                    text: 'Math Quiz Topic Frequency',
+                    left: 'center',
+                    textStyle: {
+                        fontSize: 16,
+                        fontWeight: 'bold',
+                        color: '#333'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                toolbox: {
+                    show: true,
+                    right: 0,
+                    top: 0,
+                    feature: {
+                        dataView: { show: true, readOnly: false },
+                        saveAsImage: { show: true }
+                    },
+                    iconStyle: {
+                        borderColor: '#666'
+                    }
+                },
+                grid: {
+                    left: '8%', /* Adjusted to make space for y-axis label */
+                    right: '3%',
+                    bottom: '8%',
+                    top: '15%', /* Adjusted to make space for title and top value */
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['Algebra', 'Geometry', 'Calculus', 'Statistics', 'Number Theory', 'Combinatorics', 'Logic'],
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLabel: {
+                        color: '#333',
+                        interval: 0,
+                        fontFamily: 'Roboto Mono, monospace',
+                        fontSize: 14,
+                        fontWeight: 500
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#333'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Number of Questions',
+                    nameLocation: 'end',
+                    nameGap: 20, /* Adjust gap for y-axis label */
+                    nameRotate: 0,
+                    nameTextStyle: {
+                        color: '#333',
+                        fontFamily: 'Roboto Mono, monospace',
+                        fontSize: 15,
+                        fontWeight: 'bold'
+                    },
+                    min: 0,
+                    max: 25,
+                    interval: 5,
+                    axisLabel: {
+                        color: '#333',
+                        fontFamily: 'Roboto Mono, monospace',
+                        fontSize: 14
+                    },
+                    axisLine: {
+                        show: false,
+                        lineStyle: {
+                            color: '#333'
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed',
+                            color: '#ff0000'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Questions',
+                        type: 'bar',
+                        data: [
+                            { value: 15, itemStyle: { color: '#008080' } }, /* Teal */
+                            { value: 24, itemStyle: { color: '#FF6347' } }, /* Tomato/Salmon */
+                            { value: 9, itemStyle: { color: '#1E90FF' } }, /* DodgerBlue */
+                            { value: 17, itemStyle: { color: '#8A2BE2' } }, /* BlueViolet */
+                            { value: 12, itemStyle: { color: '#FFD700' } }, /* Gold */
+                            { value: 5, itemStyle: { color: '#7CFC00' } }, /* LawnGreen */
+                            { value: 13, itemStyle: { color: '#FFA500' } }  /* Orange */
+                        ],
+                        barWidth: '45%',
+                        itemStyle: {
+                            borderColor: '#000',
+                            borderWidth: 1
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            color: '#333',
+                            fontSize: 12
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            // Make chart responsive
+            $(window).on('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

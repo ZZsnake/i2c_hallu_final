@@ -1,0 +1,54 @@
+<svg width="600" height="800" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Rectangular Medium -->
+  <rect x="50" y="300" width="500" height="210" fill="#fde2e0" stroke="#c4a4a2" stroke-width="3" />
+
+  <!-- Normal Lines -->
+  <line x1="280" y1="200" x2="280" y2="610" stroke="black" stroke-width="3" stroke-dasharray="5,5" />
+  <line x1="330" y1="510" x2="330" y2="610" stroke="black" stroke-width="3" stroke-dasharray="5,5" />
+  
+  <!-- Bracket for Normal label -->
+  <path d="M 280 620 Q 280 630 305 630 Q 330 630 330 620" fill="none" stroke="black" stroke-width="2" />
+
+  <!-- Incident Ray -->
+  <line x1="125" y1="10" x2="280" y2="300" stroke="black" stroke-width="4" />
+  <!-- Arrowhead for Incident Ray -->
+  <polygon points="200,150 215,175 190,170" fill="black" />
+
+  <!-- Reflected Ray (Partial Reflection) -->
+  <line x1="280" y1="300" x2="440" y2="10" stroke="black" stroke-width="4" stroke-dasharray="15,10" />
+  <!-- Arrowhead for Reflected Ray -->
+  <polygon points="360,150 375,125 350,130" fill="black" />
+
+  <!-- Refracted Ray (Inside) -->
+  <line x1="280" y1="300" x2="330" y2="510" stroke="black" stroke-width="4" />
+  <!-- Arrowhead for Refracted Ray -->
+  <polygon points="305,405 315,430 295,425" fill="black" />
+
+  <!-- Emergent Ray -->
+  <line x1="330" y1="510" x2="485" y2="800" stroke="black" stroke-width="4" />
+  <!-- Arrowhead for Emergent Ray -->
+  <polygon points="405,650 420,675 395,670" fill="black" />
+
+  <!-- Labels -->
+  <text x="120" y="100" font-family="Arial, sans-serif" font-size="36" text-anchor="middle">Incident</text>
+  <text x="120" y="140" font-family="Arial, sans-serif" font-size="36" text-anchor="middle">Ray</text>
+
+  <text x="480" y="110" font-family="Arial, sans-serif" font-size="36" text-anchor="middle">Reflected</text>
+  <text x="480" y="150" font-family="Arial, sans-serif" font-size="36" text-anchor="middle">Ray</text>
+  <text x="480" y="190" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">(Partial Reflection)</text>
+
+  <text x="220" y="260" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">Angle of Incidence</text>
+  <text x="265" y="260" font-family="Arial, sans-serif" font-size="22" font-weight="bold">i</text>
+  <text x="295" y="260" font-family="Arial, sans-serif" font-size="22" font-weight="bold">i</text>
+
+  <text x="240" y="380" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">Angle of Refraction</text>
+  <text x="290" y="380" font-family="Arial, sans-serif" font-size="22" font-weight="bold">r</text>
+  
+  <text x="315" y="430" font-family="Arial, sans-serif" font-size="22" font-weight="bold">r</text>
+  <text x="315" y="560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">i</text>
+
+  <text x="400" y="390" font-family="Arial, sans-serif" font-size="36" text-anchor="start">Refracted</text>
+  <text x="450" y="430" font-family="Arial, sans-serif" font-size="36" text-anchor="start">Ray</text>
+
+  <text x="305" y="660" font-family="Arial, sans-serif" font-size="36" text-anchor="middle">Normal</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 425">
+  <!-- Lithosphere layer -->
+  <rect x="0" y="380" width="850" height="45" fill="#D2691E"/>
+  <text x="374" y="408" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8B0000">Lithosphere</text>
+  
+  <!-- Coastal Area layer -->
+  <rect x="0" y="295" width="850" height="85" fill="#2F8F9D"/>
+  <text x="60" y="338" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1C5C66">Coastal Area</text>
+  
+  <!-- Forest layer -->
+  <path d="M 0 200 L 850 200 L 850 295 L 0 295 Z" fill="#32CD32"/>
+  <path d="M 0 200 L 200 200 Q 400 210 520 200 L 850 200" stroke="#228B22" stroke-width="3" stroke-dasharray="10,5" fill="none"/>
+  <text x="60" y="218" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#228B22">Forest</text>
+  
+  <!-- Mountain Range -->
+  <ellipse cx="650" cy="165" rx="125" ry="45" fill="#CD853F" stroke="#000" stroke-width="2"/>
+  <path d="M 530 190 Q 650 200 770 190" stroke="#4682B4" stroke-width="2" stroke-dasharray="8,4" fill="none"/>
+  <text x="561" y="170" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#000">Mountain Range</text>
+  
+  <!-- River Delta with dashed line -->
+  <text x="352" y="228" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4682B4">River Delta</text>
+  <path d="M 400 230 Q 380 250 350 270" stroke="#228B22" stroke-width="2" stroke-dasharray="6,3" fill="none"/>
+  
+  <!-- Lake Azure -->
+  <ellipse cx="320" cy="340" rx="55" ry="25" fill="none" stroke="#006994" stroke-width="2"/>
+  <text x="279" y="345" font-family="Arial, sans-serif" font-size="14" fill="#006994">Lake Azure</text>
+  
+  <!-- Curved geological lines -->
+  <path d="M 170 315 Q 300 280 450 300 Q 600 320 690 310" stroke="#000" stroke-width="1.5" fill="none"/>
+  <path d="M 200 310 Q 350 260 500 285" stroke="#000" stroke-width="1" fill="none"/>
+  
+  <!-- Cities (blue circles) -->
+  <circle cx="180" cy="310" r="22" fill="#4169E1" stroke="#000" stroke-width="1.5"/>
+  <text x="172" y="318" font-family="Arial, sans-serif" font-size="14" fill="#000">i</text>
+  <text x="215" y="318" font-family="Arial, sans-serif" font-size="14" fill="#000">A</text>
+  
+  <!-- Orange circles -->
+  <circle cx="690" cy="310" r="22" fill="#FF6347" stroke="#000" stroke-width="1.5"/>
+  <text x="678" y="315" font-family="Arial, sans-serif" font-size="12" fill="#000">Fy</text>
+  <text x="640" y="318" font-family="Arial, sans-serif" font-size="14" fill="#000">C</text>
+  <text x="735" y="318" font-family="Arial, sans-serif" font-size="14" fill="#000">B</text>
+  
+  <!-- Green circle in river delta -->
+  <circle cx="350" cy="265" r="18" fill="none" stroke="#228B22" stroke-width="2"/>
+  <text x="345" y="271" font-family="Arial, sans-serif" font-size="12" fill="#000">o</text>
+  <text x="305" y="260" font-family="Arial, sans-serif" font-size="12" fill="#000">T</text>
+  
+  <!-- Vertical red markers -->
+  <line x1="120" y1="345" x2="120" y2="375" stroke="#DC143C" stroke-width="2"/>
+  <line x1="780" y1="355" x2="780" y2="375" stroke="#DC143C" stroke-width="2"/>
+  
+  <!-- Legend box -->
+  <rect x="650" y="30" width="180" height="100" fill="#E6F2FF" stroke="#000" stroke-width="2"/>
+  <text x="711" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000">Legend</text>
+  
+  <!-- Legend items -->
+  <circle cx="670" cy="75" r="8" fill="#4169E1" stroke="#000" stroke-width="1"/>
+  <text x="690" y="80" font-family="Arial, sans-serif" font-size="14" fill="#000">City</text>
+  
+  <ellipse cx="670" cy="99" rx="12" ry="7" fill="#2F8F9D" stroke="#006994" stroke-width="1.5"/>
+  <text x="690" y="104" font-family="Arial, sans-serif" font-size="14" fill="#000">Lake</text>
+  
+  <rect x="662" y="112" width="16" height="10" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+  <text x="690" y="122" font-family="Arial, sans-serif" font-size="14" fill="#000" text-decoration="line-through">Landmass</text>
+</svg>

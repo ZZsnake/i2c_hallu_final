@@ -1,0 +1,62 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.8]
+
+  % Laser
+  \draw[fill=gray!20] (0,0) rectangle (1.5,1);
+  \node at (0.75,0.5) {Laser He-Ne};
+  \foreach \angle in {0,30,60,90,120,150,180,210,240,270,300,330} {
+    \draw[->, red, thick] (1.5,0.5) + (\angle:0.3) -- (1.5,0.5) + (\angle:0.8);
+  }
+
+  % Polarizer
+  \draw[fill=gray!20] (3,0) rectangle (4.5,1);
+  \node at (3.75,0.5) {Polarizer};
+
+  % Polarizer Circle
+  \draw[thick] (4,0.5) circle (0.3);
+  \draw[->, thick] (4,0.5) + (45:0.25) arc (45:135:0.25);
+  \node at (4.3,0.8) {π};
+
+  % Light after Polarizer
+  \draw[->, red, thick] (1.5,0.5) -- (3,0.5);
+  \draw[->, red, thick] (4.5,0.5) -- (4.5,0.5);
+
+  % Analyzer
+  \draw[fill=gray!20] (6,0) rectangle (7.5,1);
+  \node at (6.75,0.5) {Analyser};
+
+  % Analyzer Circle
+  \draw[thick] (7,0.5) circle (0.3);
+  \draw[->, thick] (7,0.5) + (0:0.25) arc (0:90:0.25);
+  \node at (7.3,0.8) {α};
+
+  % Light after Analyzer
+  \draw[->, red, thick] (4.5,0.5) -- (6,0.5);
+  \draw[->, red, thick] (7.5,0.5) -- (7.5,0.5);
+
+  % Viewing Screen
+  \draw[fill=gray!20] (9,0) rectangle (10.5,1);
+  \node at (9.75,0.5) {Viewing Screen};
+
+  % Intensity Labels
+  \node at (1.5,1.5) {$I_2$};
+  \node at (4.5,1.5) {$I_1$};
+  \node at (6,1.5) {$I_0$};
+
+  % Angle Labels
+  \node at (6.5,0.2) {θ};
+  \node at (7.5,0.2) {α};
+
+  % Polarization Plane Labels
+  \node at (4.2, -0.5) {Polarization Plane of Polarizer};
+  \node at (7.2, -0.5) {Polarization Plane of Analyser};
+
+  % Polarization Direction Label
+  \node at (7.7, 0.8) {Polarization Direction};
+
+\end{tikzpicture}
+\end{document}

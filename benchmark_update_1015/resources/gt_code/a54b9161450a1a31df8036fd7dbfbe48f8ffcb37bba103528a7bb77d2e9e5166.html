@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>pie-simple-other-domain</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: bold;
+      color: #24292F; /* Very dark gray for contrast */
+    }
+    .echarts-legend {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 15px;
+      color: #1A237E; /* Vivid blue for contrast */
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        text: 'Distribution of Office Supplies Usage',
+        subtext: 'Sample Data',
+        left: 'center',
+        textStyle: {
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 24,
+          color: '#24292F'
+        },
+        subtextStyle: {
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontSize: 14,
+          color: '#37474F'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        textStyle: {
+          color: '#212121',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left',
+        top: 'middle',
+        textStyle: {
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontSize: 15,
+          color: '#1A237E'
+        }
+      },
+      series: [
+        {
+          name: 'Supplies',
+          type: 'pie',
+          radius: ['40%', '60%'],
+          label: {
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 15,
+            color: '#212121'
+          },
+          labelLine: {
+            lineStyle: {
+              color: '#1A237E',
+              width: 3
+            }
+          },
+          data: [
+            { value: 450, name: 'Notebooks', itemStyle: { color: '#1565C0' } },
+            { value: 320, name: 'Pens', itemStyle: { color: '#43A047' } },
+            { value: 210, name: 'Folders', itemStyle: { color: '#F4511E' } },
+            { value: 175, name: 'Staplers', itemStyle: { color: '#8E24AA' } },
+            { value: 95,  name: 'Markers', itemStyle: { color: '#FDD835' } }
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 12,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(44, 62, 80, 0.7)'
+            }
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

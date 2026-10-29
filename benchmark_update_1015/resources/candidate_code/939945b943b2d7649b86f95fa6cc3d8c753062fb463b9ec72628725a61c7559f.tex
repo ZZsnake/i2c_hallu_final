@@ -1,0 +1,28 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[node distance=2cm, auto]
+    \node (A) {$g^*F_W$};
+    \node (B) [right of=A] {$F_W$};
+    \node (C) [below of=A] {$g^*F$};
+    \node (D) [right of=C] {$F$};
+    \node (E) [below of=C] {$P$};
+    \node (F) [right of=E] {$Q$};
+    \node (G) [below of=D] {$X$};
+    \node (H) [right of=G] {$W$};
+
+    \draw[->, blue] (A) -- (B);
+    \draw[->, blue] (A) -- (C);
+    \draw[->, blue] (C) -- (E);
+    \draw[->, blue] (G) -- (H);
+    \draw[->, blue] (D) -- (F);
+
+    \draw[->, dashed, blue] (C) -- (G);
+    \draw[->, teal] (C) -- (D);
+    \draw[->, teal] (D) -- (F);
+
+    \draw[->, dashed, red] (E) -- (G);
+\end{tikzpicture}
+\end{document}

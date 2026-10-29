@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 150" width="250" height="150">
+  <!-- Main class rectangle -->
+  <rect x="10" y="10" width="200" height="100" fill="white" stroke="black" rx="5"/>
+  
+  <!-- Header section -->
+  <rect x="10" y="10" width="200" height="20" fill="#f0f0f0"/>
+  <text x="15" y="25" font-family="Arial" font-size="12">bar() : void</text>
+  
+  <!-- Separator line -->
+  <line x1="10" x2="210" y1="30" y2="30" stroke="black"/>
+  
+  <!-- Circle with 'C' -->
+  <circle cx="50" cy="60" r="15" fill="#a0d468" stroke="black"/>
+  <text x="50" y="60" font-family="Arial" font-size="14" font-weight="bold" 
+        text-anchor="middle" dominant-baseline="middle">C</text>
+  
+  <!-- Method 1 -->
+  <circle cx="30" cy="70" r="3" fill="#8cc153"/>
+  <text x="35" y="72" font-family="Arial" font-size="10">foo() : void</text>
+  
+  <!-- Method 2 -->
+  <circle cx="30" cy="90" r="3" fill="#8cc153"/>
+  <text x="35" y="92" font-family="Arial" font-size="10">phppstar</text>
+</svg>

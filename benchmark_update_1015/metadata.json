@@ -1,0 +1,21 @@
+{
+  "release": "benchmark_update_1015",
+  "base_release": "benchmark_update_1013",
+  "record_count": 1040,
+  "unique_record_ids": 1040,
+  "labels": {
+    "positive": 289,
+    "negative": 751
+  },
+  "light_diff_reviews": {
+    "accepted": 194,
+    "restore_original": 4
+  },
+  "candidate_sources": {
+    "benchmark_update_1013_restored": 4,
+    "benchmark_update_1013_unmodified": 842,
+    "light_diff_accepted": 191,
+    "light_diff_manual_accepted": 3
+  },
+  "gt_images_supplied": 451
+}

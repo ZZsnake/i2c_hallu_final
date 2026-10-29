@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Problem Types Funnel</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    option = {
+      title: {
+        text: 'Distribution of Math Problem Types',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#212C2F',
+          fontWeight: 'bold',
+          fontFamily: 'Roboto',
+          fontSize: 22
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: '#fff',
+        borderColor: '#222',
+        borderWidth: 1,
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Roboto',
+          fontSize: 14
+        },
+        formatter: '{a} <br/>{b} : {c}'
+      },
+      toolbox: {
+        orient: 'vertical',
+        top: 'center',
+        right: 10,
+        itemSize: 22,
+        iconStyle: {
+          borderColor: '#1a237e'
+        },
+        feature: {
+          dataView: { readOnly: false },
+          restore: {},
+          saveAsImage: {}
+        }
+      },
+      legend: {
+        orient: 'vertical',
+        left: 10,
+        top: 70,
+        textStyle: {
+          color: '#1a237e',
+          fontWeight: 'bold',
+          fontSize: 15,
+          fontFamily: 'Roboto'
+        },
+        data: [
+          'Algebra',
+          'Geometry',
+          'Calculus',
+          'Probability',
+          'Number Theory'
+        ]
+      },
+      series: [
+        {
+          name: 'Problem Types',
+          type: 'funnel',
+          width: '40%',
+          height: '42%',
+          left: '5%',
+          top: '52%',
+          minSize: '20%',
+          maxSize: '100%',
+          label: {
+            show: true,
+            color: '#212C2F',
+            fontWeight: 'bold',
+            fontFamily: 'Roboto'
+          },
+          itemStyle: {
+            borderColor: '#111',
+            borderWidth: 2
+          },
+          emphasis: {
+            label: {
+              color: '#c62828'
+            }
+          },
+          data: [
+            { value: 95, name: 'Algebra', itemStyle: { color: '#2962ff' } },
+            { value: 72, name: 'Geometry', itemStyle: { color: '#00bfae' } },
+            { value: 56, name: 'Calculus', itemStyle: { color: '#fbc02d' } },
+            { value: 38, name: 'Probability', itemStyle: { color: '#8e24aa' } },
+            { value: 22, name: 'Number Theory', itemStyle: { color: '#d84315' } }
+          ]
+        },
+        {
+          name: 'Ascending Pyramid',
+          type: 'funnel',
+          width: '40%',
+          height: '42%',
+          left: '5%',
+          top: '5%',
+          minSize: '20%',
+          maxSize: '100%',
+          sort: 'ascending',
+          label: {
+            show: true,
+            color: '#263238',
+            fontWeight: 'bold',
+            fontFamily: 'Roboto'
+          },
+          itemStyle: {
+            borderColor: '#222',
+            borderWidth: 1.5
+          },
+          emphasis: {
+            label: {
+              color: '#388e3c'
+            }
+          },
+          data: [
+            { value: 95, name: 'Algebra', itemStyle: { color: '#2962ff' } },
+            { value: 72, name: 'Geometry', itemStyle: { color: '#00bfae' } },
+            { value: 56, name: 'Calculus', itemStyle: { color: '#fbc02d' } },
+            { value: 38, name: 'Probability', itemStyle: { color: '#8e24aa' } },
+            { value: 22, name: 'Number Theory', itemStyle: { color: '#d84315' } }
+          ]
+        },
+        {
+          name: 'Problem Types (Left Label)',
+          type: 'funnel',
+          width: '40%',
+          height: '42%',
+          left: '54%',
+          top: '5%',
+          minSize: '20%',
+          maxSize: '100%',
+          label: {
+            show: true,
+            position: 'left',
+            color: '#212C2F',
+            fontWeight: 'bold',
+            fontFamily: 'Roboto'
+          },
+          itemStyle: {
+            borderColor: '#111',
+            borderWidth: 2
+          },
+          emphasis: {
+            label: {
+              color: '#5d4037'
+            }
+          },
+          data: [
+            { value: 95, name: 'Algebra', itemStyle: { color: '#2962ff' } },
+            { value: 72, name: 'Geometry', itemStyle: { color: '#00bfae' } },
+            { value: 56, name: 'Calculus', itemStyle: { color: '#fbc02d' } },
+            { value: 38, name: 'Probability', itemStyle: { color: '#8e24aa' } },
+            { value: 22, name: 'Number Theory', itemStyle: { color: '#d84315' } }
+          ]
+        },
+        {
+          name: 'Ascending Pyramid (Left Label)',
+          type: 'funnel',
+          width: '40%',
+          height: '42%',
+          left: '54%',
+          top: '52%',
+          minSize: '20%',
+          maxSize: '100%',
+          sort: 'ascending',
+          label: {
+            show: true,
+            position: 'left',
+            color: '#263238',
+            fontWeight: 'bold',
+            fontFamily: 'Roboto'
+          },
+          itemStyle: {
+            borderColor: '#222',
+            borderWidth: 1.5
+          },
+          emphasis: {
+            label: {
+              color: '#0288d1'
+            }
+          },
+          data: [
+            { value: 95, name: 'Algebra', itemStyle: { color: '#2962ff' } },
+            { value: 72, name: 'Geometry', itemStyle: { color: '#00bfae' } },
+            { value: 56, name: 'Calculus', itemStyle: { color: '#fbc02d' } },
+            { value: 38, name: 'Probability', itemStyle: { color: '#8e24aa' } },
+            { value: 22, name: 'Number Theory', itemStyle: { color: '#d84315' } }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

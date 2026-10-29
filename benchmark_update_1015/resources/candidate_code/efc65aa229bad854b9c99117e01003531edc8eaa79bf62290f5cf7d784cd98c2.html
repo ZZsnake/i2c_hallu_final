@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Polar Plot: Circle & Tangent Line</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var polarChart = echarts.init(chartDom);
+
+    // --- New Dataset: Circle and Tangent Line in Polar Coordinates ---
+    // Circle: r = 4 (constant)
+    const circleData = [];
+    for (let i = 0; i <= 360; i += 5) {
+      let theta = i;
+      let r = 4;
+      circleData.push([r, theta]);
+    }
+    // Tangent line: r = 2 / cos(theta) for -60 <= theta <= 60
+    const tangentData = [];
+    for (let i = -60; i <= 60; i += 5) {
+      let theta = i;
+      let thetaRad = theta * Math.PI / 180;
+      let r = 2 / Math.cos(thetaRad);
+      // Avoid extremely large values near cos(theta)=0
+      if (Math.abs(r) < 15) {
+        tangentData.push([r, (theta + 360) % 360]);
+      }
+    }
+
+    var chartOption = {
+      title: {
+        text: 'Analytical Geometry: Circle and Tangent Line',
+        left: 'center',
+        top: 16,
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 18,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      legend: {
+        data: ['Circle: r = 4', 'Tangent Line'],
+        top: 44,
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 13,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      polar: { center: ['50%', '50%'], radius: '80%' },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross'
+        }
+      },
+      angleAxis: {
+        type: 'value',
+        startAngle: 0,
+        axisLine: {
+          lineStyle: {
+            color: '#222',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#2d2d2d',
+          fontWeight: 'bold'
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#bbb',
+            width: 1
+          }
+        }
+      },
+      radiusAxis: {
+        axisLine: {
+          lineStyle: {
+            color: '#222',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#2d2d2d',
+          fontWeight: 'bold'
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#bbb',
+            width: 1
+          }
+        }
+      },
+      series: [
+        {
+          coordinateSystem: 'polar',
+          name: 'Circle: r = 4',
+          type: 'line',
+          data: circleData,
+          lineStyle: {
+            color: '#1565c0',
+            width: 3
+          },
+          symbol: 'circle',
+          symbolSize: 7,
+          itemStyle: {
+            color: '#1565c0'
+          }
+        },
+        {
+          coordinateSystem: 'polar',
+          name: 'Tangent Line',
+          type: 'line',
+          data: tangentData,
+          lineStyle: {
+            color: '#c62828',
+            width: 3,
+            type: 'dashed'
+          },
+          symbol: 'diamond',
+          symbolSize: 7,
+          itemStyle: {
+            color: '#c62828'
+          }
+        }
+      ]
+    };
+
+    polarChart.setOption(chartOption);
+
+    window.addEventListener('resize', polarChart.resize);
+  </script>
+</body>
+</html>

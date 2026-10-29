@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Chest Cavity -->
+  <path d="M100,50 Q150,0 200,50 Q200,150 100,200 Q0,150 0,50 Q50,0 100,50 Z" fill="blue" stroke="black" stroke-dasharray="5,5"/>
+  
+  <!-- Heart -->
+  <ellipse cx="100" cy="100" rx="30" ry="50" fill="red"/>
+  <ellipse cx="140" cy="100" rx="30" ry="50" fill="red"/>
+  
+  <!-- Trachea -->
+  <line x1="100" y1="50" x2="100" y2="100" stroke="green" stroke-width="2"/>
+  <text x="100" y="45" text-anchor="middle" fill="blue" font-size="10">咽部</text>
+  <text x="100" y="105" text-anchor="middle" fill="green" font-size="10">气管</text>
+  
+  <!-- Esophagus -->
+  <line x1="120" y1="50" x2="120" y2="100" stroke="green" stroke-width="2"/>
+  <text x="120" y="105" text-anchor="middle" fill="green" font-size="10">食管</text>
+  
+  <!-- Stomach -->
+  <ellipse cx="100" cy="150" rx="20" ry="15" fill="orange"/>
+  <text x="100" y="155" text-anchor="middle" fill="orange" font-size="10">胃</text>
+  
+  <!-- Labels for Lungs -->
+  <text x="70" y="100" text-anchor="middle" fill="red" font-size="10">左肺</text>
+  <text x="130" y="100" text-anchor="middle" fill="red" font-size="10">右肺</text>
+</svg>

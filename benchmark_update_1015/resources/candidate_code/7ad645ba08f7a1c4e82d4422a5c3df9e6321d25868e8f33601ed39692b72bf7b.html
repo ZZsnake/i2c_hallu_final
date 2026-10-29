@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Heatmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+        #chart-container {
+            width: 100vw; /* Adjust as needed */
+            height: 100vh; /* Adjust as needed */
+            background-color: #fff;
+            box-shadow: none;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container"></div>
+    <script>
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('chart-container'));
+            var data = [];
+            var xLabels = ['1', '2', '3', '4', '5', '6'];
+            var yLabels = ['1', '2', '3', '4', '5', '6'];
+            for (var i = 0; i < 6; i++) {
+                for (var j = 0; j < 6; j++) {
+                    var value = (i + 1) * (j + 1);
+                    data.push([j, i, value]); // ECharts heatmap expects [x, y, value]
+                }
+            }
+            // Sort data by value for correct color mapping if needed, though ECharts handles this
+            // data.sort(function (a, b) {
+            //     return a[2] - b[2];
+            // });
+            var option = {
+                title: {
+                    text: 'Multiplication Table Heatmap (1-6)',
+                    left: 'center',
+                    top: '5%',
+                    textStyle: {
+                        fontSize: 20,
+                        fontWeight: 700
+                    }
+                },
+                tooltip: {
+                    position: 'top',
+                    formatter: function (params) {
+                        return 'Row ' + (params.value[1] + 1) + ', Col ' + (params.value[0] + 1) + ': ' + params.value[2];
+                    }
+                },
+                grid: {
+                    height: '82%',
+                    top: 80,
+                    left: '10%',
+                    right: '10%',
+                    bottom: 50
+                },
+                xAxis: {
+                    type: 'category',
+                    data: xLabels,
+                    splitArea: {
+                        show: true
+                    },
+                    axisLabel: {
+                        fontSize: 16,
+                        fontWeight: 'bold'
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#333'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: yLabels,
+                    splitArea: {
+                        show: true
+                    },
+                    axisLabel: {
+                        fontSize: 16,
+                        fontWeight: 'bold'
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#333'
+                        }
+                    }
+                },
+                visualMap: {
+                    min: 1,
+                    max: 36,
+                    calculable: true,
+                    orient: 'horizontal',
+                    left: 'center',
+                    bottom: '4%',
+                    inRange: {
+                        color: ['#1a75ff', '#00c853', '#ffd600', '#d50000']
+                    },
+                    textStyle: {
+                        color: '#333'
+                    }
+                },
+                series: [{
+                    name: 'Multiplication',
+                    type: 'heatmap',
+                    data: data,
+                    label: {
+                        show: true,
+                        formatter: function (params) {
+                            return params.value[2]; // Display the product value
+                        },
+                        color: '#000',
+                        fontSize: 14,
+                        fontWeight: 'bold'
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            };
+            myChart.setOption(option);
+            // Adjust chart size on window resize
+            $(window).on('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

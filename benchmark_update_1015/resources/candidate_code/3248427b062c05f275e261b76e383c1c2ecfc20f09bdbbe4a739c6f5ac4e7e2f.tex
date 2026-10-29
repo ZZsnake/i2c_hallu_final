@@ -1,0 +1,154 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    node distance=0.5cm,
+    every node/.style={draw, circle, inner sep=2pt, minimum size=0.5cm},
+    every path/.style={thick, ->},
+    latent/.style={fill=gray!50},
+    input/.style={fill=white},
+    output/.style={fill=white},
+    corrupt/.style={fill=blue!20},
+    encoder/.style={fill=yellow!30},
+    decoder/.style={fill=pink!30},
+    arrow/.style={-Stealth, thick},
+    wavy/.style={decorate, decoration={snake, amplitude=0.5mm, segment length=2mm}}
+]
+
+% Input layer (corrupt)
+\node[input, label=left:$\vec{x}$] (input1) at (0, 0) {};
+\node[input, label=left:$\vec{x}$] (input2) at (0, -0.5) {};
+\node[input, label=left:$\vec{x}$] (input3) at (0, -1) {};
+\node[input, label=left:$\vec{x}$] (input4) at (0, -1.5) {};
+\node[input, label=left:$\vec{x}$] (input5) at (0, -2) {};
+\node[input, label=left:$\vec{x}$] (input6) at (0, -2.5) {};
+\node[input, label=left:$\vec{x}$] (input7) at (0, -3) {};
+\node[input, label=left:$\vec{x}$] (input8) at (0, -3.5) {};
+
+% Corruption layer
+\node[corrupt, label=left:corrupt] (corrupt1) at (0.5, 0) {};
+\node[corrupt, label=left:corrupt] (corrupt2) at (0.5, -0.5) {};
+\node[corrupt, label=left:corrupt] (corrupt3) at (0.5, -1) {};
+\node[corrupt, label=left:corrupt] (corrupt4) at (0.5, -1.5) {};
+\node[corrupt, label=left:corrupt] (corrupt5) at (0.5, -2) {};
+\node[corrupt, label=left:corrupt] (corrupt6) at (0.5, -2.5) {};
+\node[corrupt, label=left:corrupt] (corrupt7) at (0.5, -3) {};
+\node[corrupt, label=left:corrupt] (corrupt8) at (0.5, -3.5) {};
+
+% Encoder layer 1
+\node[input, label=right:encoder] (enc1_1) at (1.5, -0.25) {};
+\node[input, label=right:encoder] (enc1_2) at (1.5, -0.75) {};
+\node[input, label=right:encoder] (enc1_3) at (1.5, -1.25) {};
+\node[input, label=right:encoder] (enc1_4) at (1.5, -1.75) {};
+\node[input, label=right:encoder] (enc1_5) at (1.5, -2.25) {};
+\node[input, label=right:encoder] (enc1_6) at (1.5, -2.75) {};
+\node[input, label=right:encoder] (enc1_7) at (1.5, -3.25) {};
+\node[input, label=right:encoder] (enc1_8) at (1.5, -3.75) {};
+
+% Encoder layer 2
+\node[input, label=right:encoder] (enc2_1) at (3, -0.5) {};
+\node[input, label=right:encoder] (enc2_2) at (3, -1) {};
+\node[input, label=right:encoder] (enc2_3) at (3, -1.5) {};
+\node[input, label=right:encoder] (enc2_4) at (3, -2) {};
+\node[input, label=right:encoder] (enc2_5) at (3, -2.5) {};
+\node[input, label=right:encoder] (enc2_6) at (3, -3) {};
+\node[input, label=right:encoder] (enc2_7) at (3, -3.5) {};
+\node[input, label=right:encoder] (enc2_8) at (3, -4) {};
+
+% Encoder layer 3 (latent mean and std)
+\node[latent, label=right:$\mu$] (mu1) at (4.5, -0.75) {};
+\node[latent, label=right:$\mu$] (mu2) at (4.5, -1.25) {};
+\node[latent, label=right:$\mu$] (mu3) at (4.5, -1.75) {};
+\node[latent, label=right:$\mu$] (mu4) at (4.5, -2.25) {};
+\node[latent, label=right:$\mu$] (mu5) at (4.5, -2.75) {};
+\node[latent, label=right:$\mu$] (mu6) at (4.5, -3.25) {};
+\node[latent, label=right:$\mu$] (mu7) at (4.5, -3.75) {};
+\node[latent, label=right:$\mu$] (mu8) at (4.5, -4.25) {};
+
+\node[latent, label=right:$\sigma$] (sigma1) at (4.5, -0.25) {};
+\node[latent, label=right:$\sigma$] (sigma2) at (4.5, -0.75) {};
+\node[latent, label=right:$\sigma$] (sigma3) at (4.5, -1.25) {};
+\node[latent, label=right:$\sigma$] (sigma4) at (4.5, -1.75) {};
+\node[latent, label=right:$\sigma$] (sigma5) at (4.5, -2.25) {};
+\node[latent, label=right:$\sigma$] (sigma6) at (4.5, -2.75) {};
+\node[latent, label=right:$\sigma$] (sigma7) at (4.5, -3.25) {};
+\node[latent, label=right:$\sigma$] (sigma8) at (4.5, -3.75) {};
+
+% Latent variable
+\node[latent, label=right:$\vec{z}$] (latent) at (6, -2.5) {};
+\node[latent] (latent2) at (6, -2.0) {};
+\node[latent] (latent3) at (6, -2.5) {};
+\node[latent] (latent4) at (6, -3.0) {};
+\node[latent] (latent5) at (6, -3.5) {};
+\node[latent] (latent6) at (6, -4.0) {};
+\node[latent] (latent7) at (6, -4.5) {};
+\node[latent] (latent8) at (6, -5.0) {};
+
+% Decoder layer 1
+\node[input, label=right:decoder] (dec1_1) at (7.5, -2.0) {};
+\node[input, label=right:decoder] (dec1_2) at (7.5, -2.5) {};
+\node[input, label=right:decoder] (dec1_3) at (7.5, -3.0) {};
+\node[input, label=right:decoder] (dec1_4) at (7.5, -3.5) {};
+\node[input, label=right:decoder] (dec1_5) at (7.5, -4.0) {};
+\node[input, label=right:decoder] (dec1_6) at (7.5, -4.5) {};
+\node[input, label=right:decoder] (dec1_7) at (7.5, -5.0) {};
+\node[input, label=right:decoder] (dec1_8) at (7.5, -5.5) {};
+
+% Decoder layer 2
+\node[input, label=right:decoder] (dec2_1) at (9, -1.75) {};
+\node[input, label=right:decoder] (dec2_2) at (9, -2.25) {};
+\node[input, label=right:decoder] (dec2_3) at (9, -2.75) {};
+\node[input, label=right:decoder] (dec2_4) at (9, -3.25) {};
+\node[input, label=right:decoder] (dec2_5) at (9, -3.75) {};
+\node[input, label=right:decoder] (dec2_6) at (9, -4.25) {};
+\node[input, label=right:decoder] (dec2_7) at (9, -4.75) {};
+\node[input, label=right:decoder] (dec2_8) at (9, -5.25) {};
+
+% Decoder layer 3 (output)
+\node[output, label=right:$\vec{x}'$] (output1) at (10.5, -1.5) {};
+\node[output, label=right:$\vec{x}'$] (output2) at (10.5, -2.0) {};
+\node[output, label=right:$\vec{x}'$] (output3) at (10.5, -2.5) {};
+\node[output, label=right:$\vec{x}'$] (output4) at (10.5, -3.0) {};
+\node[output, label=right:$\vec{x}'$] (output5) at (10.5, -3.5) {};
+\node[output, label=right:$\vec{x}'$] (output6) at (10.5, -4.0) {};
+\node[output, label=right:$\vec{x}'$] (output7) at (10.5, -4.5) {};
+\node[output, label=right:$\vec{x}'$] (output8) at (10.5, -5.0) {};
+
+% Draw connections
+\foreach \i in {1,...,8} {
+    \draw[arrow] (input\i) -- (corrupt\i);
+    \draw[arrow] (corrupt\i) -- (enc1_\i);
+    \draw[arrow] (enc1_\i) -- (enc2_\i);
+    \draw[arrow] (enc2_\i) -- (mu\i);
+    \draw[arrow] (enc2_\i) -- (sigma\i);
+    \draw[arrow] (mu\i) -- (latent);
+    \draw[arrow] (sigma\i) -- (latent);
+    \draw[arrow] (latent) -- (dec1_\i);
+    \draw[arrow] (dec1_\i) -- (dec2_\i);
+    \draw[arrow] (dec2_\i) -- (output\i);
+}
+
+% Wavy arrows for corruption
+\foreach \i in {1,...,8} {
+    \draw[arrow, wavy] (input\i) -- (corrupt\i);
+}
+
+% Wavy arrows for output
+\foreach \i in {1,...,8} {
+    \draw[arrow, wavy] (dec2_\i) -- (output\i);
+}
+
+% Labels for layers
+\node[below=0.5cm of input1, anchor=north, text width=2cm, align=center] {corrupt};
+\node[below=0.5cm of enc2_1, anchor=north, text width=2cm, align=center] {encoder};
+\node[below=0.5cm of dec2_1, anchor=north, text width=2cm, align=center] {decoder};
+
+% Draw dashed boxes
+\draw[dashed, thick, fill=blue!10] (0, -3.75) rectangle (0.5, 0.5);
+\draw[dashed, thick, fill=yellow!10] (0.5, -3.75) rectangle (4.5, 0.5);
+\draw[dashed, thick, fill=pink!10] (4.5, -3.75) rectangle (10.5, 0.5);
+
+\end{tikzpicture}
+\end{document}

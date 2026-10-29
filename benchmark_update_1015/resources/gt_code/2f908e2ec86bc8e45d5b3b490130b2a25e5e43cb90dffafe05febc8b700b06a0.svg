@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="280"
+   height="260"
+   id="svg2"
+   sodipodi:docname="Portes_Logiques.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata71">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="877"
+     id="namedview69"
+     showgrid="false"
+     inkscape:zoom="1.6"
+     inkscape:cx="200"
+     inkscape:cy="130"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <g
+     id="g191"
+     transform="translate(-14)">
+    <path
+       d="m 21.5878,235.41711 h 16.46665 v -14.50273 l 24.05085,13.88577 -24.0381,13.97698 v -13.3441"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5161"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 72.41455,234.84575 a 4.7229962,4.7229962 0 1 1 -9.44599,0 4.7229962,4.7229962 0 1 1 9.44599,0 z"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+       id="path5163"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 89.20742,234.84575 H 73.28917"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5165"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 21.84311,186.52742 H 36.93344"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5167"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 21.84311,199.527 H 36.93344"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5169"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 33.71747,180.2604 c 10.3076,12.94635 0,25.64531 0,25.64531"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5171"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 39.07742,179.18841 c 30.67941,0 34.05631,13.85342 34.05631,13.85342 H 89.37851 73.05127 c -4.39156,16.38954 -34.05631,13.77095 -34.05631,13.77095 14.18326,-13.85342 0.0825,-27.62437 0.0825,-27.62437 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5173"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 33.07742,138.03396 c 30.67941,0 34.05631,13.85342 34.05631,13.85342 h -0.0825 c -4.39156,16.38954 -34.05631,13.77095 -34.05631,13.77095 14.18326,-13.85342 0.0825,-27.62437 0.0825,-27.62437 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6144"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.44949,145.99683 H 37.53982"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6146"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.44949,158.99641 H 37.53982"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6148"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 73.58603,152.05511 a 3.06985,3.06985 0 1 1 -6.1397,0 3.06985,3.06985 0 1 1 6.1397,0 z"
+       style="fill:none;stroke:#000000;stroke-width:1.82622921;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+       id="path6150"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 90.03203,152.0551 H 74.11378"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6152"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 33.46837,95.96224 c 30.67941,0 34.05631,13.85342 34.05631,13.85342 H 83.76946 67.44222 c -4.39156,16.38954 -34.05631,13.77095 -34.05631,13.77095 14.18326,-13.85342 0.0825,-27.62437 0.0825,-27.62437 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6154"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.75498,104.05793 H 37.84531"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6156"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.75498,117.05751 H 37.84531"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6158"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 79.12482,67.031864 a 3.06985,3.06985 0 1 1 -6.1397,0 3.06985,3.06985 0 1 1 6.1397,0 z"
+       style="fill:none;stroke:#000000;stroke-width:1.82622921;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+       id="path6160"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 95.57082,67.03185 H 79.65257"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6162"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 37.98902,54.008713 v 26.958591 c 46.14365,2.419361 47.2183,-29.550763 0,-26.958591 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6164"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.40936,60.40355 H 37.49969"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6166"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.40936,73.40313 H 37.49969"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6168"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 89.97024,24.70718 H 74.05199"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6170"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 38.39486,11.2782 v 26.95859 c 46.14365,2.41936 47.2183,-29.55076 0,-26.95859 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6172"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.40936,18.40355 H 37.49969"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6174"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 22.40936,31.40313 H 37.49969"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path6176"
+       inkscape:connector-curvature="0" />
+    <text
+       x="109.61502"
+       y="26.218288"
+       style="font-style:normal;font-weight:normal;font-size:15.29754925px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text6206"
+       xml:space="preserve"><tspan
+         x="109.61502"
+         y="26.218288"
+         id="tspan6208">Porte ET (AND)</tspan></text>
+    <text
+       x="108.31464"
+       y="71.817993"
+       style="font-style:normal;font-weight:normal;font-size:15.29754925px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text6210"
+       xml:space="preserve"><tspan
+         x="108.31464"
+         y="71.817993"
+         id="tspan6212">Porte NON ET (NAND) </tspan></text>
+    <text
+       x="108.9407"
+       y="114.23538"
+       style="font-style:normal;font-weight:normal;font-size:15.29754925px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text6214"
+       xml:space="preserve"><tspan
+         x="108.9407"
+         y="114.23538"
+         id="tspan6216">Porte OU (OR)</tspan></text>
+    <text
+       x="108.52332"
+       y="155.97366"
+       style="font-style:normal;font-weight:normal;font-size:15.29754925px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text6218"
+       xml:space="preserve"><tspan
+         x="108.52332"
+         y="155.97366"
+         id="tspan6220">Porte NON OU (NOR)</tspan></text>
+    <text
+       x="109.14938"
+       y="197.29456"
+       style="font-style:normal;font-weight:normal;font-size:15.29754925px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text6222"
+       xml:space="preserve"><tspan
+         x="109.14938"
+         y="197.29456"
+         id="tspan6224">Porte OU Exclusif (XOR)</tspan></text>
+    <text
+       x="108.09914"
+       y="237.29543"
+       style="font-style:normal;font-weight:normal;font-size:15.29754925px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text6218-2"
+       xml:space="preserve"><tspan
+         x="108.09914"
+         y="237.29543"
+         id="tspan6220-9">Porte NON (NOT)</tspan></text>
+  </g>
+</svg>

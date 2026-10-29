@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Expenditure Breakdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var chart = echarts.init(document.getElementById('chart'));
+            var option = {
+                title: {
+                    text: 'Household Expenditure Breakdown',
+                    subtext: 'Sample Data - Economics',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b}: {c} ({d}%)'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'right',
+                    data: ['Housing', 'Food', 'Transportation', 'Healthcare', 'Education', 'Entertainment', 'Other']
+                },
+                series: [
+                    {
+                        name: 'Expenditure',
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '50%'],
+                        data: [
+                            { value: 29.79, name: 'Housing' },
+                            { value: 20.21, name: 'Food' },
+                            { value: 14.89, name: 'Transportation' },
+                            { value: 11.7, name: 'Healthcare' },
+                            { value: 9.58, name: 'Education' },
+                            { value: 7.45, name: 'Entertainment' },
+                            { value: 6.38, name: 'Other' }
+                        ],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        },
+                        label: {
+                            normal: {
+                                position: 'center',
+                                formatter: '{b}: {c} ({d}%)'
+                            }
+                        }
+                    }
+                ]
+            };
+            chart.setOption(option);
+        });
+    </script>
+</body>
+</html>

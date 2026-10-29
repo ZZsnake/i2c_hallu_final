@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Economic Line Graph Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      width: 100vw;
+    }
+    .echarts-title {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: bold;
+      color: #212121;
+      font-size: 22px;
+    }
+    .echarts-subtext {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #424242;
+      font-size: 14px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var chartInstance = echarts.init(chartDom);
+    var option;
+
+    // Economics: GDP Growth Rate Over Quarters (Dummy Data)
+    option = {
+      title: {
+        text: 'Quarterly GDP Growth Rate',
+        subtext: 'Sample Economics Data',
+        left: 'center',
+        textStyle: {
+          color: '#1a237e',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 22
+        },
+        subtextStyle: {
+          color: '#424242',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontSize: 14,
+          fontStyle: 'italic'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'line'
+        }
+      },
+      toolbox: {
+        show: true,
+        feature: {
+          saveAsImage: {
+            title: 'Save'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        axisLabel: {
+          color: '#212121',
+          fontWeight: 'bold',
+          fontFamily: 'Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#212121',
+            width: 2
+          }
+        },
+        data: [
+          'Q1 2022', 'Q2 2022', 'Q3 2022', 'Q4 2022',
+          'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023'
+        ]
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          formatter: '{value} %',
+          color: '#212121',
+          fontWeight: 'bold',
+          fontFamily: 'Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#212121',
+            width: 2
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#e0e0e0',
+            width: 1
+          }
+        }
+      },
+      visualMap: {
+        show: false,
+        dimension: 0,
+        pieces: [
+          {
+            lte: 1,
+            color: '#1565c0'
+          },
+          {
+            gt: 1,
+            lte: 3,
+            color: '#d32f2f'
+          },
+          {
+            gt: 3,
+            color: '#2e7d32'
+          }
+        ]
+      },
+      series: [
+        {
+          name: 'GDP Growth Rate',
+          type: 'line',
+          smooth: true,
+          symbolSize: 8,
+          lineStyle: {
+            color: '#d32f2f',
+            width: 4
+          },
+          itemStyle: {
+            color: '#283593',
+            borderColor: '#212121',
+            borderWidth: 2
+          },
+          data: [2.1, 2.4, 2.0, 2.7, 3.2, 2.9, 3.5, 3.1],
+          markArea: {
+            itemStyle: {
+              color: 'rgba(41, 121, 255, 0.2)'
+            },
+            data: [
+              [
+                {
+                  name: 'Growth Surge',
+                  xAxis: 'Q1 2023'
+                },
+                {
+                  xAxis: 'Q3 2023'
+                }
+              ]
+            ]
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      chartInstance.setOption(option);
+    }
+
+    window.addEventListener('resize', chartInstance.resize);
+  </script>
+</body>
+</html>

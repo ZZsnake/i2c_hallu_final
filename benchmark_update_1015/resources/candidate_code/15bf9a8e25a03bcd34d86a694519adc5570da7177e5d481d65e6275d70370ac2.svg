@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="white" />
+
+  <!-- Concentric Orbits -->
+  <circle cx="200" cy="220" r="50" fill="none" stroke="#cccccc" stroke-width="2" />
+  <circle cx="200" cy="220" r="100" fill="none" stroke="#cccccc" stroke-width="2" />
+  <circle cx="200" cy="220" r="170" fill="none" stroke="#cccccc" stroke-width="2" />
+
+  <!-- Nucleus -->
+  <circle cx="200" cy="220" r="15" fill="none" stroke="#cccccc" stroke-width="1.5" />
+  <circle cx="200" cy="220" r="3" fill="black" />
+  <text x="215" y="245" font-family="Arial, sans-serif" font-size="20" font-style="italic" fill="black">+Ze</text>
+
+  <!-- Orbit Labels -->
+  <text x="200" y="195" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#e6f041" text-anchor="middle">n = 1</text>
+  <text x="200" y="135" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#e6f041" text-anchor="middle">n = 2</text>
+  <text x="200" y="45" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#e6f041" text-anchor="middle">n = 3</text>
+
+  <!-- Electron Transition -->
+  <!-- Electron at n=3 -->
+  <circle cx="325" cy="135" r="5" fill="#800080" />
+  <!-- Electron at n=2 -->
+  <circle cx="255" cy="180" r="5" fill="#800080" />
+  
+  <!-- Transition Arrow -->
+  <defs>
+    <marker id="arrowhead-yellow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0e641" />
+    </marker>
+    <marker id="arrowhead-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#41f0f0" />
+    </marker>
+  </defs>
+  <line x1="320" y1="138" x2="262" y2="176" stroke="#f0e641" stroke-width="3" marker-end="url(#arrowhead-yellow)" />
+
+  <!-- Emitted Photon -->
+  <path d="M 295,180 Q 300,165 305,180 T 315,180 T 325,180 T 335,180 T 345,180 T 355,180 T 365,180 L 385,180" fill="none" stroke="#41f0f0" stroke-width="3" marker-end="url(#arrowhead-cyan)" />
+  
+  <!-- Photon Equation -->
+  <text x="295" y="225" font-family="Arial, sans-serif" font-size="22" font-style="italic" fill="#41f0f0">
+    ΔE = hν
+  </text>
+</svg>

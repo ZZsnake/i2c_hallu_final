@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count of Prime Numbers Less Than n</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fff;
+        }
+        #chart {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-title">Count of Prime Numbers Less Than n</div>
+    <div id="chart"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const chartDom = document.getElementById('chart');
+            const myChart = echarts.init(chartDom);
+
+            const option = {
+                tooltip: {
+                    show: false
+                },
+                grid: {
+                    left: '10%',
+                    right: '10%',
+                    top: '15%',
+                    bottom: '10%'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['10', '20', '30', '40', '50', '60', '70'],
+                    name: 'n',
+                    nameLocation: 'end',
+                    nameGap: 15,
+                    nameTextStyle: {
+                        fontSize: 14
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#1f2540',
+                            width: 1
+                        }
+                    },
+                    axisTick: {
+                        show: true,
+                        alignWithLabel: true,
+                        lineStyle: {
+                            color: '#1f2540',
+                            width: 1
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 14
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Number of Primes',
+                    nameLocation: 'end',
+                    nameGap: 15,
+                    nameTextStyle: {
+                        fontSize: 14
+                    },
+                    min: 0,
+                    max: 21,
+                    interval: 3,
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed',
+                            color: '#8f889b'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 14
+                    }
+                },
+                series: [{
+                    data: [4, 8, 10, 12, 15, 17, 19],
+                    type: 'bar',
+                    barWidth: '45%',
+                    itemStyle: {
+                        color: '#3b82f6'
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        fontSize: 14,
+                        color: '#fff',
+                        fontWeight: 'bold'
+                    }
+                }]
+            };
+
+            myChart.setOption(option);
+
+            window.addEventListener('resize', function () {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

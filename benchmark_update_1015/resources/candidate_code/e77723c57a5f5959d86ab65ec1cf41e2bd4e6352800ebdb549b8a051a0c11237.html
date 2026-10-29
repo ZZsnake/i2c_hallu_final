@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Quadratic Function Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fff;
+        }
+        #main {
+            width: 100%;
+            height: 600px;
+            margin: 0 auto;
+        }
+        .chart-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div id="main"></div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('main'));
+            
+            var option = {
+                title: {
+                    text: 'Quadratic Functions: y = x² for x = 1 to 7',
+                    left: 'center',
+                    textStyle: {
+                        fontSize: 16,
+                        fontWeight: 'normal'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['1', '2', '3', '4', '5', '6', '7'],
+                    name: 'x',
+                    nameLocation: 'center',
+                    nameGap: 30,
+                    axisLabel: {
+                        margin: 20
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'y',
+                    nameLocation: 'center',
+                    nameGap: 30,
+                    min: 0,
+                    max: 50
+                },
+                grid: {
+                    left: 60,
+                    right: 20,
+                    bottom: 60,
+                    top: 80
+                },
+                series: [{
+                    data: [1, 4, 9, 16, 25, 36, 49],
+                    type: 'line',
+                    smooth: true,
+                    symbol: 'circle',
+                    symbolSize: 6,
+                    itemStyle: {
+                        color: '#d94e5d'
+                    },
+                    lineStyle: {
+                        color: '#2f73b5',
+                        width: 2
+                    }
+                }]
+            };
+            
+            myChart.setOption(option);
+            
+            $(window).on('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

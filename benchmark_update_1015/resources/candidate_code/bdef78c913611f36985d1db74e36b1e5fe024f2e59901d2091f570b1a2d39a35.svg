@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 800">
+  <defs>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:purple;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:red;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="400" r="50" fill="url(#sunGradient)" />
+  <circle cx="1100" cy="400" r="50" fill="url(#sunGradient)" />
+  <rect x="180" y="380" width="40" height="40" fill="red" />
+  <rect x="1080" y="380" width="40" height="40" fill="red" />
+  <g>
+    <line x1="200" y1="400" x2="300" y2="200" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="350" y2="250" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="400" y2="300" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="450" y2="350" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="500" y2="400" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="450" y2="450" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="400" y2="500" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="350" y2="550" stroke="brown" stroke-width="2" />
+    <line x1="200" y1="400" x2="300" y2="600" stroke="brown" stroke-width="2" />
+  </g>
+  <g>
+    <line x1="1100" y1="400" x2="1000" y2="200" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="950" y2="250" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="900" y2="300" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="850" y2="350" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="800" y2="400" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="850" y2="450" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="900" y2="500" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="950" y2="550" stroke="brown" stroke-width="2" />
+    <line x1="1100" y1="400" x2="1000" y2="600" stroke="brown" stroke-width="2" />
+  </g>
+  <g>
+    <rect x="300" y="190" width="20" height="20" fill="blue" />
+    <rect x="350" y="240" width="20" height="20" fill="blue" />
+    <rect x="400" y="290" width="20" height="20" fill="blue" />
+    <rect x="450" y="340" width="20" height="20" fill="blue" />
+    <rect x="500" y="390" width="20" height="20" fill="blue" />
+    <rect x="450" y="440" width="20" height="20" fill="blue" />
+    <rect x="400" y="490" width="20" height="20" fill="blue" />
+    <rect x="350" y="540" width="20" height="20" fill="blue" />
+    <rect x="300" y="590" width="20" height="20" fill="blue" />
+  </g>
+  <g>
+    <rect x="990" y="190" width="20" height="20" fill="blue" />
+    <rect x="940" y="240" width="20" height="20" fill="blue" />
+    <rect x="890" y="290" width="20" height="20" fill="blue" />
+    <rect x="840" y="340" width="20" height="20" fill="blue" />
+    <rect x="790" y="390" width="20" height="20" fill="blue" />
+    <rect x="840" y="440" width="20" height="20" fill="blue" />
+    <rect x="890" y="490" width="20" height="20" fill="blue" />
+    <rect x="940" y="540" width="20" height="20" fill="blue" />
+    <rect x="990" y="590" width="20" height="20" fill="blue" />
+  </g>
+  <ellipse cx="100" cy="100" rx="50" ry="20" fill="purple" />
+  <ellipse cx="1200" cy="100" rx="50" ry="20" fill="purple" />
+  <ellipse cx="100" cy="700" rx="50" ry="20" fill="purple" />
+  <ellipse cx="1200" cy="700" rx="50" ry="20" fill="purple" />
+  <ellipse cx="650" cy="100" rx="50" ry="20" fill="purple" />
+  <ellipse cx="650" cy="700" rx="50" ry="20" fill="purple" />
+</svg>

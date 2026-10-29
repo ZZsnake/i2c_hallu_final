@@ -1,0 +1,58 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\begin{document}
+\begin{tikzpicture}[font=\sffamily]
+    \tikzset{
+        table/.style={
+            matrix of nodes,
+            row sep=-\pgflinewidth,
+            column sep=-\pgflinewidth,
+            nodes={
+                rectangle,
+                draw=black,
+                align=center,
+                minimum height=1.5em,
+                text depth=0.25ex,
+                text height=1em,
+                anchor=center,
+                inner sep=6pt
+            },
+            column 1/.style={nodes={text width=7cm, align=left}},
+            column 2/.style={nodes={text width=3cm, align=center}},
+            column 3/.style={nodes={text width=4cm, align=right}},
+            column 4/.style={nodes={text width=3cm, align=center}},
+            column 5/.style={nodes={text width=4cm, align=left}},
+            row 1/.style={nodes={fill=gray!30}},
+            oddrow/.style={nodes={fill=blue!10}},
+            evenrow/.style={nodes={fill=orange!10}}
+        }
+    }
+
+    \matrix[table] (m) {
+        Title & Genre & Box Office (USD) & Release Date & Director \\
+        El Hombre que Aprendió a Volar & Comedy & \$1,200,000 & 2022-02-25 & Juan Manuel Méndez \\
+        La Isla de los Sueños & Drama & \$800,000 & 2022-08-15 & María José Corsino \\
+        Cuento de la Selva & Family & \$950,000 & 2022-12-01 & Luis Alfredo Torres \\
+        Bajo el Mismo Cielo & Romance & \$650,000 & 2022-05-20 & Claudia Morán \\
+        Cuando El Sol Brille & Action & \$1,700,000 & 2022-10-10 & Carlos Alberto Pérez \\
+        Las Huellas del Pasado & Thriller & \$900,000 & 2022-09-30 & Ricardo Méndez \\
+        Voces en la Noche & Horror & \$300,000 & 2022-04-15 & Gabriela Ortiz \\
+        Sangre Nueva & Action & \$2,100,000 & 2022-06-22 & Fernando Reyes \\
+        Amores Eternos & Romance & \$500,000 & 2022-03-14 & Samantha Pérez \\
+        Historias de la Revolución & Drama & \$750,000 & 2022-11-05 & Javier Quintero \\
+    };
+
+    % Apply alternating row colors
+    \foreach \i in {2,4,...,10} {
+        \pgfmathtruncatemacro{\j}{\i+1}
+        \draw[evenrow] (m-\i-1.north west) rectangle (m-\j-5.south east);
+    }
+    \foreach \i in {3,5,...,9} {
+        \pgfmathtruncatemacro{\j}{\i+1}
+        \draw[oddrow] (m-\i-1.north west) rectangle (m-\j-5.south east);
+    }
+
+\end{tikzpicture}
+\end{document}

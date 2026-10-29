@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 380">
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4A90E2"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2D8659"/>
+    </marker>
+  </defs>
+  
+  <!-- Computer Box -->
+  <rect x="127" y="7" width="153" height="148" rx="3" fill="white" stroke="#4A90E2" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="127" y1="37" x2="280" y2="37" stroke="#4A90E2" stroke-width="1" stroke-dasharray="4,3"/>
+  
+  <!-- Computer Icon -->
+  <circle cx="172" cy="22" r="10" fill="#4A90E2"/>
+  <path d="M169,19 L169,25 M175,19 L175,25 M169,22 L175,22" stroke="white" stroke-width="1.5" fill="none"/>
+  
+  <!-- Computer Text -->
+  <text x="188" y="27" font-family="Arial, sans-serif" font-size="14" fill="#333">Computer</text>
+  
+  <!-- Computer Attributes -->
+  <circle cx="136" cy="52" r="2" fill="#4A90E2"/>
+  <text x="143" y="55" font-family="Arial, sans-serif" font-size="11" fill="#333">ProcessorType</text>
+  
+  <circle cx="136" cy="67" r="2" fill="#4A90E2"/>
+  <text x="143" y="70" font-family="Arial, sans-serif" font-size="11" fill="#333">RAM</text>
+  
+  <circle cx="136" cy="82" r="2" fill="#4A90E2"/>
+  <text x="143" y="85" font-family="Arial, sans-serif" font-size="11" fill="#333">StorageType</text>
+  
+  <circle cx="136" cy="97" r="2" fill="#4A90E2"/>
+  <text x="143" y="100" font-family="Arial, sans-serif" font-size="11" fill="#333">OSVersion</text>
+  
+  <circle cx="136" cy="112" r="2" fill="#4A90E2"/>
+  <text x="143" y="115" font-family="Arial, sans-serif" font-size="11" fill="#333">NetworkAdapter</text>
+  
+  <circle cx="136" cy="127" r="2" fill="#4A90E2"/>
+  <text x="143" y="130" font-family="Arial, sans-serif" font-size="11" fill="#333">ConnectedUser</text>
+  
+  <!-- User Box -->
+  <rect x="7" y="217" width="118" height="128" rx="3" fill="white" stroke="#E85D4A" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="7" y1="247" x2="125" y2="247" stroke="#E85D4A" stroke-width="1" stroke-dasharray="4,3"/>
+  
+  <!-- User Icon -->
+  <circle cx="24" cy="232" r="10" fill="#E85D4A"/>
+  <text x="19" y="237" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">U</text>
+  
+  <!-- User Text -->
+  <text x="40" y="237" font-family="Arial, sans-serif" font-size="14" fill="#333">User</text>
+  
+  <!-- User Attributes -->
+  <circle cx="16" cy="262" r="2" fill="#4A90E2"/>
+  <text x="23" y="265" font-family="Arial, sans-serif" font-size="11" fill="#333">UserName</text>
+  
+  <circle cx="16" cy="277" r="2" fill="#4A90E2"/>
+  <text x="23" y="280" font-family="Arial, sans-serif" font-size="11" fill="#333">Role</text>
+  
+  <circle cx="16" cy="292" r="2" fill="#4A90E2"/>
+  <text x="23" y="295" font-family="Arial, sans-serif" font-size="11" fill="#333">LoginTime</text>
+  
+  <circle cx="16" cy="307" r="2" fill="#4A90E2"/>
+  <text x="23" y="310" font-family="Arial, sans-serif" font-size="11" fill="#333">Status</text>
+  
+  <circle cx="16" cy="322" r="2" fill="#4A90E2"/>
+  <text x="23" y="325" font-family="Arial, sans-serif" font-size="11" fill="#333">Email</text>
+  
+  <!-- Network Box -->
+  <rect x="160" y="217" width="88" height="128" rx="3" fill="white" stroke="#2D8659" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="160" y1="247" x2="248" y2="247" stroke="#2D8659" stroke-width="1" stroke-dasharray="4,3"/>
+  
+  <!-- Network Icon -->
+  <circle cx="177" cy="232" r="10" fill="#2D8659"/>
+  <path d="M174,229 L180,229 M177,229 L177,235 M174,235 L180,235" stroke="white" stroke-width="1.5" fill="none"/>
+  <circle cx="174" cy="229" r="1.5" fill="white"/>
+  <circle cx="180" cy="229" r="1.5" fill="white"/>
+  <circle cx="174" cy="235" r="1.5" fill="white"/>
+  <circle cx="180" cy="235" r="1.5" fill="white"/>
+  
+  <!-- Network Text -->
+  <text x="193" y="237" font-family="Arial, sans-serif" font-size="14" fill="#333">Network</text>
+  
+  <!-- Network Attributes -->
+  <circle cx="169" cy="262" r="2" fill="#2D8659"/>
+  <text x="176" y="265" font-family="Arial, sans-serif" font-size="11" fill="#333">IPAddress</text>
+  
+  <circle cx="169" cy="277" r="2" fill="#2D8659"/>
+  <text x="176" y="280" font-family="Arial, sans-serif" font-size="11" fill="#333">Port</text>
+  
+  <circle cx="169" cy="292" r="2" fill="#2D8659"/>
+  <text x="176" y="295" font-family="Arial, sans-serif" font-size="11" fill="#333">Protocol</text>
+  
+  <circle cx="169" cy="307" r="2" fill="#2D8659"/>
+  <text x="176" y="310" font-family="Arial, sans-serif" font-size="11" fill="#333">Subnet</text>
+  
+  <circle cx="169" cy="322" r="2" fill="#2D8659"/>
+  <text x="176" y="325" font-family="Arial, sans-serif" font-size="11" fill="#333">Gateway</text>
+  
+  <!-- Arrow from User to Computer (Blue) -->
+  <path d="M 125,230 Q 140,180 155,155" fill="none" stroke="#4A90E2" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Arrow from Network to Computer (Green) -->
+  <path d="M 220,217 Q 260,180 260,155" fill="none" stroke="#2D8659" stroke-width="2" marker-end="url(#arrowGreen)"/>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <style>
+    .title {
+      font-family: sans-serif;
+      font-size: 30px;
+      fill: black;
+      text-anchor: middle;
+    }
+    .label {
+      font-family: sans-serif;
+      font-size: 22px;
+      fill: black;
+      text-anchor: start;
+    }
+    .axis-label {
+      font-family: sans-serif;
+      font-size: 22px;
+      fill: black;
+      text-anchor: middle;
+    }
+    .bar {
+      fill: #800080; /* A shade of purple */
+    }
+    .grid-line {
+      stroke: #E0FFE0; /* Very light green */
+      stroke-width: 1;
+    }
+    .axis-line {
+      stroke: black;
+      stroke-width: 1;
+    }
+  </style>
+
+  <!-- Title -->
+  <text x="400" y="50" class="title">Foreign aid given, per capita</text>
+
+  <!-- Chart Area Background Grid -->
+  <rect x="100" y="100" width="600" height="450" fill="#F0FFF0"/>
+  <line x1="100" y1="100" x2="100" y2="550" class="grid-line" stroke="black"/> <!-- Left border -->
+  <line x1="400" y1="100" x2="400" y2="550" class="grid-line"/>
+  <line x1="700" y1="100" x2="700" y2="550" class="grid-line"/>
+
+  <!-- X-axis -->
+  <line x1="100" y1="550" x2="700" y2="550" class="axis-line"/>
+  <text x="100" y="580" class="axis-label">0</text>
+  <text x="400" y="580" class="axis-label">$500</text>
+  <text x="700" y="580" class="axis-label">$1000</text>
+
+  <!-- Data Bars and Labels -->
+  <!-- Max value is approx $1100, so 600px width = $1000. Scale: 0.6 px per $1 -->
+  <!-- Bar height: 30px, spacing: 10px -->
+  <g transform="translate(0, 100)">
+    <!-- Norway -->
+    <rect x="100" y="0" width="660" height="30" class="bar"/>
+    <text x="450" y="25" class="label">Norway</text>
+
+    <!-- Switzerland -->
+    <rect x="100" y="40" width="420" height="30" class="bar"/>
+    <text x="450" y="65" class="label">Switzerland</text>
+
+    <!-- Sweden -->
+    <rect x="100" y="80" width="390" height="30" class="bar"/>
+    <text x="450" y="105" class="label">Sweden</text>
+
+    <!-- Germany -->
+    <rect x="100" y="120" width="270" height="30" class="bar"/>
+    <text x="450" y="145" class="label">Germany</text>
+
+    <!-- Netherlands -->
+    <rect x="100" y="160" width="240" height="30" class="bar"/>
+    <text x="450" y="185" class="label">Netherlands</text>
+
+    <!-- UK -->
+    <rect x="100" y="200" width="210" height="30" class="bar"/>
+    <text x="450" y="225" class="label">UK</text>
+
+    <!-- Canada -->
+    <rect x="100" y="240" width="180" height="30" class="bar"/>
+    <text x="450" y="265" class="label">Canada</text>
+
+    <!-- Belgium -->
+    <rect x="100" y="280" width="168" height="30" class="bar"/>
+    <text x="450" y="305" class="label">Belgium</text>
+
+    <!-- France -->
+    <rect x="100" y="320" width="150" height="30" class="bar"/>
+    <text x="450" y="345" class="label">France</text>
+
+    <!-- US -->
+    <rect x="100" y="360" width="120" height="30" class="bar"/>
+    <text x="450" y="385" class="label">US</text>
+
+    <!-- Japan -->
+    <rect x="100" y="400" width="90" height="30" class="bar"/>
+    <text x="450" y="425" class="label">Japan</text>
+
+    <!-- Australia -->
+    <rect x="100" y="440" width="60" height="30" class="bar"/>
+    <text x="450" y="465" class="label">Australia</text>
+  </g>
+</svg>

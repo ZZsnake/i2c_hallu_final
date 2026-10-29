@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\pagestyle{empty}
+
+% Define ellipses representing sets A and B
+\def\EllipseAPath{(0,0) ellipse (1.2 and 0.7)}
+\def\EllipseBPath{(0,0) ellipse (0.7 and 1.2)}
+\tikzstyle{A_style} = [draw, teal!90!black, thick]
+\tikzstyle{B_style} = [draw, blue!80!black, thick]
+
+\begin{tikzpicture}[scale=0.7, >=Stealth]
+    % First group: rotated ellipses
+    \begin{scope}[rotate=-30]
+        \path[A_style] \EllipseAPath;
+        \path[B_style] \EllipseBPath;
+        \path (-1.2,0) node[left, font=\bfseries, color=teal!90!black] {$u_1$}
+              (0,1.2) node[right, font=\bfseries, color=blue!80!black] {$u_2$};
+    \end{scope}
+    % Second group: transformed ellipses
+    \begin{scope}[xshift=5.2cm, rotate=-30, xscale=0.6, yscale=1.8]
+        \path[A_style] \EllipseAPath;
+        \path[B_style] \EllipseBPath;
+        \path (-1.2,0) node[left, font=\bfseries, color=teal!90!black] {$u_1$}
+              (0,1.2) node[right, font=\bfseries, color=blue!80!black] {$u_2$};
+    \end{scope}
+    % Third group: intersection region
+    \begin{scope}[xshift=10.4cm, rotate=0, xscale=0.6, yscale=1.8]
+        \path[A_style] \EllipseAPath;
+        \path[B_style] \EllipseBPath;
+        \path (-1.2,0) node[above left, font=\bfseries, color=teal!90!black] {$u_1$}
+              (0,1.2) node[right, font=\bfseries, color=blue!80!black] {$u_2$};
+        % Fill intersection between SetA and SetB; clip with SetA and fill SetB
+        \clip \EllipseAPath;
+        \fill[fill=purple!25!black] \EllipseBPath;
+    \end{scope}
+    % Axes and a new ellipse
+    \begin{scope}[xshift=10.4cm]
+        \draw[thin,->,gray!80!black] (-1.2,0) -- (1.2,0);
+        \draw[thin,->,gray!80!black] (0,-2.7) -- (0,2.7);
+        \draw[very thick, orange!80!black] (0,0) ellipse (0.4 and 1.0);
+    \end{scope}
+    % Arrows between ellipses
+    \draw[-{Stealth}, thick, orange!90!black] (1.2,0) to[bend left] (2.6,0);
+    \draw[-{Stealth}, thick, orange!90!black] (6.4,0) to[bend left] (7.8,0);
+\end{tikzpicture}
+
+\end{document}

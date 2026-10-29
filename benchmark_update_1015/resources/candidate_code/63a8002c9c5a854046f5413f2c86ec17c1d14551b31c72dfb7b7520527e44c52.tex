@@ -1,0 +1,33 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{siunitx}
+\usepackage{graphicx}
+
+\definecolor{lightblue}{RGB}{230,240,255}
+\definecolor{darkblue}{RGB}{0,51,102}
+\newcommand{\TableStretchValue}{1.2}
+
+\begin{document}
+\renewcommand{\arraystretch}{\TableStretchValue}
+\begin{tabular}{>{\columncolor{lightblue}}l S[table-format=2.0] S[table-format=3.1]}
+\toprule
+\rowcolor{darkblue}
+\textcolor{white}{\textbf{Task}} & \textcolor{white}{\textbf{Hours}} & \textcolor{white}{\textbf{Frequency (\%)}} \\
+\midrule
+Project Planning & 15 & 8.6 \\
+Requirements Gathering & 20 & 11.4 \\
+Design Phase & 25 & 14.3 \\
+Development & 40 & 22.9 \\
+Testing & 30 & 17.1 \\
+Deployment & 10 & 5.7 \\
+Stakeholder Meetings & 5 & 2.9 \\
+Documentation & 20 & 11.4 \\
+Project Review & 10 & 5.7 \\
+\midrule
+\rowcolor{darkblue}
+\textcolor{white}{\textbf{Total}} & \textcolor{white}{\textbf{175}} & \textcolor{white}{\textbf{100.0}} \\
+\bottomrule
+\end{tabular}
+\end{document}

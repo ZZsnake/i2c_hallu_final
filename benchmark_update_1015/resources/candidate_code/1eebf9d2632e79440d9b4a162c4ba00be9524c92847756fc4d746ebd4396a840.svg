@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Background -->
+  <rect x="0" y="0" width="900" height="600" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="60" text-anchor="middle"
+        font-family="Courier New, monospace"
+        font-size="28"
+        letter-spacing="6"
+        fill="#333333">
+    Interest Rate vs Inflation Rate
+  </text>
+
+  <!-- Plot area margins -->
+  <!-- Left=90, Right=840, Top=100, Bottom=480 -->
+  <!-- Gridlines -->
+  <g stroke="#e0e0e0" stroke-width="1">
+    <!-- Horizontal gridlines at 0,2,4,6,8,10% -->
+    <line x1="90" y1="480" x2="840" y2="480"/>
+    <line x1="90" y1="432" x2="840" y2="432"/>
+    <line x1="90" y1="384" x2="840" y2="384"/>
+    <line x1="90" y1="336" x2="840" y2="336"/>
+    <line x1="90" y1="288" x2="840" y2="288"/>
+    <line x1="90" y1="240" x2="840" y2="240"/>
+  </g>
+
+  <!-- Vertical dashed gridlines -->
+  <g stroke="#cccccc" stroke-width="1" stroke-dasharray="6,6">
+    <!-- around 2% interest -->
+    <line x1="200" y1="100" x2="200" y2="480"/>
+    <!-- 10% interest -->
+    <line x1="540" y1="100" x2="540" y2="480"/>
+  </g>
+
+  <!-- Axes -->
+  <g stroke="#999999" stroke-width="2">
+    <line x1="90" y1="480" x2="840" y2="480"/>
+    <line x1="90" y1="480" x2="90" y2="100"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <g font-family="Arial, sans-serif" font-size="12" fill="#444444" text-anchor="end">
+    <text x="80" y="484">0%</text>
+    <text x="80" y="436">2%</text>
+    <text x="80" y="388">4%</text>
+    <text x="80" y="340">6%</text>
+    <text x="80" y="292">8%</text>
+    <text x="80" y="244">10%</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="Arial, sans-serif" font-size="12" fill="#444444" text-anchor="middle">
+    <text x="130" y="500">1%</text>
+    <text x="310" y="500">5%</text>
+    <text x="540" y="500">10%</text>
+    <text x="770" y="500">15%</text>
+  </g>
+
+  <!-- Axis titles -->
+  <text x="465" y="525" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="14" fill="#444444">
+    Central bank interest rate (%)
+  </text>
+
+  <text x="25" y="290" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="14" fill="#444444"
+        transform="rotate(-90 25 290)">
+    Average annual inflation rate (%)
+  </text>
+
+  <!-- Data series -->
+  <!-- Helper: scale x: 1%->130, 5%->310, 10%->540, 15%->770 -->
+  <!-- Helper: scale y: 0%->480, 2%->432, 4%->384, 6%->336, 8%->288, 10%->240 -->
+
+  <!-- USA - red -->
+  <g fill="none" stroke="#d62728" stroke-width="3">
+    <path d="M130 440 L310 400 L540 320 L770 230"/>
+  </g>
+  <g fill="#d62728" stroke="white" stroke-width="1.2">
+    <circle cx="130" cy="440" r="4"/>
+    <circle cx="310" cy="400" r="4"/>
+    <circle cx="540" cy="320" r="4"/>
+    <circle cx="770" cy="230" r="4"/>
+  </g>
+
+  <!-- UK - blue -->
+  <g fill="none" stroke="#1f77b4" stroke-width="3">
+    <path d="M130 450 L310 420 L540 340 L770 260"/>
+  </g>
+  <g fill="#1f77b4" stroke="white" stroke-width="1.2">
+    <circle cx="130" cy="450" r="4"/>
+    <circle cx="310" cy="420" r="4"/>
+    <circle cx="540" cy="340" r="4"/>
+    <circle cx="770" cy="260" r="4"/>
+  </g>
+
+  <!-- Germany - gray -->
+  <g fill="none" stroke="#7f7f7f" stroke-width="3">
+    <path d="M130 455 L310 430 L540 345 L770 275"/>
+  </g>
+  <g fill="#7f7f7f" stroke="white" stroke-width="1.2">
+    <circle cx="130" cy="455" r="4"/>
+    <circle cx="310" cy="430" r="4"/>
+    <circle cx="540" cy="345" r="4"/>
+    <circle cx="770" cy="275" r="4"/>
+  </g>
+
+  <!-- Japan - teal/green -->
+  <g fill="none" stroke="#2ca02c" stroke-width="3">
+    <path d="M130 438 L310 410 L540 330 L770 290"/>
+  </g>
+  <g fill="#2ca02c" stroke="white" stroke-width="1.2">
+    <circle cx="130" cy="438" r="4"/>
+    <circle cx="310" cy="410" r="4"/>
+    <circle cx="540" cy="330" r="4"/>
+    <circle cx="770" cy="290" r="4"/>
+  </g>
+
+  <!-- Brazil - gold -->
+  <g fill="none" stroke="#ffbf00" stroke-width="3">
+    <path d="M130 470 L310 450 L540 370 L770 305"/>
+  </g>
+  <g fill="#ffbf00" stroke="white" stroke-width="1.2">
+    <circle cx="130" cy="470" r="4"/>
+    <circle cx="310" cy="450" r="4"/>
+    <circle cx="540" cy="370" r="4"/>
+    <circle cx="770" cy="305" r="4"/>
+  </g>
+
+  <!-- India - orange -->
+  <g fill="none" stroke="#ff7f0e" stroke-width="3">
+    <path d="M130 460 L310 440 L540 360 L770 330"/>
+  </g>
+  <g fill="#ff7f0e" stroke="white" stroke-width="1.2">
+    <circle cx="130" cy="460" r="4"/>
+    <circle cx="310" cy="440" r="4"/>
+    <circle cx="540" cy="360" r="4"/>
+    <circle cx="770" cy="330" r="4"/>
+  </g>
+
+  <!-- Series labels near left side -->
+  <g font-family="Arial, sans-serif" font-size="11" fill="#444444">
+    <text x="140" y="435">USA</text>
+    <text x="140" y="445">Japan</text>
+    <text x="140" y="455">UK</text>
+    <text x="140" y="465">Germany</text>
+    <text x="140" y="475">Brazil</text>
+    <text x="210" y="455">India</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-family="Arial, sans-serif" font-size="12" fill="#444444">
+    <!-- Positions in top-right plot area -->
+    <rect x="720" y="120" width="10" height="10" fill="#d62728"/>
+    <text x="740" y="129">USA</text>
+
+    <rect x="720" y="140" width="10" height="10" fill="#1f77b4"/>
+    <text x="740" y="149">UK</text>
+
+    <rect x="720" y="160" width="10" height="10" fill="#7f7f7f"/>
+    <text x="740" y="169">Germany</text>
+
+    <rect x="720" y="180" width="10" height="10" fill="#2ca02c"/>
+    <text x="740" y="189">Japan</text>
+
+    <rect x="720" y="200" width="10" height="10" fill="#ffbf00"/>
+    <text x="740" y="209">Brazil</text>
+
+    <rect x="720" y="220" width="10" height="10" fill="#ff7f0e"/>
+    <text x="740" y="229">India</text>
+  </g>
+
+  <!-- Footnote -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="#777777">
+    <text x="90" y="545">
+      Source: Central Bank Annual Reports, IMF World Economic Outlook, World Bank Data.
+    </text>
+    <text x="90" y="560">
+      Compiled by Economics Data Viz Team.
+    </text>
+    <text x="90" y="575">
+      CC BY
+    </text>
+  </g>
+</svg>

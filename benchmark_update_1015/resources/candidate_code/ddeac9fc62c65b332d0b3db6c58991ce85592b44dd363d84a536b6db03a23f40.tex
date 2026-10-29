@@ -1,0 +1,27 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.5]
+    % Axes
+    \draw[->] (-0.5,0) -- (6,0) node[right] {$G \uparrow / T \downarrow$};
+    \draw[->] (0,-0.5) -- (0,6) node[above] {$E$};
+
+    % Lines
+    \draw[thick, name path=IB] (0,4) -- (6,0) node[right] {$IB$};
+    \draw[thick, name path=EB] (0,2) -- (6,0) node[right] {$EB$};
+    \draw[thick, name path=P] (0,0) -- (6,0) node[right] {$P$};
+
+    % Intersection Point
+    \coordinate (E*) at (intersection of IB and EB);
+    \fill[blue] (E*) circle (2pt) node[above] {$E^*$};
+
+    % Arrows
+    \draw[->, thick, shorten >=5pt, shorten <=5pt] (E*) -- ($(E*)!1cm!90:(P)$) node[above] {$P_{IB}$};
+    \draw[->, thick, shorten >=5pt, shorten <=5pt] (E*) -- ($(E*)!1cm!-90:(P)$) node[below] {$P_{EB}$};
+
+\end{tikzpicture}
+
+\end{document}

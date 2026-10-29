@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Weekly Device Usage Trends</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: bold;
+      color: #222;
+    }
+    .echarts-legend {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 15px;
+      color: #1a1a1a;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    var option = {
+      title: {
+        text: 'Weekly Device Usage Trends',
+        left: 'center',
+        textStyle: {
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 'bold',
+          color: '#222',
+          fontSize: 22
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: '#222',
+        borderColor: '#444',
+        textStyle: {
+          color: '#fff',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      legend: {
+        data: ['Smartphone', 'Tablet', 'Laptop', 'Desktop', 'Other Devices'],
+        top: 35,
+        textStyle: {
+          color: '#1a1a1a',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontSize: 15,
+          fontWeight: 'bold'
+        }
+      },
+      grid: {
+        left: '4%',
+        right: '4%',
+        bottom: '6%',
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        axisLine: {
+          lineStyle: {
+            color: '#333',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLine: {
+          lineStyle: {
+            color: '#333',
+            width: 2
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#e0e0e0',
+            width: 1,
+            type: 'dashed'
+          }
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      series: [
+        {
+          name: 'Smartphone',
+          type: 'line',
+          stack: 'Total',
+          data: [210, 185, 240, 260, 220, 300, 250],
+          lineStyle: {
+            color: '#1565c0',
+            width: 3
+          },
+          symbolSize: 8,
+          itemStyle: {
+            color: '#1565c0'
+          }
+        },
+        {
+          name: 'Tablet',
+          type: 'line',
+          stack: 'Total',
+          data: [95, 100, 80, 120, 110, 130, 125],
+          lineStyle: {
+            color: '#2e7d32',
+            width: 3
+          },
+          symbolSize: 8,
+          itemStyle: {
+            color: '#2e7d32'
+          }
+        },
+        {
+          name: 'Laptop',
+          type: 'line',
+          stack: 'Total',
+          data: [180, 170, 160, 200, 190, 210, 205],
+          lineStyle: {
+            color: '#c62828',
+            width: 3
+          },
+          symbolSize: 8,
+          itemStyle: {
+            color: '#c62828'
+          }
+        },
+        {
+          name: 'Desktop',
+          type: 'line',
+          stack: 'Total',
+          data: [80, 75, 70, 90, 85, 100, 95],
+          lineStyle: {
+            color: '#6d4c41',
+            width: 3
+          },
+          symbolSize: 8,
+          itemStyle: {
+            color: '#6d4c41'
+          }
+        },
+        {
+          name: 'Other Devices',
+          type: 'line',
+          stack: 'Total',
+          data: [40, 55, 60, 65, 50, 80, 70],
+          lineStyle: {
+            color: '#ad1457',
+            width: 3
+          },
+          symbolSize: 8,
+          itemStyle: {
+            color: '#ad1457'
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

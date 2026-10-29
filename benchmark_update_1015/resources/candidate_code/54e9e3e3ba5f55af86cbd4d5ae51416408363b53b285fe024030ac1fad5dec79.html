@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Function Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: "Times New Roman", Times, serif;
+        }
+        #container {
+            width: 95%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #chart-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        #main-chart {
+            width: 100%;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="chart-title">Quadratic Function: y = x² - 2x + 3</div>
+    <div id="main-chart"></div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var chartDom = document.getElementById('main-chart');
+        var myChart = echarts.init(chartDom);
+        
+        var data = [
+            [-2, 11],
+            [-1, 6],
+            [0, 3],
+            [1, 2],
+            [2, 3],
+            [3, 6],
+            [4, 11]
+        ];
+
+        var option = {
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                top: '5%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                min: -2.5,
+                max: 4.5,
+                interval: 1,
+                axisLine: {
+                    lineStyle: {
+                        color: '#333',
+                        width: 2
+                    }
+                },
+                axisTick: {
+                    show: true,
+                    alignWithLabel: true
+                },
+                splitLine: {
+                    show: false
+                },
+                axisLabel: {
+                    fontFamily: 'serif',
+                    fontSize: 14,
+                    margin: 15
+                },
+                name: 'x',
+                nameLocation: 'middle',
+                nameGap: 30,
+                nameTextStyle: {
+                    fontSize: 16,
+                    fontStyle: 'italic'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                min: 0,
+                max: 12,
+                interval: 2,
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type: 'dashed',
+                        color: '#ccc'
+                    }
+                },
+                axisLabel: {
+                    fontFamily: 'serif',
+                    fontSize: 14
+                },
+                name: 'y',
+                nameLocation: 'middle',
+                nameGap: 40,
+                nameTextStyle: {
+                    fontSize: 16,
+                    fontStyle: 'italic'
+                }
+            },
+            series: [{
+                data: data,
+                type: 'line',
+                smooth: false, // The original image shows straight segments between points
+                lineStyle: {
+                    color: '#1a938a',
+                    width: 4
+                },
+                symbol: 'circle',
+                symbolSize: 14,
+                itemStyle: {
+                    color: '#ff5733',
+                    borderColor: '#2c3e50',
+                    borderWidth: 2
+                },
+                label: {
+                    show: true,
+                    position: 'top',
+                    distance: 10,
+                    formatter: '{@[1]}',
+                    fontSize: 12,
+                    fontWeight: 'bold',
+                    color: '#000',
+                    fontFamily: 'serif'
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.2, every node/.style={font=\small}]
+
+% Left diagram: w vs e
+\draw[->] (0,0) -- (4,0) node[right] {$e$};
+\draw[->] (0,0) -- (0,4) node[above] {$w$};
+
+% Point A on the curve
+\coordinate (A) at (3.4,1.5);
+
+% Draw the backward-bending curve through A
+\draw[thick] (0,3.2) .. controls (1.2,3.0) and (2.9,2.3) .. (A)
+             .. controls (3.05,1.0) and (2.2,0.55) .. (2.2,0.4);
+
+\fill (A) circle (1.5pt) node[right] {$A$};
+
+% Continuous horizontal dotted wage line across both panels
+\draw[dotted] (0,1.5) node[left] {$w^*$} -- (9.9,1.5);
+
+% Right diagram: w vs N
+\begin{scope}[xshift=5cm]
+\draw[->] (0,0) -- (4,0) node[right] {$N$};
+\draw[->] (0,0) -- (0,4) node[above] {$w$};
+
+% Labor demand: downward-sloping line
+\draw[thick] (0.8,3.5) -- (3.2,0.5);
+\node[above left] at (0.5,3.5) {$D_N$};
+
+% Labor supply: upward-sloping line
+\draw[thick] (0.8,0.5) -- (3.2,3.5) node[above right] {$S_N$};
+
+% Intersection point
+\coordinate (Eq) at (2,2);
+
+% Vertical dotted lines from w* to N-axis
+\draw[dotted] (1.6,1.5) -- (1.6,0) node[below] {$N_s$};
+\draw[dotted] (2.4,1.5) -- (2.4,0) node[below] {$N_d$};
+
+\end{scope}
+
+\end{tikzpicture}
+
+\end{document}

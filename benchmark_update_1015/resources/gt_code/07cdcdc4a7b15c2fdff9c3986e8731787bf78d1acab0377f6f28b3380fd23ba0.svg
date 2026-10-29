@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="font-family:'Roboto Slab', Georgia, serif;font-size:17px;background-color:white;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased" width="850" height="600">
+  <g class="HeaderView">
+    <text font-size="25" x="15" y="35" fill="#1C1C1C">
+      <tspan x="15" y="35">Global Economic Indicators by Sector (2010-2022)</tspan>
+    </text>
+    <text font-size="14" x="15" y="53" fill="#222">
+      <tspan x="15" y="53">Data shows GDP contribution (in billions USD) across primary economic sectors.</tspan>
+      <tspan x="15" y="69">Figures are adjusted for inflation and reflect annual estimates for selected years.</tspan>
+      <tspan x="15" y="85">Sectors include Agriculture, Industry, Services, Technology, and Finance.</tspan>
+    </text>
+  </g>
+  <g class="StackedArea">
+    <defs>
+      <clipPath id="boundsClip-econ">
+        <rect x="60" y="0" width="750" height="500"></rect>
+      </clipPath>
+    </defs>
+    <g class="AxisBoxView">
+      <g class="HorizontalAxis">
+        <text x="80" y="515" fill="#222" text-anchor="middle" font-size="16">2010</text>
+        <text x="180" y="515" fill="#222" text-anchor="middle" font-size="16">2013</text>
+        <text x="280" y="515" fill="#222" text-anchor="middle" font-size="16">2016</text>
+        <text x="380" y="515" fill="#222" text-anchor="middle" font-size="16">2019</text>
+        <text x="480" y="515" fill="#222" text-anchor="middle" font-size="16">2022</text>
+      </g>
+      <g class="VerticalAxis">
+        <text x="55" y="470" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="16">0</text>
+        <text x="55" y="375" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="16">500</text>
+        <text x="55" y="280" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="16">1,000</text>
+        <text x="55" y="185" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="16">1,500</text>
+        <text x="55" y="90" fill="#222" dominant-baseline="middle" text-anchor="end" font-size="16">2,000</text>
+      </g>
+      <g class="AxisGridLines">
+        <line x1="60" y1="470" x2="540" y2="470" stroke="#AAA" stroke-width="1"></line>
+        <line x1="60" y1="375" x2="540" y2="375" stroke="#B5B5B5" stroke-dasharray="8,4" stroke-width="1"></line>
+        <line x1="60" y1="280" x2="540" y2="280" stroke="#B5B5B5" stroke-dasharray="8,4" stroke-width="1"></line>
+        <line x1="60" y1="185" x2="540" y2="185" stroke="#B5B5B5" stroke-dasharray="8,4" stroke-width="1"></line>
+        <line x1="60" y1="90" x2="540" y2="90" stroke="#B5B5B5" stroke-dasharray="8,4" stroke-width="1"></line>
+      </g>
+    </g>
+    <g clip-path="url(#boundsClip-econ)">
+      <g class="HeightedLegend">
+        <g class="legendMark">
+          <rect x="600" y="120" width="145" height="23" fill="#fff" opacity="0"></rect>
+          <line x1="610" y1="135" x2="635" y2="135" stroke="#002D62" stroke-width="2" stroke-dasharray="4,2"></line>
+          <text font-size="13" x="645" y="139" fill="#002D62"><tspan>Agriculture</tspan></text>
+        </g>
+        <g class="legendMark">
+          <rect x="600" y="155" width="145" height="23" fill="#fff" opacity="0"></rect>
+          <line x1="610" y1="170" x2="635" y2="170" stroke="#C70039" stroke-width="2" stroke-dasharray="4,2"></line>
+          <text font-size="13" x="645" y="174" fill="#C70039"><tspan>Industry</tspan></text>
+        </g>
+        <g class="legendMark">
+          <rect x="600" y="190" width="145" height="23" fill="#fff" opacity="0"></rect>
+          <line x1="610" y1="205" x2="635" y2="205" stroke="#009E60" stroke-width="2" stroke-dasharray="4,2"></line>
+          <text font-size="13" x="645" y="209" fill="#009E60"><tspan>Services</tspan></text>
+        </g>
+        <g class="legendMark">
+          <rect x="600" y="225" width="145" height="23" fill="#fff" opacity="0"></rect>
+          <line x1="610" y1="240" x2="635" y2="240" stroke="#FF8000" stroke-width="2" stroke-dasharray="4,2"></line>
+          <text font-size="13" x="645" y="244" fill="#FF8000"><tspan>Technology</tspan></text>
+        </g>
+        <g class="legendMark">
+          <rect x="600" y="260" width="145" height="23" fill="#fff" opacity="0"></rect>
+          <line x1="610" y1="275" x2="635" y2="275" stroke="#800080" stroke-width="2" stroke-dasharray="4,2"></line>
+          <text font-size="13" x="645" y="279" fill="#800080"><tspan>Finance</tspan></text>
+        </g>
+      </g>
+      <g class="Bars">
+        <!-- Agriculture -->
+        <rect x="80" y="390" width="30" height="80" fill="#002D62" fill-opacity="0.8" stroke="#002D62" stroke-width="2"/>
+        <rect x="180" y="370" width="30" height="100" fill="#002D62" fill-opacity="0.8" stroke="#002D62" stroke-width="2"/>
+        <rect x="280" y="350" width="30" height="120" fill="#002D62" fill-opacity="0.8" stroke="#002D62" stroke-width="2"/>
+        <rect x="380" y="340" width="30" height="130" fill="#002D62" fill-opacity="0.8" stroke="#002D62" stroke-width="2"/>
+        <rect x="480" y="330" width="30" height="140" fill="#002D62" fill-opacity="0.8" stroke="#002D62" stroke-width="2"/>
+        <!-- Industry -->
+        <rect x="80" y="320" width="30" height="70" fill="#C70039" fill-opacity="0.8" stroke="#C70039" stroke-width="2"/>
+        <rect x="180" y="300" width="30" height="70" fill="#C70039" fill-opacity="0.8" stroke="#C70039" stroke-width="2"/>
+        <rect x="280" y="270" width="30" height="80" fill="#C70039" fill-opacity="0.8" stroke="#C70039" stroke-width="2"/>
+        <rect x="380" y="250" width="30" height="90" fill="#C70039" fill-opacity="0.8" stroke="#C70039" stroke-width="2"/>
+        <rect x="480" y="230" width="30" height="100" fill="#C70039" fill-opacity="0.8" stroke="#C70039" stroke-width="2"/>
+        <!-- Services -->
+        <rect x="80" y="210" width="30" height="110" fill="#009E60" fill-opacity="0.8" stroke="#009E60" stroke-width="2"/>
+        <rect x="180" y="180" width="30" height="120" fill="#009E60" fill-opacity="0.8" stroke="#009E60" stroke-width="2"/>
+        <rect x="280" y="150" width="30" height="120" fill="#009E60" fill-opacity="0.8" stroke="#009E60" stroke-width="2"/>
+        <rect x="380" y="120" width="30" height="130" fill="#009E60" fill-opacity="0.8" stroke="#009E60" stroke-width="2"/>
+        <rect x="480" y="90" width="30" height="140" fill="#009E60" fill-opacity="0.8" stroke="#009E60" stroke-width="2"/>
+        <!-- Technology -->
+        <rect x="80" y="160" width="30" height="50" fill="#FF8000" fill-opacity="0.8" stroke="#FF8000" stroke-width="2"/>
+        <rect x="180" y="140" width="30" height="40" fill="#FF8000" fill-opacity="0.8" stroke="#FF8000" stroke-width="2"/>
+        <rect x="280" y="120" width="30" height="30" fill="#FF8000" fill-opacity="0.8" stroke="#FF8000" stroke-width="2"/>
+        <rect x="380" y="110" width="30" height="10" fill="#FF8000" fill-opacity="0.8" stroke="#FF8000" stroke-width="2"/>
+        <rect x="480" y="80" width="30" height="10" fill="#FF8000" fill-opacity="0.8" stroke="#FF8000" stroke-width="2"/>
+        <!-- Finance -->
+        <rect x="80" y="100" width="30" height="60" fill="#800080" fill-opacity="0.8" stroke="#800080" stroke-width="2"/>
+        <rect x="180" y="90" width="30" height="50" fill="#800080" fill-opacity="0.8" stroke="#800080" stroke-width="2"/>
+        <rect x="280" y="70" width="30" height="50" fill="#800080" fill-opacity="0.8" stroke="#800080" stroke-width="2"/>
+        <rect x="380" y="60" width="30" height="50" fill="#800080" fill-opacity="0.8" stroke="#800080" stroke-width="2"/>
+        <rect x="480" y="40" width="30" height="50" fill="#800080" fill-opacity="0.8" stroke="#800080" stroke-width="2"/>
+      </g>
+      <!-- Bar value labels -->
+      <g class="Labels" font-size="13" font-family="Roboto Slab, serif">
+        <text x="95" y="485" fill="#232323" text-anchor="middle">80</text>
+        <text x="195" y="470" fill="#232323" text-anchor="middle">100</text>
+        <text x="295" y="450" fill="#232323" text-anchor="middle">120</text>
+        <text x="395" y="435" fill="#232323" text-anchor="middle">130</text>
+        <text x="495" y="420" fill="#232323" text-anchor="middle">140</text>
+      </g>
+    </g>
+  </g>
+  <g class="SourcesFooter" style="fill:#222">
+    <text font-size="12" x="15" y="540">
+      <tspan x="15" y="540">Source: World Bank Economic Sector Data, 2023</tspan>
+    </text>
+    <text font-size="12" x="15" y="555">
+      <tspan x="15" y="555">Note: Data compiled from IMF and World Bank sector reports.</tspan>
+      <tspan x="15" y="568">Figures reflect annual GDP contributions for Agriculture, Industry, Services, Technology, Finance.</tspan>
+    </text>
+    <text font-size="12" x="571" y="540">
+      <tspan x="571" y="540">
+        <a target='_blank' style='fill: #222;' href='https://data.worldbank.org/indicator'>WorldBank.org/indicator</a> • <a style="fill: #222;" class="cclogo" href="http://creativecommons.org/licenses/by/4.0/deed.en_US" target="_blank">CC BY</a>
+      </tspan>
+    </text>
+  </g>
+</svg>

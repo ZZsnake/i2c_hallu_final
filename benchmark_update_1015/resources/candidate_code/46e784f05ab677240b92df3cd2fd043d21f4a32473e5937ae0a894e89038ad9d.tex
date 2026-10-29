@@ -1,0 +1,121 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.04]
+
+% Define colors
+\definecolor{parkingyellow}{RGB}{255,255,153}
+\definecolor{corridorblue}{RGB}{230,230,250}
+\definecolor{parkingspace}{RGB}{102,102,102}
+\definecolor{specialpink}{RGB}{255,182,193}
+\definecolor{specialgreen}{RGB}{144,238,144}
+
+% Draw main rectangle background
+\fill[white] (0,0) rectangle (195,195);
+
+% Function to draw parking block with spaces
+\newcommand{\parkingblock}[4]{
+    % #1,#2 = position, #3 = width, #4 = height
+    \fill[parkingyellow] (#1,#2) rectangle (#1+#3,#2+#4);
+    % Draw parking spaces (4x2 grid)
+    \foreach \i in {0,1,2,3} {
+        \foreach \j in {0,1} {
+            \fill[parkingspace] (#1+1.5+\i*2.5,#2+2+\j*6) rectangle (#1+2+\i*2.5,#2+2.5+\j*6);
+        }
+    }
+}
+
+% Draw corridors (horizontal blue strips)
+\foreach \y in {26, 78, 130, 169} {
+    \fill[corridorblue] (0,\y) rectangle (195,\y+4);
+}
+
+% Draw parking blocks in rows
+% Row 1 (bottom)
+\foreach \x in {0, 26, 52, 78, 104, 130, 156, 182} {
+    \parkingblock{\x}{0}{13}{13}
+}
+
+% Row 2
+\foreach \x in {0, 26, 52, 78, 104, 130, 156, 182} {
+    \parkingblock{\x}{30}{13}{13}
+}
+
+% Row 3
+\foreach \x in {0, 26, 52, 78, 104, 130, 156, 182} {
+    \parkingblock{\x}{56}{13}{13}
+}
+
+% Row 4
+\foreach \x in {0, 26, 52, 78, 104, 130, 156, 182} {
+    \parkingblock{\x}{82}{13}{13}
+}
+
+% Row 5
+\foreach \x in {0, 26, 52, 78, 104, 130, 156, 182} {
+    \parkingblock{\x}{108}{13}{13}
+}
+
+% Row 6
+\foreach \x in {0, 26, 52, 78, 104, 130, 156, 182} {
+    \parkingblock{\x}{134}{13}{13}
+}
+
+% Row 7
+\foreach \x in {0, 26, 52, 78, 104, 130, 156, 182} {
+    \parkingblock{\x}{173}{13}{13}
+}
+
+% Special areas
+% Pink vertical rectangle
+\fill[specialpink] (97,56) rectangle (102,95);
+
+% Green rectangle
+\fill[specialgreen] (91,108) rectangle (106,121);
+
+% Magnification circle and detail
+\coordinate (target) in (150,82);
+\coordinate (magnify) at (130,140);
+
+% Draw magnified view
+\begin{scope}[shift={(magnify)}]
+    \fill[parkingyellow] (-20,-20) rectangle (20,20);
+    % Face elements
+    \fill[parkingspace] (-10,-5) rectangle (-5,0);  % Left eye
+    \fill[parkingspace] (5,-5) rectangle (10,0);    % Right eye
+    \draw[red, line width=1.5] (-12,8) -- (-5,8);   % Left eyebrow
+    \draw[red, line width=1.5] (5,8) -- (12,8);     % Right eyebrow
+    \draw[red, line width=1.5] (0,5) -- (0,-8);     % Nose
+    \draw[red, line width=1.5] (-2,-15) rectangle (2,-10); % Mouth
+    
+    % Circle around magnified view
+    \draw[red, line width=1.2] (0,0) circle (25);
+\end{scope}
+
+% Connection line
+\draw[red, line width=1] (150,82) -- (magnify);
+
+% Dashed circle highlighting parking spot
+\draw[red, line width=1, dashed] (150,82) circle (4);
+
+% Dimension annotations
+% Width dimension
+\draw[<->, >=Stealth, line width=0.8] (0,-10) -- (195,-10);
+\node at (97.5,-15) {\Large 195 m};
+
+% Height dimension
+\draw[<->, >=Stealth, line width=0.8] (-10,0) -- (-10,195);
+\node[rotate=90] at (-15,97.5) {\Large 195 m};
+
+% 13m width annotation
+\draw[<->, >=Stealth, line width=0.8] (182,200) -- (195,200);
+\node at (188.5,205) {\Large 13 m};
+
+% 13m height annotation
+\draw[<->, >=Stealth, line width=0.8] (200,182) -- (200,195);
+\node[rotate=90] at (205,188.5) {\Large 13 m};
+
+\end{tikzpicture}
+\end{document}

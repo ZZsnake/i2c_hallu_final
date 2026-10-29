@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550">
+  <!-- Background -->
+  <rect width="1000" height="550" fill="white" />
+
+  <!-- Styles -->
+  <style>
+    .label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 42px; fill: black; text-anchor: middle; }
+    .symbol { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 48px; fill: black; text-anchor: middle; }
+    .outline { stroke: black; stroke-width: 4; fill: none; stroke-linejoin: round; stroke-linecap: round; }
+    .connection { stroke: black; stroke-width: 4; fill: none; }
+  </style>
+
+  <!-- Antenna -->
+  <path d="M 25,45 L 110,45 L 67.5,120 Z" class="outline" />
+  <line x1="67.5" y1="120" x2="67.5" y2="195" class="connection" />
+  <line x1="67.5" y1="195" x2="140" y2="195" class="connection" />
+
+  <!-- Summing Junction -->
+  <circle cx="180" cy="195" r="40" class="outline" />
+  <line x1="165" y1="195" x2="195" y2="195" class="outline" />
+  <line x1="180" y1="180" x2="180" y2="210" class="outline" />
+
+  <!-- Bandpass Filter -->
+  <text x="300" y="55" class="label">Bandpass</text>
+  <text x="300" y="105" class="label">Filter</text>
+  <rect x="270" y="135" width="125" height="125" fill="#CCFFFF" class="outline" />
+  <path d="M 295,175 Q 310,160 332.5,175 T 370,175" class="outline" />
+  <path d="M 295,200 Q 310,185 332.5,200 T 370,200" class="outline" />
+  <path d="M 295,225 Q 310,210 332.5,225 T 370,225" class="outline" />
+  <line x1="220" y1="195" x2="270" y2="195" class="connection" />
+
+  <!-- RF Amplifier & Detector -->
+  <text x="580" y="55" class="label">RF Amplifier</text>
+  <text x="580" y="105" class="label">&amp; Detector</text>
+  <polygon points="495,135 495,255 635,195" fill="#F5D0F5" class="outline" />
+  <text x="520" y="212" class="symbol">A</text>
+  <line x1="395" y1="195" x2="495" y2="195" class="connection" />
+
+  <!-- Audio Amplifier -->
+  <text x="840" y="55" class="label">Audio</text>
+  <text x="840" y="105" class="label">Amplifier</text>
+  <polygon points="745,130 745,260 895,195" fill="#F5F5D0" class="outline" />
+  <line x1="635" y1="195" x2="745" y2="195" class="connection" />
+
+  <!-- Speaker -->
+  <rect x="905" y="175" x2="925" y2="215" width="20" height="40" class="outline" />
+  <path d="M 925,175 L 975,135 L 975,255 L 925,215 Z" fill="#F5F5D0" class="outline" />
+  <line x1="895" y1="195" x2="905" y2="195" class="connection" />
+
+  <!-- Feedback Network -->
+  <rect x="370" y="315" width="130" height="125" fill="#CCFFFF" class="outline" />
+  <text x="435" y="400" style="font-family: 'Times New Roman', serif; font-size: 80px; text-anchor: middle;">β</text>
+  <text x="435" y="490" class="label">Feedback</text>
+  <text x="435" y="540" class="label">Network</text>
+
+  <!-- Feedback Connections -->
+  <circle cx="685" cy="195" r="6" fill="black" />
+  <path d="M 685,195 L 685,377.5 L 500,377.5" class="connection" />
+  <path d="M 370,377.5 L 180,377.5 L 180,235" class="connection" />
+
+</svg>

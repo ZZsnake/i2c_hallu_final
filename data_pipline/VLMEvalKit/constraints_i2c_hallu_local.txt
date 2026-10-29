@@ -1,0 +1,9 @@
+# Compatibility pins for local Qwen3-VL checkpoints produced by this project.
+# Install these together with requirements.txt; PyTorch itself is installed
+# separately from the CUDA 12.8 index as documented in the repository README.
+torch==2.8.0
+torchvision==0.23.0
+transformers==4.57.6
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+qwen-vl-utils==0.0.14

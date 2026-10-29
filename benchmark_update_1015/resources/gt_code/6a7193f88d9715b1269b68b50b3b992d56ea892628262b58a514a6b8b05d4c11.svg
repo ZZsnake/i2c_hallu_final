@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="352px" preserveAspectRatio="none" style="width:343px;height:352px;background:#FFFFFF;" version="1.1" viewBox="0 0 343 352" width="343px" zoomAndPan="magnify">
+<defs/>
+<g>
+  <!--class Computer-->
+  <g id="elem_Computer">
+    <rect fill="#E5F6FF" height="145.7813" id="Computer" rx="2.5" ry="2.5" style="stroke:#1828A8;stroke-width:1.5;" width="153" x="126" y="7"/>
+    <ellipse cx="172.75" cy="23" fill="#3498DB" rx="11" ry="11" style="stroke:#1828A8;stroke-width:2.2;"/>
+    <path d="M175.0938,18.6719 C174.1563,18.2344 173.5625,18.0938 172.6875,18.0938 C170.0625,18.0938 168.0625,20.1719 168.0625,22.8906 L168.0625,24.0156 C168.0625,26.5938 170.1719,28.4844 173.0625,28.4844 C174.2813,28.4844 175.4375,28.1875 176.1875,27.6406 C176.7656,27.2344 177.0938,26.7813 177.0938,26.3906 C177.0938,25.9375 176.7031,25.5469 176.2344,25.5469 C176.0156,25.5469 175.8125,25.625 175.625,25.8125 C175.1719,26.2969 175.1719,26.2969 174.9844,26.3906 C174.5625,26.6563 173.875,26.7813 173.1094,26.7813 C171.0625,26.7813 169.7656,25.6875 169.7656,23.9844 L169.7656,22.8906 C169.7656,21.1094 171.0156,19.7969 172.75,19.7969 C173.3281,19.7969 173.9375,19.9531 174.4063,20.2031 C174.8906,20.4844 175.0625,20.7031 175.1563,21.1094 C175.2188,21.5156 175.25,21.6406 175.3906,21.7656 C175.5313,21.9063 175.7656,22.0156 175.9844,22.0156 C176.25,22.0156 176.5156,21.875 176.6875,21.6563 C176.7969,21.5 176.8281,21.3125 176.8281,20.8906 L176.8281,19.4688 C176.8281,19.0313 176.8125,18.9063 176.7188,18.75 C176.5625,18.4844 176.2813,18.3438 175.9844,18.3438 C175.6875,18.3438 175.4844,18.4375 175.2656,18.75 L175.0938,18.6719 Z" fill="#1B1B1B"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="193.25" y="27.8467">Computer</text>
+    <line style="stroke:#1828A8;stroke-width:1.5;stroke-dasharray:4,3;" x1="127" x2="278" y1="39" y2="39"/>
+    <ellipse cx="137" cy="52.6484" fill="none" rx="3" ry="3" style="stroke:#D32F2F;stroke-width:1.6;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="146" y="55.9951">ProcessorType</text>
+    <ellipse cx="137" cy="68.9453" fill="none" rx="3" ry="3" style="stroke:#D32F2F;stroke-width:1.6;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="146" y="72.292">RAM</text>
+    <ellipse cx="137" cy="85.2422" fill="none" rx="3" ry="3" style="stroke:#D32F2F;stroke-width:1.6;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="146" y="88.5889">StorageType</text>
+    <ellipse cx="137" cy="101.5391" fill="none" rx="3" ry="3" style="stroke:#D32F2F;stroke-width:1.6;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="146" y="104.8857">OSVersion</text>
+    <ellipse cx="137" cy="117.8359" fill="none" rx="3" ry="3" style="stroke:#D32F2F;stroke-width:1.6;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="146" y="121.1826">NetworkAdapter</text>
+    <ellipse cx="137" cy="134.1328" fill="none" rx="3" ry="3" style="stroke:#D32F2F;stroke-width:1.6;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="146" y="137.4795">ConnectedUser</text>
+    <line style="stroke:#1828A8;stroke-width:1.5;stroke-dasharray:4,3;" x1="127" x2="278" y1="144.7813" y2="144.7813"/>
+  </g>
+  <!--class User-->
+  <g id="elem_User">
+    <rect fill="#E5F6FF" height="129.4844" id="User" rx="2.5" ry="2.5" style="stroke:#D32F2F;stroke-width:1.2;" width="117" x="7" y="216"/>
+    <ellipse cx="25.15" cy="232" fill="#FF7043" rx="11" ry="11" style="stroke:#D32F2F;stroke-width:2.2;"/>
+    <path d="M27.4938,227.6719 C26.5563,227.2344 25.9625,227.0938 25.0875,227.0938 C22.4625,227.0938 20.4625,229.1719 20.4625,231.8906 L20.4625,233.0156 C20.4625,235.5938 22.5719,237.4844 25.4625,237.4844 C26.6813,237.4844 27.8375,237.1875 28.5875,236.6406 C29.1656,236.2344 29.4938,235.7813 29.4938,235.3906 C29.4938,234.9375 29.1031,234.5469 28.6344,234.5469 C28.4156,234.5469 28.2125,234.625 28.025,234.8125 C27.5719,235.2969 27.5719,235.2969 27.3844,235.3906 C26.9625,235.6563 26.275,235.7813 25.5094,235.7813 C23.4625,235.7813 22.1656,234.6875 22.1656,232.9844 L22.1656,231.8906 C22.1656,230.1094 23.4156,228.7969 25.15,228.7969 C25.7281,228.7969 26.3375,228.9531 26.8063,229.2031 C27.2906,229.4844 27.4625,229.7031 27.5563,230.1094 C27.6188,230.5156 27.65,230.6406 27.7906,230.7656 C27.9313,230.9063 28.1656,231.0156 28.3844,231.0156 C28.65,231.0156 28.9156,230.875 29.0875,230.6563 C29.1969,230.5 29.2281,230.3125 29.2281,229.8906 L29.2281,228.4688 C29.2281,228.0313 29.2125,227.9063 29.1188,227.75 C28.9625,227.4844 28.6813,227.3438 28.3844,227.3438 C28.0875,227.3438 27.8844,227.4375 27.6656,227.75 L27.4938,227.6719 Z" fill="#1B1B1B"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="39.85" y="236.8467">User</text>
+    <line style="stroke:#D32F2F;stroke-width:1.2;stroke-dasharray:2,6;" x1="8" x2="123" y1="248" y2="248"/>
+    <ellipse cx="18" cy="261.6484" fill="none" rx="3" ry="3" style="stroke:#1976D2;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="27" y="264.9951">UserName</text>
+    <ellipse cx="18" cy="277.9453" fill="none" rx="3" ry="3" style="stroke:#1976D2;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="27" y="281.292">Role</text>
+    <ellipse cx="18" cy="294.2422" fill="none" rx="3" ry="3" style="stroke:#1976D2;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="27" y="297.5889">LoginTime</text>
+    <ellipse cx="18" cy="310.5391" fill="none" rx="3" ry="3" style="stroke:#1976D2;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="27" y="313.8857">Status</text>
+    <ellipse cx="18" cy="326.8359" fill="none" rx="3" ry="3" style="stroke:#1976D2;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="27" y="330.1826">Email</text>
+    <line style="stroke:#D32F2F;stroke-width:1.2;stroke-dasharray:2,6;" x1="8" x2="123" y1="337.4844" y2="337.4844"/>
+  </g>
+  <!--class Network-->
+  <g id="elem_Network">
+    <rect fill="#E5F6FF" height="129.4844" id="Network" rx="2.5" ry="2.5" style="stroke:#388E3C;stroke-width:1.2;" width="89" x="159" y="216"/>
+    <ellipse cx="174" cy="232" fill="#43A047" rx="11" ry="11" style="stroke:#388E3C;stroke-width:2.2;"/>
+    <path d="M176.3438,227.6719 C175.4063,227.2344 174.8125,227.0938 173.9375,227.0938 C171.3125,227.0938 169.3125,229.1719 169.3125,231.8906 L169.3125,233.0156 C169.3125,235.5938 171.4219,237.4844 174.3125,237.4844 C175.5313,237.4844 176.6875,237.1875 177.4375,236.6406 C178.0156,236.2344 178.3438,235.7813 178.3438,235.3906 C178.3438,234.9375 177.9531,234.5469 177.4844,234.5469 C177.2656,234.5469 177.0625,234.625 176.875,234.8125 C176.4219,235.2969 176.4219,235.2969 176.2344,235.3906 C175.8125,235.6563 175.125,235.7813 174.3594,235.7813 C172.3125,235.7813 171.0156,234.6875 171.0156,232.9844 L171.0156,231.8906 C171.0156,230.1094 172.2656,228.7969 174,228.7969 C174.5781,228.7969 175.1875,228.9531 175.6563,229.2031 C176.1406,229.4844 176.3125,229.7031 176.4063,230.1094 C176.4688,230.5156 176.5,230.6406 176.6406,230.7656 C176.7813,230.9063 177.0156,231.0156 177.2344,231.0156 C177.5,231.0156 177.7656,230.875 177.9375,230.6563 C178.0469,230.5 178.0781,230.3125 178.0781,229.8906 L178.0781,228.4688 C178.0781,228.0313 178.0625,227.9063 177.9688,227.75 C177.8125,227.4844 177.5313,227.3438 177.2344,227.3438 C176.9375,227.3438 176.7344,227.4375 176.5156,227.75 L176.3438,227.6719 Z" fill="#1B1B1B"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="188" y="236.8467">Network</text>
+    <line style="stroke:#388E3C;stroke-width:1.2;stroke-dasharray:7,2;" x1="160" x2="247" y1="248" y2="248"/>
+    <ellipse cx="170" cy="261.6484" fill="none" rx="3" ry="3" style="stroke:#E53935;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="179" y="264.9951">IPAddress</text>
+    <ellipse cx="170" cy="277.9453" fill="none" rx="3" ry="3" style="stroke:#E53935;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="179" y="281.292">Port</text>
+    <ellipse cx="170" cy="294.2422" fill="none" rx="3" ry="3" style="stroke:#E53935;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="179" y="297.5889">Protocol</text>
+    <ellipse cx="170" cy="310.5391" fill="none" rx="3" ry="3" style="stroke:#E53935;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="179" y="313.8857">Subnet</text>
+    <ellipse cx="170" cy="326.8359" fill="none" rx="3" ry="3" style="stroke:#E53935;stroke-width:1.5;"/>
+    <text fill="#212121" font-family="Roboto, Arial, Helvetica, sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="179" y="330.1826">Gateway</text>
+    <line style="stroke:#388E3C;stroke-width:1.2;stroke-dasharray:7,2;" x1="160" x2="247" y1="337.4844" y2="337.4844"/>
+  </g>
+  <!--link Computer to Network-->
+  <g id="link_Computer_Network">
+    <path d="M287.707,83.947 C336.801,90.516 289.104,168.154 248.056,223.597" fill="none" id="Computer-backto-Network" style="stroke:#388E3C;stroke-width:2.2;"/>
+    <line style="stroke:#388E3C;stroke-width:2.2;" x1="284.245" x2="284.7397" y1="87.7397" y2="79.755"/>
+    <line style="stroke:#388E3C;stroke-width:2.2;" x1="287.2392" x2="287.734" y1="87.9253" y2="79.9406"/>
+    <line style="stroke:#388E3C;stroke-width:2.2;" x1="288.4847" x2="280.5" y1="83.9948" y2="83.5"/>
+  </g>
+  <!--link Computer to Network (2)-->
+  <g id="link_Computer_Network_2">
+    <path d="M287.651,99.974 C331.695,106.339 287.325,175.409 248.16,225.981" fill="none" id="Computer-backto-Network-1" style="stroke:#388E3C;stroke-width:2.2;stroke-dasharray:10,6;"/>
+    <line style="stroke:#388E3C;stroke-width:2.2;" x1="284.2259" x2="284.7565" y1="103.7565" y2="95.7741"/>
+    <line style="stroke:#388E3C;stroke-width:2.2;" x1="287.2193" x2="287.7499" y1="103.9555" y2="95.9731"/>
+    <line style="stroke:#388E3C;stroke-width:2.2;" x1="288.4824" x2="280.5" y1="100.0306" y2="99.5"/>
+  </g>
+  <!--link Computer to User-->
+  <g id="link_Computer_User">
+    <path d="M117.33,133.202 C84.9662,138.958 72.3063,179.099 67.5775,215.879" fill="none" id="Computer-backto-User" style="stroke:#1976D2;stroke-width:2.2;"/>
+    <line style="stroke:#1976D2;stroke-width:2.2;" x1="117.5293" x2="124.9868" y1="133.1842" y2="126.522"/>
+    <line style="stroke:#1976D2;stroke-width:2.2;" x1="117.5293" x2="126.0132" y1="133.1842" y2="138.478"/>
+    <line style="stroke:#1976D2;stroke-width:2.2;" x1="117.5293" x2="125.5" y1="133.1842" y2="132.5"/>
+    <line style="stroke:#1976D2;stroke-width:2.2;" x1="115.1945" x2="115.8788" y1="129.3699" y2="137.3406"/>
+  </g>
+</g>
+</svg>

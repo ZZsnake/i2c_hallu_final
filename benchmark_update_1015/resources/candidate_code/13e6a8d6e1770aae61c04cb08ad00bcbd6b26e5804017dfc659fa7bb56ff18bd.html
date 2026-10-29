@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Survey Responses by Category</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+
+    .chart-container {
+      width: 100%;
+      max-width: 1200px;
+      height: 600px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .chart-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+    }
+
+    .legend {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .legend-gradient {
+      display: inline-block;
+      width: 150px;
+      height: 10px;
+      background: linear-gradient(to right, #3a5cdd, #b44d6e, #d63a4f, #7e7e5c, #6d5c8d, #9a5c5c, #d64d4d, #3d9d70);
+      border-radius: 5px;
+      margin: 0 10px;
+    }
+
+    .legend-labels {
+      display: inline-block;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .legend-labels span {
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-container">
+    <div class="chart-title">Survey Responses by Category</div>
+    <div class="legend">
+      <span class="legend-labels"><span>Low Score</span><span>High Score</span></span>
+      <div class="legend-gradient"></div>
+    </div>
+    <div id="barChart" style="width: 100%; height: 500px;"></div>
+  </div>
+
+  <script>
+    // Define the data
+    const categories = [
+      'Other',
+      'Request',
+      'Appreciation',
+      'Complaint',
+      'Inquiry',
+      'Suggestion',
+      'Feedback'
+    ];
+    const values = [46, 75, 162, 95, 120, 185, 230];
+
+    // Define custom colors matching the image
+    const colors = [
+      '#3a5cdd',   // Other - blue
+      '#9a4d6e',   // Request - maroon
+      '#7e7e5c',   // Appreciation - olive green
+      '#6d5c8d',   // Complaint - purple
+      '#9a5c5c',   // Inquiry - brown
+      '#d64d4d',   // Suggestion - red
+      '#3d9d70'    // Feedback - teal
+    ];
+
+    // Initialize ECharts
+    const myChart = echarts.init(document.getElementById('barChart'));
+
+    // Chart options
+    const option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        },
+        formatter: function(params) {
+          return params[0].name + ': ' + params[0].value;
+        }
+      },
+      xAxis: {
+        type: 'value',
+        name: 'Responses',
+        nameLocation: 'end',
+        nameGap: 15,
+        min: 0,
+        max: 250,
+        interval: 50,
+        axisLabel: {
+          fontSize: 12,
+          color: '#333'
+        },
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        splitLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: categories,
+        axisLabel: {
+          fontSize: 12,
+          color: '#333'
+        },
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        inverse: true
+      },
+      series: [{
+        name: 'Responses',
+        type: 'bar',
+        data: values,
+        itemStyle: {
+          color: function(params) {
+            return colors[params.dataIndex];
+          }
+        },
+        label: {
+          show: true,
+          position: 'right',
+          offset: [10, 0],
+          fontSize: 12,
+          color: '#333'
+        },
+        barWidth: '60%',
+        barGap: '10%'
+      }],
+      grid: {
+        left: '5%',
+        right: '5%',
+        top: '20%',
+        bottom: '10%',
+        containLabel: true
+      }
+    };
+
+    // Set the chart option
+    myChart.setOption(option);
+
+    // Resize chart on window resize
+    window.onresize = function() {
+      myChart.resize();
+    };
+  </script>
+</body>
+</html>

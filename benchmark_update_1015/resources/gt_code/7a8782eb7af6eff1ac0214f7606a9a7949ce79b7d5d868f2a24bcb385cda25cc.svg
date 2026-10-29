@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="640px"
+   height="480px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="Positive_externality.svg">
+  <title
+     id="title3050">Positive externality</title>
+  <defs
+     id="defs2987">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path4185"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <linearGradient
+       id="linearGradient3763">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.50196081;"
+         offset="0"
+         id="stop3765" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3767" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3938">
+      <rect
+         y="55"
+         x="50"
+         height="375"
+         width="535"
+         id="rect3940"
+         style="fill:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3763"
+       id="linearGradient5333"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9778304,0,0,0.95922134,1.9346375,8.0112968)"
+       x1="-1146.7128"
+       y1="2178.0212"
+       x2="383.86172"
+       y2="13.382974" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3254">
+      <rect
+         y="-536.63123"
+         x="55"
+         height="370"
+         width="530"
+         id="rect3256"
+         style="fill:none;stroke:none"
+         transform="scale(1,-1)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3258">
+      <rect
+         y="-410.76596"
+         x="55"
+         height="370"
+         width="530"
+         id="rect3260"
+         style="fill:none;stroke:none"
+         transform="scale(1,-1)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3262">
+      <rect
+         y="-425"
+         x="55"
+         height="370"
+         width="530"
+         id="rect3264"
+         style="fill:none;stroke:none"
+         transform="scale(1,-1)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3266">
+      <rect
+         y="55"
+         x="55"
+         height="370"
+         width="530"
+         id="rect3268"
+         style="fill:none;stroke:none" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3270">
+      <rect
+         y="55"
+         x="55"
+         height="370"
+         width="530"
+         id="rect3272"
+         style="fill:none;stroke:none" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="294.75641"
+     inkscape:cy="247.14286"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:window-width="1068"
+     inkscape:window-height="639"
+     inkscape:window-x="0"
+     inkscape:window-y="75"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Positive externality</dc:title>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:date>2011-03-01</dc:date>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Public Domain</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:source>http://commons.wikimedia.org/wiki/File:Positive_externality.svg</dc:source>
+        <dc:identifier>http://commons.wikimedia.org/wiki/File:Positive_externality.svg</dc:identifier>
+        <dc:language>en</dc:language>
+        <dc:description>A supply curve diagram illustrating the microeconomic concept of positive externality.</dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>supply curve</rdf:li>
+            <rdf:li>microeconomics</rdf:li>
+            <rdf:li>economics</rdf:li>
+            <rdf:li>externality</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Lines"
+     inkscape:groupmode="layer">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.13077095;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3.39231286,1.13077095;stroke-dashoffset:0"
+       d="m 25.988948,267.02127 293.479132,0 0,186.37235"
+       id="path3793-7-6"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath3270)"
+       transform="matrix(0.78650451,0,0,0.99437339,20.52729,-10.44893)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.95043341;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.85130023,0.95043341;stroke-dashoffset:0"
+       d="m 35.819149,225.39362 227.177311,0 0,209.10639"
+       id="path3793"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath3266)"
+       transform="matrix(1.1892705,0,0,0.93084199,-2.8261148,17.049158)" />
+    <rect
+       style="fill:url(#linearGradient5333);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.8424058;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2993"
+       width="535.15759"
+       height="375.15759"
+       x="52.421204"
+       y="52.421204"
+       clip-path="url(#clipPath3938)"
+       transform="translate(9.9999993,-12.999999)" />
+    <path
+       style="fill:none;stroke:#00ffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 19.97,28.333331 504.214,395.02"
+       id="path3787"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath3262)"
+       transform="matrix(1,0,0,-1,10,467)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#fffe00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 28.397164,411.86525 590.71632,27.765955"
+       id="path3789"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       clip-path="url(#clipPath3258)"
+       transform="matrix(1,0,0,-1,10,452.76596)" />
+    <path
+       style="fill:none;stroke:#fffe00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 19.361702,470.98581 545.78724,147.6312"
+       id="path3791"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       clip-path="url(#clipPath3254)"
+       transform="matrix(1,0,0,-1,10,578.6312)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Labels">
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="497.89951"
+       y="442.27206"
+       id="text3943"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3945"
+         x="497.89951"
+         y="442.27206">Quantity</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:tb-rl;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="41.865314"
+       y="42.952255"
+       id="text3943-8"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan3945-3"
+         x="65.579674"
+         y="19.237898">Price</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fffe00;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="462.86533"
+       y="307.95227"
+       id="text3943-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3945-2"
+         x="462.86533"
+         y="307.95227">Social Demand</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fffe00;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="327.04843"
+       y="401.98254"
+       id="text3943-1-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3945-2-2"
+         x="327.04843"
+         y="401.98254">Private Demand</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00ffff;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="436.42096"
+       y="53.82431"
+       id="text3943-1-4-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3945-2-2-3"
+         x="436.42096"
+         y="53.82431">Supply</tspan></text>
+    <g
+       id="g4060"
+       transform="translate(12.399495,-40.227922)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033"
+         y="269"
+         x="28"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="269"
+           x="28"
+           id="tspan4035"
+           sodipodi:role="line">P</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033-6"
+         y="275.29004"
+         x="36.076172"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="275.29004"
+           x="36.076172"
+           id="tspan4058"
+           sodipodi:role="line">S</tspan></text>
+    </g>
+    <g
+       transform="translate(11.638753,-5.167863)"
+       id="g4060-2">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033-9"
+         y="269"
+         x="28"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="269"
+           x="28"
+           id="tspan4035-1"
+           sodipodi:role="line">P</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033-6-8"
+         y="275.29004"
+         x="36.076172"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="275.29004"
+           x="36.076172"
+           id="tspan4058-2"
+           sodipodi:role="line">P</tspan></text>
+    </g>
+    <g
+       id="g4149"
+       transform="translate(-10.890581,-12.060484)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033-68"
+         y="449.50061"
+         x="311.9696"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="449.50061"
+           x="311.9696"
+           id="tspan4035-6"
+           sodipodi:role="line">Q</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033-6-4"
+         y="457.35892"
+         x="325.14264"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="457.35892"
+           x="325.14264"
+           id="tspan4058-9"
+           sodipodi:role="line">S</tspan></text>
+    </g>
+    <g
+       id="g4155"
+       transform="translate(6.30858,-13.344616)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033-9-7"
+         y="450.3739"
+         x="255.05531"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="450.3739"
+           x="255.05531"
+           id="tspan4035-1-7"
+           sodipodi:role="line">Q</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4033-6-8-9"
+         y="457.6441"
+         x="268.22836"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+         xml:space="preserve"><tspan
+           y="457.6441"
+           x="268.22836"
+           id="tspan4058-2-4"
+           sodipodi:role="line">P</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="302.67288"
+       y="107.91969"
+       id="text4161"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="302.67288"
+         y="107.91969"
+         id="tspan4167">Ideal equilibrium</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       x="506.22562"
+       y="236.45374"
+       id="text4169"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="506.22562"
+         y="236.45374"
+         id="tspan4175">Actual equilibrium</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 297.21529,120.7456 9.8995,94.8259"
+       id="path4177"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend);stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 425.11982,233.44795 279.45498,253.14982"
+       id="path4623"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

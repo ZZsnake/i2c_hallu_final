@@ -1,0 +1,24 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{array}
+
+\definecolor{darkpurple}{RGB}{48,25,52}
+\definecolor{lightpurple}{RGB}{150,123,182}
+\definecolor{midpurple}{RGB}{94,84,142}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{>{\columncolor{darkpurple}\color{white}}c|>{\columncolor{lightpurple}}c>{\columncolor{lightpurple}}c>{\columncolor{lightpurple}}c|>{\columncolor{midpurple}\color{white}}c}
+\multicolumn{1}{c}{\cellcolor{darkpurple}\textbf{\color{white}Confusion}} & \multicolumn{3}{c}{\cellcolor{darkpurple}\textbf{\color{white}Predicted}} & \multicolumn{1}{c}{\cellcolor{darkpurple}\textbf{\color{white}Total}} \\
+\multicolumn{1}{c|}{\cellcolor{darkpurple}\textbf{\color{white}Matrix}} & \textbf{Low} & \textbf{Medium} & \textbf{High} & \\
+\hline
+\rowcolor{lightpurple}\textbf{Low} & 2 & 0 & 0 & 2 \\
+\rowcolor{lightpurple}\textbf{Medium} & 0 & 2 & 0 & 2 \\
+\rowcolor{lightpurple}\textbf{High} & 0 & 0 & 2 & 2 \\
+\hline
+\rowcolor{midpurple}\color{white}\textbf{Total} & 2 & 2 & 2 & 6 \\
+\end{tabular}
+\end{document}

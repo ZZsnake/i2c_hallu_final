@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Background -->
+  <rect x="0" y="0" width="900" height="600" fill="white"/>
+
+  <!-- Title and subtitles -->
+  <text x="60" y="60" font-family="sans-serif" font-size="30" fill="#111111">Average Wage Growth</text>
+  <text x="60" y="90" font-family="sans-serif" font-size="14" fill="#666666">
+    Real wage growth adjusted for inflation, showing trends across regions and sectors over time.
+  </text>
+  <text x="60" y="110" font-family="sans-serif" font-size="13" fill="#777777">
+    Measured in constant 2020 USD.
+  </text>
+
+  <!-- Chart area bounds (for reference only) -->
+  <!-- Left margin 70, right edge of plot 620, top 140, bottom 470 -->
+
+  <!-- Horizontal gridlines -->
+  <g stroke="#dddddd" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="70" y1="170" x2="620" y2="170"/>
+    <line x1="70" y1="220" x2="620" y2="220"/>
+    <line x1="70" y1="270" x2="620" y2="270"/>
+    <line x1="70" y1="320" x2="620" y2="320"/>
+    <line x1="70" y1="370" x2="620" y2="370"/>
+    <line x1="70" y1="420" x2="620" y2="420"/>
+  </g>
+
+  <!-- X-axis baseline -->
+  <line x1="70" y1="470" x2="620" y2="470" stroke="#999999" stroke-width="1.2"/>
+
+  <!-- Y-axis labels -->
+  <g font-family="sans-serif" font-size="12" fill="#555555" text-anchor="end">
+    <text x="65" y="175">$50,000</text>
+    <text x="65" y="225">$40,000</text>
+    <text x="65" y="275">$30,000</text>
+    <text x="65" y="325">$20,000</text>
+    <text x="65" y="375">$10,000</text>
+    <text x="65" y="425">$0</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="sans-serif" font-size="12" fill="#666666" text-anchor="middle">
+    <text x="90"  y="490">1990</text>
+    <text x="150" y="490">1995</text>
+    <text x="210" y="490">2000</text>
+    <text x="270" y="490">2005</text>
+    <text x="330" y="490">2010</text>
+    <text x="390" y="490">2015</text>
+    <text x="450" y="490">2020</text>
+    <text x="510" y="490">2022</text>
+  </g>
+
+  <!-- Data lines -->
+  <g fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- North America (dashed purple, highest) -->
+    <path d="M90 260 L150 255 L210 250 L270 245 L330 240 L390 235 L450 230 L510 225"
+          stroke="#6a3dff" stroke-dasharray="6 4"/>
+    <!-- Europe (red) -->
+    <path d="M90 310 L150 305 L210 300 L270 290 L330 280 L390 270 L450 260 L510 250"
+          stroke="#d43f3a"/>
+    <!-- Asia-Pacific (greenish teal dashed-like) -->
+    <path d="M90 320 L150 315 L210 305 L270 295 L330 285 L390 275 L450 265 L510 260"
+          stroke="#1abc9c"/>
+    <!-- Latin America (orange) -->
+    <path d="M90 330 L150 325 L210 320 L270 310 L330 300 L390 290 L450 285 L510 280"
+          stroke="#f39c12"/>
+    <!-- Africa (blue-magenta) -->
+    <path d="M90 340 L150 335 L210 330 L270 325 L330 320 L390 315 L450 310 L510 305"
+          stroke="#3366cc"/>
+    <!-- Global (teal, lowest starting) -->
+    <path d="M90 350 L150 345 L210 340 L270 330 L330 320 L390 305 L450 295 L510 290"
+          stroke="#008080"/>
+  </g>
+
+  <!-- Legend -->
+  <g font-family="sans-serif" font-size="14">
+    <!-- North America -->
+    <line x1="640" y1="190" x2="670" y2="190" stroke="#6a3dff" stroke-width="2.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+    <text x="680" y="194" fill="#6a3dff">North America</text>
+
+    <!-- Europe -->
+    <line x1="640" y1="215" x2="670" y2="215" stroke="#d43f3a" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="680" y="219" fill="#d43f3a">Europe</text>
+
+    <!-- Asia-Pacific -->
+    <line x1="640" y1="240" x2="670" y2="240" stroke="#1abc9c" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="680" y="244" fill="#1abc9c">Asia-Pacific</text>
+
+    <!-- Latin America -->
+    <line x1="640" y1="265" x2="670" y2="265" stroke="#f39c12" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="680" y="269" fill="#f39c12">Latin America</text>
+
+    <!-- Africa -->
+    <line x1="640" y1="290" x2="670" y2="290" stroke="#3366cc" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="680" y="294" fill="#3366cc">Africa</text>
+
+    <!-- Global -->
+    <line x1="640" y1="315" x2="670" y2="315" stroke="#008080" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="680" y="319" fill="#008080">Global</text>
+  </g>
+
+  <!-- Source notes -->
+  <g font-family="sans-serif" font-size="11" fill="#777777">
+    <text x="60" y="530">Source: International Wage Database (2024)</text>
+    <text x="60" y="548">
+      Note: Data represents inflation-adjusted average wages. Regional averages are weighted by sectoral employment.
+    </text>
+    <text x="60" y="566">For more info visit: www.econwagedata.org</text>
+  </g>
+
+  <!-- License at bottom-right -->
+  <text x="840" y="566" font-family="sans-serif" font-size="11" fill="#777777" text-anchor="end">CC BY</text>
+</svg>

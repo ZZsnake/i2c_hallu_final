@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="svg1"
+   width="501.12"
+   height="491.51999"
+   viewBox="0 0 501.12 491.51999"
+   xmlns="http://www.w3.org/2000/svg">
+  <g id="g1">
+    <!-- Abstracted Sample Map: Fictional Geography Regions -->
+    <path
+      id="region-north"
+      d="M 70,90 C 110,70 200,60 260,100 Q 280,110 290,140 Q 270,150 250,170 Q 210,190 170,180 Q 120,150 70,120 Z"
+      fill="#7cc2fa"
+      stroke="#07396e"
+      stroke-width="2.5"
+      stroke-dasharray="6,4"
+    />
+    <path
+      id="region-east"
+      d="M 290,140 Q 320,110 370,130 Q 410,160 390,210 Q 360,230 330,210 Q 310,185 290,140 Z"
+      fill="#e84855"
+      stroke="#a1071a"
+      stroke-width="2.5"
+      stroke-dasharray="6,4"
+    />
+    <path
+      id="region-west"
+      d="M 70,120 Q 50,180 100,230 Q 140,260 190,230 Q 170,180 120,150 Q 70,120 70,120 Z"
+      fill="#1eba81"
+      stroke="#08543a"
+      stroke-width="2.5"
+      stroke-dasharray="6,4"
+    />
+    <path
+      id="region-south"
+      d="M 190,230 Q 240,260 300,250 Q 330,210 330,210 Q 360,230 350,300 Q 270,330 170,300 Q 100,230 190,230 Z"
+      fill="#f7c948"
+      stroke="#a87c01"
+      stroke-width="2.5"
+      stroke-dasharray="6,4"
+    />
+    <!-- Region Labels -->
+    <text x="130" y="115" font-family="Montserrat, Arial, sans-serif" font-size="20" fill="#0b1128" font-weight="bold">Northland</text>
+    <text x="340" y="170" font-family="Montserrat, Arial, sans-serif" font-size="20" fill="#0b1128" font-weight="bold">East Bay</text>
+    <text x="95" y="175" font-family="Montserrat, Arial, sans-serif" font-size="20" fill="#0b1128" font-weight="bold">Westvale</text>
+    <text x="220" y="295" font-family="Montserrat, Arial, sans-serif" font-size="20" fill="#0b1128" font-weight="bold">South Plains</text>
+    <!-- Major Rivers -->
+    <path
+      id="river1"
+      d="M 110,80 Q 120,130 190,180 Q 240,210 300,200"
+      fill="none"
+      stroke="#1557a6"
+      stroke-width="3.5"
+      stroke-dasharray="2,8"
+      opacity="0.9"
+    />
+    <text x="175" y="170" font-family="Montserrat, Arial, sans-serif" font-size="16" fill="#1557a6" font-weight="bold">River Azure</text>
+    <!-- Capital City -->
+    <circle cx="260" cy="180" r="12" fill="#0b1128" stroke="#f7c948" stroke-width="3"/>
+    <text x="277" y="185" font-family="Montserrat, Arial, sans-serif" font-size="16" fill="#a1071a" font-weight="bold">Capital City</text>
+  </g>
+</svg>

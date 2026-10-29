@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Functions Over X - ECharts Recreation</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #chart-container {
+            width: 95vw;
+            height: 90vh;
+            max-width: 1400px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chart-container"></div>
+
+<script>
+    $(document).ready(function() {
+        var chartDom = document.getElementById('chart-container');
+        var myChart = echarts.init(chartDom);
+        
+        var xData = [-3, -2, -1, 0, 1, 2, 3];
+        
+        // Function calculations
+        var f_x = xData.map(x => Math.pow(x, 2));
+        var g_x = xData.map(x => 2 * x + 1);
+        var h_x = xData.map(x => Math.pow(x, 3));
+
+        var option = {
+            title: {
+                text: 'Math Functions Over X',
+                left: 'center',
+                top: 10,
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            legend: {
+                data: [
+                    { name: 'f(x) = x²', icon: 'circle' },
+                    { name: 'g(x) = 2x+1', icon: 'rect' },
+                    { name: 'h(x) = x³', icon: 'triangle' }
+                ],
+                top: 40,
+                itemWidth: 12,
+                itemHeight: 12,
+                textStyle: {
+                    fontSize: 12
+                }
+            },
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                top: '15%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: xData,
+                axisLine: {
+                    onZero: true,
+                    lineStyle: {
+                        color: '#333'
+                    }
+                },
+                axisTick: {
+                    alignWithLabel: true
+                },
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+                type: 'value',
+                min: -30,
+                max: 30,
+                interval: 10,
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#eee'
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'f(x) = x²',
+                    type: 'line',
+                    data: f_x,
+                    color: '#d63384', // Pink
+                    symbol: 'circle',
+                    symbolSize: 8,
+                    lineStyle: {
+                        width: 3
+                    }
+                },
+                {
+                    name: 'g(x) = 2x+1',
+                    type: 'line',
+                    data: g_x,
+                    color: '#20c997', // Teal
+                    symbol: 'rect',
+                    symbolSize: 8,
+                    lineStyle: {
+                        width: 3
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: function(params) {
+                            // Only show specific labels as in the image
+                            if (params.dataIndex === 4) return params.value;
+                            return '';
+                        }
+                    }
+                },
+                {
+                    name: 'h(x) = x³',
+                    type: 'line',
+                    data: h_x,
+                    color: '#0d6efd', // Blue
+                    symbol: 'triangle',
+                    symbolSize: 10,
+                    lineStyle: {
+                        width: 3
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: function(params) {
+                            // Match labels from the original image
+                            const labelsToShow = [-27, -8, -1, 1, 8, 27];
+                            if (labelsToShow.includes(params.value)) {
+                                return params.value;
+                            }
+                            return '';
+                        },
+                        fontSize: 10,
+                        color: '#333'
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg">
+
+<rect width="1200" height="675" stroke="none" fill="#f8f8f8"/>
+<rect width="825" height="525" x="300" y="50" stroke="#1a237e" stroke-width="2" fill="white"/>
+
+  <g font-size="40px" font-family="Montserrat,sans-serif" text-anchor="middle" fill="#222222">
+
+<g fill="#1565c0" transform="translate(790,370)">
+<text x="0" y="0">Regional GDP Growth</text>
+<text x="0" y="50">by Economic Sector</text>
+<text x="0" y="100">Annual Percentage Change</text>
+<text x="0" y="140" font-size="25">(2020-2023)</text>
+</g>
+
+<text fill="#d32f2f" x="718.5" y="665">Percentage (%)</text>
+
+<g transform="translate(-5,620)">
+<text x="306">0%</text>
+<text x="512.25">2%</text>
+<text x="718.5">4%</text>
+<text x="924.75">6%</text>
+<text x="1131">8%</text>
+</g>
+
+<path stroke="#212121" stroke-width="1.2" stroke-dasharray="6,4" d="
+M300,50 v535
+M341.25,50 v535
+M382.5,50 v535
+M423.75,50 v535
+M465,50 v535
+M506.25,50 v535
+M547.5,50 v535
+M588.75,50 v535
+M630,50 v535
+M671.25,50 v535
+M712.5,50 v535
+M753.75,50 v535
+M795,50 v535
+M836.25,50 v535
+M877.5,50 v535
+M918.75,50 v535
+M960,50 v535
+M1001.25,50 v535
+M1042.5,50 v535
+M1083.75,50 v535
+M1125,50 v535
+"/>
+
+<g font-size="35" font-family="Montserrat,sans-serif" transform="translate(150,0)">
+<text y="126.58" fill="#212121">Technology</text>
+<text y="166.96" fill="#212121">Healthcare</text>
+<text y="207.35" fill="#212121">Finance</text>
+<text y="247.73" fill="#212121">Manufacturing</text>
+<text y="288.12" fill="#212121">Agriculture</text>
+<text y="328.5" fill="#212121">Retail</text>
+<text y="368.88" fill="#212121">Construction</text>
+<text y="409.27" fill="#212121">Energy</text>
+<text y="449.65" fill="#212121">Transportation</text>
+<text y="490.04" fill="#212121">Education</text>
+<text y="530.42" fill="#212121">Tourism</text>
+</g>
+
+<path fill="#1565c0" d="
+M300,94.423 h680 v32.631 h-680 z
+M300,134.808 h760 v32.631 h-760 z
+M300,175.192 h540 v32.631 h-540 z
+M300,215.577 h430 v32.631 h-430 z
+M300,255.962 h370 v32.631 h-370 z
+M300,296.346 h330 v32.631 h-330 z
+M300,336.731 h230 v32.631 h-230 z
+M300,377.115 h210 v32.631 h-210 z
+M300,417.5 h180 v32.631 h-180 z
+M300,457.885 h150 v32.631 h-150 z
+M300,498.269 h110 v32.631 h-110 z
+"/>
+
+  </g>
+</svg>

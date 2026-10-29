@@ -1,0 +1,37 @@
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (optional, for clarity) -->
+  <!-- <rect x="0" y="0" width="500" height="400" fill="white"/> -->
+
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="450" y2="350" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="350" x2="50" y2="50" stroke="black" stroke-width="2"/>
+
+  <!-- Axis Labels -->
+  <text x="400" y="370" font-family="sans-serif" font-size="18" fill="black">Good X</text>
+  <text x="20" y="100" font-family="sans-serif" font-size="18" fill="black" transform="rotate(-90 20 100)">Good Y</text>
+
+  <!-- Parallel Lines (Budget Lines/Indifference Curves) -->
+  <!-- Line I3 (lowest) -->
+  <line x1="50" y1="250" x2="350" y2="350" stroke="#8B0000" stroke-width="2"/>
+  <text x="100" y="230" font-family="sans-serif" font-size="18" fill="#8B0000">I3</text>
+
+  <!-- Line I2 (middle) -->
+  <line x1="50" y1="190" x2="290" y2="350" stroke="#8B0000" stroke-width="2"/>
+  <text x="100" y="170" font-family="sans-serif" font-size="18" fill="#8B0000">I2</text>
+
+  <!-- Line I1 (highest) -->
+  <line x1="50" y1="130" x2="230" y2="350" stroke="#8B0000" stroke-width="2"/>
+  <text x="100" y="110" font-family="sans-serif" font-size="18" fill="#8B0000">I1</text>
+
+  <!-- Perpendicular dashed lines -->
+  <!-- Line between I1 and I2 -->
+  <line x1="170" y1="140" x2="190" y2="180" stroke="gray" stroke-width="1" stroke-dasharray="4 2"/>
+  <line x1="170" y1="140" x2="175" y2="145" stroke="gray" stroke-width="1"/> <!-- Perpendicular mark 1 -->
+  <line x1="190" y1="180" x2="195" y2="185" stroke="gray" stroke-width="1"/> <!-- Perpendicular mark 2 -->
+
+  <!-- Line between I2 and I3 -->
+  <line x1="210" y1="200" x2="230" y2="240" stroke="gray" stroke-width="1" stroke-dasharray="4 2"/>
+  <line x1="210" y1="200" x2="215" y2="205" stroke="gray" stroke-width="1"/> <!-- Perpendicular mark 1 -->
+  <line x1="230" y1="240" x2="235" y2="245" stroke="gray" stroke-width="1"/> <!-- Perpendicular mark 2 -->
+
+</svg>

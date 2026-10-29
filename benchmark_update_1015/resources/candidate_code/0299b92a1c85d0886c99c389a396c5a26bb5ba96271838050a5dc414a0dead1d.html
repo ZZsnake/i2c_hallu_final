@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Sector Performance Radar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #chart-container {
+            width: 900px;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #main-chart {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chart-container">
+    <div id="main-chart"></div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var chartDom = document.getElementById('main-chart');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: {
+                text: 'Economic Sector Performance (2024)',
+                left: 'center',
+                top: 20,
+                textStyle: {
+                    fontSize: 20,
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            legend: {
+                data: ['Projected Growth', 'Actual Growth'],
+                top: 55,
+                itemWidth: 25,
+                itemHeight: 12,
+                itemGap: 20,
+                textStyle: {
+                    fontSize: 14
+                }
+            },
+            radar: {
+                shape: 'polygon',
+                indicator: [
+                    { name: 'GDP Growth', max: 100 },
+                    { name: 'Consumer Confidence', max: 100 },
+                    { name: 'Exports', max: 100 },
+                    { name: 'Foreign Investment', max: 100 },
+                    { name: 'Inflation Rate', max: 100 },
+                    { name: 'Unemployment Rate', max: 100 }
+                ],
+                center: ['50%', '55%'],
+                radius: '65%',
+                splitNumber: 5,
+                axisName: {
+                    color: '#333',
+                    fontSize: 14,
+                    fontWeight: '500'
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#b0c4de',
+                        width: 1
+                    }
+                },
+                splitArea: {
+                    show: false
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#b0c4de'
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Economic Performance',
+                    type: 'radar',
+                    data: [
+                        {
+                            value: [75, 70, 85, 80, 55, 60],
+                            name: 'Projected Growth',
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            lineStyle: {
+                                color: '#2f7ed8',
+                                width: 2
+                            },
+                            itemStyle: {
+                                color: '#2f7ed8'
+                            },
+                            areaStyle: {
+                                color: 'rgba(47, 126, 216, 0.2)'
+                            }
+                        },
+                        {
+                            value: [60, 65, 83, 65, 70, 75],
+                            name: 'Actual Growth',
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            lineStyle: {
+                                color: '#c42525',
+                                width: 2
+                            },
+                            itemStyle: {
+                                color: '#c42525'
+                            },
+                            areaStyle: {
+                                color: 'rgba(196, 37, 37, 0.2)'
+                            }
+                        }
+                    ]
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Analytical Geometry: Parabola & Line Intersection</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+      color: #222;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // Generate points for parabola: y = 0.04x^2 - 5
+    function parabolaData() {
+      let data = [];
+      for (let x = -50; x <= 50; x += 0.2) {
+        let y = 0.04 * x * x - 5;
+        data.push([x, y]);
+      }
+      return data;
+    }
+
+    // Generate points for line: y = 2x - 10
+    function lineData() {
+      let data = [];
+      for (let x = -50; x <= 50; x += 0.2) {
+        let y = 2 * x - 10;
+        data.push([x, y]);
+      }
+      return data;
+    }
+
+    // Calculate intersection points between parabola and line
+    function intersectionPoints() {
+      // Solve 0.04x^2 - 5 = 2x - 10
+      // 0.04x^2 - 2x + 5 = 0
+      // x = [2 ± sqrt(4 - 0.8)] / 0.08
+      let a = 0.04;
+      let b = -2;
+      let c = 5;
+      let D = b*b - 4*a*c;
+      let points = [];
+      if (D >= 0) {
+        let sqrtD = Math.sqrt(D);
+        let x1 = (-b + sqrtD) / (2*a);
+        let x2 = (-b - sqrtD) / (2*a);
+        let y1 = 2 * x1 - 10;
+        let y2 = 2 * x2 - 10;
+        points.push([x1, y1]);
+        points.push([x2, y2]);
+      }
+      return points;
+    }
+
+    option = {
+      animation: false,
+      grid: {
+        top: 50,
+        left: 60,
+        right: 40,
+        bottom: 60
+      },
+      title: {
+        text: 'Analytical Geometry: Parabola y = 0.04x² - 5 and Line y = 2x - 10',
+        left: 'center',
+        top: 10,
+        textStyle: {
+          color: '#21205F',
+          fontWeight: 'bold',
+          fontSize: 20
+        }
+      },
+      legend: {
+        data: ['Parabola', 'Line', 'Intersection'],
+        top: 35,
+        left: 'center',
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 14
+        }
+      },
+      xAxis: {
+        name: 'x',
+        nameTextStyle: {
+          color: '#21205F',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#2B2B2B',
+            width: 2
+          }
+        },
+        minorTick: { show: true },
+        minorSplitLine: { show: true }
+      },
+      yAxis: {
+        name: 'y',
+        nameTextStyle: {
+          color: '#21205F',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#2B2B2B',
+            width: 2
+          }
+        },
+        min: -30,
+        max: 100,
+        minorTick: { show: true },
+        minorSplitLine: { show: true }
+      },
+      dataZoom: [
+        {
+          show: true,
+          type: 'inside',
+          filterMode: 'none',
+          xAxisIndex: [0],
+          startValue: -20,
+          endValue: 20
+        },
+        {
+          show: true,
+          type: 'inside',
+          filterMode: 'none',
+          yAxisIndex: [0],
+          startValue: -30,
+          endValue: 30
+        }
+      ],
+      series: [
+        {
+          name: 'Parabola',
+          type: 'line',
+          data: parabolaData(),
+          showSymbol: false,
+          lineStyle: {
+            color: '#0070C0',
+            width: 4
+          }
+        },
+        {
+          name: 'Line',
+          type: 'line',
+          data: lineData(),
+          showSymbol: false,
+          lineStyle: {
+            color: '#C00000',
+            width: 3,
+            type: 'dashed'
+          }
+        },
+        {
+          name: 'Intersection',
+          type: 'scatter',
+          data: intersectionPoints(),
+          symbolSize: 16,
+          label: {
+            show: true,
+            formatter: function (params) {
+              return 'Intersection';
+            },
+            color: '#222',
+            fontWeight: 'bold',
+            fontSize: 14,
+            position: 'top'
+          },
+          itemStyle: {
+            color: '#19A300',
+            borderColor: '#222',
+            borderWidth: 2
+          },
+          emphasis: {
+            itemStyle: {
+              color: '#FF8000',
+              borderColor: '#333',
+              borderWidth: 3
+            }
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

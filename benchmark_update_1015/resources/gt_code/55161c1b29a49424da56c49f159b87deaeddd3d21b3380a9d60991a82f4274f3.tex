@@ -1,0 +1,27 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{rotating}
+
+\definecolor{headercolor}{RGB}{0,102,204}
+\definecolor{rowcolor1}{RGB}{230,240,255}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{>{\bfseries}c>{\bfseries}c>{\bfseries}c>{\bfseries}c>{\bfseries}c>{\bfseries}p{4cm}}
+\toprule
+\rowcolor{headercolor}\textcolor{white}{\textbf{Year}} & \textcolor{white}{\textbf{City}} & \textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Commuters\\ (\%)\end{tabular}}} & \textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Bike Lanes\\ (km)\end{tabular}}} & \textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Population\\ Growth (\%)\end{tabular}}} & \textcolor{white}{\textbf{Impact on Air Quality}} \\
+\midrule
+\rowcolor{rowcolor1}2000 & Portland, OR & 4.5 & 200 & 0.8 & Improved, 10\% reduction in CO\textsubscript{2} emissions \\
+\rowcolor{rowcolor2}2005 & Amsterdam, Netherlands & 36.0 & 400 & 1.5 & Significantly improved, 15\% reduction in NO\textsubscript{2} levels \\
+\rowcolor{rowcolor1}2010 & Copenhagen, Denmark & 38.0 & 350 & 2.0 & Improved, significant decreases in urban traffic pollutants \\
+\rowcolor{rowcolor2}2015 & San Francisco, CA & 7.0 & 150 & 1.0 & Moderately improved, 5\% reduction in overall vehicle emissions \\
+\rowcolor{rowcolor1}2020 & New York, NY & 12.5 & 400 & 1.2 & Improved, 10\% decrease in particulate matter levels \\
+\rowcolor{rowcolor2}2023 & Barcelona, Spain & 16.0 & 250 & 1.1 & Improved, 8\% reduction in greenhouse gas emissions \\
+\bottomrule
+\end{tabular}
+\end{document}

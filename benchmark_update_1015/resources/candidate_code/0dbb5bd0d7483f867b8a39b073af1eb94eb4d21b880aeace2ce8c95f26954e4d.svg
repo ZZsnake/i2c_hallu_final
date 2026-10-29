@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <!-- Background -->
+  <rect width="800" height="300" fill="white" />
+
+  <!-- Force Block -->
+  <rect x="50" y="50" width="200" height="100" fill="lightblue" stroke="black" stroke-dasharray="5,5" />
+  <text x="150" y="100" font-size="16" text-anchor="middle" fill="blue">Force (F)</text>
+  <text x="150" y="120" font-size="14" text-anchor="middle" fill="blue">F = m · a</text>
+
+  <!-- Energy Block -->
+  <rect x="300" y="50" width="200" height="100" fill="navajowhite" stroke="black" stroke-dasharray="5,5" />
+  <text x="400" y="100" font-size="16" text-anchor="middle" fill="orange">Energy (E)</text>
+  <text x="400" y="120" font-size="14" text-anchor="middle" fill="orange">E = F · d</text>
+
+  <!-- Power Block -->
+  <rect x="550" y="50" width="200" height="100" fill="lightgreen" stroke="black" stroke-dasharray="5,5" />
+  <text x="650" y="100" font-size="16" text-anchor="middle" fill="green">Power (P)</text>
+  <text x="650" y="120" font-size="14" text-anchor="middle" fill="green">P = E / t</text>
+
+  <!-- Arrows -->
+  <line x1="250" y1="100" x2="300" y2="100" stroke="black" stroke-width="2" />
+  <line x1="500" y1="100" x2="550" y2="100" stroke="black" stroke-width="2" />
+  <polygon points="250,90 270,100 250,110" fill="black" />
+  <polygon points="500,90 520,100 500,110" fill="black" />
+
+  <!-- Banner -->
+  <rect x="50" y="200" width="700" height="50" fill="white" stroke="red" stroke-width="2" />
+  <text x="400" y="240" font-size="16" text-anchor="middle" fill="red">Physics Flow: Force → Energy → Power</text>
+</svg>

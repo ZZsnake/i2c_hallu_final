@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+\usetikzlibrary{arrows.meta,shapes,positioning,decorations.markings}
+\tikzset{
+    arrowstyle/.style={scale=1.1},
+    directed/.style={postaction={decorate,decoration={markings,
+        mark=at position .6 with {\arrow[arrowstyle, teal, thick]{Stealth}}}}},
+    reverse directed/.style={postaction={decorate,decoration={markings,
+        mark=at position .6 with {\arrowreversed[arrowstyle, orange!80!black, thick]{Stealth}}}}}
+}
+\begin{document}
+\begin{tikzpicture}
+
+    % coordinates
+    \coordinate (Origin) at (0,0);
+    \coordinate (Up) at (0,4);
+    \coordinate (Down) at (0,-4);
+
+    % media layers
+    \fill[teal!40!black,opacity=0.35] (-4,0) rectangle (4,4);
+    \fill[gray!70!blue,opacity=0.35] (-4,0) rectangle (4,-4);
+
+    % labels
+    \node[draw,rounded rectangle,fill=teal!20!white, text=black, font=\bfseries, right=3pt] at (2.2,2) {Vacuum};
+    \node[draw,rounded rectangle,fill=gray!20!white, text=black, font=\bfseries, left=3pt] at (-2.2,-2) {Glass};
+
+    % axis (interface)
+    \draw[dashed, line width=1pt, gray!90!black] (Up) -- (Down);
+
+    % incident and refracted rays
+    \draw[reverse directed, orange!80!black, line width=2.5pt] (Origin) -- (135:5.2);
+    \draw[directed, teal!80!black, line width=2.5pt] (Origin) -- (-60:4.24);
+
+    % angles
+    \draw[thick] (0,1.2) arc (90:135:1.2);
+    \draw[thick] (0,-1.5) arc (270:300:1.5);
+
+    \node[font=\bfseries, teal!80!black] at (115:1.7) {$\alpha$};
+    \node[font=\bfseries, orange!80!black] at (285:2.1) {$\beta$};
+
+\end{tikzpicture}
+\end{document}

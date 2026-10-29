@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Antenna -->
+  <path d="M 30 60 L 140 60 L 85 160 Z" fill="none" stroke="black" stroke-width="4"/>
+  <line x1="85" y1="160" x2="85" y2="240" stroke="black" stroke-width="4"/>
+  
+  <!-- Summing Junction -->
+  <circle cx="225" cy="240" r="40" fill="white" stroke="black" stroke-width="4"/>
+  <line x1="205" y1="240" x2="245" y2="240" stroke="black" stroke-width="3"/>
+  <line x1="225" y1="220" x2="225" y2="260" stroke="black" stroke-width="3"/>
+  
+  <!-- Connection from antenna to summing junction -->
+  <line x1="140" y1="240" x2="185" y2="240" stroke="black" stroke-width="4"/>
+  <line x1="85" y1="240" x2="140" y2="240" stroke="black" stroke-width="4"/>
+  
+  <!-- Bandpass Filter -->
+  <rect x="340" y="180" width="170" height="160" fill="#CCFFFF" stroke="black" stroke-width="4"/>
+  <path d="M 370 220 Q 390 200 410 220 Q 430 240 450 220" fill="none" stroke="black" stroke-width="3"/>
+  <path d="M 370 260 Q 390 240 410 260 Q 430 280 450 260" fill="none" stroke="black" stroke-width="3"/>
+  <path d="M 370 300 Q 390 280 410 300 Q 430 320 450 300" fill="none" stroke="black" stroke-width="3"/>
+  
+  <!-- Connection to filter -->
+  <line x1="265" y1="240" x2="340" y2="240" stroke="black" stroke-width="4"/>
+  <line x1="265" y1="240" x2="265" y2="260" stroke="black" stroke-width="4"/>
+  <line x1="265" y1="260" x2="340" y2="260" stroke="black" stroke-width="4"/>
+  
+  <!-- RF Amplifier & Detector (Triangle) -->
+  <path d="M 620 180 L 620 340 L 780 260 Z" fill="#FFCCFF" stroke="black" stroke-width="4"/>
+  <text x="665" y="280" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="black">A</text>
+  
+  <!-- Connection from filter to amplifier -->
+  <line x1="510" y1="260" x2="620" y2="260" stroke="black" stroke-width="4"/>
+  
+  <!-- Junction point after RF amplifier -->
+  <circle cx="870" cy="260" r="12" fill="black"/>
+  <line x1="780" y1="260" x2="870" y2="260" stroke="black" stroke-width="4"/>
+  
+  <!-- Audio Amplifier (Triangle) -->
+  <path d="M 950 180 L 950 340 L 1110 260 Z" fill="#FFFFCC" stroke="black" stroke-width="4"/>
+  
+  <!-- Connection to audio amplifier -->
+  <line x1="870" y1="260" x2="950" y2="260" stroke="black" stroke-width="4"/>
+  
+  <!-- Speaker -->
+  <rect x="1150" y="220" width="60" height="80" fill="#FFFFDD" stroke="black" stroke-width="4"/>
+  <path d="M 1210 220 L 1250 180 L 1250 340 L 1210 300 Z" fill="#FFFFDD" stroke="black" stroke-width="4"/>
+  
+  <!-- Connection to speaker -->
+  <line x1="1110" y1="260" x2="1150" y2="260" stroke="black" stroke-width="4"/>
+  
+  <!-- Feedback Network -->
+  <rect x="470" y="410" width="165" height="165" fill="#CCFFFF" stroke="black" stroke-width="4"/>
+  <text x="500" y="520" font-family="Arial, sans-serif" font-size="80" font-weight="normal" fill="black">β</text>
+  
+  <!-- Feedback path -->
+  <line x1="870" y1="260" x2="870" y2="492" stroke="black" stroke-width="4"/>
+  <line x1="870" y1="492" x2="635" y2="492" stroke="black" stroke-width="4"/>
+  <line x1="470" y1="492" x2="225" y2="492" stroke="black" stroke-width="4"/>
+  <line x1="225" y1="492" x2="225" y2="280" stroke="black" stroke-width="4"/>
+  
+  <!-- Labels -->
+  <text x="255" y="60" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">Bandpass</text>
+  <text x="330" y="120" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">Filter</text>
+  
+  <text x="585" y="60" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">RF Amplifier</text>
+  <text x="585" y="120" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">&amp; Detector</text>
+  
+  <text x="950" y="60" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">Audio</text>
+  <text x="950" y="120" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">Amplifier</text>
+  
+  <text x="435" y="630" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">Feedback</text>
+  <text x="435" y="680" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="black">Network</text>
+</svg>

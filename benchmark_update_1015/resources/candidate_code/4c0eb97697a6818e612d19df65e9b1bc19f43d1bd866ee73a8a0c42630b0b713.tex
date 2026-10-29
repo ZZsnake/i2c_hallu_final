@@ -1,0 +1,44 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    view={60}{30},
+    xlabel=$\xi$,
+    ylabel=$\eta$,
+    zlabel=$h$,
+    grid=major,
+    colormap/viridis,
+    colorbar right,
+    colorbar style={
+        ylabel={$g(\xi,\eta)$},
+        ylabel style={at={(axis description cs:1.05,0.5)}},
+        samples=10,
+        ytick={0,2,4,6},
+        yticklabels={0,2,4,6},
+        title style={at={(axis description cs:1.05,0.5)}},
+        title style={anchor=center},
+    },
+    domain=-2:2,
+    y domain=-2:2,
+    samples=40,
+    width=12cm,
+    height=12cm,
+    zmin=0, zmax=6,
+    xmin=-2, xmax=2,
+    ymin=-2, ymax=2,
+    title style={font=\small},
+    xlabel style={at={(axis description cs:0.5,-0.1)}, anchor=north},
+    ylabel style={at={(axis description cs:-0.1,0.5)}, anchor=east},
+    zlabel style={at={(axis description cs:0.5,0.5,1.1)}, anchor=south},
+    tick label style={font=\small},
+    legend style={font=\small},
+]
+
+\addplot3[surf, shader=interp, mesh/cols=40, opacity=0.8] {sqrt(x^2 + y^2) + 2};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

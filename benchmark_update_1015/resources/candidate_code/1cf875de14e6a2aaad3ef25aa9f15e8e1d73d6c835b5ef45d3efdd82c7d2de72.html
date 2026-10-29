@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Sector Performance (2024)</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fff;
+            color: #1a2542;
+        }
+        #chart-container {
+            width: 90%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .chart-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .chart-legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            color: #233554;
+            font-weight: 600;
+        }
+        .legend-color-box {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            border-radius: 3px;
+        }
+        #radar-chart {
+            width: 100%;
+            height: 550px; /* 设置明确高度，ECharts才能渲染 */
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container">
+        <div class="chart-title">Economic Sector Performance (2024)</div>
+        <div class="chart-legend">
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #1862b1;"></div>
+                <span>Projected Growth</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #d7263d;"></div>
+                <span>Actual Growth</span>
+            </div>
+        </div>
+        <div id="radar-chart"></div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('radar-chart'));
+            var option = {
+                color: ['#1862b1', '#d7263d'], // Blue for Projected, Red for Actual
+                tooltip: {
+                    trigger: 'item'
+                },
+                radar: {
+                    indicator: [
+                        { name: 'GDP Growth', max: 5 },
+                        { name: 'Unemployment Rate', max: 5 },
+                        { name: 'Inflation Rate', max: 5 },
+                        { name: 'Foreign Investment', max: 5 },
+                        { name: 'Exports', max: 5 },
+                        { name: 'Consumer Confidence', max: 5 }
+                    ],
+                    center: ['50%', '50%'],
+                    radius: '70%',
+                    startAngle: 90,
+                    splitNumber: 5,
+                    shape: 'polygon',
+                    axisName: {
+                        color: '#182060',
+                        fontSize: 16,
+                        fontWeight: 700
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: [
+                                'rgba(13, 91, 140, 0.95)',
+                                'rgba(13, 91, 140, 0.95)',
+                                'rgba(13, 91, 140, 0.95)',
+                                'rgba(13, 91, 140, 0.95)',
+                                'rgba(13, 91, 140, 0.95)'
+                            ],
+                            width: 1.5
+                        }
+                    },
+                    splitArea: {
+                        show: true,
+                        areaStyle: {
+                            color: [
+                                'rgba(232, 240, 248, 0.55)',
+                                'rgba(255, 255, 255, 0.15)'
+                            ]
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: 'rgba(13, 91, 140, 0.95)',
+                            width: 1.5
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Performance',
+                        type: 'radar',
+                        symbol: 'circle',
+                        symbolSize: 8,
+                        data: [
+                            {
+                                value: [3.8, 2.1, 1.6, 3.4, 4.1, 3.5], // Estimated values based on image
+                                name: 'Projected Growth',
+                                itemStyle: {
+                                    color: '#1862b1'
+                                },
+                                lineStyle: {
+                                    color: '#1862b1',
+                                    width: 2
+                                },
+                                areaStyle: {
+                                    opacity: 0.2,
+                                    color: '#1862b1'
+                                }
+                            },
+                            {
+                                value: [3.1, 2.5, 2.0, 2.75, 3.7, 3.1], // Estimated values based on image
+                                name: 'Actual Growth',
+                                itemStyle: {
+                                    color: '#d7263d'
+                                },
+                                lineStyle: {
+                                    color: '#d7263d',
+                                    width: 2
+                                },
+                                areaStyle: {
+                                    opacity: 0.2,
+                                    color: '#d7263d'
+                                }
+                            }
+                        ]
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            // Resize chart with window
+            $(window).on('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

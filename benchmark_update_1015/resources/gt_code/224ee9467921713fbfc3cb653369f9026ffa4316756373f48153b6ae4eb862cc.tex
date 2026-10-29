@@ -1,0 +1,41 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usepackage{tikz}
+
+\begin{document}
+\begin{circuitikz}[scale=0.8]
+    % Pipeline stages
+    \draw (0,0) rectangle (2,4) node[midway] {Stage 1};
+    \draw (4,0) rectangle (6,4) node[midway] {Stage 2};
+    \draw (8,0) rectangle (10,4) node[midway] {Stage 3};
+    
+    % Completion detection
+    \draw (1,-1) rectangle (3,-3) node[midway] {Completion\\ Detection};
+    \draw (5,-1) rectangle (7,-3) node[midway] {Completion\\ Detection};
+    \draw (9,-1) rectangle (11,-3) node[midway] {Completion\\ Detection};
+    
+    % Connections
+    \draw[->] (-1,2) -- (0,2) node[midway, above] {Input};
+    \draw[->] (2,2) -- (4,2);
+    \draw[->] (6,2) -- (8,2);
+    \draw[->] (10,2) -- (11,2) node[right] {Output};
+    
+    % Control signals
+    \draw[->] (1,-1) -- (1,0);
+    \draw[->] (5,-1) -- (5,0);
+    \draw[->] (9,-1) -- (9,0);
+    
+    % Handshake signals
+    \draw[->] (2,-2) -- (4,-2);
+    \draw[->] (6,-2) -- (8,-2);
+    
+    % Labels
+    \node[text width=3cm, align=center] at (5,5) {Self-timed Pipeline for Low-Power DSP};
+    \node[text width=3cm, align=center] at (5,-4) {Asynchronous Control};
+    
+    % Power management
+    \draw[dashed] (-0.5,-3.5) rectangle (11.5,4.5);
+    \node[text width=3cm, align=center] at (-2,0.5) {Low-Power\\ Management};
+    \draw[->] (-1.5,0.5) -- (-0.5,0.5);
+\end{circuitikz}
+\end{document}

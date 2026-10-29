@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Physics Gauge - Magnetic Field Strength</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var gaugeChart = echarts.init(chartDom);
+    var chartApp = {};
+    var option;
+
+    // Physics: Example gauge for 'Magnetic Field Strength (mT)'
+    option = {
+      series: [
+        {
+          type: 'gauge',
+          startAngle: 200,
+          endAngle: -20,
+          min: 0,
+          max: 120,
+          splitNumber: 8,
+          itemStyle: {
+          radius: '75%',
+          center: ['50%', '50%'],            color: '#2845CA',
+            shadowColor: 'rgba(40,69,202,0.25)',
+            shadowBlur: 8,
+            shadowOffsetX: 2,
+            shadowOffsetY: 2
+          },
+          progress: {
+            show: true,
+            roundCap: true,
+            width: 14
+          },
+          pointer: {
+            icon: 'rect',
+            length: '70%',
+            width: 10,
+            offsetCenter: [0, '8%'],
+            itemStyle: {
+              color: '#16204B'
+            }
+          },
+          axisLine: {
+            roundCap: true,
+            lineStyle: {
+              width: 14,
+              color: [
+                [0.5, '#2845CA'],
+                [1, '#16B360']
+              ]
+            }
+          },
+          axisTick: {
+            splitNumber: 3,
+            lineStyle: {
+              width: 2,
+              color: '#232323'
+            }
+          },
+          splitLine: {
+            length: 16,
+            lineStyle: {
+              width: 4,
+              color: '#232323'
+            }
+          },
+          axisLabel: {
+            distance: 22,
+            color: '#232323',
+            fontSize: 18,
+            fontFamily: 'serif'
+          },
+          title: {
+            show: true,
+            offsetCenter: [0, '-40%'],
+            color: '#16204B',
+            fontSize: 20,
+            fontWeight: 'bold',
+            fontFamily: 'Arial Black',
+            text: 'Magnetic Field'
+          },
+          detail: {
+            backgroundColor: '#fff',
+            borderColor: '#16204B',
+            borderWidth: 2,
+            width: 100,
+            lineHeight: 36,
+            height: 36,
+            borderRadius: 8,
+            offsetCenter: [0, '38%'],
+            valueAnimation: true,
+            formatter: function (value) {
+              return '{value|' + value.toFixed(1) + '}{unit| mT}';
+            },
+            rich: {
+              value: {
+                fontSize: 38,
+                fontWeight: 'bold',
+                color: '#16204B',
+                fontFamily: 'serif'
+              },
+              unit: {
+                fontSize: 16,
+                color: '#2845CA',
+                padding: [0, 0, -16, 6]
+              }
+            }
+          },
+          data: [
+            {
+              value: 73.5
+            }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      gaugeChart.setOption(option);
+    }
+    window.addEventListener('resize', gaugeChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<svg width="223mm" height="133mm" version="1.1" viewBox="0 0 223 133" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <rect width="223" height="133" fill="#fff"/>
+ <g fill="none" stroke="#1167a8" stroke-width="0.7">
+  <path d="m107 130h31v-5m-88-33v-15m0 46v7h57v-90h31v-8m-31 55h31v-8"/>
+  <path id="b" d="m29 2h45v28h-45z" stroke-width="1"/>
+  <path id="c" d="m15 15h9v-2l5 3-5 3v-2h-9v2l-5-3 5-3z" fill="#fff"/>
+  <path d="m97 6v117h-4v-14h-14v2l-5-3 5-3v2h14v-101z" fill="#fff"/>
+  <use transform="translate(87 46)" xlink:href="#c"/>
+  <use transform="translate(87)" xlink:href="#c"/>
+  <use transform="translate(87 92)" xlink:href="#c"/>
+  <use transform="translate(64)" xlink:href="#c"/>
+  <use transform="translate(0 47)" xlink:href="#b"/>
+  <use transform="translate(0 93)" xlink:href="#b"/>
+  <use transform="translate(87)" xlink:href="#b"/>
+  <use transform="translate(87 47)" xlink:href="#b"/>
+  <use transform="translate(87 93)" xlink:href="#b"/>
+  <g id="d">
+    <path d="m15 69h12" stroke-dasharray="2,2"/>
+    <path id="a" d="m25 71l4-2-4-2 1 2" fill="#152128" stroke="none"/>
+  </g>
+  <use transform="rotate(90 26.5 92.5)" xlink:href="#a"/>
+  <use transform="rotate(-90 110.5 41.5)" xlink:href="#a"/>
+  <use transform="rotate(-90 87.5 18.5)" xlink:href="#a"/>
+  <use transform="rotate(-90 64-5)" xlink:href="#a"/>
+  <g id="f">
+    <circle cx="28" cy="52" r="1" fill="#1a1a1a"/>
+    <use transform="translate(-2-17)" xlink:href="#a"/>
+    <path d="m24 52h-9" stroke-dasharray="2,2"/>
+  </g>
+  <use transform="translate(0 6)" xlink:href="#f"/>
+  <use transform="translate(0 12)" xlink:href="#f"/>
+  <use transform="translate(0 7)" xlink:href="#d"/>
+  <g id="e">
+    <use transform="translate(146-46)" xlink:href="#d"/>
+    <use transform="rotate(180 95 39)" xlink:href="#d"/>
+    <use transform="rotate(180 95 43)" xlink:href="#d"/>
+  </g>
+  <use transform="translate(0 47)" xlink:href="#e"/>
+  <use transform="translate(0 94)" xlink:href="#e"/>
+ </g>
+ <circle cx="107" cy="87" r="1" fill="#1a1a1a"/>
+ <circle cx="107" cy="130" r="1" fill="#1a1a1a"/>
+ <g font-family="Roboto, Arial, sans-serif" font-size="6px">
+  <text x="177" y="11" fill="#241c15">Input 0</text>
+  <text x="177" y="18" fill="#241c15">Enable 0</text>
+  <text x="177" y="25" fill="#241c15">Output 0</text>
+  <text x="177" y="58" fill="#241c15">Input 1</text>
+  <text x="177" y="65" fill="#241c15">Enable 1</text>
+  <text x="177" y="72" fill="#241c15">Output 1</text>
+  <text x="177" y="105" fill="#241c15">Input 2</text>
+  <text x="177" y="112" fill="#241c15">Enable 2</text>
+  <text x="177" y="119" fill="#241c15">Output 2</text>
+  <g text-anchor="middle">
+    <text x="139" y="18" fill="#003366">Register 0</text>
+    <text x="139" y="65" fill="#003366">Register 1</text>
+    <text x="139" y="111" fill="#003366">Register 2</text>
+    <text x="52" y="12" fill="#003366">Data Bus</text>
+    <text x="52" y="18" fill="#003366">Buffer</text>
+    <text x="52" y="24" fill="#003366">Module</text>
+    <text x="52" y="59" fill="#003366">Control</text>
+    <text x="52" y="65" fill="#003366">Read/</text>
+    <text x="52" y="71" fill="#003366">Write Logic</text>
+    <text x="52" y="105" fill="#003366">Instruction</text>
+    <text x="52" y="111" fill="#003366">Register</text>
+    <text x="52" y="117" fill="#003366">Controller</text>
+  </g>
+  <g text-anchor="end">
+    <text x="28" y="12" fill="#241c15">ADDR0 - ADDR7</text>
+    <text x="14" y="54" fill="#241c15">/RD</text>
+    <text x="14" y="66" fill="#241c15">/CS</text>
+    <text x="14" y="60" fill="#241c15">/WR</text>
+    <text x="14" y="72" fill="#241c15">A1</text>
+    <text x="14" y="77" fill="#241c15">A0</text>
+  </g>
+ </g>
+</svg>

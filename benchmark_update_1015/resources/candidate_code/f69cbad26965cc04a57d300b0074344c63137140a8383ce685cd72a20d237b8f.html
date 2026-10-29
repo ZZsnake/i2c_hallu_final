@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Geometry: Circle and Tangent Line</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        #chartContainer {
+            width: 100%;
+            max-width: 1200px;
+            height: 900px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="chartContainer"></div>
+    
+    <script>
+        // Initialize the chart
+        var chartDom = document.getElementById('chartContainer');
+        var myChart = echarts.init(chartDom);
+        
+        // Generate circle data (r = 4)
+        var circleData = [];
+        for (var angle = 0; angle <= 360; angle += 5) {
+            circleData.push([4, angle]);
+        }
+        
+        // Generate tangent line data shown as a vertical dashed line on the right side
+        var tangentData = [];
+        for (var theta = 300; theta <= 360; theta += 10) {
+            var radians = theta * Math.PI / 180;
+            tangentData.push([2 / Math.cos(radians), theta]);
+        }
+        for (var theta2 = 10; theta2 <= 60; theta2 += 10) {
+            var radians2 = theta2 * Math.PI / 180;
+            tangentData.push([2 / Math.cos(radians2), theta2]);
+        }
+        
+        var option = {
+            title: {
+                text: 'Analytical Geometry: Circle and Tangent Line',
+                left: 'center',
+                top: 20,
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            legend: {
+                data: ['Circle: r = 4', 'Tangent Line'],
+                left: 'center',
+                top: 50,
+                itemGap: 20
+            },
+            polar: {
+                center: ['50%', '52%'],
+                radius: '65%'
+            },
+            angleAxis: {
+                type: 'value',
+                startAngle: 90,
+                min: 0,
+                max: 360,
+                interval: 30,
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#ddd'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    color: '#333',
+                    fontSize: 12
+                }
+            },
+            radiusAxis: {
+                min: 0,
+                max: 4,
+                interval: 1,
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#ddd'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    color: '#333',
+                    fontSize: 12
+                }
+            },
+            series: [
+                {
+                    name: 'Circle: r = 4',
+                    type: 'line',
+                    coordinateSystem: 'polar',
+                    data: circleData,
+                    symbol: 'circle',
+                    symbolSize: 6,
+                    itemStyle: {
+                        color: '#2E5C8A'
+                    },
+                    lineStyle: {
+                        color: '#2E5C8A',
+                        width: 2
+                    },
+                    showSymbol: true
+                },
+                {
+                    name: 'Tangent Line',
+                    type: 'line',
+                    coordinateSystem: 'polar',
+                    data: tangentData,
+                    symbol: 'diamond',
+                    symbolSize: 7,
+                    itemStyle: {
+                        color: '#D62728'
+                    },
+                    lineStyle: {
+                        color: '#D62728',
+                        width: 2,
+                        type: 'dashed'
+                    },
+                    showSymbol: true
+                }
+            ]
+        };
+        
+        myChart.setOption(option);
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

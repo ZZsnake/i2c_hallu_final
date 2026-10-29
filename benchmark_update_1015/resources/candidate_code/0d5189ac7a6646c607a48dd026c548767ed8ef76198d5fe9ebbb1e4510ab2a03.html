@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Activity Preferences Survey</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .section {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .chart-container {
+            width: 300px;
+            height: 300px;
+        }
+        .year-label {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Community Activity Preferences (Survey)</h1>
+    <div class="year-label">Year: 2021</div>
+    <div class="section">
+        <div class="chart-container" id="chart2021"></div>
+        <div class="chart-container" id="chart2022"></div>
+        <div class="chart-container" id="chart2023"></div>
+    </div>
+    <div class="year-label">Year: 2023</div>
+    <div class="section">
+        <div class="chart-container" id="chart2021-2"></div>
+        <div class="chart-container" id="chart2022-2"></div>
+        <div class="chart-container" id="chart2023-2"></div>
+    </div>
+    <script>
+        function initChart(id, data) {
+            var chart = echarts.init(document.getElementById(id));
+            var option = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left'
+                },
+                series: [
+                    {
+                        name: 'Activities',
+                        type: 'pie',
+                        radius: '50%',
+                        data: data,
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            chart.setOption(option);
+        }
+
+        initChart('chart2021', [
+            {value: 10, name: 'Book Club'},
+            {value: 20, name: 'Painting'},
+            {value: 30, name: 'Volunteering'},
+            {value: 20, name: 'Gardening'},
+            {value: 20, name: 'Yoga'}
+        ]);
+
+        initChart('chart2022', [
+            {value: 15, name: 'Book Club'},
+            {value: 25, name: 'Painting'},
+            {value: 25, name: 'Volunteering'},
+            {value: 20, name: 'Gardening'},
+            {value: 15, name: 'Yoga'}
+        ]);
+
+        initChart('chart2023', [
+            {value: 20, name: 'Book Club'},
+            {value: 20, name: 'Painting'},
+            {value: 20, name: 'Volunteering'},
+            {value: 20, name: 'Gardening'},
+            {value: 20, name: 'Yoga'}
+        ]);
+
+        initChart('chart2021-2', [
+            {value: 10, name: 'Book Club'},
+            {value: 20, name: 'Painting'},
+            {value: 30, name: 'Volunteering'},
+            {value: 20, name: 'Gardening'},
+            {value: 20, name: 'Yoga'}
+        ]);
+
+        initChart('chart2022-2', [
+            {value: 15, name: 'Book Club'},
+            {value: 25, name: 'Painting'},
+            {value: 25, name: 'Volunteering'},
+            {value: 20, name: 'Gardening'},
+            {value: 15, name: 'Yoga'}
+        ]);
+
+        initChart('chart2023-2', [
+            {value: 20, name: 'Book Club'},
+            {value: 20, name: 'Painting'},
+            {value: 20, name: 'Volunteering'},
+            {value: 20, name: 'Gardening'},
+            {value: 20, name: 'Yoga'}
+        ]);
+    </script>
+</body>
+</html>

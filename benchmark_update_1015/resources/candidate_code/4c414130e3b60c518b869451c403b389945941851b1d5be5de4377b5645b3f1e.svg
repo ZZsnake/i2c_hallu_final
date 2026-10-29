@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 345">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="blue"/>
+    </marker>
+  </defs>
+  <ellipse cx="176" cy="31" rx="35" ry="24" stroke="blue" stroke-width="2" fill="none"/>
+  <text x="176" y="31" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">Start</text>
+  <ellipse cx="176" cy="128" rx="36" ry="23" stroke="blue" stroke-width="2" fill="none"/>
+  <text x="176" y="128" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">Input Data</text>
+  <ellipse cx="44" cy="224" rx="36" ry="23" stroke="blue" stroke-width="2" fill="none"/>
+  <text x="44" y="224" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">Parse</text>
+  <ellipse cx="140" cy="224" rx="36" ry="23" stroke="blue" stroke-width="2" fill="none"/>
+  <text x="140" y="224" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">Process</text>
+  <ellipse cx="263" cy="320" rx="36" ry="23" stroke="blue" stroke-width="2" fill="none"/>
+  <text x="263" y="320" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">Output</text>
+  <ellipse cx="140" cy="320" rx="36" ry="23" stroke="blue" stroke-width="2" fill="none"/>
+  <text x="140" y="320" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">Decision</text>
+  <path d="M176,55 176,105" stroke="blue" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M149,144 72,208" stroke="blue" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M167,150 149,201" stroke="blue" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M187,150 252,297" stroke="blue" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M62,243 122,301" stroke="blue" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M140,247 140,297" stroke="blue" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M151,298 C196,253 206,188 181,151" stroke="blue" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow)"/>
+</svg>

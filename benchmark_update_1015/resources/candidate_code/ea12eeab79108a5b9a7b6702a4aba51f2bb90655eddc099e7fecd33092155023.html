@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unemployment Rate vs GDP Growth</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 35px 100px;
+      background: radial-gradient(circle at 45% 45%, #f4f5fa 0%, #d9dde7 100%);
+      color: #333;
+    }
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .chart-title {
+      font-family: 'Times New Roman', serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 35px 0 20px 100px;
+      text-align: left;
+    }
+    .chart-container {
+      width: 100%;
+      height: 930px;
+      overflow: visible;
+    }
+    .legend {
+      position: absolute;
+      top: 3%;
+      right: 7%;
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    }
+    .legend-dot-blue { background: radial-gradient(circle at 35% 30%, #7eb2ff 0%, #3f7ed8 55%, #1f5fbd 100%); }
+    .legend-dot-red { background: radial-gradient(circle at 35% 30%, #ff8b95 0%, #ee5361 55%, #c92f3e 100%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chart-title">Unemployment Rate vs GDP Growth (Economics)</div>
+    <div class="chart-container" id="chart"></div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot legend-dot-blue"></div>
+        <span>2018</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot legend-dot-red"></div>
+        <span>2020</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize ECharts instance
+    const myChart = echarts.init(document.getElementById('chart'));
+
+    // Define data for 2018 (blue)
+    const data2018 = [
+      [1.5, 7.1, 14],
+      [1.8, 8.5, 16],
+      [2.0, 4.0, 20],
+      [2.2, 5.7, 11],
+      [2.3, 5.2, 32],
+      [2.5, 6.2, 12],
+      [2.7, 10.1, 12],
+      [3.0, 4.7, 24],
+      [5.9, 4.6, 20],
+      [6.6, 3.8, 64] // Large bubble
+    ];
+
+    // Define data for 2020 (red)
+    const data2020 = [
+      [-9.8, 6.5, 14],
+      [-7.3, 7.9, 64], // Very large bubble
+      [-6.4, 14.8, 12],
+      [-5.3, 9.5, 11],
+      [-5.0, 4.2, 15],
+      [-4.6, 2.6, 18],
+      [-4.1, 13.5, 26],
+      [-3.1, 5.8, 22],
+      [-1.0, 4.2, 12],
+      [1.8, 8.1, 32]
+    ];
+
+    // Chart configuration
+    const option = {
+      backgroundColor: 'transparent',
+      title: {
+        text: '',
+        show: false
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+          return `GDP Growth: ${params.data[0].toFixed(1)}%<br/>Unemployment Rate: ${params.data[1].toFixed(1)}%<br/>Size: ${params.data[2]}`
+        }
+      },
+      legend: {
+        show: false
+      },
+      xAxis: {
+        type: 'value',
+        name: 'GDP Growth (%)',
+        nameLocation: 'end',
+        nameGap: 15,
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#000'
+          }
+        },
+        axisTick: {
+          show: true,
+          interval: 3
+        },
+        axisLabel: {
+          color: '#222',
+          fontSize: 12,
+          fontWeight: 'bold'
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#8d8d8d'
+          }
+        },
+        min: -12,
+        max: 9,
+        interval: 3
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Unemployment Rate (%)',
+        nameLocation: 'end',
+        nameGap: 15,
+        nameRotate: 0,
+        nameTextStyle: {
+          align: 'center',
+          fontWeight: 'bold',
+          fontSize: 14
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#000'
+          }
+        },
+        axisTick: {
+          show: true,
+          interval: 2
+        },
+        axisLabel: {
+          color: '#222',
+          fontSize: 12,
+          fontWeight: 'bold'
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'dashed',
+            color: '#8d8d8d'
+          }
+        },
+        min: 2,
+        max: 16,
+        interval: 2
+      },
+      series: [
+        {
+          name: '2018',
+          type: 'scatter',
+          symbolSize: function(val) {
+            return val[2];
+          },
+          itemStyle: {
+            color: new echarts.graphic.RadialGradient(0.35, 0.3, 0.8, [
+              { offset: 0, color: '#7eb2ff' },
+              { offset: 0.55, color: '#3f7ed8' },
+              { offset: 1, color: '#1f5fbd' }
+            ]),
+            shadowBlur: 10,
+            shadowColor: 'rgba(31, 95, 189, 0.45)',
+            shadowOffsetY: 5
+          },
+          data: data2018,
+          zlevel: 1
+        },
+        {
+          name: '2020',
+          type: 'scatter',
+          symbolSize: function(val) {
+            return val[2];
+          },
+          itemStyle: {
+            color: new echarts.graphic.RadialGradient(0.35, 0.3, 0.8, [
+              { offset: 0, color: '#ff8b95' },
+              { offset: 0.55, color: '#ee5361' },
+              { offset: 1, color: '#c92f3e' }
+            ]),
+            shadowBlur: 10,
+            shadowColor: 'rgba(201, 47, 62, 0.45)',
+            shadowOffsetY: 5
+          },
+          data: data2020,
+          zlevel: 1
+        }
+      ],
+      grid: {
+        left: '10%',
+        right: '10%',
+        top: '13%',
+        bottom: '4.0%'
+      }
+    };
+
+    // Render the chart
+    myChart.setOption(option);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      myChart.resize();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Geographical Population Distribution (Bar Chart)</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // --- Rewritten JS code for Geography domain: ---
+    option = {
+      title: {
+        text: 'Population by Region',
+        subtext: 'Sample Geography Data',
+        left: 'center',
+        textStyle: {
+          color: '#1a2936',
+          fontWeight: 'bold',
+          fontFamily: 'Arial, Helvetica, sans-serif',
+          fontSize: 22
+        },
+        subtextStyle: {
+          color: '#3d4d63',
+          fontFamily: 'Arial, Helvetica, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      legend: {
+        data: ['Urban', 'Rural'],
+        top: 35,
+        textStyle: {
+          color: '#172742',
+          fontFamily: 'Arial, Helvetica, sans-serif',
+          fontWeight: 'bold'
+        }
+      },
+      toolbox: {
+        show: true,
+        feature: {
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      grid: {
+        left: '7%',
+        right: '6%',
+        bottom: '8%',
+        containLabel: true
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: ['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Oceania'],
+          axisLine: {
+            lineStyle: {
+              color: '#222',
+              width: 3
+            }
+          },
+          axisLabel: {
+            color: '#222',
+            fontWeight: 'bold',
+            fontFamily: 'Arial, Helvetica, sans-serif',
+            fontSize: 15
+          }
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: 'Population (millions)',
+          nameTextStyle: {
+            color: '#222',
+            fontFamily: 'Arial, Helvetica, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 15
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#222',
+              width: 3
+            }
+          },
+          axisLabel: {
+            color: '#222',
+            fontWeight: 'bold',
+            fontFamily: 'Arial, Helvetica, sans-serif',
+            fontSize: 14
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#d0d0d0',
+              width: 1
+            }
+          }
+        }
+      ],
+      series: [
+        {
+          name: 'Urban',
+          type: 'bar',
+          data: [320, 120, 420, 210, 950, 35],
+          itemStyle: {
+            color: '#1565c0'
+          },
+          barWidth: '45%',
+          markPoint: {
+            data: [
+              { type: 'max', name: 'Max' },
+              { type: 'min', name: 'Min' }
+            ],
+            label: {
+              color: '#fff',
+              fontWeight: 'bold',
+              fontFamily: 'Arial, Helvetica, sans-serif'
+            }
+          },
+          markLine: {
+            data: [{ type: 'average', name: 'Avg' }],
+            lineStyle: {
+              color: '#1565c0',
+              width: 2
+            },
+            label: {
+              color: '#1565c0',
+              fontWeight: 'bold',
+              fontFamily: 'Arial, Helvetica, sans-serif'
+            }
+          }
+        },
+        {
+          name: 'Rural',
+          type: 'bar',
+          data: [45, 85, 60, 340, 400, 12],
+          itemStyle: {
+            color: '#388e3c'
+          },
+          barWidth: '45%',
+          markPoint: {
+            data: [
+              { type: 'max', name: 'Max' },
+              { type: 'min', name: 'Min' }
+            ],
+            label: {
+              color: '#fff',
+              fontWeight: 'bold',
+              fontFamily: 'Arial, Helvetica, sans-serif'
+            }
+          },
+          markLine: {
+            data: [{ type: 'average', name: 'Avg' }],
+            lineStyle: {
+              color: '#388e3c',
+              width: 2
+            },
+            label: {
+              color: '#388e3c',
+              fontWeight: 'bold',
+              fontFamily: 'Arial, Helvetica, sans-serif'
+            }
+          }
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

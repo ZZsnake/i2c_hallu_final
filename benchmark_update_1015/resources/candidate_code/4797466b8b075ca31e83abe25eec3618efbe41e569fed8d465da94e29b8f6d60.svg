@@ -1,0 +1,41 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <text x="200" y="30" text-anchor="middle" font-size="20">Atom Model</text>
+  <text x="200" y="290" text-anchor="middle" font-size="12">Physics: Atomic Structure</text>
+
+  <!-- Nucleus -->
+  <ellipse cx="200" cy="150" rx="40" ry="30" fill="#A0522D" stroke="black" stroke-width="1"/>
+
+  <!-- Protons (inside nucleus) -->
+  <circle cx="170" cy="140" r="5" fill="red"/>
+  <circle cx="190" cy="160" r="5" fill="red"/>
+  <circle cx="210" cy="130" r="5" fill="red"/>
+  <circle cx="230" cy="150" r="5" fill="red"/>
+
+  <!-- Neutrons (inside nucleus) -->
+  <circle cx="180" cy="150" r="5" fill="green"/>
+  <circle cx="200" cy="140" r="5" fill="green"/>
+  <circle cx="220" cy="160" r="5" fill="green"/>
+
+  <!-- Labels inside nucleus -->
+  <text x="165" y="145" font-size="8">Neutron</text>
+  <text x="235" y="155" font-size="8">Proton</text>
+
+  <!-- Orbit 1 -->
+  <path d="M 50 150 C 50 70, 350 70, 350 150" stroke="blue" stroke-dasharray="5,5" stroke-width="2" fill="none"/>
+
+  <!-- Orbit 2 -->
+  <path d="M 70 150 C 70 30, 330 30, 330 150" stroke="blue" stroke-dasharray="5,5" stroke-width="2" fill="none"/>
+
+  <!-- Electrons -->
+  <circle cx="80" cy="150" r="5" fill="red"/>
+  <circle cx="320" cy="150" r="5" fill="red"/>
+  <circle cx="200" cy="30" r="5" fill="red"/>
+  <circle cx="200" cy="270" r="5" fill="red"/>
+  <circle cx="50" cy="220" r="5" fill="red"/>
+  <circle cx="350" cy="220" r="5" fill="red"/>
+  <circle cx="100" cy="80" r="5" fill="red"/>
+  <circle cx="300" cy="80" r="5" fill="red"/>
+
+  <!-- Electron Label -->
+  <text x="230" y="35" font-size="8">Electron</text>
+</svg>

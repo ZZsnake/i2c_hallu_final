@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multiplication Table Heatmap (1-6)</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #ffffff;
+    }
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      padding: 30px 20px;
+      box-sizing: border-box;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #222222;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    #heatmap {
+      width: 80vw;
+      max-width: 1100px;
+      height: 60vh;
+      max-height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="title">Multiplication Table Heatmap (1-6)</div>
+    <div id="heatmap"></div>
+  </div>
+
+  <script>
+    $(function () {
+      var chartDom = document.getElementById('heatmap');
+      var myChart = echarts.init(chartDom);
+
+      var xData = [1, 2, 3, 4, 5, 6];
+      var yData = [1, 2, 3, 4, 5, 6];
+
+      // Build data in [xIndex, yIndex, value] form
+      var data = [];
+      for (var i = 0; i < yData.length; i++) {
+        for (var j = 0; j < xData.length; j++) {
+          var val = xData[j] * yData[i];
+          data.push([j, i, val]);
+        }
+      }
+
+      var option = {
+        grid: {
+          left: '10%',
+          right: '10%',
+          top: '8%',
+          bottom: '18%'
+        },
+        xAxis: {
+          type: 'category',
+          data: xData,
+          axisLine: { lineStyle: { color: '#555' } },
+          axisTick: { show: false },
+          axisLabel: {
+            color: '#222',
+            fontSize: 12
+          },
+          splitArea: { show: false },
+          splitLine: { show: false }
+        },
+        yAxis: {
+          type: 'category',
+          data: yData,
+          axisLine: { lineStyle: { color: '#555' } },
+          axisTick: { show: false },
+          axisLabel: {
+            color: '#222',
+            fontSize: 12
+          },
+          splitArea: { show: false },
+          splitLine: { show: false }
+        },
+        visualMap: {
+          min: 1,
+          max: 36,
+          orient: 'horizontal',
+          left: 'center',
+          bottom: 0,
+          calculable: true,
+          show: true,
+          itemWidth: 140,
+          itemHeight: 12,
+          text: ['36', '1'],
+          textGap: 8,
+          textStyle: {
+            color: '#222',
+            fontSize: 10
+          },
+          inRange: {
+            color: [
+              '#0066ff', // blue
+              '#0099ff',
+              '#00cc66', // green
+              '#99cc33',
+              '#ffcc00', // yellow
+              '#ff9900',
+              '#ff3300'  // red
+            ]
+          },
+          borderColor: '#cccccc',
+          borderWidth: 1
+        },
+        series: [
+          {
+            name: 'Multiplication',
+            type: 'heatmap',
+            data: data,
+            label: {
+              show: true,
+              color: '#222',
+              fontSize: 11
+            },
+            itemStyle: {
+              borderWidth: 0
+            }
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

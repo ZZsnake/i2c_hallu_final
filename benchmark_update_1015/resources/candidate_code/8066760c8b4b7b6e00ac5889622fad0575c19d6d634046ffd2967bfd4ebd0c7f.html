@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar Plot: r = 1 + 2·cos(θ)</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        #chart-container {
+            width: 800px;
+            height: 800px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container"></div>
+
+    <script>
+        const chart = echarts.init(document.getElementById('chart-container'));
+        
+        const theta = [];
+        const r = [];
+        for (let i = 0; i <= 1000; i++) {
+            const angle = (i / 1000) * 2 * Math.PI;
+            theta.push(angle);
+            r.push(1 + 2 * Math.cos(angle));
+        }
+        
+        const option = {
+            title: {
+                text: 'Polar Plot: r = 1 + 2·cos(θ)',
+                left: 'center',
+                textStyle: {
+                    fontSize: 22
+                }
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['Limacon Curve'],
+            itemStyle: {
+                color: 'transparent',
+                borderColor: '#364fc7',
+                borderWidth: 2
+            },                top: 52
+            },
+            polar: {
+                center: ['50%', '50%'],
+                radius: '75%',
+                itemStyle: {
+                    color: 'transparent'
+                }
+            },
+            angleAxis: {
+                type: 'value',
+                startAngle: 0,
+                min: 0,
+                max: 360,
+                splitNumber: 12,
+                axisLabel: {
+                    formatter: function (value) {
+                        return value;
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#364fc7'
+                    }
+                }
+            },
+            radiusAxis: {
+                type: 'value',
+                min: 0,
+                max: 3,
+                interval: 0.5,
+                axisLabel: {
+                    show: true
+                }
+            },
+            series: [{
+                name: 'Limacon Curve',
+                type: 'line',
+                coordinateSystem: 'polar',
+                data: theta.map((angle, index) => {
+                    let radius = r[index];
+                    let degree = angle * 180 / Math.PI;
+                    if (radius < 0) {
+                        radius = -radius;
+                        degree = (degree + 180) % 360;
+                    }
+                    return {
+                        value: [radius, degree],
+                        itemStyle: {
+                            color: '#00008B'
+                        }
+                    };
+                }),
+                lineStyle: {
+                    color: '#364fc7'
+                },
+                symbol: 'none'
+            },{
+                type:'line',
+                coordinateSystem:'polar',
+                data:[[0,0],[3,0]],
+                lineStyle:{
+                    color:'#c92a2a',
+                    width:2
+                },
+                symbol:'none'
+            }]
+        };
+        
+        chart.setOption(option);
+    </script>
+</body>
+</html>

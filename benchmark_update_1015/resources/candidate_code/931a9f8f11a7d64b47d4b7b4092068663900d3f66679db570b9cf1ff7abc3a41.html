@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Polar Plot: Analytical Geometry</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .echarts-title {
+      font-weight: bold;
+      font-size: 22px;
+      color: #1a1a1a;
+      letter-spacing: 0.5px;
+    }
+    .echarts-legend {
+      font-size: 15px;
+      color: #22223b;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var chartInstance = echarts.init(chartDom);
+    var app = {};
+    var option;
+
+    // --- New Data Sample for Analytical Geometry: Plot r = 1 + 2*cos(θ) (Limacon) ---
+    const limaconData = [];
+    for (let deg = 0; deg <= 360; deg++) {
+      let theta = (deg / 180) * Math.PI;
+      let r = 1 + 2 * Math.cos(theta);
+      limaconData.push([r, deg]);
+    }
+
+    option = {
+      title: {
+        text: 'Polar Plot: r = 1 + 2·cos(θ)',
+        left: 'center',
+        top: 22,
+        textStyle: {
+          color: '#1a1a1a',
+          fontWeight: 'bold',
+          fontSize: 22,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      legend: {
+        data: ['Limacon Curve'],
+        top: 68,
+        left: 'center',
+        textStyle: {
+          color: '#22223b',
+          fontSize: 15,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      polar: {
+        center: ['50%', '55%']
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#364fc7',
+            color: '#fff'
+          }
+        }
+      },
+      angleAxis: {
+        type: 'value',
+        startAngle: 0,
+        min: 0,
+        max: 360,
+        axisLabel: {
+          color: '#212529',
+          fontWeight: 'bold',
+          fontSize: 13
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#364fc7',
+            width: 2
+          }
+        },
+        axisTick: {
+          lineStyle: {
+            color: '#364fc7'
+          }
+        }
+      },
+      radiusAxis: {
+        min: 0,
+        axisLabel: {
+          color: '#212529',
+          fontWeight: 'bold',
+          fontSize: 13
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#c92a2a',
+            width: 2
+          }
+        },
+        axisTick: {
+          lineStyle: {
+            color: '#c92a2a'
+          }
+        }
+      },
+      series: [
+        {
+          coordinateSystem: 'polar',
+          name: 'Limacon Curve',
+          type: 'line',
+          showSymbol: false,
+          data: limaconData,
+          lineStyle: {
+            color: '#364fc7',
+            width: 3
+          }
+        }
+      ],
+      animationDuration: 1500
+    };
+
+    if (option && typeof option === 'object') {
+      chartInstance.setOption(option);
+    }
+
+    window.addEventListener('resize', chartInstance.resize);
+  </script>
+</body>
+</html>

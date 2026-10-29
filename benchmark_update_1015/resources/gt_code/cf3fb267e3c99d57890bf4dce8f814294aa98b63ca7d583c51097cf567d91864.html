@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Pie Chart of Math Topics</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      width: 100%;
+    }
+    .echarts-title {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: bold;
+      color: #21243d;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        text: 'Distribution of Math Topics in Exam',
+        left: 'center',
+        top: 18,
+        textStyle: {
+          color: '#2d2d2d',
+          fontSize: 22,
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {c} questions ({d}%)',
+        backgroundColor: '#f6f9ff',
+        borderColor: '#2d2d2d',
+        textStyle: { color: '#222', fontSize: 14 }
+      },
+      legend: {
+        orient: 'vertical',
+        left: 16,
+        top: 'center',
+        textStyle: {
+          color: '#222',
+          fontSize: 15,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      series: [
+        {
+          name: 'Math Topics',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          center: ['60%', '55%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 7,
+            borderColor: '#fff',
+            borderWidth: 3
+          },
+          label: {
+            show: true,
+            position: 'outside',
+            color: '#161a20',
+            fontWeight: 'bold',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            formatter: '{b}\n{c} ({d}%)'
+          },
+          labelLine: {
+            show: true,
+            lineStyle: {
+              color: '#2d2d2d',
+              width: 2
+            }
+          },
+          data: [
+            { value: 12, name: 'Algebra', itemStyle: { color: '#5376e7' } },
+            { value: 8, name: 'Geometry', itemStyle: { color: '#e74c3c' } },
+            { value: 6, name: 'Calculus', itemStyle: { color: '#f3a712' } },
+            { value: 7, name: 'Probability', itemStyle: { color: '#27ae60' } },
+            { value: 3, name: 'Number Theory', itemStyle: { color: '#8f44ad' } }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

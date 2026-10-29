@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Analytical Geometry: Polygon Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+    .echarts-legend-item {
+      font-weight: 700;
+      font-size: 15px;
+      color: #222 !important;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    // --- NEW DATASET for Analytical Geometry ---
+    // Visualizing a polygon defined by 6 vertices (dummy coordinates)
+    const polygonVertices = [
+      [20, 300],
+      [90, 380],
+      [180, 350],
+      [250, 260],
+      [150, 180],
+      [60, 220]
+    ];
+
+    option = {
+      title: {
+        text: 'Polygon in Cartesian Plane',
+        left: 'center',
+        top: 10,
+        textStyle: {
+          color: '#23234c',
+          fontWeight: 'bold',
+          fontSize: 19,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#293cff',
+            color: '#fff',
+            fontWeight: 'bold'
+          }
+        }
+      },
+      legend: {
+        data: ['Polygon'],
+        top: 45,
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 15,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      xAxis: {
+        name: 'X',
+        nameLocation: 'middle',
+        nameGap: 25,
+        axisLine: {
+          lineStyle: {
+            color: '#23234c',
+            width: 3
+          }
+        },
+        axisLabel: {
+          color: '#23234c',
+          fontWeight: 'bold',
+          fontSize: 14
+        },
+        min: 0,
+        max: 300,
+        splitLine: {
+          lineStyle: {
+            type: 'dashed',
+            color: '#e0e0e0'
+          }
+        }
+      },
+      yAxis: {
+        name: 'Y',
+        nameLocation: 'middle',
+        nameGap: 35,
+        axisLine: {
+          lineStyle: {
+            color: '#23234c',
+            width: 3
+          }
+        },
+        axisLabel: {
+          color: '#23234c',
+          fontWeight: 'bold',
+          fontSize: 14
+        },
+        min: 0,
+        max: 400,
+        splitLine: {
+          lineStyle: {
+            type: 'dashed',
+            color: '#e0e0e0'
+          }
+        }
+      },
+      series: [
+        {
+          name: 'Polygon',
+          type: 'custom',
+          data: polygonVertices,
+          renderItem: function(params, api) {
+            if (params.context.rendered) {
+              return;
+            }
+            params.context.rendered = true;
+            let points = [];
+            for (let i = 0; i < polygonVertices.length; i++) {
+              points.push(api.coord(polygonVertices[i]));
+            }
+            // Close the polygon visually
+            points.push(api.coord(polygonVertices[0]));
+            return {
+              type: 'polygon',
+              transition: ['shape'],
+              shape: {
+                points: points
+              },
+              style: api.style({
+                fill: '#2d7ff9',
+                stroke: '#192b6b',
+                lineWidth: 4,
+                shadowColor: '#192b6b55',
+                shadowBlur: 6
+              })
+            };
+          },
+          clip: true
+        },
+        {
+          name: 'Vertices',
+          type: 'scatter',
+          data: polygonVertices,
+          symbolSize: 14,
+          itemStyle: {
+            color: '#d8004c',
+            borderColor: '#23234c',
+            borderWidth: 2
+          },
+          label: {
+            show: true,
+            formatter: function(params) {
+              return '(' + params.value[0] + ', ' + params.value[1] + ')';
+            },
+            position: 'top',
+            color: '#23234c',
+            fontWeight: 'bold',
+            fontSize: 13,
+            fontFamily: 'Segoe UI, Arial, sans-serif'
+          }
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Central nodes -->
+  <circle cx="50" cy="100" r="10" fill="purple" stroke="black" />
+  <circle cx="150" cy="100" r="10" fill="purple" stroke="black" />
+  
+  <!-- Smaller nodes -->
+  <rect x="70" y="70" width="10" height="10" fill="blue" />
+  <rect x="90" y="70" width="10" height="10" fill="blue" />
+  <rect x="110" y="70" width="10" height="10" fill="blue" />
+  <rect x="130" y="70" width="10" height="10" fill="blue" />
+  <rect x="70" y="130" width="10" height="10" fill="blue" />
+  <rect x="90" y="130" width="10" height="10" fill="blue" />
+  <rect x="110" y="130" width="10" height="10" fill="blue" />
+  <rect x="130" y="130" width="10" height="10" fill="blue" />
+  
+  <!-- Connecting lines -->
+  <line x1="50" y1="100" x2="70" y2="70" stroke="brown" />
+  <line x1="50" y1="100" x2="90" y2="70" stroke="brown" />
+  <line x1="50" y1="100" x2="110" y2="70" stroke="brown" />
+  <line x1="50" y1="100" x2="130" y2="70" stroke="brown" />
+  <line x1="50" y1="100" x2="70" y2="130" stroke="brown" />
+  <line x1="50" y1="100" x2="90" y2="130" stroke="brown" />
+  <line x1="50" y1="100" x2="110" y2="130" stroke="brown" />
+  <line x1="50" y1="100" x2="130" y2="130" stroke="brown" />
+  <line x1="150" y1="100" x2="70" y2="70" stroke="brown" />
+  <line x1="150" y1="100" x2="90" y2="70" stroke="brown" />
+  <line x1="150" y1="100" x2="110" y2="70" stroke="brown" />
+  <line x1="150" y1="100" x2="130" y2="70" stroke="brown" />
+  <line x1="150" y1="100" x2="70" y2="130" stroke="brown" />
+  <line x1="150" y1="100" x2="90" y2="130" stroke="brown" />
+  <line x1="150" y1="100" x2="110" y2="130" stroke="brown" />
+  <line x1="150" y1="100" x2="130" y2="130" stroke="brown" />
+  
+  <!-- Curved lines -->
+  <path d="M50 100 Q30 50 50 0" stroke="purple" />
+  <path d="M50 100 Q30 150 50 200" stroke="purple" />
+  <path d="M150 100 Q170 50 150 0" stroke="purple" />
+  <path d="M150 100 Q170 150 150 200" stroke="purple" />
+</svg>

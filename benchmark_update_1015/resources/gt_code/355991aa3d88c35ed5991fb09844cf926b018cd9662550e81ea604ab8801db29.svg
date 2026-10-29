@@ -1,0 +1,76 @@
+<?xml version="1.0" standalone="no"?>
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="100px" height="192px"
+	viewBox="2430 270 1170 2250">
+<g fill="none">
+
+<!-- Line -->
+<rect x="2430" y="270" width="1170" height="2250" fill="#ffffff"/>
+<!-- Line -->
+<defs>
+<rect x="2430" y="300" width="1170" height="150" id="p0"/>
+<pattern id="tile0" patternUnits="userSpaceOnUse"
+	x="0" y="0" width="134" height="134">
+<g stroke-width="7.5" stroke="#000000" fill="none">
+<path d="M -4,63 71,138 M 63,-4 138,71"/>
+</g>
+</pattern>
+</defs>
+<use xlink:href="#p0" fill="#ffffff"/>
+<use xlink:href="#p0" fill="url(#tile0)"/>
+<!-- Line -->
+<polygon points=" 2501,747 2923,592 3539,2284 3116,2437" fill="#4c85ca"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 3117,1820 2700,675"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Arc -->
+<path d="M 2700,1125 A 343 343 0 0 0 2856 1101"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 2700,1575 2700,675"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Text -->
+<text xml:space="preserve" x="2745" y="1305" fill="#000000" font-family="Times,Symbol" font-style="normal" font-weight="normal" font-size="192" text-anchor="start">α</text>
+<!-- Text -->
+<text xml:space="preserve" x="2925" y="1215" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="192" text-anchor="start">r</text>
+<!-- Text -->
+<text xml:space="preserve" x="2634" y="1974" fill="#00ffff" font-family="Times" font-style="normal" font-weight="normal" font-size="192" text-anchor="start">mg</text>
+<!-- Text -->
+<text xml:space="preserve" x="2759" y="822" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="192" text-anchor="start">P</text>
+<!-- Text -->
+<text xml:space="preserve" x="2860" y="1628" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="192" text-anchor="start">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="3083" y="1687" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="192" text-anchor="start">e</text>
+<!-- Text -->
+<text xml:space="preserve" x="3117" y="1988" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="192" text-anchor="start">C</text>
+<!-- Line -->
+<polyline points=" 2565,450 2700,675 2835,450"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 2430,450 3600,450"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp0">
+	<path clip-rule="evenodd" d="M 2418,269 H 3612 V 2521 H 2418 z
+		M 3050,1806 3005,1836 2960,1806 2987,1988 3023,1988z"/>
+</clipPath>
+</defs>
+<polyline points=" 3005,1516 3005,1970" clip-path="url(#cp0)"
+	stroke="#00ffff" stroke-width="30px"/>
+<!-- Forward arrow to point 3005,1970 -->
+<polygon points=" 2960,1806 3005,1956 3050,1806 3005,1836 2960,1806"
+	stroke="#00ffff" stroke-width="8px" stroke-miterlimit="8" fill="#00ffff"/>
+<!-- Circle -->
+<circle cx="2700" cy="675" r="34" fill="#ffffff"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Circle -->
+<circle cx="3007" cy="1516" r="23" fill="#00ffff"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Circle -->
+<circle cx="3117" cy="1820" r="23" fill="#fffe00"
+	stroke="#000000" stroke-width="8px"/>
+</g>
+</svg>

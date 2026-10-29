@@ -1,0 +1,24 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[scale=2]
+    % Main rectangle
+    \draw[red, thick] (0,0) rectangle (3,2);
+    
+    % Sub-rectangles and labels
+    \draw[blue!50!black, thick] (0,0) rectangle (1,1) node[midway west] {$P(\neg A|B)$};
+    \draw[blue!50!black, thick] (1,0) rectangle (3,1) node[midway east] {$P(\neg A|\neg B)$};
+    \draw[green!50!black, thick] (0,1) rectangle (1,2) node[midway west] {$P(A|B)$};
+    \draw[green!50!black, thick] (1,1) rectangle (3,2) node[midway east] {$P(A|\neg B)$};
+    
+    % Top labels
+    \node at (-.5, 0.5) {P(B)};
+    \node at (3.5, 0.5) {P($\neg$B)};
+    
+    % Right side rectangle
+    \draw[green!50!black, thick] (4,0) rectangle (6,2);
+    \node at (4.5, 0.5) {P($\neg$B|A)};
+    \node at (5.5, 0.5) {P(B|A)};
+\end{tikzpicture}
+\end{document}

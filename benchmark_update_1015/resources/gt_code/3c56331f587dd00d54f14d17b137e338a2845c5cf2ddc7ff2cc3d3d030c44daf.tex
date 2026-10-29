@@ -1,0 +1,29 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{multirow}
+
+\definecolor{lightblue}{RGB}{173,216,230}
+\definecolor{lightorange}{RGB}{255,223,186}
+
+\begin{document}
+\begin{tabular}{>{\columncolor{lightblue}}l>{\columncolor{lightorange}}l>{\columncolor{lightblue}}c>{\columncolor{lightorange}}c>{\columncolor{lightblue}}l}
+\toprule
+\rowcolor{gray!30}\textbf{Title} & \textbf{Genre} & \textbf{Box Office (USD)} & \textbf{Release Date} & \textbf{Director} \\
+\midrule
+El Hombre que Aprendió a Volar & Comedy & \$1,200,000 & 2022-02-25 & Juan Manuel Méndez \\
+La Isla de los Sueños & Drama & \$800,000 & 2022-08-15 & María José Corsino \\
+Cuento de la Selva & Family & \$950,000 & 2022-12-01 & Luis Alfredo Torres \\
+Bajo el Mismo Cielo & Romance & \$650,000 & 2022-05-20 & Claudia Morán \\
+Cuando El Sol Brille & Action & \$1,700,000 & 2022-10-10 & Carlos Alberto Pérez \\
+Las Huellas del Pasado & Thriller & \$900,000 & 2022-09-30 & Ricardo Méndez \\
+Voces en la Noche & Horror & \$300,000 & 2022-04-15 & Gabriela Ortiz \\
+Sangre Nueva & Action & \$2,100,000 & 2022-06-22 & Fernando Reyes \\
+Amores Eternos & Romance & \$500,000 & 2022-03-14 & Samantha Pérez \\
+Historias de la Revolución & Drama & \$750,000 & 2022-11-05 & Javier Quintero \\
+\bottomrule
+\end{tabular}
+\end{document}

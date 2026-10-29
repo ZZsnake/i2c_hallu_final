@@ -1,0 +1,43 @@
+\documentclass[border=2pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\begin{document}
+\pgfplotsset{
+    colormap={deepbluegreen}{
+        color(0cm)=(blue!80!black);
+        color(1cm)=(teal!90!black)
+    }
+}
+\begin{tikzpicture}
+    \begin{axis}[
+        colormap name=deepbluegreen,
+        width=15cm,
+        view={325}{30},
+        enlargelimits=false,
+        grid=major,
+        domain=-2:4,
+        y domain=0:pi,
+        xmin=-2, xmax=2,
+        ymin=-2, ymax=2, zmin=-1.0,
+        samples=28,
+        xlabel={$\xi$},
+        ylabel={$\eta$},
+        zlabel={$h$},
+        axis line style={thick, blue!80!black},
+        tick label style={font=\bfseries\color{teal!90!black}},
+        label style={font=\bfseries\color{blue!80!black}},
+        colorbar,
+        colorbar style={
+            at={(1.05,0)},
+            anchor=south west,
+            height=0.2*\pgfkeysvalueof{/pgfplots/parent axis height},
+            title={$g(\xi,\eta)$},
+            title style={font=\bfseries\color{teal!90!black}}
+        }
+    ]
+    \addplot3 [surf, z buffer=sort, draw=blue!80!black, thick] 
+        ({cos(deg(y))*(x/2)},{sin(deg(y))*(x/2)},{0.5*x^2-1});
+    \end{axis}
+\end{tikzpicture}
+\end{document}

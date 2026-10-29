@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Numbers Count</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        #main {
+            width: 100vw;
+            height: 100vh;
+        }
+        .chart-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div id="main"></div>
+    </div>
+    <script>
+        $(function() {
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                title: {
+                    text: 'Count of Prime Numbers Less Than n',
+                    left: 'center',
+                    textStyle: {
+                        fontSize: 20,
+                        fontWeight: 'bold'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                grid: {
+                    left: '8%',
+                    right: '5%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: [10, 20, 30, 40, 50, 60, 70],
+                    name: 'n',
+                    nameLocation: 'end',
+                    nameGap: 20,
+                    axisLabel: {
+                        fontWeight: 'bold',
+                        margin: 10
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Number of Primes',
+                    nameLocation: 'end',
+                    nameGap: 30,
+                    min: 0,
+                    max: 21,
+                    interval: 3,
+                    splitLine: {
+                        lineStyle: {
+                            color: '#9A8C98',
+                            width: 1,
+                            type: 'dashed'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Primes',
+                    type: 'bar',
+                    barWidth: 50,
+                    itemStyle: {
+                        color: '#3A86FF'
+                    },
+                    label: {
+                        show: true,
+                        fontWeight: 'bold',
+                        position: 'top',
+                        distance: 10,
+                        color: '#333'
+                    },
+                    data: [4, 8, 10, 12, 15, 17, 19]
+                }]
+            };
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

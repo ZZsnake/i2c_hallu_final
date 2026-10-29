@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#008080" />
+      <stop offset="100%" stop-color="#ff4500" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4 Z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <!-- Top Box -->
+  <rect x="50" y="50" width="300" height="100" fill="url(#grad1)" stroke="#000"/>
+  <text x="55" y="125" fill="#00008b" font-size="24">S</text>
+  <text x="335" y="125" fill="#8b0000" font-size="24">N</text>
+  <!-- Arrows Top -->
+  <path d="M50,70 C30,50 30,50 40,30" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M50,100 C20,80 20,80 40,60" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M50,130 C30,150 30,150 40,170" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M350,70 C370,50 370,50 360,30" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M350,100 C380,80 380,80 360,60" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <path d="M350,130 C370,150 370,150 360,170" stroke="#000" fill="none" marker-end="url(#arrow)"/>
+  <!-- Horseshoe Magnet -->
+  <path d="M600,100 v60 q10,10 20,0 v-60 h-20" stroke="#000" stroke-width="4" fill="none"/>
+  
+  <!-- Bottom Box -->
+  <rect x="50" y="300" width="300" height="100" fill="url(#grad1)" stroke="#000"/>
+  <text x="55" y="375" fill="#8b0000" font-size="24">S</text>
+  <text x="335" y="375" fill="#8b0000" font-size="24">N</text>
+  <!-- Arrows Bottom -->
+  <path d="M50,320 C30,300 30,300 40,280" stroke="#8b0000" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M50,350 C20,330 20,330 40,310" stroke="#8b0000" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M50,380 C30,400 30,400 40,420" stroke="#8b0000" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M350,320 C370,300 370,300 360,280" stroke="#8b0000" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M350,350 C380,330 380,330 360,310" stroke="#8b0000" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M350,380 C370,400 370,400 360,420" stroke="#8b0000" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <!-- H Symbol -->
+  <path d="M600,350 v80 M620,350 v80 M600,390 h20" stroke="#8b0000" stroke-width="4" fill="none"/>
+  <text x="600" y="340" fill="#8b0000" font-size="20">+</text>
+  <text x="600" y="440" fill="#8b0000" font-size="20">−</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>circle { stroke-width: 1; }</style>  <!-- Outer circle -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="black" stroke-width="1.5"/>
+  
+  <!-- Top-left medium circle -->
+  <circle cx="27.72" cy="37.14" r="22.28" fill="none" stroke="black" stroke-width="1.5"/>
+  <!-- Small circles within top-left -->
+  <circle cx="27.72" cy="25.20" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="17.38" cy="43.11" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="38.06" cy="43.11" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  
+  <!-- Top-right medium circle -->
+  <circle cx="72.28" cy="37.14" r="22.28" fill="none" stroke="black" stroke-width="1.5"/>
+  <!-- Small circles within top-right -->
+  <circle cx="72.28" cy="25.20" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="61.94" cy="43.11" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="82.62" cy="43.11" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  
+  <!-- Bottom medium circle -->
+  <circle cx="50" cy="75.72" r="22.28" fill="none" stroke="black" stroke-width="1.5"/>
+  <!-- Small circles within bottom -->
+  <circle cx="50" cy="63.78" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="39.66" cy="81.69" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="60.34" cy="81.69" r="10.34" fill="none" stroke="black" stroke-width="1.5"/>
+</svg>

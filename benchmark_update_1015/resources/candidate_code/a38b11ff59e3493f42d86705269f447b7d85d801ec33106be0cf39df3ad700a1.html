@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Concepts Relationships</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+        .title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Relationships Between Math Concepts</div>
+    <div id="chart"></div>
+
+    <script>
+        const chartDom = document.getElementById('chart');
+        const myChart = echarts.init(chartDom);
+
+        const option = {
+            tooltip: {
+                show: false
+            },
+            series: [{
+                type: 'graph',
+                layout: 'force',
+                force: {
+                    repulsion: 1000,
+                    edgeLength: [100, 200]
+                },
+                data: [
+                    { name: 'Algebra', value: 10, itemStyle: { color: '#2E8B57' } },
+                    { name: 'Geometry', value: 10, itemStyle: { color: '#4682B4' } },
+                    { name: 'Calculus', value: 10, itemStyle: { color: '#DC143C' } },
+                    { name: 'Statistics', value: 10, itemStyle: { color: '#FFA500' } }
+                ],
+                links: [
+                    { source: 'Algebra', target: 'Calculus', lineStyle: { color: '#008B8B' }, label: { show: true, formatter: 'leads to', position: 'middle', rotate: true, color: '#008B8B' } },
+                    { source: 'Geometry', target: 'Calculus', lineStyle: { color: '#4682B4' }, label: { show: true, formatter: 'defines', position: 'middle', rotate: true, color: '#4682B4' } },
+                    { source: 'Geometry', target: 'Statistics', lineStyle: { color: '#DC143C' }, label: { show: true, formatter: 'informs', position: 'middle', rotate: true, color: '#DC143C' } },
+                    { source: 'Algebra', target: 'Statistics', lineStyle: { color: '#FFD700' }, label: { show: true, formatter: 'required for', position: 'middle', rotate: true, color: '#FFD700' } },
+                    { source: 'Statistics', target: 'Calculus', lineStyle: { color: '#32CD32' }, label: { show: true, formatter: 'applies to', position: 'middle', rotate: true, color: '#32CD32' } }
+                ],
+                edgeSymbol: ['none', 'arrow'],
+                edgeSymbolSize: [0, 10],
+                roam: false,
+                label: {
+                    show: true,
+                    position: 'inside',
+                    color: 'white',
+                    fontWeight: 'bold'
+                },
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowColor: 'rgba(0, 0, 0, 0.3)'
+                },
+                emphasis: {
+                    focus: 'none'
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+        window.addEventListener('resize', myChart.resize);
+    </script>
+</body>
+</html>

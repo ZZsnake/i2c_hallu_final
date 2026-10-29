@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L8 3 L0 6 z" fill="black"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L8 3 L0 6 z" fill="green"/>
+    </marker>
+  </defs>
+  <!-- Header -->
+  <rect x="0" y="0" width="400" height="30" fill="#ccff99"/>
+  <!-- Vertical dashed line L -->
+  <line x1="200" y1="30" x2="200" y2="230" stroke="black" stroke-dasharray="5,5"/>
+  <text x="205" y="150" font-size="12">L</text>
+  <!-- Diagonal line with angle θ -->
+  <line x1="200" y1="230" x2="250" y2="30" stroke="black" marker-end="url(#arrow)"/>
+  <!-- Angle θ -->
+  <path d="M200 70 A40 40 0 0 1 230 50" fill="none" stroke="black"/>
+  <text x="215" y="60" font-size="12">θ</text>
+  <!-- Bob -->
+  <circle cx="200" cy="230" r="5" fill="red"/>
+  <!-- Horizontal distance r -->
+  <line x1="200" y1="230" x2="250" y2="230" stroke="black" stroke-dasharray="5,5"/>
+  <text x="220" y="245" font-size="12">r</text>
+  <!-- Vertical arrow h -->
+  <line x1="200" y1="230" x2="200" y2="260" stroke="black" marker-end="url(#arrow)"/>
+  <text x="190" y="250" font-size="12">h</text>
+  <!-- Force arrows -->
+  <!-- mg arrow -->
+  <line x1="200" y1="230" x2="200" y2="260" stroke="black" marker-end="url(#arrow)"/>
+  <text x="205" y="250" font-size="12">mg</text>
+  <!-- N arrow -->
+  <line x1="200" y1="230" x2="225" y2="130" stroke="green" marker-end="url(#arrowGreen)"/>
+  <text x="215" y="170" font-size="12" fill="green">N</text>
+  <!-- Curved path -->
+  <path d="M150 230 Q200 200 250 230" fill="none" stroke="blue" stroke-dasharray="5,5"/>
+  <path d="M245 228 Q240 229 242 232" fill="none" stroke="blue" marker-end="url(#arrow)"/>
+</svg>

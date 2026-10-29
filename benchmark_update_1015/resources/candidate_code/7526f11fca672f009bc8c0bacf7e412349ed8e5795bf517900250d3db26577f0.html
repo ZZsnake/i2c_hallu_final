@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Supplies Distribution</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #chart-container {
+            width: 60%;
+            height: 60%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="chart-container">
+        <div id="donut-chart" style="height: 90%;"></div>
+    </div>
+
+    <script>
+        var myChart = echarts.init(document.getElementById('donut-chart'));
+        var option = {
+            title: {
+                text: 'Distribution of Office Supplies Usage',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['Notebooks', 'Pens', 'Folders', 'Stickers', 'Markers']
+            },
+            series: [
+                {
+                    name: 'Donut Chart',
+                    type: 'pie',
+                    radius: [0, '100%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: 30, name: 'Notebooks', itemStyle: { color: '#1f77b4' } },
+                        { value: 25, name: 'Pens', itemStyle: { color: '#2ca02c' } },
+                        { value: 20, name: 'Folders', itemStyle: { color: '#ff7f0e' } },
+                        { value: 15, name: 'Stickers', itemStyle: { color: '#d62728' } },
+                        { value: 10, name: 'Markers', itemStyle: { color: '#9467bd' } }
+                    ]
+                }
+            ]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

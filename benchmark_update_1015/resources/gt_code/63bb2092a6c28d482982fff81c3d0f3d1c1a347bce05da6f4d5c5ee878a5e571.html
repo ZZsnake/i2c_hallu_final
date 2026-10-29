@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Skills Radar Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      color: ['#265CFF', '#FF3C38', '#22A39F', '#F9B208'],
+      title: {
+        text: 'Student Math Competency Radar',
+        left: 'center',
+        textStyle: {
+          color: '#1A1A1A',
+          fontWeight: 'bold',
+          fontSize: 22,
+          fontFamily: 'Arial, sans-serif'
+        }
+      },
+      legend: {
+        data: ['Alice', 'Bob', 'Class Average', 'Practice Target'],
+        top: 30,
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontFamily: 'Arial, sans-serif'
+        }
+      },
+      radar: [
+        {
+          indicator: [
+            { text: 'Algebra', max: 100 },
+            { text: 'Geometry', max: 100 },
+            { text: 'Calculus', max: 100 },
+            { text: 'Statistics', max: 100 },
+            { text: 'Logic', max: 100 }
+          ],
+          center: ['30%', '55%'],
+          radius: 110,
+          startAngle: 90,
+          splitNumber: 5,
+          shape: 'circle',
+          axisName: {
+            formatter: '{value}',
+            color: '#222',
+            fontFamily: 'Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 15
+          },
+          splitArea: {
+            areaStyle: {
+              color: ['#F0F6FF', '#D6E4FF', '#B2CFFF', '#8FBFFF', '#5A96FF'],
+              shadowColor: 'rgba(0, 0, 0, 0.15)',
+              shadowBlur: 8
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#222',
+              width: 2
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#5A96FF',
+              width: 2
+            }
+          }
+        },
+        {
+          indicator: [
+            { text: 'Arithmetic', max: 120 },
+            { text: 'Trigonometry', max: 120 },
+            { text: 'Discrete Math', max: 120 },
+            { text: 'Probability', max: 120 },
+            { text: 'Number Theory', max: 120 },
+            { text: 'Set Theory', max: 120 }
+          ],
+          center: ['75%', '55%'],
+          radius: 110,
+          startAngle: 90,
+          splitNumber: 6,
+          shape: 'polygon',
+          axisName: {
+            color: '#212121',
+            backgroundColor: '#E8EAF6',
+            borderRadius: 4,
+            padding: [4, 7],
+            fontWeight: 'bold',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: 14
+          },
+          splitArea: {
+            areaStyle: {
+              color: ['#FFF7E3', '#FFE2B6', '#FFD591', '#F9B208', '#F98404', '#F55050'],
+              shadowColor: 'rgba(0,0,0,0.12)',
+              shadowBlur: 7
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#F55050',
+              width: 2
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#F9B208',
+              width: 2,
+              type: 'dashed'
+            }
+          }
+        }
+      ],
+      series: [
+        {
+          type: 'radar',
+          emphasis: {
+            lineStyle: {
+              width: 4
+            }
+          },
+          data: [
+            {
+              value: [85, 92, 77, 89, 93],
+              name: 'Alice',
+              itemStyle: {
+                color: '#265CFF'
+              },
+              lineStyle: {
+                color: '#265CFF',
+                width: 3
+              },
+              areaStyle: {
+                color: 'rgba(38,92,255,0.25)'
+              }
+            },
+            {
+              value: [74, 88, 68, 80, 86],
+              name: 'Bob',
+              itemStyle: {
+                color: '#FF3C38'
+              },
+              lineStyle: {
+                color: '#FF3C38',
+                width: 3
+              },
+              areaStyle: {
+                color: 'rgba(255,60,56,0.22)'
+              }
+            }
+          ]
+        },
+        {
+          type: 'radar',
+          radarIndex: 1,
+          data: [
+            {
+              value: [100, 75, 85, 110, 70, 90],
+              name: 'Class Average',
+              symbol: 'diamond',
+              symbolSize: 10,
+              lineStyle: {
+                type: 'dashed',
+                color: '#22A39F',
+                width: 3
+              },
+              areaStyle: {
+                color: 'rgba(34,163,159,0.17)'
+              },
+              label: {
+                show: true,
+                color: '#222',
+                fontWeight: 'bold',
+                fontSize: 12,
+                fontFamily: 'Arial, sans-serif',
+                formatter: function (params) {
+                  return params.value;
+                }
+              }
+            },
+            {
+              value: [110, 110, 110, 110, 110, 110],
+              name: 'Practice Target',
+              symbol: 'circle',
+              symbolSize: 11,
+              lineStyle: {
+                color: '#F9B208',
+                width: 3
+              },
+              areaStyle: {
+                color: new echarts.graphic.RadialGradient(0.2, 0.7, 1, [
+                  { color: 'rgba(249,178,8,0.18)', offset: 0 },
+                  { color: 'rgba(249,178,8,0.65)', offset: 1 }
+                ])
+              }
+            }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

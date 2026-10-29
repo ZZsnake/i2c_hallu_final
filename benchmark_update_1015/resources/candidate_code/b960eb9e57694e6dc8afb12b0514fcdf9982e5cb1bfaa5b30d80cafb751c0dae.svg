@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black"/>
+    </marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="350" y2="350" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="50" y1="350" x2="50" y2="50" stroke="black" marker-end="url(#arrow)"/>
+  <!-- BR1 line (cyan) -->
+  <line x1="60" y1="50" x2="270" y2="350" stroke="cyan" stroke-width="2"/>
+  <!-- BR2 line (yellow) -->
+  <line x1="50" y1="100" x2="300" y2="350" stroke="gold" stroke-width="2"/>
+  <!-- Points -->
+  <circle cx="50" cy="100" r="4" fill="black"/>
+  <circle cx="200" cy="250" r="4" fill="black"/>
+  <circle cx="120" cy="300" r="4" fill="black"/>
+  <circle cx="270" cy="350" r="4" fill="black"/>
+  <!-- Text labels -->
+  <text x="45" y="45" font-size="14">Q2</text>
+  <text x="360" y="355" font-size="14">Q1</text>
+  <text x="55" y="95" font-size="12">B</text>
+  <text x="210" y="245" font-size="12">C</text>
+  <text x="130" y="295" font-size="12">D</text>
+  <text x="275" y="345" font-size="12">A</text>
+  <text x="120" y="200" fill="cyan" font-size="12">BR1</text>
+  <text x="280" y="310" fill="gold" font-size="12">BR2</text>
+</svg>

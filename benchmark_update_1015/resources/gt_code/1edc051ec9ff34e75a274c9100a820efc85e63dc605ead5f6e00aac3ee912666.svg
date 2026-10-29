@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0"
+  width="1050px" height="1050px" viewBox="-1050,-1050,2100,2100">
+  <!-- Transparent background (default) -->
+  <!-- Regular convex polygon approximating a circle - change colors, style, and labels to math context -->
+  <polygon style="stroke:#2D2DFF; stroke-width:6; stroke-dasharray:20,8; stroke-linejoin:round; fill:none;" 
+    points="0,-900 173,-871 339,-786 487,-649 610,-466 701,-247 754,0 701,247 610,466 487,649 339,786 173,871 0,900 -173,871 -339,786 -487,649 -610,466 -701,247 -754,0 -701,-247 -610,-466 -487,-649 -339,-786 -173,-871"/>
+  <!-- Axes -->
+  <line x1="0" y1="0" x2="0" y2="950" stroke="#222222" stroke-width="4"/>
+  <line x1="0" y1="0" x2="0" y2="-950" stroke="#222222" stroke-width="4"/>
+  <line x1="0" y1="0" x2="950" y2="0" stroke="#222222" stroke-width="4"/>
+  <line x1="0" y1="0" x2="-950" y2="0" stroke="#222222" stroke-width="4"/>
+  <!-- Example math labels -->
+  <text x="30" y="-930" font-family="Arial" font-size="54" fill="#323232">Y</text>
+  <text x="930" y="44" font-family="Arial" font-size="54" fill="#323232">X</text>
+  <text x="30" y="920" font-family="Arial" font-size="54" fill="#323232">-Y</text>
+  <text x="-970" y="44" font-family="Arial" font-size="54" fill="#323232">-X</text>
+  <text x="400" y="-400" font-family="Times New Roman" font-size="50" fill="#D10000">r = 900</text>
+  <text x="-340" y="320" font-family="Times New Roman" font-size="50" fill="#008C2F">Circle</text>
+</svg>

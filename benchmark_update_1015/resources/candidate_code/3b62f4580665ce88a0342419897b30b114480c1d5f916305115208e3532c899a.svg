@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="red" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="green" />
+    </marker>
+  </defs>
+
+  <!-- Participants -->
+  <rect x="100" y="50" width="100" height="40" fill="#ADD8E6" stroke="#4169E1" stroke-width="2" />
+  <text x="150" y="75" font-family="Arial" font-size="16" text-anchor="middle" fill="black">User</text>
+
+  <rect x="350" y="50" width="100" height="40" fill="#ADD8E6" stroke="#4169E1" stroke-width="2" />
+  <text x="400" y="75" font-family="Arial" font-size="16" text-anchor="middle" fill="black">Server</text>
+
+  <rect x="600" y="50" width="100" height="40" fill="#ADD8E6" stroke="#4169E1" stroke-width="2" />
+  <text x="650" y="75" font-family="Arial" font-size="16" text-anchor="middle" fill="black">Database</text>
+
+  <!-- Lifelines -->
+  <line x1="150" y1="90" x2="150" y2="850" stroke="black" stroke-dasharray="5,5" />
+  <line x1="400" y1="90" x2="400" y2="850" stroke="black" stroke-dasharray="5,5" />
+  <line x1="650" y1="90" x2="650" y2="850" stroke="black" stroke-dasharray="5,5" />
+
+  <!-- Messages -->
+  <!-- Login Request -->
+  <line x1="150" y1="150" x2="650" y2="150" stroke="red" stroke-width="1.5" marker-end="url(#arrowhead-red)" />
+  <text x="390" y="140" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Login Request</text>
+
+  <!-- Login Success -->
+  <line x1="650" y1="220" x2="150" y2="220" stroke="green" stroke-width="1.5" marker-end="url(#arrowhead-green)" />
+  <text x="390" y="210" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Login Success</text>
+
+  <!-- Query Data -->
+  <line x1="150" y1="290" x2="650" y2="290" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="390" y="280" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Query Data</text>
+
+  <!-- Query Result -->
+  <line x1="650" y1="360" x2="150" y2="360" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="390" y="350" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Query Result</text>
+
+  <!-- Update (1st) -->
+  <line x1="150" y1="430" x2="650" y2="430" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="390" y="420" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Update</text>
+
+  <!-- Logout (1st) -->
+  <line x1="400" y1="500" x2="650" y2="500" stroke="green" stroke-width="1.5" marker-end="url(#arrowhead-green)" />
+  <text x="525" y="490" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Logout</text>
+
+  <!-- Update (2nd) -->
+  <line x1="150" y1="570" x2="650" y2="570" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="390" y="560" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Update</text>
+
+  <!-- Access Denied -->
+  <line x1="650" y1="640" x2="150" y2="640" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <path d="M160 635 L170 645 M160 645 L170 635" stroke="black" stroke-width="1.5" /> <!-- X mark -->
+  <rect x="360" y="625" width="100" height="25" fill="#4169E1" stroke="black" stroke-width="0.5" rx="3" ry="3"/>
+  <text x="410" y="643" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Access Denied</text>
+
+  <!-- Logout (2nd) -->
+  <line x1="400" y1="710" x2="650" y2="710" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="525" y="700" font-family="Arial" font-size="14" text-anchor="middle" fill="black">Logout</text>
+
+</svg>

@@ -1,0 +1,65 @@
+\documentclass[border=3pt]{standalone}
+
+% Drawing
+\usepackage{tikz}
+
+% 3D
+\usepackage{tikz-3dplot}
+
+% Tikz Library
+\usetikzlibrary{angles,quotes,intersections}
+
+% Styles
+\tikzset{axis/.style={very thick, teal!70!black, -stealth}}
+\tikzset{vec/.style={thick, blue!80!black}}
+\tikzset{univec/.style={thick, orange!85!black, -stealth}}
+
+% Notation
+\usepackage{physics}
+\usepackage{bm}
+
+\begin{document}
+
+\tdplotsetmaincoords{65}{100}
+%
+\pgfmathsetmacro{\thetaV}{32}
+\pgfmathsetmacro{\phiV}{55}
+%
+
+\begin{tikzpicture}[tdplot_main_coords]
+
+    % Axes
+    \draw[axis] (0,0,0) -- (5.5,0,0) node [pos=1.1] {$a$};
+    \draw[axis] (0,0,0) -- (0,5.5,0) node [pos=1.1] {$b$};
+    \draw[axis] (0,0,0) -- (0,0,5)   node [pos=1.1] {$c$};
+
+    % Help Lines
+    \draw[dashed, gray!80!black] (1.4,3.2,3.6) -- (1.4,3.2,0);
+    \draw[dashed, gray!80!black] (1.4,0,0) -- (1.4,3.2,0) node [pos=-0.1, left] {$a$};
+    \draw[dashed, gray!80!black] (0,3.2,0) -- (1.4,3.2,0) node [pos=-0.25, left] {$b$};
+    \draw[dashed, gray!80!black] (0,0,3.6) -- (1.4,3.2,3.6) node [pos=-0.05] {$c$};
+    \draw[dashed, gray!80!black, tdplot_main_coords] (4,0,0) arc (0:90:4);
+
+    % Unit Vectors
+    \tdplotsetcoord{Q'}{1.2}{90}{\phiV}
+    \draw[univec] (1.4,3.2,0) -- ($(Q')+(1.4,3.2,0)$) node [pos=1.25, right] {$\vu*{s}$};
+    \tdplotsetcoord{Q''}{1.2}{90}{90+\phiV}
+    \draw[univec] (1.4,3.2,0) -- ($(Q'') + (1.4,3.2,0)$) node [pos=1.25, left] {$\vu*{\lambda}$};
+
+    % Vectors
+    \tdplotsetcoord{Q}{5}{\thetaV}{\phiV}
+    \draw[vec] (0,0,0) -- (Q);
+    \draw[thick, violet!80!black] (0,0,0) -- (1.4,3.2,0) node [pos=0.6, above] {$\bm{d}$};
+
+    % Point
+    \node[fill=teal!90!black, circle, inner sep=1.1pt] at (1.4,3.2,3.6) {};
+
+    % Angles
+    \tdplotdrawarc{(0,0,0)}{0.8}{0}{\phiV}{below}{$\alpha$}
+
+    % Example Plane Equation
+    \node[anchor=west, teal!90!black] at (5.2,1.8,2.6) {\large $c=2a + b - 1$};
+
+\end{tikzpicture}
+
+\end{document}

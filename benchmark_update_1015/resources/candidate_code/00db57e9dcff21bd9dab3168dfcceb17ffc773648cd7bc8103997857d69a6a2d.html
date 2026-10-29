@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Survey Responses by Category</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+      color: #111111;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .page-wrapper {
+      width: 90vw;
+      max-width: 1365px;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chart-title {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .legend-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .legend-row span {
+      margin: 0 4px;
+    }
+
+    .legend-gradient {
+      width: 120px;
+      height: 12px;
+      background: linear-gradient(to right, #1f77b4, #2ca02c);
+      border-radius: 10px;
+      margin: 0 6px;
+    }
+
+    #chart {
+      width: 100%;
+      height: 550px;
+    }
+
+    @media (max-width: 900px) {
+      #chart {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="chart-title">Survey Responses by Category</div>
+    <div class="legend-row">
+      <span>Low Score</span>
+      <div class="legend-gradient"></div>
+      <span>High Score</span>
+    </div>
+    <div id="chart"></div>
+  </div>
+
+  <script>
+    $(function () {
+      var chartDom = document.getElementById('chart');
+      var myChart = echarts.init(chartDom);
+
+      var categories = [
+        'Feedback',
+        'Suggestion',
+        'Inquiry',
+        'Complaint',
+        'Appreciation',
+        'Request',
+        'Other'
+      ];
+
+      var values = [230, 185, 120, 95, 162, 75, 46];
+
+      var colors = [
+        '#2ca02c', // Feedback - green
+        '#d62728', // Suggestion - red
+        '#8c564b', // Inquiry - brown
+        '#9467bd', // Complaint - purple
+        '#7f7f3a', // Appreciation - olive
+        '#c23b73', // Request - magenta
+        '#1f77b4'  // Other - blue
+      ];
+
+      var option = {
+        backgroundColor: '#ffffff',
+        grid: {
+          left: 70,
+          right: 60,
+          top: 40,
+          bottom: 40
+        },
+        xAxis: {
+          type: 'value',
+          min: 0,
+          max: 250,
+          splitLine: { show: false },
+          axisLabel: { show: false },
+          axisLine: { show: false },
+          axisTick: { show: false },
+          name: 'Responses',
+          nameLocation: 'end',
+          nameGap: 15,
+          nameTextStyle: {
+            fontSize: 10,
+            color: '#444'
+          }
+        },
+        yAxis: {
+          type: 'category',
+          data: categories,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#000000'
+            }
+          },
+          axisTick: { show: false },
+          axisLabel: {
+            fontSize: 11,
+            color: '#333333',
+            margin: 12
+          },
+          name: 'Category',
+          nameLocation: 'start',
+          nameGap: 30,
+          nameTextStyle: {
+            fontSize: 10,
+            color: '#333333'
+          }
+        },
+        series: [
+          {
+            type: 'bar',
+            data: values.map(function (v, idx) {
+              return {
+                value: v,
+                itemStyle: {
+                  color: colors[idx]
+                }
+              };
+            }),
+            barWidth: 22,
+            label: {
+              show: true,
+              position: 'right',
+              fontSize: 10,
+              color: '#111111',
+              formatter: '{c}'
+            },
+            emphasis: {
+              itemStyle: {
+                opacity: 0.9
+              }
+            }
+          }
+        ],
+        animation: false
+      };
+
+      myChart.setOption(option);
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usepackage{tikz}
+
+\begin{document}
+\begin{circuitikz}[scale=0.8]
+    % Operational Amplifier
+    \draw (0,0) node[op amp] (opamp) {};
+    
+    % Input
+    \draw (-4,1) node[left] {Input} to[short] (-3,1)
+    to[R, l=$R_1$] (-1,1) -- (opamp.+);
+    
+    % Feedback network
+    \draw (opamp.-) to[short] (-1,-1) to[R, l=$R_2$] (3,-1)
+    to[switch, l=$S_1$] (5,-1) -- (5,0) -- (opamp.out);
+    
+    \draw (1,-1) to[R, l=$R_3$] (1,-3) to[switch, l=$S_2$] (5,-3) -- (5,-1);
+    
+    \draw (-1,-1) to[short] (-1,-5) to[R, l=$R_4$] (3,-5)
+    to[switch, l=$S_3$] (5,-5) -- (5,-3);
+    
+    % Output
+    \draw (opamp.out) -- (7,0) node[right] {Output};
+    
+    % Microcontroller
+    \draw[dashed] (7,-6) rectangle (11,-2) node[midway] {Microcontroller};
+    \draw (8,-2) -- (8,-1) -| (5.5,-1);
+    \draw (9,-2) -- (9,-3) -| (5.5,-3);
+    \draw (10,-2) -- (10,-5) -| (5.5,-5);
+    
+    % Labels
+    \node[text width=5cm, align=center, above] at (3.5,3) 
+    {Programmable Gain Amplifier for\\Audio Component Testing};
+    
+    \node[text width=4cm, align=left, below] at (9,-6.5) 
+    {S1, S2, S3: Digital\\control switches};
+\end{circuitikz}
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{multirow}
+
+\definecolor{headcolor}{HTML}{2C3E50}
+\definecolor{oddrow}{HTML}{ECF0F1}
+\definecolor{evenrow}{HTML}{D6DBDF}
+\definecolor{highlight}{HTML}{F39C12}
+
+\begin{document}
+
+\renewcommand{\arraystretch}{1.2}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{tabular}{L{2.5cm}R{1.5cm}C{1.2cm}C{1cm}R{1.5cm}C{1cm}C{1.2cm}C{1cm}C{1cm}R{1cm}}
+\rowcolor{headcolor}
+\multicolumn{10}{c}{\textbf{\textcolor{white}{\large Fundraising Performance Metrics for Non-Profit Campaigns}}} \\[0.5ex]
+\rowcolor{headcolor}
+\textcolor{white}{\textbf{Campaign}} & 
+\textcolor{white}{\textbf{Funds Raised (\$)}} & 
+\textcolor{white}{\textbf{Duration (days)}} & 
+\textcolor{white}{\textbf{Donors}} & 
+\textcolor{white}{\textbf{Avg. Donation (\$)}} & 
+\textcolor{white}{\textbf{Conv. Rate (\%)}} & 
+\textcolor{white}{\textbf{Social Media}} & 
+\textcolor{white}{\textbf{Event Attend.}} & 
+\textcolor{white}{\textbf{Emails Sent}} & 
+\textcolor{white}{\textbf{Cost/\$ Raised}} \\
+\midrule
+\rowcolor{oddrow}
+Healthy Futures Initiative & 350,000 & 30 & 1,500 & 233.33 & 10.5 & 12,000 & 400 & 20,000 & 0.25 \\
+\rowcolor{evenrow}
+\cellcolor{highlight}Clean Water for All & \cellcolor{highlight}500,000 & 45 & 850 & 588.24 & 8.0 & 22,000 & 600 & 15,000 & \cellcolor{highlight}0.15 \\
+\rowcolor{oddrow}
+Education for Every Child & 275,000 & 60 & 1,200 & 229.17 & 12.0 & 18,000 & 300 & 18,000 & 0.30 \\
+\rowcolor{evenrow}
+Local Wildlife Preservation & 150,000 & 30 & 500 & 300.00 & \cellcolor{highlight}15.0 & 5,000 & 200 & 5,000 & 0.40 \\
+\rowcolor{oddrow}
+Mental Health Awareness Drive & 420,000 & 75 & 950 & 442.11 & 9.5 & \cellcolor{highlight}25,000 & 450 & 22,000 & 0.20 \\
+\bottomrule
+\end{tabular}
+
+\end{document}

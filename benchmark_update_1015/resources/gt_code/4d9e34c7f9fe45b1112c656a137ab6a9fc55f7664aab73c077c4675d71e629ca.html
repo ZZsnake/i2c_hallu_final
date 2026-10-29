@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Pie Chart - Miscellaneous Categories</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-legend-item,
+    .echarts-tooltip,
+    .echarts-title {
+      color: #222 !important;
+      font-family: 'Segoe UI', Arial, sans-serif !important;
+      font-weight: bold !important;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        text: 'Miscellaneous Task Distribution',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#1a1a1a',
+          fontSize: 22,
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 'bold'
+        }
+      },
+      legend: {
+        top: 'bottom',
+        textStyle: {
+          color: '#222',
+          fontSize: 16,
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 'bold'
+        }
+      },
+      toolbox: {
+        show: true,
+        feature: {
+          mark: { show: true },
+          dataView: { show: true, readOnly: false },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      series: [
+        {
+          name: 'Tasks',
+          type: 'pie',
+          radius: [60, 230],
+          center: ['50%', '55%'],
+          roseType: 'area',
+          itemStyle: {
+            borderRadius: 10,
+            borderColor: '#232323',
+            borderWidth: 3
+          },
+          label: {
+            color: '#232323',
+            fontSize: 15,
+            fontWeight: 'bold',
+            fontFamily: 'Segoe UI, Arial, sans-serif'
+          },
+          data: [
+            { value: 45, name: 'Administrative' },
+            { value: 35, name: 'Support' },
+            { value: 30, name: 'Maintenance' },
+            { value: 28, name: 'Logistics' },
+            { value: 25, name: 'Miscellaneous' },
+            { value: 22, name: 'Documentation' },
+            { value: 20, name: 'Research' },
+            { value: 15, name: 'Coordination' }
+          ],
+          color: [
+            '#0066CC', // vivid blue
+            '#009966', // vivid green
+            '#FF3300', // vivid red
+            '#FF6600', // vivid orange
+            '#A700B2', // deep magenta
+            '#0055A4', // navy blue
+            '#008C8C', // teal
+            '#B22222'  // firebrick
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

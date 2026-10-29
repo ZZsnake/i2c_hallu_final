@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <style>
+        .title { font-size: 20px; font-family: Arial, sans-serif; }
+        .legend { font-size: 14px; font-family: Arial, sans-serif; }
+        .source { font-size: 12px; font-family: Arial, sans-serif; }
+        .label { font-size: 12px; font-family: Arial, sans-serif; }
+    </style>
+    <!-- Title -->
+    <text x="400" y="30" text-anchor="middle" class="title">Production mondiale en 1939 : 136,5 millions de tonnes</text>
+    <!-- Pie Chart -->
+    <!-- Blue Segment (Luxembourg 39.5) -->
+    <path d="M 400 300 L 400 150 A 150 150 0 0 1 548.5 230.5 L 400 300" fill="#0066CC"/>
+    <!-- Red Segment (Allemagne 22.9) -->
+    <path d="M 400 300 L 548.5 230.5 A 150 150 0 0 1 520.5 370.5 L 400 300" fill="red"/>
+    <!-- Yellow Segment (48,9 13.4) -->
+    <path d="M 400 300 L 520.5 370.5 A 150 150 0 0 1 440.5 410.5 L 400 300" fill="#FFCC00"/>
+    <!-- Green Segment (1,8 8.0) -->
+    <path d="M 400 300 L 440.5 410.5 A 150 150 0 0 1 380.5 420.5 L 400 300" fill="green"/>
+    <!-- Maroon Segment (Belgique 3.1) -->
+    <path d="M 400 300 L 380.5 420.5 A 150 150 0 0 1 350.5 400.5 L 400 300" fill="#990000"/>
+    <!-- Light Blue Segment (Grande-Bretagne 0.6) -->
+    <path d="M 400 300 L 350.5 400.5 A 150 150 0 0 1 340.5 390.5 L 400 300" fill="#66CCFF"/>
+    <!-- Gray Segment (France 0.6) -->
+    <path d="M 400 300 L 340.5 390.5 A 150 150 0 0 1 330.5 380.5 L 400 300" fill="#999999"/>
+    <!-- Gray Segment (Autres 3.1) -->
+    <path d="M 400 300 L 330.5 380.5 A 150 150 0 0 1 350.5 330.5 L 400 300" fill="#CCCCCC"/>
+    <!-- Labels -->
+    <text x="560" y="220" class="label">Luxembourg 39,5</text>
+    <text x="530" y="380" class="label">Allemagne 22,9</text>
+    <text x="450" y="420" class="label">48,9 13,4</text>
+    <text x="400" y="430" class="label">1,8 8,0</text>
+    <text x="360" y="410" class="label">Belgique 3,1</text>
+    <text x="330" y="390" class="label">Grande-</text>
+    <text x="330" y="400" class="label">Bretagne 0,6</text>
+    <text x="320" y="370" class="label">France 0,6</text>
+    <text x="340" y="340" class="label">Autres 3,1</text>
+    <!-- Legend -->
+    <rect x="50" y="150" width="10" height="10" fill="#0066CC"/>
+    <text x="65" y="160" class="legend">Etats-Unis</text>
+    <rect x="50" y="170" width="10" height="10" fill="red"/>
+    <text x="65" y="180" class="legend">Allemagne</text>
+    <rect x="50" y="190" width="10" height="10" fill="#FFCC00"/>
+    <text x="65" y="200" class="legend">48,9</text>
+    <rect x="50" y="210" width="10" height="10" fill="green"/>
+    <text x="65" y="220" class="legend">1,8</text>
+    <rect x="50" y="230" width="10" height="10" fill="#990000"/>
+    <text x="65" y="240" class="legend">Belgique</text>
+    <rect x="50" y="250" width="10" height="10" fill="#66CCFF"/>
+    <text x="65" y="260" class="legend">Source : thèse de Françoise Berger (2006)</text>
+    <rect x="50" y="270" width="10" height="10" fill="#999999"/>
+    <text x="65" y="280" class="legend">Autres</text>
+    <!-- Source -->
+    <text x="200" y="580" class="source" fill="#66CCFF">Source : thèse de Françoise Berger (2006)</text>
+</svg>

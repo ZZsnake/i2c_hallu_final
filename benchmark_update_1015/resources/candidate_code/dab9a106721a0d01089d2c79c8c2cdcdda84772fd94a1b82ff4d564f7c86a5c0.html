@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Table Heatmap</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    #heatmap {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="heatmap"></div>
+
+  <script>
+    // Generate multiplication table data
+    const data = [];
+    for (let i = 1; i <= 10; i++) {
+      for (let j = 1; j <= 10; j++) {
+        data.push([j - 1, i - 1, i * j]);
+      }
+    }
+
+    // Initialize ECharts
+    const chart = echarts.init(document.getElementById('heatmap'));
+
+    // Define color gradient from red (1) to blue (100)
+    const option = {
+      title: {
+        text: 'Multiplication Table Heatmap',
+        left: 'center',
+        top: '10',
+        textStyle: {
+          fontSize: 22,
+          fontWeight: 'bold'
+        }
+      },
+      tooltip: {
+        formatter: function (params) {
+          const value = params.value[2];
+          const x = params.value[0] + 1;
+          const y = params.value[1] + 1;
+          return `${y} × ${x} = ${value}`;
+        }
+      },
+      grid: {
+        left: '15%',
+        right: '15%',
+        top: 203,
+        bottom: 65
+      },
+      visualMap: {
+        min: 1,
+        max: 100,
+        calculable: true,
+        orient: 'horizontal',
+        left: 'center',
+        top: '100',
+        inRange: {
+          color: ['#ef4444', '#f6c431', '#58a946', '#1e88e5']
+        },
+        textStyle: {
+          fontSize: 14,
+          fontWeight: 'bold'
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+        position: 'bottom',
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#1f2d5d',
+            width: 3
+          }
+        },
+        axisTick: { show: true },
+        axisLabel: {
+          fontSize: 16,
+          fontWeight: 'bold',
+          color: '#1f2d5d'
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+        position: 'left',
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#b22222',
+            width: 3
+          }
+        },
+        axisTick: { show: true },
+        axisLabel: {
+          fontSize: 16,
+          fontWeight: 'bold',
+          color: '#b22222'
+        }
+      },
+      series: [{
+        type: 'heatmap',
+        data: data,
+        label: {
+          show: true,
+          fontSize: 13,
+          fontWeight: 'bold',
+          color: '#000',
+          formatter: function (params) {
+            return params.value[2];
+          }
+        },
+        itemStyle: {
+          borderColor: '#fff',
+          borderWidth: 0
+        },
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }]
+    };
+
+    chart.setOption(option);
+
+    // Responsive resize
+    window.addEventListener('resize', function () {
+      chart.resize();
+    });
+  </script>
+</body>
+</html>

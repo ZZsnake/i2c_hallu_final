@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Functions Over X</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            padding: 0;
+        }
+        #chartContainer {
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="chartContainer"></div>
+    
+    <script>
+        // Initialize the chart
+        var chartDom = document.getElementById('chartContainer');
+        var myChart = echarts.init(chartDom);
+        
+        // X values
+        var xData = [-3, -2, -1, 0, 1, 2, 3];
+        
+        // Calculate function values
+        var fxData = xData.map(x => x * x);  // f(x) = x²
+        var gxData = xData.map(x => 2 * x + 1);  // g(x) = 2x+1
+        var hxData = xData.map(x => x * x * x);  // h(x) = x³
+        
+        var option = {
+            title: {
+                text: 'Math Functions Over X',
+                left: 'center',
+                top: 3,
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            toolbox: {
+                show: true,
+                right: 5,
+                top: 5,
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                data: ['f(x) = x²', 'g(x) = 2x+1', 'h(x) = x³'],
+                top: 40,
+                left: 'center',
+                itemGap: 30
+            },
+            grid: {
+                left: '2%',
+                right: '2%',
+                top: 60,
+                bottom: 45,
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: xData,
+                boundaryGap: false,
+                axisLine: {
+                    lineStyle: {
+                        color: '#2d5be3'
+                    }
+                },
+                axisLabel: {
+                    color: '#333'
+                },
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+                type: 'value',
+                min: -30,
+                max: 30,
+                interval: 10,
+                axisLine: {
+                    show: false
+                },
+                axisLabel: {
+                    color: '#333'
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#e0e0e0',
+                        type: 'solid'
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'f(x) = x²',
+                    type: 'line',
+                    data: fxData,
+                    symbol: 'circle',
+                    symbolSize: 8,
+                    itemStyle: {
+                        color: '#d81b60'
+                    },
+                    lineStyle: {
+                        color: '#d81b60',
+                        width: 4
+                    },
+                    label: {
+                        show: false
+                    }
+                },
+                {
+                    name: 'g(x) = 2x+1',
+                    type: 'line',
+                    data: gxData,
+                    symbol: 'rect',
+                    symbolSize: 8,
+                    itemStyle: {
+                        color: '#00897b'
+                    },
+                    lineStyle: {
+                        color: '#00897b',
+                        width: 4
+                    },
+                    label: {
+                        show: false
+                    }
+                },
+                {
+                    name: 'h(x) = x³',
+                    type: 'line',
+                    data: hxData,
+                    symbol: 'triangle',
+                    symbolSize: 10,
+                    itemStyle: {
+                        color: '#2d5be3'
+                    },
+                    lineStyle: {
+                        color: '#2d5be3',
+                        width: 4
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}',
+                        color: '#333',
+                        fontSize: 11
+                    }
+                }
+            ]
+        };
+        
+        myChart.setOption(option);
+        
+        // Responsive resize
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

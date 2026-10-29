@@ -1,0 +1,26 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{multirow}
+
+\definecolor{lightblue}{RGB}{230,240,255}
+\definecolor{darkblue}{RGB}{0,0,102}
+
+\begin{document}
+
+\begin{tabular}{>{\columncolor{lightblue}}l|c|c|c|>{\columncolor{lightblue}}c|c}
+\toprule
+\rowcolor{darkblue}
+\textcolor{white}{\textbf{School}} & \textcolor{white}{\textbf{Parent Engagement}} & \textcolor{white}{\textbf{Avg. GPA}} & \textcolor{white}{\textbf{Attendance}} & \textcolor{white}{\textbf{Test Scores (M/R/S)}} & \textcolor{white}{\textbf{Rehab. Program}} \\
+\midrule
+Lincoln High School & \textbf{85} & 3.6 & 95\% & 720/710/730 & 15\% \\
+Roosevelt High School & 78 & 3.2 & 92\% & 680/675/690 & 22\% \\
+Washington Academy & \textbf{90} & \textbf{3.8} & \textbf{97\%} & \textbf{740/735/750} & 10\% \\
+Jefferson High School & 65 & 2.9 & 88\% & 650/640/660 & \textbf{30\%} \\
+Madison Prep & 82 & 3.5 & 93\% & 700/685/710 & 18\% \\
+\bottomrule
+\end{tabular}
+
+\end{document}

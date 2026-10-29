@@ -1,0 +1,84 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, every node/.style={font=\small}]
+
+% Some common dimensions
+\def\H{3}          % total height up to alpha_s^A
+\def\midH{1.6}     % height of alpha_s^B
+\def\W{4.2}        % total width up to NV_s^B
+
+%---------------- LEFT DIAGRAM ----------------%
+\begin{scope}[xshift=0cm]
+  % x coordinates
+  \def\rL{1.4}
+  \def\NVSA{2.6}
+  % axes
+  \draw[->] (0,0) -- (\W+0.4,0);
+  \draw[->] (0,0) -- (0,\H+0.4);
+  % outer rectangle (0,0) to (W,H)
+  \draw (0,0) rectangle (\W,\H);
+  % horizontal reference lines
+  \draw (0,\midH) -- (\W,\midH);
+  % y-axis labels
+  \node[left] at (0,\H) {$\alpha_s^A$};
+  \node[left] at (0,\midH) {$\alpha_s^B$};
+  % vertical lines
+  \draw[dashed] (\rL,0) -- (\rL,\H);
+  \draw[very thick] (\NVSA,0) -- (\NVSA,\H);
+  % x-axis labels
+  \node[below] at (\rL,0) {$\tilde r_L$};
+  \node[below] at (\NVSA,0) {$NV_s^A$};
+  \node[below] at (\W,0) {$NV_s^B$};
+
+  % region labels
+  \node at (0.5*\rL,0.5*(\H+\midH)) {I};
+  \node at (0.5*(\rL+\NVSA),0.5*(\H+\midH)) {II};
+  \node at (0.5*\rL,0.5*\midH) {III};
+  \node at (0.5*(\rL+\NVSA),0.5*\midH) {IV};
+  \node at (0.5*(\NVSA+\W),0.5*\midH) {V};
+\end{scope}
+
+%---------------- RIGHT DIAGRAM ----------------%
+\begin{scope}[xshift=7cm]
+  % x coordinates
+  \def\rLA{1.0}
+  \def\rLB{1.8}
+  \def\NVSA{2.8}
+  % axes
+  \draw[->] (0,0) -- (\W+0.4,0);
+  \draw[->] (0,0) -- (0,\H+0.4);
+  % outer rectangle
+  \draw (0,0) rectangle (\W,\H);
+  % horizontals
+  \draw (0,\midH) -- (\W,\midH);
+  % y labels
+  \node[left] at (0,\H) {$\alpha_s^A$};
+  \node[left] at (0,\midH) {$\alpha_s^B$};
+
+  % vertical lines
+  \draw[dashed] (\rLA,0) -- (\rLA,\H);
+  \draw[dashed] (\rLB,0) -- (\rLB,\H);
+  \draw[very thick] (\NVSA,0) -- (\NVSA,\H);
+
+  % x labels
+  \node[below] at (\rLA,0) {$r_L^A$};
+  \node[below] at (\rLB,0) {$r_L^B$};
+  \node[below] at (\NVSA,0) {$NV_s^A$};
+  \node[below] at (\W,0) {$NV_s^B$};
+
+  % region labels top row
+  \node at (0.5*\rLA,0.5*(\H+\midH)) {VI};
+  \node at (0.5*(\rLA+\rLB),0.5*(\H+\midH)) {VII};
+  \node at (0.5*(\rLB+\NVSA),0.5*(\H+\midH)) {VIII};
+  % bottom row
+  \node at (0.5*\rLA,0.5*\midH) {IX};
+  \node at (0.5*(\rLA+\rLB),0.5*\midH) {X};
+  \node at (0.5*(\rLB+\NVSA),0.5*\midH) {XI};
+  \node at (0.5*(\NVSA+\W),0.5*\midH) {XII};
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

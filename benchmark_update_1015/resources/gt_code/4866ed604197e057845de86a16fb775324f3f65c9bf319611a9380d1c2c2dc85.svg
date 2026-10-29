@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <g>
+    <!-- Main flowchart container -->
+    <rect x="30" y="30" width="1140" height="840" fill="#fff" stroke="#24248f" stroke-width="3"/>
+    <!-- Flowchart nodes -->
+    <rect x="100" y="100" width="200" height="70" rx="10" fill="#e5e5ff" stroke="#24248f" stroke-width="3" stroke-dasharray="10,5"/>
+    <rect x="100" y="220" width="200" height="70" rx="10" fill="#c0ffc0" stroke="#24248f" stroke-width="3" stroke-dasharray="10,5"/>
+    <rect x="400" y="160" width="200" height="70" rx="10" fill="#ffdede" stroke="#b2002d" stroke-width="4"/>
+    <rect x="700" y="100" width="200" height="70" rx="10" fill="#e5e5ff" stroke="#24248f" stroke-width="3" stroke-dasharray="10,5"/>
+    <rect x="700" y="220" width="200" height="70" rx="10" fill="#c0ffc0" stroke="#24248f" stroke-width="3" stroke-dasharray="10,5"/>
+    <rect x="1000" y="160" width="80" height="70" rx="10" fill="#ffdede" stroke="#b2002d" stroke-width="4"/>
+    <!-- Decision diamond -->
+    <polygon points="600,370 650,410 600,450 550,410" fill="#fff7c0" stroke="#24248f" stroke-width="3"/>
+    <!-- End node -->
+    <ellipse cx="600" cy="700" rx="70" ry="35" fill="#e5e5ff" stroke="#24248f" stroke-width="3"/>
+    <!-- Arrow connectors -->
+    <path d="M200,170 L200,220" stroke="#24248f" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M200,290 L400,195" stroke="#24248f" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M300,135 L400,195" stroke="#24248f" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M600,195 L700,135" stroke="#24248f" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M600,195 L700,250" stroke="#24248f" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M900,135 L1080,195" stroke="#b2002d" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M600,230 L600,370" stroke="#24248f" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M600,450 L600,700" stroke="#24248f" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <!-- Arrowhead marker definition -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#24248f"/>
+      </marker>
+    </defs>
+    <!-- Node labels -->
+    <text x="200" y="140" text-anchor="middle" font-family="Roboto, Arial" font-size="22" fill="#24248f">Input Data</text>
+    <text x="200" y="260" text-anchor="middle" font-family="Roboto, Arial" font-size="22" fill="#24248f">Validation</text>
+    <text x="500" y="200" text-anchor="middle" font-family="Roboto, Arial" font-size="22" fill="#b2002d">Preprocessing</text>
+    <text x="800" y="140" text-anchor="middle" font-family="Roboto, Arial" font-size="22" fill="#24248f">Algorithm</text>
+    <text x="800" y="260" text-anchor="middle" font-family="Roboto, Arial" font-size="22" fill="#24248f">Data Structures</text>
+    <text x="1040" y="200" text-anchor="middle" font-family="Roboto, Arial" font-size="18" fill="#b2002d">Output</text>
+    <text x="600" y="410" text-anchor="middle" font-family="Roboto, Arial" font-size="22" fill="#24248f">Condition?</text>
+    <text x="600" y="715" text-anchor="middle" font-family="Roboto, Arial" font-size="24" fill="#24248f">Result</text>
+    <text x="1160" y="80" text-anchor="end" font-family="Roboto, Arial" font-size="32" fill="#24248f" font-weight="bold">Computer Science Flow</text>
+  </g>
+</svg>

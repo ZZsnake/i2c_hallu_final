@@ -1,0 +1,58 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes, calc}
+
+\begin{document}
+\begin{tikzpicture}
+    % Define layers
+    \draw[dashed] (0,0) rectangle (6,6);
+    \node at (3,5.5) {Layer 1};
+    \node at (3,0.5) {Layer 2};
+
+    % Define points
+    \coordinate (A) at (3,4);
+    \coordinate (B) at (1,2);
+    \coordinate (C) at (5,2);
+
+    % Draw connections
+    \draw[red, ->] (A) -- (B);
+    \draw[red, ->] (A) -- (C);
+    \draw[red, ->] (B) -- (A);
+    \draw[red, ->] (C) -- (A);
+
+    \draw[blue, ->] (B) -- (C);
+    \draw[blue, ->] (C) -- (B);
+
+    % Label points
+    \filldraw[red] (A) circle (2pt) node[above] {A};
+    \filldraw[blue] (B) circle (2pt) node[left] {B};
+    \filldraw[red] (C) circle (2pt) node[right] {C};
+
+    % Tensor form
+    \node at (8,4) {Tensor form:};
+    \node at (8,3.5) {Layer 1};
+    \node at (8,0.5) {Layer 2};
+
+    % Matrix M
+    \matrix (M) at (10,3) [matrix of nodes, column sep=-1pt, row sep=-1pt] {
+        1 & 0 & 0 \\
+        1 & 0 & 1 \\
+        1 & 0 & 0 \\
+        0 & 0 & 0 \\
+        1 & 0 & 0 \\
+        0 & 0 & 0 \\
+    };
+
+    % Arrows
+    \draw[->] (M-1-1) -- (M-2-2);
+    \draw[->] (M-2-1) -- (M-3-2);
+    \draw[->] (M-3-1) -- (M-4-2);
+    \draw[->] (M-4-1) -- (M-5-2);
+    \draw[->] (M-5-1) -- (M-6-2);
+    \draw[->] (M-6-1) -- (M-6-3);
+
+    % Labels
+    \node at (11.5,3.5) {$1 \rightarrow 2$};
+    \node at (11.5,0.5) {$2 \rightarrow 1$};
+\end{tikzpicture}
+\end{document}

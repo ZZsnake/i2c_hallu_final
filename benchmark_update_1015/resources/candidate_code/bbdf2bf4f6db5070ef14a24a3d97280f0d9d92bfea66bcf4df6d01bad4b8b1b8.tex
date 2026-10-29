@@ -1,0 +1,41 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+
+\definecolor{headerblue}{RGB}{0,0,102}
+\definecolor{rowgray}{RGB}{242,242,242}
+\definecolor{totalrow}{RGB}{204,204,204}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}p{2.0cm}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1.6cm}}
+\newcolumntype{C}{>{\centering\arraybackslash}p{2.2cm}}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{L|*{6}{R}}
+\toprule[1.2pt]
+\multicolumn{1}{>{\columncolor{headerblue}\bfseries\raggedright\arraybackslash}p{2.0cm}|}{\textcolor{white}{Category}} &
+\multicolumn{1}{>{\columncolor{headerblue}\bfseries\raggedleft\arraybackslash}p{1.6cm}|}{\textcolor{white}{January}} &
+\multicolumn{1}{>{\columncolor{headerblue}\bfseries\raggedleft\arraybackslash}p{1.6cm}|}{\textcolor{white}{February}} &
+\multicolumn{1}{>{\columncolor{headerblue}\bfseries\raggedleft\arraybackslash}p{1.6cm}|}{\textcolor{white}{March}} &
+\multicolumn{1}{>{\columncolor{headerblue}\bfseries\raggedleft\arraybackslash}p{1.6cm}|}{\textcolor{white}{April}} &
+\multicolumn{1}{>{\columncolor{headerblue}\bfseries\raggedleft\arraybackslash}p{1.6cm}|}{\textcolor{white}{May}} &
+\multicolumn{1}{>{\columncolor{headerblue}\bfseries\raggedleft\arraybackslash}p{1.6cm}}{\textcolor{white}{June}} \\
+\midrule[1.2pt]
+\addlinespace[2pt]
+\multicolumn{7}{>{\columncolor{rowgray}}l}{\textbf{Jersey Sales}} \\
+Home Jersey & \$45,000 & \$40,000 & \$60,000 & \$48,000 & \$53,000 & \$51,000 \\
+Away Jersey & \$30,000 & \$35,000 & \$25,000 & \$28,000 & \$31,000 & \$33,000 \\
+Third Jersey & \$15,000 & \$10,000 & \$12,000 & \$15,000 & \$14,000 & \$10,000 \\
+\multicolumn{7}{>{\columncolor{rowgray}}l}{\textbf{Memorabilia Sales}} \\
+Signed Balls & \$20,000 & \$15,000 & \$22,000 & \$17,000 & \$18,000 & \$19,000 \\
+Player Posters & \$10,000 & \$12,000 & \$9,000 & \$11,000 & \$10,500 & \$9,000 \\
+Scarves & \$5,000 & \$4,000 & \$6,000 & \$7,000 & \$8,000 & \$7,500 \\
+\midrule[1.2pt]
+\rowcolor{totalrow}
+\textbf{Total Income} & \textbf{\$125,000} & \textbf{\$116,000} & \textbf{\$134,000} & \textbf{\$126,000} & \textbf{\$134,500} & \textbf{\$129,500} \\
+\bottomrule[1.2pt]
+\end{tabular}
+\end{document}

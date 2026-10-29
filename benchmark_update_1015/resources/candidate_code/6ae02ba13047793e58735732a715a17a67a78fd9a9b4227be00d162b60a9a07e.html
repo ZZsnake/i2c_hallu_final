@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Function Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+        .title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Quadratic Function: \( y = x^2 - 2x + 3 \)</div>
+    <div id="chart"></div>
+    <script>
+        var chartDom = document.getElementById('chart');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: {
+                text: 'Quadratic Function: \( y = x^2 - 2x + 3 \)',
+                show: false
+            },
+            xAxis: {
+                type: 'value',
+                min: -2,
+                max: 4,
+                axisLabel: {
+                    inside: false,
+                    color: '#333'
+                },
+                axisTick: {
+                    show: true
+                },
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#333'
+                    }
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#eee'
+                    }
+                }
+            },
+            yAxis: {
+                type: 'value',
+                min: 0,
+                max: 12,
+                axisLabel: {
+                    inside: false,
+                    color: '#333'
+                },
+                axisTick: {
+                    show: true
+                },
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#333'
+                    }
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#eee'
+                    }
+                }
+            },
+            series: [
+                {
+                    data: [
+                        [-2, 11], [-1, 6], [0, 3], [1, 2], [2, 3], [3, 6], [4, 11]
+                    ],
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: {
+                        color: 'orange'
+                    },
+                    lineStyle: {
+                        color: 'teal'
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        color: 'black'
+                    }
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+    </script>
+</body>
+</html>

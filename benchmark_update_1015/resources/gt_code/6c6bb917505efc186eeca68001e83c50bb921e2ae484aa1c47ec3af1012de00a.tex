@@ -1,0 +1,46 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{siunitx}
+
+\definecolor{headcolor}{RGB}{0,102,204}
+\definecolor{subheadcolor}{RGB}{102,178,255}
+\definecolor{rowcolor1}{RGB}{230,242,255}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\begin{document}
+
+\begin{tabular}{l R{2cm} R{2cm} R{2cm} R{2cm} R{2cm}}
+\toprule
+\rowcolor{headcolor}\multicolumn{6}{c}{\textbf{\textcolor{white}{Socioeconomic Factors and Vector-Borne Diseases}}} \\
+\midrule
+\rowcolor{subheadcolor}\textbf{Factor} & \textbf{Brazil} & \textbf{India} & \textbf{Nigeria} & \textbf{Vietnam} & \textbf{South Africa} \\
+\midrule
+\rowcolor{rowcolor1}Population & \num{213993437} & \num{1393409038} & \num{211400708} & \num{98168829} & \num{59308690} \\
+\rowcolor{rowcolor2}Urbanization Rate (\%) & 87.4 & 34.5 & 51.2 & 37.0 & 66.0 \\
+\rowcolor{rowcolor1}GDP Per Capita (USD) & 9040 & 2100 & 2272 & 3483 & 6025 \\
+\rowcolor{rowcolor2}Healthcare Expenditure (\% of GDP) & 9.5 & 3.5 & 3.7 & 5.7 & 8.5 \\
+\rowcolor{rowcolor1}Access to Healthcare (\%) & 78 & 66 & 47 & 70 & 80 \\
+\midrule
+\rowcolor{subheadcolor}\multicolumn{6}{c}{\textbf{Population Distribution (\%)}} \\
+\midrule
+\rowcolor{rowcolor2}Children & 14.8 & 28.5 & 45.4 & 19.4 & 29.2 \\
+\rowcolor{rowcolor1}Adults & 56.2 & 53.2 & 51.0 & 72.3 & 65.8 \\
+\rowcolor{rowcolor2}Elderly & 29.0 & 18.3 & 3.6 & 8.3 & 5.0 \\
+\midrule
+\rowcolor{subheadcolor}\multicolumn{6}{c}{\textbf{Annual Incidence of Vector-Borne Diseases}} \\
+\midrule
+\rowcolor{rowcolor1}Dengue & \num{1400000} & \num{100000} & \num{60000} & \num{200000} & \num{3000} \\
+\rowcolor{rowcolor2}Malaria & \num{65000} & \num{1000000} & \num{2000000} & \num{30000} & \num{55000} \\
+\rowcolor{rowcolor1}Zika & \num{65000} & \num{3000} & 500 & 500 & 50 \\
+\rowcolor{rowcolor2}Chikungunya & \num{300000} & \num{3000} & \num{8000} & \num{5000} & \num{1000} \\
+\rowcolor{rowcolor1}Yellow Fever & \num{1300} & 0 & \num{2000} & 0 & 0 \\
+\bottomrule
+\end{tabular}
+
+\end{document}

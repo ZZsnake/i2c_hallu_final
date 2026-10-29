@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>bar-chart-categories-other</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      title: {
+        text: 'Monthly Event Attendance',
+        left: 'center',
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 22
+        }
+      },
+      dataset: [
+        {
+          dimensions: ['event', 'month', 'attendees', 'location', 'date'],
+          source: [
+            ['Workshop', 'January', 120, 'Room A', '2024-01-10'],
+            ['Seminar', 'February', 85, 'Room B', '2024-02-15'],
+            ['Conference', 'March', 230, 'Hall 1', '2024-03-20'],
+            ['Meetup', 'April', 150, 'Room C', '2024-04-05'],
+            ['Webinar', 'May', 195, 'Online', '2024-05-25'],
+            ['Panel', 'June', 140, 'Room D', '2024-06-18'],
+            ['Networking', 'July', 110, 'Lounge', '2024-07-08'],
+            ['Hackathon', 'August', 175, 'Lab 2', '2024-08-12'],
+            ['Expo', 'September', 210, 'Expo Center', '2024-09-30']
+          ]
+        },
+        {
+          transform: {
+            type: 'sort',
+            config: { dimension: 'attendees', order: 'desc' }
+          }
+        }
+      ],
+      xAxis: {
+        type: 'category',
+        axisLabel: {
+          interval: 0,
+          rotate: 25,
+          color: '#222',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#444',
+            width: 2
+          }
+        }
+      },
+      yAxis: {
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#444',
+            width: 2
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#ddd',
+            width: 1
+          }
+        }
+      },
+      series: {
+        type: 'bar',
+        encode: { x: 'event', y: 'attendees' },
+        datasetIndex: 1,
+        itemStyle: {
+          color: '#3366cc',
+          borderColor: '#222',
+          borderWidth: 1
+        },
+        barWidth: '55%'
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+          shadowStyle: {
+            color: 'rgba(51,102,204,0.1)'
+          }
+        },
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      grid: {
+        top: 60,
+        left: 50,
+        right: 30,
+        bottom: 60
+      }
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

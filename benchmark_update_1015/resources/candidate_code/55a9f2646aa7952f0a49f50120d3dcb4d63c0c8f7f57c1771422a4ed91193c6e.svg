@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <!-- Background medium (refracting block) -->
+  <rect x="20" y="180" width="360" height="260" fill="#fbd6d0" />
+
+  <!-- Normal and angle guide dashes -->
+  <!-- Main normal -->
+  <line x1="200" y1="80" x2="200" y2="520"
+        stroke="#000" stroke-width="1.8"
+        stroke-dasharray="6,6" />
+
+  <!-- Angle guide segments above interface (incidence) -->
+  <line x1="192" y1="120" x2="192" y2="190"
+        stroke="#000" stroke-width="1.5"
+        stroke-dasharray="4,4" />
+  <line x1="208" y1="120" x2="208" y2="190"
+        stroke="#000" stroke-width="1.5"
+        stroke-dasharray="4,4" />
+
+  <!-- Angle guide segments below interface (refraction) -->
+  <line x1="192" y1="200" x2="192" y2="320"
+        stroke="#000" stroke-width="1.5"
+        stroke-dasharray="4,4" />
+  <line x1="208" y1="200" x2="208" y2="320"
+        stroke="#000" stroke-width="1.5"
+        stroke-dasharray="4,4" />
+
+  <!-- Small brace for normal label -->
+  <path d="M188 320 L188 340 M188 340 L212 340 M212 340 L212 320"
+        fill="none" stroke="#000" stroke-width="1.5" />
+
+  <!-- Interface point -->
+  <!-- (implicit at 200,200 where rays and normal meet) -->
+
+  <!-- Incident ray (from upper left to interface) -->
+  <path d="M80 40 L200 200" stroke="#000" stroke-width="3" fill="none" />
+  <!-- Arrowhead for incident ray -->
+  <path d="M192 189 L200 200 L186 196 Z" fill="#000" />
+
+  <!-- Reflected ray (from interface to upper right) -->
+  <path d="M200 200 L310 60" stroke="#000" stroke-width="3" fill="none" />
+  <!-- Arrowhead for reflected ray -->
+  <path d="M296 65 L310 60 L301 73 Z" fill="#000" />
+
+  <!-- Refracted ray (from interface down through block) -->
+  <path d="M200 200 L250 420" stroke="#000" stroke-width="3" fill="none" />
+  <!-- Arrowhead for refracted ray -->
+  <path d="M241 408 L250 420 L236 416 Z" fill="#000" />
+
+  <!-- Text labels -->
+  <!-- Incident Ray label -->
+  <text x="40" y="80" font-family="sans-serif" font-size="16">Incident</text>
+  <text x="60" y="100" font-family="sans-serif" font-size="16">Ray</text>
+
+  <!-- Reflected Ray label -->
+  <text x="250" y="100" font-family="sans-serif" font-size="16">Reflected</text>
+  <text x="280" y="120" font-family="sans-serif" font-size="16">Ray</text>
+  <text x="245" y="136" font-family="sans-serif" font-size="11">(Partial Reflection)</text>
+
+  <!-- Angle of Incidence label -->
+  <text x="80" y="170" font-family="sans-serif" font-size="14">Angle of Incidence</text>
+
+  <!-- Angle of Refraction label -->
+  <text x="60" y="250" font-family="sans-serif" font-size="14">Angle of Refraction</text>
+
+  <!-- Refracted Ray label -->
+  <text x="250" y="280" font-family="sans-serif" font-size="16">Refracted</text>
+  <text x="270" y="300" font-family="sans-serif" font-size="16">Ray</text>
+
+  <!-- Normal label -->
+  <text x="180" y="360" font-family="sans-serif" font-size="14">Normal</text>
+
+  <!-- Small angle labels i and r -->
+  <text x="210" y="165" font-family="sans-serif" font-size="12">i</text>
+  <text x="210" y="255" font-family="sans-serif" font-size="12">r</text>
+
+  <!-- Optional subtle angle arcs (incidence and refraction) -->
+  <path d="M200 155 A40 40 0 0 1 170 130"
+        fill="none" stroke="#000" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M200 230 A40 40 0 0 0 228 260"
+        fill="none" stroke="#000" stroke-width="1" stroke-dasharray="3,3" />
+</svg>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Growth Trends</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        $(document).ready(function() {
+            var chartDom = document.getElementById('chart');
+            var myChart = echarts.init(chartDom);
+
+            var option = {
+                title: {
+                    text: 'Population Growth Trends in Selected Regions (2015-2021)',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['Region A', 'Region B']
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021']
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Population (K)',
+                    min: 0,
+                    max: 180
+                },
+                series: [
+                    {
+                        name: 'Region A',
+                        type: 'line',
+                        data: [120, 125, 130, 135, 140, 150, 160],
+                        itemStyle: {
+                            color: '#1f77b4'
+                        },
+                        symbol: 'circle',
+                        symbolSize: 8
+                    },
+                    {
+                        name: 'Region B',
+                        type: 'line',
+                        data: [90, 95, 100, 105, 110, 115, 121],
+                        itemStyle: {
+                            color: '#d62728'
+                        },
+                        symbol: 'circle',
+                        symbolSize: 8
+                    }
+                ],
+                grid: {
+                    left: '10%',
+                    right: '10%',
+                    bottom: '15%'
+                }
+            };
+
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

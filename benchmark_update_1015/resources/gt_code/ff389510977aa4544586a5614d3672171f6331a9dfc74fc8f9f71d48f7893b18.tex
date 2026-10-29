@@ -1,0 +1,55 @@
+\documentclass[border=3pt]{standalone}
+
+% Circuits
+\usepackage[european, straightvoltages, RPvoltages, americanresistor, americaninductors]{circuitikz}
+\tikzset{every picture/.style={line width=0.35mm}}
+
+% Notation
+\usepackage{amsmath}
+
+% Tikz Library
+\usetikzlibrary{calc}
+
+% Bipoles Specifications
+\ctikzset{bipoles/thickness=1.4, label distance=1.3mm, voltage shift = 1.2}
+
+% Custom Voltage Arrows
+\newcommand{\fixedvlen}[3][0.54cm]{% [semilength]{node}{label}
+    \coordinate (#2-Vcenter) at ($(#2-Vfrom)!0.5!(#2-Vto)$);
+    \draw[-{Stealth[scale=1.1]}, color=blue!80!black] ($(#2-Vcenter)!#1!(#2-Vfrom)$) -- ($(#2-Vcenter)!#1!(#2-Vto)$);
+    \node[ anchor=\ctikzgetanchor{#2}{Vlab}, text=blue!90!black] at (#2-Vlab) {#3};
+}
+\newcommand{\fixedvlendashed}[3][0.8cm]{% [semilength]{node}{label}
+    \coordinate (#2-Vcenter) at ($(#2-Vfrom)!0.5!(#2-Vto)$);
+    \draw[dashed,-{Stealth[scale=1]}, color=teal!80!black] ($(#2-Vcenter)!#1!(#2-Vfrom)$) -- ($(#2-Vcenter)!#1!(#2-Vto)$);
+    \node[ anchor=\ctikzgetanchor{#2}{Vlab}, text=teal!90!black] at (#2-Vlab) {#3};
+}
+
+\begin{document}
+
+\begin{circuitikz}
+    % Coordinates
+    \coordinate (GND) at (0,-1);
+    \coordinate (X) at (0,0);
+    \coordinate (Y) at (0,3);
+    \coordinate (Z) at (6,3);
+    \coordinate (W) at (6,0);
+    \coordinate (Zp) at (8.5,3);
+    \coordinate (Wp) at (8.5,0);
+    
+    % Circuit
+    \draw (GND) node[ground]{} -- (X)
+        to[battery1, i=$I_{in}$, v>, name=vsrc] (Y)
+        to[R, l_=$R_A$, v^<, name=ra] (Z)
+        to [R, l_=$R_B$, v^<, name=rb, *-*] (W) -- (X);
+    \draw (Z) -- (Zp)
+        to[R, l_=$R_{load}$, v^<, name=rl, *-*] (Wp) -- (W);
+        
+    % Voltages
+    \fixedvlen[0.54cm]{vsrc}{$V_{in}$}        
+    \fixedvlen[0.7cm]{ra}{$V_{A}$}    
+    \fixedvlen[0.7cm]{rb}{$V_{B}$}
+    \fixedvlen[0.7cm]{rl}{$V_{L}$}
+\end{circuitikz}
+
+\end{document}

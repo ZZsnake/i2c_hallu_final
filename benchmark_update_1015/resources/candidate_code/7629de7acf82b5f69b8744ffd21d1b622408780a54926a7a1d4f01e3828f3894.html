@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Population vs. Elevation Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #chart-container {
+            width: 95vw;
+            height: 90vh;
+            max-width: 1200px;
+            max-height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chart-container"></div>
+
+    <script>
+        const chartDom = document.getElementById('chart-container');
+        const myChart = echarts.init(chartDom);
+
+        // Data: [Elevation (m), Population (m), City Name]
+        const data = [
+            [10, 32, 'Dhaka'],
+            [15, 31, 'Lagos'],
+            [23, 30, 'Cairo'],
+            [4, 29, 'Shanghai'],
+            [8, 25, 'Jakarta'],
+            [12, 23, 'Bangkok'],
+            [25, 21, 'Buenos Aires'],
+            [240, 20, 'Kinshasa'],
+            [16, 19, 'Manila'],
+            [420, 11.5, 'Johannesburg'],
+            [650, 3.5, 'Nairobi'],
+            [820, 7, 'Addis Ababa'],
+            [580, 3.8, 'Bogotá'],
+            [190, 3, 'Kampala'],
+            [1550, 9, 'Mexico City'],
+            // Additional points to fill the visual density
+            [5, 14, ''],
+            [10, 9, ''],
+            [20, 6, ''],
+            [15, 3.5, ''],
+            [100, 9.5, '']
+        ];
+
+        const option = {
+            title: {
+                text: 'Urban Population vs. Elevation of Major Cities',
+                left: 'center',
+                top: 20,
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    color: '#333'
+                }
+            },
+            grid: {
+                top: 100,
+                left: 80,
+                right: 80,
+                bottom: 60,
+                containLabel: false
+            },
+            xAxis: {
+                name: 'Elevation (meters)',
+                nameLocation: 'end',
+                nameGap: 10,
+                type: 'value',
+                min: 0,
+                max: 1800,
+                interval: 300,
+                axisLine: { lineStyle: { color: '#999' } },
+                splitLine: { lineStyle: { color: '#eee' } },
+                axisLabel: { color: '#666' }
+            },
+            yAxis: {
+                name: 'Urban Population (millions)',
+                nameLocation: 'start',
+                nameTextStyle: {
+                    padding: [0, 0, 20, 80],
+                    fontWeight: 'bold'
+                },
+                type: 'value',
+                min: 0,
+                max: 35,
+                interval: 5,
+                axisLine: { show: false },
+                splitLine: { lineStyle: { color: '#eee' } },
+                axisLabel: { color: '#666' }
+            },
+            series: [
+                {
+                    type: 'custom',
+                    renderItem: function (params, api) {
+                        const point = api.coord([api.value(0), api.value(1)]);
+                        const topY = api.coord([api.value(0), 35])[1]; // Top of the grid
+                        
+                        return {
+                            type: 'group',
+                            children: [
+                                {
+                                    type: 'line',
+                                    shape: {
+                                        x1: point[0], y1: topY,
+                                        x2: point[0], y2: point[1]
+                                    },
+                                    style: {
+                                        stroke: '#4a657a',
+                                        lineWidth: 1.5
+                                    }
+                                },
+                                {
+                                    type: 'text',
+                                    style: {
+                                        text: api.value(2),
+                                        x: point[0],
+                                        y: topY - 10,
+                                        textAlign: 'center',
+                                        fill: '#333',
+                                        fontSize: 11
+                                    }
+                                }
+                            ]
+                        };
+                    },
+                    data: data,
+                    clip: true
+                },
+                {
+                    type: 'scatter',
+                    data: data,
+                    symbolSize: 10,
+                    itemStyle: {
+                        color: '#d9534f',
+                        borderColor: '#333',
+                        borderWidth: 1,
+                        opacity: 0.9
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            symbolSize: 12,
+                            color: '#c9302c'
+                        }
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

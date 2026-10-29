@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="750">
+<!-- Background rectangles for overall page, and for plot area:  -->
+<path d="M0,0 h1000 v750 h-1000 z" stroke="none" fill="black"/>
+<path d="M150,60 h800 v630 h-800 z" stroke="#888888" stroke-width="1" fill="black"/>
+
+<switch><text x="550" y="40" font-size="40px" font-family="sans-serif" text-anchor="middle" fill="white" id="trsvg14-de" systemLanguage="de"><tspan id="trsvg1-de">Globale durchschnittl. Temperaturänderung</tspan></text><text x="550" y="40" font-size="40px" font-family="sans-serif" text-anchor="middle" fill="white" id="trsvg14"><tspan id="trsvg1">Global average temperature change</tspan></text></switch>
+
+<!-- VERTICAL (Y) AXIS -->
+<!-- Horizontal gridlines -->
+<g stroke="white" stroke-width="0.4">
+<path d=" M140,60 h810 M140,150 h810 M140,240 h810 M140,330 h810 M140,420 h810 M140,510 h810 M140,600 h810 M140,690 h810 "/>
+</g>
+
+<!-- Y Tick mark text labels for Y VALUES -->
+<switch><text font-size="35px" transform="translate(-30,0)" font-family="sans-serif" text-anchor="middle" fill="white" id="trsvg15-de" systemLanguage="de"><tspan x="104.5" y="72.25" id="trsvg2-de">+1,0</tspan><tspan x="104.5" y="252.25" id="trsvg3-de">+0,5</tspan><tspan x="104.5" y="432.25" id="trsvg4-de">0 °C</tspan>
+<tspan x="104.5" y="612.25" id="trsvg5-de">-0,5</tspan>
+</text><text font-size="35px" transform="translate(-30,0)" font-family="sans-serif" text-anchor="middle" fill="white" id="trsvg15"><tspan x="104.5" y="72.25" id="trsvg2">+1.0</tspan><tspan x="104.5" y="252.25" id="trsvg3">+0.5</tspan><tspan x="104.5" y="432.25" id="trsvg4">0 °C</tspan>
+<tspan x="104.5" y="612.25" id="trsvg5">-0.5</tspan>
+</text></switch>
+
+<!-- HORIZONTAL (X) AXIS -->
+<!-- Vertical gridlines -->
+<g stroke="white" stroke-width="0.4">
+<path d=" M150,60 v640 M264.286,60 v640 M378.571,60 v640 M492.857,60 v640 M607.143,60 v640 M721.429,60 v640 M835.714,60 v640 M950,60 v640 "/> </g>
+
+<!-- X Tick mark text labels for X VALUES  -->
+<switch><text font-size="35" font-family="sans-serif" text-anchor="middle" transform="translate(0,0)" fill="white" id="trsvg16-de" systemLanguage="de"><tspan x="152.29" y="728.75" id="trsvg6-de">1850</tspan><tspan x="266.57" y="728.75" id="trsvg7-de">1875</tspan><tspan x="380.86" y="728.75" id="trsvg8-de">1900</tspan><tspan x="495.14" y="728.75" id="trsvg9-de">1925</tspan><tspan x="609.43" y="728.75" id="trsvg10-de">1950</tspan><tspan x="723.71" y="728.75" id="trsvg11-de">1975</tspan><tspan x="838" y="728.75" id="trsvg12-de">2000</tspan> 
+<tspan x="947.71" y="728.75" id="trsvg13-de">2025</tspan> 
+</text><text font-size="35" font-family="sans-serif" text-anchor="middle" transform="translate(0,0)" fill="white" id="trsvg16"><tspan x="152.29" y="728.75" id="trsvg6">1850</tspan><tspan x="266.57" y="728.75" id="trsvg7">1875</tspan><tspan x="380.86" y="728.75" id="trsvg8">1900</tspan><tspan x="495.14" y="728.75" id="trsvg9">1925</tspan><tspan x="609.43" y="728.75" id="trsvg10">1950</tspan><tspan x="723.71" y="728.75" id="trsvg11">1975</tspan><tspan x="838" y="728.75" id="trsvg12">2000</tspan> 
+<tspan x="947.71" y="728.75" id="trsvg13">2025</tspan> 
+</text></switch>
+
+<!-- FIRST SERIES columns -->
+
+<path fill="#d6936b" d="M150,420 v158.4 h4.576 v-158.4 z"/>
+<path fill="#e1b39c" d="M154.571,420 v118.8 h4.576 v-118.8 z"/>
+<path fill="#e1b39c" d="M159.143,420 v115.2 h4.576 v-115.2 z"/>
+<path fill="#e1b39c" d="M163.714,420 v129.6 h4.576 v-129.6 z"/>
+<path fill="#e1b39c" d="M168.286,420 v108 h4.576 v-108 z"/>
+<path fill="#e1b39c" d="M172.857,420 v100.8 h4.576 v-100.8 z"/>
+<path fill="#d6936b" d="M177.429,420 v144 h4.576 v-144 z"/>
+<path fill="#c67642" d="M182,420 v190.8 h4.576 v-190.8 z"/>
+<path fill="#d6936b" d="M186.571,420 v140.4 h4.576 v-140.4 z"/>
+<path fill="#e1b39c" d="M191.143,420 v118.8 h4.576 v-118.8 z"/> 
+<path fill="#d6936b" d="M195.714,420 v144 h4.576 v-144 z"/>
+<path fill="#c67642" d="M200.286,420 v180 h4.576 v-180 z"/>
+<path fill="#c67642" d="M204.857,420 v208.8 h4.576 v-208.8 z"/>
+<path fill="#d6936b" d="M209.429,420 v133.2 h4.576 v-133.2 z"/>
+<path fill="#d6936b" d="M214,420 v144 h4.576 v-144 z"/>
+<path fill="#e1b39c" d="M218.571,420 v104.4 h4.576 v-104.4 z"/>
+<path fill="#efdac6" d="M223.143,420 v79.2 h4.576 v-79.2 z"/>
+<path fill="#efdac6" d="M227.714,420 v75.6 h4.576 v-75.6 z"/>
+<path fill="#efdac6" d="M232.286,420 v79.2 h4.576 v-79.2 z"/>
+<path fill="#efdac6" d="M236.857,420 v79.2 h4.576 v-79.2 z"/> 
+<path fill="#e1b39c" d="M241.429,420 v111.6 h4.576 v-111.6 z"/>
+<path fill="#e1b39c" d="M246,420 v115.2 h4.576 v-115.2 z"/>
+<path fill="#e1b39c" d="M250.571,420 v104.4 h4.576 v-104.4 z"/>
+<path fill="#e1b39c" d="M255.143,420 v93.6 h4.576 v-93.6 z"/>
+<path fill="#e1b39c" d="M259.714,420 v118.8 h4.576 v-118.8 z"/>
+<path fill="#e1b39c" d="M264.286,420 v129.6 h4.576 v-129.6 z"/>
+<path fill="#d6936b" d="M268.857,420 v133.2 h4.576 v-133.2 z"/>
+<path fill="#d2f0fe" d="M273.429,420 v0 h4.576 v0 z"/>
+<path fill="#d2f0fe" d="M278,420 v-36 h4.576 v36 z"/>
+<path fill="#efdac6" d="M282.571,420 v82.8 h4.576 v-82.8 z"/> 
+<path fill="#e1b39c" d="M287.143,420 v104.4 h4.576 v-104.4 z"/>
+<path fill="#efdac6" d="M291.714,420 v68.4 h4.576 v-68.4 z"/>
+<path fill="#efdac6" d="M296.286,420 v86.4 h4.576 v-86.4 z"/>
+<path fill="#e1b39c" d="M300.857,420 v108 h4.576 v-108 z"/>
+<path fill="#d6936b" d="M305.429,420 v162 h4.576 v-162 z"/>
+<path fill="#d6936b" d="M310,420 v151.2 h4.576 v-151.2 z"/>
+<path fill="#d6936b" d="M314.571,420 v165.6 h4.576 v-165.6 z"/>
+<path fill="#d6936b" d="M319.143,420 v169.2 h4.576 v-169.2 z"/>
+<path fill="#e1b39c" d="M323.714,420 v100.8 h4.576 v-100.8 z"/>
+<path fill="#efdac6" d="M328.286,420 v57.6 h4.576 v-57.6 z"/> 
+<path fill="#d6936b" d="M332.857,420 v162 h4.576 v-162 z"/>
+<path fill="#e1b39c" d="M337.429,420 v122.4 h4.576 v-122.4 z"/>
+<path fill="#d6936b" d="M342,420 v144 h4.576 v-144 z"/>
+<path fill="#d6936b" d="M346.571,420 v136.8 h4.576 v-136.8 z"/>
+<path fill="#e1b39c" d="M351.143,420 v129.6 h4.576 v-129.6 z"/>
+<path fill="#e1b39c" d="M355.714,420 v108 h4.576 v-108 z"/>
+<path fill="#efdac6" d="M360.286,420 v72 h4.576 v-72 z"/>
+<path fill="#efdac6" d="M364.857,420 v68.4 h4.576 v-68.4 z"/>
+<path fill="#d6936b" d="M369.429,420 v140.4 h4.576 v-140.4 z"/>
+<path fill="#efdac6" d="M374,420 v79.2 h4.576 v-79.2 z"/> 
+<path fill="#f7eade" d="M378.571,420 v43.2 h4.576 v-43.2 z"/>
+<path fill="#efdac6" d="M383.143,420 v72 h4.576 v-72 z"/>
+<path fill="#e1b39c" d="M387.714,420 v118.8 h4.576 v-118.8 z"/>
+<path fill="#d6936b" d="M392.286,420 v154.8 h4.576 v-154.8 z"/>
+<path fill="#d6936b" d="M396.857,420 v172.8 h4.576 v-172.8 z"/>
+<path fill="#e1b39c" d="M401.429,420 v115.2 h4.576 v-115.2 z"/>
+<path fill="#efdac6" d="M406,420 v86.4 h4.576 v-86.4 z"/>
+<path fill="#d6936b" d="M410.571,420 v144 h4.576 v-144 z"/>
+<path fill="#d6936b" d="M415.143,420 v158.4 h4.576 v-158.4 z"/>
+<path fill="#c67642" d="M419.714,420 v176.4 h4.576 v-176.4 z"/> 
+<path fill="#d6936b" d="M424.286,420 v165.6 h4.576 v-165.6 z"/>
+<path fill="#c67642" d="M428.857,420 v180 h4.576 v-180 z"/>
+<path fill="#d6936b" d="M433.429,420 v151.2 h4.576 v-151.2 z"/>
+<path fill="#d6936b" d="M438,420 v136.8 h4.576 v-136.8 z"/>
+<path fill="#efdac6" d="M442.571,420 v75.6 h4.576 v-75.6 z"/>
+<path fill="#efdac6" d="M447.143,420 v54 h4.576 v-54 z"/>
+<path fill="#d6936b" d="M451.714,420 v140.4 h4.576 v-140.4 z"/>
+<path fill="#c67642" d="M456.286,420 v176.4 h4.576 v-176.4 z"/>
+<path fill="#e1b39c" d="M460.857,420 v126 h4.576 v-126 z"/>
+<path fill="#e1b39c" d="M465.429,420 v100.8 h4.576 v-100.8 z"/> 
+<path fill="#e1b39c" d="M470,420 v93.6 h4.576 v-93.6 z"/>
+<path fill="#efdac6" d="M474.571,420 v68.4 h4.576 v-68.4 z"/>
+<path fill="#e1b39c" d="M479.143,420 v100.8 h4.576 v-100.8 z"/>
+<path fill="#e1b39c" d="M483.714,420 v93.6 h4.576 v-93.6 z"/>
+<path fill="#e1b39c" d="M488.286,420 v90 h4.576 v-90 z"/>
+<path fill="#efdac6" d="M492.857,420 v75.6 h4.576 v-75.6 z"/>
+<path fill="#f7eade" d="M497.429,420 v25.2 h4.576 v-25.2 z"/>
+<path fill="#efdac6" d="M502,420 v68.4 h4.576 v-68.4 z"/>
+<path fill="#efdac6" d="M506.571,420 v61.2 h4.576 v-61.2 z"/>
+<path fill="#e1b39c" d="M511.143,420 v129.6 h4.576 v-129.6 z"/> 
+<path fill="#efdac6" d="M515.714,420 v50.4 h4.576 v-50.4 z"/>
+<path fill="#f7eade" d="M520.286,420 v28.8 h4.576 v-28.8 z"/>
+<path fill="#f7eade" d="M524.857,420 v43.2 h4.576 v-43.2 z"/>
+<path fill="#e1b39c" d="M529.429,420 v108 h4.576 v-108 z"/>
+<path fill="#efdac6" d="M534,420 v61.2 h4.576 v-61.2 z"/>
+<path fill="#efdac6" d="M538.571,420 v75.6 h4.576 v-75.6 z"/>
+<path fill="#efdac6" d="M543.143,420 v54 h4.576 v-54 z"/>
+<path fill="#d2f0fe" d="M547.714,420 v0 h4.576 v0 z"/>
+<path fill="#d2f0fe" d="M552.286,420 v0 h4.576 v0 z"/>
+<path fill="#f7eade" d="M556.857,420 v3.6 h4.576 v-3.6 z"/> 
+<path fill="#d2f0fe" d="M561.429,420 v-28.8 h4.576 v28.8 z"/>
+<path fill="#d2f0fe" d="M566,420 v-21.6 h4.576 v21.6 z"/>
+<path fill="#d2f0fe" d="M570.571,420 v-3.6 h4.576 v3.6 z"/>
+<path fill="#d2f0fe" d="M575.143,420 v-14.4 h4.576 v14.4 z"/>
+<path fill="#a1e2fc" d="M579.714,420 v-50.4 h4.576 v50.4 z"/>
+<path fill="#d2f0fe" d="M584.286,420 v-7.2 h4.576 v7.2 z"/>
+<path fill="#f7eade" d="M588.857,420 v18 h4.576 v-18 z"/>
+<path fill="#d2f0fe" d="M593.429,420 v-7.2 h4.576 v7.2 z"/>
+<path fill="#f7eade" d="M598,420 v21.6 h4.576 v-21.6 z"/>
+<path fill="#f7eade" d="M602.571,420 v36 h4.576 v-36 z"/> 
+<path fill="#efdac6" d="M607.143,420 v61.2 h4.576 v-61.2 z"/>
+<path fill="#d2f0fe" d="M611.714,420 v0 h4.576 v0 z"/>
+<path fill="#d2f0fe" d="M616.286,420 v-21.6 h4.576 v21.6 z"/>
+<path fill="#a1e2fc" d="M620.857,420 v-43.2 h4.576 v43.2 z"/>
+<path fill="#f7eade" d="M625.429,420 v25.2 h4.576 v-25.2 z"/>
+<path fill="#f7eade" d="M630,420 v43.2 h4.576 v-43.2 z"/>
+<path fill="#efdac6" d="M634.571,420 v68.4 h4.576 v-68.4 z"/>
+<path fill="#d2f0fe" d="M639.143,420 v-18 h4.576 v18 z"/>
+<path fill="#d2f0fe" d="M643.714,420 v-25.2 h4.576 v25.2 z"/>
+<path fill="#d2f0fe" d="M648.286,420 v-14.4 h4.576 v14.4 z"/> 
+<path fill="#f7eade" d="M652.857,420 v7.2 h4.576 v-7.2 z"/>
+<path fill="#d2f0fe" d="M657.429,420 v-25.2 h4.576 v25.2 z"/>
+<path fill="#d2f0fe" d="M662,420 v-7.2 h4.576 v7.2 z"/>
+<path fill="#d2f0fe" d="M666.571,420 v-21.6 h4.576 v21.6 z"/>
+<path fill="#efdac6" d="M671.143,420 v72 h4.576 v-72 z"/>
+<path fill="#f7eade" d="M675.714,420 v39.6 h4.576 v-39.6 z"/>
+<path fill="#f7eade" d="M680.286,420 v14.4 h4.576 v-14.4 z"/>
+<path fill="#d2f0fe" d="M684.857,420 v0 h4.576 v0 z"/>
+<path fill="#f7eade" d="M689.429,420 v18 h4.576 v-18 z"/>
+<path fill="#d2f0fe" d="M694,420 v-32.4 h4.576 v32.4 z"/> 
+<path fill="#d2f0fe" d="M698.571,420 v-10.8 h4.576 v10.8 z"/>
+<path fill="#f7eade" d="M703.143,420 v36 h4.576 v-36 z"/>
+<path fill="#f7eade" d="M707.714,420 v3.6 h4.576 v-3.6 z"/>
+<path fill="#a1e2fc" d="M712.286,420 v-43.2 h4.576 v43.2 z"/>
+<path fill="#f7eade" d="M716.857,420 v43.2 h4.576 v-43.2 z"/>
+<path fill="#f7eade" d="M721.429,420 v18 h4.576 v-18 z"/>
+<path fill="#efdac6" d="M726,420 v54 h4.576 v-54 z"/>
+<path fill="#a1e2fc" d="M730.571,420 v-50.4 h4.576 v50.4 z"/>
+<path fill="#d2f0fe" d="M735.143,420 v-7.2 h4.576 v7.2 z"/>
+<path fill="#d2f0fe" d="M739.714,420 v-39.6 h4.576 v39.6 z"/> 
+<path fill="#a1e2fc" d="M744.286,420 v-79.2 h4.576 v79.2 z"/>
+<path fill="#71dcfc" d="M748.857,420 v-90 h4.576 v90 z"/>
+<path fill="#d2f0fe" d="M753.429,420 v-21.6 h4.576 v21.6 z"/>
+<path fill="#71dcfc" d="M758,420 v-86.4 h4.576 v86.4 z"/>
+<path fill="#d2f0fe" d="M762.571,420 v-25.2 h4.576 v25.2 z"/>
+<path fill="#d2f0fe" d="M767.143,420 v-25.2 h4.576 v25.2 z"/>
+<path fill="#a1e2fc" d="M771.714,420 v-43.2 h4.576 v43.2 z"/>
+<path fill="#71dcfc" d="M776.286,420 v-90 h4.576 v90 z"/>
+<path fill="#71dcfc" d="M780.857,420 v-104.4 h4.576 v104.4 z"/>
+<path fill="#a1e2fc" d="M785.429,420 v-64.8 h4.576 v64.8 z"/> 
+<path fill="#49dafb" d="M790,420 v-133.2 h4.576 v133.2 z"/>
+<path fill="#71dcfc" d="M794.571,420 v-122.4 h4.576 v122.4 z"/>
+<path fill="#a1e2fc" d="M799.143,420 v-61.2 h4.576 v61.2 z"/>
+<path fill="#a1e2fc" d="M803.714,420 v-72 h4.576 v72 z"/>
+<path fill="#71dcfc" d="M808.286,420 v-93.6 h4.576 v93.6 z"/>
+<path fill="#49dafb" d="M812.857,420 v-136.8 h4.576 v136.8 z"/>
+<path fill="#71dcfc" d="M817.429,420 v-100.8 h4.576 v100.8 z"/>
+<path fill="#49dafb" d="M822,420 v-158.4 h4.576 v158.4 z"/>
+<path fill="#2cdfee" d="M826.571,420 v-205.2 h4.576 v205.2 z"/>
+<path fill="#71dcfc" d="M831.143,420 v-122.4 h4.576 v122.4 z"/> 
+<path fill="#71dcfc" d="M835.714,420 v-126 h4.576 v126 z"/>
+<path fill="#2cdfee" d="M840.286,420 v-180 h4.576 v180 z"/>
+<path fill="#2cdfee" d="M844.857,420 v-208.8 h4.576 v208.8 z"/>
+<path fill="#2cdfee" d="M849.429,420 v-201.6 h4.576 v201.6 z"/>
+<path fill="#2cdfee" d="M854,420 v-172.8 h4.576 v172.8 z"/>
+<path fill="#17cbc6" d="M858.571,420 v-226.8 h4.576 v226.8 z"/>
+<path fill="#2cdfee" d="M863.143,420 v-208.8 h4.576 v208.8 z"/>
+<path fill="#2cdfee" d="M867.714,420 v-208.8 h4.576 v208.8 z"/>
+<path fill="#49dafb" d="M872.286,420 v-169.2 h4.576 v169.2 z"/>
+<path fill="#2cdfee" d="M876.857,420 v-212.4 h4.576 v212.4 z"/> 
+<path fill="#17cbc6" d="M881.429,420 v-234 h4.576 v234 z"/>
+<path fill="#2cdfee" d="M886,420 v-190.8 h4.576 v190.8 z"/>
+<path fill="#2cdfee" d="M890.571,420 v-198 h4.576 v198 z"/>
+<path fill="#2cdfee" d="M895.143,420 v-212.4 h4.576 v212.4 z"/>
+<path fill="#17cbc6" d="M899.714,420 v-234 h4.576 v234 z"/>
+<path fill="#0fa59e" d="M904.286,420 v-288 h4.576 v288 z"/>
+<path fill="#00675a" d="M908.857,420 v-327.6 h4.576 v327.6 z"/>
+<path fill="#0fa59e" d="M913.429,420 v-288 h4.576 v288 z"/>
+<path fill="#0fa59e" d="M918,420 v-262.8 h4.576 v262.8 z"/>
+<path fill="#00675a" d="M922.571,420 v-309.6 h4.576 v309.6 z"/> 
+<path fill="#00675a" d="M927.143,420 v-320.4 h4.576 v320.4 z"/> 
+
+<!-- Hollow rectangle surrounds plot area, and covers edges' grid lines  -->
+<path d="M150,60 h800 v630 h-800 z" stroke="gray" stroke-width="3" fill="none"/>
+
+</svg>

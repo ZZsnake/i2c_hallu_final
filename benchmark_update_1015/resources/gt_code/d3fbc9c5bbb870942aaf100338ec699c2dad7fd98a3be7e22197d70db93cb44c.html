@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>GDP Growth Over Time - Line Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #181818;
+      margin: 0;
+    }
+    #container {
+      height: 100%;
+    }
+    .echarts-title {
+      font-weight: bold;
+      font-size: 22px;
+      color: #222;
+      text-align: center;
+      margin-top: 16px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    // Economics line graph dummy data: GDP growth rates for several countries over 10 years
+    var years = [
+      '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'
+    ];
+    var countryData = [
+      {
+        name: 'Country A',
+        data: [2.3, 2.7, 2.5, 2.6, 3.1, 3.4, 2.9, -0.8, 2.2, 2.8]
+      },
+      {
+        name: 'Country B',
+        data: [1.8, 2.0, 2.2, 1.9, 2.3, 2.6, 2.4, -1.2, 1.7, 2.1]
+      },
+      {
+        name: 'Country C',
+        data: [3.0, 3.1, 2.8, 2.9, 3.5, 3.8, 3.2, -2.0, 2.9, 3.0]
+      }
+    ];
+
+    var vividColors = [
+      '#1e3888', // Country A: vivid blue
+      '#e4572e', // Country B: vivid orange
+      '#2e8e57'  // Country C: vivid green
+    ];
+
+    var option = {
+      title: {
+        text: 'GDP Growth Rate (2013–2022)',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#2a2a2a',
+          fontWeight: 'bold',
+          fontSize: 22,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'line',
+          lineStyle: {
+            color: '#555',
+            width: 2
+          }
+        },
+        backgroundColor: '#ffffff',
+        borderColor: '#222',
+        borderWidth: 1,
+        textStyle: {
+          color: '#222',
+          fontSize: 14,
+          fontFamily: 'Arial'
+        }
+      },
+      legend: {
+        data: countryData.map(function(c){return c.name}),
+        top: 60,
+        textStyle: {
+          color: '#1a1a1a',
+          fontSize: 15,
+          fontWeight: 'bold'
+        }
+      },
+      grid: {
+        left: '8%',
+        right: '8%',
+        bottom: '12%',
+        top: 100
+      },
+      xAxis: {
+        type: 'category',
+        data: years,
+        name: 'Year',
+        nameLocation: 'center',
+        nameGap: 30,
+        axisLine: {
+          lineStyle: {
+            color: '#222',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 13,
+          fontFamily: 'Arial'
+        },
+        splitLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'GDP Growth (%)',
+        nameLocation: 'center',
+        nameGap: 40,
+        min: function (value) { return Math.floor(value.min - 1); },
+        max: function (value) { return Math.ceil(value.max + 1); },
+        axisLine: {
+          lineStyle: {
+            color: '#222',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 13,
+          fontFamily: 'Arial'
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: '#cfd8dc',
+            width: 1,
+            type: 'dashed'
+          }
+        }
+      },
+      series: countryData.map(function(c, idx){
+        return {
+          name: c.name,
+          type: 'line',
+          data: c.data,
+          smooth: true,
+          symbol: 'circle',
+          symbolSize: 7,
+          lineStyle: {
+            color: vividColors[idx],
+            width: 3
+          },
+          itemStyle: {
+            color: vividColors[idx],
+            borderColor: '#222',
+            borderWidth: 1
+          },
+          label: {
+            show: false
+          }
+        }
+      })
+    };
+
+    myChart.setOption(option);
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

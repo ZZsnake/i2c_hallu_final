@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+  <!-- Background and overall structure -->
+  <rect width="800" height="900" fill="white" />
+  <path d="M100,150 Q-50,450 280,830" fill="none" stroke="#ccc" stroke-width="40" stroke-linecap="round" opacity="0.6" />
+
+  <!-- Definitions for gradients and markers -->
+  <defs>
+    <radialGradient id="sugarGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffcc66" />
+      <stop offset="100%" stop-color="#ff9933" />
+    </radialGradient>
+    <radialGradient id="phosGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffff99" />
+      <stop offset="100%" stop-color="#ffff00" />
+    </radialGradient>
+  </defs>
+
+  <!-- Left Strand (5' to 3') -->
+  <g id="left-strand">
+    <!-- Phosphate 1 -->
+    <circle cx="180" cy="150" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <text x="175" y="155" font-family="Arial" font-size="12">P</text>
+    <text x="70" y="120" font-family="Arial" font-size="18">ujung 5'</text>
+    
+    <!-- Sugar 1 -->
+    <path d="M220,210 L260,230 L240,270 L200,270 L180,230 Z" fill="url(#sugarGrad)" stroke="black" />
+    <line x1="180" y1="150" x2="200" y2="210" stroke="black" stroke-width="2" />
+
+    <!-- Base 1: Adenine (Green) -->
+    <path d="M260,230 L300,200 L340,210 L360,250 L330,280 L290,270 Z" fill="#99ff99" stroke="black" />
+    <path d="M360,250 L400,240 L420,200 L390,170 L340,180 Z" fill="#99ff99" stroke="black" />
+    <text x="150" y="80" font-family="Arial" font-size="32" font-weight="bold">Adenina</text>
+    <path d="M260,130 L290,160" fill="none" stroke="#99ff99" stroke-width="5" marker-end="url(#arrowhead)" />
+
+    <!-- Phosphate 2 -->
+    <circle cx="180" cy="350" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <line x1="200" y1="270" x2="180" y2="350" stroke="black" stroke-width="2" />
+
+    <!-- Sugar 2 -->
+    <path d="M280,410 L320,430 L300,470 L260,470 L240,430 Z" fill="url(#sugarGrad)" stroke="black" />
+    <line x1="180" y1="350" x2="260" y2="410" stroke="black" stroke-width="2" />
+
+    <!-- Base 2: Cytosine (Pink) -->
+    <path d="M320,430 L360,400 L400,410 L410,450 L380,480 L340,470 Z" fill="#ff9999" stroke="black" />
+
+    <!-- Phosphate 3 -->
+    <circle cx="240" cy="550" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <line x1="260" y1="470" x2="240" y2="550" stroke="black" stroke-width="2" />
+
+    <!-- Sugar 3 -->
+    <path d="M330,610 L370,630 L350,670 L310,670 L290,630 Z" fill="url(#sugarGrad)" stroke="black" />
+    <line x1="240" y1="550" x2="310" y2="610" stroke="black" stroke-width="2" />
+
+    <!-- Base 3: Thymine (Purple) -->
+    <path d="M370,630 L410,600 L450,610 L460,650 L430,680 L390,670 Z" fill="#e099ff" stroke="black" />
+
+    <!-- Phosphate 4 -->
+    <circle cx="290" cy="750" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <line x1="310" y1="670" x2="290" y2="750" stroke="black" stroke-width="2" />
+
+    <!-- Sugar 4 -->
+    <path d="M380,810 L420,830 L400,870 L360,870 L340,830 Z" fill="url(#sugarGrad)" stroke="black" />
+    <line x1="290" y1="750" x2="360" y2="810" stroke="black" stroke-width="2" />
+
+    <!-- Base 4: Guanine (Blue) -->
+    <path d="M420,830 L460,800 L500,810 L520,850 L490,880 L450,870 Z" fill="#9999ff" stroke="black" />
+    <path d="M520,850 L560,840 L580,800 L550,770 L500,780 Z" fill="#9999ff" stroke="black" />
+  </g>
+
+  <!-- Right Strand (3' to 5') -->
+  <g id="right-strand">
+    <!-- Base 1: Thymine (Purple) -->
+    <path d="M480,150 L520,120 L560,130 L570,170 L540,200 L500,190 Z" fill="#e099ff" stroke="black" />
+    <text x="400" y="40" font-family="Arial" font-size="32" font-weight="bold">Timina</text>
+    <path d="M500,50 L520,110" fill="none" stroke="#e099ff" stroke-width="5" marker-end="url(#arrowhead)" />
+
+    <!-- Sugar 1 -->
+    <path d="M570,170 L610,190 L590,230 L550,230 L530,190 Z" fill="url(#sugarGrad)" stroke="black" />
+    
+    <!-- Phosphate 1 -->
+    <circle cx="650" cy="280" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <line x1="610" y1="230" x2="650" y2="280" stroke="black" stroke-width="2" />
+
+    <!-- Base 2: Guanine (Blue) -->
+    <path d="M460,350 L500,320 L540,330 L560,370 L530,400 L490,390 Z" fill="#9999ff" stroke="black" />
+    <path d="M560,370 L600,360 L620,320 L590,290 L540,300 Z" fill="#9999ff" stroke="black" />
+
+    <!-- Sugar 2 -->
+    <path d="M620,360 L660,380 L640,420 L600,420 L580,380 Z" fill="url(#sugarGrad)" stroke="black" />
+
+    <!-- Phosphate 2 -->
+    <circle cx="700" cy="470" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <line x1="660" y1="420" x2="700" y2="470" stroke="black" stroke-width="2" />
+
+    <!-- Base 3: Adenine (Green) -->
+    <path d="M550,550 L590,520 L630,530 L650,570 L620,600 L580,590 Z" fill="#99ff99" stroke="black" />
+    <path d="M650,570 L690,560 L710,520 L680,490 L630,500 Z" fill="#99ff99" stroke="black" />
+
+    <!-- Sugar 3 -->
+    <path d="M710,560 L750,580 L730,620 L690,620 L670,580 Z" fill="url(#sugarGrad)" stroke="black" />
+
+    <!-- Phosphate 3 -->
+    <circle cx="750" cy="670" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <line x1="750" y1="620" x2="750" y2="670" stroke="black" stroke-width="2" />
+
+    <!-- Base 4: Cytosine (Pink) -->
+    <path d="M600,750 L640,720 L680,730 L690,770 L660,800 L620,790 Z" fill="#ff9999" stroke="black" />
+
+    <!-- Sugar 4 -->
+    <path d="M690,770 L730,790 L710,830 L670,830 L650,790 Z" fill="url(#sugarGrad)" stroke="black" />
+
+    <!-- Phosphate 4 -->
+    <circle cx="800" cy="880" r="15" fill="url(#phosGrad)" stroke="black" stroke-width="1" />
+    <line x1="730" y1="830" x2="800" y2="880" stroke="black" stroke-width="2" />
+    <text x="780" y="930" font-family="Arial" font-size="18">ujung 5'</text>
+  </g>
+
+  <!-- Hydrogen Bonds -->
+  <g stroke="black" stroke-dasharray="3,3">
+    <!-- A-T -->
+    <line x1="420" y1="200" x2="480" y2="150" />
+    <line x1="400" y1="240" x2="500" y2="190" />
+    <!-- C-G -->
+    <line x1="400" y1="410" x2="460" y2="350" />
+    <line x1="410" y1="450" x2="490" y2="390" />
+    <line x1="380" y1="480" x2="530" y2="400" />
+    <!-- T-A -->
+    <line x1="450" y1="610" x2="550" y2="550" />
+    <line x1="460" y1="650" x2="580" y2="590" />
+    <!-- G-C -->
+    <line x1="500" y1="810" x2="600" y2="750" />
+    <line x1="520" y1="850" x2="620" y2="790" />
+    <line x1="490" y1="880" x2="660" y2="800" />
+  </g>
+
+  <!-- Labels -->
+  <text x="40" y="480" font-family="Arial" font-size="24">Rantai</text>
+  <text x="40" y="510" font-family="Arial" font-size="24">NH</text>
+  <text x="40" y="540" font-family="Arial" font-size="24" fill="#999900">ujung 3'</text>
+  <text x="40" y="570" font-family="Arial" font-size="24">deoksiribosa</text>
+  
+  <text x="430" y="920" font-family="Arial" font-size="32" font-weight="bold">Guanina</text>
+  <path d="M530,880 L530,820" fill="none" stroke="#9999ff" stroke-width="5" marker-end="url(#arrowhead)" />
+
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" />
+  </marker>
+</svg>

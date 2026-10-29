@@ -1,0 +1,51 @@
+\documentclass[crop, tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc}
+
+% Define new styles with high-contrast colors
+\tikzset{
+  mainblock/.style={rectangle, draw=teal!80!black, fill=teal!10, 
+    thick, text width=5em, font=\bfseries, text centered, rounded corners=5pt, minimum height=4em},
+  subblock/.style={rectangle, draw=teal!80!black, fill=teal!10, 
+    thick, text width=4em, font=\small, text centered, rounded corners=3pt, minimum height=1.2em},
+  dataellipse/.style={draw=orange!80!red, fill=orange!15, ellipse, thick, minimum height=2em, font=\itshape, minimum width=6em},
+  io/.style={rectangle, draw=purple!80!black, fill=purple!10, thick, text width=4em, text centered, rounded corners=3pt, minimum height=2em},
+  rel/.style={draw=blue!80!black, -Stealth, very thick},
+  relalt/.style={draw=gray!70!black, -Stealth, dashed, thick},
+}
+
+\begin{document}
+\begin{tikzpicture}[node distance=3cm, auto]
+
+  % Nodes
+  \node [mainblock] (proc) {Processor};
+  \node [dataellipse, below=2.2cm of proc] (event) {Events};
+  \node [mainblock, right=3.2cm of proc] (bus) {System Bus};
+  \node [mainblock, right=3.2cm of bus, align=center, minimum height=7em, minimum width=8em] (storage) {Storage\\
+    \begin{tikzpicture}[baseline=0pt]
+      \node [subblock, draw=cyan!80!black, fill=cyan!10, text width=4em] (ssd) {SSD};
+      \node [subblock, draw=cyan!80!black, fill=cyan!10, below=0.7em of ssd, text width=4em] (hdd) {HDD};
+    \end{tikzpicture}
+  };
+  \node [mainblock, right=3.2cm of storage] (periph) {Peripheral Hub};
+  \node [mainblock, below=2.2cm of storage] (gpu) {Graphics Unit};
+  \node [dataellipse, right=3.2cm of gpu] (frame) {Frame Buffer};
+  \node [io, left=3.2cm of gpu] (ctrl) {Controller};
+
+  % Relationships (arrows)
+  \draw[rel] (proc) -- (bus);
+  \draw[rel] (bus) -- (proc);
+  \draw[rel] (bus) -- (storage);
+  \draw[rel] (storage) -- (bus);
+  \draw[rel] (ctrl) -- (bus);
+  \draw[rel] (bus) -- (gpu);
+  \draw[rel] (storage) -- (gpu);
+  \draw[relalt] (event) -- (proc);
+  \draw[relalt] (ctrl) -- (event);
+  \draw[relalt, bend left=20] (gpu) to (event);
+  \draw[rel] (periph) -- (storage);
+  \draw[relalt] (storage) -- (frame);
+  \draw[relalt] (frame) -- (gpu);
+
+\end{tikzpicture}
+\end{document}

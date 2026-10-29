@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 700">
+  <title>Annual GDP Growth Rates</title>
+  <rect x="0" y="0" width="1300" height="700" fill="#f0f0f0" />
+  <text x="650" y="30" font-size="24" text-anchor="middle" font-family="sans-serif">Annual GDP Growth Rates</text>
+  <text x="50" y="350" font-size="18" text-anchor="end" font-family="sans-serif" transform="rotate(-90, 50, 350)">Inflation Adjusted</text>
+  <text x="650" y="680" font-size="18" text-anchor="middle" font-family="sans-serif">Years</text>
+  <text x="30" y="280" font-size="18" font-family="sans-serif">$8B</text>
+  <text x="1080" y="420" font-size="18" font-family="sans-serif" fill="red">Recession</text>
+  
+  <!-- Grid Lines -->
+  <line x1="50" y1="100" x2="1250" y2="100" stroke="black" stroke-dasharray="5,5" />
+  <line x1="50" y1="200" x2="1250" y2="200" stroke="black" stroke-dasharray="5,5" />
+  <line x1="50" y1="300" x2="1250" y2="300" stroke="black" stroke-dasharray="5,5" />
+  <line x1="50" y1="400" x2="1250" y2="400" stroke="black" stroke-dasharray="5,5" />
+  <line x1="50" y1="500" x2="1250" y2="500" stroke="black" stroke-dasharray="5,5" />
+  <line x1="50" y1="600" x2="1250" y2="600" stroke="black" stroke-dasharray="5,5" />
+  
+  <!-- Bars -->
+  <rect x="100" y="550" width="30" height="150" fill="steelblue" />
+  <rect x="140" y="500" width="30" height="200" fill="steelblue" />
+  <!-- ... Additional bars for each year ... -->
+  <rect x="1210" y="520" width="30" height="180" fill="steelblue" />
+  
+  <!-- Year Labels -->
+  <text x="115" y="670" font-size="14" text-anchor="middle" font-family="sans-serif">1985</text>
+  <!-- ... Additional year labels ... -->
+  <text x="1225" y="670" font-size="14" text-anchor="middle" font-family="sans-serif">2025</text>
+</svg>

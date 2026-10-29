@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[pdftex,active,tightpage]{preview}
+\setlength\PreviewBorder{2mm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+\begin{document}
+\begin{preview}
+\pgfplotsset{
+    colormap={deepbluegreen}{
+        color(0cm)=(blue!80!black);
+        color(1cm)=(teal!80!black)
+    }
+}
+\begin{tikzpicture}
+    \begin{axis}[
+        colormap name=deepbluegreen,
+        width=15cm,
+        view={60}{70},
+        enlargelimits=false,
+        grid=major,
+        domain=-4:4,
+        y domain=-3.99:4,
+        samples=48,
+        xlabel={$\xi$},
+        ylabel={$\eta$},
+        zlabel={$\zeta$},
+        axis line style={thick, teal!90!black},
+        tick style={thick, blue!80!black},
+        colorbar,
+        colorbar style={
+            at={(-0.13,0)},
+            anchor=south west,
+            height=0.27*\pgfkeysvalueof{/pgfplots/parent axis height},
+            title style={font=\bfseries\color{teal!80!black}},
+            title={$g(\xi,\eta)$}
+        }
+    ]
+        \addplot3[surf] {2*x^2*y/(1 + x^2 + y^4)};
+    \end{axis}
+\end{tikzpicture}
+\end{preview}
+\end{document}

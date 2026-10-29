@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+  <defs>
+    <!-- Short curved chromosome-like fragment -->
+    <path id="rod" d="M1 6 C7 0 18 -1 26 3 C28 4 28 7 26 8 C18 5 9 6 4 11 C2 12 -1 9 1 6 Z"/>
+    <!-- Chromosome-like bar with adjacent kinetochore dot -->
+    <g id="chrom">
+      <rect x="-6" y="-4" width="12" height="8" rx="3" ry="3" fill="#2f73ad"/>
+      <circle cx="-8" cy="0" r="3" fill="#18b9e6"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="200" height="120" fill="white"/>
+
+  <!-- Scattered lavender curved fragments -->
+  <g fill="#b19cd9">
+    <use href="#rod" transform="translate(10 20) rotate(-35) scale(0.75)"/>
+    <use href="#rod" transform="translate(31 12) rotate(-10) scale(0.8)"/>
+    <use href="#rod" transform="translate(58 15) rotate(20) scale(0.72)"/>
+    <use href="#rod" transform="translate(100 12) rotate(20) scale(0.7)"/>
+    <use href="#rod" transform="translate(136 14) rotate(35) scale(0.75)"/>
+    <use href="#rod" transform="translate(162 23) rotate(12) scale(0.8)"/>
+    <use href="#rod" transform="translate(12 88) rotate(25) scale(0.75)"/>
+    <use href="#rod" transform="translate(31 99) rotate(18) scale(0.78)"/>
+    <use href="#rod" transform="translate(62 105) rotate(8) scale(0.78)"/>
+    <use href="#rod" transform="translate(145 101) rotate(-25) scale(0.78)"/>
+    <use href="#rod" transform="translate(177 91) rotate(-70) scale(0.74)"/>
+    <use href="#rod" transform="translate(187 66) rotate(-85) scale(0.72)"/>
+    <use href="#rod" transform="translate(8 53) rotate(-75) scale(0.65)"/>
+    <use href="#rod" transform="translate(186 47) rotate(80) scale(0.65)"/>
+  </g>
+
+  <!-- Central chromosomes -->
+  <g fill="#2f73ad">
+    <!-- Left column -->
+    <use href="#chrom" transform="translate(90 30)"/>
+    <use href="#chrom" transform="translate(90 45)"/>
+    <use href="#chrom" transform="translate(90 60)"/>
+    <use href="#chrom" transform="translate(90 75)"/>
+    <!-- Right column -->
+    <use href="#chrom" transform="translate(110 30)"/>
+    <use href="#chrom" transform="translate(110 45)"/>
+    <use href="#chrom" transform="translate(110 60)"/>
+    <use href="#chrom" transform="translate(110 75)"/>
+  </g>
+
+  <!-- Microtubule rays -->
+  <g stroke="#8b5a2b" stroke-width="1.2" fill="none">
+    <!-- Curved spindle arcs -->
+    <path d="M40 60 C66 14 132 14 160 60"/>
+    <path d="M40 60 C66 106 132 106 160 60"/>
+    <!-- From left pole to central chromosomes -->
+    <line x1="40" y1="60" x2="90" y2="30"/>
+    <line x1="40" y1="60" x2="90" y2="45"/>
+    <line x1="40" y1="60" x2="90" y2="60"/>
+    <line x1="40" y1="60" x2="90" y2="75"/>
+    <line x1="40" y1="60" x2="110" y2="30"/>
+    <line x1="40" y1="60" x2="110" y2="45"/>
+    <line x1="40" y1="60" x2="110" y2="60"/>
+    <line x1="40" y1="60" x2="110" y2="75"/>
+    <line x1="40" y1="60" x2="92" y2="22"/>
+    <line x1="40" y1="60" x2="92" y2="88"/>
+    <!-- From right pole to central chromosomes -->
+    <line x1="160" y1="60" x2="110" y2="30"/>
+    <line x1="160" y1="60" x2="110" y2="45"/>
+    <line x1="160" y1="60" x2="110" y2="60"/>
+    <line x1="160" y1="60" x2="110" y2="75"/>
+    <line x1="160" y1="60" x2="90" y2="30"/>
+    <line x1="160" y1="60" x2="90" y2="45"/>
+    <line x1="160" y1="60" x2="90" y2="60"/>
+    <line x1="160" y1="60" x2="90" y2="75"/>
+    <line x1="160" y1="60" x2="108" y2="22"/>
+    <line x1="160" y1="60" x2="108" y2="88"/>
+  </g>
+
+  <!-- Poles / centrioles -->
+  <g>
+    <!-- Left pole -->
+    <g transform="translate(40 60)">
+      <!-- Spikes -->
+      <g stroke="#b45a00" stroke-width="1.2">
+        <line x1="0" y1="0" x2="-14" y2="-12"/>
+        <line x1="0" y1="0" x2="-16" y2="0"/>
+        <line x1="0" y1="0" x2="-14" y2="12"/>
+        <line x1="0" y1="0" x2="-8" y2="-15"/>
+        <line x1="0" y1="0" x2="-8" y2="15"/>
+      </g>
+      <!-- Central body -->
+      <circle cx="0" cy="0" r="10" fill="#ff66cc"/>
+      <!-- Centriole-like perpendicular pair with gray caps -->
+      <g>
+        <rect x="-2" y="-8" width="4" height="16" fill="#8b0000"/>
+        <rect x="-3" y="-9" width="6" height="2" fill="#bfbfbf"/>
+        <rect x="-3" y="7" width="6" height="2" fill="#bfbfbf"/>
+        <rect x="-8" y="-2" width="16" height="4" fill="#8b0000"/>
+        <rect x="-9" y="-3" width="2" height="6" fill="#bfbfbf"/>
+        <rect x="7" y="-3" width="2" height="6" fill="#bfbfbf"/>
+      </g>
+    </g>
+
+    <!-- Right pole -->
+    <g transform="translate(160 60)">
+      <!-- Spikes -->
+      <g stroke="#b45a00" stroke-width="1.2">
+        <line x1="0" y1="0" x2="14" y2="-12"/>
+        <line x1="0" y1="0" x2="16" y2="0"/>
+        <line x1="0" y1="0" x2="14" y2="12"/>
+        <line x1="0" y1="0" x2="8" y2="-15"/>
+        <line x1="0" y1="0" x2="8" y2="15"/>
+      </g>
+      <!-- Central body -->
+      <circle cx="0" cy="0" r="10" fill="#ff66cc"/>
+      <!-- Centriole-like perpendicular pair with gray caps -->
+      <g>
+        <rect x="-2" y="-8" width="4" height="16" fill="#8b0000"/>
+        <rect x="-3" y="-9" width="6" height="2" fill="#bfbfbf"/>
+        <rect x="-3" y="7" width="6" height="2" fill="#bfbfbf"/>
+        <rect x="-8" y="-2" width="16" height="4" fill="#8b0000"/>
+        <rect x="-9" y="-3" width="2" height="6" fill="#bfbfbf"/>
+        <rect x="7" y="-3" width="2" height="6" fill="#bfbfbf"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+\documentclass[border=2pt]{standalone}
+
+% Drawing
+\usepackage{tikz}
+
+% Tikz Library
+\usetikzlibrary{calc, quotes, angles}
+
+% Notation
+\usepackage{physics, bm}
+
+\begin{document}
+
+	%Macros
+	\pgfmathsetmacro{\r}{1.0}	
+	\pgfmathsetmacro{\Alpha}{35}
+	\pgfmathsetmacro{\Beta}{55}
+	
+	\begin{tikzpicture}
+		% Coordinates
+		\coordinate (source) at (1.5,2.5);
+		\coordinate (target) at (7.5,1.5);
+		\coordinate (source-point1) at ({\r*cos(\Beta)+1.5},{\r*sin(\Beta)+2.5});
+		\coordinate (FieldA) at (3.2,4.1);
+		\coordinate (FieldB) at (6.3,2.9);
+		
+		% Source Mass (e.g., Planet)
+		\draw[line width=1.2pt, fill=teal!80!black, draw=teal!80!black] (source) circle (\r);
+		% Text
+		\node[draw=teal!80!black, rectangle, rounded corners=2pt, fill=white, text=teal!80!black, font=\bfseries] (A) at (FieldA) {Source};
+		
+		% Target Mass (e.g., Satellite)
+		\node[circle, inner sep=2pt, outer sep=2pt, fill=blue!80!black] (TARGET) at (target) {};
+		% Text 
+		\node[below, shift={(0,-0.12)}, text=blue!80!black, font=\bfseries] at (TARGET) {$m'$};
+		\node[draw=blue!80!black, rectangle, rounded corners=2pt, fill=white, text=blue!80!black, font=\bfseries] (B) at (FieldB) {Satellite};
+		
+		% Vectors / Relationships
+		\draw[-stealth, very thick, teal!80!black] (source) -- (TARGET) node[pos=.52, below right, text=teal!80!black, font=\bfseries] {$\vb{d}_1$};
+		\draw[-stealth, thick, teal!80!black] (source) -- (source-point1) node [pos=0.64, left, text=teal!80!black, font=\bfseries] {$\vb{d}_2$};
+		\draw[-stealth, thick, blue!80!black] (A) to[bend left=27] ({\r*cos(\Alpha)+1.5},{\r*sin(\Alpha)+2.5});
+		\draw[-stealth, thick, blue!80!black] (B) to[bend left=27] (TARGET);
+		\draw[dashed, -stealth, line width=1.1pt, black] (source) -- (TARGET) -- ($(source)!1.4!(target)$) node [above, shift={(-0.09,0.12)}, text=black, font=\bfseries] {$h$};
+		
+		% Angles
+		\pic[draw, "$\varphi$", angle eccentricity=2.7, angle radius=7pt, text=purple!80!black, font=\bfseries] {angle = target--source--source-point1};
+		
+		% Point Mark
+		\draw[fill=black] (source) circle (1.1pt) node[below, shift={(0,-0.12)}, text=black, font=\bfseries] {$\mathrm{S}$};
+	\end{tikzpicture}
+	
+\end{document}

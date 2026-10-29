@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 400" width="420" height="400">
+  <defs>
+    <clipPath id="clipTop">
+      <circle cx="210" cy="145" r="130" />
+    </clipPath>
+    <clipPath id="clipLeft">
+      <circle cx="145" cy="257" r="130" />
+    </clipPath>
+    <clipPath id="clipRight">
+      <circle cx="275" cy="257" r="130" />
+    </clipPath>
+  </defs>
+
+  <!-- Define circles -->
+  <!-- Green Circle (Bearable) -->
+  <circle cx="210" cy="145" r="130" fill="#8fff80" />
+  <!-- Red Circle (Social) -->
+  <circle cx="145" cy="257" r="130" fill="#ff8080" />
+  <!-- Blue Circle (Équitable) -->
+  <circle cx="275" cy="257" r="130" fill="#809eff" />
+
+  <!-- Intersection regions -->
+  <g clip-path="url(#clipTop)">
+    <circle cx="145" cy="257" r="130" fill="#fff881" />
+  </g>
+  <g clip-path="url(#clipTop)">
+    <circle cx="275" cy="257" r="130" fill="#81ffe9" />
+  </g>
+  <g clip-path="url(#clipLeft)">
+    <circle cx="275" cy="257" r="130" fill="#da81ff" />
+  </g>
+  <g clip-path="url(#clipTop)">
+    <g clip-path="url(#clipLeft)">
+      <circle cx="275" cy="257" r="130" fill="#ffffff" />
+    </g>
+  </g>
+
+  <!-- Labels inside non-overlapping parts -->
+  <text x="196" y="92" text-anchor="middle" font-family="Arial" font-size="20" fill="black">Bearable</text>
+  <text x="86" y="289" text-anchor="middle" font-family="Arial" font-size="20" fill="black">Social</text>
+  <text x="335" y="286" text-anchor="middle" font-family="Arial" font-size="20" fill="black">Équitable</text>
+
+  <!-- Labels in intersections -->
+  <!-- Top-left: Vivable (Green + Red) -->
+  <text x="126" y="169" text-anchor="middle" font-family="Arial" font-size="20" fill="black">Vivable</text>
+  <!-- Top-right: Viable (Green + Blue) -->
+  <text x="292" y="176" text-anchor="middle" font-family="Arial" font-size="20" fill="black">Viable</text>
+  <!-- Bottom: Social (Red + Blue) -->
+  <text x="200" y="313" text-anchor="middle" font-family="Arial" font-size="20" fill="black">Social</text>
+  <!-- Center: Durable (All three) -->
+  <text x="210" y="232" text-anchor="middle" font-family="Arial" font-size="20" fill="black">Durable</text>
+</svg>

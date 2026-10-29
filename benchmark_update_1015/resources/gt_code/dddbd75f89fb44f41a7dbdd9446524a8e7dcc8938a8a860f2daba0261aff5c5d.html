@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Resource Distribution Pie Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+    }
+    .echarts-legend-item {
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #222 !important;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option;
+
+    option = {
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: '#f4f4f4',
+        borderColor: '#333',
+        borderWidth: 1,
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontSize: 15
+        }
+      },
+      legend: {
+        top: '6%',
+        left: 'center',
+        textStyle: {
+          color: '#222',
+          fontFamily: 'Segoe UI, Arial, sans-serif',
+          fontWeight: 'bold',
+          fontSize: 16
+        }
+      },
+      series: [
+        {
+          name: 'Resource Types',
+          type: 'pie',
+          radius: ['38%', '72%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 14,
+            borderColor: '#fff',
+            borderWidth: 3
+          },
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 34,
+              fontWeight: 'bolder',
+              color: '#111',
+              fontFamily: 'Segoe UI, Arial, sans-serif'
+            },
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: '#555'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 920, name: 'Documents', itemStyle: { color: '#2b85e4' } },
+            { value: 670, name: 'Images', itemStyle: { color: '#d43f8d' } },
+            { value: 520, name: 'Audio Files', itemStyle: { color: '#39b54a' } },
+            { value: 430, name: 'Videos', itemStyle: { color: '#f26b1a' } },
+            { value: 210, name: 'Other Files', itemStyle: { color: '#8e44ad' } }
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

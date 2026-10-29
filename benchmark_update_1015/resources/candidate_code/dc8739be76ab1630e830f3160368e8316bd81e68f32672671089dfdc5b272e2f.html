@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math - Matrix Heatmap</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #222;
+    }
+    #container {
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var chartDom = document.getElementById("container");
+    var chartInstance = echarts.init(chartDom);
+    var chartOption;
+
+    // --- New Math Domain Heatmap Data ---
+    // Generate a 6x6 multiplication table heatmap
+    function getMultiplicationHeatmapData(size) {
+      const data = [];
+      for (let i = 1; i <= size; i++) {
+        for (let j = 1; j <= size; j++) {
+          data.push([i - 1, j - 1, i * j]);
+        }
+      }
+      return data;
+    }
+
+    function getLabels(size) {
+      var labels = [];
+      for (var i = 1; i <= size; i++) {
+        labels.push(i + '');
+      }
+      return labels;
+    }
+
+    var size = 6; // 6x6 multiplication table
+    var labels = getLabels(size);
+
+    chartOption = {
+      title: {
+        text: 'Multiplication Table Heatmap (1-6)',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          fontWeight: 'bold',
+          fontSize: 22,
+          color: '#222'
+        }
+      },
+      tooltip: {
+        position: 'top',
+        formatter: function(params) {
+          return 'Row ' + labels[params.data[0]] + ' × Col ' + labels[params.data[1]] +
+                 ' = <b>' + params.data[2] + '</b>';
+        },
+        backgroundColor: '#fff',
+        borderColor: '#333',
+        borderWidth: 2,
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold'
+        }
+      },
+      grid: {
+        left: '10%',
+        right: '10%',
+        top: 80,
+        bottom: 50
+      },
+      xAxis: {
+        type: 'category',
+        data: labels,
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222',
+            width: 2
+          }
+        },
+        splitLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: labels,
+        axisLabel: {
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222',
+            width: 2
+          }
+        },
+        splitLine: {
+          show: false
+        }
+      },
+      visualMap: {
+        min: 1,
+        max: size * size,
+        calculable: true,
+        orient: 'horizontal',
+        left: 'center',
+        bottom: 10,
+        inRange: {
+          color: ['#1a75ff', '#00c853', '#ffd600', '#d50000'] // vivid blue → green → yellow → red
+        },
+        textStyle: {
+          color: '#222',
+          fontWeight: 'bold'
+        }
+      },
+      series: [{
+        name: 'Product',
+        type: 'heatmap',
+        data: getMultiplicationHeatmapData(size),
+        label: {
+          show: true,
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: 14
+        },
+        emphasis: {
+          itemStyle: {
+            borderColor: '#222',
+            borderWidth: 3
+          }
+        }
+      }]
+    };
+
+    if (chartOption && typeof chartOption === 'object') {
+      chartInstance.setOption(chartOption);
+    }
+
+    window.addEventListener('resize', chartInstance.resize);
+  </script>
+</body>
+</html>

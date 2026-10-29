@@ -1,0 +1,33 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Container -->
+  <path d="M60,60 L440,80 L420,400 L50,400 Z" fill="#eef6fb" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3" />
+
+  <!-- Coastal Plains Region -->
+  <path d="M100,100 C120,105 210,120 215,160 C220,200 190,240 190,245 L105,230 C95,200 95,130 100,100 Z" fill="#b2d8d8" stroke="#006d77" stroke-width="1" stroke-dasharray="4,2" />
+  <text x="150" y="180" font-family="Arial, sans-serif" font-size="14" fill="#003049" text-anchor="middle">Coastal Plains</text>
+
+  <!-- Central Highlands Region -->
+  <path d="M230,130 L380,130 C395,180 395,230 370,275 L250,255 C240,220 230,170 230,130 Z" fill="#f9b248" stroke="#d68c45" stroke-width="1" stroke-dasharray="4,2" />
+  <text x="315" y="180" font-family="Arial, sans-serif" font-size="14" fill="#003049" text-anchor="middle">Central Highlands</text>
+
+  <!-- Green Valley Region -->
+  <path d="M110,275 L280,290 C310,295 340,310 340,350 L290,375 L130,375 C110,350 105,310 110,275 Z" fill="#8dbb69" stroke="#386641" stroke-width="1" stroke-dasharray="4,2" />
+  <text x="200" y="345" font-family="Arial, sans-serif" font-size="14" fill="#003049" text-anchor="middle">Green Valley</text>
+
+  <!-- Blue River -->
+  <path d="M160,80 Q220,200 330,355" fill="none" stroke="#1d4e89" stroke-width="2.5" stroke-dasharray="6,4" />
+  <text x="245" y="230" font-family="Arial, sans-serif" font-size="14" fill="#003049" text-anchor="middle">Blue River</text>
+
+  <!-- Locations -->
+  <!-- Riverton -->
+  <circle cx="195" cy="120" r="8" fill="#e63946" stroke="#333" stroke-width="1" />
+  <text x="195" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#003049" text-anchor="middle">Riverton</text>
+
+  <!-- Hillport -->
+  <circle cx="260" cy="160" r="8" fill="#e63946" stroke="#333" stroke-width="1" />
+  <text x="260" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#003049" text-anchor="middle">Hillport</text>
+
+  <!-- Southgate -->
+  <circle cx="330" cy="325" r="8" fill="#e63946" stroke="#333" stroke-width="1" />
+  <text x="330" y="320" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#003049" text-anchor="middle">Southgate</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <!-- Background circle with dashed border -->
+  <circle cx="400" cy="330" r="220" fill="#6DB4E8" stroke="#1B4F72" stroke-width="3" stroke-dasharray="8,5"/>
+  
+  <!-- Left lung -->
+  <ellipse cx="360" cy="290" rx="70" ry="90" fill="#E74C3C" opacity="0.9"/>
+  <path d="M 360 200 Q 340 240 350 280 Q 355 300 360 290 Q 365 300 370 280 Q 380 240 360 200" fill="#C0392B"/>
+  
+  <!-- Right lung -->
+  <ellipse cx="480" cy="290" rx="75" ry="95" fill="#E74C3C" opacity="0.9"/>
+  <path d="M 480 200 Q 460 240 470 280 Q 475 300 480 290 Q 485 300 490 280 Q 500 240 480 200" fill="#C0392B"/>
+  
+  <!-- Trachea -->
+  <rect x="415" y="180" width="20" height="60" fill="#52B788" rx="3"/>
+  <rect x="415" y="180" width="20" height="8" fill="#3A8A5F"/>
+  <rect x="415" y="195" width="20" height="3" fill="#3A8A5F"/>
+  <rect x="415" y="205" width="20" height="3" fill="#3A8A5F"/>
+  <rect x="415" y="215" width="20" height="3" fill="#3A8A5F"/>
+  <rect x="415" y="225" width="20" height="3" fill="#3A8A5F"/>
+  
+  <!-- Trachea branches -->
+  <path d="M 425 240 L 380 270" stroke="#52B788" stroke-width="12" fill="none"/>
+  <path d="M 425 240 L 470 270" stroke="#52B788" stroke-width="12" fill="none"/>
+  
+  <!-- Diaphragm/Heart area -->
+  <ellipse cx="430" cy="410" rx="60" ry="45" fill="#F39C12" opacity="0.85"/>
+  <path d="M 380 400 Q 430 420 480 400" stroke="#E67E22" stroke-width="3" fill="none"/>
+  
+  <!-- Text labels -->
+  <text x="420" y="145" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="28" fill="#1B4F72" font-weight="bold">咽部</text>
+  
+  <text x="445" y="200" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="22" fill="#1B4F72" font-weight="bold">气管</text>
+  
+  <text x="345" y="285" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="24" fill="#8B0000" font-weight="bold">左肺</text>
+  
+  <text x="520" y="285" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="24" fill="#8B0000" font-weight="bold">右肺</text>
+  
+  <text x="395" y="365" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="22" fill="#2E4C9E" font-weight="bold">食管</text>
+  
+  <text x="405" y="425" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="22" fill="#C0392B" font-weight="bold">心脏</text>
+</svg>

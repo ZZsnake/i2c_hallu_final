@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Connectivity Over Time</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #chart-container {
+            width: 800px;
+            height: 600px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container"></div>
+    <script>
+        var chartDom = document.getElementById('chart-container');
+        var myChart = echarts.init(chartDom);
+
+        var option = {
+            title: {
+                text: 'Device Connectivity Over Time',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['Sensor A', 'Sensor B', 'Sensor C']
+            },
+            xAxis: {
+                type: 'category',
+                data: ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00']
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Active Connections',
+                min: 0,
+                max: 25
+            },
+            series: [
+                {
+                    name: 'Sensor A',
+                    type: 'line',
+                    step: 'start',
+                    data: [10, 15, 12, 20, 16, 18, 17],
+                    itemStyle: {
+                        color: 'blue'
+                    }
+                },
+                {
+                    name: 'Sensor B',
+                    type: 'line',
+                    step: 'start',
+                    data: [5, 10, 15, 14, 12, 20, 19],
+                    itemStyle: {
+                        color: 'red'
+                    }
+                },
+                {
+                    name: 'Sensor C',
+                    type: 'line',
+                    step: 'start',
+                    data: [20, 20, 17, 19, 21, 24, 20],
+                    itemStyle: {
+                        color: 'teal'
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

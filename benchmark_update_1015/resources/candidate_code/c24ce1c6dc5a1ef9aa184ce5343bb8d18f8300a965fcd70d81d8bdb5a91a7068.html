@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+            font-family: sans-serif;
+            flex-direction: column; /* Arrange legend and chart vertically */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-container {
+            width: 100vw; /* Adjust as needed */
+            height: 72vh; /* Adjust as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #donut-chart {
+            width: 100%;
+            height: 100%;
+        }
+
+        .legend-custom {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0; /* Space between legend and chart */
+            flex-wrap: wrap;
+            gap: 15px; /* Space between legend items */
+            position: absolute;
+            top: 6%;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .legend-color-box {
+            width: 24px;
+            height: 10px;
+            margin-right: 6px;
+            border-radius: 3px; /* Slightly rounded corners for color boxes */
+        }
+    </style>
+</head>
+<body>
+    <div class="legend-custom" id="custom-legend">
+        <!-- Legend items will be dynamically generated or hardcoded if ECharts legend is not used -->
+    </div>
+    <div class="chart-container">
+        <div id="donut-chart"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var myChart = echarts.init(document.getElementById('donut-chart'));
+
+            // Estimated data values based on visual proportions
+            var chartData = [
+                { value: 33, name: 'Documents' },
+                { value: 25, name: 'Images' },
+                { value: 19, name: 'Audio Files' },
+                { value: 15, name: 'Videos' },
+                { value: 8, name: 'Other Files' }
+            ];
+
+            // Colors matching the image
+            var colors = ['#2b85e4', '#d43f8d', '#39b54a', '#f26b1a', '#8e44ad'];
+
+            var option = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{b}: {c} ({d}%)'
+                },
+                color: colors, // Apply custom colors
+                legend: {
+                    show: false // Hide ECharts default legend as we're creating a custom one
+                },
+                series: [
+                    {
+                        name: 'File Types',
+                        type: 'pie',
+                        radius: ['38%', '72%'], // Inner and outer radius for donut chart
+                        avoidLabelOverlap: false,
+                        label: {
+                            show: false, // Hide labels on the segments
+                            position: 'center'
+                        },
+                        emphasis: {
+                            label: {
+                                show: false, // No label on hover either
+                                fontSize: '20',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        itemStyle: {
+                            borderColor: '#fff',
+                            borderWidth: 4,
+                            borderRadius: 10
+                        },
+                        data: chartData
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+
+            // Generate custom legend
+            var customLegendDiv = $('#custom-legend');
+            chartData.forEach(function(item, index) {
+                var legendItem = $('<div class="legend-item"></div>');
+                var colorBox = $('<div class="legend-color-box"></div>').css('background-color', colors[index]);
+                var textLabel = $('<span></span>').text(item.name);
+                legendItem.append(colorBox).append(textLabel);
+                customLegendDiv.append(legendItem);
+            });
+
+            // Make chart responsive
+            $(window).on('resize', function() {
+                myChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

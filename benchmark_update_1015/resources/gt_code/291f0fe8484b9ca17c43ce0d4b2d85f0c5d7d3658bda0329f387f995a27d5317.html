@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Math Scatter Plot Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* High contrast: dark axes, vivid point color, readable font */
+    #container {
+      height: 100%;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222222;
+      background: #fff;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    // New high-contrast color scheme, math context, new data sample
+    var option = {
+      title: {
+        text: 'Quadratic Function: y = x² + 2x + 1',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#222222',
+          fontWeight: 'bold',
+          fontSize: 20,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      xAxis: {
+        name: 'x',
+        nameLocation: 'middle',
+        nameTextStyle: {
+          color: '#222222',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222222',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#222222',
+          fontSize: 14,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        splitLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        name: 'y',
+        nameLocation: 'middle',
+        nameGap: 35,
+        nameTextStyle: {
+          color: '#222222',
+          fontWeight: 'bold',
+          fontSize: 16
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#222222',
+            width: 2
+          }
+        },
+        axisLabel: {
+          color: '#222222',
+          fontSize: 14,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        },
+        splitLine: {
+          show: false
+        }
+      },
+      series: [{
+        name: 'Sample Points',
+        type: 'scatter',
+        symbolSize: 18,
+        itemStyle: {
+          color: '#D32F2F', // Vivid red
+          borderColor: '#222222',
+          borderWidth: 2
+        },
+        data: [
+          [-4, 9],
+          [-3, 4],
+          [-2, 1],
+          [-1, 0],
+          [0, 1],
+          [1, 4],
+          [2, 9],
+          [3, 16],
+          [4, 25],
+          [5, 36],
+          [6, 49],
+          [7, 64]
+        ]
+      }],
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params){
+          return 'x: ' + params.value[0] + '<br>y: ' + params.value[1];
+        },
+        backgroundColor: '#fff',
+        borderColor: '#222222',
+        borderWidth: 1,
+        textStyle: {
+          color: '#222222',
+          fontSize: 14,
+          fontFamily: 'Segoe UI, Arial, sans-serif'
+        }
+      },
+      grid: {
+        left: 60,
+        right: 40,
+        top: 70,
+        bottom: 60
+      }
+    };
+
+    myChart.setOption(option);
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

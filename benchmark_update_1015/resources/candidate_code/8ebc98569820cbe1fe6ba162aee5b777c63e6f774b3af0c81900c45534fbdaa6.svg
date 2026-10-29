@@ -1,0 +1,18 @@
+<svg width="400" height="500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <rect x="0" y="0" width="400" height="50" fill="#90EE90"/>
+  <path d="M200 50 C 200 100, 100 200, 100 300 C 100 400, 200 450, 200 450" stroke="purple" stroke-width="1" fill="none" opacity="0.3"/>
+  <circle cx="200" cy="300" r="10" fill="red"/>
+  <line x1="200" y1="50" x2="200" y2="300" stroke="green" stroke-width="2"/>
+  <line x1="200" y1="300" x2="150" y2="350" stroke="green" stroke-width="2"/>
+  <text x="140" y="340" font-size="12">N</text>
+  <line x1="200" y1="300" x2="200" y2="400" stroke="black" stroke-width="1"/>
+  <text x="210" y="410" font-size="12">h</text>
+  <line x1="200" y1="300" x2="100" y2="300" stroke="black" stroke-width="1"/>
+  <text x="90" y="290" font-size="12">r</text>
+  <line x1="200" y1="50" x2="200" y2="150" stroke="black" dashed stroke-width="1"/>
+  <text x="210" y="140" font-size="12">L</text>
+  <line x1="200" y1="300" x2="250" y2="250" stroke="black" stroke-width="1"/>
+  <text x="260" y="240" font-size="12">θ</text>
+  <line x1="200" y1="300" x2="100" y2="300" stroke="black" stroke-width="1"/>
+  <text x="100" y="270" font-size="12">mg</text>
+</svg>

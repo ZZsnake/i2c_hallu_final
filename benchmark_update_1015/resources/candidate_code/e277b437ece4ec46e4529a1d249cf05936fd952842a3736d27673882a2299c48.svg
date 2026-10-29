@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 900">
+  <!-- defs for arrowheads -->
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#1f57b5"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#c82424"/>
+    </marker>
+  </defs>
+
+  <!-- Start ellipse -->
+  <ellipse cx="110" cy="60" rx="60" ry="30"
+           fill="#ccffcc" stroke="#4b9b4b" stroke-width="2"/>
+  <text x="110" y="55" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#4b9b4b">Start: User Input</text>
+
+  <!-- Down arrow to Tokenize -->
+  <line x1="110" y1="90" x2="110" y2="120"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Tokenize Source Code box -->
+  <rect x="35" y="120" width="150" height="50" rx="8" ry="8"
+        fill="white" stroke="#1f57b5" stroke-width="2"/>
+  <text x="110" y="145" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#000000">Tokenize Source Code</text>
+
+  <!-- Arrow to Valid Tokens? -->
+  <line x1="110" y1="170" x2="110" y2="210"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Valid Tokens? diamond -->
+  <polygon points="110,210 145,235 110,260 75,235"
+           fill="white" stroke="#c82424" stroke-width="2"/>
+  <text x="110" y="236" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#c82424">Valid Tokens?</text>
+
+  <!-- Yes label under diamond -->
+  <text x="110" y="270" text-anchor="middle" font-family="sans-serif"
+        font-size="8" fill="#c82424">Yes</text>
+
+  <!-- No label to the right of diamond -->
+  <text x="155" y="230" text-anchor="start" font-family="sans-serif"
+        font-size="8" fill="#c82424">No</text>
+
+  <!-- Yes arrow down from Valid Tokens? to Parse Syntax Tree -->
+  <line x1="110" y1="260" x2="110" y2="290"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- No arrow right from Valid Tokens? to Error 1 -->
+  <line x1="145" y1="235" x2="185" y2="235"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Error box 1 -->
+  <rect x="185" y="215" width="30" height="40" rx="6" ry="6"
+        fill="white" stroke="#1f57b5" stroke-width="2"/>
+  <text x="200" y="240" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#c82424">Error</text>
+
+  <!-- Parse Syntax Tree box -->
+  <rect x="35" y="290" width="150" height="50" rx="8" ry="8"
+        fill="white" stroke="#1f57b5" stroke-width="2"/>
+  <text x="110" y="315" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#000000">Parse Syntax Tree</text>
+
+  <!-- Arrow to Syntax OK? -->
+  <line x1="110" y1="340" x2="110" y2="380"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Syntax OK? diamond -->
+  <polygon points="110,380 145,405 110,430 75,405"
+           fill="white" stroke="#c82424" stroke-width="2"/>
+  <text x="110" y="406" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#c82424">Syntax OK?</text>
+
+  <!-- Yes / No labels for Syntax -->
+  <text x="110" y="440" text-anchor="middle" font-family="sans-serif"
+        font-size="8" fill="#c82424">Yes</text>
+  <text x="155" y="400" text-anchor="start" font-family="sans-serif"
+        font-size="8" fill="#c82424">No</text>
+
+  <!-- Yes arrow down from Syntax OK? -->
+  <line x1="110" y1="430" x2="110" y2="460"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- No arrow right from Syntax OK? to Error 2 -->
+  <line x1="145" y1="405" x2="185" y2="405"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Error box 2 -->
+  <rect x="185" y="385" width="30" height="40" rx="6" ry="6"
+        fill="white" stroke="#1f57b5" stroke-width="2"/>
+  <text x="200" y="410" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#c82424">Error</text>
+
+  <!-- Semantic Analysis box -->
+  <rect x="35" y="460" width="150" height="50" rx="8" ry="8"
+        fill="white" stroke="#1f57b5" stroke-width="2"/>
+  <text x="110" y="485" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#000000">Semantic Analysis</text>
+
+  <!-- Arrow to Semantic OK? -->
+  <line x1="110" y1="510" x2="110" y2="550"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Semantic OK? diamond -->
+  <polygon points="110,550 145,575 110,600 75,575"
+           fill="white" stroke="#c82424" stroke-width="2"/>
+  <text x="110" y="576" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#c82424">Semantic OK?</text>
+
+  <!-- Yes / No labels for Semantic -->
+  <text x="110" y="610" text-anchor="middle" font-family="sans-serif"
+        font-size="8" fill="#c82424">Yes</text>
+  <text x="155" y="570" text-anchor="start" font-family="sans-serif"
+        font-size="8" fill="#c82424">No</text>
+
+  <!-- Yes arrow down from Semantic OK? -->
+  <line x1="110" y1="600" x2="110" y2="630"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- No arrow right from Semantic OK? to Error 3 -->
+  <line x1="145" y1="575" x2="185" y2="575"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Error box 3 -->
+  <rect x="185" y="555" width="30" height="40" rx="6" ry="6"
+        fill="white" stroke="#1f57b5" stroke-width="2"/>
+  <text x="200" y="580" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#c82424">Error</text>
+
+  <!-- Generate Bytecode box -->
+  <rect x="35" y="630" width="150" height="50" rx="8" ry="8"
+        fill="white" stroke="#1f57b5" stroke-width="2"/>
+  <text x="110" y="655" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#000000">Generate Bytecode</text>
+
+  <!-- Arrow to End -->
+  <line x1="110" y1="680" x2="110" y2="720"
+        stroke="#1f57b5" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- End ellipse -->
+  <ellipse cx="110" cy="760" rx="60" ry="30"
+           fill="#ccffcc" stroke="#4b9b4b" stroke-width="2"/>
+  <text x="110" y="755" text-anchor="middle" font-family="sans-serif"
+        font-size="9" fill="#4b9b4b">End: Executable Output</text>
+
+  <!-- Red dashed side path (decorative) -->
+  <path d="M175 40 C185 90 185 180 175 230"
+        fill="none" stroke="#c82424" stroke-width="1.2"
+        stroke-dasharray="4 4" marker-end="url(#arrowRed)"/>
+</svg>

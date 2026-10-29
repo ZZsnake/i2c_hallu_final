@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" style="background-color: white;">
+  <!-- Axes -->
+  <line x1="40" y1="360" x2="380" y2="360" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="40" y1="360" x2="40" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Labels for Axes -->
+  <text x="30" y="15" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">দাম</text>
+  <text x="360" y="375" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">পরিমাণ</text>
+  <text x="30" y="190" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" transform="rotate(-90, 30, 190)">বাজার দর</text>
+  <text x="180" y="375" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">সমান পরিমাণ</text>
+
+  <!-- Curves -->
+  <!-- Demand Curve (Red) -->
+  <path id="demand" d="M 40 60 Q 180 160 370 340" fill="none" stroke="#d62728" stroke-width="2" />
+  <!-- Supply Curve (Yellow) -->
+  <path id="supply" d="M 40 320 Q 180 160 380 40" fill="none" stroke="#f9e104" stroke-width="2" />
+
+  <!-- Shaded Areas -->
+  <!-- Consumer Surplus (Reddish) -->
+  <path d="M 40 60 Q 110 100 180 152 L 40 152 Z" fill="#f9c2c2" />
+  <!-- Producer Surplus (Yellowish) -->
+  <path d="M 40 320 Q 110 236 180 152 L 40 152 Z" fill="#fff59d" />
+
+  <!-- Equilibrium Point and Dashed Lines -->
+  <line x1="40" y1="152" x2="180" y2="152" stroke="black" stroke-width="1" stroke-dasharray="4" />
+  <line x1="180" y1="152" x2="180" y2="360" stroke="black" stroke-width="1" stroke-dasharray="4" />
+  <circle cx="180" cy="152" r="4" fill="#2ca02c" />
+
+  <!-- Text Labels on Graph -->
+  <text x="110" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">উপভোক্তা</text>
+  <text x="110" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">উদ্বৃত্ত</text>
+  
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">উৎপাদক</text>
+  <text x="100" y="195" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">উদ্বৃত্ত</text>
+
+  <text x="225" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="start">সাম্যাবস্থা</text>
+  
+  <text x="320" y="40" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">যোগান রেখা</text>
+  <text x="280" y="240" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">চাহিদা</text>
+  <text x="280" y="260" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">রেখা</text>
+
+</svg>

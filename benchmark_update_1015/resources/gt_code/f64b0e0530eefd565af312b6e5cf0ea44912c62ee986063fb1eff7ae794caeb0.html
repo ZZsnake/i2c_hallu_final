@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Pie Chart - Survey Response Types</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #container {
+      height: 100%;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    /* High-contrast title and labels */
+    .echarts-title, .echarts-label {
+      color: #18214D !important;
+      font-weight: 700 !important;
+      font-family: 'Segoe UI', Arial, sans-serif !important;
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    // New dataset: Survey Response Types (Other domain)
+    const responseData = [
+      { name: 'Email', value: 56 },
+      { name: 'Phone Call', value: 34 },
+      { name: 'In-person', value: 24 },
+      { name: 'Online Form', value: 47 },
+      { name: 'Mail', value: 12 },
+      { name: 'Social Media', value: 31 },
+      { name: 'Other', value: 20 }
+    ];
+
+    option = {
+      title: [
+        {
+          text: 'Survey Response Methods',
+          left: 'center',
+          textStyle: {
+            color: '#18214D',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 22
+          }
+        },
+        {
+          subtext: 'alignTo: "none" (default)',
+          left: '16.67%',
+          top: '75%',
+          textAlign: 'center',
+          subtextStyle: {
+            color: '#18214D',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14
+          }
+        },
+        {
+          subtext: 'alignTo: "labelLine"',
+          left: '50%',
+          top: '75%',
+          textAlign: 'center',
+          subtextStyle: {
+            color: '#18214D',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14
+          }
+        },
+        {
+          subtext: 'alignTo: "edge"',
+          left: '83.33%',
+          top: '75%',
+          textAlign: 'center',
+          subtextStyle: {
+            color: '#18214D',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 14
+          }
+        }
+      ],
+      series: [
+        {
+          type: 'pie',
+          radius: '25%',
+          center: ['50%', '50%'],
+          data: responseData,
+          label: {
+            position: 'outer',
+            alignTo: 'none',
+            bleedMargin: 6,
+            color: '#2B2B2B',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 13
+          },
+          labelLine: {
+            lineStyle: {
+              color: '#185ADB',
+              width: 3
+            }
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          color: [
+            '#185ADB', // blue
+            '#E94F37', // vivid red
+            '#007F5F', // dark green
+            '#FFA900', // vivid orange
+            '#3A86FF', // strong blue
+            '#8338EC', // deep purple
+            '#F72585'  // bright magenta
+          ],
+          left: 0,
+          right: '66.6667%',
+          top: 0,
+          bottom: 0
+        },
+        {
+          type: 'pie',
+          radius: '25%',
+          center: ['50%', '50%'],
+          data: responseData,
+          label: {
+            position: 'outer',
+            alignTo: 'labelLine',
+            bleedMargin: 6,
+            color: '#2B2B2B',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 13
+          },
+          labelLine: {
+            lineStyle: {
+              color: '#F3722C',
+              width: 3
+            }
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          color: [
+            '#F3722C', // orange
+            '#277DA1', // blue
+            '#43AA8B', // green
+            '#F94144', // red
+            '#F9C74F', // yellow (allowed in chart, not in text)
+            '#577590', // blue gray
+            '#560BAD'  // purple
+          ],
+          left: '33.3333%',
+          right: '33.3333%',
+          top: 0,
+          bottom: 0
+        },
+        {
+          type: 'pie',
+          radius: '25%',
+          center: ['50%', '50%'],
+          data: responseData,
+          label: {
+            position: 'outer',
+            alignTo: 'edge',
+            margin: 24,
+            color: '#2B2B2B',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: 13
+          },
+          labelLine: {
+            lineStyle: {
+              color: '#3D348B',
+              width: 3
+            }
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          color: [
+            '#3D348B', // indigo
+            '#E07A5F', // muted orange
+            '#81B29A', // teal
+            '#F2CC8F', // beige
+            '#6D597A', // purple
+            '#355070', // blue gray
+            '#B56576'  // rose
+          ],
+          left: '66.6667%',
+          right: 0,
+          top: 0,
+          bottom: 0
+        }
+      ]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

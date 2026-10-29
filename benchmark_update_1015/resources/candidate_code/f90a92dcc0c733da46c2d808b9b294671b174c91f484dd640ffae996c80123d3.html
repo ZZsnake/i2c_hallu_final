@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Population Growth in Major Cities (2015-2023)</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .chart-container {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .chart-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #000;
+    }
+    .y-axis-label {
+      position: absolute;
+      left: -100px;
+      top: 0;
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      writing-mode: vertical-rl;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-title">Population Growth in Major Cities (2015-2023)</div>
+  <div class="chart-container" id="populationChart"></div>
+
+  <script>
+    // Initialize ECharts instance
+    const myChart = echarts.init(document.getElementById('populationChart'));
+
+    // Define chart options
+    const option = {
+      tooltip: {
+        trigger: 'axis',
+        formatter: '{a} <br/>{c} thousand'
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+        axisLabel: {
+          color: '#333',
+          fontSize: 12
+        },
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        splitLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Population (thousands)',
+        min: 0,
+        max: 2100,
+        interval: 300,
+        axisLabel: {
+          color: '#333',
+          fontSize: 12
+        },
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            type: 'solid',
+            color: '#ddd'
+          }
+        }
+      },
+      grid: {
+        left: '8%',
+        right: '8%',
+        bottom: '10%',
+        top: '15%',
+        containLabel: true
+      },
+      series: [{
+        name: 'Population',
+        type: 'line',
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 6,
+        itemStyle: {
+          color: '#A00000' // Dark red for data points
+        },
+        lineStyle: {
+          color: '#C70000' // Bright red for line
+        },
+        areaStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: '#E6F3FF' },
+            { offset: 1, color: '#FFFFFF' }
+          ]),
+          opacity: 0.7
+        },
+        data: [880, 900, 910, 940, 1120, 1200, 1330, 1500, 1680]
+      }],
+      // Add vertical dashed lines at 2017, 2019, 2021
+      graphic: {
+        elements: [
+          {
+            type: 'line',
+            left: '20%',
+            top: '0%',
+            width: 0,
+            height: '100%',
+            shape: {
+              x1: 0,
+              y1: 0,
+              x2: 0,
+              y2: 1
+            },
+            style: {
+              stroke: '#008000',
+              lineWidth: 1,
+              dashArray: [5, 5]
+            }
+          },
+          {
+            type: 'line',
+            left: '40%',
+            top: '0%',
+            width: 0,
+            height: '100%',
+            shape: {
+              x1: 0,
+              y1: 0,
+              x2: 0,
+              y2: 1
+            },
+            style: {
+              stroke: '#008000',
+              lineWidth: 1,
+              dashArray: [5, 5]
+            }
+          },
+          {
+            type: 'line',
+            left: '60%',
+            top: '0%',
+            width: 0,
+            height: '100%',
+            shape: {
+              x1: 0,
+              y1: 0,
+              x2: 0,
+              y2: 1
+            },
+            style: {
+              stroke: '#008000',
+              lineWidth: 1,
+              dashArray: [5, 5]
+            }
+          }
+        ]
+      }
+    };
+
+    // Set chart options
+    myChart.setOption(option);
+
+    // Resize chart on window resize
+    window.addEventListener('resize', function () {
+      myChart.resize();
+    });
+  </script>
+</body>
+</html>

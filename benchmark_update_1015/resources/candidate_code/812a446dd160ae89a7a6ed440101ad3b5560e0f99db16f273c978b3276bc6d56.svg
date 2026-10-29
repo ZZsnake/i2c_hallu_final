@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566 403" width="566" height="403" preserveAspectRatio="none">
+  <!-- Define styles -->
+  <style>
+    .node {
+      fill: white;
+      stroke: black;
+      stroke-width: 2;
+      font-family: monospace;
+      font-size: 20px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    text.node {
+      fill: black;
+      stroke: none;
+      stroke-width: 0;
+      font-weight: normal;
+    }
+    .leaf {
+      fill: #cba5e0;
+      stroke: #8B008B;
+      stroke-width: 2;
+    }
+    .arrow {
+      stroke: black;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" viewBox="0 0 10 7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0,0, 10,3.5, 0,7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Root Node -->
+  <circle class="node" cx="200" cy="50" r="30" />
+  <text x="200" y="50" class="node">12</text>
+
+  <!-- Left Child of Root -->
+  <circle class="node" cx="100" cy="120" r="30" />
+  <text x="100" y="120" class="node">6</text>
+
+  <!-- Right Child of Root -->
+  <circle class="node" cx="300" cy="120" r="30" />
+  <text x="300" y="120" class="node">16</text>
+
+  <!-- Left Child of 6 -->
+  <circle class="node" cx="50" cy="200" r="30" />
+  <text x="50" y="200" class="node">2</text>
+
+  <!-- Right Child of 6 -->
+  <circle class="node" cx="150" cy="200" r="30" />
+  <text x="150" y="200" class="node">8</text>
+
+  <!-- Right Child of 2 -->
+  <circle class="leaf" cx="100" cy="280" r="30" />
+  <text x="100" y="280" class="node">4</text>
+
+  <!-- Right Child of 8 -->
+  <circle class="node" cx="200" cy="280" r="30" />
+  <text x="200" y="280" class="node">10</text>
+
+  <!-- Left Child of 10 -->
+  <circle class="leaf" cx="150" cy="360" r="30" />
+  <text x="150" y="360" class="node">9</text>
+
+  <!-- Right Child of 10 -->
+  <circle class="leaf" cx="250" cy="360" r="30" />
+  <text x="250" y="360" class="node">11</text>
+
+  <!-- Left Child of 16 -->
+  <circle class="leaf" cx="270" cy="200" r="30" />
+  <text x="270" y="200" class="node">14</text>
+
+  <!-- Right Child of 16 -->
+  <circle class="leaf" cx="370" cy="200" r="30" />
+  <text x="370" y="200" class="node">18</text>
+
+  <!-- Edges (Arrows) -->
+  <!-- Root to Left Child -->
+  <path class="arrow" d="M175.4,67.2 L126.2,101.7" />
+  <!-- Root to Right Child -->
+  <path class="arrow" d="M224.6,67.2 L273.8,101.7" />
+  <!-- 6 to 2 -->
+  <path class="arrow" d="M84.1,145.4 L67.0,172.9" />
+  <!-- 6 to 8 -->
+  <path class="arrow" d="M115.9,145.4 L133.0,172.9" />
+  <!-- 2 to 4 -->
+  <path class="arrow" d="M65.9,225.4 L83.0,252.9" />
+  <!-- 8 to 10 -->
+  <path class="arrow" d="M165.9,225.4 L183.0,252.9" />
+  <!-- 10 to 9 -->
+  <path class="arrow" d="M184.1,305.4 L167.0,332.9" />
+  <!-- 10 to 11 -->
+  <path class="arrow" d="M215.9,305.4 L233.0,332.9" />
+  <!-- 16 to 14 -->
+  <path class="arrow" d="M289.5,148.1 L281.2,170.0" />
+  <!-- 16 to 18 -->
+  <path class="arrow" d="M319.8,142.6 L348.9,175.9" />
+</svg>

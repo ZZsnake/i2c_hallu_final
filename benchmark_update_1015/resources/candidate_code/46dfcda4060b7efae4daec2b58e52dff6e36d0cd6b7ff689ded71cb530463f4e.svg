@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="675" fill="#f7f7f7"/>
+
+  <!-- Plot area -->
+  <g transform="translate(120,60)">
+    <!-- Axes size -->
+    <!-- width ~ 920, height ~ 520 -->
+    <rect x="0" y="0" width="920" height="520" fill="none"/>
+
+    <!-- Y-axis gridlines (dashed) and labels -->
+    <g stroke="#cccccc" stroke-width="1" stroke-dasharray="6,6">
+      <!-- 500B -->
+      <line x1="0" y1="420" x2="920" y2="420"/>
+      <!-- 1.0T -->
+      <line x1="0" y1="320" x2="920" y2="320"/>
+      <!-- 1.5T -->
+      <line x1="0" y1="220" x2="920" y2="220"/>
+      <!-- 2.0T -->
+      <line x1="0" y1="120" x2="920" y2="120"/>
+      <!-- 2.5T -->
+      <line x1="0" y1="20" x2="920" y2="20"/>
+    </g>
+
+    <!-- Axes lines -->
+    <g stroke="#888888" stroke-width="2">
+      <line x1="0" y1="520" x2="0" y2="0"/>
+      <line x1="0" y1="520" x2="920" y2="520"/>
+    </g>
+
+    <!-- Y-axis labels -->
+    <g font-family="sans-serif" fill="#008000" font-size="20" text-anchor="end">
+      <text x="-10" y="525">0</text>
+      <text x="-10" y="425">$500B</text>
+      <text x="-10" y="325">$1.0T</text>
+      <text x="-10" y="225">$1.5T</text>
+      <text x="-10" y="125">$2.0T</text>
+      <text x="-10" y="35">$2.5</text>
+      <text x="-10" y="55">trillion</text>
+    </g>
+
+    <!-- Title in center -->
+    <g font-family="sans-serif" fill="#008000" font-size="44" text-anchor="middle">
+      <text x="360" y="170">Global investment</text>
+      <text x="360" y="220">in</text>
+      <text x="360" y="270">energy transition</text>
+    </g>
+
+    <!-- Stacked bars -->
+    <!-- Define bar colors: blue (renewable), green (elec transport),
+         purple (power grids), yellow (elec heat), red (other top) -->
+
+    <!-- Helper: baseline y=520; height units loosely scaled -->
+
+    <!-- Early years small bars (single-color mostly) -->
+    <g>
+      <!-- 2005 -->
+      <rect x="80" y="495" width="30" height="25" fill="#1f77b4"/>
+      <!-- 2006 -->
+      <rect x="120" y="485" width="30" height="35" fill="#1f77b4"/>
+      <!-- 2007 -->
+      <rect x="160" y="470" width="30" height="50" fill="#1f77b4"/>
+      <!-- 2008 -->
+      <rect x="200" y="460" width="30" height="60" fill="#1f77b4"/>
+      <!-- 2009 -->
+      <rect x="240" y="455" width="30" height="65" fill="#1f77b4"/>
+      <!-- 2010 -->
+      <rect x="280" y="450" width="30" height="70" fill="#1f77b4"/>
+    </g>
+
+    <!-- 2011-2014 with emerging green -->
+    <g>
+      <!-- 2011 -->
+      <rect x="330" y="440" width="30" height="60" fill="#1f77b4"/>
+      <rect x="330" y="420" width="30" height="20" fill="#2ca02c"/>
+      <!-- 2012 -->
+      <rect x="370" y="430" width="30" height="60" fill="#1f77b4"/>
+      <rect x="370" y="405" width="30" height="25" fill="#2ca02c"/>
+      <!-- 2013 -->
+      <rect x="410" y="430" width="30" height="70" fill="#1f77b4"/>
+      <rect x="410" y="400" width="30" height="30" fill="#2ca02c"/>
+      <!-- 2014 -->
+      <rect x="450" y="425" width="30" height="75" fill="#1f77b4"/>
+      <rect x="450" y="390" width="30" height="35" fill="#2ca02c"/>
+    </g>
+
+    <!-- 2015-2018 adding purple and yellow -->
+    <g>
+      <!-- 2015 -->
+      <rect x="500" y="420" width="30" height="80" fill="#1f77b4"/>
+      <rect x="500" y="380" width="30" height="40" fill="#2ca02c"/>
+      <rect x="500" y="345" width="30" height="35" fill="#c5b0d5"/>
+      <!-- 2016 -->
+      <rect x="540" y="410" width="30" height="90" fill="#1f77b4"/>
+      <rect x="540" y="365" width="30" height="45" fill="#2ca02c"/>
+      <rect x="540" y="330" width="30" height="35" fill="#c5b0d5"/>
+      <!-- 2017 -->
+      <rect x="580" y="400" width="30" height="100" fill="#1f77b4"/>
+      <rect x="580" y="350" width="30" height="50" fill="#2ca02c"/>
+      <rect x="580" y="310" width="30" height="40" fill="#c5b0d5"/>
+      <rect x="580" y="295" width="30" height="15" fill="#ffbf00"/>
+      <!-- 2018 -->
+      <rect x="620" y="390" width="30" height="110" fill="#1f77b4"/>
+      <rect x="620" y="335" width="30" height="55" fill="#2ca02c"/>
+      <rect x="620" y="290" width="30" height="45" fill="#c5b0d5"/>
+      <rect x="620" y="270" width="30" height="20" fill="#ffbf00"/>
+      <rect x="620" y="260" width="30" height="10" fill="#d62728"/>
+    </g>
+
+    <!-- 2019-2022 high bars with full stacks -->
+    <g>
+      <!-- 2019 -->
+      <rect x="670" y="380" width="35" height="140" fill="#1f77b4"/>
+      <rect x="670" y="320" width="35" height="60" fill="#2ca02c"/>
+      <rect x="670" y="270" width="35" height="50" fill="#c5b0d5"/>
+      <rect x="670" y="250" width="35" height="20" fill="#ffbf00"/>
+      <rect x="670" y="235" width="35" height="15" fill="#d62728"/>
+      <!-- 2020 -->
+      <rect x="715" y="360" width="35" height="160" fill="#1f77b4"/>
+      <rect x="715" y="290" width="35" height="70" fill="#2ca02c"/>
+      <rect x="715" y="235" width="35" height="55" fill="#c5b0d5"/>
+      <rect x="715" y="210" width="35" height="25" fill="#ffbf00"/>
+      <rect x="715" y="195" width="35" height="15" fill="#d62728"/>
+      <!-- 2021 -->
+      <rect x="760" y="340" width="35" height="180" fill="#1f77b4"/>
+      <rect x="760" y="260" width="35" height="80" fill="#2ca02c"/>
+      <rect x="760" y="200" width="35" height="60" fill="#c5b0d5"/>
+      <rect x="760" y="175" width="35" height="25" fill="#ffbf00"/>
+      <rect x="760" y="160" width="35" height="15" fill="#d62728"/>
+      <!-- 2022 (tallest) -->
+      <rect x="805" y="320" width="35" height="200" fill="#1f77b4"/>
+      <rect x="805" y="235" width="35" height="85" fill="#2ca02c"/>
+      <rect x="805" y="165" width="35" height="70" fill="#c5b0d5"/>
+      <rect x="805" y="135" width="35" height="30" fill="#ffbf00"/>
+      <rect x="805" y="115" width="35" height="20" fill="#d62728"/>
+    </g>
+
+    <!-- X-axis labels and markers -->
+    <g font-family="sans-serif" font-size="26" fill="#000000" text-anchor="middle">
+      <text x="195" y="560">2005</text>
+      <text x="375" y="560">2010</text>
+      <text x="555" y="560">2015</text>
+      <text x="735" y="560">2020</text>
+    </g>
+
+    <!-- X-axis triangle markers -->
+    <g fill="#bbbbbb">
+      <!-- under 2005 -->
+      <path d="M195 565 L185 580 L205 580 Z"/>
+      <!-- under 2010 -->
+      <path d="M375 565 L365 580 L385 580 Z"/>
+      <!-- under 2015 -->
+      <path d="M555 565 L545 580 L565 580 Z"/>
+      <!-- under 2020 -->
+      <path d="M735 565 L725 580 L745 580 Z"/>
+    </g>
+
+    <!-- Right-side category labels -->
+    <g font-family="sans-serif" fill="#000000" font-size="32" text-anchor="start">
+      <text x="860" y="420">Renewable</text>
+      <text x="860" y="310">Elec. Transport</text>
+      <text x="860" y="210">Power grids</text>
+    </g>
+
+    <g font-family="sans-serif" fill="#000000" font-size="26" text-anchor="start">
+      <text x="860" y="110">Storage</text>
+      <text x="860" y="140">Clean Industry</text>
+      <text x="860" y="170">Nuclear</text>
+      <text x="860" y="200">Elec. Heat</text>
+    </g>
+
+  </g>
+
+  <!-- Bottom annotation -->
+  <g font-family="sans-serif" font-size="10" fill="#666666">
+    <text x="20" y="660">
+      Purposely omitted from this chart: (smaller) investments in carbon capture and storage, hydrogen, clean shipping. Bloomberg NEF states that "Start years differ by sector but all sectors are present from 2020 onwards."
+    </text>
+  </g>
+</svg>

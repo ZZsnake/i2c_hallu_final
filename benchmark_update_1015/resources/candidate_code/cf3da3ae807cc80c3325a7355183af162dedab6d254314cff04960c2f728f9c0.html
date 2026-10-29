@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Test Score Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #chart-container {
+            width: 800px;
+            height: 600px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container"></div>
+    <div class="legend">
+        Boxplot: Q1, Q3, Median & Outliers<br>
+        (upper: Q3 + 1.5 × IQR, lower: Q1 - 1.5 × IQR)
+    </div>
+    <script>
+        var chartDom = document.getElementById('chart-container');
+        var myChart = echarts.init(chartDom);
+        var option = {
+            title: {
+                text: 'Algebra Test Score Distribution',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            xAxis: {
+                type: 'value',
+                name: 'Score',
+                min: 0,
+                max: 100
+            },
+            yAxis: {
+                type: 'category',
+                data: ['Group 1', 'Group 2', 'Group 3', 'Group 4', 'Group 5']
+            },
+            series: [
+                {
+                    name: 'Score Distribution',
+                    type: 'boxplot',
+                    data: [
+                        [80, 85, 90, 95, 100],
+                        [70, 75, 80, 85, 90],
+                        [55, 60, 65, 70, 75],
+                        [50, 55, 60, 65, 70],
+                        [90, 95, 100, 105, 110]
+                    ],
+                    itemStyle: {
+                        color: 'steelblue'
+                    }
+                }
+            ]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

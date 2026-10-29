@@ -1,0 +1,66 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    font=\large,
+    every node/.style={font=\large}
+]
+
+% Define colors
+\definecolor{primeBlue}{RGB}{0,0,255}
+\definecolor{fibonacciGreen}{RGB}{20,120,120}
+\definecolor{polynomialPurple}{RGB}{100,0,100}
+\definecolor{matrixOrange}{RGB}{240,130,30}
+\definecolor{labelBlue}{RGB}{0,0,150}
+\definecolor{centerTextGreen}{RGB}{20,120,120}
+
+% Define chart parameters
+\def\outerRadius{3}
+\def\innerRadius{1.5}
+\def\totalResponses{44}
+
+% Data: {count, color} in clockwise order
+\def\chartData{
+    {18/primeBlue},
+    {12/fibonacciGreen},
+    {8/polynomialPurple},
+    {6/matrixOrange}
+}
+
+% --- Draw Donut Segments ---
+% Start angle for the first segment (split between Matrix and Prime)
+\pgfmathsetmacro{\currentAngle}{45}
+
+\foreach \count/\color in \chartData {
+    \pgfmathsetmacro{\sweepAngle}{\count/\totalResponses*360}
+    \pgfmathsetmacro{\nextAngle}{\currentAngle - \sweepAngle}
+    
+    % Draw the filled segment with a blue border
+    \fill[\color, draw=labelBlue, line width=0.8pt] 
+        (\currentAngle:\outerRadius) arc (\currentAngle:\nextAngle:\outerRadius) --
+        (\nextAngle:\innerRadius) arc (\nextAngle:\currentAngle:\innerRadius) -- cycle;
+    
+    % Update the current angle for the next segment
+    \global\let\currentAngle\nextAngle
+}
+
+% --- Draw Dashed Radial Lines ---
+\foreach \angle in {0, 7.5, ..., 352.5} {
+    \draw[centerTextGreen, dashed, thin, dash pattern=on 2.5pt off 2.5pt] 
+        (\angle:\innerRadius) -- (\angle:\outerRadius);
+}
+
+% --- Add Center Text ---
+\node[align=center, text=centerTextGreen] at (0,0) {Responses by \\ 44 students};
+
+% --- Add Outer Labels ---
+\node[text=labelBlue, anchor=south] at (0, 3.5) {Matrix: $S = 6$ (13.64\%)};
+\node[text=labelBlue, anchor=east] at (-4.2, 0.5) {Polynomial: $S = 8$ (18.18\%)};
+\node[text=labelBlue, anchor=north] at (0, -3.5) {Fibonacci: $S = 12$ (27.27\%)};
+\node[text=labelBlue, anchor=west] at (4.2, 0) {Prime: $S = 18$ (40.91\%)};
+
+\end{tikzpicture}
+
+\end{document}

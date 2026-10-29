@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <style>
+      .axis-label {
+        font-family: sans-serif;
+        font-size: 18px;
+        fill: #333;
+      }
+      .percent-label {
+        font-family: sans-serif;
+        font-size: 16px;
+        fill: #333;
+      }
+      .curve-label {
+        font-family: sans-serif;
+        font-size: 18px;
+        fill: #333;
+      }
+      .area-label {
+        font-family: sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        fill: #333;
+      }
+    </style>
+  </defs>
+
+  <!-- Plot Area (scaled from 0-100 to 50-550 for padding) -->
+  <g transform="translate(50, 550) scale(5, -5)">
+    <!-- Axes -->
+    <line x1="0" y1="0" x2="100" y2="0" stroke="black" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="0" y2="100" stroke="black" stroke-width="1.5"/>
+    <line x1="100" y1="0" x2="100" y2="100" stroke="black" stroke-width="1.5"/>
+    <line x1="0" y1="100" x2="100" y2="100" stroke="black" stroke-width="1.5"/>
+
+    <!-- Perfect Equity Line -->
+    <path d="M0 0 L100 100" stroke="darkblue" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+
+    <!-- Actual Wealth Curve (approximated with a cubic bezier) -->
+    <path d="M0 0 C20 1 50 10 100 100" stroke="darkblue" stroke-width="2" fill="none" id="actualWealthCurve"/>
+
+    <!-- Market Area (dark green) -->
+    <path d="M0 0 C20 1 50 10 100 100 L100 0 Z" fill="#388E3C"/>
+
+    <!-- Distribution Area (light green/teal) -->
+    <path d="M0 0 L100 100 C50 10 20 1 0 0 Z" fill="#80CBC4"/>
+  </g>
+
+  <!-- Axis Labels and Percentages -->
+  <text x="300" y="580" text-anchor="middle" class="axis-label">Cumulative % of population (by wealth)</text>
+  <text x="560" y="560" text-anchor="middle" class="percent-label">100%</text>
+  <text x="560" y="40" text-anchor="middle" class="percent-label">100%</text>
+
+  <g transform="translate(580, 300) rotate(90)">
+    <text x="0" y="0" text-anchor="middle" class="axis-label">Cumulative % of total wealth</text>
+  </g>
+
+  <!-- Arrows for axes -->
+  <path d="M550 50 L545 55 L555 55 Z" fill="darkblue"/> <!-- Vertical axis arrow -->
+  <path d="M550 550 L545 545 L555 545 Z" fill="darkblue"/> <!-- Horizontal axis arrow -->
+
+  <!-- Text Labels for lines and areas -->
+  <text x="150" y="180" transform="rotate(-45 150 180)" class="curve-label">Perfect equity line</text>
+  <text x="250" y="400" transform="rotate(-20 250 400)" class="curve-label">Actual wealth curve</text>
+
+  <text x="400" y="180" text-anchor="middle" class="area-label">Distribution</text>
+  <text x="400" y="400" text-anchor="middle" class="area-label">Market</text>
+
+</svg>

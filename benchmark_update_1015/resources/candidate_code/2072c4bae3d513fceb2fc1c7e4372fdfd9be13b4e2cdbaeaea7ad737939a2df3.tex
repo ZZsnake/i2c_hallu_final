@@ -1,0 +1,94 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix, shapes, arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}
+% Define colors
+\definecolor{headercolor}{RGB}{30,45,65}
+\definecolor{highlightcolor}{RGB}{255,165,0}
+\definecolor{altrowcolor}{RGB}{230,230,230}
+
+% Define font sizes and styles
+\newcommand{\headerfont}{\bfseries\color{white}\sffamily\footnotesize}
+\newcommand{\datafont}{\sffamily\footnotesize}
+
+% Create matrix for the table
+\matrix (table) [matrix of nodes,
+    nodes={draw=black, very thin, align=center, text width=2.2cm, minimum height=1.2cm, anchor=center},
+    column 1/.style={nodes={text width=3.5cm}},
+    column 2/.style={nodes={text width=2.0cm}},
+    column 3/.style={nodes={text width=1.8cm}},
+    column 4/.style={nodes={text width=1.8cm}},
+    column 5/.style={nodes={text width=1.8cm}},
+    column 6/.style={nodes={text width=1.8cm}},
+    column 7/.style={nodes={text width=1.8cm}},
+    column 8/.style={nodes={text width=1.8cm}},
+    column 9/.style={nodes={text width=1.8cm}},
+    column 10/.style={nodes={text width=1.8cm}},
+    row 1/.style={nodes={fill=headercolor, \headerfont}},
+    row 2/.style={nodes={fill=altrowcolor, \datafont}},
+    row 3/.style={nodes={fill=highlightcolor, \datafont}},
+    row 4/.style={nodes={fill=altrowcolor, \datafont}},
+    row 5/.style={nodes={fill=white, \datafont}},
+    row 6/.style={nodes={fill=altrowcolor, \datafont}},
+    row 3 column 2/.style={nodes={fill=highlightcolor}},
+    row 3 column 10/.style={nodes={fill=highlightcolor}},
+    row 5 column 6/.style={nodes={fill=highlightcolor}},
+    row 6 column 7/.style={nodes={fill=highlightcolor}},
+    row 1 column 1/.style={nodes={text width=3.5cm}},
+    row 1 column 2/.style={nodes={text width=2.0cm}},
+    row 1 column 3/.style={nodes={text width=1.8cm}},
+    row 1 column 4/.style={nodes={text width=1.8cm}},
+    row 1 column 5/.style={nodes={text width=1.8cm}},
+    row 1 column 6/.style={nodes={text width=1.8cm}},
+    row 1 column 7/.style={nodes={text width=1.8cm}},
+    row 1 column 8/.style={nodes={text width=1.8cm}},
+    row 1 column 9/.style={nodes={text width=1.8cm}},
+    row 1 column 10/.style={nodes={text width=1.8cm}},
+    row 1/.style={nodes={text height=1.2cm, text depth=0.2cm}},
+    row 2/.style={nodes={text height=1.2cm, text depth=0.2cm}},
+    row 3/.style={nodes={text height=1.2cm, text depth=0.2cm}},
+    row 4/.style={nodes={text height=1.2cm, text depth=0.2cm}},
+    row 5/.style={nodes={text height=1.2cm, text depth=0.2cm}},
+    row 6/.style={nodes={text height=1.2cm, text depth=0.2cm}},
+    column sep=-\pgflinewidth,
+    row sep=-\pgflinewidth,
+    nodes in empty cells,
+    inner sep=0pt,
+    outer sep=0pt,
+    every node/.style={text centered}
+] {
+% Header row
+{Campaign} & {Funds Raised (\$)} & {Duration (days)} & {Donors} & {Avg. Donation (\$)} & {Conv. Rate (\%)} & {Social Media} & {Event Attend.} & {Emails Sent} & {Cost/\$ Raised} \\
+% Data rows
+{Healthy Futures Initiative} & {350,000} & {30} & {1,500} & {233.33} & {10.5} & {12,000} & {400} & {20,000} & {0.25} \\
+{Clean Water for All} & {500,000} & {45} & {850} & {588.24} & {8.0} & {22,000} & {600} & {15,000} & {0.15} \\
+{Education for Every Child} & {275,000} & {60} & {1,200} & {229.17} & {12.0} & {18,000} & {300} & {18,000} & {0.30} \\
+{Local Wildlife Preservation} & {150,000} & {30} & {500} & {300.00} & {15.0} & {5,000} & {200} & {5,000} & {0.40} \\
+{Mental Health Awareness Drive} & {420,000} & {75} & {950} & {442.11} & {9.5} & {25,000} & {450} & {22,000} & {0.20} \\
+};
+
+% Add title above the table
+\node[above=0.2cm of table, font=\bfseries\color{white}\sffamily\large, text width=18cm, align=center] {Fundraising Performance Metrics for Non-Profit Campaigns};
+
+% Draw horizontal lines for header and between rows
+\draw[black, thick] (table-1-1.north west) -- (table-1-10.north east);
+\draw[black, thick] (table-1-1.south west) -- (table-1-10.south east);
+\draw[black, thick] (table-2-1.south west) -- (table-2-10.south east);
+\draw[black, thick] (table-3-1.south west) -- (table-3-10.south east);
+\draw[black, thick] (table-4-1.south west) -- (table-4-10.south east);
+\draw[black, thick] (table-5-1.south west) -- (table-5-10.south east);
+\draw[black, thick] (table-6-1.south west) -- (table-6-10.south east);
+
+% Draw vertical lines for columns
+\foreach \col in {1,...,10} {
+    \draw[black, thick] (table-1-\col.north west) -- (table-6-\col.south west);
+}
+
+% Adjust the height of the first row to match the title
+\draw[black, thick] (table-1-1.north west) -- (table-1-10.north east);
+
+% Ensure the table is tightly cropped
+\end{tikzpicture}
+\end{document}

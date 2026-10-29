@@ -1,0 +1,33 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+
+\definecolor{lightblue}{RGB}{230,240,255}
+\definecolor{darkblue}{RGB}{0,51,102}
+
+\begin{document}
+
+\begin{tabular}{>{\columncolor{lightblue}}l*{6}{S[table-format=2.1]}}
+\toprule
+\rowcolor{darkblue}
+\multicolumn{1}{c}{\textcolor{white}{\textbf{Setting Type}}} & 
+\multicolumn{1}{c}{\textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Average\\ Reading Time\\ (min)\end{tabular}}}} & 
+\multicolumn{1}{c}{\textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Hours\\ per Week\end{tabular}}}} & 
+\multicolumn{1}{c}{\textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Character\\ Development\\ Satisfaction\end{tabular}}}} & 
+\multicolumn{1}{c}{\textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Setting\\ Realism\\ Rating\end{tabular}}}} & 
+\multicolumn{1}{c}{\textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Emotional\\ Engagement\\ Score\end{tabular}}}} & 
+\multicolumn{1}{c}{\textcolor{white}{\textbf{\begin{tabular}[c]{@{}c@{}}Preference for\\ Detailed Settings\\ (\%)\end{tabular}}}} \\
+\midrule
+Urban       & 35.0 & 4.0 & 4.5 & 4.7 & 4.6 & 92.0 \\
+Rural       & 30.0 & 3.0 & 4.3 & 4.5 & 4.4 & 88.0 \\
+Historical  & 40.0 & 5.0 & 4.8 & 4.9 & 4.7 & 95.0 \\
+Fantasy     & 25.0 & 2.0 & 4.0 & 3.5 & 4.1 & 75.0 \\
+Contemporary& 32.0 & 3.5 & 4.4 & 4.6 & 4.5 & 90.0 \\
+\bottomrule
+\end{tabular}
+
+\end{document}

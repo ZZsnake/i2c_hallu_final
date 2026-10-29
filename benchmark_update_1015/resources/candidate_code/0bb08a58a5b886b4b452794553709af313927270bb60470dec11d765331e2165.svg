@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 750">
+  <style>
+    .block { fill: #e0f2f1; }
+    .rf-amp { fill: #f0e6ff; }
+    .audio-amp { fill: #fffde7; }
+    .text { font-family: sans-serif; font-size: 24px; }
+    .label { font-family: sans-serif; font-size: 36px; }
+  </style>
+  <rect x="350" y="180" width="180" height="180" class="block" />
+  <rect x="490" y="420" width="180" height="180" class="block" />
+  <polygon points="650,180 830,330 650,480" class="rf-amp" />
+  <polygon points="990,180 1170,330 990,480" class="audio-amp" />
+  <path d="M1200,330h60" stroke="black" stroke-width="3" />
+  <path d="M30,60 180,330" stroke="black" stroke-width="3" />
+  <path d="M180,330h170" stroke="black" stroke-width="3" />
+  <path d="M350,330h280" stroke="black" stroke-width="3" />
+  <path d="M650,330h280" stroke="black" stroke-width="3" />
+  <path d="M990,330h180" stroke="black" stroke-width="3" />
+  <path d="M490,600h340" stroke="black" stroke-width="3" />
+  <path d="M830,330v270" stroke="black" stroke-width="3" />
+  <path d="M830,600h160" stroke="black" stroke-width="3" />
+  <circle cx="230" cy="270" r="40" stroke="black" stroke-width="3" fill="white" />
+  <text x="230" y="270" class="label">+</text>
+  <text x="400" y="270" class="label">β</text>
+  <text x="740" y="270" class="label">A</text>
+  <text x="550" y="60" class="text">Bandpass</text>
+  <text x="550" y="120" class="text">Filter</text>
+  <text x="750" y="60" class="text">RF Amplifier</text>
+  <text x="750" y="120" class="text">& Detector</text>
+  <text x="1070" y="60" class="text">Audio</text>
+  <text x="1070" y="120" class="text">Amplifier</text>
+  <text x="550" y="540" class="text">Feedback</text>
+  <text x="550" y="600" class="text">Network</text>
+  <polygon points="1260,300 1310,330 1260,360" fill="black" />
+  <path d="M370,210 400,240 370,270 400,300 370,330 400,360 370,390" stroke="black" stroke-width="3" />
+</svg>

@@ -1,0 +1,81 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, 3d}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=0.8, line cap=round, line join=round]
+
+% Top Sphere
+\begin{scope}[shift={(0, 6)}]
+    \shade[ball color=gray!20, opacity=0.8] (0,0) circle (2.5cm);
+    \draw[thick] (0,0) circle (2.5cm);
+    
+    % Latitude lines
+    \foreach \y in {-2.0, -1.5, -1.0, -0.5, 0, 0.5, 1.0, 1.5, 2.0} {
+        \draw[thick] (0,\y) arc (90:270:2.5cm and 0.5cm);
+        \draw[dashed] (0,\y) arc (90:-90:2.5cm and 0.5cm);
+    }
+    
+    % Longitude lines
+    \foreach \a in {0, 45, 90, 135, 180, 225, 270, 315} {
+        \draw[thick, domain=0:180, samples=50, smooth] plot ({2.5*cos(\a)*cos(\x)}, {2.5*sin(\a)*cos(\x)});
+        \draw[dashed, domain=180:360, samples=50, smooth] plot ({2.5*cos(\a)*cos(\x)}, {2.5*sin(\a)*cos(\x)});
+    }
+\end{scope}
+
+% Bottom Sphere with Projection
+\begin{scope}[shift={(0, 0)}]
+    % Sphere
+    \shade[ball color=gray!20, opacity=0.8] (0,0) circle (2.5cm);
+    \draw[thick] (0,0) circle (2.5cm);
+    
+    % Latitude lines
+    \foreach \y in {-2.0, -1.5, -1.0, -0.5, 0, 0.5, 1.0, 1.5, 2.0} {
+        \draw[thick] (0,\y) arc (90:270:2.5cm and 0.5cm);
+        \draw[dashed] (0,\y) arc (90:-90:2.5cm and 0.5cm);
+    }
+    
+    % Longitude lines
+    \foreach \a in {0, 45, 90, 135, 180, 225, 270, 315} {
+        \draw[thick, domain=0:180, samples=50, smooth] plot ({2.5*cos(\a)*cos(\x)}, {2.5*sin(\a)*cos(\x)});
+        \draw[dashed, domain=180:360, samples=50, smooth] plot ({2.5*cos(\a)*cos(\x)}, {2.5*sin(\a)*cos(\x)});
+    }
+    
+    % Axes
+    \draw[thick, -{Stealth}] (0,0) -- (0,3.5) node[above] {$z, \zeta$};
+    \draw[thick, -{Stealth}] (0,0) -- (-3,-2) node[below left] {$x, \xi$};
+    \draw[thick, -{Stealth}] (0,0) -- (3,-2) node[below right] {$y, \eta$};
+    
+    % Points
+    \fill (0,2.5) circle (2pt) node[above left] {N};
+    \fill (0,-2.5) circle (2pt) node[below left] {S};
+    \fill (2.5*cos(45), 2.5*sin(45)) circle (2pt) node[right] {P};
+    \fill (4, -1.5) circle (2pt) node[right] {$\hat{\mathrm{P}}$};
+    
+    % Radius
+    \draw[thick, dashed] (0,0) -- (0,2.5);
+    \draw[thick, dashed] (0,0) -- (2.5*cos(45), 2.5*sin(45));
+    \draw[thick, dashed] (0,0) -- (2.5,0);
+    
+    % Angles
+    \draw[thick, ->] (0,0) ++(0.5,0) arc (0:45:0.5) node[midway, right] {$\beta$};
+    \draw[thick, ->] (0,0) ++(0,0.5) arc (90:45:0.5) node[midway, left] {$\phi$};
+    
+    % Radius label
+    \draw[thick, decorate, decoration={brace, mirror, amplitude=5pt}] (0,0) -- (0,2.5) node[midway, right=5pt] {$a$};
+    
+    % Projection lines
+    \draw[thick] (2.5*cos(45), 2.5*sin(45)) -- (4, -1.5);
+    \draw[thick] (0,-2.5) -- (4, -1.5);
+    
+    % Projection plane
+    \draw[thick] (-3,-2) -- (3,-2) -- (4,-1.5) -- (-2,-1.5) -- cycle;
+\end{scope}
+
+% Page number
+\node at (0, -7) {1};
+
+\end{tikzpicture}
+
+\end{document}

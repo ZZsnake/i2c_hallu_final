@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban vs Rural Population Growth</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        #chart {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        $(document).ready(function() {
+            var chartDom = document.getElementById('chart');
+            var myChart = echarts.init(chartDom);
+
+            var option = {
+                title: {
+                    text: 'Urban vs Rural Population Growth (2010-2024)',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['Urban Population', 'Rural Population', 'Annual Growth Rate']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['2010', '2012', '2014', '2016', '2018', '2020', '2022', '2024']
+                },
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: 'Urban Population (millions)',
+                        min: 0,
+                        max: 600,
+                        interval: 100,
+                        axisLine: {
+                            show: true
+                        },
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                    {
+                        type: 'value',
+                        name: 'Rural Population Annual Growth Rate (%)',
+                        min: 0,
+                        max: 6,
+                        interval: 1,
+                        axisLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#d33'
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}%'
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: 'Urban Population',
+                        type: 'line',
+                        data: [350, 370, 400, 430, 460, 500, 550, 600],
+                        itemStyle: {
+                            color: '#31688e'
+                        }
+                    },
+                    {
+                        name: 'Rural Population',
+                        type: 'line',
+                        data: [420, 410, 400, 390, 380, 370, 360, 350],
+                        itemStyle: {
+                            color: '#d33'
+                        }
+                    },
+                    {
+                        name: 'Annual Growth Rate',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: [2.5, 2.7, 3.0, 3.2, 3.5, 3.7, 4.0, 4.2],
+                        itemStyle: {
+                            color: '#4caf50'
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

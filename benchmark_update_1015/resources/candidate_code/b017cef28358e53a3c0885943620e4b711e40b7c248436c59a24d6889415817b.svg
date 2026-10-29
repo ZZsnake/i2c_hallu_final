@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 600">
+  <!-- Background -->
+  <rect x="0" y="0" width="850" height="600" fill="white"/>
+
+  <!-- Plot area -->
+  <!-- Margins: left=80, right=220 (for legend), top=60, bottom=120 -->
+  <rect x="80" y="60" width="550" height="420" fill="none"/>
+
+  <!-- Grid lines -->
+  <g stroke="#cccccc" stroke-width="1" stroke-dasharray="4 6">
+    <!-- Horizontal grid (0 to 500 every 100) -->
+    <line x1="80" y1="480" x2="630" y2="480"/>
+    <line x1="80" y1="396" x2="630" y2="396"/>
+    <line x1="80" y1="312" x2="630" y2="312"/>
+    <line x1="80" y1="228" x2="630" y2="228"/>
+    <line x1="80" y1="144" x2="630" y2="144"/>
+    <line x1="80" y1="60"  x2="630" y2="60"/>
+    <!-- Vertical grid (0 to 500 every 100) -->
+    <line x1="80"  y1="60" x2="80"  y2="480"/>
+    <line x1="190" y1="60" x2="190" y2="480"/>
+    <line x1="300" y1="60" x2="300" y2="480"/>
+    <line x1="410" y1="60" x2="410" y2="480"/>
+    <line x1="520" y1="60" x2="520" y2="480"/>
+    <line x1="630" y1="60" x2="630" y2="480"/>
+  </g>
+
+  <!-- Axes -->
+  <g stroke="#333333" stroke-width="2">
+    <line x1="80" y1="480" x2="630" y2="480"/>
+    <line x1="80" y1="480" x2="80"  y2="60"/>
+  </g>
+
+  <!-- Tick labels -->
+  <g font-family="Times New Roman, serif" font-size="14" fill="#333333">
+    <!-- Y-axis ticks -->
+    <text x="60" y="484" text-anchor="end">0</text>
+    <text x="60" y="400" text-anchor="end">100</text>
+    <text x="60" y="316" text-anchor="end">200</text>
+    <text x="60" y="232" text-anchor="end">300</text>
+    <text x="60" y="148" text-anchor="end">400</text>
+    <text x="60" y="64"  text-anchor="end">500</text>
+
+    <!-- X-axis ticks -->
+    <text x="80"  y="502" text-anchor="middle">0</text>
+    <text x="190" y="502" text-anchor="middle">100</text>
+    <text x="300" y="502" text-anchor="middle">200</text>
+    <text x="410" y="502" text-anchor="middle">300</text>
+    <text x="520" y="502" text-anchor="middle">400</text>
+    <text x="630" y="502" text-anchor="middle">500</text>
+  </g>
+
+  <!-- Axis titles -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#222222">
+    <!-- X-axis title -->
+    <text x="355" y="535" text-anchor="middle" letter-spacing="3">
+      Market Supply (units)
+    </text>
+    <!-- Y-axis title -->
+    <text x="25" y="270" text-anchor="middle" transform="rotate(-90 25 270)" letter-spacing="3">
+      Market Demand (units)
+    </text>
+  </g>
+
+  <!-- Regression line (diagonal) -->
+  <path d="
+    M 80 480
+    L 630 60
+  " stroke="#cc3333" stroke-width="2.5" fill="none"/>
+
+  <!-- Data points and labels -->
+  <!-- Helper: function-like mapping (not executable) 
+       data x->svgX: 80 + (x/500)*550
+       data y->svgY: 480 - (y/500)*420
+  -->
+
+  <!-- Retail: (50,40) -->
+  <circle cx="135" cy="446" r="14" fill="#8e44ad" stroke="#4a235a" stroke-width="2"/>
+  <text x="145" y="438" font-family="Georgia, serif" font-size="14" fill="#555555">Retail</text>
+
+  <!-- Manufacturing: (90,100) -->
+  <circle cx="179" cy="396" r="13" fill="#2980b9" stroke="#1f3a93" stroke-width="2"/>
+  <text x="189" y="388" font-family="Georgia, serif" font-size="14" fill="#555555">Manufacturing</text>
+
+  <!-- Agriculture: (130,150) -->
+  <circle cx="223" cy="354" r="13" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="233" y="346" font-family="Georgia, serif" font-size="14" fill="#555555">Agriculture</text>
+
+  <!-- Transport: (170,200) -->
+  <circle cx="267" cy="312" r="14" fill="#f1c40f" stroke="#b7950b" stroke-width="2"/>
+  <text x="277" y="304" font-family="Georgia, serif" font-size="14" fill="#555555">Transport</text>
+
+  <!-- Healthcare: (210,250) -->
+  <circle cx="311" cy="270" r="14" fill="#e74c3c" stroke="#922b21" stroke-width="2"/>
+  <text x="321" y="262" font-family="Georgia, serif" font-size="14" fill="#555555">Healthcare</text>
+
+  <!-- Technology: (250,300) -->
+  <circle cx="355" cy="228" r="14" fill="#3498db" stroke="#21618c" stroke-width="2"/>
+  <text x="365" y="220" font-family="Georgia, serif" font-size="14" fill="#555555">Technology</text>
+
+  <!-- Finance: (320,360) -->
+  <circle cx="432" cy="178" r="16" fill="#16a085" stroke="#0b5345" stroke-width="2"/>
+  <text x="442" y="170" font-family="Georgia, serif" font-size="14" fill="#555555">Finance</text>
+
+  <!-- Energy: (400,430) -->
+  <circle cx="520" cy="118" r="18" fill="#e67e22" stroke="#a04000" stroke-width="2"/>
+  <text x="530" y="110" font-family="Georgia, serif" font-size="14" fill="#555555">Energy</text>
+
+  <!-- Real Estate: (450,500) -->
+  <circle cx="575" cy="60" r="20" fill="#c0392b" stroke="#641e16" stroke-width="2"/>
+  <text x="585" y="56" font-family="Georgia, serif" font-size="14" fill="#555555">Real Estate</text>
+
+  <!-- Legend -->
+  <g font-family="Georgia, serif" font-size="14" fill="#333333">
+    <!-- legend position -->
+    <!-- small colored squares with labels -->
+    <rect x="660" y="120" width="14" height="14" fill="#8e44ad" stroke="#4a235a" stroke-width="1"/>
+    <text x="682" y="131">Retail</text>
+
+    <rect x="660" y="145" width="14" height="14" fill="#2980b9" stroke="#1f3a93" stroke-width="1"/>
+    <text x="682" y="156">Manufacturing</text>
+
+    <rect x="660" y="170" width="14" height="14" fill="#27ae60" stroke="#1e8449" stroke-width="1"/>
+    <text x="682" y="181">Agriculture</text>
+
+    <rect x="660" y="195" width="14" height="14" fill="#f1c40f" stroke="#b7950b" stroke-width="1"/>
+    <text x="682" y="206">Transport</text>
+
+    <rect x="660" y="220" width="14" height="14" fill="#e74c3c" stroke="#922b21" stroke-width="1"/>
+    <text x="682" y="231">Healthcare</text>
+
+    <rect x="660" y="245" width="14" height="14" fill="#3498db" stroke="#21618c" stroke-width="1"/>
+    <text x="682" y="256">Technology</text>
+
+    <rect x="660" y="270" width="14" height="14" fill="#16a085" stroke="#0b5345" stroke-width="1"/>
+    <text x="682" y="281">Finance</text>
+
+    <rect x="660" y="295" width="14" height="14" fill="#e67e22" stroke="#a04000" stroke-width="1"/>
+    <text x="682" y="306">Energy</text>
+
+    <rect x="660" y="320" width="14" height="14" fill="#c0392b" stroke="#641e16" stroke-width="1"/>
+    <text x="682" y="331">Real Estate</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <g font-family="Courier New, monospace" font-size="12" fill="#bbbbbb">
+    <text x="80" y="580">
+      Source: Hypothetical Economics Dataset, Market Sectors
+    </text>
+    <text x="760" y="580" text-anchor="end">CC BY</text>
+  </g>
+</svg>
