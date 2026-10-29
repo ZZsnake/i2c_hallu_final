@@ -11,6 +11,20 @@
 - `run_api.sh`、`run_local.sh`：推理；`run_convert.sh`：转换；`run_eval.sh`：使用当前 benchmark 评测。
 - `eval_pipeline/run_evaluation.sh`：评测入口依赖的完整运行及结果检查脚本。
 
+## 运行依赖
+
+根目录 `requirements.txt` 统一列出推理、JSONL/Excel 转换、评测及 VLMEvalKit 共享导入所需的 79 个包，固定为现有 `image2code` 环境中的版本。基线：Python 3.10.18、Linux x86_64、PyTorch CUDA 12.8。pip 会继续安装这些包的传递依赖；本文件不是完整环境锁定文件。
+
+已有环境可以直接使用，无需重新安装。重建同类环境时，在目标 Python 环境中执行：
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+核心组合为 torch 2.10.0、torchvision 0.25.0、torchaudio 2.10.0、vLLM 0.19.0、Transformers 4.57.6。Toolkit 内的 requirements 转引根目录，旧 torch 2.8 约束已更新。需要可用的 NVIDIA GPU 驱动；系统驱动和 Conda/Python 本身不由 pip requirements 安装。
+
+依赖核查中，现有环境的 `pip check` 唯一提示是 decord 0.6.0 的已安装 wheel 标记为 cp36，与当前 Python 3.10 不匹配。推理启动器和评测/转换导入检查均通过。重建环境时需从匹配当前 Python/平台的发行包安装 decord；本次未改动现有环境。当前任务处理双图，不使用视频解码。
+
 ## 推理
 
 ```bash
